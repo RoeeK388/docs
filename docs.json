@@ -242,7 +242,8 @@
               "analytics-reporting/funnel-step-performance",
               "analytics-reporting/filtering-experiences",
               "analytics-reporting/custom-events",
-              "analytics-reporting/attribution-overview"
+              "analytics-reporting/attribution-overview",
+              "analytics-reporting/export-csv"
             ]
           },
           {

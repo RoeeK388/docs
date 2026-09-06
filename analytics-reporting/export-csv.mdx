@@ -1,0 +1,70 @@
+---
+title: "Export experience and experiment lists"
+sidebarTitle: "Export to CSV"
+description: "Download list data for reporting, understand which filters are included, and distinguish page URLs from campaign Smart Links in an experience export."
+icon: "download"
+---
+
+Use **Export to CSV** on the experience or experiment list to download data for reporting and campaign organization. The file is a list export, not a screenshot or a copy of every chart on an analytics detail page.
+
+## Export a list
+
+<Steps>
+  <Step title="Open the right shop and list">
+    Open **Experiences** or **Tests** in the intended shop.
+  </Step>
+  <Step title="Set the list filters">
+    Set the status and search filters. For experiences, select the relevant tags as needed. Review the sort order before exporting.
+  </Step>
+  <Step title="Select Export to CSV">
+    Use the list's export/download control, labeled **Export to CSV** in its tooltip. Wait for the export to finish and the file to download.
+  </Step>
+  <Step title="Check the file before sharing">
+    Confirm that the rows match the intended brand and list scope. Check the columns and metric definitions before combining the file with other reports.
+  </Step>
+</Steps>
+
+## Which filters are included?
+
+| List | Filters passed through by its export action |
+| --- | --- |
+| **Experiences** | Status, search, selected tags, and supported sort settings. |
+| **Tests / experiments** | Status, search, and supported sort settings. |
+
+The current list export controls do not pass a custom analytics date range. **Do not assume that an export represents the date range selected on a different analytics screen.** For a date-specific comparison, verify the report scope before presenting the figures as a weekly or monthly result.
+
+## What an experience export includes
+
+The experience export includes identifiers and names, sessions, revenue, conversion rate, average order value, orders, tags, click-through rate, add-to-cart rate, and available page links.
+
+The rate columns labeled **CVR (%)**, **CTR (%)**, and **ATC (%)** are percentage values. Avoid multiplying them by 100 again when formatting a spreadsheet.
+
+The link columns serve different purposes:
+
+| Column | Use |
+| --- | --- |
+| **Hash Link** | The experience's generated direct link. |
+| **Preview Link** | A preview destination for reviewing the page. |
+| **Shopify Page Link** | The native Shopify Page URL, when one is associated. |
+| **Connected Smart Link 1**, **2**, and so on | Active, non-deleted Smart Links directly associated with that experience. |
+
+A blank link cell does not by itself mean the experience is broken. It can mean that the corresponding destination or direct Smart Link association is absent. The connected-link columns should not be treated as a complete inventory of every experiment or external campaign that can send traffic to the page.
+
+## Sharing and comparing exports
+
+Keep the export date, active shop, filters, and metric scope with the file. Use the [metrics glossary](/data-dictionary/metrics-glossary) when interpreting rates and revenue. A CSV does not remove differences between Jurni's attribution and another platform's reporting.
+
+## Troubleshooting
+
+**The export action is unavailable:** check your access to the list and its metrics with a shop admin.
+
+**The file contains unexpected experiences:** review the status, search, and tag filters in the list you exported.
+
+**Numbers differ from another screen:** compare scope, period, filters, and attribution rather than assuming every export uses the same reporting view.
+
+## Related guides
+
+- [Filter experience data](/analytics-reporting/filtering-experiences)
+- [Manage experiences](/build/manage-experiences)
+- [Read experiment results](/experiments/reading-results)
+- [Analytics differences](/troubleshooting/analytics-differences)
