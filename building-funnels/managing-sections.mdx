@@ -5,36 +5,56 @@ sidebarTitle: "Add sections"
 icon: "square-plus"
 ---
 
-Use the Section Library in the Experience Editor to add pre-built sections to a page. This guide covers how to open the library, add sections, and manage them on the canvas.
+Add sections to build the page's structure without recreating each layout from scratch. Use the **Section Library** for a new pattern, **Saved Sections** for a reusable copy, **Global Sections** for shared content, and **Integrations** for provider widgets.
+
+## Add a section from the library
 
 <Steps>
-  <Step title="Open the Section Library">
-    Open an experience in the Experience Editor. Use the **Sections** area to open the Section Library.
+  <Step title="Open the correct page">
+    Open the experience in the editor and check which page you are editing. Finish any dedicated Global Section edit before adding content to the whole page.
   </Step>
-  <Step title="Browse or search for sections">
-    The Section Library contains many pre-built sections organized into categories and layouts. Browse the categories or use search to find the layout you need. New sections are added over time.
+  <Step title="Open Section Library">
+    Select **Section Library** in the left toolbar. Browse the categories or search for the kind of section you need, such as a hero, FAQ, or Buy Box.
   </Step>
-  <Step title="Select and add sections">
-    Select one or more sections, then click **Add Sections**. Sections are added to the canvas immediately.
+  <Step title="Select the section layouts">
+    Select one or more templates. Selecting a template marks it for insertion; use the add action to insert your selection into the page.
+  </Step>
+  <Step title="Select Add Sections">
+    Add the selected sections. Jurni clears the selection and returns to **Layers**, where you can locate the inserted sections.
+  </Step>
+  <Step title="Place and configure them">
+    Check their position in Layers, reorder them as needed, and select each section to replace example content and configure its controls. Save the page changes when ready.
   </Step>
 </Steps>
 
-## Where new sections appear
+## Pick the right source
 
-New sections are inserted below the currently selected section. If no section is selected, they are added at the bottom of the page. You can reposition sections after adding them.
+| Source | Use it for | Important distinction |
+| --- | --- | --- |
+| **Section Library** | Starting from a ready-made section layout. | A starting point still needs your content and configuration. |
+| **Saved Sections → Saved** | Reusing a section as an independent copy. | Future local edits are not a shared global update. |
+| **Saved Sections → Global** | Keeping a shared section connected across uses. | Editing the shared source has a wider impact. |
+| **Integrations** | Placing reviews, forms, and other supported widgets. | Adding the section does not replace connecting the provider. |
+| **AI** | Creating or adapting a section from instructions. | Review the result and its actual behavior before saving or publishing. |
 
-## Selecting a section after adding
+## After adding a section
 
-Click a section on the canvas, or select it from the section list. This opens the section's properties in the right-side editing panel so you can customize it.
+Replace sample copy and media, verify the selected product and button action, and inspect the layout in both mobile and desktop modes. For a Buy Box, choose the real product rather than leaving a visual placeholder.
 
-<Warning>
-  Sections are added through the Section Library, and multiple sections can be added at once. Saving is not automatic: save the experience draft, or update the published experience when you are ready to make those changes live.
-</Warning>
+If the section depends on a provider, product, or another section, configure that dependency too. For example, a review widget needs the right review provider/product mapping, and a scroll button needs a valid target.
 
-## Next steps
+## Common questions
 
-After adding sections, continue building the experience:
+**Why did nothing get added?** Confirm you selected at least one template and used **Add Sections**, rather than only browsing or searching.
 
-- Reordering and Removing Sections
-- Editing Content and Media
-- Styling and Design Controls
+**Why is the library unavailable?** In a dedicated Global Section edit, Jurni restricts the available panels. Finish that scoped edit and return to the page editor. Comment mode is also not an editing mode.
+
+**Why does the section look empty?** Check required configuration, device visibility, and whether a product or widget provider has been connected. The standard Buy Box template, for example, does not render a live purchasing area without a selected product.
+
+## Related guides
+
+- [Sections, layers, and selection](/build/layers-selection)
+- [Reorder sections](/build/reorder-sections)
+- [Saved Sections](/building-funnels/saved-sections)
+- [Global Sections](/build/global-sections)
+- [Manage on-page integrations](/build/editor-integrations)
