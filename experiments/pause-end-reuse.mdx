@@ -1,0 +1,70 @@
+---
+title: "Pause, End, and Reuse an Experiment"
+sidebarTitle: "Pause, End & Reuse"
+description: "Understand what happens to Smart Link traffic when you pause or end a Jurni experiment, how winners are selected, and when a Smart Link can be reused."
+keywords:
+  - "pause Jurni experiment"
+  - "end experiment"
+  - "declare winner"
+  - "reuse Smart Link"
+---
+
+Pausing and ending an experiment have different effects on traffic. Use **Pause** when you need to temporarily stop an active test. Use **End Experiment** when you are ready to permanently close the test and choose a winner.
+
+## Pause an experiment
+
+When you choose **Pause**, Jurni stops the experiment from actively splitting traffic.
+
+The current Jurni UI warns that while an experiment is paused, traffic entering through its Smart Link is routed to the **shop home page**.
+
+<Warning>
+Do not pause an experiment while a paid campaign is still sending meaningful traffic to its Smart Link unless routing that traffic to the home page is acceptable.
+</Warning>
+
+A planned workflow for choosing a variant or custom fallback URL while paused is not part of the current shipped behavior.
+
+## End an experiment
+
+Ending is different from pausing. Jurni requires you to select a **winning variant**.
+
+When you confirm the winner, Jurni currently:
+
+- routes 100% of experiment traffic to the selected winning variant
+- points the experiment Smart Link to the winner
+- moves the experiment to **Ended** status
+- treats ending the experiment as permanent and irreversible
+
+The winning destination can be either a Jurni funnel or a supported external URL that was used as a variant.
+
+## What happens to the Smart Link after ending
+
+The Smart Link continues to work and points to the winning destination.
+
+The Smart Link itself is not disposable. Jurni lets you update a Smart Link's destination later, and the same Smart Link can be reused for a later routing/testing workflow when appropriate.
+
+<Tip>
+Keeping the campaign-facing Smart Link stable is useful when you want to change the destination behind an existing ad without replacing the URL in the campaign.
+</Tip>
+
+## Pause vs. End
+
+| Action | Experiment status | Where traffic goes | Reversible? |
+| --- | --- | --- | --- |
+| **Pause** | Paused | Current behavior routes Smart Link traffic to the shop home page | The experiment can be resumed |
+| **End** | Ended | 100% to the selected winning variant | Ending the experiment is irreversible |
+
+## Before pausing or ending
+
+Check:
+
+1. Whether paid traffic is still using the Smart Link.
+2. The current date range and variant metrics.
+3. Whether any custom/downstream decision metric needs to be reviewed outside the variant table.
+4. Which destination should continue receiving traffic after the test.
+
+## Related guides
+
+- [What Are Experiments?](/experiments/what-are-experiments)
+- [Read Experiment Results](/experiments/reading-results)
+- [Smart Links](/building-funnels/smart-links)
+- [How Experiment Traffic Is Assigned](/experiments/traffic-assignment)

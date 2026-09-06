@@ -1,7 +1,7 @@
 ---
-title: "Publishing Jurni Experiences"
+title: "Publishing Jurni Pages"
 sidebarTitle: "Publishing Overview"
-description: "Understand the ways you can publish a Jurni experience, including Jurni-hosted URLs, custom subdomains, and native Shopify Pages."
+description: "Understand where Jurni pages can live, how Shopify app proxy/custom subdomain/native Shopify Pages differ, and how Smart Links sit above those destinations."
 keywords:
   - "publish Jurni"
   - "Jurni URL"
@@ -9,61 +9,101 @@ keywords:
   - "custom subdomain"
 ---
 
-Publishing makes a Jurni experience available to real shoppers. Jurni supports different publishing paths so you can choose the URL and storefront setup that fits the campaign.
+Publishing determines **where the live Jurni page is served**. Smart Links determine **which URL you put in campaigns and where that traffic is routed**.
 
-## Publishing options
+Those are related, but they are not the same thing.
 
-The two primary publishing models are:
+## The three publishing paths
 
-<CardGroup cols={2}>
-  <Card title="Jurni-hosted or custom subdomain" icon="globe">
-    Publish the experience through Jurni and serve it from the Jurni URL or a custom subdomain connected to your workspace.
-  </Card>
-  <Card title="Shopify Pages" icon="shop">
-    Publish the experience as a native page inside your Shopify store, typically under your store's `/pages/` path.
-  </Card>
-</CardGroup>
+### 1. Jurni page on a custom subdomain
 
-## Choose the right publishing method
+This is the standard branded Jurni-hosted setup for paid landing pages.
 
-| Need | Recommended path |
-| --- | --- |
-| Launch a dedicated paid-traffic landing page quickly | Jurni-hosted/custom subdomain |
-| Use a URL on the Shopify root domain | Shopify Pages |
-| Keep the page inside the Shopify theme environment | Shopify Pages |
-| Route ad traffic through Smart Links | Either publishing method |
-| Use a branded campaign subdomain | Custom subdomain |
+After you connect a domain such as `go.brand.com`, your live pages and Smart Links can use that domain.
+
+Example page or Smart Link URL:
+
+`https://go.brand.com/summer-offer`
+
+There is no Jurni limit on the number of pages you can create on the connected subdomain.
+
+### 2. Shopify app proxy
+
+For a **Shopify Online Store** that has not connected a custom Jurni subdomain, Jurni uses the Shopify app proxy as the default root-domain route.
+
+Example:
+
+`https://brand.com/apps/jurni/summer-offer`
+
+The page is still served by Jurni, but the shopper-facing URL stays on the Shopify store domain through the app proxy.
+
+### 3. Native Shopify Pages
+
+Shopify Online Store brands can optionally publish a Jurni page into a Shopify page template.
+
+Example:
+
+`https://brand.com/pages/summer-offer`
+
+Jurni creates/uses a Shopify page template containing the Jurni app block, and each published page can have its own Shopify page handle.
+
+This is a different runtime from a Jurni-hosted page: the page lives inside the Shopify theme environment and can inherit theme/app behavior that is already installed in Shopify.
+
+## Smart Links are the campaign-facing layer
+
+For paid traffic, we generally recommend putting a **Smart Link** in the ad rather than hard-coding a page destination directly.
+
+A Smart Link can point to:
+
+- one Jurni page
+- a native Shopify Page
+- a supported external URL
+- an experiment that splits traffic across multiple destinations
+
+You can later change the destination behind the Smart Link without replacing the Smart Link URL in the campaign.
 
 <Info>
-Your publishing method does not determine whether you can use Jurni experiments or Smart Links. Those traffic tools can route shoppers to supported published destinations.
+  If a custom Jurni subdomain is configured, Smart Links use that domain. For Shopify shops without a custom subdomain, the current fallback URL uses the Shopify app proxy path under `/apps/jurni/`.
 </Info>
 
-## Before you publish
+## Shopify vs. Headless / Non-Shopify
 
-Run a full QA pass before sending traffic:
+| Store setup | Jurni-hosted / custom-domain pages | Shopify app proxy | Native Shopify Pages |
+| --- | --- | --- | --- |
+| **Shopify Online Store** | Yes | Yes, when no custom Jurni subdomain is configured | Optional |
+| **Shopify Headless** | Yes / implementation-specific | Do not assume the Online Store proxy/theme flow applies | No — Shopify Pages depend on Online Store theme templates |
+| **Non-Shopify** | Yes / implementation-specific | No | No |
 
-- Preview desktop and mobile layouts.
-- Test every important CTA.
-- Add products and variants to cart.
-- Test subscription or bundle options.
-- Confirm tracking pixels and custom scripts are configured correctly.
-- Check the final checkout path.
-- Verify the page URL and any Smart Link routing.
+See [Choose Your Setup](/getting-started/choose-your-setup) before publishing if you are not on a standard Shopify Online Store.
 
-## Publishing and draft changes
+## Which Shopify publishing method should I use?
 
-Editing an experience does not mean every change should immediately be visible to shoppers. Use the publish/update flow to control when your latest version becomes live.
+Use **Jurni-hosted / custom subdomain or app proxy** when you want the normal Jurni page runtime and Jurni-managed page integrations.
 
-For a live campaign, make important changes deliberately and test them before publishing the new version.
+Use **Shopify Pages** when you specifically need the page inside the Shopify theme environment—for example, to use a native `/pages/` URL or existing Shopify theme/app scripts.
 
-## Publishing with experiments
+Shopify Pages have their own compatibility and cart considerations, so review [Shopify Pages: When to Use Them and Limitations](/shopify-pages/limitations) before switching a live campaign.
 
-If an experience is part of an experiment, make sure the variant you intend to use is published and available before routing meaningful traffic to it. Draft or unavailable destinations can affect the shopper experience and the validity of test results.
+## Before sending traffic
+
+Test the exact live URL and publishing method you will use:
+
+1. desktop and mobile layout
+2. all primary links and buttons
+3. Buy Box/product configuration
+4. subscription and bundle behavior
+5. cart and checkout
+6. pixels and analytics
+7. review/popup/widget integrations
+8. consent behavior
+9. Smart Link routing and URL parameters
+10. purchase attribution
 
 ## Related guides
 
-- Publish on a custom subdomain
-- Set up and publish Shopify Pages
-- Update or unpublish an experience
-- Smart Links
-- QA checklist
+- [Shopify App Proxy URLs](/publishing/shopify-app-proxy)
+- [Custom Subdomain](/getting-started/custom-subdomain)
+- [Smart Links](/building-funnels/smart-links)
+- [Shopify Pages Setup](/shopify-pages/setup-publish)
+- [Shopify Pages Limitations](/shopify-pages/limitations)
+- [Update or Unpublish a Page](/publishing/update-unpublish)

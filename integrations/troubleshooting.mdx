@@ -4,8 +4,119 @@ sidebarTitle: "Troubleshooting"
 description: "Resolve common integration issues in Jurni, including widgets that fail to render and data that does not sync. Follow these steps to diagnose and fix problems."
 ---
 
-Integration issues can disrupt your workflow, but most problems have straightforward solutions. This guide covers common scenarios such as widgets not displaying and data failing to sync, with steps to diagnose and resolve each issue.
+Use this guide when an integration is configured in Jurni but the expected widget, pixel, popup, or downstream data is missing. A saved credential or active toggle confirms configuration; it does not prove that the full shopper-facing flow is working.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/6286878753-troubleshooting-widget-not-rendering-data-not-syncing) for full content.
-</Note>
+## Start by identifying the integration type
+
+The right troubleshooting path depends on what the integration does:
+
+- **Data & Tracking** — Meta Pixel, GTM, GA4, TikTok, Blotout, Axon, Northbeam, Polar, Triple Whale, Shopify Analytics
+- **Reviews / on-page widgets** — Junip, Stamped, Trustpilot, Okendo, Yotpo, Judge.me, Bazaarvoice, REVIEWS.io
+- **Pop-ups / lifecycle** — Klaviyo, Postscript, Alia
+- **Collaboration** — Slack
+- **Custom** — Custom Scripts and MCP
+
+Do not troubleshoot all of these as if they used the same API-key model.
+
+## Review widget or review data is missing
+
+Check the following in order:
+
+1. The integration is enabled in **Settings → Integrations**.
+2. The credential matches the field Jurni currently asks for—for example Yotpo App Key, Okendo Subscriber ID, Judge.me Public API Token, or REVIEWS.io Store ID.
+3. The Shopify product used on the page is the same product your review provider has data for.
+4. The review widget is configured for the intended mode: **Product**, **Group**, or **All Reviews**, where supported.
+5. The provider actually has published review data for that product or group.
+6. Refresh the editor, then also test the **live page URL**. Some third-party scripts behave differently in editor Preview.
+
+If a widget works on a normal Shopify product page but not on a native Jurni Shopify Page, also check the Shopify Pages limitations. Third-party theme scripts do not always attach to Jurni-rendered content automatically.
+
+## Pixel or analytics tag is not firing
+
+For Meta, GTM, GA4, TikTok, or another browser-side tracking integration:
+
+1. Confirm the ID in Jurni matches the provider exactly.
+2. Test a published/live Jurni page, not only editor Preview.
+3. Check whether consent prevents the tag from loading or the event from firing.
+4. Look for a second installation through Shopify, GTM, Custom Scripts, or another app.
+5. Verify the underlying shopper action actually happened—for example use a completed add-to-cart event when validating an ATC conversion.
+
+<Warning>
+  Duplicate installations are a common reason analytics looks wrong. If the same Meta Pixel or GTM container is loaded through Jurni and the Shopify theme on a Shopify Page, events can fire twice.
+</Warning>
+
+## Klaviyo, Postscript, or pop-up behavior is missing
+
+First confirm the integration uses the **current credential type** shown in Jurni. For example, Jurni's current Klaviyo setup uses the **Company ID**, not the private API key referenced in older help-center material.
+
+Then verify:
+
+- the integration is enabled
+- the correct store/account identifier is saved
+- the page actually contains or triggers the relevant form/popup behavior
+- the page is being tested in the environment where that vendor script is expected to run
+
+For Shopify Pages, remember that scripts native to the Shopify theme and Jurni-hosted integrations are different execution paths.
+
+## Shopify Analytics is missing or stale
+
+Shopify Analytics for Jurni-hosted commerce uses a public Storefront API access token from Shopify's **Headless** sales channel.
+
+If it is not working:
+
+1. Confirm the Shopify Headless storefront still exists.
+2. Confirm Jurni has the **public** Storefront API token from that storefront.
+3. Make sure the token belongs to the same Shopify store as the Jurni workspace.
+4. Re-save the token if the Shopify storefront configuration changed.
+5. Compare the same date range and timezone before treating reporting differences as a sync failure.
+
+Do not rely on older help-center guidance that says all Jurni analytics refresh on one fixed schedule; different reporting surfaces are produced by different data pipelines.
+
+## Custom Script is not running
+
+Check:
+
+- the script is enabled
+- its targeting mode includes the page you are testing
+- the script is not marked **Tracking** while you are testing only in editor Preview
+- the code does not depend on a DOM element or vendor library that loads later
+- a Content Security Policy or consent manager is not blocking it
+
+Tracking Custom Scripts are intentionally excluded from editor Preview and should be tested on a live Jurni URL.
+
+## Shopify Pages require a separate check
+
+Native Shopify Pages run inside the Shopify theme environment and use the Shopify Pages render target. Do not assume a Jurni-hosted integration or Custom Script will execute there in exactly the same way.
+
+When an integration fails only on Shopify Pages, determine whether it is:
+
+- a Jurni integration that needs Shopify Pages support
+- a Shopify theme/app script that expects native theme markup
+- a duplicate script being loaded through both systems
+- a widget trying to attach to content inside Jurni's rendered page surface
+
+## What to send Jurni Support
+
+If the issue remains, include:
+
+- integration name
+- Jurni page URL
+- whether it is Jurni-hosted, app-proxy/custom-subdomain, or Shopify Pages
+- expected behavior vs. actual behavior
+- affected product, if relevant
+- screenshot or browser-console error
+- whether it works on the normal Shopify storefront
+- whether consent was accepted during the test
+
+This is enough context for the team to distinguish a credential problem from a page-runtime or vendor-compatibility issue.
+
+## Related guides
+
+- Integrations Overview
+- API Keys & Credentials
+- Custom Scripts
+- Google Tag Manager
+- Consent & Tracking
+- Review Integrations
+- Shopify Pages Limitations
+- Duplicate Tracking Events

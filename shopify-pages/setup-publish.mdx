@@ -1,14 +1,14 @@
 ---
-title: "Set Up and Publish Shopify Pages with Jurni"
+title: "Set Up and Publish Shopify Pages"
 sidebarTitle: "Setup & Publish"
-description: "Connect your Shopify store, configure a theme template, and publish Jurni funnels as native Shopify pages. Covers enabling Shopify Pages, theme setup, publishing, and troubleshooting."
+description: "Create the Shopify page-template/app-block setup required by Jurni, then publish an eligible Jurni page as a native Shopify `/pages/<handle>` URL."
 ---
 
-Jurni Shopify Pages let you publish funnels as native pages inside your Shopify store instead of hosting them on a Jurni domain. This guide walks you through enabling the integration, configuring your theme, and publishing your first Shopify Page.
+Jurni Shopify Pages let you publish eligible Jurni experiences as native pages inside your Shopify store instead of serving them from a Jurni-hosted URL. This guide covers the one-time Shopify theme setup and the page publishing flow.
 
 ## How Shopify Pages work
 
-When you publish a funnel to Shopify, Jurni creates or updates a native Shopify page under your store's `/pages/` path (for example, `/pages/black-friday`). You continue to design and manage the funnel in Jurni, while Shopify serves the published page using one of your Shopify page templates. Shopify Pages also work seamlessly with Smart Links, so you can redirect campaign traffic without changing your marketing URLs.
+When you publish an experience to Shopify, Jurni creates or updates a native Shopify page under your store's `/pages/` path (for example, `/pages/black-friday`). You continue to design and manage the experience in Jurni, while Shopify serves the published snapshot using a Shopify page template that contains the Jurni app block. Smart Links can route campaign traffic to the Shopify Page just like another supported destination.
 
 ## Prerequisites
 
@@ -91,11 +91,11 @@ Your Shopify Pages integration is now configured and ready to use.
 
 ## Step 4: Publish a Shopify Page
 
-Once setup is complete, publish a funnel directly to Shopify:
+Once setup is complete, publish an eligible experience directly to Shopify:
 
 <Steps>
-  <Step title="Open your funnel">
-    Open your funnel in the Jurni editor.
+  <Step title="Open your experience">
+    Open the experience in the Jurni editor.
   </Step>
   <Step title="Start publishing">
     Click **Publish** in the upper-right corner, then select **Publish to Shopify**.
@@ -110,12 +110,12 @@ Once setup is complete, publish a funnel directly to Shopify:
     Select the Shopify page template you want to use.
   </Step>
   <Step title="Publish">
-    Click **Publish to Shopify**. Your funnel will be published as a native Shopify page.
+    Click **Publish to Shopify**. Jurni publishes the experience as a native Shopify page.
   </Step>
 </Steps>
 
 <Warning>
-  Some legacy Jurni sections are not supported on Shopify Pages. If your funnel contains unsupported sections, Jurni will identify them before publishing so they can be updated.
+  Shopify Pages are a separate render target. If an experience contains sections or JSX that cannot be represented by the current Shopify Pages renderer, Jurni can block publishing until the page is updated.
 </Warning>
 
 ## Updating a published page

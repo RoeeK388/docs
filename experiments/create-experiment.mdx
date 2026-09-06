@@ -45,7 +45,8 @@ From the dashboard you can:
 - Edit existing variants, or add a new one at any time.
 - See a full history of every change made.
 - Select **Copy Link** to bring the SmartLink URL straight into your ads.
-- Pause the experiment whenever you need to hold traffic.
+- Pause the experiment when needed. **Current behavior routes the experiment Smart Link to the shop home page while paused**, so do not pause while paid traffic is still using the link unless that fallback is acceptable.
+- Add or edit **Routing Rules** to send matching URL-parameter traffic to a specific variant before the normal weighted split.
 
 <Note>
   Screenshot: the experiment dashboard showing metrics overview, variant breakdown, and the Copy Link button.
@@ -82,15 +83,19 @@ Reach out to our team at [info@getjurni.ai](mailto:info@getjurni.ai) or on Slack
     Learn the basics of Jurni experiments and how they work.
   </Card>
 
-  <Card title="Testing Jurni Funnels Against Your Existing Website Pages" href="/experiments/testing-funnels">
-    Compare Jurni journeys side by side with your current pages.
+  <Card title="Experiment Routing Rules" href="/experiments/routing-rules">
+    Route matching campaign parameters to specific variants.
   </Card>
 
-  <Card title="Reading Test Results" href="/experiments/reading-results">
-    Understand your experiment metrics and pick a winner with confidence.
+  <Card title="Testing a Jurni Page Against Your Existing Website Page" href="/experiments/testing-against-website">
+    Compare Jurni experiences side by side with an existing page.
   </Card>
 
-  <Card title="Troubleshoot Experiment Traffic" href="/experiments/troubleshoot-traffic">
-    Fix traffic splitting issues when visitors are not distributed as expected.
+  <Card title="Reading Experiment Results" href="/experiments/reading-results">
+    Understand the current variant metrics and reporting limitations.
+  </Card>
+
+  <Card title="Pause, End & Reuse" href="/experiments/pause-end-reuse">
+    Understand what happens to Smart Link traffic when a test is paused or ended.
   </Card>
 </CardGroup>

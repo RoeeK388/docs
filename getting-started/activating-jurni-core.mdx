@@ -1,63 +1,87 @@
 ---
 title: "Activate Jurni Core for Shopify"
 sidebarTitle: "Activating Jurni Core"
-description: "Activate Jurni Core on your Shopify store to enable accurate funnel tracking, attribution, and analytics. Complete this required onboarding step before launching funnels or paid traffic."
+description: "Activate Jurni Core on a Shopify Online Store so Jurni can maintain session, visit, cart, checkout, and attribution context across Jurni pages and the Shopify storefront."
 ---
 
-Jurni Core connects your Shopify store to Jurni funnels so you can track sessions, attribute purchases, and power analytics. If your store runs on Shopify, this is a required onboarding step. Without it, Jurni cannot accurately track conversions or attribute performance to your funnels and campaigns.
+Jurni Core connects a **Shopify Online Store** to Jurni's tracking and attribution layer. It runs on the Shopify storefront so a shopper who moves from a Jurni page into Shopify can keep the Jurni session, visit, experiment, and cart context needed for downstream measurement.
 
 <Warning>
-  If you skip this step, tracking and attribution will be incomplete. You will not be able to accurately measure funnel performance, campaign ROI, or experiment results.
+  If Jurni Core is not active on a Shopify Online Store, traffic can still reach a Jurni page, but Jurni may lose the storefront/cart evidence required to connect later Shopify activity and orders back to the correct Jurni visit.
 </Warning>
 
-## When to activate Jurni Core
+## When this setup applies
 
-Activate Jurni Core if any of the following apply:
+Use this activation flow when the shopper-facing store is a standard **Shopify Online Store** using a Shopify theme.
 
-- Your store is on Shopify.
-- You want accurate funnel analytics and attribution.
-- You plan to launch funnels, run experiments, or send paid traffic.
+Do **not** use this theme-app-embed setup as the instructions for:
 
-You only need to complete this activation once per Shopify store.
+- a Shopify Headless storefront
+- a fully non-Shopify storefront
 
-## How to activate Jurni Core
+Those environments load Jurni's tracking integration differently. Start with **Choose Your Setup** if you are not sure which path applies.
+
+## Activate Jurni Core
 
 <Steps>
-  <Step title="Open activation settings">
-    Log in to Jurni, go to **Settings**, then click **Account**. Locate the **Activate Jurni Core** section.
+  <Step title="Open Jurni settings">
+    In Jurni, open the account/setup area and find **Activate Jurni Core**.
   </Step>
-  <Step title="Start the Shopify connection">
-    Click **Activate & Open**. You will be redirected to your Shopify admin.
+  <Step title="Open Shopify">
+    Use the activation action to open the Shopify theme editor for the connected store.
   </Step>
-  <Step title="Enable the app in your theme">
-    In the Shopify theme editor, enable the Jurni Core app in your active theme.
+  <Step title="Enable the Jurni Core app embed">
+    Enable Jurni Core in the theme/app-embed settings for the active theme.
   </Step>
-  <Step title="Save and return">
-    Save your changes in Shopify. Once enabled, you will be redirected back to Jurni and the status will update to **Active**.
+  <Step title="Save the Shopify theme">
+    Save the change in Shopify, then return to Jurni and confirm the Core status is active.
   </Step>
 </Steps>
 
-## What Jurni Core enables
+## What Jurni Core does
 
-After activation, Jurni Core provides the following capabilities:
+The current Shopify integration participates in the journey by helping Jurni:
 
-- Accurate session and funnel traffic tracking
-- Purchase attribution to funnels and campaigns
-- Analytics, experiments, and reporting powered by Shopify checkout events
-- Connection of Shopify checkout events back to Jurni
+- maintain the anonymous Jurni session on the Shopify storefront
+- initialize/continue visit context
+- read experiment parameters such as `jurni_ab_test_id` and `jurni_ab_variant_id`
+- connect Shopify cart activity with the Jurni session/visit
+- preserve Jurni attribution data on the Shopify cart where available
+- capture checkout evidence through the Shopify integration/pixel path
+- connect eligible Shopify orders back to the most recent valid Jurni visit
+
+Jurni's current order-attribution model uses Jurni visit/cart/checkout evidence within its attribution window. Shopify's **Sales channel** label is not the rule used to decide which Jurni page or experiment receives credit.
+
+## Jurni-hosted pages vs. Shopify Pages
+
+Core is especially important when a shopper starts on a Jurni-hosted page—such as an app-proxy or custom-subdomain URL—and then continues into the Shopify storefront/checkout.
+
+Native **Shopify Pages** are served inside the Shopify theme itself. They still rely on the Shopify/Jurni integration for Jurni measurement, but the page rendering and third-party-script environment is different from Jurni-hosted pages.
+
+## Verify the installation
+
+After activating Core:
+
+1. Open the live Shopify storefront in a new browser session.
+2. Enter through a Jurni page or Smart Link.
+3. Continue into Shopify and add a product to cart.
+4. If you are validating attribution, complete a test order.
+5. Confirm the Jurni session/experiment and order appear under the expected page or variant.
 
 ## Troubleshooting
 
-If Jurni Core still shows as **Disabled** after activation:
+If Jurni still shows Core as inactive:
 
-1. Confirm the app is enabled in your active Shopify theme.
-2. Make sure you saved changes in the theme editor.
-3. If the issue persists, contact [support@getjurni.ai](mailto:support@getjurni.ai).
+- confirm you enabled the app embed in the **active** Shopify theme
+- save the theme after enabling it
+- make sure you are looking at the Shopify store connected to the current Jurni workspace
+- check whether a theme change or duplication caused the app embed to be disabled in the new active theme
 
-## Next steps
+## Related guides
 
-After Jurni Core is active, you can:
-
-- Install tracking pixels
-- Create your first funnel
-- Launch traffic with full attribution
+- Choose Your Setup
+- Shopify Setup Overview
+- Attribution Overview
+- Shopify Sales Channel
+- Shopify Pages
+- Tracking Pixels

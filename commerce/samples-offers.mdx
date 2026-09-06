@@ -1,0 +1,52 @@
+---
+title: "Samples Offers"
+sidebarTitle: "Samples"
+description: "Offer shoppers a configurable set of sample products after they reach a minimum order amount."
+keywords:
+  - "Jurni samples"
+  - "free samples"
+  - "sample products"
+  - "cart samples"
+---
+
+A Samples offer lets shoppers choose from a configured list of sample products after their cart reaches a minimum order amount.
+
+## Current configuration
+
+The current Samples offer supports:
+
+- selecting one or more **sample products**
+- setting how many samples the shopper can choose
+- setting a **minimum order amount** required to unlock samples
+
+The cart threshold is calculated against the order amount used for qualification, excluding the samples themselves.
+
+## Sample product price
+
+The Samples editor allows you to select products regardless of their catalog price. Selecting a product as a sample does not by itself change the product's Shopify price.
+
+Make sure your Shopify/commerce configuration produces the intended final price for the selected sample products.
+
+## Shopper flow
+
+Once the cart reaches the configured minimum amount, the shopper can select up to the maximum number of samples configured for the offer.
+
+If the cart falls back below the eligibility threshold, test how your specific cart/promotion configuration handles already-selected samples before launch.
+
+## QA checklist
+
+Verify:
+
+1. the sample selector is hidden before qualification
+2. it appears at the configured order threshold
+3. the correct products are available
+4. the shopper cannot select more than the configured maximum
+5. selected samples reach the cart correctly
+6. sample pricing is correct in Shopify checkout
+7. dropping below the threshold does not leave an invalid cart state
+
+## Related guides
+
+- [Offers Overview](/commerce/offers-overview)
+- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)
+- [Products & Variants](/building-funnels/products-and-variants)

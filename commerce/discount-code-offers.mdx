@@ -1,0 +1,66 @@
+---
+title: "Discount Code Offers"
+sidebarTitle: "Discount Codes"
+description: "Validate and auto-apply an existing Shopify discount code in Jurni funnels, with optional storefront messaging and purchase-type targeting."
+keywords:
+  - "Jurni discount code"
+  - "Shopify discount code"
+  - "auto apply discount"
+---
+
+A Discount Code offer connects an existing Shopify discount code to Jurni funnels so the code can be auto-applied in the Jurni commerce flow.
+
+## Start with an existing Shopify code
+
+The current offer editor asks for a **Shopify Discount Code** and validates it against Shopify.
+
+Jurni does not use this flow to invent a separate discount rule that only exists on the page. The code must be valid in Shopify.
+
+## Show the promotion in the storefront
+
+After Jurni validates the code, you can enable **Show discount in storefronts**.
+
+When enabled, Jurni can show promotion messaging on product/collection experiences. You can configure:
+
+- **Display Text** — the shopper-facing offer message
+- **Apply to** — Both, One-time purchase only, or Subscription only
+- **Show calculated price** — display the calculated discounted price in the storefront instead of only showing the original price
+
+When **Show discount in storefronts** is disabled, the code can still be applied in the cart without displaying the promotion ahead of time.
+
+## Shopify remains the discount authority
+
+The Shopify discount code determines the actual discount rules, including eligibility, usage limits, products, markets, customer restrictions, and whether it can combine with other discounts.
+
+<Warning>
+Jurni displaying or applying a Shopify code does not override Shopify's discount configuration. Always validate the real checkout result with the same customer/product conditions used in production.
+</Warning>
+
+## One-time vs. subscription messaging
+
+The **Apply to** setting controls which purchase options receive the Jurni promo message/calculated-price presentation:
+
+- **Both**
+- **One-time purchase only**
+- **Subscription only**
+
+This should match the actual Shopify discount eligibility. If Jurni displays a subscription discount that Shopify does not accept for that selling plan, the shopper can see a mismatch between page and checkout.
+
+## QA checklist
+
+Test:
+
+1. a valid eligible cart
+2. a cart that should not qualify
+3. one-time purchase behavior
+4. subscription behavior when relevant
+5. Shopify usage restrictions
+6. discount stacking/combinations
+7. final checkout price
+
+## Related guides
+
+- [Offers Overview](/commerce/offers-overview)
+- [How Shopify Discounts Work with Jurni](/commerce/discounts-promotions)
+- [Subscriptions & Selling Plans](/building-funnels/subscriptions-selling-plans)
+- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)

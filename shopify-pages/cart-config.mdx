@@ -1,7 +1,7 @@
 ---
-title: "Cart Configurations for Shopify Pages in Jurni"
+title: "Cart Configuration for Shopify Pages"
 sidebarTitle: "Cart Config"
-description: "Configure your slide-out cart for Jurni funnels published to Shopify using ready-to-use snippets for popular themes and cart apps like Rebuy, Dawn, and Focal."
+description: "Configure cart behavior for Jurni pages published natively to Shopify, including Shopify theme/cart integrations and provider-specific setup when the page should open a drawer instead of the standard cart page."
 ---
 
 Jurni's Cart Config Code makes your published Shopify pages trigger the same slide-out cart your store already uses. This guide covers why cart configuration is needed, where to set it up in Jurni, how to identify your cart provider, and ready-to-use snippets for the most common themes and cart apps.
@@ -10,7 +10,7 @@ Jurni's Cart Config Code makes your published Shopify pages trigger the same sli
 
 Some themes and apps provide a built-in cart experience that is not a full page. These carts usually slide out from somewhere on the page after a product is added, instead of redirecting to a different page.
 
-When you publish a Jurni funnel to Shopify, you'll want your **Add to Cart** action to trigger this same cart so customers can check out smoothly without leaving your page. Jurni makes this easy with a single **Cart Config Code** field in your settings: set it up once for your provider, and it applies across your published funnels.
+When you publish a Jurni page to Shopify, its **Add to Cart** action needs to work with the cart experience used by your Shopify theme or cart provider. The **Cart Config Code** in Jurni lets you add the provider-specific bridge needed for published Shopify Pages when the default behavior is not sufficient.
 
 ## Why cart configuration is needed
 
@@ -20,7 +20,7 @@ This experience is powered by your theme or a cart app (like Rebuy), and each on
 
 - The cart opens automatically when a customer adds a product
 - The cart contents refresh correctly
-- Customers stay on your funnel page instead of being redirected away
+- Customers can stay on the published page while the intended cart experience opens
 
 The Cart Config Code field supports any provider, so you can configure the exact behavior your store uses in one place.
 

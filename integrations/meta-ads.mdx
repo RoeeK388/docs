@@ -1,0 +1,62 @@
+---
+title: "Connect Meta Ad Accounts"
+sidebarTitle: "Meta Ads"
+description: "Connect Meta to Jurni through OAuth, choose which ad accounts Jurni can use, and understand the difference between Meta Ad Accounts and the Meta Pixel tracking integration."
+---
+
+## Meta Ad Accounts vs. Meta Pixel
+
+Jurni has two different Meta integrations:
+
+- **Meta Ad Accounts** connects Jurni to Meta's campaign/ad-account data through an authorization flow.
+- **Meta Pixel** is a browser-side tracking integration configured with one or more Pixel IDs under Data & Tracking.
+
+Connecting one does not automatically configure the other.
+
+## Connect Meta Ad Accounts
+
+<Steps>
+  <Step title="Open Settings → Integrations">
+    Find **Meta Ad Accounts** under Ad Integrations.
+  </Step>
+  <Step title="Connect Meta">
+    Use the Meta connect action and complete Meta's authorization flow with a user who has access to the intended ad accounts.
+  </Step>
+  <Step title="Choose the ad accounts Jurni should use">
+    After the Meta account is connected, open **Manage Accounts**. Jurni can work with all accessible accounts or a selected subset.
+  </Step>
+  <Step title="Verify the connection">
+    The integration shows **Active** when Meta is connected. Use **View Ad Accounts** to inspect the accounts available to Jurni.
+  </Step>
+</Steps>
+
+## Account selection
+
+If no subset is selected, Jurni treats all accessible Meta ad accounts as selected. If you only want Jurni to use certain ad accounts, choose them in the account manager.
+
+This selection affects the Meta account/campaign data Jurni can surface for features such as Strategy/Opportunities and Meta performance analysis.
+
+## If Jurni shows “No Accounts Found”
+
+The Meta authorization succeeded, but the authenticated Meta user does not currently expose any accessible ad accounts to Jurni.
+
+Check:
+
+- the Meta user has access to the correct Business/Ad Account
+- the expected ad account is active
+- the authorization was completed with the intended Meta login
+
+You can reconnect Meta after correcting the Meta-side access.
+
+## Remove Meta
+
+Use **Remove Meta Integration** from the integration's actions menu to disconnect the Meta account connection.
+
+Removing Meta Ad Accounts does not by itself remove a Meta Pixel ID saved under Data & Tracking. They are separate integrations.
+
+## Related articles
+
+- Tracking Pixels
+- Google Analytics & Meta Pixel
+- Opportunities & Briefs
+- Integrations Overview

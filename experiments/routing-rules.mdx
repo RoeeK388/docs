@@ -1,0 +1,117 @@
+---
+title: "Experiment Routing Rules"
+sidebarTitle: "Routing Rules"
+description: "Route experiment visitors to specific variants using URL parameters, while keeping weighted traffic as the fallback for visitors who do not match a rule."
+keywords:
+  - "Jurni routing rules"
+  - "UTM routing"
+  - "experiment targeting"
+  - "utm_term variant"
+---
+
+Routing Rules let you send visitors to a specific experiment variant when their incoming URL parameters match conditions you define. Use them when the same experiment URL serves different campaigns, audiences, personas, or creative groups that need deterministic routing.
+
+## How routing rules work
+
+Routing rules are evaluated **before** Jurni uses the visitor's existing experiment assignment or the normal weighted traffic split.
+
+The current routing order is:
+
+1. Jurni checks the experiment's Routing Rules from top to bottom.
+2. The **first matching rule wins**.
+3. If a rule matches, the visitor is routed to that rule's configured variant and that assignment is remembered.
+4. If no rule matches and the visitor already has a valid assignment for the experiment, Jurni keeps that assignment.
+5. If there is no matching rule and no valid existing assignment, Jurni chooses a variant using the configured traffic weights.
+
+<Info>
+A matching routing rule can override a visitor's previous experiment assignment. This is intentional: deterministic routing rules take priority over the normal split.
+</Info>
+
+## Supported conditions
+
+The Routing Rules editor includes presets for:
+
+- `utm_source`
+- `utm_medium`
+- `utm_campaign`
+- `utm_content`
+- `utm_term`
+
+You can also enter a **custom URL parameter**.
+
+For each condition, you can choose:
+
+- **equals**
+- **does not equal**
+
+A rule can contain more than one condition. When it does, **all conditions in that rule must match** before the visitor is sent to its target variant.
+
+## Example: route personas to different variants
+
+Suppose one campaign sends:
+
+`?utm_term=persona1`
+
+and another sends:
+
+`?utm_term=persona2`
+
+You can configure:
+
+- `utm_term` **equals** `persona1` → Variant A
+- `utm_term` **equals** `persona2` → Variant B
+
+Visitors who match neither rule continue through the experiment's normal assignment flow.
+
+## Rule order matters
+
+Jurni checks rules from top to bottom and stops on the first match. If more than one rule could match the same visitor, place the more specific rule above the broader rule.
+
+You can reorder rules in the Routing Rules editor.
+
+## Query parameters are preserved
+
+When Jurni redirects an experiment visitor to the selected destination, incoming campaign/query parameters are carried forward to the destination URL, except for internal Shopify proxy parameters and internal parameters that begin with `_`.
+
+Jurni also appends experiment context to the destination URL:
+
+- `jurni_ab_test_id`
+- `jurni_ab_variant_id`
+
+These parameters identify the experiment and selected variant for downstream tracking and attribution.
+
+## Assignment persistence
+
+Jurni remembers the selected variant for the experiment so repeat visits do not need to be randomly reassigned on every request. The current experiment assignment is stored for up to 30 days.
+
+If a Routing Rule matches on a later visit, that rule takes priority and the remembered assignment is updated to the routed variant.
+
+## When to use Routing Rules
+
+Routing Rules are useful for:
+
+- persona-specific landing pages
+- creative-to-page congruence
+- campaign-specific variants
+- source or medium-specific experiences
+- preserving deterministic routing while keeping a weighted fallback for everyone else
+
+## QA before launch
+
+Test every rule with the exact parameter/value combination your campaign will send.
+
+Verify that:
+
+1. The matching URL reaches the intended variant.
+2. A non-matching URL follows the expected fallback behavior.
+3. Campaign parameters are still present on the destination.
+4. The destination includes the correct Jurni experiment and variant IDs.
+5. Rule order does not create an unintended earlier match.
+
+## Related guides
+
+- [What Are Experiments?](/experiments/what-are-experiments)
+- [How Experiment Traffic Is Assigned](/experiments/traffic-assignment)
+- [Smart Links](/building-funnels/smart-links)
+- [UTM Attribution](/integrations/utm-attribution)
+- [URL Parameters](/reference/url-parameters)

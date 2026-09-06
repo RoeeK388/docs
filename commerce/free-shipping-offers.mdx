@@ -1,0 +1,49 @@
+---
+title: "Free Shipping Offers"
+sidebarTitle: "Free Shipping"
+description: "Configure Jurni free-shipping eligibility by cart amount or item quantity and understand how the final shipping discount is enforced in Shopify."
+keywords:
+  - "Jurni free shipping"
+  - "Shopify free shipping"
+  - "cart threshold"
+---
+
+A Free Shipping offer lets Jurni show and evaluate free-shipping eligibility in the storefront cart.
+
+The current offer editor supports two trigger types:
+
+- **Minimum Amount** — unlock free shipping when the cart reaches a configured value.
+- **Minimum Product Quantity** — unlock free shipping when the cart contains at least a configured number of items.
+
+## Subscription option
+
+For either trigger type, you can enable **Offer free shipping with subscription products**.
+
+When enabled, a cart that contains a subscription product can qualify for the free-shipping offer regardless of the normal cart threshold, and the cart messaging can present both paths to eligibility.
+
+## Shopify discount enforcement
+
+The Jurni offer controls the storefront/cart eligibility and messaging. The final shipping discount must still be valid in Shopify checkout.
+
+Jurni's current **Create Shopify Discount** control in the offer editor is not an editable self-service control. Do not rely on creating the Jurni offer alone to create a new Shopify free-shipping discount.
+
+<Warning>
+Configure and verify the actual free-shipping discount in Shopify or your store's discount logic. Test checkout—not only the Jurni cart banner.
+</Warning>
+
+## QA checklist
+
+Test:
+
+1. below the threshold
+2. exactly at the threshold
+3. above the threshold
+4. adding/removing items after qualification
+5. subscription and one-time carts if the subscription option is enabled
+6. the final shipping charge in Shopify checkout
+
+## Related guides
+
+- [Offers Overview](/commerce/offers-overview)
+- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)
+- [How Shopify Discounts Work with Jurni](/commerce/discounts-promotions)

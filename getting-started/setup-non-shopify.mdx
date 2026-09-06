@@ -1,11 +1,69 @@
 ---
-title: "How to Set up Non Shopify"
-sidebarTitle: "Non Shopify Setup"
-description: "Set up Jurni without a Shopify store. This guide explains how to configure your workspace for non Shopify platforms and standalone use."
+title: "Non-Shopify Setup"
+sidebarTitle: "Non-Shopify"
+description: "Set up Jurni when the storefront and commerce flow are outside Shopify, including tracking, cart/checkout, and conversion requirements."
 ---
 
-Jurni supports setups outside of Shopify as well. This page explains how to configure your workspace for non Shopify platforms and get started with a standalone Jurni account.
+Use this setup when the shopper-facing storefront and commerce flow are **not powered by Shopify**.
 
-<Info>
-  This article is in draft. Content will be added soon.
-</Info>
+A non-Shopify implementation is different from both Shopify Online Store and Shopify Headless. Jurni can load its browser-side tracking directly on a custom storefront, but product data, cart actions, checkout, and final conversion/order events must be connected to the systems used by your commerce stack.
+
+## What needs to be defined
+
+Before launch, document four parts of the integration:
+
+1. **Storefront domains** — every domain where the Jurni session/visit needs to persist.
+2. **Product and commerce source** — where products, variants, prices, and availability come from.
+3. **Cart and checkout behavior** — which API or client-side action adds products and where shoppers are sent to complete payment.
+4. **Conversion source** — which event or server-side signal represents a completed order/conversion for attribution.
+
+Unlike Shopify, there is no single universal theme/app configuration that covers every non-Shopify platform.
+
+## Jurni Core on a custom storefront
+
+Jurni's generic browser script can run directly on a custom/headless storefront. It creates and maintains Jurni session/visit context and sends supported page/activity signals back to Jurni.
+
+The exact host configuration can be scoped to the storefront hostname or root domain when required.
+
+## Commerce and order attribution
+
+Do not assume Shopify-specific attribution behavior applies to a non-Shopify store. Shopify implementations can rely on Shopify cart/order attributes and cart/checkout tokens; a non-Shopify implementation needs an equivalent event/data contract for its commerce platform.
+
+<Warning>
+  Before sending paid traffic, confirm with Jurni exactly how a completed purchase will be connected back to the originating Jurni visit. A page-view integration alone is not enough for revenue or conversion reporting.
+</Warning>
+
+## Setup checklist
+
+<Steps>
+  <Step title="Confirm the storefront and checkout domains">
+    List every domain the shopper will move through from the Jurni page to checkout and confirmation.
+  </Step>
+  <Step title="Install Jurni tracking">
+    Add the Jurni browser script to the required storefront pages and confirm a session/visit is created.
+  </Step>
+  <Step title="Define product and cart behavior">
+    Confirm how Jurni should receive product data and what action/API is used for add-to-cart and checkout.
+  </Step>
+  <Step title="Define conversion tracking">
+    Agree on the purchase/conversion event and the identifiers available to connect it back to the Jurni visit.
+  </Step>
+  <Step title="Configure third-party tracking">
+    Decide which analytics/pixels are loaded by Jurni versus the existing site/tag manager.
+  </Step>
+  <Step title="Run an end-to-end test">
+    Test the real live flow through purchase and confirm both Jurni analytics and the external analytics stack receive the expected events.
+  </Step>
+</Steps>
+
+## Publishing
+
+Non-Shopify brands normally use Jurni-hosted pages/Smart Links on the configured Jurni domain or a custom publishing/integration path. Native Shopify Pages and the Shopify `/apps/jurni/` app proxy do not apply.
+
+## Related guides
+
+- [Choose Your Setup](/getting-started/choose-your-setup)
+- [Shopify Headless Setup](/getting-started/shopify-headless)
+- [Publishing Jurni Pages](/publishing/overview)
+- [Attribution Overview](/analytics-reporting/attribution-overview)
+- [Custom Events](/analytics-reporting/custom-events)
