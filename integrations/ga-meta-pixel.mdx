@@ -4,100 +4,28 @@ sidebarTitle: "GA & Meta Pixel"
 description: "Configure Google Analytics and Meta Pixel in Jurni to track visitor behavior and ad conversions. Follow these steps to install both tracking tools on your pages."
 ---
 
-Jurni can work with Google Analytics and Meta Pixel so your marketing team can measure traffic and conversion activity alongside Jurni's own analytics. The most important part of the setup is making sure each tracking tool is installed **once on each page** and behaves correctly across your publishing model.
+**Google Analytics 4 and Meta Pixel are separate connections.** Use the guide for the platform your brand is configuring.
 
-## Before you configure tracking
+<CardGroup cols={2}>
+  <Card title="Google Analytics 4" icon="chart-column" href="/integrations/google-analytics">
+    Find the G- Measurement ID, save it in Jurni, and check the correct GA4 property.
+  </Card>
 
-Identify where your pages are served:
+  <Card title="Meta Pixel" icon="chart-no-axes-combined" href="/integrations/meta-pixel">
+    Find the website Pixel ID, configure page tracking, and test the intended Meta data source.
+  </Card>
+</CardGroup>
 
-- **Jurni-hosted or custom subdomain pages** may need Jurni to load the tracking integration.
-- **Shopify Pages** can already inherit tracking from the Shopify theme, Shopify customer events, Google Tag Manager, or another app.
+## Which connection do I need?
 
-<Warning>
-  Do not install the same Meta Pixel or Google Analytics implementation twice on the same page. Duplicate installations can inflate PageView and conversion events.
-</Warning>
+Use **GA4** for website activity and campaign analysis in Google Analytics. Use **Meta Pixel** for the supported website events used by your Meta advertising setup. Some brands use both for different purposes.
 
-## Meta Pixel
+If your tracking team already loads these tags through [Google Tag Manager](/integrations/gtm), review that installation before adding the same tag directly in Jurni.
 
-Use your existing Meta Pixel when you want Meta to receive browser-side events from Jurni traffic.
+**Connecting Meta Ads is different from configuring Meta Pixel.** The [Meta Ads connection](/integrations/meta-ads) grants access to an advertising account; it does not replace entering the website pixel used for page tracking.
 
-A typical setup is:
+## Verify the final destination
 
-<Steps>
-  <Step title="Find the Meta Pixel ID">
-    Use the pixel associated with the advertising account and store you intend to measure.
-  </Step>
-  <Step title="Configure Meta in Jurni">
-    Add the pixel through Jurni's supported tracking/integration settings for the pages where Jurni should load it.
-  </Step>
-  <Step title="Check page scope">
-    Exclude Shopify Pages if the same Meta Pixel already loads there through Shopify or your theme.
-  </Step>
-  <Step title="Test the live page">
-    Use Meta's browser debugging tools or Events Manager to confirm the base pixel and expected events fire once.
-  </Step>
-</Steps>
+Test the actual published Jurni page, consent flow, and downstream checkout. Native Shopify Pages may already inherit tags from the theme or apps. Do not assume the same installation is needed twice.
 
-## Google Analytics
-
-Use the Google Analytics integration when your team wants Jurni traffic represented in GA4.
-
-Before launch:
-
-- Confirm the correct GA4 property / measurement configuration.
-- Check whether GA4 is already loaded through Google Tag Manager or Shopify.
-- Avoid loading both a direct GA integration and an equivalent GA tag in GTM unless your analytics architecture intentionally requires both.
-- Test PageView and commerce events on the live page.
-
-## Jurni events vs. platform events
-
-Jurni has its own event model, including PageView, Click, AddToCart, Checkout, and Order. Meta and GA4 have their own event names, parameters, deduplication, and session logic.
-
-Do not expect every number in Jurni to match Meta or GA4 one-for-one. Use each system for the question it is designed to answer.
-
-## Cross-domain checkout
-
-A common Jurni flow is:
-
-`Meta / Google ad → Jurni subdomain → Shopify root domain → checkout`
-
-The shopper can keep the same campaign click identifiers while the browser still crosses into a different domain. Meta and GA4 each apply their own cookie and session rules to that transition.
-
-<Info>
-  Seeing a new third-party analytics session after a domain transition does not automatically mean Jurni lost the campaign attribution. Jurni and the third-party platform maintain attribution independently.
-</Info>
-
-## Click IDs
-
-Paid traffic can include identifiers such as:
-
-- `fbclid` for Meta
-- `gclid` for Google Ads
-
-Preserve these parameters through supported campaign flows. When debugging attribution, compare the click IDs and UTMs before assuming two page views represent different paid-media visitors.
-
-## Consent
-
-Consent tools can intentionally block Meta or Google scripts until the shopper grants permission. Test both accepted and declined consent states so you understand which events each platform receives.
-
-## Debugging checklist
-
-If events are missing or duplicated:
-
-1. Check whether the base tracking script loads once.
-2. Check Jurni native integrations.
-3. Check Jurni Custom Scripts.
-4. Check Google Tag Manager.
-5. Check Shopify customer events, theme code, and apps.
-6. Check consent state.
-7. Follow the shopper from landing page through checkout.
-8. Compare UTMs and click IDs across the transition.
-
-## Related guides
-
-- Jurni Event Dictionary
-- Attribution in Jurni
-- UTM Parameter Passthrough & Attribution
-- Google Tag Manager
-- Duplicate Tracking Events or Pixels
-- Consent and Tracking
+See [Tracking setup](/getting-started/tracking-pixels) and [Integration troubleshooting](/integrations/troubleshooting).

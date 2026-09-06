@@ -272,7 +272,8 @@
           {
             "group": "Overview",
             "pages": [
-              "integrations/overview"
+              "integrations/overview",
+              "integrations/api-keys"
             ]
           },
           {
@@ -301,14 +302,15 @@
             ]
           },
           {
-            "group": "Lifecycle & Messaging",
+            "group": "Forms & Pop-ups",
             "pages": [
               "integrations/klaviyo",
-              "integrations/postscript"
+              "integrations/postscript",
+              "integrations/alia"
             ]
           },
           {
-            "group": "Widgets, Reviews & Pop-ups",
+            "group": "Reviews",
             "pages": [
               "integrations/review-integrations",
               "integrations/review-widgets",
@@ -319,8 +321,7 @@
               "integrations/stamped",
               "integrations/trustpilot",
               "integrations/reviews-io",
-              "integrations/bazaarvoice",
-              "integrations/alia"
+              "integrations/bazaarvoice"
             ]
           },
           {
@@ -340,7 +341,6 @@
           {
             "group": "Custom Integrations",
             "pages": [
-              "integrations/api-keys",
               "integrations/custom-scripts",
               "integrations/mcp-connector"
             ]

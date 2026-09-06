@@ -1,109 +1,67 @@
 ---
-title: "Integrations Overview"
-sidebarTitle: "Overview"
-description: "Understand Jurni integrations by function: ad platforms, data and tracking, reviews/widgets/pop-ups, lifecycle tools, Slack, affiliate platforms, and developer/custom integrations."
+title: "Connect the tools your brand uses"
+sidebarTitle: "Start here"
+description: "Find the right integration and finish the account, page-widget, or tracking setup."
+icon: "plug"
 ---
 
-Use **Settings → Integrations** to configure the external platforms that Jurni currently exposes in the merchant app. Different integrations use different connection methods—some use OAuth, some use IDs/URLs, and some are simple enable/disable integrations.
+Start with the job you need the integration to do. **Connecting an account, placing a widget, and configuring tracking are different tasks.** Use the provider guide for the exact values and setup steps.
 
-Do not assume every integration needs an API key or that the same credential type is used across vendors.
+## Track visits and conversions
 
-## Current integration areas
+| Tool | Use it for |
+| --- | --- |
+| [Google Analytics 4](/integrations/google-analytics) | Website activity and campaign analysis in your GA4 property. |
+| [Google Tag Manager](/integrations/gtm) | Loading your team's tag container; tags and event mappings are configured separately. |
+| [Meta Pixel](/integrations/meta-pixel) | Supported browser events for the website pixel used by Meta advertising. |
+| [TikTok Pixel](/integrations/tiktok) | Supported browser events for the TikTok website data source. |
+| [Northbeam](/integrations/northbeam) | Including Jurni pages in your Northbeam measurement setup. |
+| [Axon](/integrations/axon) | Axon/AppLovin browser-pixel tracking. |
+| [Polar Analytics](/integrations/polar-analytics) | Supported page events for the Shopify store connected to Polar. |
+| [Triple Whale](/integrations/triple-whale) | Loading Triple Pixel for the connected Shopify shop. |
+| [Blotout EdgeTag](/integrations/blotout) | Connecting the existing EdgeTag implementation agreed with your tracking team. |
+| [Shopify Analytics](/getting-started/shopify-analytics) | The supported Shopify analytics setup for Jurni-hosted pages. |
 
-### Ad Integrations
+Configure these from **Settings → Integrations → Data Integrations**. Most tracking IDs share one **Save Changes** action; Shopify Analytics and Triple Whale have their own controls.
 
-The **Ad Integrations** section connects **Meta Ads** accounts to Jurni. This is separate from entering a Meta Pixel ID for page tracking. Start with [Connect Meta Ad Accounts](/integrations/meta-ads), then use [Meta ad account insights](/analytics-reporting/meta-ad-insights) to review the connected account's results.
+## Display reviews, collect leads, and show pop-ups
 
-### Messaging
+For reviews, connect the provider in **Settings → Integrations → Reviews & Pop-ups**, then add its widget from the **editor → Integrations** panel. Some widgets need another identifier after the account is connected.
 
-The current Messaging integration is **Slack**. Jurni supports more than one connected Slack workspace for a shop, subject to the user's Jurni permissions.
+[Okendo](/integrations/okendo) · [Junip](/integrations/junip) · [Yotpo](/integrations/yotpo) · [Judge.me](/integrations/judge-me) · [Stamped](/integrations/stamped) · [Trustpilot](/integrations/trustpilot) · [REVIEWS.io](/integrations/reviews-io) · [Bazaarvoice](/integrations/bazaarvoice)
 
-See [Connect Jurni to Slack](/integrations/connect-slack) for the installation and access model.
+For lead collection, use [Klaviyo](/integrations/klaviyo) or [Postscript](/integrations/postscript). Use [Alia](/integrations/alia) for its pop-up connection. Embedded forms are placements on the page; [pop-up controls](/build/page-popups) are separate experience-level switches.
 
-### Data Integrations
+## Connect ad accounts, design tools, and your team
 
-The current Data Integrations page includes the following tracking fields/integrations:
+[Meta Ads](/integrations/meta-ads) connects the advertising account and supports the related ad-data workflows. **It does not replace Meta Pixel setup.**
 
-- **Meta Pixel IDs** — more than one Pixel ID can be configured
-- **Google Tag Manager ID** — must use the `GTM-...` format
-- **Google Analytics tag ID** — must use the `G-...` format
-- **Blotout EdgeTag URL**
-- **Axon Pixel ID**
-- **Northbeam Pixel ID**
-- **Polar Analytics Shopify URL**
-- **TikTok Pixel ID**
-- **Shopify Analytics** configuration
-- **Triple Whale** enable/disable integration
+[Figma](/building-funnels/figma-file) connects design references to your page-building workflow. [Slack](/integrations/connect-slack) connects the workspace; [scheduled reports](/notifications/slack-reports) are configured separately.
 
-<Info>
-  Meta Ads account connection and Meta Pixel tracking are different integrations. Connecting a Meta ad account does not replace configuring the Pixel IDs you want Jurni pages to load.
-</Info>
+[Affiliatly and Bix Grow](/integrations/affiliate-tools) support the relevant affiliate setup; [creator records](/integrations/manage-creators) hold the corresponding creator information.
 
-### Design
+## Complete the connection, not just the form
 
-Jurni currently exposes a **Figma** connection for Figma-powered workflows. Connection and management are permission-controlled in Jurni.
+<Steps>
+  <Step title="Get the right values">
+    Open the provider guide and copy the required ID, URL, or public token from the correct brand account. Some connections use an authorization screen or a switch instead; do not create an API key unless the guide asks for it.
+  </Step>
+  <Step title="Configure Jurni">
+    Save the account connection. For a widget, add and configure its page placement. For tracking, have your tracking owner check the required events and checkout connection.
+  </Step>
+  <Step title="Verify the published destination">
+    Test the real page and shopper action. Check the expected review, signup, or event in the provider, not just the integration's enabled state.
+  </Step>
+</Steps>
 
-### Affiliate Integrations
+## Shopify Pages and custom storefronts
 
-Enable **Affiliatly** or **Bix Grow** for the shop, then enter the corresponding reference in the creator record. These are enable/disable integrations, not generic API-key connections. See [affiliate setup](/integrations/affiliate-tools) and [manage creators](/integrations/manage-creators).
+**Shopify Pages** run in your theme, where some tools may already be installed. Verify the final page for missing or duplicate scripts. A working Jurni-hosted preview does not verify a Shopify theme placement.
 
-### Lifecycle, Widgets & Reviews
+For **headless or non-Shopify stores**, confirm catalog identifiers and downstream cart/checkout tracking with the Jurni team. A provider connection does not automatically configure your commerce integration.
 
-For forms, pop-ups, and reviews, connect the provider using the value requested in its settings card:
+For a tool not listed here, use [Custom Scripts](/integrations/custom-scripts) only when the implementation is appropriate, or contact the team about a custom integration.
 
-- **Klaviyo** — Company ID
-- **Postscript** — Shop ID
-- **Alia** — embed script URL
-- **Junip** — Store Key
-- **Stamped** — Store Hash + API Public Key
-- **Trustpilot** — Business Unit ID
-- **Okendo** — Subscriber ID (User ID)
-- **Yotpo** — App Key
-- **Judge.me** — Public API Token
-- **Bazaarvoice** — Client Name
-- **REVIEWS.io** — Store ID
+## Need a specific value?
 
-The credential requested by Jurni is the credential shown in the integration card. For example, Jurni currently asks for a **Klaviyo Company ID**, not a Klaviyo private API key.
-
-## Custom Scripts are separate
-
-**Settings → Custom Scripts** is a separate system from the Integrations page. Use it for third-party browser code that does not have an appropriate native Jurni integration.
-
-Custom Scripts support three page-targeting modes: **All**, **Only selected**, and **All except**. (The current settings UI may still use the legacy label “funnels” for this targeting control.) Tracking scripts run on live Jurni-hosted pages and are intentionally excluded from editor Preview.
-
-See [Custom Scripts](/integrations/custom-scripts) for the exact behavior and Shopify Pages limitation.
-
-## Before connecting an integration
-
-Identify what you actually need the integration to do:
-
-- **Ad account data** → Meta Ads connection
-- **Page/event tracking** → tracking pixel / GTM / GA configuration
-- **Review widgets** → connect the matching review provider
-- **Slack data access/reporting** → Slack integration + notification settings
-- **Custom browser-side vendor** → Custom Scripts when appropriate
-
-This distinction helps avoid duplicate installations—for example loading a Meta Pixel through both Jurni Data Integrations and GTM.
-
-## Verify after setup
-
-After saving an integration:
-
-1. Test the **live page**, not only Preview.
-2. Confirm the vendor/script loads only once.
-3. Trigger the relevant customer action.
-4. Verify the event/widget in the third-party platform.
-5. If the page is a Shopify Page, verify the behavior separately because Shopify theme/app integrations and Jurni-hosted page integrations do not have identical loading paths.
-
-## Forms, pop-ups, and page placement
-
-Use [Klaviyo](/integrations/klaviyo) for its account connection and embedded forms, [Postscript](/integrations/postscript) for SMS signup forms, and [Alia](/integrations/alia) for its pop-up script connection. The [on-page integrations guide](/build/editor-integrations) explains where to place widgets in the editor; [pop-up controls](/build/page-popups) explains the separate per-experience switches.
-
-## Related guides
-
-- [Google Analytics & Meta Pixel](/integrations/ga-meta-pixel)
-- [Google Tag Manager](/integrations/gtm)
-- [Custom Scripts](/integrations/custom-scripts)
-- [Review Integrations](/integrations/review-integrations)
-- [Connect Jurni to Slack](/integrations/connect-slack)
-- [Consent & Tracking](/integrations/consent-tracking)
+Use the [connection-details directory](/integrations/api-keys) for a quick map of what to copy and where it goes. Use [Integration troubleshooting](/integrations/troubleshooting) when a connection saves but the expected result is missing.
