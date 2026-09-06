@@ -230,6 +230,7 @@
           {
             "group": "Experiments",
             "pages": [
+              "experiments/new-reporting-overview",
               "experiments/what-are-experiments",
               "experiments/create-experiment",
               "experiments/routing-rules",

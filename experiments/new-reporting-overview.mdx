@@ -1,0 +1,71 @@
+---
+title: "Read the updated experiment overview"
+sidebarTitle: "New reporting overview"
+description: "Connect experiment results with ad creatives, traffic sources, customer segments, and page-engagement metrics."
+icon: "chart-column"
+noindex: true
+tag: "Release draft"
+---
+
+<Note>
+  Release-preview draft for the experiment reporting update. The associated product work is in review. Final screen names, data availability, and filter behavior must be confirmed before publication.
+</Note>
+
+Use the updated experiment view to understand the commercial result, the traffic behind it, and how visitors use the pages. Start with the test's main question rather than trying to optimize every metric at once.
+
+## A useful order for reviewing a test
+
+<Steps>
+  <Step title="Confirm the experiment and reporting period">
+    Open the intended test and check its date range and active filters. Make sure campaign traffic is entering through the experiment link rather than directly through a variant page.
+  </Step>
+  <Step title="Review the main result">
+    Compare variants using the success metric chosen for the test. Use Sessions, Orders, Revenue, CVR, AOV, and RPS to understand volume and performance together.
+  </Step>
+  <Step title="Check which ads are connected">
+    Use the connected-ad area to identify the creatives and campaigns associated with the experiment. This helps confirm that the incoming message matches the page being tested.
+  </Step>
+  <Step title="Review the traffic mix">
+    Inspect the available traffic-source and New versus Returning customer breakdowns. Keep the same date range and filters when comparing these views with the total.
+  </Step>
+  <Step title="Investigate page engagement">
+    Use duration, scroll depth, and bounce rate to form questions about the page. Then inspect its content and purchasing path. Engagement alone does not establish a winning commercial result.
+  </Step>
+  <Step title="Make the next decision">
+    Keep collecting data, investigate a measurement or purchase issue, or use the available end-and-winner controls when the evidence and business goal justify it.
+  </Step>
+</Steps>
+
+## Page metrics and ad metrics are different
+
+An ad creative identifies the message attracting shoppers. Jurni page metrics describe the attributed visits and actions after arrival. Do not assume Meta's purchases, click-through rate, or attribution window will exactly match Jurni's page or experiment results.
+
+For example, Jurni's page CTR uses counted sessions and a tracked page click-through action; it is not the same denominator as ad impressions. See [Meta ad insights](/analytics-reporting/meta-ad-insights).
+
+## Use breakdowns to understand the result
+
+A traffic-source breakdown helps you identify the origin of the measured sessions. New and Returning customer breakdowns help you compare the customer groups shown by the report.
+
+Use the released report's customer definition. Do not assume Returning means a previous page visit, or New means a first-ever visit, without checking how that segment is classified.
+
+A small segment with a strong result can still be noisy. Check its volume before treating it as a reason to change the entire campaign.
+
+## Empty and missing values
+
+No connected ads, an unavailable breakdown, or missing engagement data should not be read as zero performance. Confirm the relevant connection, traffic, and metric availability before drawing a conclusion.
+
+A partial-data problem in one panel does not necessarily invalidate the rest of the report. Investigate the affected source instead of assuming all measurement is broken.
+
+## From an observation to a test
+
+A useful observation is specific: “Mobile visitors from this campaign rarely reach the Buy Box.” A useful follow-up is a focused hypothesis: “Moving a purchase opportunity earlier may improve RPS.”
+
+That is more actionable than simply trying to maximize time on page or scroll depth. Test the change while preserving unrelated purchase and tracking settings.
+
+## Related guides
+
+- [Core metric definitions](/data-dictionary/metrics-glossary)
+- [Engagement metrics](/analytics-reporting/engagement-metrics)
+- [Confidence and experiment winners](/experiments/statistical-significance)
+- [Traffic assignment](/experiments/traffic-assignment)
+- [Experience versus experiment sessions](/troubleshooting/experiment-experience-sessions)
