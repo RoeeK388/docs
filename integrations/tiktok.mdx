@@ -1,0 +1,40 @@
+---
+title: "Connect TikTok Pixel"
+sidebarTitle: "TikTok Pixel"
+description: "Find the website Pixel ID in TikTok Events Manager, save it in Jurni, and verify the intended page events."
+icon: "chart-column"
+---
+
+Use **TikTok Pixel** to connect supported Jurni page activity to the website data source used by your TikTok advertising team. This is pixel tracking, not a connection for managing TikTok ad campaigns inside Jurni.
+
+## Find your Pixel ID
+
+In **TikTok Ads Manager**, open **Tools → Events Manager**, select the website pixel, and copy its **Pixel ID** from the pixel details. Make sure you have access to the business and pixel used by the brand.
+
+See [TikTok's pixel-location guide](https://ads.tiktok.com/resources/help/article/how-to-troubleshoot-pixel-visibility-in-tiktok-ads-manager). Copy the ID only—not an Events API token, ad account ID, or full tracking snippet.
+
+## Connect and verify
+
+<Steps>
+  <Step title="Enter the ID">
+    In Jurni, open **Settings → Integrations → Data Integrations → Tracking Pixels** and paste it into **TikTok Pixel ID**.
+  </Step>
+  <Step title="Save Changes">
+    Save the tracking settings. Check whether the same pixel is already installed through your tag manager or another script before adding a second installation.
+  </Step>
+  <Step title="Test a real page">
+    Visit the published campaign URL and perform the intended shopper actions. Check the selected pixel in TikTok Events Manager or the provider's debugging tools.
+  </Step>
+</Steps>
+
+## Before launching ads
+
+Verify the purchase destination as well as the landing page. A valid page Pixel ID does not automatically configure a custom checkout, an Events API connection, or every conversion your campaign may need.
+
+If no activity appears, check the correct pixel, consent, browser blocking, and whether you tested a published page. For **Shopify Pages**, review the TikTok installation inherited from the Shopify theme/apps before adding another copy.
+
+## Related guides
+
+- [Tracking setup](/getting-started/tracking-pixels)
+- [Consent and tracking](/integrations/consent-tracking)
+- [Test your campaign link](/publishing/check-campaign-link)
