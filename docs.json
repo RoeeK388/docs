@@ -102,6 +102,8 @@
           {
             "group": "Assets & Reuse",
             "pages": [
+              "build/assets-library",
+              "build/template-library",
               "building-funnels/saved-sections",
               "build/global-sections"
             ]
