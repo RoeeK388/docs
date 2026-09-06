@@ -1,205 +1,116 @@
 ---
-title: "Create a Funnel with AI, Templates, or Scratch"
-sidebarTitle: "Creating a Funnel"
-description: "Learn how to create a funnel in Jurni using AI generation, conversion-optimized templates, or a blank canvas. Choose the method that fits your workflow and timeline."
+title: "Create an Experience"
+sidebarTitle: "Create an Experience"
+description: "Create a Jurni experience with AI, a template, a Figma reference, reusable sections, or a blank page, then connect real products and QA the commerce flow before publishing."
 ---
 
-Jurni gives you three ways to create a funnel: generate a complete funnel with AI in minutes, start from a conversion-optimized template, or build from scratch on a blank canvas. This guide walks through each method so you can choose the one that fits your timeline and goals.
+An **experience** is the main page-building object in Jurni. It contains the page structure, design, product interactions, and publishing configuration that shoppers ultimately see.
 
-## Starting a New Funnel
+## Ways to start
 
-You can start a new funnel from anywhere in Jurni or from the Funnels page.
+Jurni supports several practical starting points depending on what you already have:
+
+- **Generate with AI** when you have a product, audience, campaign angle, or brief and want Jurni to create the initial page.
+- **Start from a template** when an existing page structure is close to what you need.
+- **Build from scratch** when you want to assemble the page section by section.
+- **Use a Figma reference** when your team already has a designed desktop/mobile page that Jurni should recreate.
+- **Duplicate or reuse an existing experience/section** when the approved structure already exists in the same shop.
+
+<Tip>
+  Reuse approved sections—especially complex Buy Boxes—when they already exist. Rebuilding the same commerce logic from scratch creates unnecessary QA work.
+</Tip>
+
+## Generate with AI
+
+When starting from AI, give Jurni the campaign context that should influence the page rather than only asking for a generic landing page.
+
+Useful inputs include:
+
+- product or offer
+- audience/persona
+- traffic source
+- campaign or ad angle
+- page type, such as advertorial, creator page, listicle, PDP-style page, or long-form sales page
+- required sections
+- brand constraints
+- source URLs, screenshots, or Figma references when relevant
+
+**Example:**
+
+> Build a creator-led landing page for our protein powder. Traffic is coming from Meta ads focused on high-protein breakfast. Keep the product proof above the first Buy Box, use our existing review section, and make the mobile layout the priority.
+
+After generation, treat the result as a draft: review every section, connect the real products, and QA the live commerce flow before publishing.
+
+## Start from a template
+
+Templates are useful when you want a known structure without starting from a blank page. Choose the closest page type, then replace the template's content and product configuration with the campaign-specific version.
+
+Common page concepts in Jurni include:
+
+- creator / UGC
+- listicle
+- advertorial
+- long-form sales
+- product-focused page
+- video / VSL
+- gifting or bundle page
+
+Template availability can change as Jurni adds or updates patterns, so use the options visible in your workspace rather than relying on a fixed template list in documentation.
+
+## Build from scratch
+
+A blank experience gives you control over the section order and composition.
+
+A typical workflow is:
 
 <Steps>
-  <Step title="Quick Action">
-    Click **Create New Funnel** below the Jurni icon in the top-left corner. This option is available from any page in Jurni.
+  <Step title="Add the page structure">
+    Use the Section Library to add the sections you need.
   </Step>
-  <Step title="From the Funnels Page">
-    Click **Funnels** in the left sidebar, then click **Create New Funnel** in the top right.
+  <Step title="Connect real products early">
+    Add the actual products, variants, Buy Boxes, subscription options, or bundle behavior before the design is considered finished.
+  </Step>
+  <Step title="Build desktop and mobile together">
+    Check responsive behavior while you build instead of treating mobile as a final cleanup pass.
+  </Step>
+  <Step title="Add tracking and destination behavior">
+    Confirm CTAs, cart/checkout behavior, integrations, and any external links.
+  </Step>
+  <Step title="QA and publish">
+    Run the QA checklist, test the final live URL, then choose the appropriate publishing path.
   </Step>
 </Steps>
 
-After you start, you will see three creation options. Pick the one that matches your needs.
+## Name experiences for how the team will find them
 
-<Tabs>
-  <Tab title="Generate with AI">
-    The fastest way to create a complete, on-brand funnel. Describe what you want in a text prompt and Jurni builds the funnel for you.
+Use a name that identifies the campaign or purpose rather than a generic label such as “Landing Page 2.” Examples:
 
-    <Steps>
-      <Step title="Click Generate with AI">
-        Select the AI option from the creation screen.
-      </Step>
-      <Step title="Write your prompt">
-        Describe the funnel you want. Include your product, purpose, audience, key messages, and any sections you need.
-      </Step>
-      <Step title="Click Generate">
-        Submit your prompt to start the generation process.
-      </Step>
-      <Step title="Wait 2-5 minutes">
-        Jurni builds your funnel pages, applies your brand settings, and structures the layout.
-      </Step>
-      <Step title="Review and customize">
-        Open the generated funnel in the editor, adjust content, and refine the design.
-      </Step>
-    </Steps>
+- `Labor Day – Collagen PDP`
+- `Meta – Creator Angle – Protein`
+- `Black Friday – Bundle Page`
 
-    <Tip>
-      Be specific in your prompts. Include your product name or type, the funnel purpose (launch, sale, upsell), target audience, key benefits, and any required sections.
-    </Tip>
+Clear names become especially important when the same experience is used in Smart Links or experiments.
 
-    **Example prompt:**
+## What to configure before launch
 
-    > Create a landing page for our new protein powder targeting fitness enthusiasts. Highlight the 30g protein per serving, 5 flavors available, and include customer testimonials. Add a limited-time 25% off offer.
+A page is not ready just because the layout looks finished. Verify:
 
-    **When to use AI:**
+- desktop and mobile design
+- product and variant selection
+- Buy Box actions
+- selling plans/subscriptions
+- bundle or offer rules
+- cart and checkout behavior
+- tracking pixels and Custom Scripts
+- publishing destination
+- Smart Link / experiment routing, when used
 
-    - You need a funnel in under 5 minutes
-    - You want a product-based starting point to customize
-    - You want brand consistency (AI uses your saved brand settings automatically)
-  </Tab>
-  <Tab title="Start from Template">
-    Browse a library of pre-built, conversion-optimized templates designed for specific use cases and traffic types.
+## Related guides
 
-    <Steps>
-      <Step title="Click Start from Template">
-        Select the template option from the creation screen.
-      </Step>
-      <Step title="Browse the library">
-        Explore templates by category to find one that matches your goal.
-      </Step>
-      <Step title="Preview">
-        Click any template to preview how it looks and flows.
-      </Step>
-      <Step title="Use the template">
-        Click **Use Template** to create your funnel from that layout.
-      </Step>
-      <Step title="Customize">
-        Replace placeholder content, swap images, adjust colors, and connect your products.
-      </Step>
-    </Steps>
-
-    **Template categories:**
-
-    <CardGroup cols={2}>
-      <Card title="Creator" icon="user">
-        Creator and influencer-led funnels with a personal, authentic tone.
-      </Card>
-
-      <Card title="Listicle" icon="list">
-        Editorial layouts built around lists, comparisons, and "best of" content.
-      </Card>
-
-      <Card title="Product" icon="box">
-        Single-product or single-offer focus with clear calls to action.
-      </Card>
-
-      <Card title="Advertorial" icon="newspaper">
-        Long-form, story-driven pages designed for paid traffic campaigns.
-      </Card>
-
-      <Card title="Gifting" icon="gift">
-        Bundles, seasonal promotions, and multi-product gift pages.
-      </Card>
-    </CardGroup>
-
-    <Note>
-      More templates are added regularly. If you do not see one for your exact use case, check back soon or use AI generation.
-    </Note>
-
-    **When to use templates:**
-
-    - You want a proven layout with conversion best practices built in
-    - You have a specific use case (creator page, listicle, advertorial)
-    - You want design inspiration or a faster starting point than scratch
-    - You want more control over structure than AI provides
-  </Tab>
-  <Tab title="Build from Scratch">
-    A blank canvas gives you complete control over every section, layout, and design choice.
-
-    <Steps>
-      <Step title="Click Build from Scratch">
-        Select the blank canvas option from the creation screen.
-      </Step>
-      <Step title="Start with a blank page">
-        You begin with an empty page and full control over the structure.
-      </Step>
-      <Step title="Add sections">
-        Click the **\+** button to open the section library and add components to your page.
-      </Step>
-      <Step title="Arrange layout">
-        Drag sections to reorder them and build the flow you want.
-      </Step>
-      <Step title="Customize content">
-        Edit text, images, styling, and spacing for every element.
-      </Step>
-      <Step title="Add products">
-        Connect your Shopify products so visitors can purchase directly.
-      </Step>
-      <Step title="Preview and refine">
-        Check your funnel on desktop and mobile, then adjust as needed.
-      </Step>
-    </Steps>
-
-    **When to build from scratch:**
-
-    - You have a unique design vision
-    - You want complete control over layout and styling
-    - You need brand-specific layouts that templates do not cover
-    - You want to learn the Jurni editor by building piece by piece
-  </Tab>
-</Tabs>
-
-## Naming Your Funnel
-
-A clear funnel name keeps your dashboard organized and makes it easy for your team to understand the purpose at a glance.
-
-**Good naming examples:**
-
-- "Black Friday Landing Page - Collagen"
-- "Q1 Product Launch - Yoga Mat"
-- "Meta Ads - Summer Sale 2025"
-
-Naming matters for finding funnels in your list, keeping team communication clear, and maintaining an organized workspace.
-
-## Adding Tags
-
-Tags help you organize and filter funnels. You can add tags when you create the funnel or later in settings.
-
-**Common tag types:**
-
-| Tag Type | Examples |
-| --- | --- |
-| Campaign type | Product Launch, Seasonal, Evergreen |
-| Traffic source | Meta Ads, Google Ads, Email |
-| Quarter | Q1 2025, Q4 2024 |
-| Product | Skincare, Supplements, Apparel |
-
-## What Happens Next
-
-After you create a funnel, your next steps depend on the method you chose.
-
-- **AI-generated:** Review the generated pages, edit and customize content, add or remove sections, then preview and publish.
-- **Template-based:** Replace all placeholder content with your own copy, swap in your images, adjust colors to match your brand, and connect your products.
-- **Built from scratch:** Continue adding sections from the library, build out your page structure, add your content and products, and apply your brand styling.
-
-## Tips for Success
-
-<Tip>
-  Start simple. A single landing page can be highly effective. You do not need a multi-page funnel for every campaign.
-</Tip>
-
-<Tip>
-  Use your brand settings. AI-generated and template-based funnels pull from your saved brand settings automatically, so your colors, fonts, and tone stay consistent.
-</Tip>
-
-<Tip>
-  Think mobile-first. Always preview your funnel on mobile before publishing. Most visitors will see it on their phones.
-</Tip>
-
-<Tip>
-  Test multiple approaches. Try AI for speed, templates for proven layouts, and scratch builds for custom designs. You may find different methods work better for different campaigns.
-</Tip>
-
-## What's Next
-
-Now that your funnel is created, learn how to use the funnel editor, add and arrange sections, connect your products, and preview and publish your funnel.
+- Experience Editor
+- Managing Sections
+- AI Chat Prompts
+- Figma
+- Products & Buy Boxes
+- QA Checklist
+- Publishing Overview

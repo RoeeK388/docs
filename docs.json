@@ -70,7 +70,6 @@
           {
             "group": "Create Experiences",
             "pages": [
-              "getting-started/funnel-building",
               "building-funnels/creating-a-funnel",
               "building-funnels/qa-checklist"
             ]

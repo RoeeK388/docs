@@ -1,80 +1,120 @@
 ---
-title: "Funnel Editor: Build and Customize Funnels Visually"
-sidebarTitle: "Funnel Editor"
-description: "Learn how to use the Funnel Editor to customize layouts, content, and styling with a visual, no-code interface that updates in real time."
+title: "Experience Editor"
+sidebarTitle: "Experience Editor"
+description: "Use the Jurni Experience Editor to manage sections, content, responsive layouts, shopper actions, products, Buy Boxes, AI edits, and pre-publish QA."
 ---
 
-The Funnel Editor is the visual workspace where you customize every part of a funnel. It is fast, flexible, and requires no code. You can adjust layout, edit content, replace media, and apply styling in a live preview that closely reflects what your visitors will see.
+The **Experience Editor** is where you build and refine a Jurni page. Use it to manage sections, content, media, responsive behavior, product interactions, and the actions shoppers take from the page.
 
-## Accessing the Funnel Editor
+## Open the editor
 
-<Steps>
-  <Step title="Open Funnels">
-    Go to the **Funnels** area in your dashboard.
-  </Step>
-  <Step title="Select or create a funnel">
-    Open an existing funnel, or create a new one to start from scratch.
-  </Step>
-  <Step title="Enter the editor">
-    You are taken directly into the Funnel Editor, ready to build.
-  </Step>
-</Steps>
+Open an experience from the **Experiences** area in Jurni. The editor loads the current working version of the page so you can make changes before publishing them to shoppers.
 
-## Funnel Editor Layout
-
-The editor is divided into three main areas. Each serves a different purpose and works together to give you full control over the funnel.
+## Main parts of the editor
 
 <CardGroup cols={3}>
-  <Card title="Canvas (Center)" icon="desktop">
-    The Canvas shows a live preview of your funnel. You can view the full layout, select individual sections and elements, and see changes reflected in real time. The preview closely reflects the live experience your visitors will have.
+  <Card title="Page canvas" icon="desktop">
+    Shows the page as you build it. Select sections and elements directly from the canvas and switch between desktop and mobile views while editing.
   </Card>
 
-  <Card title="Sections Panel (Left)" icon="layer-group">
-    The left panel controls funnel structure. Add new sections, reorder existing ones, remove sections you no longer need, and select a section to edit it. Each section acts as a content block, such as a hero, product showcase, testimonials, or call to action.
+  <Card title="Sections" icon="layer-group">
+    Controls the structure of the page. Add sections from the Section Library, select existing sections, reorder them, or reuse Saved/Global Sections.
   </Card>
 
-  <Card title="Editing Panel (Right)" icon="sliders">
-    The right panel changes based on what you select. Use it to edit text and copy, replace images and videos, adjust layout and spacing, configure products and CTAs, and modify styling and design details.
+  <Card title="Editing controls" icon="sliders">
+    The available controls depend on what you select. Use them for content, media, layout, actions, and section-specific configuration.
   </Card>
 </CardGroup>
 
-## How Editing Works
+Jurni also exposes AI chat inside the editing workflow for changes that are easier to describe than configure manually.
 
-Editing in the Funnel Editor is contextual. The right panel and available options change depending on what you click.
+## Work section by section
 
-- **Click a section** to edit its structure and layout
-- **Click text** to update copy and messaging
-- **Click media** to replace images or videos
-- **Click buttons or products** to configure behavior and links
+A section should have a clear job in the shopper journey. Common jobs include:
 
-<Note>
-  Changes save automatically as you edit. There is no manual save button. Your work is preserved in the background while you build.
-</Note>
+- hero / campaign hook
+- product education
+- social proof
+- comparison or ingredients
+- Buy Box / purchase decision
+- FAQ
+- repeated CTA
 
-## Funnel Status and Changes
+Use the **Section Library** to add new patterns and **Saved/Global Sections** when your shop already has an approved section you want to reuse.
 
-All funnels start in **Draft** status. Edits you make while in Draft are not visible to visitors until you publish.
+## Edit content and media
 
-Once a funnel is published, you can continue editing. Updates remain private until you republish, so you can refine and preview changes before making them live.
+Select the relevant content in the editor to update copy, images, video, links, or section configuration.
 
-## What the Funnel Editor Is Used For
+For images, Jurni also supports image repositioning/crop controls so you can change the visible focal point without replacing the underlying asset.
 
-You can use the Funnel Editor to accomplish a wide range of customization tasks:
+For larger design changes, AI chat can modify or rebuild a section based on your instruction. Review AI changes visually and functionally rather than assuming a successful generation means the section is launch-ready.
 
-- **Customize layout and structure**: Arrange sections and control the overall flow of the page.
-- **Adjust messaging and visuals**: Update copy, headlines, images, and videos to match your offer.
-- **Control product presentation**: Configure how products, pricing, and CTAs appear to visitors.
-- **Apply brand styling**: Set colors, fonts, spacing, and design details that match your brand.
-- **Prepare for publishing and traffic**: Finalize content and design before sending visitors to the funnel.
+## Configure shopper actions carefully
 
-Each of these topics is covered in more detail in dedicated articles.
+Buttons and purchase controls can do very different things. Depending on the section, an action may:
 
-## Next Steps
+- scroll to another section
+- add a product to cart
+- open cart
+- continue to checkout
+- navigate to another product/page
+- open an external URL
 
-Continue learning about the Funnel Editor with these guides:
+The visual label on a CTA does not determine its behavior. Test the configured action itself before publishing.
 
-- [Adding and Managing Sections](/building-funnels/adding-and-managing-sections)
-- [Editing Content and Media](/building-funnels/editing-content-and-media)
-- [Working With Products in Funnels](/building-funnels/working-with-products)
-- [Styling and Design Controls](/building-funnels/styling-and-design)
-- [Publishing a Funnel](/building-funnels/publishing)
+## Products and Buy Boxes
+
+Product configuration should be handled as real commerce behavior, not placeholder design.
+
+For any shoppable section, confirm:
+
+- Shopify product and variant
+- one-time vs. subscription purchase option
+- selling plan
+- quantity
+- bundle rules, when used
+- discount/offer behavior
+- post-add-to-cart action
+
+Use the dedicated **Products & Buy Boxes** docs for those behaviors.
+
+## Desktop and mobile
+
+Review both breakpoints throughout the build. Pay particular attention to:
+
+- image crop
+- section spacing
+- Buy Box stacking
+- carousels
+- long labels
+- sticky CTAs
+- modals and overlays
+
+Do not wait until the final QA pass to discover that a desktop-first section does not work on mobile.
+
+## Preview vs. live page
+
+Editor Preview is useful for layout and interactions, but it is not identical to every published environment.
+
+In particular:
+
+- tracking Custom Scripts can be intentionally excluded from Preview
+- Shopify Pages run inside the Shopify theme environment
+- third-party widgets may behave differently on a live URL
+
+Always test the final publishing destination before sending meaningful traffic.
+
+## Before publishing
+
+Use the QA Checklist to verify the page, products, tracking, mobile behavior, and live cart/checkout path. Then choose the appropriate publishing method: Jurni URL/custom subdomain, Smart Link traffic routing, or native Shopify Pages where supported.
+
+## Related guides
+
+- Managing Sections
+- Saved & Global Sections
+- AI Chat Prompts
+- Image Repositioning
+- Products & Buy Boxes
+- QA Checklist
+- Publishing Overview
