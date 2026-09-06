@@ -1,101 +1,74 @@
 ---
 title: "Create and Run an A/B Test in Jurni"
 sidebarTitle: "Create Test"
-description: "Learn how to build, launch, and manage an A/B experiment in Jurni. Set variants, control traffic splits, and route all future traffic to the winning journey automatically."
+description: "Choose a new or existing campaign link, configure page variants and traffic weights, and check the test before sending visitors."
+icon: "flask-conical"
 ---
 
-Jurni experiments let you test agentic shopping journeys against each other using a single SmartLink. You drop one URL into your ads, Jurni splits traffic across your variants, and when a winner is clear you can route all future traffic to it without changing your campaign links. This page walks you through creating an experiment from setup to finish.
+An experiment sends visitors from one campaign link to different page variants so you can compare their results. Prepare the pages first, then configure the test and use its connected Smart Link in your campaign.
+
+## Before you start
+
+Decide what you are testing and which metric will guide your decision. For example: “Does a shorter hero improve purchase conversion?” Start with your existing page and one meaningful alternative rather than changing every part of the journey at once.
+
+Test both pages on mobile and desktop, including their product options and checkout. A custom URL also needs the appropriate Jurni tracking connection to report results; successfully redirecting traffic there is not enough.
+
+To prepare an alternative with AI, duplicate the experience and ask for the specific change in the copy. For example: “Change only the hero headline to the approved alternative below. Keep the offer, products, button actions, and other sections unchanged.” Review and publish the alternative before selecting it as a variant. See [Prompt examples](/build/prompt-library) and [Manage experiences](/build/manage-experiences).
+
+[Testing best practices](/experiments/strategic-experiments) · [Test against an existing website page](/experiments/testing-against-website)
+
+## Set up the experiment
 
 <Steps>
-  <Step title="Create your experiment">
-    Open the **Experiments** tab and select **Create Experiment** in the top right corner.
-
-    Name your experiment with two labels:
-
-    - **Test Name**: your internal name for finding the experiment inside Jurni.
-    - **Link Name**: the external name used in the SmartLink itself.
+  <Step title="Create the test">
+    Open the tests/experiments area and start a new experiment. Enter a **Test Name** you will recognize later. Use the optional **Description** to record the hypothesis.
   </Step>
-  <Step title="Add your variants">
-    Select **Add Variant** for each journey you want to test. You can add up to 10 variants.
-
-    For every variant, choose one of two sources:
-
-    - An agentic shopping journey already built in Jurni.
-    - A custom URL.
+  <Step title="Choose the campaign link">
+    Under **Link**, choose **Create new link** and enter its slug, or **Use existing link** and select an available Smart Link. The existing-link picker excludes links already connected to experiments.
   </Step>
-  <Step title="Set the traffic split">
-    Jurni distributes traffic evenly across your variants by default. A two-variant experiment splits 50/50, a four-variant experiment splits 25% each, and so on.
-
-    To use a different distribution, adjust the weight on each variant to set how much traffic it receives. This is useful when you want to favor a proven journey while still testing a new one, or to limit exposure on an experimental variant until the early data looks right.
-
-    <Tip>
-      Because every variant runs on the same SmartLink, traffic routes automatically based on the weights you set the moment your experiment goes live.
-    </Tip>
+  <Step title="Add the page variants">
+    For each variant, set its **Variant Name** and **Destination**. Select a published Jurni page or enter the supported custom URL. Use names that describe the difference, such as “Current hero” and “Short hero.”
   </Step>
-  <Step title="Save and start the test">
-    When you are ready, select **Save and Start Test**. Your experiment goes live immediately and you land on the experiment dashboard.
+  <Step title="Review Weight %">
+    The initial two variants start at 50% each. Adjust their weights if needed. Adding or removing a variant redistributes the weights, so review the final split before saving.
   </Step>
-</Steps>
-
-## Manage a live experiment
-
-From the dashboard you can:
-
-- Review your metrics, with an overview and a breakdown by variant.
-- Edit existing variants, or add a new one at any time.
-- See a full history of every change made.
-- Select **Copy Link** to bring the SmartLink URL straight into your ads.
-- Pause the experiment when needed. **Current behavior routes the experiment Smart Link to the shop home page while paused**, so do not pause while paid traffic is still using the link unless that fallback is acceptable.
-- Add or edit **Routing Rules** to send matching URL-parameter traffic to a specific variant before the normal weighted split.
-
-<Note>
-  Screenshot: the experiment dashboard showing metrics overview, variant breakdown, and the Copy Link button.
-</Note>
-
-## End an experiment and name a winner
-
-When one variant clearly wins, follow these steps to close the test and route all traffic to the winner:
-
-<Steps>
-  <Step title="Select End">
-    On the experiment dashboard, select **End** to begin closing the experiment.
+  <Step title="Add routing rules only when needed">
+    Use [Routing Rules](/experiments/routing-rules) when specific campaign parameters must reach a particular variant. This is separate from a simple weighted comparison; leave rules out when you do not need that routing behavior.
   </Step>
-  <Step title="Choose the winning variant">
-    Pick the variant that performed best based on your metrics.
-  </Step>
-  <Step title="Confirm to end the experiment">
-    Confirm your choice. Because the link is a SmartLink, all traffic from that point forward routes automatically to your winning variant. No new URL to swap into your ads, no campaign downtime.
+  <Step title="Save and start">
+    Review the destinations and link, then use the form's save/start action. Confirm any warning about replacing an existing link's destination. Wait for the success message and open the experiment overview.
   </Step>
 </Steps>
 
 <Warning>
-  Ending an experiment is final. Once you confirm the winner, traffic will no longer split and all visitors will be routed to the selected variant.
+  Reusing a Smart Link that is already in ads or emails can change where that existing traffic goes when you start the test. Do not treat this as a private draft operation.
 </Warning>
 
-## Need a hand?
+## Launch through the right URL
 
-Reach out to our team at [info@getjurni.ai](mailto:info@getjurni.ai) or on Slack and we will help you set up your first experiment.
+Copy the experiment's connected Smart Link into the campaign. Open that exact URL with the campaign parameters and check the result. Direct visits to a variant page do not automatically belong to the experiment.
+
+A returning visitor can keep their assignment. Repeatedly refreshing one browser is not a meaningful check of whether a 50/50 split is working.
+
+Use [Test your campaign link](/publishing/check-campaign-link) before sending traffic.
+
+## Review or change a running test
+
+Read the variant metrics using the same date range and your chosen decision metric. Check [Reading results](/experiments/reading-results) before interpreting a small difference as a winner.
+
+The variant-editing form locks the destination URL of an existing variant. Do not assume you can replace its URL in place. Record any changes to the test or underlying page, since combining results from different page versions can make the comparison harder to interpret.
+
+For traffic weights and returning visitors, see [Traffic assignment](/experiments/traffic-assignment).
+
+## Pause or finish deliberately
+
+Before pausing, read the confirmation: the current pause flow warns that visitors will be sent to the shop home page. Ending is a different action that asks you to choose the winning destination.
+
+Follow [Pause, end, and reuse](/experiments/pause-end-reuse) before changing a test with live campaign traffic. Selecting a winner is a routing decision; it is not, by itself, proof of statistical significance.
 
 ## Related guides
 
-<CardGroup>
-  <Card title="What Are Experiments?" href="/experiments/what-are-experiments">
-    Learn the basics of Jurni experiments and how they work.
-  </Card>
-
-  <Card title="Experiment Routing Rules" href="/experiments/routing-rules">
-    Route matching campaign parameters to specific variants.
-  </Card>
-
-  <Card title="Testing a Jurni Page Against Your Existing Website Page" href="/experiments/testing-against-website">
-    Compare Jurni experiences side by side with an existing page.
-  </Card>
-
-  <Card title="Reading Experiment Results" href="/experiments/reading-results">
-    Understand the current variant metrics and reporting limitations.
-  </Card>
-
-  <Card title="Pause, End & Reuse" href="/experiments/pause-end-reuse">
-    Understand what happens to Smart Link traffic when a test is paused or ended.
-  </Card>
-</CardGroup>
+- [What experiments do](/experiments/what-are-experiments)
+- [Smart Links](/building-funnels/smart-links)
+- [Experiment versus experience sessions](/troubleshooting/experiment-experience-sessions)
+- [Metric definitions](/data-dictionary/metrics-glossary)
