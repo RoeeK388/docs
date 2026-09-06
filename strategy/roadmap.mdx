@@ -1,11 +1,96 @@
 ---
-title: "Strategy Roadmap"
-sidebarTitle: "Roadmap"
-description: "Plan your optimization work with the Jurni strategy roadmap. Learn how to prioritize experiments, set milestones, and align your team around a testing plan."
+title: "Strategy: Opportunities and Briefs"
+sidebarTitle: "Opportunities & Briefs"
+description: "Use Jurni Strategy to turn recent Meta and page-performance signals into prioritized briefs for new pages and experiments, then take those briefs into build and test workflows."
 ---
 
-Jurni helps you build a strategy roadmap to organize your experiments and optimization efforts over time. This page covers how to plan milestones, prioritize tests, and align your team around a clear testing schedule.
+Jurni's Strategy area helps you turn performance signals into **briefs** for what to build or test next. It combines a working roadmap of briefs with AI-generated opportunities based on connected performance data.
 
-<Info>
-  This article is in draft. Content will be added soon.
-</Info>
+## What lives in Strategy
+
+The current Strategy workflow has two related concepts:
+
+- **Briefs / Roadmap** — the list of ideas your team is planning, building, or launching.
+- **AI suggestions / Opportunities** — recommendations Jurni surfaces from recent performance signals that can be turned into a brief.
+
+Recent Jurni support conversations may refer to this area as **Opportunities** or **Strategizer**. The underlying purpose is the same: help the team decide what page or experiment should be created next.
+
+## AI suggestions
+
+Jurni can use connected Meta and Jurni page-performance data to surface opportunities worth turning into a brief. The current product looks at recent performance rather than presenting generic CRO ideas with no account context.
+
+A suggestion is a starting point, not an automatically proven winner. Review the underlying campaign/page context before committing design or media spend.
+
+<Warning>
+  Do not treat an AI recommendation's expected impact as a statistical guarantee. It is a prioritization input, not measured experiment lift.
+</Warning>
+
+## Create a brief
+
+You can create a brief directly or start from a suggestion.
+
+A brief can capture fields such as:
+
+- brief name
+- goal
+- success metric / target
+- campaign or ad
+- persona
+- target launch date
+- product
+- media
+- creative direction
+- page type
+- design references
+
+This makes the Strategy area useful as the handoff between **why a page should exist** and the actual build in Jurni.
+
+## Page-type starting points
+
+The brief workflow supports common paid-traffic page concepts such as:
+
+- Listicle / “reasons why”
+- Advertorial
+- Long-form sales page
+- Creator / UGC page
+- Video / VSL page
+- Product-focused page
+- Custom concept
+
+These are starting points for the creative brief, not restrictions on what the final Jurni page can contain.
+
+## From suggestion to launch
+
+A useful workflow is:
+
+<Steps>
+  <Step title="Review the opportunity">
+    Check which recent page, campaign, audience, or performance signal led to the recommendation.
+  </Step>
+  <Step title="Create or refine the brief">
+    Add the goal, product, persona, success metric, media, and creative constraints your team already knows.
+  </Step>
+  <Step title="Generate or build the page">
+    Use the brief as context for Jurni's AI builder or as the specification for a manual build.
+  </Step>
+  <Step title="QA the commerce and tracking setup">
+    Verify products, Buy Boxes, mobile layout, publishing, and tracking before launch.
+  </Step>
+  <Step title="Test when appropriate">
+    If the recommendation is a hypothesis rather than a direct campaign launch, create an experiment against the current page or another variant.
+  </Step>
+</Steps>
+
+## What not to assume
+
+Older help-center material described a fixed number of recommendations delivered every Monday and specific recommendation categories. The recommendation engine has continued to evolve, so do not rely on a fixed weekly count or cadence unless that behavior is visible in your current Strategy UI.
+
+Similarly, improvements currently planned for the recommendation engine should not be treated as shipped behavior until they appear in the product.
+
+## Related guides
+
+- Experiment Strategy
+- Create an Experiment
+- Test Against Existing Pages
+- Create an Experience
+- Meta Ads Integration

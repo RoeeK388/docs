@@ -4,8 +4,100 @@ sidebarTitle: "MCP Connector"
 description: "Set up the Jurni MCP Connector to link Claude and other AI assistants with your Jurni workspace. Follow the configuration steps to enable seamless data access."
 ---
 
-The Jurni MCP Connector bridges your workspace with AI assistants like Claude, enabling intelligent access to your data. This guide walks you through the setup process and configuration options to get the connector running.
+The Jurni MCP Connector lets an MCP-compatible AI assistant work with the Jurni workspace that you authorize. It can expose Jurni data such as experiences, products, experiments, analytics, Smart Links, templates, and page-building tools through a standard Model Context Protocol connection.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/9212850860-connecting-claude-to-jurni) for full content.
-</Note>
+## Jurni MCP server
+
+Use the Jurni MCP endpoint:
+
+`https://api.getjurni.ai/api/mcp`
+
+The current Jurni backend serves MCP requests from `/api/mcp` and authenticates the connection with Jurni OAuth.
+
+## Connect from Claude
+
+Claude is a common example because it supports custom MCP connectors.
+
+<Steps>
+  <Step title="Open Claude connector settings">
+    In Claude, open **Settings → Connectors**. Depending on the Claude interface, the option to add a custom connector may be under **Customize**.
+  </Step>
+  <Step title="Add Jurni">
+    Create a custom connector named **Jurni** and use `https://api.getjurni.ai/api/mcp` as the server URL.
+  </Step>
+  <Step title="Authorize with Jurni">
+    Claude redirects you to Jurni's OAuth consent flow. Review the access being requested and choose **Allow access** to connect the authenticated Jurni workspace.
+  </Step>
+  <Step title="Return to Claude">
+    After authorization, Jurni tools become available to the assistant for the shop your Jurni account can access.
+  </Step>
+</Steps>
+
+## What the connector can access
+
+The exact tool set can evolve, but the current MCP server includes read-only tools for areas such as:
+
+- shop and brand information
+- Jurni experiences and page content
+- products and product details
+- experience and shop analytics
+- experiments and experiment metrics
+- Smart Links
+- available page/section templates
+- Meta performance data when that integration is available to the shop
+
+The server also includes authoring tools for creating draft experiences and adding, updating, or removing sections. Write capabilities are permission-aware; Jurni does not grant an AI assistant more access than the authenticated Jurni user is allowed to use.
+
+<Warning>
+  An MCP connection can expose business data to the AI application you authorize and, for permitted users, can include write actions. Review the OAuth consent screen and only authorize applications your organization approves.
+</Warning>
+
+## A practical workflow
+
+Once connected, you can ask the assistant to:
+
+1. inspect current Jurni performance
+2. identify an experience or experiment to work on
+3. review products, sections, or templates available in the shop
+4. create or modify a **draft** experience when the required permissions are available
+5. return to Jurni to review, QA, and publish the result
+
+<Tip>
+  Treat AI-created pages as drafts. Review product configuration, Buy Boxes, responsive behavior, tracking, and the live commerce flow in Jurni before publishing.
+</Tip>
+
+## Permissions and OAuth
+
+Jurni's OAuth flow shows the authenticated account and the access being granted. The connector runs in the context of the authorized shop/user rather than using a shared API key pasted into the AI assistant.
+
+If a user cannot perform a write action in Jurni, connecting MCP should not be used as a way around that permission boundary.
+
+## Other MCP clients
+
+The same Jurni server can be used by other clients that correctly support Jurni's MCP + OAuth flow. Setup UI varies between clients, so use the client's instructions for adding a remote/custom MCP server.
+
+Do not assume compatibility with a specific AI product solely because it uses the term “MCP”; the client must support the authentication flow required by Jurni.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The connector opens Jurni but does not finish connecting">
+    Confirm you are logged into the intended Jurni account, complete the OAuth consent flow, and make sure the MCP client supports remote OAuth-authenticated servers.
+  </Accordion>
+
+  <Accordion title="The assistant can read data but cannot edit an experience">
+    Write tools are permission-aware. Confirm the Jurni user who authorized the connection has the necessary access for the requested action.
+  </Accordion>
+
+  <Accordion title="I connected the wrong Jurni account">
+    Disconnect the Jurni connector in the AI client and reconnect it, then authenticate with the correct Jurni account during OAuth.
+  </Accordion>
+</AccordionGroup>
+
+## Related guides
+
+- Integrations Overview
+- Create an Experience
+- Experience Editor
+- Experiments Overview
+- Analytics Overview

@@ -1,91 +1,100 @@
 ---
-title: "Troubleshoot Experiment Traffic Splitting in Jurni"
-sidebarTitle: "Traffic Split Issues"
-description: "Diagnose why Jurni experiment traffic is not splitting evenly. Check Smart Links, browser caching, traffic volume, and draft variants with step-by-step fixes."
+title: "Troubleshoot Experiment Traffic Assignment"
+sidebarTitle: "Traffic Assignment Issues"
+description: "Diagnose experiment traffic differences by checking the Smart Link, Routing Rules, sticky assignment, configured weights, destination availability, and experiment parameters."
 ---
 
-If your Jurni experiment traffic is not distributing between variants as expected, there are four common causes to investigate. This guide walks you through each check so you can identify the issue and restore a balanced split.
+If an experiment is not receiving the traffic distribution you expect, first determine whether the difference is caused by **routing logic**, **sticky assignment**, or the campaign not entering through the experiment Smart Link at all.
 
-<AccordionGroup>
-  <Accordion title="Check 1: Smart Link Not in Use">
-    <Warning>
-      Experiments only split traffic through Smart Links. A direct funnel URL always loads the same variant.
-    </Warning>
+## 1. Confirm traffic is entering through the experiment Smart Link
 
-    If your ad campaign is pointing to a direct funnel URL instead of a Smart Link, every visitor will see the same variant and the experiment will not split traffic. Confirm your ad campaign destination is the Smart Link URL, not a direct link to either funnel.
+An experiment only assigns a variant when the request enters through the Smart Link connected to that experiment. Sending traffic directly to one of the destination pages bypasses experiment assignment.
 
-    <Steps>
-      <Step title="Open your ad campaign settings">
-        Go to the platform where your ads are running (Meta, Google, TikTok, etc.).
-      </Step>
-      <Step title="Review the destination URL">
-        Look at the landing page URL set for the campaign or ad set.
-      </Step>
-      <Step title="Replace with the Smart Link">
-        If the URL is a direct funnel link, swap it for the experiment Smart Link from Jurni.
-      </Step>
-    </Steps>
-  </Accordion>
+<Steps>
+  <Step title="Copy the experiment Smart Link">
+    Open the experiment in Jurni and copy its Smart Link.
+  </Step>
+  <Step title="Check the campaign destination">
+    Verify that your ad, email, or other traffic source uses that Smart Link rather than one of the underlying page URLs.
+  </Step>
+  <Step title="Follow the redirect">
+    Open the Smart Link and confirm it redirects to one of the configured variants.
+  </Step>
+</Steps>
 
-  <Accordion title="Check 2: Browser Caching (Cookie-Based Assignment)">
-    <Info>
-      Jurni uses cookie-based assignment to ensure each visitor sees a consistent experience across visits.
-    </Info>
+## 2. Check Routing Rules before judging the weighted split
 
-    Returning visitors are served the same variant repeatedly. This is expected behavior. The split is not 50/50 per page load, but 50/50 across unique visitors over time. If you are testing by refreshing the same browser, you will keep seeing the same variant.
+Routing Rules take priority over normal weighted assignment. If a visitor matches a query-parameter rule, Jurni sends that visitor to the variant defined by the rule even if the experiment is configured 50/50 overall.
 
-    <Tip>
-      To verify the split is working, test from different browsers, devices, or incognito windows. Each new cookie should assign a variant randomly.
-    </Tip>
-  </Accordion>
+For example, a rule such as `utm_term=persona1 → Variant A` can intentionally make the observed totals look very different from the fallback weights.
 
-  <Accordion title="Check 3: Low Traffic Volume">
-    <Note>
-      Splits even out significantly once each variant reaches 500 or more sessions.
-    </Note>
+Review the experiment's Routing Rules and test the Smart Link both **with** and **without** the matching parameters.
 
-    At very low volumes, statistical variance naturally creates the appearance of uneven splitting. A 50/50 split might look like 60/40 or 70/30 when only a handful of sessions have been recorded. Avoid drawing conclusions from small sample sizes.
+## 3. Remember that variant assignment is sticky
 
-    | Sessions per variant | What to expect |
-    | --- | --- |
-    | Fewer than 200 | High variance; split may look uneven |
-    | 200 to 500 | Variance decreases; trend becomes clearer |
-    | 500 or more | Split should closely match your target ratio |
-  </Accordion>
+After a visitor is assigned to a variant, Jurni stores the assignment in an experiment-specific cookie for up to 30 days. Returning through the same experiment normally keeps that visitor on the same variant.
 
-  <Accordion title="Check 4: Variant Is in Draft">
-    <Warning>
-      A draft funnel cannot receive experiment traffic.
-    </Warning>
+This means repeatedly refreshing one browser is not a useful way to test whether a 50/50 split is working.
 
-    If one variant funnel is still in draft status, all traffic will flow to the published variant and the other will show zero sessions. Open both variant funnels in the Jurni editor and confirm both are published before the experiment goes live.
+<Tip>
+  When manually validating assignment, use a clean browser profile or clear the experiment assignment cookie between tests. Do not use repeated refreshes as a traffic-distribution test.
+</Tip>
 
-    <Steps>
-      <Step title="Open the experiment">
-        Go to the Experiments section in your Jurni workspace.
-      </Step>
-      <Step title="Click each variant funnel">
-        Open both funnels from the experiment details.
-      </Step>
-      <Step title="Confirm published status">
-        Make sure each funnel shows as Published, not Draft.
-      </Step>
-    </Steps>
-  </Accordion>
+## 4. Weighted assignment is probabilistic
 
-  <Accordion title="Frequently Asked Questions">
-    **Can I change the traffic split after an experiment is live?**
+For visitors who do not match a Routing Rule and do not already have a valid assignment cookie, Jurni chooses a variant using the experiment weights.
 
-    Yes, but doing so resets the statistical significance calculation. Only adjust the split if you have a strong reason to, and note that prior data will no longer be part of the calculation.
+A 50/50 configuration therefore does **not** guarantee exactly 50 visitors on each variant after every 100 visits. Some variance is expected, especially at lower traffic volumes.
 
-    **Why is one variant getting 0 sessions?**
+Jurni does not use a fixed session-count threshold at which the split suddenly becomes valid. Compare the actual distribution with the configured weights over a meaningful volume of **new assignments**, not page refreshes.
 
-    The most likely cause is that the variant funnel is still in draft status. Confirm both variants are published. If both are published, verify the Smart Link is in use and that traffic volume is high enough for a split to appear.
+## 5. Confirm every destination is reachable
 
-    **How do I know if my experiment is getting enough traffic?**
+Each active variant needs a valid redirect destination. Test each destination directly and through the experiment Smart Link.
 
-    Aim for at least 200 sessions per variant before drawing any conclusions. For statistical significance, 500 or more sessions per variant is recommended.
-  </Accordion>
-</AccordionGroup>
+Check for:
 
-If you have reviewed all four checks and traffic is still not splitting correctly, contact Jurni support at [info@getjurni.ai](mailto:info@getjurni.ai) or reach out in Slack.
+- unpublished or inaccessible Jurni pages
+- an external URL that redirects unexpectedly
+- authentication or geo restrictions
+- a Shopify page that is not published
+- a destination that returns an error
+
+An inaccessible destination is a launch problem even if Jurni's assignment itself is working correctly.
+
+## 6. Check the parameters on the final destination
+
+When Jurni sends a visitor to a variant, it preserves incoming campaign parameters except Shopify-internal proxy parameters and appends experiment context:
+
+- `jurni_ab_test_id`
+- `jurni_ab_variant_id`
+
+If those parameters are missing after the redirect, follow the full redirect chain and check whether another system is rewriting the URL.
+
+## Why one variant can show more sessions than another
+
+Common reasons include:
+
+- Routing Rules intentionally sending a segment to one variant
+- returning visitors keeping an earlier assignment
+- low volume and normal random variation
+- direct traffic reaching the underlying page outside the experiment
+- different date ranges between experiment and page-level analytics
+
+See **Experiment vs Experience Sessions** for the difference between an experiment's assigned traffic and all traffic received by an underlying page.
+
+## Changing traffic weights
+
+Changing the weights affects **future eligible assignments**. It does not rewrite historical sessions or force already-assigned visitors onto a new variant.
+
+<Warning>
+  Statistical significance/confidence is not currently a shipped decision layer in Jurni. Do not use old help-center guidance that refers to fixed session thresholds or a significance calculation resetting after a weight change.
+</Warning>
+
+## Related guides
+
+- Traffic Assignment
+- Routing Rules
+- Experiment vs Experience Sessions
+- Smart Links
+- URL Parameters

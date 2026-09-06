@@ -4,8 +4,78 @@ sidebarTitle: "API Keys"
 description: "Learn how to locate and manage API keys and credentials for each Jurni integration. Securely connect your accounts with the right authentication details."
 ---
 
-Setting up integrations in Jurni requires the correct API keys and credentials for each connected service. This guide shows you how to find and enter the necessary authentication details for every supported integration.
+Different Jurni integrations use different credential types. Do not assume every integration needs an API key: some use OAuth, some use public IDs/tokens, and some only need a storefront identifier.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/5210436652-finding-api-keys-credentials-per-integration) for full content.
-</Note>
+The fields below reflect the credential labels currently exposed in Jurni.
+
+## Data & tracking
+
+| Integration | Credential used in Jurni |
+| --- | --- |
+| Meta Pixel | Pixel ID. Jurni supports multiple Meta Pixel IDs. |
+| Google Tag Manager | Container ID in `GTM-...` format |
+| Google Analytics | GA tag / Measurement ID in `G-...` format |
+| TikTok | TikTok Pixel ID |
+| Blotout | EdgeTag URL |
+| Axon | Axon Pixel ID |
+| Northbeam | Northbeam Pixel ID |
+| Polar Analytics | Shopify URL in `store.myshopify.com` format |
+| Shopify Analytics | Public Storefront API access token from Shopify's Headless sales channel |
+| Triple Whale | Enabled through the Jurni integration toggle; no key field is currently shown in Jurni |
+
+## Reviews, pop-ups & lifecycle
+
+| Integration | Credential used in Jurni |
+| --- | --- |
+| Klaviyo | **Company ID** |
+| Postscript | **Shop ID** |
+| Alia | HTTPS embed script URL |
+| Junip | Store Key |
+| Stamped | Store Hash + API Public Key |
+| Trustpilot | Business Unit ID |
+| Okendo | Subscriber ID (User ID) |
+| Yotpo | App Key |
+| Judge.me | Public API Token |
+| Bazaarvoice | Client Name |
+| REVIEWS.io | Store ID / `url_key` |
+
+<Warning>
+  Older Jurni help-center articles referenced credentials that are no longer the fields shown in the current product. For example, the current Klaviyo integration asks for the **Company ID**, not a private API key. Always follow the label shown in **Settings → Integrations**.
+</Warning>
+
+## OAuth connections
+
+Some integrations do not require you to paste a key at all. The current product uses an authorization flow for integrations such as:
+
+- Meta Ads account connection
+- Slack
+- Figma
+
+Use the **Connect** or **Add to** action in Jurni and complete the provider's authorization flow.
+
+## Security guidance
+
+- Never paste private/server-side secrets into Jurni unless the integration explicitly asks for that credential type.
+- Do not put private API secrets into Custom Scripts; those scripts run in the shopper's browser.
+- Treat private Shopify Storefront tokens as secrets. Jurni's Shopify Analytics setup specifically uses the **public** access token.
+- If a credential is rotated in the provider, update the corresponding field in Jurni.
+- After changing a credential, test the actual widget, pixel, or data flow rather than relying only on an “Active” status.
+
+## If an integration is not working
+
+Check the following:
+
+1. The credential type matches the exact field shown in Jurni.
+2. The credential belongs to the same store/account that Jurni is connected to.
+3. The integration is enabled after saving the credential.
+4. The vendor has not revoked or rotated the credential.
+5. The feature is being tested in the correct environment—for example, some tracking scripts should be tested on a live page rather than editor Preview.
+
+## Related guides
+
+- Integrations Overview
+- Tracking Pixels
+- Review Integrations
+- Connect Shopify Analytics
+- Custom Scripts
+- Integration Troubleshooting

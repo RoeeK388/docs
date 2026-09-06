@@ -1,11 +1,62 @@
 ---
-title: "Managing the Sticky CTA Banner on Your Funnel"
-sidebarTitle: "Sticky CTA Banner"
-description: "Control the sticky call-to-action banner that stays visible as customers scroll through your Jurni funnel. Learn how to enable and customize it."
+title: "Sticky CTAs"
+sidebarTitle: "Sticky CTAs"
+description: "Add sticky calls to action to Jurni pages, understand the current Section Library model versus legacy global sticky banners, and QA behavior across desktop, mobile, and Shopify Pages."
 ---
 
-The sticky CTA banner keeps your primary action visible while customers explore your Jurni funnel. This page covers how to manage the banner, including enabling it, editing its text, and adjusting its appearance to match your design.
+A sticky CTA keeps an important action visible while a shopper moves through a page. Jurni currently has **two sticky CTA models**, and the setup depends on when the experience was created.
+
+## New experiences: add a Sticky CTA from the Section Library
+
+For new experiences, add the Sticky CTA as a normal section from the **Section Library**. This is the current model and should be used for new builds.
+
+Because it is a section, you can manage it with the same editor workflow used for other page sections: add it, edit its content and action, preview it, and save the experience.
 
 <Info>
-  This article is in draft. Content will be added soon.
+  Older help-center instructions that tell you to create a new sticky banner from **Experience Settings → Global Sticky Banner** describe the legacy model. New sticky CTAs are added from the Section Library instead.
 </Info>
+
+## Existing experiences with the legacy Sticky Banner
+
+Experiences that already use the legacy global sticky banner can still edit it from the experience settings. Jurni keeps the legacy settings visible when the experience already has a saved sticky CTA configuration.
+
+From the legacy settings you can:
+
+- enable or disable the existing sticky banner
+- open the sticky-banner editor
+- edit the saved sticky CTA configuration
+
+The legacy configuration is stored separately for the experience and can include separate mobile/desktop enablement.
+
+## CTA actions
+
+A sticky CTA should lead to the shopper's next intended action. Common examples include:
+
+- scroll to a Buy Box or another section
+- add a product to cart
+- open cart
+- continue to checkout
+- open another page or external URL
+
+If a scroll action does not land on the expected section, verify that the action points to the correct section target in the current page.
+
+## Preview before publishing
+
+Always check sticky behavior in both desktop and mobile preview before publishing. Pay particular attention to:
+
+- whether the CTA covers important page content
+- whether it remains visible at the right point in the page
+- whether its action works after the page is published
+- whether the mobile layout needs different spacing or text
+
+## Shopify Pages
+
+Shopify Pages use a different rendering target from Jurni-hosted pages. Do not assume an older legacy sticky-banner configuration will publish to Shopify Pages exactly the same way. Use current, publishable sections for Shopify Pages and test the live Shopify URL before sending traffic.
+
+## Related guides
+
+- Managing Sections
+- Experience Editor
+- Buy Boxes
+- Shopify Pages: When to Use & Limitations
+- QA Checklist

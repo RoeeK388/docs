@@ -4,8 +4,55 @@ sidebarTitle: "Sales Channel"
 description: "Understand why Shopify orders from Jurni experiences show Jurni as the sales channel. Learn how sales channel attribution works and what it means for reporting."
 ---
 
-When customers complete purchases through Jurni experiences, Shopify may list Jurni as the sales channel on those orders. This page explains why that happens and how sales channel attribution works in your Shopify store.
+Shopify's **Sales channel** field describes the Shopify surface that created or owned the commerce flow. It is not the same thing as Jurni's order-attribution logic.
+
+## Why an order can show Jurni / Headless
+
+Jurni-hosted commerce uses Shopify Storefront APIs to build the cart and send the shopper into Shopify checkout. Because that commerce flow is created through a headless/storefront integration rather than a normal Online Store product page, Shopify can report the order under a Jurni/Headless sales channel.
+
+This is expected for Jurni-hosted pages served through the Shopify app proxy or a Jurni custom subdomain when the cart originates from the Jurni storefront flow.
+
+## Why Shopify Pages can look different
+
+A page published through **Shopify Pages** is served natively inside the merchant's Shopify Online Store theme. The page URL uses `/pages/<handle>`, and native Shopify storefront behavior is used for commerce actions supported by the Shopify Pages renderer.
+
+As a result, orders from that flow can be represented by Shopify differently from orders whose cart was created by the Jurni-hosted Storefront API flow.
+
+## Sales channel is not Jurni attribution
+
+Do not use Shopify's Sales channel field to determine which Jurni page or experiment should receive credit for an order.
+
+Jurni's current Shopify attribution uses Jurni-specific evidence such as:
+
+- the Jurni visit/session attached to the shopper journey
+- Jurni data carried on the Shopify cart/order
+- shop-scoped cart-token and checkout-token joins
+- experiment variant context when the visit came through an experiment
+
+Jurni applies a last-Jurni-touch model within the current attribution window. A Shopify sales-channel label is not one of the signals that decides the attributed Jurni visit.
+
+## The `Jurni-Funnel-Order` Shopify tag
+
+You may also see a `Jurni-Funnel-Order` tag on an attributed Shopify order. Jurni currently attempts to add this tag as a post-order side effect for orders it creates in its attribution records.
 
 <Info>
-  This article is in draft. Content will be added soon.
+  The tag can be useful operationally for filtering orders in Shopify, but it is not the primary source of truth Jurni uses to decide attribution.
 </Info>
+
+## When numbers do not match
+
+If Shopify sales-channel totals do not match Jurni analytics, compare like-for-like data before treating it as a tracking failure:
+
+1. Use the same date range and timezone.
+2. Compare orders that actually touched a Jurni page or experiment.
+3. Check whether the page was Jurni-hosted or published as a Shopify Page.
+4. Review the Jurni attribution record rather than grouping only by Shopify Sales channel.
+5. Check for orders outside the attribution window or journeys where browser privacy prevented Jurni identity/cart evidence from persisting.
+
+## Related guides
+
+- Attribution Overview
+- Publishing Overview
+- Shopify App Proxy URLs
+- Shopify Pages: When to Use & Limitations
+- Analytics Differences

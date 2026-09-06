@@ -1,116 +1,116 @@
 ---
-title: "Test Jurni Funnels Against Your Existing Website Pages"
+title: "Test a Jurni Page Against an Existing Website Page"
 sidebarTitle: "Vs. Existing Pages"
-description: "Run A/B experiments that compare Jurni agentic shopping journeys against your current Shopify PDP or any external URL. Learn setup, attribution, and how to read valid results."
+description: "Compare a Jurni page with an existing Shopify or external page in one experiment, understand how experiment parameters are passed through, and validate downstream attribution before launch."
 ---
 
-Jurni lets you run experiments that pit an agentic shopping journey against your existing Shopify product page, a page on your own site, or any URL you control. This page covers why you should include your current page as a control, how to configure the experiment step by step, how traffic routing and attribution work for external destinations, and how to know when your results are valid.
+Jurni experiments can compare a Jurni page against an existing Shopify page or another supported external URL. This is useful when your current PDP or landing page should remain the control while a new Jurni experience is the challenger.
 
-## Why include your existing page as a control
+## When to use an existing page as the control
 
-Sending traffic to your existing page alongside your Jurni variants establishes a baseline. Without one, you learn which Jurni variant wins, but not whether either beats your status quo. A three-way experiment, for example one control plus two Jurni variants, answers both questions in a single test.
+Use an existing page when you want the experiment to answer a real business question such as:
 
-## How to set up the experiment
+- Does the new Jurni page outperform the current PDP?
+- Does an advertorial or pre-lander improve performance compared with sending traffic directly to product detail?
+- Which of several page concepts performs best against today's baseline?
+
+Keeping the existing page in the same experiment lets Jurni make the traffic assignment from one Smart Link rather than relying on separate campaign URLs to create the split.
+
+## Set up the experiment
 
 <Steps>
-  <Step title="Create the experiment">
-    Go to **Experiments** and select **Create Experiment**.
+  <Step title="Create or choose the Smart Link">
+    The Smart Link is the campaign-facing URL that will assign visitors to the experiment variants.
   </Step>
-  <Step title="Name it and pick a SmartLink">
-    Name the experiment and select the SmartLink that will route traffic into the test.
+  <Step title="Add the existing page">
+    Add your current Shopify page or other public URL as one variant.
   </Step>
-  <Step title="Add your control variant">
-    Select **Add Variant**, choose **External URL**, and paste the URL of your existing page or PDP.
+  <Step title="Add the Jurni page">
+    Add the Jurni experience you want to compare against the control.
   </Step>
-  <Step title="Add your Jurni journey variants">
-    Add your Jurni journey, or journeys, as additional variants.
+  <Step title="Set the traffic weights">
+    Configure the percentage of eligible new assignments that should go to each variant. The weights must total 100%.
   </Step>
-  <Step title="Set traffic allocation">
-    Set traffic allocation across all variants. Equal splits, such as 33/33/33 for three variants, give the cleanest comparison.
+  <Step title="Add Routing Rules only when intentional">
+    If a URL parameter should force a specific audience into a variant, configure a Routing Rule. Otherwise, visitors use the normal weighted assignment.
   </Step>
-  <Step title="Start the test">
-    Select **Save and Start Test**.
+  <Step title="Start and QA the experiment">
+    Open the Smart Link in a clean browser and verify both the redirect behavior and downstream tracking before sending paid traffic.
   </Step>
 </Steps>
 
-<Tip>
-  Use your Shopify product page as the control and a Jurni journey as the challenger. This gives you a direct comparison against your current baseline.
-</Tip>
+## What Jurni adds to the destination URL
 
-## Running three-way experiments
+When the experiment redirects a visitor, Jurni preserves incoming campaign parameters other than Shopify-internal proxy parameters and appends:
 
-A three-way experiment, one control plus two Jurni variants, is a common setup. It lets you measure the baseline lift from Jurni and compare two Jurni approaches, for example a long-form journey against a pre-lander, in a single test. The trade-off is that you need more traffic to reach significance across three buckets, so plan for at least 300 sessions per variant.
+- `jurni_ab_test_id`
+- `jurni_ab_variant_id`
 
-## How traffic routing works
+These parameters carry the experiment and variant context into the destination page.
 
-Jurni's SmartLink splits incoming traffic across your variants according to the allocation you set. Visitors assigned to an external URL variant are sent directly to your existing page. Jurni's pixel, installed via the Core Script on your Shopify store, tracks conversions from both paths.
+## Shopify control pages with Jurni Core
 
-When Jurni routes traffic to an external URL, it automatically appends experiment and variant UTM parameters, so your existing analytics tools receive the referral data. For the most accurate comparison, keep your existing page's own UTM tagging consistent with Jurni's. The exact parameter names appear in the experiment setup screen when you configure the external URL variant.
+If the control is a Shopify page on a store where **Jurni Core is active**, Jurni Core reads the experiment parameters on the destination and can continue the Jurni session/visit and cart attribution flow.
 
-## How attribution works for external destinations
+That is materially different from sending traffic to a completely unrelated website with no Jurni tracking installed.
 
-Jurni tracks sessions and clicks through the SmartLink for every variant, including external ones. Revenue is different:
+For a Shopify control page, validate:
 
-- Sessions and clicks are tracked by Jurni at the SmartLink level.
-- Revenue attribution relies on your own tracking setup. Jurni cannot read conversion or revenue data from external pages directly.
-- Revenue for an external variant shows as 0 in Jurni's dashboard unless you have configured passthrough attribution.
+1. Jurni Core is active on the Shopify storefront.
+2. The redirected URL contains the Jurni experiment/variant parameters.
+3. Add-to-cart and checkout behavior preserves the Jurni cart/session evidence.
+4. A test order is attributed to the expected experiment variant in Jurni.
 
-<Warning>
-  Without passthrough attribution, a revenue comparison between a Jurni journey and an external URL may not be apples to apples. Cross-reference Jurni's session data with your Shopify reports, GA4, or your Meta Pixel to compare revenue across variants.
-</Warning>
+<Info>
+  Jurni's current Shopify attribution uses Jurni visit and cart/checkout evidence. The Shopify **sales channel** is not the attribution rule used to decide which experiment variant owns an order.
+</Info>
 
-## Getting clean revenue data for external variants
+## External pages without Jurni Core
 
-<Steps>
-  <Step title="Segment by UTM in GA4 or Shopify">
-    Use the UTM parameters Jurni appends to segment sessions in GA4 or Shopify.
-  </Step>
-  <Step title="Filter orders in Shopify Analytics">
-    In Shopify Analytics, filter orders by the UTM source or campaign that matches the experiment variant.
-  </Step>
-  <Step title="Compare the numbers">
-    Compare that revenue to what Jurni reports for the Jurni journey variant.
-  </Step>
-</Steps>
+A public URL can still be used as an experiment destination, but downstream visibility depends on the tracking available on that destination.
 
-If you are running Meta ads, make sure your Meta Pixel fires on the external page's order confirmation page so Meta can attribute those purchases.
+If the page does not load Jurni Core or another agreed Jurni tracking implementation, Jurni can make the Smart Link assignment and redirect the visitor, but it cannot automatically observe every interaction or commerce event that happens later on an unrelated site.
 
-## Campaign setup for clean isolation
+For those destinations, decide before launch how conversion data will be compared—for example through the site's own analytics stack or a custom Jurni integration.
 
-In a CBO (Campaign Budget Optimization) campaign on Meta, the algorithm shifts budget toward ad sets showing early purchase signals, not toward page performance. This can distort your results. For cleaner isolation:
+## Keep the experiment variable clean
 
-- Use ABO (Ad Set Budget Optimization) with a fixed budget per ad set.
-- Point each ad set to its corresponding SmartLink variant.
-- Keep creative identical across ad sets, so the only variable is the destination.
+When the purpose is to compare landing-page performance, avoid changing unrelated variables at the same time.
 
-## Knowing when results are valid
+Keep these consistent where possible:
 
-Aim for at least 300 sessions per variant before drawing directional conclusions, and wait for 500+ sessions per variant at 95%+ confidence in the Experiments dashboard before calling a winner. Lower traffic can be directionally useful, but do not optimize against it.
+- ad creative
+- offer and product pricing
+- audience targeting
+- campaign parameters
+- checkout availability
+- measurement setup
 
-## Frequently asked questions
+The Smart Link should be the common entry point so Jurni, not the ad platform, determines the landing-page variant.
 
-<AccordionGroup>
-  <Accordion title="Will my existing page affect Jurni's experiment data?">
-    No. Each variant's session and conversion data is tracked independently, so the external variant's data does not contaminate the Jurni variants.
-  </Accordion>
+## Validate tracking before launch
 
-  <Accordion title="Will Jurni show revenue for the external URL variant?">
-    Jurni shows click-throughs and sessions for the external variant, but cannot pull revenue from external pages directly. That revenue shows as 0 unless you have configured passthrough attribution, so cross-reference with Shopify or your analytics platform.
-  </Accordion>
+Run test sessions through **each** variant and verify:
 
-  <Accordion title="Can I test Jurni against multiple external pages at once?">
-    Yes. You can add multiple external URL variants to the same experiment.
-  </Accordion>
+- the final URL and redirect are correct
+- `jurni_ab_test_id` and `jurni_ab_variant_id` are present after assignment
+- the correct variant is shown in Jurni
+- the expected conversion events are recorded
+- a Shopify test order, when applicable, is attributed to the expected experiment
+- GA4, Meta, or other external tools fire once rather than through duplicate installations
 
-  <Accordion title="Can I use any external URL, not just Shopify?">
-    Yes. Any publicly accessible URL works, including custom domain pages and other platforms.
-  </Accordion>
+## Do not use old fixed significance thresholds
 
-  <Accordion title="What if my existing page doesn't have UTM tracking?">
-    Add UTM parameters to the external variant URL when you set it up in the experiment. This ensures Shopify attributes those sessions correctly.
-  </Accordion>
-</AccordionGroup>
+Older help-center material recommended fixed session counts and confidence thresholds for declaring a winner. Jurni's statistical-significance feature is not currently a shipped decision layer, so those thresholds should not be treated as product behavior.
 
-## Need a hand?
+Use the current experiment metrics and enough business-relevant volume to make a responsible decision; do not infer a Jurni “winner” state that the product does not currently calculate.
 
-Reach out to our team at [info@getjurni.ai](mailto:info@getjurni.ai) or on Slack and we'll help you set up your first control experiment.
+## Related guides
+
+- Create an Experiment
+- Traffic Assignment
+- Routing Rules
+- Attribution Overview
+- Activating Jurni Core
+- URL Parameters
+- Analytics Differences

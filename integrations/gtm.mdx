@@ -18,6 +18,10 @@ A Jurni experience can be served from a Jurni/custom subdomain or published insi
 
 ## Connect GTM to Jurni
 
+<Info>
+  Connecting the GTM container and forwarding Jurni browser events are separate steps. Adding the container ID loads GTM, but it does not automatically push every Jurni interaction into `dataLayer`.
+</Info>
+
 <Steps>
   <Step title="Find your GTM container ID">
     In Google Tag Manager, copy the container ID for the container you want to use.
@@ -33,17 +37,30 @@ A Jurni experience can be served from a Jurni/custom subdomain or published insi
   </Step>
 </Steps>
 
-## Core Jurni events
+## Jurni browser events
 
-Jurni's core event model includes events such as:
+Jurni's current storefront event model exposes browser events that can be bridged into GTM, including:
 
-- PageView
-- Click
-- AddToCart
-- Checkout
-- Order
+- `jurni:page-view`
+- `jurni:button-clicked`
+- `jurni:add-to-cart`
+- `jurni:add-to-cart-complete`
+- `jurni:open-cart`
+- `jurni:open-product-page`
+- `jurni:goto-external-url`
+- `jurni:scroll-to-section`
+- `jurni:go-to-checkout`
+- `jurni:play-video`
+- `jurni:video-watched`
+- `jurni:session-engaged`
 
-Use the Jurni Event Dictionary for the product-level meaning of each event. Your GTM container can then map those events into the vendor-specific tags you need.
+If your GTM implementation needs these interactions, use a Jurni Event Bridge or custom mapping through **Settings → Custom Scripts** to forward the selected browser events into `dataLayer`.
+
+<Tip>
+  For add-to-cart conversion tags, prefer `jurni:add-to-cart-complete` when you need confirmation that the cart action completed successfully rather than only recording the initial add-to-cart attempt.
+</Tip>
+
+Use the Event Dictionary for the product-level meaning of Jurni's reporting events and the payload fields available to downstream tracking.
 
 ## CTA tracking
 
