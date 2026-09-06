@@ -1,0 +1,84 @@
+---
+title: "Subscriptions and Selling Plans"
+sidebarTitle: "Subscriptions & Selling Plans"
+description: "Configure one-time and subscription purchase options in Jurni using the selling plans available from your connected Shopify product."
+keywords:
+  - "Shopify selling plans"
+  - "subscriptions"
+  - "Recharge"
+  - "Skio"
+  - "Jurni subscription"
+---
+
+Jurni can present subscription purchase options when the selected Shopify product exposes compatible selling plans. This lets shoppers choose between a one-time purchase and subscription directly inside supported Buy Boxes and purchase-option sections.
+
+## How subscriptions work
+
+The subscription configuration is defined by the selling plan available for the Shopify product. Jurni uses that selling plan when adding the selected product to cart so Shopify and the subscription provider can continue the subscription flow.
+
+A typical setup includes:
+
+- A one-time purchase option
+- One or more subscription selling plans
+- Subscription pricing or discount messaging
+- Delivery frequency, when provided by the selling plan
+
+<Info>
+Jurni does not create the underlying subscription contract or selling plan. Configure the selling plan in Shopify or your subscription platform first, then expose it through the Jurni purchase section.
+</Info>
+
+## Add a subscription option
+
+<Steps>
+  <Step title="Confirm the selling plan exists">
+    Verify the product has the expected subscription or selling plan in Shopify.
+  </Step>
+  <Step title="Open the Buy Box">
+    In Jurni, select the Buy Box or purchase-option section connected to that product.
+  </Step>
+  <Step title="Enable the purchase options you want">
+    Configure the section to show the relevant one-time and subscription choices.
+  </Step>
+  <Step title="Set the default selection">
+    If the section supports a default purchase option, choose the option that should be preselected for shoppers.
+  </Step>
+  <Step title="Test the cart">
+    Add each purchase option to cart and confirm the correct selling plan is attached.
+  </Step>
+</Steps>
+
+## Subscription providers
+
+Jurni works with Shopify selling-plan data rather than recreating subscription logic inside the page. The exact behavior can vary by subscription provider and store setup, so test the full flow whenever you use providers such as Recharge, Skio, or another Shopify subscription app.
+
+## If a selling plan is missing
+
+Check the following:
+
+- The selling plan is active for the product in Shopify.
+- The product and variant used in Jurni are included in the selling plan.
+- The subscription app has fully synced the plan to Shopify.
+- The product data exposed to Jurni includes the plan.
+
+If the plan was recently changed, reopen the experience and verify the product configuration again.
+
+## QA checklist
+
+For every subscription offer, test:
+
+1. One-time purchase.
+2. Each subscription frequency you intend to offer.
+3. The product, variant, and selling plan shown in cart.
+4. The price and discount shown to the shopper.
+5. The transition from cart to checkout.
+
+<Warning>
+Do not rely only on the label shown in the page UI. Confirm the selling plan that reaches the cart and checkout.
+</Warning>
+
+## Related guides
+
+- Buy Box overview
+- Products and variants
+- Building bundles
+- Cart and checkout behavior

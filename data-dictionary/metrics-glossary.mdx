@@ -4,8 +4,77 @@ sidebarTitle: "Metrics Glossary"
 description: "Browse the Jurni metrics glossary for clear definitions of key terms. Understand how each metric is calculated and when to use it in your analysis."
 ---
 
-Jurni uses specific metrics to measure funnel and experiment performance. This glossary defines each metric, explains how it is calculated, and helps you choose the right ones for your analysis.
+Jurni uses a consistent set of commerce and traffic metrics across experience analytics and experiments. Use this glossary as the reference for what each metric is intended to represent.
 
-<Info>
-  This article is in draft. Content will be added soon.
-</Info>
+## Core performance metrics
+
+| Metric | Definition | Calculation |
+| --- | --- | --- |
+| **Sessions** | Counted visits used as the traffic denominator in Jurni reporting. | Count of attributed sessions in the selected range |
+| **Page Views** | Views of Jurni pages or supported experience steps. | Count of PageView events |
+| **Purchases / Orders** | Completed orders attributed to Jurni traffic. | Count of attributed Order events |
+| **Revenue** | Revenue attributed to the selected Jurni traffic. | Sum of attributed order revenue |
+| **CVR** | Percentage of sessions that result in a purchase. | Orders ÷ Sessions × 100 |
+| **AOV** | Average revenue per completed order. | Revenue ÷ Orders |
+| **RPS** | Revenue generated per session. | Revenue ÷ Sessions |
+| **Add-to-Cart Rate** | Percentage of sessions that generate an add-to-cart. | Sessions with AddToCart ÷ Sessions × 100 |
+| **Checkout Rate** | Percentage of sessions that reach checkout. | Sessions with Checkout ÷ Sessions × 100 |
+
+## Sessions
+
+Sessions are the main traffic denominator used for metrics such as CVR, RPS, add-to-cart rate, and checkout rate. Do not compare a Jurni session count directly with another platform until you confirm that platform uses the same session definition and attribution rules.
+
+## Conversion Rate (CVR)
+
+CVR answers: **What percentage of traffic purchased?**
+
+For example, if an experience receives 1,000 sessions and 50 attributed orders, the CVR is 5%.
+
+CVR is useful for understanding purchase efficiency, but it does not account for how much each order is worth.
+
+## Average Order Value (AOV)
+
+AOV answers: **How much revenue does the average order generate?**
+
+A variant can increase AOV while reducing CVR, or increase CVR while reducing AOV. This is why AOV should not be interpreted in isolation when comparing offers.
+
+## Revenue Per Session (RPS)
+
+RPS combines traffic and revenue into one metric:
+
+`Revenue ÷ Sessions`
+
+It is especially useful when two variants trade off conversion rate and average order value. A variant with a slightly lower CVR can still generate more revenue per session if its orders are significantly larger.
+
+## Add-to-Cart Rate
+
+Add-to-cart rate is an intent metric. It can help identify whether the product presentation or offer is convincing shoppers to begin the purchase process.
+
+A high add-to-cart rate with a low purchase rate can point to friction later in the journey, such as cart, discount, shipping, subscription, or checkout issues.
+
+## Checkout Rate
+
+Checkout rate helps measure the transition from shopping intent into the checkout process. When add-to-cart is healthy but checkout rate falls, inspect the cart experience and any custom cart logic.
+
+## Revenue
+
+Revenue should always be interpreted with the selected date range, attribution scope, and traffic filter. Jurni revenue can differ from Shopify, Meta, GA4, or another analytics platform when those systems use different attribution windows or definitions.
+
+## Experiment metrics
+
+Experiments compare the same core metrics by variant. When evaluating a test, avoid choosing a winner based on one metric without considering the primary business goal of the experiment.
+
+For example:
+
+- Use **CVR** when the test is primarily about purchase completion.
+- Use **AOV** when the test is designed to increase basket size.
+- Use **RPS** when the goal is to maximize revenue generated from the traffic entering the test.
+
+## Related guides
+
+- Analytics overview
+- Experience analytics
+- Funnel step performance
+- Reading experiment results
+- Attribution overview
+- Event dictionary

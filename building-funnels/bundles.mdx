@@ -1,0 +1,80 @@
+---
+title: "Build Product Bundles in Jurni"
+sidebarTitle: "Bundles"
+description: "Create shoppable bundle experiences in Jurni, configure product selections and quantities, and understand how bundle pricing and discounts reach Shopify."
+keywords:
+  - "Jurni bundles"
+  - "build a bundle"
+  - "Shopify bundle"
+  - "BYOB"
+---
+
+Jurni bundle sections let shoppers purchase multiple products or quantities from a single shopping experience. Use bundles for multi-pack offers, build-your-own-bundle experiences, tiered offers, gifting pages, and other offers where the shopper selects more than one item before adding to cart.
+
+## Common bundle types
+
+Jurni experiences can be designed around several bundle patterns:
+
+- **Fixed bundle:** a predefined set of products or variants
+- **Quantity bundle:** the shopper chooses a quantity or pack size
+- **Build your own bundle:** the shopper chooses products from an allowed set
+- **Tiered bundle:** the offer changes based on the number of items selected
+
+The exact controls available depend on the bundle section you use and the commerce configuration behind the products.
+
+## Build a bundle
+
+<Steps>
+  <Step title="Add a bundle section">
+    Open the section library and add the bundle or multi-product purchase section that matches the experience you want.
+  </Step>
+  <Step title="Choose the products">
+    Select the products or variants that shoppers should be able to add to the bundle.
+  </Step>
+  <Step title="Configure selection rules">
+    Set the supported quantities, minimums, maximums, tiers, or required selections available in that section.
+  </Step>
+  <Step title="Configure the offer">
+    Add the pricing and savings messaging that matches the promotion configured in Shopify.
+  </Step>
+  <Step title="Test the cart payload">
+    Add several valid bundle combinations to cart and confirm every expected line item, quantity, and selling plan is present.
+  </Step>
+</Steps>
+
+## Discounts and bundle pricing
+
+The Jurni page controls the shopper-facing bundle experience, but the discount must also be enforceable in the commerce flow. Depending on your setup, bundle savings may be handled by:
+
+- Product pricing in Shopify
+- An automatic Shopify discount
+- A discount code
+- A Shopify Function or third-party discount app
+- A dedicated bundle product or bundle configuration
+
+<Warning>
+Do not rely on visual savings messaging alone. If the page says a shopper receives a bundle discount, make sure Shopify applies the same offer in cart or checkout.
+</Warning>
+
+## Build-your-own-bundle QA
+
+For build-your-own-bundle experiences, verify:
+
+1. Only eligible products can be selected.
+2. Minimum and maximum selection rules behave as expected.
+3. The shopper cannot submit an invalid bundle state.
+4. Quantities in cart match the shopper's selection.
+5. The discount applies to every supported combination.
+6. Mobile selection controls remain easy to use.
+
+## Subscriptions in bundles
+
+If bundle items use subscription selling plans, test those combinations separately. Selling-plan behavior can vary by product and subscription provider, so confirm the exact selling plan attached to each cart line.
+
+## Related guides
+
+- Buy Box overview
+- Products and variants
+- Subscriptions and selling plans
+- Gift with purchase
+- Cart and checkout behavior

@@ -4,8 +4,79 @@ sidebarTitle: "Experience Analytics"
 description: "Explore Jurni experience analytics to measure how visitors interact with your experiences. Understand engagement, conversion, and behavior patterns."
 ---
 
-Jurni experience analytics give you visibility into how visitors interact with the experiences you build. This page explains how to access and interpret experience-level metrics so you can optimize engagement and conversion.
+Experience Analytics shows how a specific Jurni experience performs across traffic, engagement, commerce steps, and revenue. Use it to understand the performance of the page itself before comparing it against other variants in an experiment.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/9093086953-experience-analytics) for full content.
-</Note>
+## What to look at first
+
+Start with four questions:
+
+1. **How much traffic reached the experience?** Review sessions.
+2. **Are shoppers showing purchase intent?** Review add-to-cart and checkout rates.
+3. **Are they converting?** Review purchases and CVR.
+4. **How valuable is the traffic?** Review revenue, AOV, and revenue per session.
+
+## Core metrics
+
+| Metric | What it tells you |
+| --- | --- |
+| Sessions | How much attributed traffic reached the experience |
+| Add-to-Cart Rate | Whether visitors are beginning the purchase process |
+| Checkout Rate | Whether shoppers are progressing from cart toward checkout |
+| CVR | How efficiently sessions turn into purchases |
+| Revenue | Total attributed revenue in the selected scope |
+| AOV | Average value of each completed order |
+| RPS | Revenue generated per session |
+
+## Diagnose performance using the funnel
+
+Do not treat every CVR change as a landing-page problem. Use the step metrics to identify where the change is happening.
+
+### Low add-to-cart rate
+
+Investigate:
+
+- Message-to-ad alignment
+- Product selection
+- Offer clarity
+- Buy Box usability
+- Mobile layout
+- Pricing and savings communication
+
+### Healthy add-to-cart, low checkout
+
+Investigate:
+
+- Cart configuration
+- Unexpected cart contents
+- Discounts not applying
+- Subscription or selling-plan issues
+- Cart app conflicts
+
+### Healthy checkout, low purchase
+
+Investigate the Shopify checkout and payment flow, shipping expectations, taxes, discount behavior, or other checkout-specific friction.
+
+## Compare time periods carefully
+
+When comparing two time ranges, consider changes outside the page itself:
+
+- Traffic source or campaign mix
+- Promotion or pricing
+- Inventory
+- Paid-media targeting
+- Day-of-week mix
+- Seasonality
+
+A page can be unchanged while its performance changes because the incoming traffic changed.
+
+## Use experiments for controlled comparisons
+
+If you want to know whether a page change **caused** a performance difference, use an experiment rather than comparing two unrelated time periods. An A/B test controls the traffic distribution so the variants can be evaluated under more comparable conditions.
+
+## Related guides
+
+- Analytics overview
+- Funnel step performance
+- Filtering data
+- Metrics glossary
+- Create and run an A/B test

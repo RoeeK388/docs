@@ -1,0 +1,72 @@
+---
+title: "Cart and Checkout Behavior"
+sidebarTitle: "Cart & Checkout Behavior"
+description: "Understand how Jurni adds products to cart, hands shoppers into Shopify cart or checkout, and which parts of the flow are controlled by your store."
+keywords:
+  - "Jurni cart"
+  - "Shopify checkout"
+  - "add to cart"
+  - "cart behavior"
+---
+
+Jurni commerce sections can add Shopify products, variants, quantities, and supported selling plans to the shopper's cart. After that action, the shopper continues through the cart and checkout experience configured for the store and page type.
+
+## What Jurni controls
+
+Depending on the section and publishing setup, Jurni can control:
+
+- Which product and variant are added
+- Quantity
+- Selling plan or subscription selection
+- Bundle composition
+- Gift products configured in the experience
+- The CTA that opens cart or moves the shopper toward checkout
+
+## What Shopify controls
+
+Shopify and your commerce apps remain responsible for the underlying commerce rules, including:
+
+- Inventory validation
+- Final cart line items
+- Taxes and shipping
+- Discount enforcement
+- Checkout
+- Order creation
+- Subscription contract behavior
+
+<Info>
+A Jurni page can present the offer, but the cart and checkout are the final source of truth for what the shopper is purchasing and what they will be charged.
+</Info>
+
+## Slide-out carts and Shopify Pages
+
+When a Jurni experience is published as a Shopify Page, it may need additional cart configuration so the Jurni add-to-cart action works correctly with the store's theme or cart app. See the Cart Config guide for provider-specific setup.
+
+## Direct checkout flows
+
+Some experiences are designed to move the shopper directly toward checkout rather than keeping them on the page after add to cart. Test the exact configured path, especially if the store uses custom checkout, subscription, or cart logic.
+
+## Test the complete purchase path
+
+For each important offer, test:
+
+1. The default product selection.
+2. Every important variant.
+3. One-time and subscription options.
+4. Bundle or quantity selections.
+5. Gift-with-purchase behavior.
+6. Cart contents and discounts.
+7. The transition to checkout.
+8. The final order confirmation flow.
+
+## Returning to the page
+
+Browser history and cart persistence can vary depending on the store and checkout flow. If your campaign depends on a specific back-button or cart-reset behavior, test it explicitly rather than assuming the cart will be cleared when the shopper returns.
+
+## Related guides
+
+- Cart configurations for Shopify Pages
+- Buy Box overview
+- Subscriptions and selling plans
+- Gift with purchase
+- Discounts and promotions

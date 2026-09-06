@@ -1,0 +1,44 @@
+---
+title: "Using Multiple Domains With Shopify Pages"
+sidebarTitle: "Multiple Domains"
+description: "Understand the current domain model for Jurni Shopify Pages and what to do when one Shopify instance uses more than one root domain."
+keywords:
+  - "multiple Shopify domains"
+  - "Jurni root domain"
+  - "Shopify Pages domain"
+---
+
+Jurni Shopify Pages are published into the connected Shopify store and follow the domain structure of that Shopify instance. This is different from Jurni-hosted experiences, where you can use a dedicated custom subdomain connected to Jurni.
+
+## Current limitation
+
+A single Jurni Shopify Pages setup does not support publishing pages across multiple independent **root domains** inside the same Shopify instance as separate Jurni publishing destinations.
+
+For example:
+
+- `brand.com` and `go.brand.com` are part of the same root domain family.
+- `brand.com` and `anotherbrand.com` are separate root domains.
+
+<Warning>
+If your Shopify store serves multiple root domains, do not assume a Jurni Shopify Page configured for one root domain can automatically be published and managed on the other domain.
+</Warning>
+
+## What you can do instead
+
+Depending on the use case, consider:
+
+1. **Use a Jurni custom subdomain** for the additional campaign domain.
+2. **Keep the Shopify Page on the primary Shopify domain** and route campaign traffic there.
+3. **Use Smart Links** when the main requirement is a stable campaign URL with flexible routing.
+4. Contact your Jurni team when the store has a non-standard multi-domain architecture so the implementation can be reviewed before launch.
+
+## Subdomains are different
+
+Using a campaign subdomain such as `go.brand.com` or `try.brand.com` is a different setup from adding a second root domain. Custom subdomains can be connected to Jurni and used to host campaign experiences independently of Shopify Pages.
+
+## Related guides
+
+- Custom subdomain setup
+- Shopify Pages: setup and publish
+- Shopify page templates
+- Smart Links

@@ -1,0 +1,62 @@
+---
+title: "How Experiment Traffic Is Assigned"
+sidebarTitle: "Traffic Assignment"
+description: "Understand how Jurni assigns visitors to experiment variants, applies traffic weights, and keeps experiment results consistent over time."
+keywords:
+  - "Jurni experiment traffic"
+  - "traffic split"
+  - "variant assignment"
+  - "A/B testing"
+---
+
+When traffic enters a Jurni experiment, Jurni routes the visitor to one of the configured destinations according to the experiment's traffic allocation. The goal is to keep the test stable enough that differences in results reflect the variants rather than inconsistent routing.
+
+## Traffic allocation
+
+Each experiment has a traffic distribution across its variants. A simple two-variant test may use a 50/50 split, while other tests can use different weights when the experiment setup requires it.
+
+The configured percentages describe the expected allocation over meaningful traffic volume. They do not guarantee that every small group of visitors will be split perfectly.
+
+<Info>
+A 50/50 experiment can temporarily look like 47/53 or 52/48 at low traffic. Random variation is normal. Evaluate the split over a larger number of sessions before treating a small imbalance as a routing problem.
+</Info>
+
+## Visitor consistency
+
+Jurni is designed to avoid unnecessarily switching the same visitor between variants during the same experiment. This protects the shopper experience and keeps the experiment easier to interpret.
+
+If you are manually testing different variants, use the experiment's preview or testing workflow rather than repeatedly refreshing the production Smart Link and expecting a new variant on every load.
+
+## Changing traffic allocation
+
+If you change the allocation after the experiment has already collected traffic:
+
+- Existing results remain attributed to the variant that received the traffic.
+- The new allocation affects traffic going forward.
+- Historical results are not rewritten to simulate the new split.
+
+<Warning>
+Large allocation changes in the middle of a test can make the overall experiment harder to interpret. Record why the change was made and consider whether the test should be analyzed in separate time periods.
+</Warning>
+
+## External URL variants
+
+Experiments can include supported external destinations, such as an existing Shopify page, when you want to compare a Jurni experience against the current website. Make sure tracking is configured so the external destination can report the events required for your decision metric.
+
+## Troubleshooting an uneven split
+
+Before escalating an apparent traffic-split issue, check:
+
+1. Total session volume for the experiment.
+2. The configured traffic weights.
+3. Whether visitors are repeatedly testing from the same browser.
+4. Whether all variants are published and reachable.
+5. Whether campaign traffic is actually entering through the intended Smart Link.
+
+## Related guides
+
+- What are experiments?
+- Create and run an A/B test
+- Troubleshoot experiment traffic splitting
+- Test Jurni against an existing website page
+- Reading experiment results

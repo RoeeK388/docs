@@ -4,8 +4,80 @@ sidebarTitle: "Overview"
 description: "Learn how Jurni analytics track funnel performance and experiment outcomes. This overview covers key metrics, dashboards, and how to interpret your data."
 ---
 
-Jurni provides analytics to help you understand how your funnels and experiments are performing. This page covers the fundamentals of Jurni analytics, including how to read funnel metrics and experiment results so you can make data-driven decisions.
+Jurni analytics connect traffic, shopper behavior, commerce events, and experiment assignments so you can understand how each experience performs from landing through purchase.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/5058321310-analytics-overview-funnels-experiments) for full content.
-</Note>
+## Where analytics appear
+
+Jurni reporting is organized around two main questions:
+
+<CardGroup cols={2}>
+  <Card title="How is this experience performing?" icon="chart-line">
+    Use experience analytics to review traffic, conversion, revenue, and funnel behavior for a specific Jurni experience.
+  </Card>
+
+  <Card title="Which variant performs better?" icon="flask">
+    Use experiment results to compare the same metrics across variants that received controlled traffic.
+  </Card>
+</CardGroup>
+
+## Core metrics
+
+The main metrics you will see across Jurni include:
+
+- Sessions
+- Conversion rate (CVR)
+- Revenue
+- Average order value (AOV)
+- Revenue per session (RPS)
+- Add-to-cart rate
+- Checkout rate
+- Purchases / orders
+
+For exact definitions and formulas, use the Metrics Glossary.
+
+## Read the funnel, not only the final conversion
+
+A purchase is the final outcome, but intermediate steps help explain **why** performance changed.
+
+A common funnel looks like:
+
+`Session → Product interaction → Add to Cart → Checkout → Purchase`
+
+If CVR falls, inspect the earlier steps:
+
+- Low add-to-cart rate can point to product, offer, or page-message friction.
+- Healthy add-to-cart with low checkout can point to cart friction.
+- Healthy checkout with low purchase can point to checkout, payment, shipping, or discount issues.
+
+## Filters and date ranges
+
+Use the same date range and filters when comparing performance. Changing the date range, traffic source, or experience selection can materially change the result.
+
+When comparing Jurni with another platform, also align:
+
+- Timezone
+- Attribution window
+- Session definition
+- Included traffic
+- Consent state
+
+## Experiments
+
+Experiment analytics use the same commerce outcomes but break them down by variant. A valid experiment requires more than one variant having a higher number at a point in time—traffic allocation, sample size, duration, and the decision metric all matter.
+
+## Attribution
+
+Jurni maintains attribution context across supported Jurni-to-commerce flows. Third-party tools can report different totals because they use their own cookies, identity rules, consent handling, and attribution models.
+
+<Info>
+  Use Jurni analytics as the source of truth for Jurni experience and experiment performance, then use external analytics platforms to understand their own channel-specific view of the same traffic.
+</Info>
+
+## Related guides
+
+- Experience analytics
+- Funnel step performance
+- Filtering data
+- Attribution overview
+- Metrics glossary
+- Reading experiment results

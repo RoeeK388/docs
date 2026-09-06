@@ -4,8 +4,81 @@ sidebarTitle: "Funnel Performance"
 description: "Understand how Jurni tracks funnel step performance across sessions, product pages, add to cart, checkout, and purchase. Identify drop-offs and optimize conversions."
 ---
 
-Jurni breaks down funnel performance by individual steps so you can see exactly where visitors drop off. This page covers how to read session, product detail page, add to cart, checkout, and purchase metrics to optimize your funnel.
+Funnel-step reporting helps you understand where shoppers progress and where they drop off between landing on a Jurni experience and completing a purchase.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/9197261492-funnel-step-performance-sessions-pdp-atc-checkout-purchase) for full content.
-</Note>
+## Typical commerce funnel
+
+A common Jurni commerce journey can be read as:
+
+`Session → Product interaction → Add to Cart → Checkout → Purchase`
+
+Not every experience uses every step in the same way, but the progression is useful for diagnosing where performance is changing.
+
+## Sessions
+
+Sessions represent the traffic entering the experience and act as the denominator for many rate-based metrics.
+
+If session counts are unexpectedly low, check the traffic destination, Smart Link or experiment routing, date range, and tracking setup before diagnosing the page itself.
+
+## Product interaction / PDP step
+
+Some experiences contain a dedicated product-detail step or product interaction before add to cart. Use this stage to understand whether shoppers are engaging deeply enough with the product or offer to continue.
+
+A large drop before product interaction can point to weak message match, slow engagement, or unclear page structure.
+
+## Add to Cart
+
+AddToCart is a strong purchase-intent signal. When the rate is low, inspect:
+
+- Offer clarity
+- Pricing and savings
+- Product/variant availability
+- Buy Box usability
+- CTA prominence
+- Mobile experience
+
+<Info>
+  A button click is not automatically the same thing as an AddToCart event. For commerce analysis, confirm that the product action successfully adds the intended item to cart.
+</Info>
+
+## Checkout
+
+Checkout measures shoppers who progress into the supported checkout flow.
+
+When add-to-cart is healthy but checkout rate is low, inspect:
+
+- Slide-out cart behavior
+- Cart provider configuration
+- Unexpected products or quantities
+- Subscription/selling-plan state
+- Discounts or gifts
+- Checkout CTA behavior
+
+## Purchase
+
+Purchase or Order is the completed conversion used for CVR and revenue reporting.
+
+If checkout volume is healthy but purchase completion drops, investigate checkout-specific factors such as payment methods, shipping, taxes, discount behavior, or store-level checkout changes.
+
+## Read drop-offs as rates
+
+Raw counts naturally get smaller at each stage. Use rates to decide whether the drop is unusual.
+
+For example:
+
+- **Add-to-Cart Rate** = sessions with add to cart ÷ sessions
+- **Checkout Rate** = sessions reaching checkout ÷ sessions
+- **CVR** = orders ÷ sessions
+
+## Compare variants
+
+In an experiment, compare the same funnel steps by variant. A variant can improve the top of the funnel while hurting checkout or AOV, so look at the full path before declaring the change successful.
+
+## Related guides
+
+- Experience analytics
+- Analytics overview
+- Metrics glossary
+- Cart and checkout behavior
+- Buy Box overview
+- Reading experiment results

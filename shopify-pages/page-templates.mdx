@@ -1,0 +1,86 @@
+---
+title: "Shopify Page Templates for Jurni"
+sidebarTitle: "Page Templates"
+description: "Create and manage Shopify page templates that contain the Jurni Funnel Page app block, including full-width layout and theme header/footer behavior."
+keywords:
+  - "Shopify page template"
+  - "Jurni app block"
+  - "Jurni Funnel Page"
+  - "full width"
+---
+
+Jurni experiences published through Shopify Pages are rendered inside a Shopify **page template** that contains the **Jurni Funnel Page** app block. The template controls the Shopify theme environment around the Jurni content.
+
+## Recommended setup
+
+Create a dedicated page template for Jurni instead of reusing a standard content page template. This prevents Shopify theme sections intended for regular pages from appearing above or below your Jurni experience.
+
+<Steps>
+  <Step title="Open the Shopify theme editor">
+    Go to **Online Store → Themes → Customize**.
+  </Step>
+  <Step title="Create a page template">
+    Create a new template based on the Page resource. A clear name such as `jurni-funnel` makes it easy to identify later.
+  </Step>
+  <Step title="Remove default content sections">
+    Hide or remove theme sections that should not surround the Jurni experience.
+  </Step>
+  <Step title="Add the Jurni app block">
+    Add the **Jurni Funnel Page** app section to the template.
+  </Step>
+  <Step title="Configure the width">
+    Use the section's full-width option or disable theme margin matching when your design should span the available page width.
+  </Step>
+  <Step title="Save the template">
+    Save the Shopify template, then return to Jurni and use it when publishing.
+  </Step>
+</Steps>
+
+## Full-width pages
+
+Some Shopify themes apply a maximum width or horizontal padding to page templates by default. If a Jurni page appears narrower than the design in the editor, check the settings on the **Jurni Funnel Page** section.
+
+Depending on the theme and app-block version, look for a control such as:
+
+- **Full page width**
+- **Match section margins to theme**
+- Theme-specific page/container width settings
+
+<Tip>
+If the Jurni content itself looks correct but the entire page is constrained, troubleshoot the Shopify template before changing the Jurni design.
+</Tip>
+
+## Header and footer behavior
+
+Your Shopify page template determines which theme sections surround the Jurni content. Create different templates if you need different combinations, for example:
+
+- Full theme header and footer
+- Header only
+- Footer only
+- Minimal landing-page layout
+
+The Jurni experience itself remains editable in Jurni; the Shopify template controls the theme shell around it.
+
+## Multiple templates
+
+You can create more than one Shopify page template for Jurni. Each usable template needs the **Jurni Funnel Page** app block. This is helpful when different campaigns need different theme treatment without changing the Jurni content itself.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My Jurni page is too narrow">
+    Check the Jurni app section width setting and any container-width settings applied by the Shopify theme template.
+  </Accordion>
+  <Accordion title="Extra Shopify sections appear on the page">
+    Open the template in the Shopify theme editor and remove or hide the default sections you do not want.
+  </Accordion>
+  <Accordion title="The template does not appear in Jurni">
+    Make sure the template is saved and contains the Jurni Funnel Page app section, then refresh the publishing flow in Jurni.
+  </Accordion>
+</AccordionGroup>
+
+## Related guides
+
+- Set up and publish Shopify Pages
+- Cart configurations for Shopify Pages
+- Publishing overview

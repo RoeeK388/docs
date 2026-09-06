@@ -37,7 +37,6 @@
             "pages": [
               "getting-started/create-account",
               "getting-started/setup-account",
-              "getting-started/custom-subdomain",
               "getting-started/activating-jurni-core",
               "getting-started/shopify-headless",
               "getting-started/setup-non-shopify"
@@ -48,16 +47,8 @@
             "pages": [
               "getting-started/brand-settings",
               "getting-started/setup-ai-knowledge",
-              "getting-started/inviting-team-members"
-            ]
-          },
-          {
-            "group": "Getting Started",
-            "pages": [
-              "getting-started/integration-keys",
-              "getting-started/shopify-analytics",
-              "getting-started/tracking-pixels",
-              "getting-started/funnel-building"
+              "getting-started/inviting-team-members",
+              "getting-started/tracking-pixels"
             ]
           }
         ]
@@ -67,28 +58,33 @@
         "groups": [
           {
             "group": "Create & Edit",
-            "pages": []
-          },
-          {
-            "group": "Products & Buy Boxes",
-            "pages": []
-          },
-          {
-            "group": "Reusable Content & Collaboration",
-            "pages": []
-          },
-          {
-            "group": "Experiences",
             "pages": [
+              "getting-started/funnel-building",
               "building-funnels/creating-a-funnel",
               "building-funnels/funnel-editor",
               "building-funnels/managing-sections",
-              "building-funnels/saved-sections",
               "building-funnels/sticky-cta-banner",
               "building-funnels/figma-file",
               "building-funnels/ai-chat-prompts",
               "building-funnels/qa-checklist",
-              "building-funnels/smart-links"
+              "product-updates/image-repositioning"
+            ]
+          },
+          {
+            "group": "Products & Buy Boxes",
+            "pages": [
+              "building-funnels/buy-box-overview",
+              "building-funnels/products-and-variants",
+              "building-funnels/subscriptions-selling-plans",
+              "building-funnels/bundles",
+              "building-funnels/gift-with-purchase"
+            ]
+          },
+          {
+            "group": "Reusable Content & Collaboration",
+            "pages": [
+              "building-funnels/saved-sections",
+              "product-updates/jurni-comments"
             ]
           }
         ]
@@ -98,25 +94,32 @@
         "groups": [
           {
             "group": "Publishing",
-            "pages": []
-          },
-          {
-            "group": "Shopify Pages",
-            "pages": []
-          },
-          {
-            "group": "Traffic Routing & Domains",
-            "pages": []
-          },
-          {
-            "group": "Cart & Checkout",
-            "pages": []
+            "pages": [
+              "publishing/overview",
+              "publishing/update-unpublish"
+            ]
           },
           {
             "group": "Shopify Pages",
             "pages": [
               "shopify-pages/setup-publish",
-              "shopify-pages/cart-config"
+              "shopify-pages/page-templates"
+            ]
+          },
+          {
+            "group": "Traffic Routing & Domains",
+            "pages": [
+              "building-funnels/smart-links",
+              "getting-started/custom-subdomain",
+              "publishing/shopify-multiple-domains"
+            ]
+          },
+          {
+            "group": "Cart & Checkout",
+            "pages": [
+              "shopify-pages/cart-config",
+              "commerce/cart-checkout-behavior",
+              "commerce/discounts-promotions"
             ]
           }
         ]
@@ -126,31 +129,13 @@
         "groups": [
           {
             "group": "Experiments",
-            "pages": []
-          },
-          {
-            "group": "Analytics & Reporting",
-            "pages": []
-          },
-          {
-            "group": "Optimization Strategy",
-            "pages": []
-          },
-          {
-            "group": "Experiments & A/B Testing",
             "pages": [
               "experiments/what-are-experiments",
               "experiments/create-experiment",
-              "experiments/strategic-experiments",
+              "experiments/traffic-assignment",
               "experiments/reading-results",
               "experiments/testing-against-website",
               "experiments/traffic-troubleshoot"
-            ]
-          },
-          {
-            "group": "Strategy",
-            "pages": [
-              "strategy/roadmap"
             ]
           },
           {
@@ -159,7 +144,16 @@
               "analytics-reporting/overview",
               "analytics-reporting/experience-analytics",
               "analytics-reporting/funnel-step-performance",
-              "analytics-reporting/filtering-experiences"
+              "analytics-reporting/filtering-experiences",
+              "analytics-reporting/attribution-overview"
+            ]
+          },
+          {
+            "group": "Optimization Strategy",
+            "pages": [
+              "experiments/strategic-experiments",
+              "strategy/roadmap",
+              "product-updates/strategizer-opportunities"
             ]
           }
         ]
@@ -168,36 +162,40 @@
         "tab": "Integrations",
         "groups": [
           {
-            "group": "Tracking & Analytics",
-            "pages": []
+            "group": "Overview & Setup",
+            "pages": [
+              "integrations/overview"
+            ]
           },
           {
-            "group": "Integrations",
+            "group": "Tracking & Analytics",
             "pages": [
-              "integrations/overview",
-              "integrations/api-keys",
-              "integrations/connect-slack",
-              "integrations/gtm",
+              "getting-started/shopify-analytics",
               "integrations/ga-meta-pixel",
-              "integrations/custom-scripts",
-              "integrations/utm-attribution",
-              "integrations/review-integrations",
-              "integrations/review-widgets",
-              "integrations/mcp-connector",
-              "integrations/troubleshooting"
+              "integrations/gtm",
+              "integrations/utm-attribution"
             ]
           },
           {
             "group": "Developer & Automation",
-            "pages": []
+            "pages": [
+              "getting-started/integration-keys",
+              "integrations/api-keys",
+              "integrations/custom-scripts",
+              "integrations/mcp-connector"
+            ]
           },
           {
             "group": "Commerce & Social Proof",
-            "pages": []
+            "pages": [
+              "integrations/review-integrations",
+              "integrations/review-widgets"
+            ]
           },
           {
-            "group": "Notifications",
+            "group": "Slack & Notifications",
             "pages": [
+              "integrations/connect-slack",
               "notifications/slack-reports"
             ]
           }
@@ -208,26 +206,21 @@
         "groups": [
           {
             "group": "Reference",
-            "pages": []
-          },
-          {
-            "group": "Product Updates",
             "pages": [
-              "product-updates/image-repositioning",
-              "product-updates/jurni-comments",
-              "product-updates/strategizer-opportunities"
-            ]
-          },
-          {
-            "group": "Data Dictionary",
-            "pages": [
-              "data-dictionary/metrics-glossary"
+              "data-dictionary/metrics-glossary",
+              "reference/events",
+              "reference/url-parameters"
             ]
           },
           {
             "group": "Troubleshooting & FAQ",
             "pages": [
-              "troubleshooting/jurni-sales-channel"
+              "integrations/troubleshooting",
+              "troubleshooting/jurni-sales-channel",
+              "troubleshooting/duplicate-tracking-events",
+              "troubleshooting/shopify-page-layout",
+              "troubleshooting/product-cart-issues",
+              "troubleshooting/analytics-differences"
             ]
           }
         ]

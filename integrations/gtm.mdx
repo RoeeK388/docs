@@ -4,8 +4,75 @@ sidebarTitle: "Google Tag Manager"
 description: "Learn how to configure Google Tag Manager to capture and track Jurni events. Set up tags, triggers, and variables to monitor user interactions effectively."
 ---
 
-Google Tag Manager lets you track user interactions within Jurni without modifying your codebase. This guide explains how to configure GTM tags, triggers, and variables to capture Jurni events and send data to your analytics tools.
+Google Tag Manager (GTM) lets your team use Jurni events as inputs for analytics and marketing tags without hard-coding every vendor directly into each experience.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/1515174319-configure-google-tag-manager-gtm-to-track-jurni-events) for full content.
-</Note>
+## Before you add GTM
+
+First decide **where GTM is already installed**.
+
+A Jurni experience can be served from a Jurni/custom subdomain or published inside Shopify Pages. If your Shopify theme already loads the same GTM container, adding that container again through Jurni on the Shopify Page can cause tags and pixels to fire twice.
+
+<Warning>
+  Do not load the same GTM container twice on one page. Duplicate containers can produce duplicate PageView, conversion, and advertising events.
+</Warning>
+
+## Connect GTM to Jurni
+
+<Steps>
+  <Step title="Find your GTM container ID">
+    In Google Tag Manager, copy the container ID for the container you want to use.
+  </Step>
+  <Step title="Open Jurni tracking or integration settings">
+    Add the GTM container using the Google Tag Manager integration or the supported tracking configuration in your workspace.
+  </Step>
+  <Step title="Choose where it should load">
+    If your Jurni setup supports page-level targeting, include only the pages that need Jurni to load GTM.
+  </Step>
+  <Step title="Publish and test">
+    Open the live page and use GTM Preview / Tag Assistant to confirm the container appears once and receives the expected events.
+  </Step>
+</Steps>
+
+## Core Jurni events
+
+Jurni's core event model includes events such as:
+
+- PageView
+- Click
+- AddToCart
+- Checkout
+- Order
+
+Use the Jurni Event Dictionary for the product-level meaning of each event. Your GTM container can then map those events into the vendor-specific tags you need.
+
+## CTA tracking
+
+For click reporting, clear CTA metadata makes downstream GTM events much easier to use. Prefer names that describe the shopper action, such as **Hero Add to Cart**, **Start Quiz**, or **Checkout**, rather than generic labels such as **Button**.
+
+## Jurni subdomain vs. Shopify Pages
+
+A common implementation is:
+
+- Load GTM through Jurni on Jurni-hosted/subdomain experiences.
+- Let the Shopify theme load GTM on Shopify Pages when the same container is already installed there.
+
+If your account has both page types, use script/page targeting so the container is not injected twice.
+
+## Debugging
+
+When a GTM event is missing or duplicated:
+
+1. Check whether the container loads once or multiple times.
+2. Confirm the page is included in the Jurni tracking configuration.
+3. Verify consent tools are not blocking the tag.
+4. Use GTM Preview to inspect the event stream.
+5. Confirm the underlying Jurni event actually occurred—for example, verify the product reached cart for AddToCart.
+6. Check whether a second implementation exists in the Shopify theme, custom scripts, or another tag manager.
+
+## Related guides
+
+- Event Dictionary
+- Custom Scripts
+- Google Analytics and Meta Pixel setup
+- Tracking Pixels
+- Attribution Overview
