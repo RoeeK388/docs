@@ -1,0 +1,80 @@
+---
+title: "Consent and Tracking on Jurni Pages"
+sidebarTitle: "Consent & Tracking"
+description: "Understand how consent management can affect analytics, pixels, custom scripts, and event delivery on Jurni-hosted pages and Shopify Pages."
+keywords:
+  - "Jurni consent"
+  - "Shopify consent"
+  - "cookie banner"
+  - "tracking consent"
+  - "Meta pixel blocked"
+---
+
+Consent management can change which analytics and advertising scripts are allowed to run on a Jurni experience. A shopper can still view and purchase from a page even when a consent platform intentionally blocks optional tracking.
+
+## Separate page functionality from tracking permission
+
+A consent decision can affect:
+
+- Meta Pixel
+- Google Analytics
+- Google Tag Manager tags
+- Custom advertising scripts
+- Third-party analytics identifiers
+
+It should not be treated as the same thing as whether the Jurni page itself loaded successfully.
+
+<Info>
+A page view can exist in one system while a third-party marketing event is absent because the shopper did not grant the consent required by that third party.
+</Info>
+
+## Jurni-hosted pages
+
+If your brand uses a consent management platform on Jurni-hosted or custom-subdomain pages, make sure the consent implementation is available on those pages and controls the relevant scripts according to your setup.
+
+Custom consent integrations can require implementation work from the consent provider or your technical team. Test the actual production banner—not only a preview or theme implementation on the Shopify root domain.
+
+## Shopify Pages
+
+Jurni experiences published as Shopify Pages run inside the Shopify storefront environment. Tracking inherited from Shopify can follow Shopify's customer privacy / consent configuration, while scripts loaded separately through Jurni may require their own consent-aware implementation.
+
+Avoid creating two independent consent systems on the same page unless your privacy architecture explicitly requires it.
+
+## Test accepted and declined states
+
+For every important tracking implementation, test at least two states:
+
+### Consent accepted
+
+Verify that the expected analytics and advertising tools load and receive the intended events.
+
+### Consent declined
+
+Verify that tools which require consent are blocked as intended while the shopper can still use the page and complete the supported commerce flow.
+
+## Common debugging mistake
+
+If Meta, GA4, or another tool reports fewer events than Jurni, check consent before assuming the event implementation is broken.
+
+A useful debugging sequence is:
+
+1. Open a clean browser session.
+2. Record the consent state.
+3. Load the Jurni page.
+4. Inspect which scripts load.
+5. Trigger the relevant action.
+6. Compare what Jurni and the third-party platform received.
+
+## Consent and custom scripts
+
+Custom Scripts can load third-party code, but that does not remove your responsibility to make the script follow the consent behavior required by your implementation.
+
+Do not use a custom script to bypass a consent choice.
+
+## Related guides
+
+- Google Analytics & Meta Pixel Setup
+- Google Tag Manager
+- Custom Scripts
+- Attribution in Jurni
+- Duplicate Tracking Events or Pixels

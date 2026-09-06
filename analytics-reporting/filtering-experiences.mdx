@@ -4,8 +4,58 @@ sidebarTitle: "Filtering Data"
 description: "Learn how to filter analytics data in Jurni to focus on specific experiences, time periods, or segments. Narrow results to find actionable insights faster."
 ---
 
-Jurni lets you filter analytics data so you can focus on the experiences and time periods that matter most. This page covers how to apply filters and refine your analytics views for clearer insights.
+Filters change the scope of the analytics you are looking at. Before comparing two Jurni reports, make sure both views are using the same date range and relevant filters.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/2753400878-filtering-data-on-experiences) for full content.
-</Note>
+## Start with the date range
+
+Date range is the most common reason two Jurni surfaces appear to show different totals.
+
+For example, an experience card can represent a broader period while an experiment view is filtered to the active test dates. Comparing those numbers without aligning the range can make valid data look inconsistent.
+
+## Use the same scope when comparing performance
+
+When comparing two experiences, variants, or reporting surfaces, align:
+
+- Start date
+- End date
+- Experience / experiment selection
+- Traffic scope available in that view
+- Timezone where relevant
+
+<Info>
+  Filters available in Jurni can vary by analytics view. Do not assume a filter applied on one dashboard automatically carries over to another dashboard.
+</Info>
+
+## All-time vs. campaign-period performance
+
+Use a campaign-specific range when you want to understand how a page performed during a particular launch or paid-media period.
+
+Use a broader range when you want to understand the lifetime performance of the experience.
+
+Do not compare an all-time experience total with a 7-day experiment total and expect the session counts to match.
+
+## Comparing experiments
+
+For an active or completed experiment, the most useful reporting range is normally the period when meaningful experiment traffic was actually running.
+
+If the experience existed before the experiment, its all-time analytics can include sessions that were never part of the test.
+
+## Comparing Jurni with another platform
+
+When checking Jurni against Shopify, Meta, GA4, or another analytics platform, also align:
+
+- Date range
+- Timezone
+- Attribution model/window
+- Included traffic
+- Session definition
+
+Even with identical dates, the platforms can still differ because their definitions and attribution logic are not identical.
+
+## Related guides
+
+- Analytics Overview
+- Experience Analytics
+- Experiment and Experience Session Counts Do Not Match
+- Attribution in Jurni
+- Metrics Glossary

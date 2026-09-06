@@ -1,0 +1,78 @@
+---
+title: "Products and Variants"
+sidebarTitle: "Products & Variants"
+description: "Learn how Jurni uses your connected Shopify product catalog, variants, pricing, and product data when building shoppable experiences."
+keywords:
+  - "Shopify products"
+  - "product variants"
+  - "Jurni products"
+---
+
+Jurni uses product data from your connected commerce store to power shoppable sections such as Buy Boxes, product cards, bundles, and purchase options.
+
+## Where product data comes from
+
+For Shopify stores, Jurni reads the product information exposed by your connected store. This can include:
+
+- Product title and description
+- Product media
+- Variants and variant titles
+- Current price and compare-at price
+- Availability
+- Selling plans when supported and available
+
+The exact data shown in a section depends on the component you are using and how that component is configured.
+
+## Select a product in the editor
+
+<Steps>
+  <Step title="Select a shoppable section">
+    Click the Buy Box, product card, or other commerce section you want to configure.
+  </Step>
+  <Step title="Choose the product">
+    Use the product selector in the editing panel to search your connected catalog.
+  </Step>
+  <Step title="Choose the available options">
+    If the section supports variant or purchase-option controls, configure which choices should be shown to shoppers.
+  </Step>
+  <Step title="Preview the behavior">
+    Test the section in preview and confirm the selected option maps to the correct Shopify variant.
+  </Step>
+</Steps>
+
+## Variants
+
+A Shopify variant represents a purchasable version of a product, such as a size, color, flavor, pack size, or other option combination. Jurni uses the Shopify variant ID when a shopper adds that selection to cart.
+
+<Warning>
+Do not treat two visually similar variants as interchangeable. If the wrong variant is selected in Jurni, Shopify will receive the wrong variant ID and the shopper can end up with a different product configuration than expected.
+</Warning>
+
+## Changes made in Shopify
+
+When you add, remove, rename, or replace variants in Shopify, review any Jurni experience that uses that product. Product changes can affect:
+
+- Variant selectors
+- Default selections
+- Pricing shown on the page
+- Selling plan availability
+- Bundle composition
+- Add-to-cart behavior
+
+## Product availability
+
+If a product or variant cannot be found in Jurni, check that it is active and available to the sales channel or storefront configuration used by Jurni. Also confirm that the connected Shopify store is the store you expect.
+
+## Best practices
+
+- Keep product and variant names clear in Shopify so they are easy to identify in Jurni.
+- Re-test important landing pages after changing product configurations.
+- Avoid deleting variants that are still used by live Jurni pages.
+- Test the actual cart item, not just the visual selector.
+
+## Related guides
+
+- Buy Box overview
+- Subscriptions and selling plans
+- Building bundles
+- Cart and checkout behavior

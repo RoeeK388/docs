@@ -1,0 +1,126 @@
+---
+title: "Product Purchase Options"
+sidebarTitle: "Purchase Options"
+description: "Configure product variants, one-time purchases, subscriptions, quantity, pricing, add-to-cart, and direct-checkout behavior in Jurni purchase sections."
+keywords:
+  - "Product Purchase Options"
+  - "Jurni purchase options"
+  - "one-time subscription"
+  - "selling plan"
+  - "buy box"
+---
+
+Product Purchase Options are the controls inside a Jurni commerce section that determine **what the shopper is buying and how they want to buy it** before the purchase action is triggered.
+
+Depending on the section and product configuration, purchase options can include:
+
+- Product variant selection
+- One-time vs. subscription purchase
+- Subscription selling plan
+- Quantity
+- Product pricing and compare-at pricing
+- Add to cart
+- Direct checkout
+
+## How the selection is resolved
+
+Jurni uses the selected product option values to resolve the real commerce variant. This is important for products where a shopper chooses combinations such as:
+
+- Flavor + pack size
+- Size + color
+- Pack size + formula
+- One-time + subscription configuration
+
+The final cart action should use the actual selected variant ID rather than relying on the text shown in the selector.
+
+<Warning>
+Always test the cart or checkout payload. A purchase section can look visually correct while still pointing to the wrong Shopify variant or selling plan.
+</Warning>
+
+## One-time purchase
+
+For a one-time purchase, Jurni adds the selected product variant without a subscription selling plan.
+
+Use one-time as the only option when the product is not sold as a subscription, or present it alongside subscription when shoppers should be able to choose.
+
+## Subscription purchase
+
+When the shopper selects subscription, Jurni uses a selling plan available for the selected product and variant.
+
+The subscription option can affect:
+
+- Final price
+- Compare-at or savings display
+- Delivery frequency
+- Cart line selling-plan data
+
+The selling plan itself is configured in Shopify or your subscription provider—not created by the Jurni section.
+
+## Pricing
+
+Pricing should reflect the currently selected variant, selling plan, and quantity. This matters when subscription pricing differs from one-time pricing or when variants have different prices.
+
+Avoid hard-coding prices into a purchase section when the value should come from the connected product. Product-backed pricing is much safer when Shopify pricing changes.
+
+## Quantity
+
+If the section exposes a quantity selector, the selected quantity is passed into the cart or checkout action.
+
+Quantity is different from a product pack-size variant. For example:
+
+- **2 Pack** may be a Shopify variant.
+- **Quantity 2** means adding two units of the selected variant.
+
+Make sure the page makes that distinction clear to shoppers.
+
+## Add to cart vs. direct checkout
+
+A purchase CTA can follow two common patterns:
+
+### Add to cart
+
+Use add to cart when the shopper should remain in the store flow, open the cart drawer, add more products, or review the cart before checkout.
+
+### Direct checkout
+
+Use direct checkout when the experience is intentionally designed to take the selected configuration straight into checkout.
+
+In both cases, the commerce action should carry the selected:
+
+- Variant
+- Selling plan when subscription is selected
+- Quantity
+
+## When the available options change
+
+Review the Jurni purchase section after changes to:
+
+- Shopify variants
+- Product option names or values
+- Subscription selling plans
+- Product availability
+- Pricing
+- Pack-size structure
+
+A live page should not depend on a variant or plan that has been removed from the connected product.
+
+## QA checklist
+
+Before publishing, test every meaningful purchase path:
+
+1. Default product option.
+2. Each important variant combination.
+3. One-time purchase.
+4. Every subscription option you intend to expose.
+5. Quantity changes.
+6. Add-to-cart behavior.
+7. Direct-checkout behavior when used.
+8. Final cart or checkout price.
+
+## Related guides
+
+- Buy Boxes in Jurni
+- Products and Variants
+- Subscriptions and Selling Plans
+- Cart and Checkout Behavior
+- Discounts and Promotions

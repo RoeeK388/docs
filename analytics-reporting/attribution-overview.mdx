@@ -1,0 +1,77 @@
+---
+title: "Attribution in Jurni"
+sidebarTitle: "Attribution Overview"
+description: "Understand how Jurni connects visits, campaign parameters, checkout activity, and orders when measuring experience and experiment performance."
+keywords:
+  - "Jurni attribution"
+  - "UTM attribution"
+  - "Shopify order attribution"
+  - "cross-domain tracking"
+---
+
+Jurni attribution connects the traffic that enters a Jurni experience with the downstream commerce events used in analytics and experiments. The objective is to keep the visitor's Jurni context available as they move from the landing experience into cart, checkout, and purchase.
+
+## What Jurni uses attribution for
+
+Attribution powers reporting such as:
+
+- Experience sessions and conversion rate
+- Add-to-cart and checkout rates
+- Revenue and average order value
+- Revenue per visitor/session metrics
+- Experiment results by variant
+- Traffic-source and campaign breakdowns when the required parameters are available
+
+## Campaign parameters
+
+Jurni can preserve common campaign identifiers and UTM parameters as traffic moves through supported Jurni flows. These parameters help you understand where a visit originated and can also be used by routing or downstream analytics setups.
+
+Common parameters include:
+
+- `utm_source`
+- `utm_medium`
+- `utm_campaign`
+- `utm_term`
+- `utm_content`
+- `fbclid`
+- `gclid`
+- `msclkid`
+
+See the UTM and URL parameter guides for the exact parameters used by your implementation.
+
+## Moving from a Jurni subdomain to Shopify
+
+A shopper may land on a Jurni page hosted on a campaign subdomain and then continue to the Shopify root domain for checkout. Jurni maintains its own attribution context for supported flows, but third-party tools such as Meta, GA4, or other analytics platforms apply their own browser, cookie, and cross-domain rules.
+
+<Info>
+Two systems can attribute the same purchase differently without either system necessarily being broken. Compare definitions, attribution windows, consent state, and cross-domain configuration before treating a reporting difference as an event-loss issue.
+</Info>
+
+## Attribution and experiments
+
+For experiments, the variant assignment becomes part of the context used to attribute downstream performance. This is why traffic should enter through the intended experiment or Smart Link path and why variant identifiers should remain stable for the life of the test.
+
+## Consent can affect reporting
+
+When a shopper declines tracking or a consent platform blocks scripts, some third-party analytics events may not fire even though the Jurni page itself loads. Validate consent behavior separately from page functionality.
+
+## Debugging attribution differences
+
+When Jurni and another platform do not match, compare:
+
+1. The same date range and timezone.
+2. The same definition of a session or visit.
+3. Purchase timestamp vs. click timestamp.
+4. Consent state.
+5. Cross-domain transitions.
+6. UTM and click-ID persistence.
+7. Duplicate or missing pixels.
+8. Whether the comparison includes only Jurni traffic or the whole store.
+
+## Related guides
+
+- UTM parameter passthrough and attribution
+- Tracking pixels
+- Google Analytics and Meta Pixel setup
+- Experiment traffic assignment
+- Metrics glossary

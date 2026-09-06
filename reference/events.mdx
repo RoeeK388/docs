@@ -1,0 +1,72 @@
+---
+title: "Jurni Event Dictionary"
+sidebarTitle: "Event Dictionary"
+description: "Reference the core Jurni commerce and interaction events used for analytics and integrations, including PageView, Click, AddToCart, Checkout, and Order."
+keywords:
+  - "Jurni events"
+  - "PageView"
+  - "AddToCart"
+  - "Checkout"
+  - "Order"
+  - "GTM events"
+---
+
+Jurni tracks a set of core events that describe how shoppers move through an experience and into commerce. These events power Jurni analytics and can also be used by supported integrations such as Google Tag Manager and third-party tracking tools.
+
+## Core events
+
+| Event | When it represents |
+| --- | --- |
+| **PageView** | A shopper views a Jurni page or supported experience step. |
+| **Click** | A tracked interactive element is clicked. CTA metadata can be used to make important clicks easier to identify. |
+| **AddToCart** | A product is successfully added through a Jurni commerce action. |
+| **Checkout** | The shopper enters the supported checkout flow. |
+| **Order** | A completed order is attributed back to the Jurni visit or experiment context. |
+
+<Info>
+The exact payload available to a third-party integration depends on that integration. Use the integration-specific guide when you need field names or implementation details for GTM, GA4, Meta, or a custom script.
+</Info>
+
+## PageView
+
+Use PageView to understand how much traffic reached a Jurni page. Page views are not the same as unique visitors or sessions: one shopper can generate more than one page view during a journey.
+
+## Click
+
+Click events are most useful when important CTAs are identifiable. When configuring tracked elements, use clear CTA naming so downstream reports can distinguish actions such as:
+
+- Hero Add to Cart
+- Learn More
+- Start Quiz
+- Checkout
+- Select Bundle
+
+Avoid relying only on generic labels such as `Button` when the event will be used outside Jurni.
+
+## AddToCart
+
+AddToCart should represent the commerce action, not simply a click on a button that looks like an add-to-cart button. For debugging, confirm that the expected product and variant actually reached cart.
+
+## Checkout
+
+Checkout represents the transition into the supported checkout flow. Depending on your Shopify architecture, the checkout itself may be hosted on the Shopify root domain even when the Jurni experience is hosted on a subdomain.
+
+## Order
+
+Order is the downstream conversion event used for revenue and purchase reporting. Attribution depends on the Jurni context being preserved through the supported purchase path.
+
+## Jurni and third-party events
+
+Jurni events and platform-specific events are related but are not always one-to-one. For example, Meta and GA4 have their own naming, deduplication, consent, and session rules. Configure each integration intentionally rather than assuming every Jurni event should be duplicated exactly into every platform.
+
+## Custom events
+
+Some customer implementations require business-specific events such as quiz steps, email capture, or a custom subscription milestone. These should be designed with a stable event name and clear trigger condition before they are sent to downstream tools.
+
+## Related guides
+
+- Google Tag Manager
+- Google Analytics and Meta Pixel setup
+- Tracking pixels
+- Attribution overview
+- Metrics glossary

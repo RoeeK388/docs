@@ -1,0 +1,68 @@
+---
+title: "Product, Variant, or Selling Plan Is Wrong in Cart"
+sidebarTitle: "Product & Cart Issues"
+description: "Troubleshoot Jurni commerce actions when the wrong product, variant, quantity, subscription plan, or cart item is added."
+keywords:
+  - "wrong variant cart"
+  - "Jurni add to cart issue"
+  - "selling plan missing"
+  - "product not adding"
+---
+
+If a Jurni Buy Box or product section looks correct but the wrong item reaches cart, troubleshoot the commerce configuration from the cart payload backward.
+
+## First identify what is wrong
+
+Check the actual cart and note whether the issue is with:
+
+- Product
+- Variant
+- Quantity
+- Selling plan / subscription
+- Bundle line items
+- Gift product
+- Discount
+
+Do not diagnose only from the text shown on the landing page. The cart is the first place to confirm what the commerce action actually produced.
+
+## Wrong product or variant
+
+Check that the Jurni section is mapped to the expected Shopify product and exact variant. Variant IDs matter even when two options have similar names.
+
+If the product was recently edited in Shopify, reopen the experience and verify the product configuration again.
+
+## Selling plan is missing
+
+If one-time purchase works but subscription does not:
+
+1. Confirm the selling plan is active in Shopify.
+2. Confirm the selected product and variant are included in the plan.
+3. Confirm the subscription app has synced the selling plan to Shopify.
+4. Re-test the Jurni purchase option.
+
+## Bundle items are wrong
+
+For bundle experiences, test multiple valid combinations. Verify that the expected products and quantities appear as separate or bundled cart items according to the store's bundle implementation.
+
+## Gift appears but is not free
+
+This is usually a discount configuration issue rather than an add-to-cart issue. Jurni can add the gift product, while Shopify or your discount system controls the final price of that gift.
+
+## Nothing is added to cart
+
+Check:
+
+- The product/variant is active and available.
+- The page's cart configuration is correct.
+- The Shopify Page uses the expected cart provider setup.
+- Browser console errors are not blocking the commerce action.
+- A custom cart app has not changed its integration behavior.
+
+## Related guides
+
+- Products and Variants
+- Buy Box Overview
+- Subscriptions and Selling Plans
+- Building Bundles
+- Gift With Purchase
+- Cart and Checkout Behavior

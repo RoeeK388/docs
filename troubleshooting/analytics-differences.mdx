@@ -1,0 +1,81 @@
+---
+title: "Jurni, Meta, GA4, and Shopify Numbers Do Not Match"
+sidebarTitle: "Analytics Differences"
+description: "Understand why Jurni, Shopify, Meta, GA4, and other analytics platforms can report different sessions, conversions, and revenue totals."
+keywords:
+  - "Jurni analytics discrepancy"
+  - "Meta attribution mismatch"
+  - "GA4 vs Shopify"
+  - "revenue mismatch"
+---
+
+It is normal for Jurni, Shopify, Meta, GA4, and other analytics platforms to report different totals. Each system measures a different part of the journey and can use different identity, session, consent, and attribution rules.
+
+## Do not compare totals before aligning definitions
+
+Before investigating a discrepancy, make sure the reports use the same:
+
+- Date range
+- Timezone
+- Traffic scope
+- Conversion definition
+- Attribution window
+- Currency
+
+## Common reasons numbers differ
+
+### Session definitions
+
+Analytics tools define and reset sessions differently. A Jurni session should not be expected to match GA4 sessions one-for-one unless the definitions are intentionally aligned.
+
+### Attribution models
+
+Meta may credit a conversion to an ad using its attribution window while GA4 uses another model and Shopify reports the order without the same marketing attribution logic.
+
+### Cross-domain transitions
+
+A shopper can land on a Jurni subdomain and continue to a Shopify root-domain checkout. Jurni, Meta, and GA4 can each handle that transition differently.
+
+### Consent
+
+If a shopper declines tracking, some third-party tools may not fire or store identifiers even though the shopper can still purchase.
+
+### Duplicate tracking
+
+A duplicated Meta pixel, GTM container, or other tag can inflate the third-party event count.
+
+### Reporting scope
+
+Shopify can show all store orders while a Jurni report only includes orders attributed to the selected Jurni traffic.
+
+## Debug one journey end to end
+
+When the gap looks too large to be explained by normal attribution differences:
+
+1. Open a test campaign URL with known UTMs.
+2. Confirm the Jurni page view.
+3. Trigger the expected product and cart events.
+4. Continue through checkout.
+5. Complete a test order when appropriate.
+6. Verify which events each platform received.
+7. Check whether campaign and click identifiers persisted through redirects.
+
+## What to send Jurni support
+
+For faster debugging, include:
+
+- Exact landing URL
+- Jurni experience URL or ID
+- Date and approximate time of the test
+- Order ID if a test purchase was completed
+- Screenshots from the external analytics tool
+- The specific metric you expect to match
+
+## Related guides
+
+- Attribution Overview
+- UTM Parameter Passthrough & Attribution
+- Duplicate Tracking Events
+- Google Tag Manager
+- Google Analytics and Meta Pixel Setup
+- Metrics Glossary

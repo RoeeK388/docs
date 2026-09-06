@@ -4,8 +4,78 @@ sidebarTitle: "Custom Subdomain"
 description: "Configure a custom subdomain for your Jurni workspace. This guide explains how to set up and verify your branded domain settings."
 ---
 
-A custom subdomain gives your Jurni workspace a professional, branded web address. This page covers how to configure and verify your custom subdomain within Jurni.
+A custom subdomain lets you serve Jurni experiences from a branded URL such as `go.yourbrand.com`, `try.yourbrand.com`, or `offers.yourbrand.com` instead of a generic Jurni URL.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/1273775784-setting-up-your-custom-domain-subdomain) for full content.
-</Note>
+## When to use a custom subdomain
+
+A custom subdomain is a strong fit when you want to:
+
+- Send paid traffic to a branded campaign URL
+- Keep Jurni landing pages separate from your main Shopify theme
+- Use Smart Links and experiments without changing your store's primary domain
+- Launch multiple campaign pages under one dedicated subdomain
+
+<Info>
+  A subdomain is different from a separate root domain. For example, `go.brand.com` is a subdomain of `brand.com`, while `anotherbrand.com` is a separate root domain.
+</Info>
+
+## Set up the subdomain
+
+<Steps>
+  <Step title="Choose the subdomain">
+    Decide which branded hostname you want to use, such as `go.yourbrand.com` or `try.yourbrand.com`.
+  </Step>
+  <Step title="Add it in Jurni">
+    Open your workspace settings and add the custom subdomain in the domain configuration area.
+  </Step>
+  <Step title="Copy the DNS value from Jurni">
+    Jurni will provide the DNS record your domain administrator needs to add.
+  </Step>
+  <Step title="Add the DNS record">
+    In your DNS provider, create the record exactly as shown in Jurni. Avoid adding unrelated redirects or proxy rules unless your setup specifically requires them.
+  </Step>
+  <Step title="Verify the connection">
+    Return to Jurni and verify the domain after the DNS change has propagated.
+  </Step>
+</Steps>
+
+## What happens when the subdomain has no page path
+
+A campaign subdomain can contain many Jurni experiences. Traffic should normally be sent to the full published page URL or through a Smart Link rather than only to the bare subdomain.
+
+If your workspace is configured with a fallback destination, visiting the subdomain without a valid page handle can redirect to that fallback, such as your main storefront.
+
+## Using the subdomain with paid ads
+
+Once the domain is connected, publish the Jurni experience and use its full URL as the destination for your campaign. If you expect to change destinations or run experiments, consider using a Smart Link as the stable campaign URL.
+
+<Tip>
+  Use one consistent campaign subdomain across your paid landing pages. It keeps links recognizable and makes domain management much simpler than creating a new subdomain for every page.
+</Tip>
+
+## Subdomain to Shopify checkout
+
+It is normal for a shopper to move from a Jurni subdomain to the Shopify root domain when they continue to cart or checkout. Your analytics and ad platforms can have their own cross-domain behavior, so test your attribution setup before launch if cross-domain reporting is critical.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The domain is not verifying">
+    Confirm the DNS hostname and target exactly match the values shown in Jurni. DNS updates can also take time to propagate depending on your provider.
+  </Accordion>
+
+  <Accordion title="The subdomain redirects to my homepage">
+    Check whether the visitor is opening the bare subdomain instead of a published page URL, and review any fallback or DNS-level redirect configured for that hostname.
+  </Accordion>
+
+  <Accordion title="The page works on the Jurni URL but not the custom domain">
+    Confirm the domain is verified, the experience is published, and the page path you are requesting exists.
+  </Accordion>
+</AccordionGroup>
+
+## Related guides
+
+- Publishing overview
+- Smart Links
+- Set up and publish Shopify Pages
+- UTM parameter passthrough and attribution

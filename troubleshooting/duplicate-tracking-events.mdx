@@ -1,0 +1,69 @@
+---
+title: "Duplicate Tracking Events or Pixels"
+sidebarTitle: "Duplicate Tracking Events"
+description: "Diagnose duplicate PageView, pixel, GTM, or conversion events on Jurni pages and Shopify Pages."
+keywords:
+  - "duplicate Meta pixel"
+  - "duplicate GTM"
+  - "duplicate events"
+  - "Jurni tracking"
+---
+
+Duplicate tracking usually happens when the same analytics or advertising tool is installed through more than one path on the same page.
+
+## Common symptoms
+
+You may see:
+
+- Two PageView events for one page load
+- AddToCart or conversion events firing twice
+- Meta Events Manager showing duplicate browser events
+- GA4 reporting unexpectedly high event counts
+- GTM Preview showing the same container more than once
+
+## Most common cause: Shopify Pages
+
+A Shopify Page can inherit tracking from the Shopify theme. If Jurni also injects the same pixel, GTM container, or custom script onto that page, both installations can run.
+
+<Warning>
+The correct goal is not "install the pixel everywhere." The goal is **one intentional installation of each tag on each page**.
+</Warning>
+
+## Check every installation path
+
+Audit the vendor in this order:
+
+1. Jurni native integrations
+2. Jurni Custom Scripts
+3. Google Tag Manager
+4. Shopify theme code or theme app embeds
+5. Shopify customer events / pixels
+6. Third-party Shopify apps
+
+## Fix page-level overlap
+
+If the same script should be loaded by Jurni on subdomain pages but by Shopify on Shopify Pages, use page-level targeting in Jurni to exclude the Shopify Pages from that Jurni script configuration.
+
+This keeps the integration active on the pages that need it without firing twice on pages that already inherit it from the store.
+
+## Verify the fix
+
+After changing the setup:
+
+- Hard refresh the live page.
+- Use the vendor's debugger or browser network tools.
+- Confirm the base script loads once.
+- Trigger a PageView and AddToCart.
+- Confirm the expected number of events.
+
+## Server and browser events
+
+Some platforms intentionally receive both browser and server-side versions of the same conversion and deduplicate them using event identifiers. Do not remove a legitimate server event simply because you see two transport paths. First determine whether the platform is deduplicating them correctly.
+
+## Related guides
+
+- Custom Scripts
+- Google Tag Manager
+- Tracking Pixels
+- Google Analytics and Meta Pixel setup
+- Shopify Page Templates

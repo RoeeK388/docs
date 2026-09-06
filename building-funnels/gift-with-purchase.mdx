@@ -1,0 +1,80 @@
+---
+title: "Gift With Purchase"
+sidebarTitle: "Gift With Purchase"
+description: "Set up gift-with-purchase experiences in Jurni and understand the split between adding the gift product and applying its discount in Shopify."
+keywords:
+  - "gift with purchase"
+  - "GWP"
+  - "Shopify discount"
+  - "Jurni gift"
+---
+
+A gift-with-purchase (GWP) offer adds a gift product to the shopper's cart when the configured purchase action is completed. Jurni can handle adding the gift item as part of the page experience, while the price or discount for that gift is controlled by your Shopify setup.
+
+## How the offer is split between Jurni and Shopify
+
+Think of the setup as two separate responsibilities:
+
+| Jurni | Shopify |
+| --- | --- |
+| Controls when the gift is added from the Jurni experience | Controls what the gift ultimately costs |
+| Adds the configured gift product or variant to cart | Applies a $0 product price, automatic discount, discount code, or other discount logic |
+| Presents the gift and offer messaging | Enforces the promotion in cart and checkout |
+
+<Info>
+Jurni adding a gift product to cart does not automatically make that product free. The discount logic must be configured in Shopify or in the discount system your store uses.
+</Info>
+
+## Common ways to make the gift free
+
+Depending on your store setup, the gift can be discounted using:
+
+- A gift product with a $0 price
+- A Shopify automatic discount
+- A discount code
+- A Shopify Function or third-party discount app
+
+Choose the approach that best matches the rest of your store's promotion logic.
+
+## Set up a gift offer
+
+<Steps>
+  <Step title="Choose the gift product">
+    Identify the exact Shopify product and variant that should be added as the gift.
+  </Step>
+  <Step title="Configure the Jurni experience">
+    Set the relevant Buy Box, bundle, or purchase section to add the gift with the qualifying purchase.
+  </Step>
+  <Step title="Configure the Shopify discount">
+    Make sure the gift receives the expected price or discount once it is in cart.
+  </Step>
+  <Step title="Test the full flow">
+    Add the qualifying purchase, confirm the gift appears, and verify its final price in both cart and checkout.
+  </Step>
+</Steps>
+
+## Threshold gifts
+
+If the gift only applies after a shopper reaches a cart-value or quantity threshold, the threshold and discount logic must remain consistent with the Jurni experience. Test values immediately below and above the threshold to confirm the promotion behaves correctly.
+
+## QA checklist
+
+Before launching a GWP offer, confirm:
+
+- The correct gift variant is added.
+- The gift is not added when the shopper does not qualify.
+- The gift price is discounted correctly.
+- The promotion works with other discounts you intend to allow.
+- Removing qualifying items from cart does not leave the promotion in an invalid state.
+- The offer works on both desktop and mobile.
+
+<Warning>
+Discount stacking and threshold behavior can depend on Shopify or third-party discount logic. Always test the same combinations shoppers will use in production.
+</Warning>
+
+## Related guides
+
+- Buy Box overview
+- Building bundles
+- Products and variants
+- Cart and checkout behavior

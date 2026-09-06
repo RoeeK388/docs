@@ -4,8 +4,114 @@ sidebarTitle: "Figma File"
 description: "Prepare your Figma designs so they can be imported into Jurni. Follow best practices for layer naming, structure, and asset export."
 ---
 
-If you design in Figma before building in Jurni, structuring your file correctly will make the transition smoother. This page covers how to organize layers, name elements, and prepare assets so your Figma file is ready for Jurni.
+Jurni can use Figma frames as source material when generating or replicating an experience. A clean Figma structure makes it easier for the AI to understand the intended sections, responsive layout, assets, and hierarchy.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/5018698679-how-to-build-a-figma-file-for-jurni) for full content.
-</Note>
+## Use page-sized frames
+
+Give Jurni the frame that represents the actual page you want to build—not the full design file or a board containing unrelated concepts.
+
+For a typical landing page, provide:
+
+- One desktop page frame
+- One mobile page frame when a separate mobile design exists
+
+## Desktop + mobile designs
+
+If you have separate desktop and mobile frames, you can paste **both Figma frame links into the Jurni chat** when asking Jurni to build the page.
+
+Jurni should treat them as responsive versions of the **same page**, not as two page sections placed one after another.
+
+<Tip>
+  Label the links in your prompt, for example: `Desktop:` followed by the desktop frame link and `Mobile:` followed by the mobile frame link.
+</Tip>
+
+## Organize the frame by visual sections
+
+Keep the design structure aligned with the page structure where possible:
+
+- Announcement bar
+- Navigation
+- Hero
+- Product / Buy Box
+- Benefits
+- Reviews
+- Ingredients or details
+- FAQ
+- Footer
+
+You do not need to flatten the design into one giant image. Keeping meaningful groups makes the intended page structure easier to interpret.
+
+## Name important layers clearly
+
+Useful names include:
+
+- `Hero headline`
+- `Product image`
+- `Add to cart`
+- `Testimonials`
+- `FAQ item`
+- `Mobile nav`
+
+Avoid naming every layer `Frame 123`, `Group 47`, or `Rectangle` when the layer has an obvious product meaning.
+
+## Images and assets
+
+Use the actual campaign assets in Figma whenever possible. If a section uses a specific product image, creator asset, icon, or logo, make that asset available in the source frame rather than relying on Jurni to guess what should be there.
+
+For brand assets that should be reused across many pages, also configure Brand Settings and AI Knowledge.
+
+## Products and commerce behavior
+
+Figma describes the **visual target**, but it does not contain the Shopify commerce configuration Jurni needs for a real Buy Box.
+
+After generation, verify:
+
+- Product mapping
+- Variant selection
+- One-time vs. subscription behavior
+- Selling plan
+- Quantity
+- Add-to-cart / checkout behavior
+- Dynamic pricing
+
+<Warning>
+  A visually accurate Figma replication is not complete until the commerce behavior has been QA'd against the connected Shopify product.
+</Warning>
+
+## Responsive design
+
+If only a desktop frame exists, Jurni can still build a responsive page, but a dedicated mobile frame is useful when mobile intentionally differs—for example:
+
+- Different image crop
+- Reordered content
+- Hidden elements
+- Mobile-specific navigation
+- Different Buy Box arrangement
+
+Do not place the desktop and mobile page frames inside one long frame and expect them to become one page. Share them as separate source frames.
+
+## Prompt example
+
+When starting the build, describe the job rather than only pasting the link:
+
+> Build this landing page in Jurni using the attached desktop and mobile Figma frames. Match the design closely, treat the two frames as responsive versions of the same page, and keep the existing product purchase flow from the connected shop.
+
+## After generation
+
+Review the generated page section by section. The highest-priority QA areas are:
+
+1. Mobile layout
+2. Typography
+3. Image crops
+4. Spacing and section order
+5. Buy Box and product behavior
+6. Links and CTAs
+7. Sticky/mobile elements
+
+## Related guides
+
+- Create a Funnel with AI, Templates, or Scratch
+- AI Chat Prompts
+- Funnel Editor
+- Buy Boxes in Jurni
+- QA Checklist

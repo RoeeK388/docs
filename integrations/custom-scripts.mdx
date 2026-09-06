@@ -4,8 +4,76 @@ sidebarTitle: "Custom Scripts"
 description: "Add custom scripts and third-party tracking pixels to your Jurni pages. Follow best practices for placement, loading order, and security when embedding external code."
 ---
 
-Sometimes you need to add tracking pixels or custom scripts that are not covered by built-in integrations. This guide explains how to safely embed third-party scripts in Jurni, including placement options and best practices for performance and security.
+Custom Scripts let you load third-party JavaScript or tracking integrations that are not available as a dedicated Jurni integration. Use them for tools that need to run on Jurni experiences, but manage their scope carefully to avoid duplicate tracking and performance issues.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/5492713353-custom-scripts-adding-third-party-tracking-pixels) for full content.
-</Note>
+## When to use Custom Scripts
+
+Use a custom script when:
+
+- A vendor does not have a native Jurni integration.
+- Your analytics team needs to load a custom tracking library.
+- A campaign requires a specific third-party widget or initialization script.
+- You need temporary campaign-specific code without changing the underlying storefront theme.
+
+Whenever a built-in Jurni integration exists, prefer the built-in integration because it is easier to manage and less likely to conflict with another implementation.
+
+## Control where the script loads
+
+Custom scripts should only load on the Jurni pages that actually need them. If your workspace contains both Jurni-hosted/subdomain pages and Shopify Pages, review the script's page targeting before launch.
+
+<Warning>
+  If the same pixel or script is already loaded by your Shopify theme, do not also inject it through Jurni on those Shopify Pages. Doing so can cause events to fire twice.
+</Warning>
+
+A common setup is to include Jurni-hosted pages in the custom script configuration while manually excluding Shopify Pages that already inherit the integration from the theme.
+
+## Add a custom script
+
+<Steps>
+  <Step title="Get the vendor script">
+    Copy the installation snippet from the vendor or from your analytics team.
+  </Step>
+  <Step title="Create the script in Jurni">
+    Add it in the Custom Scripts area of your workspace or experience settings.
+  </Step>
+  <Step title="Choose the page scope">
+    Select only the pages where Jurni should load the script.
+  </Step>
+  <Step title="Publish and verify">
+    Open a live page, confirm the script loads once, and test the expected event or widget behavior.
+  </Step>
+</Steps>
+
+## Performance and safety
+
+Third-party scripts can affect page performance or break page behavior if they throw errors. Before rolling a script across many experiences:
+
+- Test it on one page first.
+- Avoid loading multiple vendors that perform the same job.
+- Prefer asynchronous vendor snippets when provided by the vendor.
+- Remove scripts that are no longer required.
+- Do not paste credentials, private API secrets, or server-side keys into browser JavaScript.
+
+## Consent management
+
+If the script is used for advertising or analytics, make sure it follows the consent rules required by your implementation. Consent platforms can intentionally prevent a script from loading or storing identifiers until the shopper grants permission.
+
+## Debugging duplicate events
+
+If a pixel fires twice:
+
+1. Check Jurni Custom Scripts.
+2. Check Jurni's native integrations.
+3. Check the Shopify theme.
+4. Check Google Tag Manager or another tag manager.
+5. Check third-party apps that may inject the same vendor.
+
+The goal is to have one intentional installation path for each tag on each page.
+
+## Related guides
+
+- Google Tag Manager
+- Tracking Pixels
+- Google Analytics and Meta Pixel setup
+- Shopify Page Templates
+- Attribution Overview

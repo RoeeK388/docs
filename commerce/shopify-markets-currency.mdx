@@ -1,0 +1,73 @@
+---
+title: "Shopify Markets, Currency, and Localized Pricing"
+sidebarTitle: "Markets & Currency"
+description: "Understand how Shopify market context affects product prices and cart currency on Jurni commerce experiences, and how to test regional pricing correctly."
+keywords:
+  - "Shopify Markets"
+  - "Jurni currency"
+  - "localized pricing"
+  - "EUR GBP Jurni"
+---
+
+For Shopify-connected experiences, commerce pricing and cart currency can depend on the shopper's Shopify market context. This is especially important when the same brand serves different countries or currencies from one Shopify store.
+
+## Product-backed prices vs. static page copy
+
+Treat these as two different things:
+
+- **Product-backed commerce prices** can reflect the active Shopify market and currency when the store returns localized pricing.
+- **Static text written into the page** does not automatically become a different currency just because the shopper is in another country.
+
+<Warning>
+If a headline or image says `£39` while the Buy Box and cart are correctly showing `€45`, the page can look inconsistent even though Shopify market detection is working. Review all price copy when localizing a campaign.
+</Warning>
+
+## Test market-specific pricing
+
+When checking a market such as Germany from another country:
+
+1. Use an incognito/private browser session.
+2. Apply the VPN or location setup before opening the page.
+3. Open the page fresh rather than reusing a browser session that may already contain store/market cookies.
+4. Check the product price in the Jurni purchase section.
+5. Add the product to cart and confirm the currency and price there.
+6. Continue toward checkout and verify the market remains consistent.
+
+## Why incognito helps
+
+Shopify can persist market or localization context in browser state. Testing a new country in the same long-lived browser session can produce confusing results because old cookies or market selections may still affect the storefront.
+
+## Do you need a separate domain?
+
+Not necessarily. If your Shopify Markets setup already serves the required country and currency, the same storefront architecture can often return the localized commerce data.
+
+A separate domain may still be part of your brand's market strategy, but it should not be the first troubleshooting step for a currency issue.
+
+## Localizing the full experience
+
+Currency is only one part of localization. Also review:
+
+- Language and translated copy
+- Static price references
+- Promotional terms
+- Product availability
+- Subscription availability
+- Shipping claims
+- Legal or market-specific disclaimers
+
+## Troubleshooting mismatched prices
+
+If different parts of the page show different values:
+
+- Identify whether each value is product-backed or static text.
+- Test in a clean browser session.
+- Check the active Shopify market.
+- Verify the selected product/variant is available in that market.
+- Confirm the cart and checkout match the intended market.
+
+## Related guides
+
+- Products and Variants
+- Product Purchase Options
+- Cart and Checkout Behavior
+- Shopify Page Templates

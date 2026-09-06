@@ -4,8 +4,85 @@ sidebarTitle: "Review Widgets"
 description: "Learn how to add and configure review widgets in the Jurni editor. Customize display settings, layout, and styling to showcase customer feedback on your pages."
 ---
 
-Review widgets help you display customer feedback directly on your pages. This guide covers how to add review widgets in the Jurni editor and configure their layout, styling, and display settings to match your brand.
+Review widgets let you display review data from a connected provider inside a Jurni experience. Configure the widget based on **which reviews should appear**, then style the surrounding section to fit the page.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/8677666144-configuring-review-widgets-in-the-editor) for full content.
-</Note>
+## Connect the review provider first
+
+Before adding the widget, make sure the correct review platform is enabled in **Settings → Integrations** and has the required store/account identifier.
+
+A widget cannot display provider data that Jurni cannot access.
+
+## Review display modes
+
+Jurni review widgets support three core modes:
+
+| Mode | Use it when |
+| --- | --- |
+| **Product** | Show reviews for one specific Shopify product |
+| **Group** | Show reviews for a configured product/review group |
+| **All Reviews** | Show reviews across the connected review source/store |
+
+## Product mode
+
+Use Product mode on PDP-style landing pages where the social proof should match the exact product being sold.
+
+<Steps>
+  <Step title="Select Product mode">
+    Set the widget's review mode to **Product**.
+  </Step>
+  <Step title="Choose the product">
+    Select the Shopify product whose reviews should be displayed.
+  </Step>
+  <Step title="Preview the results">
+    Confirm the returned reviews belong to the intended product and market.
+  </Step>
+</Steps>
+
+## Group mode
+
+Use Group mode when the review provider or Jurni configuration groups related products together—for example, multiple sizes, scents, or variants that should share a review pool.
+
+Make sure the group itself is configured correctly before using it on several landing pages.
+
+## All Reviews mode
+
+Use All Reviews when the section is intended to show broader brand/store social proof rather than proof for the exact product on the page.
+
+This works well for brand-level testimonials, but can be less relevant on a highly specific product page.
+
+## Product ratings and review counts
+
+Some Jurni sections can also display product rating summaries or review counts near product information. Those values should come from the connected product/review data rather than being manually typed when they are intended to stay current.
+
+## Styling
+
+The review provider supplies the underlying review data, while the Jurni section controls how that content is presented.
+
+Review:
+
+- Number of reviews shown
+- Card layout
+- Desktop columns
+- Mobile carousel/stacking
+- Star treatment
+- Reviewer name
+- Review body length
+- Product context when needed
+
+## If no reviews appear
+
+Check:
+
+1. The review integration is enabled.
+2. The credential belongs to the correct store/account.
+3. The widget is using the intended mode.
+4. Product mode points to the correct Shopify product.
+5. The review source actually contains reviews for that product/group.
+6. The shop is using the correct market-specific review integration.
+
+## Related guides
+
+- Review Integrations
+- Products and Variants
+- Managing Sections
+- Integration Troubleshooting
