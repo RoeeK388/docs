@@ -1,0 +1,45 @@
+---
+title: "Connect Okendo reviews"
+sidebarTitle: "Okendo"
+description: "Find your Okendo User ID, connect the review provider, and display the correct product, group, or store reviews."
+icon: "star"
+---
+
+Use **Okendo** to display existing reviews on a Jurni page. Connecting the account supplies the review service; you still need to place and configure the Okendo widget in the editor.
+
+## Find the value Jurni needs
+
+Open **Okendo → Settings → Integrations → Okendo** and copy the **User ID** for the store. Jurni labels this field **Subscriber ID (User ID)**. It identifies the Okendo account, not a member of your team, a product, or an API secret.
+
+See [Okendo's account-ID documentation](https://docs.okendo.io/on-site/storefront-rest-api/quick-start).
+
+## Connect and place the widget
+
+<Steps>
+  <Step title="Connect Okendo in Jurni">
+    Go to **Settings → Integrations → Reviews & Pop-ups**. Enable **Okendo**, paste the User ID into **Subscriber ID (User ID)**, and select **Save Changes** on the Okendo card.
+  </Step>
+  <Step title="Add the review section">
+    Open the experience editor, open **Integrations**, and add the Okendo review section. Select the inserted widget to configure it.
+  </Step>
+  <Step title="Choose which reviews to show">
+    Use all reviews for a broader store-review section, product mode for one product, or group mode for an existing Okendo review group. For product mode, select the real product. For group mode, use the existing Okendo Group ID, not the account User ID.
+  </Step>
+  <Step title="Save and check the page">
+    Save the page, preview the review section, and verify the published destination. Check the product or group being reviewed as well as the visible layout.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+**Only a placeholder appears:** check that Okendo is enabled, the User ID was saved, and the account matches this store.
+
+**The widget shows unrelated reviews:** check its all/product/group choice. The product-specific integration uses Shopify product identifiers; entering a variant ID, product title, or a different store's product will not identify the intended review collection.
+
+**A custom drawer or pop-up does not work:** the review connection is not a general installer for every Okendo feature. Share the exact widget or behavior with the Jurni team. For Shopify Pages, check the theme/app installation separately.
+
+## Related guides
+
+- [Review-widget setup](/integrations/review-widgets)
+- [Shopify Pages limitations](/shopify-pages/limitations)
+- [On-page integrations](/build/editor-integrations)

@@ -304,6 +304,7 @@
             "pages": [
               "integrations/review-integrations",
               "integrations/review-widgets",
+              "integrations/okendo",
               "integrations/alia"
             ]
           },
