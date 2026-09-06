@@ -6,3 +6,70 @@ icon: "mouse-pointer-2"
 noindex: true
 tag: "Release draft"
 ---
+
+<Note>
+  Release-preview draft: these metrics are part of the new reporting work. This guide uses the intended product definitions; final tracking rules and availability must be confirmed before publication.
+</Note>
+
+Engagement metrics help explain **how shoppers use a page**, while conversion and revenue metrics show the commercial result. Use them together rather than treating more time or more scrolling as a win on its own.
+
+## What each metric means
+
+| Metric | Intended meaning | A useful question |
+| --- | --- | --- |
+| **Session duration** | Average time spent on the page per session. | Are shoppers spending time with the content, or leaving quickly? |
+| **Scroll depth** | Average percentage of the page viewed per session. | Are shoppers reaching the content and purchase area you expect them to see? |
+| **Bounce rate** | Percentage of sessions that leave without interacting. | Is the page encouraging an initial interaction? |
+
+These are the definitions proposed for the new experiment reporting view. They should not be assumed identical to metrics with the same names in GA4, Meta, or another tool.
+
+## Session duration
+
+Use session duration to investigate how much time shoppers spend with a page. For example, a longer duration on an educational page may accompany more reading, while a shorter duration on a focused offer page may accompany faster purchasing.
+
+Longer is not automatically better. It can also accompany confusion, repeated attempts to use a selector, or difficulty finding the next action. Compare duration with purchase rate, add-to-cart, checkout, and revenue per session.
+
+The definition of recorded time matters. Do not assume that an inactive browser tab represents continuous attention or that a missing duration means a zero-second visit. The released tracking rules must determine which time is included.
+
+## Scroll depth
+
+Scroll depth helps identify whether important content sits beyond where visitors typically reach. It can inform a test of section order or moving key information closer to the top.
+
+For example, if visitors rarely reach a lower-page Buy Box, test placing an earlier purchase opportunity rather than simply making the page longer. Check whether the change improves buying, not just scrolling.
+
+A percentage represents relative position on the page. Comparing 50% of a short page with 50% of a long page does not mean shoppers saw the same amount of content. A depth value also does not prove that someone read or understood the section.
+
+## Bounce rate
+
+The planned definition is about leaving **without interaction**, not simply leaving without purchasing. A shopper can interact with a page and still decide not to buy.
+
+Use a high bounce rate as a reason to investigate the campaign-to-page message, loading problems, unclear content, or a missing next action. It is not enough information to conclude that a product or audience is wrong.
+
+The exact actions that count as an interaction must follow Jurni's released definition. Do not import another platform's time threshold or assume that scrolling always counts.
+
+## Use the metrics to choose a test
+
+| Pattern to investigate | Useful next check |
+| --- | --- |
+| Quick exits and few interactions | Does the hero match the ad, and does the page load correctly? |
+| Visitors do not reach important content | Is the information too far down, or is the opening section unclear? |
+| More time on page but fewer purchases | Are selection, pricing, or checkout steps creating friction? |
+| More scrolling without revenue improvement | Is the added content helping shoppers decide, or just adding length? |
+
+These are investigation prompts, not diagnoses. Inspect the page and test a focused change.
+
+## Compare like with like
+
+Use the same reporting window and distinguish experiment traffic from direct page traffic. Compare mobile and desktop separately when those breakdowns are available, especially when page length and section arrangement differ.
+
+Do not average averages from different variants to recreate an overall result. Use the report's underlying totals and applicable counted sessions. Missing data should remain distinguishable from a measured zero.
+
+Engagement metrics explain behavior; they do not by themselves declare an experiment winner. The planned first confidence calculations apply to CVR, AOV, and RPS.
+
+## Related guides
+
+- [Read experiment results](/experiments/reading-results)
+- [Confidence and winners](/experiments/statistical-significance)
+- [Metric definitions](/data-dictionary/metrics-glossary)
+- [Desktop and mobile editing](/build/desktop-mobile)
+- [Testing best practices](/experiments/strategic-experiments)
