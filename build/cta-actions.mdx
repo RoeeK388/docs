@@ -1,0 +1,61 @@
+---
+title: "Configure buttons, links, and shopper actions"
+sidebarTitle: "Buttons & actions"
+description: "Set the real behavior behind a CTA, including section scrolling, product navigation, add to cart, checkout, and external links."
+icon: "mouse-pointer-2"
+---
+
+A CTA has two separate parts: **what the shopper sees** and **what happens when they activate it**. Changing “Learn more” to “Buy now” does not configure a purchase action.
+
+## Configure an action
+
+<Steps>
+  <Step title="Select the button or purchasing component">
+    Select it on the canvas or in Layers. For a Buy Box, use its purchasing configuration rather than only editing the text inside the button.
+  </Step>
+  <Step title="Identify its current behavior">
+    Inspect the action and destination controls exposed by that component. A custom or AI-built section may expose different controls from a standard library section.
+  </Step>
+  <Step title="Set the destination or product">
+    Configure the target section, product, variant, selling plan, or URL required by the chosen action.
+  </Step>
+  <Step title="Test as a shopper">
+    Open Preview to test the interaction, then verify the final live publishing destination before launch.
+  </Step>
+</Steps>
+
+## Common actions
+
+| Intended behavior | What to verify |
+| --- | --- |
+| **Scroll to a section** | The target section exists and is visible where the shopper needs it. Retest after changing page structure. |
+| **Open a product page** | The product and the intended internal or external product destination are correct. |
+| **Add to cart** | The actual variant, quantity, and any selling plan reach the cart; the cart opens or continues according to the configured flow. |
+| **Open cart** | The intended cart interface appears. Opening a cart alone is not the same as adding a product. |
+| **Go to checkout** | The selected purchase reaches the intended checkout with the correct product and plan. |
+| **External URL** | The full destination is correct, and any new-tab behavior or query parameters behave as intended. |
+
+The standard library Buy Box exposes **Action type** choices for **Add to cart**, **Go to checkout**, and **External URL**. Other sections can implement actions differently.
+
+## Buttons inside custom or AI-built sections
+
+For a complex purchasing area, the button can depend on state selected elsewhere in the section. Its action must use the shopper's current selection, not a hard-coded product that merely looks correct.
+
+When asking AI to change the design, specify that the product, variant selection, subscription logic, and CTA behavior must remain unchanged. When changing the behavior, describe the required result explicitly and test it afterwards.
+
+## Shopify Pages and external storefronts
+
+The same visual CTA can run in a different commerce environment after publication. On native Shopify Pages, cart behavior is handled through the Shopify setup and may require [cart configuration](/shopify-pages/cart-config). A custom/headless storefront needs the implementation agreed for that stack.
+
+Test both the preview and the final page; do not infer cart compatibility from a successful visual render.
+
+## Use clear tracking metadata
+
+When the component offers CTA metadata, use meaningful names that identify the action and placement, such as **Hero — start quiz**. Keep the label and configured behavior consistent. Metadata helps identify an interaction; it does not turn a click into a confirmed add-to-cart or purchase.
+
+## Related guides
+
+- [Add and configure a Buy Box](/products/add-buy-box)
+- [Cart and checkout behavior](/commerce/cart-checkout-behavior)
+- [Event dictionary](/reference/events)
+- [AI editing](/build/ai-editing)

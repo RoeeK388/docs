@@ -1,0 +1,69 @@
+---
+title: "Edit pages and sections with AI"
+sidebarTitle: "Edit with AI"
+description: "Use section context, attachments, chat history, and focused instructions to make AI-assisted edits without losing track of scope or publishing state."
+icon: "sparkles"
+---
+
+Use **AI** in the editor when a change is easier to describe than to make one control at a time. For a single text replacement or spacing value, a manual edit can be more direct. For a new arrangement or a larger section change, AI can help build the result.
+
+## Make a focused AI edit
+
+<Steps>
+  <Step title="Open the correct experience and page">
+    Confirm the shop, page, and editing mode before asking for a change. Check whether the selected content is a Global Section or product-specific page.
+  </Step>
+  <Step title="Select and identify the target">
+    Select the section or element you want to change. Review the section context attached to the chat, and name the target in your instruction so the request is unambiguous.
+  </Step>
+  <Step title="Provide the change and constraints">
+    Describe what should change, what should stay unchanged, and which device view the change is for. Include a reference or approved content when needed.
+  </Step>
+  <Step title="Review the result">
+    Wait for the response and inspect the actual canvas. Check the target section, neighboring content, both device views, and any affected purchasing interaction.
+  </Step>
+  <Step title="Save or publish deliberately">
+    A completed chat response does not by itself tell you the page's saved or published state. Use the appropriate page or scoped-section save/publish action after reviewing the result.
+  </Step>
+</Steps>
+
+## Use the right attachments
+
+The editor chat supports context such as **files, media, products, Meta ads, Figma links, and web links**. Attach the actual product or reference when possible rather than expecting the assistant to identify it from an ambiguous name.
+
+For Figma, provide both the desktop and mobile frame links in the chat and label which is which. For a web reference, explain whether it is a visual reference, a copy reference, or the desired shopping interaction. These are different instructions.
+
+## Preserve what is already working
+
+State the boundaries of the edit. For example:
+
+> In the selected hero section, shorten the headline to two lines on mobile. Keep the image, desktop layout, CTA destination, product selection, and all other sections unchanged. Use only the approved wording below.
+
+For a Buy Box, explicitly preserve or intentionally change the product, variant selection, selling plan, quantity, and cart/checkout action. A visual redesign should not silently become a new purchasing implementation.
+
+## Use existing sections intentionally
+
+For an approved reusable section, insert it from Saved Sections or Global Sections first and then work within the intended scope. Do not assume AI will automatically choose every existing saved component instead of creating a new one.
+
+If the selected section is global, changes can affect the shared source. Detach it first when you need a local campaign-specific version.
+
+## Chat history and new conversations
+
+Use **Chat history** in the AI panel to return to an earlier conversation for the experience. Use **New chat** for a separate task. The panel also provides a stop control while a response is running.
+
+Chat history is not version history. Opening an older conversation does not restore the page to its earlier design. Use [Undo/redo](/build/undo-redo) or [published version history](/build/version-history) for the appropriate recovery task.
+
+For standalone Agent conversations and missing-history checks, see [Find and resume AI conversations](/build/chat-history). Starting before an experience exists? Use the [Jurni Agent guide](/build/jurni-agent).
+
+## When an edit does not look right
+
+Check that you are viewing the intended page, device mode, and section. Describe the specific mismatch rather than repeating “try again.” For example: “The image changed, but the request was only to reduce the space above the heading.”
+
+Inspect the result before sending a second large request. Use Undo when appropriate rather than stacking corrections on an unclear intermediate state.
+
+## Related guides
+
+- [Prompting best practices](/building-funnels/ai-chat-prompts)
+- [Figma workflow](/building-funnels/figma-file)
+- [Global Sections](/build/global-sections)
+- [Save, preview, and publish](/build/save-preview-publish)

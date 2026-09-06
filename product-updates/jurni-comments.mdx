@@ -4,55 +4,61 @@ sidebarTitle: "Comments"
 description: "Leave page-specific feedback directly in the Jurni editor, review comment threads in context, and keep experience feedback attached to the exact section being discussed."
 ---
 
-Comments let your team leave feedback directly on an experience inside the Jurni editor. Each comment is attached to the part of the page being reviewed, which makes it easier to understand exactly what needs to change.
+Use comments to keep feedback attached to the page content being discussed. A comment is a review thread, not a request that automatically edits or publishes the page.
 
-## When to use comments
+For external reviewers, first use [Share and review links](/build/share-review-links). A public Preview Link is read-only and is not the same as the restricted comments workflow.
 
-Use comments when an experience is in review and you want to:
+## Enter Comment mode
 
-- request a copy or design change
-- ask a question about a specific section
-- leave implementation context for another editor
-- keep feedback attached to the page instead of spreading it across Slack or screenshots
+Select the **comments icon** in the editor header. In Comment mode, the page is used for feedback rather than normal editing; some editing panels are disabled.
 
-## Add a comment
+If Jurni asks you to handle unsaved changes, read the action carefully:
+
+| Current page state | What the prompt can offer |
+| --- | --- |
+| **Draft with unsaved edits** | Save the edits, discard them, or keep editing. |
+| **Published experience with unsaved edits** | Publish the changes, discard them, or keep editing. |
+
+<Warning>
+  Choosing **Publish** before entering comments on a published experience can make pending changes live. Choose **Keep editing** when they are not ready. **Discard** intentionally removes those local edits; it is not a way to save them privately.
+</Warning>
+
+## Leave and follow up on feedback
 
 <Steps>
-  <Step title="Open the experience">
-    Open the experience in the Jurni editor.
+  <Step title="Select the relevant content">
+    In Comment mode, select the section or element you want to discuss and open the comment composer.
   </Step>
-  <Step title="Enter Comment mode">
-    Use the **Comment** control in the editor to switch from editing to commenting.
+  <Step title="Write a specific comment">
+    Describe the issue and expected result. Include the device view when relevant, such as “On mobile, the subscription label wraps over the price.”
   </Step>
-  <Step title="Select the part of the page">
-    Click the section or element the feedback relates to. Jurni places the comment at that location so the context stays attached to the page.
+  <Step title="Post and continue the thread">
+    Submit the comment. Open its pin or its entry in the Comments sidebar to read the discussion and reply.
   </Step>
-  <Step title="Write the feedback">
-    Add a specific, actionable comment and submit it.
-  </Step>
-  <Step title="Return to editing">
-    Exit Comment mode when you are ready to continue editing the experience.
+  <Step title="Resolve after verification">
+    After making and checking the requested change, resolve the thread. Use the **Resolved** tab to find completed threads and reopen one when more work is needed.
   </Step>
 </Steps>
 
-## Review existing comments
+The sidebar separates **Open** and **Resolved** comments. Select a thread to return to its target when that target still exists.
 
-Comments can be reviewed from the editor's comment UI and sidebar. Threads stay associated with their page location so reviewers and editors can return to the exact area being discussed.
+## Editing and deleting comments
 
-<Tip>
-  Keep one requested change per comment. A comment such as **“Use the lifestyle image from the campaign creative here”** is much easier to action than **“This section feels off.”**
-</Tip>
+Use the comment's available menu to edit or delete your own feedback. These actions change the discussion, not the page design. Resolve a completed discussion instead of deleting it when you want to keep the review history.
 
-## Save edits before commenting
+## When a pin no longer matches the page
 
-Jurni's editor includes a save check when switching into Comment mode. If you have unsaved page edits, save them first so the feedback is attached to the version your team is actually reviewing.
+A section or element can be replaced or removed after a comment is created. The thread can still appear in the sidebar even when it is no longer attached to a current target. Read the thread and confirm its context rather than assuming the original element still exists.
 
-## Current limitations
+## When Comment mode is unavailable
 
-Do not rely on features that are not visible in your workspace. In particular, older help-center material referenced future collaboration features such as shareable review links and teammate @mentions. Those should not be treated as available unless they are present in the current Jurni UI.
+Wait for an active AI operation to finish and leave a dedicated Global Section edit before entering comments. Also confirm that the reviewer has access to the restricted review link.
+
+To resume design work, exit Comment mode and return to the editor. A reviewer asking for a change does not automatically gain editing access to the shop.
 
 ## Related guides
 
-- Experience Editor
-- Saved & Global Sections
-- QA Checklist
+- [Share and review links](/build/share-review-links)
+- [Save, preview, and publish](/build/save-preview-publish)
+- [Invite team members](/getting-started/inviting-team-members)
+- [QA checklist](/building-funnels/qa-checklist)

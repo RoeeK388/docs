@@ -1,0 +1,68 @@
+---
+title: "Save, preview, and publish your work"
+sidebarTitle: "Save & preview"
+description: "Distinguish unsaved canvas edits, saved drafts, public preview links, restricted review links, and published destinations."
+icon: "eye"
+---
+
+A page can look correct on the editor canvas without that version being saved or published. Check the editor's state and the action you are taking instead of assuming every change autosaves or remains private.
+
+## Understand the different surfaces
+
+| Surface | What it is for |
+| --- | --- |
+| **Editor canvas** | Making and inspecting changes in the current editing session. |
+| **Saved draft** | Preserving the page's working content without publishing that draft as a live campaign destination. |
+| **Preview Link** | A read-only page preview that does not require sign-in. Treat it as a shareable link, not an access-controlled review. |
+| **Share/review link** | Review and comments for workspace members and invited reviewers. |
+| **Published URL** | The destination shoppers reach through a direct URL, Smart Link, or experiment. |
+
+## Save a draft
+
+When a draft has unsaved page changes, the editor shows **Unsaved changes** and **Save Changes**. Use that action and wait for it to complete before leaving or sharing the preview.
+
+The current canvas can contain changes that an external preview link has not loaded. Save first, reopen the preview, and verify what the recipient will actually see.
+
+Code mode and dedicated Global Section editing have their own scoped save actions. Finish those operations deliberately rather than assuming a page-level save means every separate source was handled the same way.
+
+## Test a preview
+
+Use the editor's preview controls to test interactions without selecting the underlying elements. Use **Share → Preview Link** to copy or open the read-only external preview.
+
+Check mobile and desktop, links, selectors, modals, and purchasing controls. Do not distribute the preview as the campaign's live URL.
+
+<Note>
+  Tracking Custom Scripts can be intentionally excluded from Preview. Native Shopify Pages also run in a different theme/cart environment. Verify analytics and integrations on the actual published destination before launch.
+</Note>
+
+## Publish deliberately
+
+Open **Publish**, review the destination and state shown, and confirm publication only when the page is ready for shoppers. Publishing can save pending page edits as part of the operation.
+
+For native Shopify Pages, use the Shopify publication controls and verify the resulting `/pages/` URL. Do not treat a Jurni preview and a Shopify publication as the same rendered environment.
+
+See [Publishing overview](/publishing/overview) and [Shopify Pages setup](/shopify-pages/setup-publish) for destination-specific steps.
+
+## Be careful when entering comments
+
+If you enter Comment mode with unsaved changes, Jurni asks what to do first. For a draft, the prompt offers saving. For an already published experience, the prompt can offer **Publish**, **Discard**, or **Keep editing**.
+
+<Warning>
+  On a published experience, selecting **Publish** in this prompt can publish your pending changes. It is not merely a private “save before commenting.” Choose **Keep editing** when the changes are not ready, or **Discard** only when you intend to remove those local edits.
+</Warning>
+
+## Settings and shared sources have a different scope
+
+Some editor Settings controls save directly: for example, changing **Enable Cart** or **Enable SEO** sends a configuration update immediately. Other settings use their own Save action. Do not assume every setting remains a private unsaved canvas edit until publication. See [Page settings](/build/page-settings).
+
+Saving a [Global Section](/build/global-sections) changes a shared source. Updating product data or shop-level integrations is also a different operation from editing one page draft. Review those scopes independently before changing a live campaign.
+
+## If you need to recover
+
+Use [Undo/redo](/build/undo-redo) for current-session edits. Use [version history](/build/version-history) for available published snapshots. Restoring a version is not the same as opening a read-only preview of it.
+
+## Related guides
+
+- [Share pages for review](/build/share-review-links)
+- [Comments](/product-updates/jurni-comments)
+- [QA checklist](/building-funnels/qa-checklist)

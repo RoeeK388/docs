@@ -1,0 +1,57 @@
+---
+title: "Delete or hide sections and elements"
+sidebarTitle: "Delete & hide"
+description: "Remove a section, hide supported content without deleting it, and distinguish a page instance from a shared library source."
+icon: "eye-off"
+---
+
+Use **Delete** to remove content from the page. Use **Hide/Show**, where available, when the content should remain editable but not be displayed in that visibility context.
+
+## Delete a section
+
+<Steps>
+  <Step title="Select the correct level">
+    In **Layers**, select the section you intend to remove. Check that it is the whole section, not just an element inside it.
+  </Step>
+  <Step title="Check what depends on it">
+    Check whether a button scrolls to the section, a Buy Box provides the page's purchase action, or the section contains a required widget. Update those dependencies before launch.
+  </Step>
+  <Step title="Use Delete">
+    Open the section's more-options menu and select **Delete**. Inspect the resulting page before saving or publishing.
+  </Step>
+</Steps>
+
+For a supported element selection, **Delete** applies to that selected element instead. Removing a button is different from removing its entire section.
+
+## Hide without deleting
+
+Select the supported section or layer, open its menu, and use **Hide**. Use **Show** to make hidden content visible again. Hidden content can still appear in the editor's layer structure with a visibility indicator.
+
+Check the active editing/device context and then inspect both mobile and desktop. Do not assume that hiding something while viewing one device has produced the desired result on the other.
+
+Use hiding for deliberate presentation differences, not as a way to protect sensitive information. Content visibility is not an access-control mechanism.
+
+## Page instances versus reusable sources
+
+| Action | Scope to check |
+| --- | --- |
+| Delete an ordinary section from a page | The selected occurrence on that page. |
+| Remove a Global Section instance from a page | The page's use of shared content; this is different from deleting the shared source. |
+| Delete a template from Saved Sections or Global Sections | The reusable library item. Treat this as a separate operation and review its usage first. |
+| Detach Global | Makes the selected global use local; it is not the same as deleting the section. |
+
+## Recover from an accidental edit
+
+Use [Undo](/build/undo-redo) immediately when the change is part of the current editor history. Do not assume Undo can restore a deleted library item or reverse a change made in another settings screen.
+
+If you have already left the session, review the available [version history](/build/version-history) rather than assuming there is an unlimited recycle bin for every object.
+
+## Before publishing
+
+Check that the page still has a clear main action and that links, review widgets, mobile layouts, and sticky elements behave correctly after the removal.
+
+## Related guides
+
+- [Layers and selection](/build/layers-selection)
+- [Global Sections](/build/global-sections)
+- [Desktop and mobile editing](/build/desktop-mobile)

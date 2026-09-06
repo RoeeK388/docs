@@ -1,72 +1,67 @@
 ---
-title: "Choose the Right Jurni Setup"
-sidebarTitle: "Choose Your Setup"
-description: "Choose the correct Jurni setup for a Shopify Online Store, Shopify Headless storefront, or non-Shopify commerce stack before configuring publishing and tracking."
+title: "Supported commerce platforms"
+sidebarTitle: "Supported platforms"
+description: "Understand Jurni's native Shopify integration and how headless, custom, WooCommerce, Salesforce, BigCommerce, and other storefronts connect."
 keywords:
-  - "Jurni Shopify setup"
-  - "Jurni headless"
-  - "non Shopify Jurni"
-  - "Shopify Pages"
+  - "Shopify native integration"
+  - "headless storefront"
+  - "WooCommerce"
+  - "Salesforce"
+  - "BigCommerce"
+  - "custom commerce"
+icon: "store"
 ---
 
-Your Jurni setup depends on **where your storefront runs**, not only which commerce platform processes the order.
+Jurni connects to the commerce setup your brand already uses. **Shopify is supported through a native integration.** Headless storefronts, custom storefronts, WooCommerce, Salesforce, BigCommerce, and other platforms require the connection appropriate to that stack.
 
-Use this guide before configuring publishing, tracking, or checkout behavior.
+This page explains compatibility. It is not an onboarding step where you choose a new commerce platform.
 
-## Shopify Online Store
+## Shopify: native integration
 
-Choose this path when your customer-facing storefront uses a standard Shopify Online Store theme.
+For a Shopify brand, connect the existing store through Jurni's Shopify authorization flow during onboarding. The native integration provides the connection to Shopify commerce; you then configure the features you need, such as products, Jurni Core, and publishing.
 
-Jurni integrates with the Shopify store and **Jurni Core** can run through the Shopify theme/app environment for session, visit, cart, and attribution tracking.
+For a store using a Shopify Online Store theme:
 
-For publishing, Shopify brands have three relevant URL patterns:
+- Activate [Jurni Core](/getting-started/activating-jurni-core) in the active theme.
+- Work with the connected products and their available purchase options in Jurni.
+- Publish using a Jurni URL on your connected subdomain, or the Shopify app-proxy route while no custom Jurni subdomain is configured.
+- Optionally configure [Shopify Pages](/shopify-pages/setup-publish) to publish inside a Shopify page template.
 
-1. **Jurni page on your Shopify app proxy** — the default Shopify-hosted route when no custom Jurni subdomain is configured, using a URL such as `yourdomain.com/apps/jurni/<handle>`.
-2. **Jurni page on a custom subdomain** — after you connect a branded subdomain, Jurni pages and Smart Links can use that domain.
-3. **Native Shopify Page** — an optional publishing method that places the Jurni page inside a Shopify page template at `yourdomain.com/pages/<handle>`.
+**Native integration does not mean every third-party Shopify app automatically runs on a Jurni-hosted page.** Tracking, reviews, forms, cart drawers, and other widgets still need the appropriate integration and testing.
 
-<Info>
-Native Shopify Pages are an additional publishing option for Shopify Online Store brands. They are not required in order to use Jurni.
-</Info>
+## Shopify with a headless storefront
 
-Start with [Shopify Setup](/getting-started/shopify-setup-overview), then review [Publishing Jurni Pages](/publishing/overview).
+A headless Shopify brand still uses Shopify for commerce, but shoppers browse a custom frontend rather than a standard Shopify theme.
 
-## Shopify Headless
+The Shopify connection and the custom frontend's tracking are different parts of this setup. Enabling an app embed in a Shopify theme does not install that script on the separate frontend. Your developer and the Jurni team need to confirm the frontend script installation, cart continuity, checkout handoff, and purchase attribution.
 
-Choose this path when Shopify is still your commerce backend but the shopper-facing site is **not rendered by the Shopify Online Store theme**.
+See [Shopify headless setup](/getting-started/shopify-headless). Native Shopify Pages instructions apply to Shopify's theme-rendered pages, not automatically to a headless frontend.
 
-In a headless setup, Jurni cannot rely on the standard Shopify theme-extension path. The Jurni tracking script is loaded directly on the headless storefront and can use host-specific configuration for the domains connected to the shop.
+## WooCommerce, Salesforce, BigCommerce, and custom storefronts
 
-Shopify's cart/order data can still be used for attribution, but the integration needs to preserve the Jurni session/visit and cart or checkout signals through the custom storefront flow.
+Jurni can work with these setups through an implementation agreed with your team. During onboarding, identify your existing provider. The current non-Shopify onboarding flow includes a team-assisted handoff rather than the native Shopify authorization path.
 
-<Warning>
-Do not follow the native Shopify Pages instructions for a headless storefront. Shopify Pages rely on Shopify theme templates and the Jurni app block.
-</Warning>
+Before launch, agree how these four parts work:
 
-Start with [Shopify Headless Setup](/getting-started/shopify-headless).
+| Part | What needs to be confirmed |
+| --- | --- |
+| **Product data** | Where Jurni receives products, variants, prices, availability, and any subscription options. |
+| **Cart and checkout** | What each purchasing action does and where the shopper completes the order. |
+| **Tracking** | Where Jurni and third-party scripts run, including the downstream storefront and consent requirements. |
+| **Purchase measurement** | Which event or backend integration supplies completed purchases and revenue. |
 
-## Non-Shopify or custom commerce
+A working landing-page URL alone does not confirm that the purchase or revenue integration is complete. See [Non-Shopify setup](/getting-started/setup-non-shopify).
 
-Choose this path when the storefront and commerce flow are outside Shopify.
+## Publishing follows the storefront environment
 
-Jurni can load its browser-side tracking directly on a custom storefront, but commerce events, cart/checkout behavior, and order attribution depend on the APIs and event sources available in your stack.
+| Existing environment | What to expect |
+| --- | --- |
+| **Shopify Online Store theme** | Native Shopify connection; Jurni app-proxy/custom-subdomain URLs; optional native Shopify Pages. |
+| **Shopify headless** | Shopify commerce plus a separate frontend implementation. Confirm tracking and commerce handoffs with your developer. |
+| **Other commerce platforms** | Assisted/custom connection for the provider and storefront you already use. Do not apply Shopify app-proxy or Shopify Pages instructions. |
 
-Because these implementations are not all identical, confirm the required integration with the Jurni team before launching paid traffic.
+For standard Shopify stores, `brand.com/apps/jurni/<handle>` and `brand.com/pages/<handle>` are different publishing routes. A [Smart Link](/building-funnels/smart-links) is the traffic-routing layer, not a different commerce platform.
 
-Start with [Non-Shopify Setup](/getting-started/setup-non-shopify).
+## Already onboarded?
 
-## Quick comparison
-
-| Setup | Storefront | Jurni Core / tracking | Publishing options |
-| --- | --- | --- | --- |
-| **Shopify Online Store** | Shopify theme | Shopify integration / theme environment | App proxy, custom Jurni subdomain, or native Shopify Pages |
-| **Shopify Headless** | Custom/headless frontend with Shopify commerce | Jurni script loaded directly on the storefront | Jurni-hosted/custom-domain or implementation-specific flow; not Shopify Pages |
-| **Non-Shopify** | Custom/non-Shopify storefront | Jurni script + custom event/commerce integration | Jurni-hosted/custom-domain or implementation-specific flow |
-
-## Next steps
-
-- [Shopify Setup](/getting-started/shopify-setup-overview)
-- [Shopify Headless Setup](/getting-started/shopify-headless)
-- [Non-Shopify Setup](/getting-started/setup-non-shopify)
-- [Publishing Jurni Pages](/publishing/overview)
-- [Tracking & Attribution](/analytics-reporting/attribution-overview)
+Keep using the shop created for your brand. You do not need to create another shop just to read the guide for your platform. Use [First-launch checklist](/getting-started/step-by-step-setup) to finish the remaining launch work, or go straight to the [editor guide](/building-funnels/funnel-editor).

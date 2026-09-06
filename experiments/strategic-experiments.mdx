@@ -1,77 +1,53 @@
 ---
-title: "Strategically Run Experiments in Jurni for Reliable Results"
-sidebarTitle: "Strategy"
-description: "Learn how to run Jurni A/B experiments with proper duration, traffic thresholds, and budget expectations so you can trust your results and avoid common mistakes."
+title: "Plan a useful experiment"
+sidebarTitle: "Testing best practices"
+description: "Choose a clear hypothesis, compare variants fairly, check the purchase flow, and use results without relying on arbitrary traffic or confidence thresholds."
+icon: "flask-conical"
 ---
 
-Running an experiment for too short a period is the most common reason teams draw wrong conclusions from their tests. This guide covers the minimum run times, traffic thresholds, and confidence levels you need to trust the results you see in Jurni, plus how to budget time and money for faster insights.
+A useful experiment answers a specific question: **does this change help the shoppers we are sending to the page?** Start with a clear comparison, check both purchase flows, and decide what success means before reviewing the results.
 
-## Minimum Guidelines
+## 1. Start with one question
 
-Use the table below as your baseline before you act on any experiment result.
+Write down what you are changing and why. For example: “Will a shorter hero explanation help more visitors reach the Buy Box?”
 
-| Factor | Minimum |
-| --- | --- |
-| Run time | 3 weeks (21 days) |
-| Sessions per variant | 500 |
-| Statistical confidence | 95% |
+Use your current page as the control and create a variant with the proposed change. Starting with two variants keeps the comparison easier to manage. For a full-page redesign, treat the result as a comparison between two page approaches—not proof that a particular headline caused the difference.
 
-**Why 3 weeks?** A full three weeks accounts for day-of-week traffic variation. Stopping after one weekend or one weekday spike risks drawing conclusions from unrepresentative data.
+## 2. Decide what success means
 
-**Why 500 sessions per variant?** Below this threshold, statistical confidence scores on the dashboard are unreliable regardless of what they display.
+Choose the business result you care about, such as conversion rate or revenue per session. Use supporting metrics to understand the result: more button clicks are not necessarily better if fewer shoppers complete checkout.
 
-**Why 95% confidence?** This is the standard minimum for making decisions based on experiment results. The Jurni dashboard displays confidence as a score; wait for 95+ before declaring a winner.
+See [Reading results](/experiments/reading-results) and the [Metrics glossary](/data-dictionary/metrics-glossary) for the measures shown in Jurni.
 
-## Budget and Timeline Expectations
+## 3. Check the experience before launch
 
-There is no minimum spend requirement in Jurni, but more traffic means faster results.
+Test both variants on mobile and desktop. Verify the products, variants, purchase options, discounts, and final checkout. Enter through the experiment's campaign link so you are testing the intended routing, not just opening a page directly.
 
-- Brands spending ~\$500/day on a campaign can typically reach significance in 1 to 2 weeks.
-- Brands spending ~\$100/day may need 4 to 6 weeks.
+If you are comparing against an existing store page, follow [Testing against your website](/experiments/testing-against-website).
 
-Push as much traffic as possible to reach significance faster.
+## 4. Keep the comparison fair
 
-## What to Avoid
+Keep the campaign audience and offer consistent where possible. Avoid editing the pages repeatedly during a test; otherwise, the results describe several versions rather than the comparison you planned.
 
-<Warning>
-  Do not pause or adjust an experiment in the first 48 to 72 hours. Early data is noisy and consistently misleading.
-</Warning>
+If you must fix a broken page or checkout, fix it. Record when the issue happened and reconsider which results are usable. Do not leave a broken purchase flow running simply to preserve a test schedule.
 
-- **Do not act on results below 95% confidence**, even if the trend looks strong.
-- **Do not change the traffic allocation mid-experiment.** This resets the signal quality.
+## 5. Review the result in context
 
-## Early Winners
+Look at the amount of traffic and the number of completed purchases behind the percentages. A large percentage difference based on very few orders can change quickly. Review a representative period for your campaign rather than reacting to one unusually strong day.
 
-If one variant is performing dramatically better (for example, 2x or more on CVR after 7 days), you can choose to end early. Document that the result is directional and not statistically confirmed. Use it to inform your next test, not as a final conclusion.
+<Note>
+  There is no universal rule that 500 sessions, three weeks, or a particular daily ad budget makes a result conclusive. A higher metric by itself is not proof of statistical significance. Use only the confidence or significance information actually available in your results, and do not assume a fixed confidence threshold applies to every test.
+</Note>
 
-## Multi-Variant Experiments
+## 6. Decide what to do next
 
-Experiments with 3 or more variants need proportionally more traffic. Add roughly 50% more sessions per additional variant beyond the original two.
+Record what you learned, which version you intend to use, and whether the result is conclusive or only directional. Before pausing or ending the experiment, review [Pause, end, and reuse](/experiments/pause-end-reuse) and confirm where its campaign link will send shoppers.
 
-<Tip>
-  Keep early experiments to two variants (control vs. one change) to reach significance faster and isolate what is actually driving the difference.
-</Tip>
+An unclear result can still guide the next test. Prefer a clearer hypothesis or fewer competing changes over adding complexity to an inconclusive comparison.
 
-## Frequently Asked Questions
+## Related guides
 
-<AccordionGroup>
-  <Accordion title="Can I extend an experiment that is close to significance?">
-    Yes. Just let it run longer. The clock does not reset unless you change the traffic allocation.
-  </Accordion>
-
-  <Accordion title="What if traffic is too low to ever reach significance?">
-    Focus traffic on fewer variants, increase traffic to the experiment Smart Link, or run a simpler single-variable test with a tighter creative change. This concentrates the available traffic and makes differences easier to interpret.
-  </Accordion>
-
-  <Accordion title="Should I run an experiment on a brand-new page or a proven one?">
-    Start with your best-performing current page as the control. Testing against a weak baseline inflates apparent lift and makes it harder to know if your change is genuinely effective.
-  </Accordion>
-</AccordionGroup>
-
-## Related Articles
-
-- [Test a Jurni Page Against an Existing Website Page](/experiments/testing-against-website)
-- [What Are Experiments?](/what-are-experiments)
-- [How to Create an Experiment](/how-to-create-an-experiment)
-- [Reading Tests Results](/reading-tests-results)
-- [Troubleshoot: Experiment Traffic Not Splitting Correctly](/troubleshoot-experiment-traffic-not-splitting-correctly)
+- [What are experiments?](/experiments/what-are-experiments)
+- [Create an experiment](/experiments/create-experiment)
+- [Reading results](/experiments/reading-results)
+- [Troubleshoot traffic assignment](/experiments/traffic-troubleshoot)

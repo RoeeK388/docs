@@ -1,0 +1,68 @@
+---
+title: "Control pop-ups on an experience"
+sidebarTitle: "Pop-up controls"
+description: "Enable or disable connected Klaviyo, Postscript, and Alia pop-ups for an experience without confusing this with inline forms or provider-account settings."
+icon: "panel-top"
+---
+
+Use the editor's pop-up settings to control which **connected Klaviyo, Postscript, and Alia providers** are enabled for the current experience. These controls are separate from placing an inline form section on the page.
+
+## Connect the provider first
+
+The control appears when at least one supported provider is connected with the required configuration in the shop:
+
+| Provider | Required shop-side configuration |
+| --- | --- |
+| **Klaviyo** | Enabled integration and Company ID. |
+| **Postscript** | Enabled integration and Shop ID. |
+| **Alia** | Enabled integration and embed script URL. |
+
+Configure these in **Settings → Integrations**. Do not enter a private API key where the integration requests a public identifier or an embed URL.
+
+## Set the experience's pop-up providers
+
+<Steps>
+  <Step title="Open editor Settings">
+    Open the experience and select the **Settings gear** in the editor header. Open the pop-ups control.
+  </Step>
+  <Step title="Set the main switch">
+    Enable or disable pop-ups for this experience through this integration path.
+  </Step>
+  <Step title="Choose the connected providers">
+    When enabled, use the individual provider switches to select which connected pop-ups should be allowed. Turning the last selected provider off also disables the overall pop-up selection.
+  </Step>
+  <Step title="Save">
+    Select **Save** and verify the result on the intended page. **Cancel** discards the unsaved choices in this pop-up settings panel.
+  </Step>
+</Steps>
+
+When no experience-specific pop-up choice has been saved, the editor defaults to the connected providers. Review the settings deliberately rather than assuming a newly connected provider is excluded from existing experiences.
+
+## What still belongs to the provider
+
+Provider-side rules can determine the form design, campaign status, timing, audience, and whether a shopper has already seen or submitted it. Enabling a provider in Jurni does not mean its pop-up must appear on every test visit.
+
+Test in a clean browser session when checking display rules, and confirm the campaign is active in the provider.
+
+## Inline forms and other script installations
+
+An inline Klaviyo or Postscript form added through the editor's **Integrations** panel is a separate placement. Do not assume the pop-up switch deletes that inline section.
+
+Likewise, a script installed through Custom Scripts, the Shopify theme, GTM, or another app is a separate installation path. These controls should not be treated as a universal switch for every copy of a provider script on the site.
+
+For native Shopify Pages, inspect the Shopify theme/app configuration and test the final `/pages/` URL independently.
+
+## Troubleshooting
+
+**The control is missing:** confirm that one of the supported providers is enabled with its required shop-side value.
+
+**The provider is enabled but no pop-up appears:** check provider display rules, campaign state, consent, and the publishing environment.
+
+**A pop-up still appears after you disabled it:** check for another loader in Custom Scripts, the Shopify theme, a tag manager, or an app.
+
+## Related guides
+
+- [On-page integrations](/build/editor-integrations)
+- [Credentials reference](/integrations/api-keys)
+- [Custom Scripts](/integrations/custom-scripts)
+- [Shopify Pages limitations](/shopify-pages/limitations)

@@ -1,0 +1,59 @@
+---
+title: "Understand product editing scope"
+sidebarTitle: "What your edit affects"
+description: "Distinguish shared product data, one Buy Box, shared product-page layouts, product-specific layouts, Saved Sections, and Global Sections."
+icon: "scan"
+---
+
+Before changing a product experience, check **what you are editing and where else it is used**. A product record, one page section, a shared product-page layout, and a Global Section are different scopes.
+
+## The main scopes
+
+| Where you are working | Scope to understand |
+| --- | --- |
+| **Products → Edit Product Data** | Shared Jurni product content, available to compatible experiences using that product. |
+| An ordinary **Buy Box section** on a page | That section's product selection, layout, and supported actions. |
+| A product page showing **Editing all products** | The shared product-page layout within the current experience. |
+| A product page showing **Editing for: [product]** | The selected product's custom page layout within that experience. |
+| A section inserted from **Saved Sections → Saved** | An independent copy on the page. |
+| A **Global Section** editing session | The shared section source referenced by its linked uses. |
+
+## Shared versus product-specific page editing
+
+When working in a product-page context, read the banner above the canvas. **Editing all products** identifies the shared product-page mode. **Editing for: [product]** identifies the currently selected product's custom mode.
+
+Select the intended product/context through the controls offered in that editor and confirm the banner before changing sections. Check another connected product afterwards when you meant to change a shared layout.
+
+These product-page modes do not mean every Buy Box added to a landing page automatically exposes the same scope switch. They apply to the product-page editing context where Jurni displays those controls.
+
+## Product scope is not catalog visibility
+
+**Products → Manage products** controls which Shopify catalog items Jurni makes available. It does not choose whether a page-layout edit applies to one product or all products.
+
+Likewise, changing a Buy Box's **Product** field selects what the component uses; it does not edit the underlying Shopify product or move the page into a different shop.
+
+## Product scope and responsive scope are independent
+
+**Editing all products** is about products. **Editing All Sizes** is about the base/responsive editing mode. A page can involve both decisions.
+
+Before an edit, check the product context, device context, and whether the selected section is global. For example, a desktop-only adjustment to a shared product-page layout is not the same as a local adjustment to one product on all sizes.
+
+## Keep one campaign's change local
+
+For a campaign-specific headline or layout, edit the local page/section rather than changing the shared product content. For an isolated copy of a Global Section, use **Detach Global** before customizing it.
+
+For reusable but independently editable designs, use Saved Sections. Use Global Sections only when linked changes are the desired behavior.
+
+## Verification checklist
+
+After a scope-sensitive edit, inspect the current product, another affected product where relevant, mobile and desktop, and any page that uses the same Global Section. Test the actual purchasing action again if product selection, options, or layout logic changed.
+
+A scope banner is a guide to the operation—not a reason to skip checking the saved and published result.
+
+## Related guides
+
+- [Product content and media](/products/content-media)
+- [Product visibility](/products/catalog-visibility)
+- [Desktop and mobile](/build/desktop-mobile)
+- [Saved Sections](/building-funnels/saved-sections)
+- [Global Sections](/build/global-sections)

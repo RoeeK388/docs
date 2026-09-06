@@ -1,0 +1,60 @@
+---
+title: "Read Meta ad account insights"
+sidebarTitle: "Meta ad insights"
+description: "Open connected ad accounts, review revenue, clicks, spend, ROAS and CPA, and distinguish Meta account reporting from Jurni page and experiment results."
+icon: "chart-column"
+---
+
+Use **Ads** in the Jurni sidebar to review connected Meta ad accounts. This answers a different question from page analytics: ad account insights describe the connected account's advertising performance, while experience and experiment reports focus on Jurni page journeys and tests.
+
+## Open an account's insights
+
+<Steps>
+  <Step title="Connect the intended Meta account">
+    Complete the [Meta Ad Accounts connection](/integrations/meta-ads). A Meta Pixel ID alone does not authorize Jurni to read the ad account.
+  </Step>
+  <Step title="Open Ads">
+    Select **Ads** under Channels in the main sidebar. Confirm you are looking at the intended ad account, especially when your login can access several brands.
+  </Step>
+  <Step title="Open Ad Account Insights">
+    Use the account's **Ad Account Insights** action. To browse its campaigns instead, use the account's campaigns/ads view.
+  </Step>
+  <Step title="Set the reporting period">
+    Choose the period in the insights selector. Read the displayed dates before comparing the account with another report.
+  </Step>
+</Steps>
+
+## Understand the summary
+
+The insights summary displays **Revenue**, **Clicks**, **Spend**, **ROAS** (return on ad spend), and **CPA** (cost per acquisition), together with a conversion-stage view. Monetary values use the currency returned for the account's insights.
+
+Use the summary to identify which account and period need investigation. Then inspect the relevant campaigns and landing pages rather than assuming an account-wide change came from one Jurni page.
+
+## Choose the right report
+
+| Question | Start here |
+| --- | --- |
+| How is my connected Meta ad account performing? | Ads → Ad Account Insights |
+| How is a particular Jurni experience performing? | [Experience analytics](/analytics-reporting/experience-analytics) |
+| Which variant is performing better in a Jurni test? | [Experiment results](/experiments/reading-results) |
+| Why are the numbers different across platforms? | [Analytics differences](/troubleshooting/analytics-differences) |
+
+<Warning>
+  Do not treat ad-account revenue, Jurni-attributed revenue, and total Shopify store revenue as interchangeable totals. First match the account, dates, currency, traffic scope, and attribution context. An account-wide advertising report is not a controlled page experiment.
+</Warning>
+
+## A useful review workflow
+
+Select one account and reporting period. Note the relevant spend and outcome metrics, then identify the campaign or creative angle you want to improve. Review the destination page's performance in Jurni and write a specific hypothesis before changing the page.
+
+For a new landing-page concept, provide the relevant Meta ad to the [Jurni Agent](/build/jurni-agent). For a comparison, route traffic through a [Jurni experiment](/experiments/create-experiment) rather than comparing unrelated campaigns as though only the page had changed.
+
+## Missing account or insights
+
+Check the selected ad accounts in **Settings → Integrations → Meta Ad Accounts → Manage Accounts**. Confirm that the Meta login used for authorization can access the intended account. Also check your Jurni access: advertising data can be restricted by role.
+
+A missing or failed insights panel is not evidence of zero revenue. If the connection is correct but the report does not load, share the affected account, reporting period, and screenshot with Jurni support.
+
+- [Connect Meta Ad Accounts](/integrations/meta-ads)
+- [Filter experience analytics](/analytics-reporting/filtering-experiences)
+- [Export reporting data](/analytics-reporting/export-csv)

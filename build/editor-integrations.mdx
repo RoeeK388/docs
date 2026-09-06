@@ -1,0 +1,68 @@
+---
+title: "Add and manage on-page integrations"
+sidebarTitle: "On-page integrations"
+description: "Place forms, reviews, and widgets from the editor's Integrations panel, and distinguish page placement from account connection and tracking."
+icon: "plug"
+---
+
+Use the editor's **Integrations** panel to add supported forms, reviews, and widgets to a page. Use **Settings → Integrations** to connect the provider account or required identifier. These are two different jobs.
+
+## What belongs in the editor
+
+The current editor groups integration sections by function:
+
+| Group | Examples | Purpose |
+| --- | --- | --- |
+| **Forms** | Klaviyo, Postscript | Place a supported form inside the page. |
+| **Reviews** | Junip, Stamped, Trustpilot, Okendo, Yotpo, Judge.me, Bazaarvoice, REVIEWS.io | Display the supported review or rating widget. |
+| **Widgets** | Videowise | Place a supported third-party widget. |
+
+The template determines which display types and fields are available. The presence of an integration does not mean every widget offered by that vendor is automatically supported in every publishing environment.
+
+## Connect and place a widget
+
+<Steps>
+  <Step title="Connect the provider">
+    Open **Settings → Integrations** for the correct shop. Configure the provider with the value its integration requests. Use the [credentials reference](/integrations/api-keys) rather than assuming every provider needs a private API key.
+  </Step>
+  <Step title="Open the editor's Integrations panel">
+    Return to the page editor and select **Integrations** in the left toolbar. Browse the appropriate form, review, or widget category.
+  </Step>
+  <Step title="Add the supported section">
+    Select the template and use **Add Sections**. Locate the inserted section in Layers and move it to the intended position.
+  </Step>
+  <Step title="Configure its page-level fields">
+    Set the required product, form, widget, or provider identifier exposed by that section. Review size and spacing in the page layout.
+  </Step>
+  <Step title="Verify the rendered result">
+    Test the page, then check the final live URL. Confirm that the widget shows the intended product or form—not merely that the provider script loaded.
+  </Step>
+</Steps>
+
+## Pop-ups are different from inline forms
+
+An inline form occupies a position on the page. A provider-managed pop-up uses its own loading and display rules. For connected Klaviyo, Postscript, and Alia providers, the editor also has **per-experience pop-up switches** in Settings. See [Pop-up controls](/build/page-popups) for the prerequisites and Save/Cancel workflow.
+
+Connecting a pop-up service, selecting it for the experience, and adding an inline form section are not interchangeable steps.
+
+Similarly, Meta Pixel, GA4, and GTM are **tracking integrations**, not visible sections that need to be dragged onto the page. Configure their installation and event delivery separately.
+
+## Remove or move a widget
+
+Move the widget's section in Layers to change its placement. Removing that section removes the page placement; it is not the same action as disconnecting the provider in shop settings.
+
+Before disconnecting a shop-level integration, review other pages that use it. Before adding a second vendor script, check whether the same provider already loads through a native integration, Custom Scripts, GTM, or the Shopify theme.
+
+## Native Shopify Pages require their own test
+
+A widget that works on a Jurni subdomain may need a different setup inside a native Shopify Page. Theme/app scripts and widgets that search the page structure can behave differently there. Do not assume a custom review drawer, overlay, or script will work solely because its basic provider connection is active.
+
+Test the real `/pages/` destination and involve the Jurni team when a custom vendor widget needs compatibility work.
+
+## Related guides
+
+- [Review integrations](/integrations/review-integrations)
+- [Review widgets](/integrations/review-widgets)
+- [Custom Scripts](/integrations/custom-scripts)
+- [Integration troubleshooting](/integrations/troubleshooting)
+- [Shopify Pages limitations](/shopify-pages/limitations)

@@ -1,0 +1,56 @@
+---
+title: "Add and configure a Buy Box"
+sidebarTitle: "Add a Buy Box"
+description: "Add the standard library Buy Box, select a real product, set Add to cart, Go to checkout, or External URL, and verify the selected purchase."
+icon: "shopping-cart"
+---
+
+Use a Buy Box when shoppers should select a product and purchase it directly from your page. This guide covers the standard library Buy Box; a custom or older purchasing section may have different controls.
+
+## Add and connect the Buy Box
+
+<Steps>
+  <Step title="Add the section">
+    Open the experience in the editor. In **Section Library**, select the product/Buy Box layout and choose **Add Sections**. You can also reuse an approved section from **Saved Sections**.
+  </Step>
+  <Step title="Select the product">
+    Select the whole Buy Box in **Layers**, then choose the item in the **Product** field. Check that the title, images, and variant options match the intended product.
+  </Step>
+  <Step title="Set the button action">
+    Choose **Action type**: **Add to cart**, **Go to checkout**, or **External URL**. For an external link, enter the destination URL.
+  </Step>
+  <Step title="Adjust the design">
+    Edit the text, media, and layout with the visual controls or AI. When using AI, ask it to preserve the product selection and purchase behavior unless you intend to change them.
+  </Step>
+  <Step title="Test the purchase">
+    Preview both screen sizes. Try the default selection and the main variant or subscription choices, then check the actual cart or checkout before publishing.
+  </Step>
+</Steps>
+
+## Which action should I use?
+
+| Action | Use it when |
+| --- | --- |
+| **Add to cart** | Shoppers should add the selection and review their cart. |
+| **Go to checkout** | The page should take the selected purchase directly into checkout. |
+| **External URL** | The purchase or next step happens at another destination. This action navigates there rather than adding the selection to cart. |
+
+<Note>
+  The standard library Buy Box purchases **one unit of the selected variant**. A quantity selector, multi-buy offer, or bundle needs a section configured for that behavior. Renaming a button or pack-size label does not change the quantity purchased.
+</Note>
+
+## Check the options and final price
+
+Variants and available subscription plans come from the connected product. Confirm the default choice, selected plan, and displayed amount. Read [Purchase options](/building-funnels/product-purchase-options) before changing subscription preferences or using a custom Buy Box.
+
+Test the published destination too. For native Shopify Pages, check the real `/pages/` URL and its [cart configuration](/shopify-pages/cart-config).
+
+<AccordionGroup>
+  <Accordion title="Why is the Buy Box missing from Preview?">
+    Check the **Product** field. The standard template shows a selection prompt in the editor when no product is chosen, but does not show a purchasing area in Preview or on the live page without a product.
+  </Accordion>
+
+  <Accordion title="How do I reuse this Buy Box?">
+    Use a [Saved Section](/building-funnels/saved-sections) for independent copies, or a [Global Section](/build/global-sections) when updates should be shared. Check the product and purchase options again after inserting it into another experience.
+  </Accordion>
+</AccordionGroup>

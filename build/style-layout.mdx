@@ -1,0 +1,54 @@
+---
+title: "Style and layout controls"
+sidebarTitle: "Style & layout"
+description: "Use element styles and the page theme for spacing, dimensions, colors, typography, backgrounds, and border radius without confusing local and shared changes."
+icon: "palette"
+---
+
+Use local controls for a change to one section or element. Use the editor's **palette/theme panel** when you intend to change the page's design settings more broadly.
+
+## Start with the correct selection
+
+Select the section or element and inspect the right panel. Expand the relevant style group when it is collapsed. Available fields come from the selected component: an image, text element, button, and section container do not expose identical controls.
+
+Check **Editing All Sizes** versus **Editing Desktop Only** before changing a responsive value.
+
+## Common control types
+
+| Control | What it changes | What to check |
+| --- | --- | --- |
+| **Size and dimensions** | The dimensions of the selected content or container. | Oversized fixed values can overflow a narrow layout. |
+| **Padding and spacing** | Space within or around a block, according to the selected control. | Check the neighboring section as well as the selected one. |
+| **Typography** | Text appearance, including the settings offered for the selected text or theme category. | Check wrapping and legibility on both device views. |
+| **Colors and background** | Text, fill, border, or background values. | Change the intended property; a background and a text color are separate values. |
+| **Border radius** | Corner rounding for the selected element or design preset. | A card, button, and media element can use different presets. |
+| **Media position** | How the asset sits inside its display area. | Repositioning is different from replacing or resizing the image. |
+
+Do not add empty text blocks or repeated spaces just to position an element. Use the appropriate spacing or layout control, or ask AI for a clearly scoped structural change.
+
+## Page theme versus element styling
+
+Open the **palette icon** in the editor's left toolbar to work with the page theme. The current design system includes surface colors, primary and secondary button colors, accent and discount colors, neutral colors, typography, and card/button/media radius settings. Older pages can also expose legacy theme fields.
+
+A theme value is useful when several elements should share a design choice. A locally assigned value can override that shared styling, so changing the theme does not mean every customized element will visibly change.
+
+Shop-level **Settings → Brand** and the theme of the experience currently being edited are different scopes. Use [Brand settings](/getting-started/brand-settings) for the brand inputs, and the editor for the current page's design work.
+
+## A reliable editing sequence
+
+First adjust the base/All Sizes layout. Then inspect desktop and add responsive overrides where needed. Recheck mobile after structural changes. If one field should return to its base value on desktop, clear its desktop override rather than maintaining duplicate values manually.
+
+For a layout that needs a different arrangement of elements, use [AI section editing](/build/ai-editing) with a precise instruction, such as: “On desktop only, place the image beside the copy; preserve the mobile stack, product selection, and button action.”
+
+## Section positioning
+
+Supported section roots expose **Sticky position** with **None**, **Top**, and **Bottom**. This changes how the section stays visible while scrolling. It is separate from selecting a Buy Box's purchase action or configuring an older global sticky banner.
+
+See [Sticky CTAs](/building-funnels/sticky-cta-banner) before using sticky behavior with carts, pop-ups, or mobile content.
+
+## Related guides
+
+- [Desktop and mobile](/build/desktop-mobile)
+- [Text and media](/build/edit-content-media)
+- [Image repositioning](/product-updates/image-repositioning)
+- [Global Sections](/build/global-sections)

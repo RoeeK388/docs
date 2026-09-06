@@ -4,13 +4,17 @@ sidebarTitle: "Sticky CTAs"
 description: "Add sticky calls to action to Jurni pages, understand the current Section Library model versus legacy global sticky banners, and QA behavior across desktop, mobile, and Shopify Pages."
 ---
 
-A sticky CTA keeps an important action visible while a shopper moves through a page. Jurni currently has **two sticky CTA models**, and the setup depends on when the experience was created.
+A sticky CTA keeps an important action visible while a shopper moves through a page. Jurni supports section-based sticky content and an older, separately configured global sticky banner. Check which model the experience actually uses rather than relying on its creation date.
 
 ## New experiences: add a Sticky CTA from the Section Library
 
 For new experiences, add the Sticky CTA as a normal section from the **Section Library**. This is the current model and should be used for new builds.
 
 Because it is a section, you can manage it with the same editor workflow used for other page sections: add it, edit its content and action, preview it, and save the experience.
+
+For a supported editable section, select the **section root** and find **Sticky position** in its controls. Choose **None**, **Top**, or **Bottom** according to the intended behavior. Check both device views and scroll the preview to confirm the result.
+
+Sticky placement does not configure the button's purchase or navigation action. Configure and test that action separately. Avoid stacking a new sticky section over an existing legacy banner, cart control, or consent notice.
 
 <Info>
   Older help-center instructions that tell you to create a new sticky banner from **Experience Settings → Global Sticky Banner** describe the legacy model. New sticky CTAs are added from the Section Library instead.
@@ -55,8 +59,9 @@ Shopify Pages use a different rendering target from Jurni-hosted pages. Do not a
 
 ## Related guides
 
-- Managing Sections
-- Experience Editor
-- Buy Boxes
-- Shopify Pages: When to Use & Limitations
-- QA Checklist
+- [Add sections](/building-funnels/managing-sections)
+- [Style and layout controls](/build/style-layout)
+- [Buttons and actions](/build/cta-actions)
+- [Page settings](/build/page-settings)
+- [Shopify Pages limitations](/shopify-pages/limitations)
+- [QA checklist](/building-funnels/qa-checklist)

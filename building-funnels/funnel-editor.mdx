@@ -1,120 +1,67 @@
 ---
-title: "Experience Editor"
-sidebarTitle: "Experience Editor"
-description: "Use the Jurni Experience Editor to manage sections, content, responsive layouts, shopper actions, products, Buy Boxes, AI edits, and pre-publish QA."
+title: "Editor overview"
+sidebarTitle: "Editor overview"
+description: "Find every major Jurni editor workflow: sections, responsive design, AI, product actions, integrations, settings, saving, previews, comments, and version history."
+icon: "panels-top-left"
 ---
 
-The **Experience Editor** is where you build and refine a Jurni page. Use it to manage sections, content, media, responsive behavior, product interactions, and the actions shoppers take from the page.
+Open an experience from **Experiences** to build or edit its pages. Most work follows the same flow: **add sections → edit content and design → check mobile and desktop → preview and publish**.
 
-## Open the editor
-
-Open an experience from the **Experiences** area in Jurni. The editor loads the current working version of the page so you can make changes before publishing them to shoppers.
-
-## Main parts of the editor
+## Find your way around
 
 <CardGroup cols={3}>
-  <Card title="Page canvas" icon="desktop">
-    Shows the page as you build it. Select sections and elements directly from the canvas and switch between desktop and mobile views while editing.
+  <Card title="Canvas" icon="monitor">
+    Select the section, text, image, or button you want to change.
   </Card>
 
-  <Card title="Sections" icon="layer-group">
-    Controls the structure of the page. Add sections from the Section Library, select existing sections, reorder them, or reuse Saved/Global Sections.
+  <Card title="Left toolbar" icon="panel-left">
+    Open AI, Section Library, Saved Sections, Layers, the theme panel, and Integrations.
   </Card>
 
-  <Card title="Editing controls" icon="sliders">
-    The available controls depend on what you select. Use them for content, media, layout, actions, and section-specific configuration.
+  <Card title="Right panel" icon="sliders-horizontal">
+    Change the content, style, or settings available for your selection.
   </Card>
 </CardGroup>
 
-Jurni also exposes AI chat inside the editing workflow for changes that are easier to describe than configure manually.
+## Build and edit your page
 
-## Work section by section
+<Steps>
+  <Step title="Arrange the sections">
+    Use **Section Library** to add a layout, then **Layers** to select, rename, copy, reorder, hide, or delete sections. Use Saved Sections for an independent copy of an approved design, or Global Sections when the content should stay shared.
+  </Step>
+  <Step title="Make your changes">
+    Select content on the canvas and edit it in the right panel. Use **AI** for changes that are easier to describe. Name the section and say what should stay unchanged.
+  </Step>
+  <Step title="Connect the actions">
+    Check what buttons do—not just their labels. Connect the Buy Box to the correct product and add any forms or review widgets the page needs.
+  </Step>
+  <Step title="Check both screen sizes">
+    Start in **Editing All Sizes**, then use **Editing Desktop Only** for desktop adjustments. Review both views after changes to layout, copy, or purchasing controls.
+  </Step>
+  <Step title="Save, review, and publish">
+    Save your draft before sharing. Use a Preview Link for viewing or invite reviewers for comments. When ready, publish and test the campaign's actual destination.
+  </Step>
+</Steps>
 
-A section should have a clear job in the shopper journey. Common jobs include:
+<Note>
+  Global Sections and shared product data can affect more than one page. Also read any save or publish prompt carefully: on an already published experience, entering comments with unsaved changes can offer to **Publish** them.
+</Note>
 
-- hero / campaign hook
-- product education
-- social proof
-- comparison or ingredients
-- Buy Box / purchase decision
-- FAQ
-- repeated CTA
+## Explore a feature
 
-Use the **Section Library** to add new patterns and **Saved/Global Sections** when your shop already has an approved section you want to reuse.
+| What you need | Guides |
+| --- | --- |
+| Manage page structure | [Add sections](/building-funnels/managing-sections), [Layers](/build/layers-selection), [Copy and duplicate](/build/copy-duplicate-sections), [Reorder](/build/reorder-sections), [Delete or hide](/build/delete-hide-sections) |
+| Edit the design | [Text and media](/build/edit-content-media), [Style and layout](/build/style-layout), [Desktop and mobile](/build/desktop-mobile), [Image positioning](/product-updates/image-repositioning) |
+| Reuse approved work | [Saved Sections](/building-funnels/saved-sections), [Global Sections](/build/global-sections), [Template Library](/build/template-library) |
+| Build with AI or Figma | [AI editing](/build/ai-editing), [Prompting tips](/building-funnels/ai-chat-prompts), [Figma references](/building-funnels/figma-file) |
+| Add shopping and integrations | [Buy Boxes](/products/add-buy-box), [Buttons and actions](/build/cta-actions), [Widgets and forms](/build/editor-integrations), [Pop-ups](/build/page-popups), [Sticky CTAs](/building-funnels/sticky-cta-banner) |
+| Review and recover work | [Save and preview](/build/save-preview-publish), [Share for review](/build/share-review-links), [Comments](/product-updates/jurni-comments), [Undo/redo](/build/undo-redo), [Version history](/build/version-history) |
 
-## Edit content and media
+<Accordion title="Additional settings and advanced tools">
+  [Page settings](/build/page-settings) covers subscription preferences, cart-icon visibility, variant-selection modals, and SEO. [Localized content](/build/localization) applies to pages with locales configured. [Code mode](/build/code-mode) is optional and access-dependent; it is not required for normal page editing.
+</Accordion>
 
-Select the relevant content in the editor to update copy, images, video, links, or section configuration.
+## Before you launch
 
-For images, Jurni also supports image repositioning/crop controls so you can change the visible focal point without replacing the underlying asset.
-
-For larger design changes, AI chat can modify or rebuild a section based on your instruction. Review AI changes visually and functionally rather than assuming a successful generation means the section is launch-ready.
-
-## Configure shopper actions carefully
-
-Buttons and purchase controls can do very different things. Depending on the section, an action may:
-
-- scroll to another section
-- add a product to cart
-- open cart
-- continue to checkout
-- navigate to another product/page
-- open an external URL
-
-The visual label on a CTA does not determine its behavior. Test the configured action itself before publishing.
-
-## Products and Buy Boxes
-
-Product configuration should be handled as real commerce behavior, not placeholder design.
-
-For any shoppable section, confirm:
-
-- Shopify product and variant
-- one-time vs. subscription purchase option
-- selling plan
-- quantity
-- bundle rules, when used
-- discount/offer behavior
-- post-add-to-cart action
-
-Use the dedicated **Products & Buy Boxes** docs for those behaviors.
-
-## Desktop and mobile
-
-Review both breakpoints throughout the build. Pay particular attention to:
-
-- image crop
-- section spacing
-- Buy Box stacking
-- carousels
-- long labels
-- sticky CTAs
-- modals and overlays
-
-Do not wait until the final QA pass to discover that a desktop-first section does not work on mobile.
-
-## Preview vs. live page
-
-Editor Preview is useful for layout and interactions, but it is not identical to every published environment.
-
-In particular:
-
-- tracking Custom Scripts can be intentionally excluded from Preview
-- Shopify Pages run inside the Shopify theme environment
-- third-party widgets may behave differently on a live URL
-
-Always test the final publishing destination before sending meaningful traffic.
-
-## Before publishing
-
-Use the QA Checklist to verify the page, products, tracking, mobile behavior, and live cart/checkout path. Then choose the appropriate publishing method: Jurni URL/custom subdomain, Smart Link traffic routing, or native Shopify Pages where supported.
-
-## Related guides
-
-- Managing Sections
-- Saved & Global Sections
-- AI Chat Prompts
-- Image Repositioning
-- Products & Buy Boxes
-- QA Checklist
-- Publishing Overview
+Use the [pre-launch checklist](/building-funnels/qa-checklist). Check the live URL, products, cart, and tracking in the destination you will use—not only in the editor preview.

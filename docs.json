@@ -29,15 +29,17 @@
             "group": "Start Here",
             "pages": [
               "getting-started/welcome",
-              "getting-started/choose-your-setup",
-              "getting-started/step-by-step-setup"
+              "getting-started/step-by-step-setup",
+              "getting-started/choose-your-setup"
             ]
           },
           {
-            "group": "Workspace Setup",
+            "group": "Account & Team",
             "pages": [
               "getting-started/create-account",
-              "getting-started/setup-account"
+              "getting-started/setup-account",
+              "getting-started/inviting-team-members",
+              "getting-started/shop-access"
             ]
           },
           {
@@ -55,46 +57,78 @@
             ]
           },
           {
-            "group": "Brand & Team",
+            "group": "Brand & AI Knowledge",
             "pages": [
               "getting-started/brand-settings",
-              "getting-started/setup-ai-knowledge",
-              "getting-started/inviting-team-members"
+              "getting-started/setup-ai-knowledge"
             ]
           }
         ]
       },
       {
-        "tab": "Experiences",
+        "tab": "Build",
         "groups": [
           {
-            "group": "Create Experiences",
+            "group": "Start Building",
             "pages": [
               "building-funnels/creating-a-funnel",
-              "building-funnels/qa-checklist"
+              "building-funnels/funnel-editor",
+              "build/manage-experiences"
             ]
           },
           {
-            "group": "Editor & Sections",
+            "group": "Sections & Layers",
             "pages": [
-              "building-funnels/funnel-editor",
               "building-funnels/managing-sections",
+              "build/layers-selection",
+              "build/copy-duplicate-sections",
+              "build/reorder-sections",
+              "build/delete-hide-sections"
+            ]
+          },
+          {
+            "group": "Design & Behavior",
+            "pages": [
+              "build/edit-content-media",
+              "build/style-layout",
+              "build/desktop-mobile",
+              "build/cta-actions",
+              "build/editor-integrations",
+              "build/page-popups",
               "building-funnels/sticky-cta-banner",
-              "product-updates/image-repositioning"
+              "product-updates/image-repositioning",
+              "build/page-settings",
+              "build/localization"
+            ]
+          },
+          {
+            "group": "Assets & Reuse",
+            "pages": [
+              "build/assets-library",
+              "build/template-library",
+              "building-funnels/saved-sections",
+              "build/global-sections"
             ]
           },
           {
             "group": "AI & Figma",
             "pages": [
+              "build/jurni-agent",
+              "build/ai-editing",
               "building-funnels/figma-file",
-              "building-funnels/ai-chat-prompts"
+              "building-funnels/ai-chat-prompts",
+              "build/chat-history"
             ]
           },
           {
-            "group": "Reusable Content & Collaboration",
+            "group": "Preview, History & Collaboration",
             "pages": [
-              "building-funnels/saved-sections",
-              "product-updates/jurni-comments"
+              "build/save-preview-publish",
+              "build/undo-redo",
+              "build/version-history",
+              "product-updates/jurni-comments",
+              "build/share-review-links",
+              "building-funnels/qa-checklist"
             ]
           }
         ]
@@ -103,17 +137,26 @@
         "tab": "Products & Buy Boxes",
         "groups": [
           {
-            "group": "Products",
+            "group": "Start Here",
+            "pages": [
+              "building-funnels/buy-box-overview"
+            ]
+          },
+          {
+            "group": "Product Library",
             "pages": [
               "building-funnels/products-and-variants",
+              "products/catalog-visibility",
+              "products/content-media",
               "building-funnels/sync-new-products"
             ]
           },
           {
             "group": "Buy Boxes",
             "pages": [
-              "building-funnels/buy-box-overview",
-              "building-funnels/product-purchase-options"
+              "products/add-buy-box",
+              "building-funnels/product-purchase-options",
+              "products/editing-scope"
             ]
           },
           {
@@ -138,6 +181,7 @@
             "group": "Cart & Checkout",
             "pages": [
               "commerce/cart-checkout-behavior",
+              "commerce/cart-display-settings",
               "commerce/shopify-markets-currency"
             ]
           }
@@ -150,7 +194,8 @@
             "group": "Publishing Basics",
             "pages": [
               "publishing/overview",
-              "publishing/update-unpublish"
+              "publishing/update-unpublish",
+              "publishing/page-seo"
             ]
           },
           {
@@ -202,7 +247,9 @@
               "analytics-reporting/funnel-step-performance",
               "analytics-reporting/filtering-experiences",
               "analytics-reporting/custom-events",
-              "analytics-reporting/attribution-overview"
+              "analytics-reporting/attribution-overview",
+              "analytics-reporting/export-csv",
+              "analytics-reporting/meta-ad-insights"
             ]
           },
           {
@@ -241,22 +288,25 @@
             ]
           },
           {
-            "group": "Developer & Custom",
-            "pages": [
-              "integrations/api-keys",
-              "integrations/custom-scripts",
-              "integrations/mcp-connector"
-            ]
-          },
-          {
             "group": "Lifecycle & Messaging",
-            "pages": []
+            "pages": [
+              "integrations/klaviyo",
+              "integrations/postscript"
+            ]
           },
           {
             "group": "Widgets, Reviews & Pop-ups",
             "pages": [
               "integrations/review-integrations",
-              "integrations/review-widgets"
+              "integrations/review-widgets",
+              "integrations/alia"
+            ]
+          },
+          {
+            "group": "Affiliate & Creator Tools",
+            "pages": [
+              "integrations/manage-creators",
+              "integrations/affiliate-tools"
             ]
           },
           {
@@ -264,6 +314,14 @@
             "pages": [
               "integrations/connect-slack",
               "notifications/slack-reports"
+            ]
+          },
+          {
+            "group": "Custom Integrations",
+            "pages": [
+              "integrations/api-keys",
+              "integrations/custom-scripts",
+              "integrations/mcp-connector"
             ]
           }
         ]
@@ -276,7 +334,8 @@
             "pages": [
               "data-dictionary/metrics-glossary",
               "reference/events",
-              "reference/url-parameters"
+              "reference/url-parameters",
+              "build/code-mode"
             ]
           },
           {

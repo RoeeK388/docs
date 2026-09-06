@@ -1,0 +1,68 @@
+---
+title: "Edit product content and variant media"
+sidebarTitle: "Product content & media"
+description: "Use Edit Product Data to manage shared benefits, details, reviews, offers, cross-sell content, and variant media for compatible Jurni components."
+icon: "file-pen-line"
+---
+
+Open a product in **Products** to access **Edit Product Data**. This drawer manages shared Jurni product information that compatible pages and components can use across experiences.
+
+<Warning>
+  This is not an isolated text edit on one page. Before changing shared product content, consider other experiences using that product. For a campaign-only paragraph or image, edit the local section instead.
+</Warning>
+
+## Edit product information
+
+<Steps>
+  <Step title="Find the correct product">
+    Open Products in the correct shop and search for the product. Check its name and image before opening the edit drawer.
+  </Step>
+  <Step title="Open the relevant tab">
+    Choose the content area you need: **Variants**, **Benefits**, **Details**, **Reviews**, **Offers**, **Cross-Sell**, or **Variant Media**.
+  </Step>
+  <Step title="Update the intended fields">
+    Use approved product content and the correct media. Keep product facts, customer review content, and promotional messages accurate.
+  </Step>
+  <Step title="Save and inspect a consuming page">
+    Save the product changes and wait for confirmation. Open an experience using that product to verify how its particular components display the updated data.
+  </Step>
+</Steps>
+
+## What each tab is for
+
+| Tab | What to review |
+| --- | --- |
+| **Variants** | Product option and variant presentation/configuration exposed by the drawer. Do not confuse these controls with creating Shopify variants. |
+| **Benefits** | Reusable benefit text and supporting presentation, including the icon fields offered. |
+| **Details** | Supporting product descriptions and details used by compatible components. |
+| **Reviews** | Product review content and summary/display fields used by the Jurni product presentation. |
+| **Offers** | Product offer content. Displayed offer information is not itself proof of a working checkout discount. |
+| **Cross-Sell** | Products configured as cross-sell suggestions where the consuming cart/component supports them. |
+| **Variant Media** | Media associated with product variants/options for supported product presentations. |
+
+Not every section automatically uses every field. A manually written heading, a custom image, or a custom AI-built section may have its own local value or logic.
+
+## Product data versus provider widgets
+
+Editing product review content in this drawer is not the same as connecting Okendo, Judge.me, or another reviews provider. A provider widget uses its integration and product mapping; connect and configure it through the [review integration workflow](/integrations/review-integrations).
+
+Similarly, adding offer text does not create an automatic Shopify discount or a valid selling plan. Configure the underlying commerce rules in the appropriate system and verify the final cart or checkout.
+
+## Product media versus one page's image
+
+Change shared variant media when the product's selected option should use that media in compatible product components. Change a local image in the page editor when only that campaign's section needs a different visual.
+
+After changing variant media, test each relevant option and check that the displayed image corresponds to what will actually be added to cart.
+
+## Sync Product
+
+The drawer includes **Sync Product**. Treat it as a product-refresh operation, not a way to save arbitrary local page edits or to change which catalog products are visible. Review the result and any important customizations after refreshing.
+
+For a product missing from the library, first inspect [product visibility](/products/catalog-visibility) and the [missing-product checks](/building-funnels/sync-new-products).
+
+## Related guides
+
+- [Product editing scope](/products/editing-scope)
+- [Text and media in the page editor](/build/edit-content-media)
+- [Purchase options](/building-funnels/product-purchase-options)
+- [Discounts and promotions](/commerce/discounts-promotions)

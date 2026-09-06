@@ -1,0 +1,57 @@
+---
+title: "Restore a published version"
+sidebarTitle: "Version history"
+description: "Find previous published versions, understand restore behavior and unsaved-change loss, and verify the restored page and products."
+icon: "history"
+---
+
+Use version history when you need to return to content from an earlier published version. It is separate from the current session's Undo/Redo history and from AI chat history.
+
+## Open version history
+
+Open **Publish → Restore Version** when the experience has published versions. The panel shows the current version and previous versions, including version numbers, publisher information, and publication time.
+
+A new draft that has never been published will not have the same published-version history to restore.
+
+## Restore an earlier version
+
+<Steps>
+  <Step title="Identify the version">
+    Review the version number and publication details. Make sure you are looking at the correct experience.
+  </Step>
+  <Step title="Review your current edits">
+    Decide what to do with any unsaved work before proceeding. Restoring a version can discard the current unsaved edits.
+  </Step>
+  <Step title="Select Restore">
+    Choose the previous version and read the confirmation dialog. Confirm with **Restore Version** only when you intend to replace the current state.
+  </Step>
+  <Step title="Verify the restored state">
+    Wait for restoration to finish. Inspect the page, its products, both device views, and the publication status. Test every live destination used by the campaign.
+  </Step>
+</Steps>
+
+## What restoration does
+
+Restoration creates a **new version using the older version's content**. The existing history remains intact, and the new entry records which version it was restored from.
+
+<Warning>
+  Restore is not a read-only preview operation. The restored version becomes the current published version in the version interface, and unsaved local changes can be discarded. Treat it as a change to the current page, not a private way to browse an old design.
+</Warning>
+
+## What it does not guarantee
+
+A page snapshot is not a rollback of your entire commerce stack. Products that are no longer available may not be restorable; Jurni can show a warning when some product resources are missing.
+
+Recheck the selected product, variants, subscription options, discounts, and cart action after restoring. Also review any shared Global Sections or integrations the page relies on. Restoring page content does not imply that Shopify inventory, discounts, vendor settings, or shop membership have been rolled back.
+
+For a native Shopify Page, verify the Shopify publication status and actual `/pages/` destination as well. Do not assume that checking only the editor confirms every publishing surface is on the desired content.
+
+## Choose the right recovery tool
+
+Use [Undo/Redo](/build/undo-redo) for a recent edit in the current session. Use **Chat history** to revisit a conversation. Use **Restore Version** only when you intend to restore a published snapshot and have reviewed its impact.
+
+## Related guides
+
+- [Save, preview, and publish](/build/save-preview-publish)
+- [Global Sections](/build/global-sections)
+- [Update or unpublish](/publishing/update-unpublish)

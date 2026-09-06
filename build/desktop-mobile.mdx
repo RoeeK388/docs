@@ -1,0 +1,65 @@
+---
+title: "Edit desktop and mobile layouts"
+sidebarTitle: "Desktop & mobile"
+description: "Understand Editing All Sizes, desktop overrides, responsive controls, and the difference between changing a device view and creating a separate page."
+icon: "monitor-smartphone"
+---
+
+Jurni's mobile and desktop controls affect how you edit, not just how the canvas looks. **The mobile/base editing mode is labeled “Editing All Sizes.” It is not a mobile-only page.**
+
+## The two editing modes
+
+| Mode shown in the editor | How to use it |
+| --- | --- |
+| **Editing All Sizes / Edit All** | Set the shared/base content and design. These values provide the starting point across sizes. |
+| **Editing Desktop Only / Desktop** | Customize responsive properties for desktop without replacing the base value for that property. |
+
+Desktop-specific overrides can take precedence over shared/base values. A base edit therefore does not necessarily replace a desktop value that was already customized.
+
+<Warning>
+  Do not assume every operation is isolated to the device shown on the canvas. Responsive properties and shared structural or functional changes are different. After changing sections, product settings, actions, or shared content, inspect both views.
+</Warning>
+
+## Build the shared version first
+
+<Steps>
+  <Step title="Start in Editing All Sizes">
+    Use the device/editing control to work in **Edit All**. Establish the content, products, shopper actions, and base layout.
+  </Step>
+  <Step title="Switch to Desktop">
+    Change to **Desktop** and check that the indicator reads **Editing Desktop Only** before making a desktop-specific adjustment.
+  </Step>
+  <Step title="Adjust the relevant property">
+    Select the section or element and edit the responsive property you need, such as sizing, spacing, or media position. Available responsive controls depend on the selected element.
+  </Step>
+  <Step title="Check both views">
+    Switch back to the base/mobile view and confirm it still looks and behaves correctly. Repeat for desktop, then save or publish through the appropriate action.
+  </Step>
+</Steps>
+
+## Remove a desktop override
+
+When a field has a desktop override, the editor can show a control to clear it. Clear the override when desktop should inherit that property's base value again, rather than manually keeping two matching values in sync.
+
+Media position can also have a desktop-specific override. **Reset position** and clearing a desktop override are not the same as replacing the image file.
+
+## Diagnose an unexpected difference
+
+**The mobile view changed when I edited it:** that view is the base/All Sizes editing mode. Check desktop for inherited changes and existing overrides.
+
+**A base change did not appear on desktop:** select the same element on desktop and inspect whether the field already has an override.
+
+**Only one view shows the section:** check device visibility and the section's responsive layout. Do not add a duplicate section before checking whether the original is hidden.
+
+**Desktop controls are unavailable:** check whether you are in locale editing or another scoped editing mode. The current locale workflow limits device-mode switching; finish that mode first.
+
+## Test more than the canvas width
+
+Check text wrapping, image crop, Buy Box stacking, selectors, modal content, carousels, and sticky elements. Open the actual published page on mobile and desktop as part of launch QA, especially when using Shopify Pages and its theme/cart environment.
+
+## Related guides
+
+- [Style and layout controls](/build/style-layout)
+- [Image repositioning](/product-updates/image-repositioning)
+- [Delete and hide content](/build/delete-hide-sections)
+- [Locale editing](/build/localization)
