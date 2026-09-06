@@ -245,6 +245,7 @@
             "pages": [
               "analytics-reporting/overview",
               "analytics-reporting/experience-analytics",
+              "analytics-reporting/engagement-metrics",
               "analytics-reporting/funnel-step-performance",
               "analytics-reporting/filtering-experiences",
               "analytics-reporting/custom-events",
