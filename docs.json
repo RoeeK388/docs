@@ -133,5 +133,10 @@
       "x": "https://x.com/borrowedfire",
       "instagram": "https://instagram.com/OurJurni"
     }
+  },
+  "logo": {
+    "light": "/images/white1.png",
+    "dark": "/images/black1.png",
+    "href": "https://app.getjurni.ai"
   }
 }

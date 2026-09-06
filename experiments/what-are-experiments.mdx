@@ -1,11 +1,55 @@
 ---
-title: "What Are Experiments?"
-sidebarTitle: "What Are Experiments"
-description: "Learn what Jurni experiments are and how they help you test variations of your experiences. Understand the basics of running controlled tests for better results."
+title: "What Are Experiments? A/B Testing in Jurni"
+sidebarTitle: "Overview"
+description: "Jurni's built-in A/B testing framework splits SmartLink traffic between funnel variants so you can find what converts better without changing your ad campaigns."
 ---
 
-Jurni experiments let you test different versions of your experiences to see what drives the best results. This page introduces the core concepts behind Jurni experiments and how they fit into your optimization workflow.
+Jurni Experiments are the built-in A/B testing framework that lets you split traffic between two or more funnels to find what converts better. Unlike running separate campaigns, experiments use a single SmartLink to split traffic, so your Meta or Google ad set stays untouched and you never push ads back into the learning phase.
+
+## How Experiments Work
+
+When a shopper clicks your SmartLink, Jurni routes them to one of your variants based on your traffic allocation. Every session is tracked and attributed to the correct variant automatically.
+
+Key details:
+
+- **No learning phase reset.** Your ad set destination URL never changes, so Meta and Google algorithms are not disrupted.
+- **Metrics tracked:** CVR, AOV, RPS, add-to-cart rate, checkout rate.
+- **Results update in near-real-time** as sessions and purchases come in.
+- **What you can test:** Jurni funnel vs. Jurni funnel, or a Jurni funnel vs. your existing Shopify product page or any external URL.
+- **Requirement:** Experiments require a SmartLink. You must have at least two published funnels, or one published funnel and one external URL, to create an experiment.
+
+<Tip>
+  Experiments are the fastest way to find your highest-converting funnel without touching your ad campaigns. Set one up before scaling spend.
+</Tip>
 
 <Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/5431976135-what-are-experiments) for full content.
+  Screenshot: Experiments dashboard overview showing active experiments, variant cards, and CVR comparison.
 </Note>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Do I need to pause my ads to run an experiment?">
+    No. Experiments route traffic through your SmartLink. Your ad campaign destination URL stays the same, so there is no disruption to ad delivery or algorithm optimization.
+  </Accordion>
+
+  <Accordion title="What metrics does Jurni track?">
+    Jurni tracks CVR, AOV, RPS, add-to-cart rate, and checkout rate for each variant. All metrics update in near-real-time.
+  </Accordion>
+
+  <Accordion title="Can I test against my existing Shopify product page?">
+    Yes. You can add an external URL as a variant. See [Testing Against Your Website](/experiments/testing-against-website) for details on how attribution works.
+  </Accordion>
+
+  <Accordion title="Do I need a paid plan?">
+    Experiments are available on all Jurni plans.
+  </Accordion>
+</AccordionGroup>
+
+## Related Articles
+
+- [How to Create an Experiment](/experiments/how-to-create-an-experiment)
+- [Testing Against Your Website](/experiments/testing-against-website)
+- [How to Strategically Run an Experiment](/experiments/how-to-strategically-run-an-experiment)
+- [Reading Test Results](/experiments/reading-test-results)
+- [Troubleshoot Experiment Traffic Not Splitting Correctly](/experiments/troubleshoot-traffic-splitting)
