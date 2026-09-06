@@ -150,5 +150,8 @@
   "fonts": {
     "family": "Geist",
     "weight": 400
+  },
+  "interaction": {
+    "drilldown": true
   }
 }
