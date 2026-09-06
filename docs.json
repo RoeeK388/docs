@@ -279,6 +279,8 @@
             "group": "Data & Tracking",
             "pages": [
               "getting-started/tracking-pixels",
+              "integrations/google-analytics",
+              "integrations/meta-pixel",
               "getting-started/shopify-analytics",
               "integrations/ga-meta-pixel",
               "integrations/gtm",

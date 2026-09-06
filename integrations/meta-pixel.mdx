@@ -1,0 +1,48 @@
+---
+title: "Connect Meta Pixel"
+sidebarTitle: "Meta Pixel"
+description: "Find the website Pixel ID, configure Jurni page tracking, and distinguish it from the Meta Ads account connection."
+icon: "chart-no-axes-combined"
+---
+
+Use **Meta Pixel** for the supported browser tracking on Jurni pages. It is separate from [connecting Meta Ads](/integrations/meta-ads), which gives Jurni access to the selected advertising account.
+
+## Get the website Pixel ID
+
+Open [Meta Events Manager](https://business.facebook.com/events_manager/), select the business and website data source, and copy the **Pixel ID** from its details or Settings. Meta may show the pixel under a dataset; use the identifier associated with the website pixel your advertising team wants to use.
+
+Do not copy an ad account ID, business ID, or Conversions API access token into Jurni's Pixel ID field. If several data sources exist, confirm the intended one with the person managing Meta tracking rather than creating a new pixel unnecessarily.
+
+## Add it to Jurni
+
+<Steps>
+  <Step title="Open Tracking Pixels">
+    Go to **Settings → Integrations → Data Integrations → Tracking Pixels**.
+  </Step>
+  <Step title="Enter Meta Pixel IDs">
+    Add the intended ID in **Meta Pixel IDs**. The field supports more than one ID when the brand deliberately uses multiple pixels. Do not add the same ID twice.
+  </Step>
+  <Step title="Save Changes">
+    Save the tracking settings and wait for confirmation.
+  </Step>
+  <Step title="Verify the actual page">
+    Open a published Jurni page and use **Test Events** in the selected Meta data source or your team's Pixel Helper tooling. Confirm the expected Pixel ID and relevant actions rather than only checking that a script exists.
+  </Step>
+</Steps>
+
+## Avoid duplicate tracking
+
+Before adding an ID, check whether that pixel already loads through GTM, Custom Scripts, or the Shopify theme. Shopify Pages may inherit an existing theme/app installation. A second installation can cause duplicate events rather than better measurement.
+
+## Check the full purchase journey
+
+A page-level pixel setting is not a complete Conversions API setup and does not prove the downstream checkout is connected. Test the transition from the Jurni page to the actual cart and checkout with your tracking owner.
+
+Keep campaign parameters intact and confirm your consent setup. Do not treat a visual reset in a testing tool as proof that attribution was lost; investigate the actual identifiers and events.
+
+## Related guides
+
+- [Meta Ads account connection](/integrations/meta-ads)
+- [Duplicate tracking](/troubleshooting/duplicate-tracking)
+- [Consent and tracking](/integrations/consent-tracking)
+- [URL and attribution parameters](/reference/url-parameters)
