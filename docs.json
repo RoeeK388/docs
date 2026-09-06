@@ -121,6 +121,8 @@
               "commerce/offers-overview",
               "shopify-pages/cart-config",
               "commerce/free-shipping-offers",
+              "commerce/samples-offers",
+              "commerce/discount-code-offers",
               "building-funnels/gift-with-purchase",
               "commerce/cart-checkout-behavior",
               "commerce/discounts-promotions",
