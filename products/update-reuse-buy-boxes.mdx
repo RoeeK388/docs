@@ -33,9 +33,24 @@ Check the pages that should receive the change. For a native Shopify Page, verif
 
 ## Create an independent campaign version
 
-For a test that should leave the control unchanged, create another Buy Box rather than editing a source used by both variants. Start from an approved template, select the product, make the targeted change, and connect the new Buy Box only to the intended variant.
+For a test that should leave the control unchanged, create another Buy Box rather than editing a source used by both variants.
 
-The managed Buy Box flow should not be treated as an ordinary Global Section with a Detach action. Use the Buy Box's own creation and selection workflow for an independent version.
+<Steps>
+  <Step title="Keep the current version">
+    Identify the Buy Box used by the control. From its menu, choose **Save as Buy Box template** when you want to reuse that exact starting design.
+  </Step>
+  <Step title="Create a separate Buy Box">
+    Start **Create new**, select the same product, and choose the saved template. Give it a distinct campaign name and make the intended change.
+  </Step>
+  <Step title="Connect only the test page">
+    Create the saved Buy Box, return to the test page, and select that new version in its Buy Box selector. Confirm the control still uses the original version.
+  </Step>
+  <Step title="Test and publish the page">
+    Check the default purchase selection, alternative variants/plans, and actual cart/checkout before publishing the test page.
+  </Step>
+</Steps>
+
+The reviewed managed Buy Box panel does **not** offer the ordinary Global Section **Detach Global** action. Do not look for that button or assume duplicating the page detached its Buy Box. The separate-version workflow above keeps the shared original intact.
 
 ## Save a template for reuse
 

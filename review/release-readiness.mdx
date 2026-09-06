@@ -23,6 +23,21 @@ The AI/prompting and current-metric fixes are in docs PR #5. The five feature gu
 | Statistical significance | [ENG-2017](https://linear.app/jurni/issue/ENG-2017/statistical-significance-to-experiments); available Jurni_Stat_Sig_Dev_Spec.md uploaded September 2. | Issue In Development. The readable uploaded spec was used because the signed Linear attachment could not be fetched; verify that its content matches the latest attached revision. |
 | Duration, depth, bounce tracking | [ENG-2522](https://linear.app/jurni/issue/ENG-2522/visit-deepening-data-collection-duration-depth-bounce), ENG-1988, ENG-1990, ENG-1989. | Parent In Development; children Ready for Dev with empty descriptions. No implementation of the final calculation rules was established in this review. |
 
+## Recovered Buy Box product brief
+
+The detailed original product brief was recovered in [ENG-2476 — Managing PDPs per Product](https://linear.app/jurni/issue/ENG-2476/managing-pdps-per-product). Prior-chat retrieval did not recover the specific Claude Design conversation; do not attribute these requirements to a retrieved chat.
+
+The brief defines Product, product-specific Buy Box, product-independent Buy Box Template, and page usage as separate concepts. Its intended flow is select product → reuse a default/existing Buy Box or create from a template → edit → save to product → add to a page → reuse/manage connected uses. Product-level management, global versus page-specific edits, defaults, and template reuse are central; per-Buy-Box performance is a later capability.
+
+The draft guides now explain the implemented management and separate-version paths. The following requirements must not be silently presented as existing controls:
+
+- The brief's **Update everywhere / Create page-specific version** choice is not the ordinary Global Section Detach action. In the reviewed PR, use a separate product-specific Buy Box from a saved template for an isolated change; confirm whether a direct detach/version action ships later.
+- **Create / Save** plus the separate add-to-page action are in the reviewed code. ENG-2983's proposed **Save / Save and add to page** split is not yet verified.
+- Screenshot/reference generation and independent Buy Box performance reporting are not documented as available creation/reporting controls merely because they appear in the broader brief.
+- Connected-page count is usage, not performance. Setting a default is not retroactive replacement of all existing page references.
+
+Before a release PR, reconcile with docs PR #5's corrected product data, Offers, and cart pages. The current release branch was based on older main content; do not overwrite the newer corrections during that reconciliation.
+
 ## Confirm before publishing the Buy Box guides
 
 Check final entry points and labels in a demo shop. The reviewed implementation uses Create/Save and a separate Add Buy Box to page action; ENG-2983 requests a Save / Save and add to page split and template tabs. Do not publish the requested design as the implemented screen without checking it.
