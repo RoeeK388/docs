@@ -156,8 +156,14 @@
     }
   },
   "fonts": {
-    "family": "Geist",
-    "weight": 400
+    "heading": {
+      "family": "Geist",
+      "weight": 500
+    },
+    "body": {
+      "family": "Geist",
+      "weight": 400
+    }
   },
   "interaction": {
     "drilldown": true
