@@ -57,15 +57,42 @@
         "groups": [
           {
             "group": "Products",
-            "pages": []
+            "pages": [
+              "building-funnels/products-and-variants",
+              "building-funnels/sync-new-products"
+            ]
           },
           {
             "group": "Buy Boxes",
-            "pages": []
+            "pages": [
+              "building-funnels/buy-box-overview",
+              "building-funnels/product-purchase-options"
+            ]
           },
           {
             "group": "Subscriptions & Bundles",
-            "pages": []
+            "pages": [
+              "building-funnels/subscriptions-selling-plans",
+              "building-funnels/bundles"
+            ]
+          },
+          {
+            "group": "Offers",
+            "pages": [
+              "commerce/offers-overview",
+              "building-funnels/gift-with-purchase",
+              "commerce/free-shipping-offers",
+              "commerce/samples-offers",
+              "commerce/discount-code-offers",
+              "commerce/discounts-promotions"
+            ]
+          },
+          {
+            "group": "Cart & Checkout",
+            "pages": [
+              "commerce/cart-checkout-behavior",
+              "commerce/shopify-markets-currency"
+            ]
           }
         ]
       },
@@ -73,28 +100,27 @@
         "tab": "Experiences",
         "groups": [
           {
-            "group": "Create & Edit",
+            "group": "Create Experiences",
             "pages": [
               "getting-started/funnel-building",
               "building-funnels/creating-a-funnel",
+              "building-funnels/qa-checklist"
+            ]
+          },
+          {
+            "group": "Editor & Sections",
+            "pages": [
               "building-funnels/funnel-editor",
               "building-funnels/managing-sections",
               "building-funnels/sticky-cta-banner",
-              "building-funnels/figma-file",
-              "building-funnels/ai-chat-prompts",
-              "building-funnels/qa-checklist",
               "product-updates/image-repositioning"
             ]
           },
           {
-            "group": "Products & Buy Boxes",
+            "group": "AI & Figma",
             "pages": [
-              "building-funnels/buy-box-overview",
-              "building-funnels/product-purchase-options",
-              "building-funnels/products-and-variants",
-              "building-funnels/sync-new-products",
-              "building-funnels/subscriptions-selling-plans",
-              "building-funnels/bundles"
+              "building-funnels/figma-file",
+              "building-funnels/ai-chat-prompts"
             ]
           },
           {
@@ -120,7 +146,8 @@
             "group": "Shopify Pages",
             "pages": [
               "shopify-pages/setup-publish",
-              "shopify-pages/page-templates"
+              "shopify-pages/page-templates",
+              "shopify-pages/cart-config"
             ]
           },
           {
@@ -133,17 +160,7 @@
           },
           {
             "group": "Cart, Checkout & Offers",
-            "pages": [
-              "commerce/offers-overview",
-              "shopify-pages/cart-config",
-              "commerce/free-shipping-offers",
-              "commerce/samples-offers",
-              "commerce/discount-code-offers",
-              "building-funnels/gift-with-purchase",
-              "commerce/cart-checkout-behavior",
-              "commerce/discounts-promotions",
-              "commerce/shopify-markets-currency"
-            ]
+            "pages": []
           }
         ]
       },
