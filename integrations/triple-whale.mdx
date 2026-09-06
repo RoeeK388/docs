@@ -1,0 +1,46 @@
+---
+title: "Enable Triple Whale tracking"
+sidebarTitle: "Triple Whale"
+description: "Enable the native Triple Whale connection for Shopify-connected Jurni pages without inventing an API-key setup."
+icon: "chart-column"
+---
+
+Use **Triple Whale** when your brand already uses Triple Pixel to measure its Shopify purchase journey. Jurni can load the supported pixel on Jurni-hosted pages using the connected shop's domain.
+
+## What do I need to copy?
+
+**Nothing into Jurni for this integration.** The current Triple Whale card is an enable/disable control. It does not request an API key, pixel ID, or copied snippet.
+
+First confirm with your tracking owner that the correct Shopify store is connected in Triple Whale and its pixel setup is ready. In Triple Whale, the relevant setup lives under **Settings → Business Configurations → Pixel Settings**. See [Triple Whale's external-page and headless guide](https://kb.triplewhale.com/en/articles/6266255-how-to-add-the-triple-pixel-to-a-headless-business-or-custom-website).
+
+## Enable it in Jurni
+
+<Steps>
+  <Step title="Find the integration">
+    Open **Settings → Integrations → Data Integrations** and find **Triple Whale**.
+  </Step>
+  <Step title="Enable the card">
+    Turn on the Triple Whale integration and wait for the update to complete. This card is separate from the Tracking Pixels fields above it.
+  </Step>
+  <Step title="Verify the published page">
+    Open the actual Jurni campaign page. Have your tracking owner confirm that Triple Pixel identifies the intended Shopify store and receives the expected activity.
+  </Step>
+</Steps>
+
+## What the switch does not replace
+
+It does not connect ad accounts to Triple Whale, configure every Sonar product, or supply tracking for an unrelated custom checkout. Keep the necessary store and checkout installations and verify the complete purchase journey.
+
+For **Shopify Pages**, the theme may already contain Triple Pixel. Check for overlapping installations rather than adding the native switch, GTM tag, and manual snippet for the same purpose.
+
+The current native loader is configured for Shopify. For a non-Shopify commerce system, contact the Jurni team to agree a compatible implementation.
+
+## Troubleshooting
+
+If the pixel is absent, check the enabled card, the connected shop, the published destination, consent, and browser blocking. If the page is tracked but a purchase is missing, inspect the downstream checkout connection instead of repeatedly reinstalling the page pixel.
+
+## Related guides
+
+- [Tracking setup](/getting-started/tracking-pixels)
+- [Consent and tracking](/integrations/consent-tracking)
+- [Integration troubleshooting](/integrations/troubleshooting)

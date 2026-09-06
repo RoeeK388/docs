@@ -290,7 +290,8 @@
               "integrations/northbeam",
               "integrations/axon",
               "integrations/blotout",
-              "integrations/polar-analytics"
+              "integrations/polar-analytics",
+              "integrations/triple-whale"
             ]
           },
           {
