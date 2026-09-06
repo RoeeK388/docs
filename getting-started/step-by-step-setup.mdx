@@ -1,88 +1,78 @@
 ---
-title: "Step by Step Guide to Setting up Jurni"
-sidebarTitle: "Step by Step Setup"
-description: "Follow a complete step by step guide to set up Jurni from scratch. This walkthrough covers every stage of the initial configuration process."
+title: "Set up Jurni for your first launch"
+sidebarTitle: "First-launch checklist"
+description: "Work from completed onboarding and billing to a tested live page, with platform-specific requirements and optional integrations clearly separated."
+icon: "list-checks"
 ---
 
-**Account Set Up: **
+Use this checklist to take your brand from onboarding to its first live Jurni page. You can build while some launch work is still in progress; the important distinction is **what you need to start editing** versus **what must work before real campaign traffic arrives**.
 
-### **Core App set up: Settings> [<u>Account</u>](https://app.getjurni.ai/settings)**
+## 1. Finish onboarding, shop creation, and billing
 
-- [**<u>Jurni Core App</u>**](https://app.getjurni.ai/settings#:~:text=owletcare.myshopify.com-,Activate%20Jurni%20Core,-Activate%20Jurni%20Core): Blocker to go live
-  - Needs: Shopify Access to install 
-  - Click **Activate & Open** to install via Shopify, activate in theme editor and click save
-- [**<u>Subdomain setup</u>**](https://app.getjurni.ai/settings#:~:text=Enable%20Shopify%20Pages-,Subdomain%20Setup,-Connect%20a%20custom): Recommended 
-  - Choose Your Subdomain DNS can take up to 24–48 hours; must be live before tracking/pixels are configured
-- [**<u>Shopify Pages integration</u>**](https://app.getjurni.ai/settings#:~:text=Activate%20%26%20Open-,Shopify%20Pages,-Disabled): Optional (Dependent on customer)
-  - Needs: Shopify Access to install
-  - Click **Enable Shopify Pages **
-  - Follow [<u>instructions on our Knowledge Base for next steps</u>](https://help.getjurni.ai/collections/8188601983-shopify_pages)
+Complete onboarding using your existing commerce provider, confirm the correct shop was created or connected, and finish the billing flow for that shop. Then invite the teammates who will build, review, or manage it.
 
----
+Already working in an active shop? Continue below rather than creating another account or shop.
 
-### **Members: Settings > [<u>Members</u>](https://app.getjurni.ai/settings/members)**
+[Create your account and shop](/getting-started/create-account) · [Invite team members](/getting-started/inviting-team-members)
 
-- Click **Invite Member**
-- Choose Email Address, Choose Role, Send Invitation 
-  - Admin: Manage shop and invite team members 
-  - Staff: Manage shop dashboard and content
-  - Designer: Design and manage experiences
+## 2. Confirm the integration for your storefront
 
----
+**Shopify Online Store:** confirm the native Shopify connection and activate **Jurni Core** in your active Shopify theme. Save the theme change. Recheck the embed when you change your active theme.
 
-### **Brand: Settings> [<u>Brand</u>](https://app.getjurni.ai/settings/brand) : All of the below is a blocker to building pages **
+**Shopify headless:** keep the Shopify commerce connection, but have your developer confirm the separate frontend's Jurni script, cart continuity, and checkout handoff. A theme embed does not install itself on that frontend.
 
-- Brand Logo URL:
-  - Paste URL, click **Save Changes**
-- Brand Colors: 
-  - Click on each color to input color Hexcode or the dropper to choose the color on screen, **click Save Changed**
-- Border Radius: 
-  - Choose the pixel status for each card, **Save Changes **
-- Typography:
-  - Review and configure fonts for both Desktop and Mobile, slick **Save Changes**
+**WooCommerce, Salesforce, BigCommerce, or another custom setup:** complete the integration agreed with the Jurni team. Confirm how products, purchasing actions, and completed purchases are connected.
 
----
+[Activate Jurni Core](/getting-started/activating-jurni-core) · [Shopify headless](/getting-started/shopify-headless) · [Non-Shopify setup](/getting-started/setup-non-shopify)
 
-### **Integrations: Settings> [<u>Integrations</u>](https://app.getjurni.ai/settings/integrations) **
+## 3. Review your brand and AI guidance
 
-- Shopify Analytics: Recommended 
-- All of the below are optional, connect as needed: 
-  - Meta Ad Accounts 
-  - Meta Pixel IDs
-  - Google Tag Manager ID
-  - Google analytics tag ID 
-  - Blot Out ID
-  - Axon Pixel ID 
-  - Polar Analytics Shopify URL
-  - TikTok Pixel ID
-  - Triple Whale 
-  - Figma
-  - Affiliatly 
-  - Bix Grow
-  - Klaviyo 
-  - PostScript
-  - Alia
-  - Junip
-  - Stamped
-  - Trustpilot
-  - Okendo
-  - Yotpo
-  - [Judge.me](http://Judge.me)
-  - Baaarvoice
-  - REVIEWS. io
+Check the brand's logo, colors, typography, and other design defaults in **Settings → Brand**. Supply approved product facts, tone, messaging requirements, and restrictions in **AI Knowledge**.
 
----
+Review what onboarding has prepared instead of assuming every field is correct. Save changes in the relevant settings screen. You can refine these inputs while building; they are not a reason to describe every optional brand field as a technical launch blocker.
 
-### **AI Knowledge: Settings> [<u>AI Knowledge</u>](https://app.getjurni.ai/settings/agent)**
+[Brand settings](/getting-started/brand-settings) · [AI Knowledge](/getting-started/setup-ai-knowledge)
 
-- Brand Guidance: Provide instructions, click **Save Guidance**
-- Skills: 
-  - Upload Skills, choose file, click **Open**
-  - Click **Add Skill,** fill out Name, Description and Content, click **Add Skill **
+## 4. Confirm products and the intended shopper action
 
----
+Find the products you need in Jurni. Confirm variants and any subscription options. Decide whether the page should add to cart, go to checkout, or send shoppers to an existing product or other destination page.
 
-### **Custom Integrations: Settings> [<u>Custom Scripts</u>](https://app.getjurni.ai/settings/custom-scripts)**
+Connect real products early. A price written into a text block, a designed discount badge, or an AI-generated button does not by itself configure the actual purchase.
 
-- For any custom script, please discuss with our team. 
-- Click **New Script,** name script, paste Script
+[Products and variants](/building-funnels/products-and-variants) · [Buy Boxes](/building-funnels/buy-box-overview) · [Cart and checkout](/commerce/cart-checkout-behavior)
+
+## 5. Prepare the publishing destination
+
+For a standard Shopify store, Jurni can use the app-proxy route `brand.com/apps/jurni/<handle>` while a custom Jurni subdomain is not configured. A connected subdomain uses a branded URL such as `go.brand.com/<handle>`.
+
+Native **Shopify Pages** are optional and require their own page-template/app-block setup. They use `brand.com/pages/<handle>` and must be tested in the Shopify theme environment.
+
+Non-Shopify and headless brands should use the publishing arrangement confirmed for their implementation.
+
+You can configure tracking IDs while domain work is in progress. The launch requirement is that the **final destination is reachable and its tracking has been tested**—not that DNS must finish before you are allowed to enter an integration ID.
+
+[Publishing overview](/publishing/overview) · [Custom subdomain](/getting-started/custom-subdomain) · [Shopify Pages](/shopify-pages/setup-publish)
+
+## 6. Connect only the tools your campaign needs
+
+Set up the required data integrations, review providers, forms, and custom scripts. An integration's required value may be a public identifier, a URL, or an authorization flow—not always an API key.
+
+For Shopify Pages, check which scripts are already installed by the Shopify theme or apps. Avoid loading the same pixel or tag manager twice. Test consent behavior and any visible widgets on the intended publishing destination.
+
+[Integrations](/integrations/overview) · [Credentials reference](/integrations/api-keys) · [Duplicate tracking](/troubleshooting/duplicate-tracking-events)
+
+## 7. Build, review, and test
+
+Create the page, add and edit sections, and review **both mobile and desktop**. Save your draft before sharing it. Use the appropriate preview or comment-review link for your reviewers.
+
+Before launch, test the selected product and variant, subscription choice, quantity, discount or gift, cart behavior, and checkout. Verify that the required events reach the intended analytics tools on the live page.
+
+[Editor guide](/building-funnels/funnel-editor) · [Pre-launch QA checklist](/building-funnels/qa-checklist)
+
+## 8. Publish and test the campaign entry link
+
+Publish to the intended destination and open the exact URL you will use in the campaign. When using a Smart Link or experiment, enter through that link—not directly through a variant page—and check the resulting destination and parameters.
+
+Start sending traffic only after the page, purchasing path, and measurement are ready. Keep the shop owner, builder, and person responsible for tracking aligned on the launch.
+
+[Smart Links](/building-funnels/smart-links) · [Create an experiment](/experiments/create-experiment)

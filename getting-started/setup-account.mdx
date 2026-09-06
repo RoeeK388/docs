@@ -1,136 +1,52 @@
 ---
-title: "Set Up Your Jurni Account"
-sidebarTitle: "Setup Account"
-description: "Configure your Jurni account with a custom subdomain, tracking pixels, team members, and brand settings before generating your first agentic shopping journey."
+title: "Manage your shop settings"
+sidebarTitle: "Shop settings"
+description: "Find the right settings for your active Jurni shop: account connection, publishing, brand, AI guidance, members, and integrations."
+icon: "settings"
 ---
 
-This guide walks you through the core account setup steps in Jurni. You will configure a custom subdomain, connect third-party tracking pixels, invite team members, and define your brand and design system. Complete each section before generating your first agentic shopping journey.
+Shop settings configure the brand you are currently working in. They are separate from your personal login and from the settings of one page in the editor.
 
-## Custom Subdomain Setup
+For initial registration and billing, use [Create your account and shop](/getting-started/create-account). For the full route to launch, use [First-launch checklist](/getting-started/step-by-step-setup).
 
-Your Jurni journeys are served from a subdomain you control. Set it up in **Settings > Account Settings > Account**.
+## Check the active shop first
 
-<Steps>
-  <Step title="Navigate to Subdomain Setup">
-    Go to **Settings > Account Settings > Account**, then scroll to the Subdomain Setup section.
-  </Step>
-  <Step title="Enter your subdomain prefix">
-    Type your preferred prefix, such as `shop`, `get`, `buy`, or any word that fits your brand. A live preview renders as you type so you can confirm the result before continuing.
-  </Step>
-  <Step title="Save and copy DNS values">
-    Click **Save**. Jurni displays DNS values to copy into your DNS provider.
-  </Step>
-  <Step title="Verify propagation">
-    Status shows **Pending** while DNS propagates. Click **Refresh** after a few minutes. Once propagation is complete, the status updates to **Active**.
-  </Step>
-</Steps>
+Before changing settings, confirm the selected shop in Jurni. This matters when you work across brands, agencies, or regional stores: the products, credentials, and teammates you configure must belong to the intended shop.
 
-<Note>
-  DNS propagation typically takes a few minutes but can take longer. Status will not update until propagation is complete.
-</Note>
+Do not paste one brand's tracking or review credentials into another shop as a shortcut. A page may appear to work while sending data to the wrong account.
 
-## Third-Party Tracking Pixels
+## Find the right setting
 
-Connect analytics and ad platforms in **Settings > Integrations > Data Integrations**.
+| What you need to change | Where to start | Guide |
+| --- | --- | --- |
+| Shopify connection or Jurni Core | **Settings**, account/store connection area | [Shopify setup](/getting-started/shopify-setup-overview) |
+| Custom subdomain | **Settings**, subdomain setup | [Custom subdomain](/getting-started/custom-subdomain) |
+| Native Shopify page publishing | **Settings**, Shopify Pages | [Shopify Pages setup](/shopify-pages/setup-publish) |
+| Logo, colors, typography, and design defaults | **Settings → Brand** | [Brand settings](/getting-started/brand-settings) |
+| Brand instructions and AI context | **Settings → AI Knowledge** | [AI Knowledge](/getting-started/setup-ai-knowledge) |
+| Team access | **Settings → Members** | [Invite members](/getting-started/inviting-team-members) |
+| Pixels, ad accounts, review providers, and other connections | **Settings → Integrations** | [Integrations overview](/integrations/overview) |
+| Browser-side code not covered by a native connection | **Settings → Custom Scripts** | [Custom Scripts](/integrations/custom-scripts) |
+| Slack report channels and schedules | **Settings → Notifications** | [Slack performance reports](/notifications/slack-reports) |
 
-<Steps>
-  <Step title="Open Data Integrations">
-    Go to **Settings > Integrations**, scroll to **Data Integrations**, and view the full list of available pixels.
-  </Step>
-  <Step title="Enable a pixel">
-    Toggle the pixel on.
-  </Step>
-  <Step title="Enter your Pixel ID">
-    Enter the Pixel ID or Tag ID from your platform's settings.
-  </Step>
-  <Step title="Save">
-    Click **Save**. The pixel becomes active immediately.
-  </Step>
-</Steps>
+Available store-connection controls depend on your platform. Do not use Shopify theme or app-proxy instructions for a non-Shopify frontend.
 
-Repeat these steps for each pixel you want to install. Each integration is independent.
+## Shop-wide configuration versus a page edit
 
-## App Integrations
+A **shop integration** connects the provider account or loads its required script. A **page widget** decides where that provider's form, reviews, or other content appears. Connecting a provider does not necessarily insert a visible widget into every page.
 
-Connect additional apps in the same **Data Integrations** section.
+Similarly, your brand settings provide design inputs, while the editor contains page-specific styling and content. When changing a shared input, inspect existing pages that depend on it rather than assuming every local customization will be replaced.
 
-<Steps>
-  <Step title="Open Data Integrations">
-    Go to **Settings > Integrations**, scroll to **Data Integrations**.
-  </Step>
-  <Step title="Enable an app">
-    Toggle the app on.
-  </Step>
-  <Step title="Enter your App Key">
-    Enter the App Key or credential from your app's settings.
-  </Step>
-  <Step title="Save">
-    Click **Save**.
-  </Step>
-</Steps>
+For reusable page content, distinguish [Saved Sections](/building-funnels/saved-sections) from [Global Sections](/build/global-sections). Global content has a wider edit scope than an ordinary local section.
 
-## Inviting Team Members
+## Save and verify changes
 
-Add collaborators in **Settings > Members**.
+Use the save or connect action in the settings area you changed and wait for its result. Different settings do different things: an OAuth connection authorizes an account, a saved identifier configures a provider, and a publishing action updates a page.
 
-<Steps>
-  <Step title="Open the invite flow">
-    Click **Invite Member** in the top right.
-  </Step>
-  <Step title="Enter email and role">
-    Enter the team member's email and select their role.
-  </Step>
-  <Step title="Send invitation">
-    Click **Send Invitation**.
-  </Step>
-</Steps>
+A connected badge confirms the saved connection state; it is not a substitute for testing the full shopper workflow. Open the intended page and verify the result, especially after changing credentials, scripts, domains, or commerce settings.
 
-Only **Owner** and **Admin** roles can invite members. Available roles are:
+## When a control is unavailable
 
-<CardGroup cols={2}>
-  <Card title="Owner" icon="crown">
-    Full control of the shop and organization.
-  </Card>
+Check the active shop, your role, and whether initial onboarding and billing are complete. Some controls require additional Shopify, ad-platform, or vendor permissions outside Jurni. Ask the owner or admin to complete the action rather than sharing their login.
 
-  <Card title="Admin" icon="shield">
-    Manage the shop and invite team members.
-  </Card>
-
-  <Card title="Staff" icon="user">
-    Manage the shop dashboard and content.
-  </Card>
-
-  <Card title="Designer" icon="palette">
-    Design and manage experiences.
-  </Card>
-</CardGroup>
-
-## Brand and Design System
-
-Brand settings are the foundation Jurni uses when generating every agentic shopping journey. Configure them in **Settings > Brand**.
-
-<Steps>
-  <Step title="Set your logo">
-    Enter a **Logo URL** by uploading an image or pasting a URL. The logo appears across all journeys.
-  </Step>
-  <Step title="Describe your brand">
-    Fill in **Brand Description** to define tone and style. The more specific your description, the better the generated output.
-  </Step>
-  <Step title="Choose brand colors">
-    Click color swatches and enter hex values, or use the eyedropper to sample colors from a live site. Work through each token from surface to neutral, then click **Save Changes**.
-  </Step>
-  <Step title="Adjust border radius">
-    Set **Border Radius** defaults: Card is Small, Button is Medium, and Media is None. Adjust to match your design system and click **Save**.
-  </Step>
-  <Step title="Configure typography">
-    Set mobile and desktop typography separately. Both are required even if the values are identical. Under **Headings**, select a Google Font, then adjust size, weight, text transform, line height, and letter spacing. Custom fonts can be uploaded but offer fewer adjustable properties.
-  </Step>
-</Steps>
-
-<Note>
-  Click **Save Changes** after each section within Brand settings. Changes are not auto-saved.
-</Note>
-
-<Tip>
-  If you plan to use custom fonts, upload them before configuring typography so you can select them in the font dropdown.
-</Tip>
+If you still need help, share the setting you opened, the shop name, and the error message with the Jurni team. Do not include private API keys or account passwords in a screenshot or support message.

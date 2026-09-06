@@ -29,15 +29,16 @@
             "group": "Start Here",
             "pages": [
               "getting-started/welcome",
-              "getting-started/choose-your-setup",
-              "getting-started/step-by-step-setup"
+              "getting-started/step-by-step-setup",
+              "getting-started/choose-your-setup"
             ]
           },
           {
-            "group": "Workspace Setup",
+            "group": "Account & Team",
             "pages": [
               "getting-started/create-account",
-              "getting-started/setup-account"
+              "getting-started/setup-account",
+              "getting-started/inviting-team-members"
             ]
           },
           {
@@ -55,32 +56,41 @@
             ]
           },
           {
-            "group": "Brand & Team",
+            "group": "Brand & AI Knowledge",
             "pages": [
               "getting-started/brand-settings",
-              "getting-started/setup-ai-knowledge",
-              "getting-started/inviting-team-members"
+              "getting-started/setup-ai-knowledge"
             ]
           }
         ]
       },
       {
-        "tab": "Experiences",
+        "tab": "Build",
         "groups": [
           {
-            "group": "Create Experiences",
+            "group": "Start Building",
             "pages": [
               "building-funnels/creating-a-funnel",
-              "building-funnels/qa-checklist"
+              "building-funnels/funnel-editor"
             ]
           },
           {
-            "group": "Editor & Sections",
+            "group": "Sections & Layers",
             "pages": [
-              "building-funnels/funnel-editor",
-              "building-funnels/managing-sections",
+              "building-funnels/managing-sections"
+            ]
+          },
+          {
+            "group": "Design & Behavior",
+            "pages": [
               "building-funnels/sticky-cta-banner",
               "product-updates/image-repositioning"
+            ]
+          },
+          {
+            "group": "Reusable Sections",
+            "pages": [
+              "building-funnels/saved-sections"
             ]
           },
           {
@@ -91,10 +101,10 @@
             ]
           },
           {
-            "group": "Reusable Content & Collaboration",
+            "group": "Preview, History & Collaboration",
             "pages": [
-              "building-funnels/saved-sections",
-              "product-updates/jurni-comments"
+              "product-updates/jurni-comments",
+              "building-funnels/qa-checklist"
             ]
           }
         ]

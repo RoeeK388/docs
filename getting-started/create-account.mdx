@@ -1,57 +1,80 @@
 ---
-title: "Creating Your Account and Workspace"
-sidebarTitle: "Create Account"
-description: "Learn how to create your Jurni account and set up your workspace. This guide covers the initial registration and workspace configuration steps."
+title: "Create your account and shop"
+sidebarTitle: "Create your account"
+description: "Follow Jurni onboarding, create or connect your brand's shop, complete billing, and then invite teammates without creating duplicate shops."
+icon: "user-plus"
 ---
 
-Your Jurni account gives you access to one or more Jurni shops/workspaces. After you have access, complete the shop setup before building or sending traffic to an experience.
+For a new brand, the sequence is **create your login → complete onboarding → create or connect your shop → complete billing → invite your team**. Your personal account and your brand's shop are related, but they are not the same thing.
 
-## Create or join your Jurni account
+<Note>
+  Joining a team that already uses Jurni? Ask an admin to invite your email to the existing shop. You should not create another shop or set up separate billing just to collaborate.
+</Note>
 
-Use the invitation or onboarding link provided for your Jurni account. Sign in with the email address that should own your Jurni user profile.
+## Before you start
 
-If your team already has a Jurni shop, ask an existing admin to invite you rather than creating a separate workspace for the same store.
+Use the work email you intend to keep using in Jurni. Have the brand's website address ready. For Shopify, the person connecting the store needs the Shopify access required to authorize the Jurni app. Have the person responsible for billing available to complete that step.
 
-## Account vs. shop
+For a headless or non-Shopify storefront, involve someone who knows how the storefront, cart, and checkout are implemented. That information helps the Jurni team confirm the integration rather than treating every provider as a native Shopify connection.
 
-It is helpful to separate two concepts:
+## 1. Create your personal account
 
-- **Your user account** is your personal Jurni login.
-- **A shop/workspace** contains the brand's products, experiences, integrations, analytics, and team access.
+Open [Jurni](https://app.getjurni.ai) or the onboarding link shared with you and follow the account-creation prompts. Use the intended work email consistently.
 
-One person can have access to more than one shop.
+Your login identifies you as a person. The **shop** created or connected during onboarding is where your brand's products, experiences, integrations, analytics, and team access live. A person with access to multiple shops can switch between them without creating a new personal login for each one.
 
-## Initial shop setup
+## 2. Complete onboarding
 
-After entering the shop, work through these areas before launch:
+Follow the onboarding screens shown for your account.
 
-1. Connect the correct Shopify store or supported commerce setup.
-2. Activate Jurni Core for Shopify where required.
-3. Configure Brand Settings.
-4. Add AI Knowledge.
-5. Connect required tracking and review integrations.
-6. Invite teammates.
-7. Connect a custom subdomain or configure Shopify Pages if required by the campaign.
+<Steps>
+  <Step title="Tell Jurni about your business">
+    Identify whether you are a brand or an agency. The onboarding flow can differ for these two cases.
+  </Step>
+  <Step title="Identify your existing store provider">
+    In **Connect your Store**, select the provider your brand already uses. This identifies your current platform; it is not a recommendation to migrate to another one.
+  </Step>
+  <Step title="Connect Shopify or complete the assisted handoff">
+    For Shopify, continue through the store connection and approve the Jurni app for the correct store. For providers such as WooCommerce, Salesforce, BigCommerce, or Other, follow the team-assisted onboarding steps shown, which can include booking a demo.
+  </Step>
+  <Step title="Let shop setup finish">
+    Continue through the setup/finalizing screens. When the shop is ready, confirm that Jurni shows the expected brand or store name before configuring it.
+  </Step>
+</Steps>
 
-## Invite teammates instead of sharing credentials
+See [Supported commerce platforms](/getting-started/choose-your-setup) for the distinction between the native Shopify connection and custom/headless implementation work.
 
-Every teammate should use their own Jurni user. Do not share one login across the team.
+## 3. Confirm your shop
 
-Separate user access makes it easier to manage permissions, collaboration, and account ownership as the team changes.
+The shop is the brand's working environment in Jurni; creating it does not create a replacement ecommerce store. Confirm that you are in the correct shop, especially when your team manages several brands or regional stores.
 
-## If you cannot see the expected shop
+For Shopify, verify that the connected store is the intended store—not a development store or another region's store. For an assisted setup, confirm the storefront and checkout domains with the Jurni team.
 
-Check:
+## 4. Complete billing
 
-- You signed in with the email address that was invited.
-- The invitation was sent to the correct email.
-- You are not signed into a second Jurni account in another browser/profile.
-- An admin has actually added you to the intended shop.
+After your shop is created, complete the billing or activation flow offered for that shop. Review the plan and terms shown there before confirming. Some accounts use an assisted sales/onboarding flow rather than the same self-service plan screen.
 
-## Next steps
+Return to Jurni after completing the flow and confirm that the shop is accessible. **An app installation or a completed login is not the same as completing your shop's billing setup.**
 
-- Activate Jurni Core
-- Configure Brand Settings
-- Set Up AI Knowledge
-- Invite Team Members
-- Create your first experience
+Do not start a second shop to work around an incomplete billing screen. Have the shop owner or your Jurni contact resolve the existing setup.
+
+## 5. Invite your team
+
+After billing is connected, open **Settings → Members** in the correct shop. Select **Invite Member**, enter the person's email, choose a role, and select **Send Invitation**.
+
+The invitation roles are **Admin**, **Staff**, and **Designer**. Owner is not a role you assign through the normal invitation dropdown. See [Invite team members](/getting-started/inviting-team-members) for the complete workflow.
+
+Each teammate should use their own login. An invitation to a Slack channel or a page review link does not add someone as a member of the Jurni shop.
+
+## When something looks wrong
+
+| What you see | What to check |
+| --- | --- |
+| Onboarding starts even though your team already has a shop | Confirm you used the invited email and accepted the invitation. Ask an admin to check your access before creating another shop. |
+| The wrong brand or products appear | Check the active shop and the connected commerce store. |
+| You cannot invite someone | Confirm billing setup is complete, you are in the right shop, and your role has invitation permission. |
+| The provider connection needs technical information | Continue the assisted setup with the Jurni team rather than applying Shopify instructions to a different platform. |
+
+## Next step
+
+Use the [first-launch checklist](/getting-started/step-by-step-setup) to configure brand guidance, products, publishing, tracking, and your first live page.

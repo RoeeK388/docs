@@ -1,90 +1,65 @@
 ---
-title: "Invite Team Members to Your Jurni Workspace"
-sidebarTitle: "Inviting Team Members"
-description: "Learn how to invite collaborators to your Jurni workspace, assign Admin or Staff roles, and manage pending invitations for secure team collaboration."
+title: "Invite team members"
+sidebarTitle: "Invite team members"
+description: "Invite Admin, Staff, or Designer members to the correct Jurni shop after onboarding and billing, and distinguish shop membership from page-review access."
+icon: "users"
 ---
 
-Jurni makes it easy to collaborate with your team by inviting members to your workspace and assigning roles that match their access needs. This guide walks you through viewing current members, sending invitations, understanding role permissions, and managing pending invites.
+Invite each teammate to the existing Jurni shop using their own email. For a new shop, complete onboarding, shop creation, and billing before inviting the team.
 
-## Accessing Team Members
+## Before sending an invitation
 
-Follow these steps to open the Members page and see who has access to your workspace.
+Confirm that you are in the correct shop and that your role can invite members. The **Invite Member** action is shown only to users with invitation permission.
+
+A Shopify collaborator account, a shared Slack channel, and a Jurni page-review invitation are different types of access. None automatically makes someone a member of the Jurni shop.
+
+## Invite a member
 
 <Steps>
-  <Step title="Log in to Jurni">
-    Open Jurni and sign in to your account.
-  </Step>
-  <Step title="Open Settings">
-    Click **Settings** in the left sidebar.
-  </Step>
   <Step title="Open Members">
-    Click **Members**. You will see a list of current team members and any pending invitations.
+    In the correct shop, go to **Settings → Members** and select **Invite Member**.
   </Step>
-</Steps>
-
-## Inviting a New Team Member
-
-Send an invitation to add someone to your workspace.
-
-<Steps>
-  <Step title="Click Invite Member">
-    Click **Invite Member** in the top-right corner of the Members page.
+  <Step title="Enter the intended login email">
+    Fill in **Email Address** with the email the teammate will use in Jurni. Check for typos and accidental personal/work email mismatches.
   </Step>
-  <Step title="Enter their email">
-    Type the team member's email address into the invitation form.
-  </Step>
-  <Step title="Select a role">
-    Choose either **Admin** or **Staff** based on the level of access they need.
+  <Step title="Choose their role">
+    Select **Admin**, **Staff**, or **Designer**, based on the work they need to do.
   </Step>
   <Step title="Send the invitation">
-    Click **Send**. The invited user will receive an email with instructions to join your workspace.
+    Select **Send Invitation** and wait for the confirmation. Have the teammate open the invitation email and complete the join flow with the invited email.
   </Step>
 </Steps>
 
-<Note>
-  Invited users must accept the invitation via the email they receive before they can access your workspace.
-</Note>
+## Roles in the invitation form
 
-## Team Roles and Permissions
+| Role | Intended access described in Jurni |
+| --- | --- |
+| **Admin** | Manage the shop and invite team members. |
+| **Staff** | Manage the shop dashboard and content. |
+| **Designer** | Design and manage experiences. |
 
-Jurni offers two roles so you can balance collaboration with security. Choose the role that matches what each team member needs to do.
+The **Owner** role has full control of the shop and organization, but it is not offered in the normal invitation dropdown. Do not use a regular member invitation as an ownership-transfer process.
 
-<CardGroup cols={2}>
-  <Card title="Admin" icon="shield-halved">
-    Full workspace control, including billing and member management.
+Use the least access the person needs. For someone who only needs to review one page and leave feedback, consider a [page review invitation](/build/share-review-links) instead of full shop membership.
 
-    **Can do:**
+## Help a teammate join the right shop
 
-    - Use all product features
-    - Manage billing and subscription settings
-    - Invite and manage team members
-    - Change workspace and account-level settings
-  </Card>
+Ask the teammate to accept the invitation rather than starting onboarding for a new brand. After signing in, they should open the shop they were invited to.
 
-  <Card title="Staff" icon="user">
-    Day-to-day product access without sensitive administrative controls.
+If they already have a Jurni login under that email, they should use it. A second login or a duplicate shop can make work and chat history appear missing when the person is simply in the wrong account or shop.
 
-    **Can do:**
+## Troubleshoot an invitation
 
-    - Create and edit experiences
-    - Run experiments
-    - View analytics and performance data
+**The invitation email is missing:** verify the address, check spam/junk, and use the resend option for a pending invitation where available.
 
-    **Cannot do:**
+**The person signs in but cannot find the shop:** confirm that the invitation was accepted and that their current login email matches it. Check the shop switcher and ask an admin to verify membership.
 
-    - Access billing or subscription settings
-    - Invite or remove users
-    - Change account-level permissions
-  </Card>
-</CardGroup>
+**You cannot see Invite Member:** check the current shop, whether setup and billing are complete, and whether your role has invitation permission. Ask the owner or admin rather than sharing login credentials.
 
-## Managing Pending Invitations
+**You invited someone only to a review link:** that access is intentionally limited to review. Use **Settings → Members** when they need to build or manage experiences in the shop.
 
-When you invite someone, they appear in the members list with a **Pending Invitation** status until they accept.
+## Related guides
 
-- You can review all pending invitations on the Members page.
-- If a user has not accepted, you can resend the invitation so they receive a fresh email with join instructions.
-
-<Note>
-  Pending invitations do not count as active seats until the invited user accepts and joins the workspace.
-</Note>
+- [Create your account and shop](/getting-started/create-account)
+- [Manage your shop settings](/getting-started/setup-account)
+- [Share pages for review and comments](/build/share-review-links)
