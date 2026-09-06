@@ -53,9 +53,11 @@ If you change variant weights or routing rules after an experiment has started, 
 
 ## Statistical significance
 
-Jurni does **not currently expose the new statistical-significance/confidence experience as a shipped part of experiment reporting**. Confidence, lift, p-value, and winner-state calculations are being developed separately from the current performance metrics.
+A higher observed metric is not automatically a reliable winner. Keep the selected success metric, traffic quality, and amount of data in view when making a decision.
 
-Until that feature is released, do not interpret the current dashboard as automatically declaring a statistically significant winner. Use adequate sample size, a pre-defined decision metric, and a test duration that captures normal traffic variation before making a decision.
+The new confidence and winner-status workflow is being prepared separately. Do not assume it is available simply because a report shows conversion or revenue differences. Use the controls actually available in your account, and confirm feature availability with Jurni before relying on a confidence threshold.
+
+An observed lift describes the difference so far; it does not guarantee the same improvement on future traffic. See [Testing best practices](/experiments/strategic-experiments).
 
 ## Custom downstream events
 

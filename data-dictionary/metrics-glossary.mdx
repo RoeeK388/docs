@@ -4,77 +4,69 @@ sidebarTitle: "Metrics Glossary"
 description: "Browse the Jurni metrics glossary for clear definitions of key terms. Understand how each metric is calculated and when to use it in your analysis."
 ---
 
-Jurni uses a consistent set of commerce and traffic metrics across experience analytics and experiments. Use this glossary as the reference for what each metric is intended to represent.
+Use these definitions when reading experience and experiment performance. Compare the same date range and traffic scope before comparing two reports.
 
-## Core performance metrics
+## Core metrics at a glance
 
-| Metric | Definition | Calculation |
+| Metric | What it tells you | Calculation |
 | --- | --- | --- |
-| **Sessions** | Counted visits used as the traffic denominator in Jurni reporting. | Count of attributed sessions in the selected range |
-| **Page Views** | Views of Jurni pages or supported experience steps. | Count of PageView events |
-| **Purchases / Orders** | Completed orders attributed to Jurni traffic. | Count of attributed Order events |
-| **Revenue** | Revenue attributed to the selected Jurni traffic. | Sum of attributed order revenue |
-| **CVR** | Percentage of sessions that result in a purchase. | Orders ÷ Sessions × 100 |
-| **AOV** | Average revenue per completed order. | Revenue ÷ Orders |
-| **RPS** | Revenue generated per session. | Revenue ÷ Sessions |
-| **Add-to-Cart Rate** | Percentage of sessions that generate an add-to-cart. | Sessions with AddToCart ÷ Sessions × 100 |
-| **Checkout Rate** | Percentage of sessions that reach checkout. | Sessions with Checkout ÷ Sessions × 100 |
+| **Sessions** | The counted visits included in the report. | Visits in the selected reporting scope. |
+| **Orders** | Completed orders attributed to those visits. | Count of distinct attributed orders. |
+| **Revenue** | The attributed order value in the report. | Sum of the attributed order amounts. |
+| **CVR** | Attributed orders relative to sessions. | Orders ÷ Sessions × 100. |
+| **AOV** | The average value of an attributed order. | Revenue ÷ Orders. |
+| **RPS** | Revenue generated per counted session. | Revenue ÷ Sessions. |
+| **Click-through rate** | The share of sessions with the tracked click-through action. | Sessions with click-through ÷ Sessions × 100. |
+| **Add-to-cart rate** | The share of sessions with a tracked add-to-cart action. | Sessions with add-to-cart ÷ Sessions × 100. |
+| **Checkout rate** | The share of sessions with a tracked checkout-start action. | Sessions with checkout started ÷ Sessions × 100. |
 
-## Sessions
+## Sessions are not unique people
 
-Sessions are the main traffic denominator used for metrics such as CVR, RPS, add-to-cart rate, and checkout rate. Do not compare a Jurni session count directly with another platform until you confirm that platform uses the same session definition and attribution rules.
+Jurni's performance reports use counted visits as their session unit. One person can produce more than one visit. Do not assume the number matches unique visitors, raw PageView events, or a different platform's session count.
 
-## Conversion Rate (CVR)
+Experience and experiment reports can include different traffic. For example, a direct visit to a page does not necessarily belong to an experiment. See [Experience versus experiment sessions](/troubleshooting/experiment-experience-sessions).
 
-CVR answers: **What percentage of traffic purchased?**
+## Orders and revenue follow attribution
 
-For example, if an experience receives 1,000 sessions and 50 attributed orders, the CVR is 5%.
+Orders and revenue are connected to the visit credited by Jurni. They are not simply every order placed in your Shopify store during the same period.
 
-CVR is useful for understanding purchase efficiency, but it does not account for how much each order is worth.
+The reporting window follows the attributed visit's date. An order-date report in another tool can therefore differ even when both tools show the same calendar range. See [Attribution](/analytics-reporting/attribution-overview) before reconciling totals.
 
-## Average Order Value (AOV)
+## CVR: purchase efficiency
 
-AOV answers: **How much revenue does the average order generate?**
+With 1,000 counted sessions and 50 attributed orders, CVR is **5%**.
 
-A variant can increase AOV while reducing CVR, or increase CVR while reducing AOV. This is why AOV should not be interpreted in isolation when comparing offers.
+The calculation uses **orders**, not a separate count of unique purchasing people. It should not be silently redefined as unique customers divided by traffic. Use AOV and RPS alongside CVR when the variants have different basket sizes.
 
-## Revenue Per Session (RPS)
+## AOV and RPS: basket size versus traffic value
 
-RPS combines traffic and revenue into one metric:
+With 5,000 in attributed revenue, 50 orders, and 1,000 sessions, **AOV is 100** and **RPS is 5**, in the report's currency.
 
-`Revenue ÷ Sessions`
+AOV can increase while fewer visitors purchase. RPS helps compare that trade-off because it accounts for the revenue generated by all counted sessions, not just orders. Neither metric is profit or return on ad spend.
 
-It is especially useful when two variants trade off conversion rate and average order value. A variant with a slightly lower CVR can still generate more revenue per session if its orders are significantly larger.
+## Action rates are not raw event totals
 
-## Add-to-Cart Rate
+For click-through, add-to-cart, and checkout-start rates, the corresponding action group is counted at most once per visit. Repeated actions within that visit do not create multiple converting sessions for the same rate.
 
-Add-to-cart rate is an intent metric. It can help identify whether the product presentation or offer is convincing shoppers to begin the purchase process.
+For example, if 100 of 1,000 sessions include at least one tracked add-to-cart, the rate is **10%**, even when some shoppers add several items.
 
-A high add-to-cart rate with a low purchase rate can point to friction later in the journey, such as cart, discount, shipping, subscription, or checkout issues.
+Jurni's click-through rate describes the tracked page action. It is not Meta's ad clicks divided by ad impressions. See [Meta ad insights](/analytics-reporting/meta-ad-insights) when comparing page and ad performance.
 
-## Checkout Rate
+## Read the metrics together
 
-Checkout rate helps measure the transition from shopping intent into the checkout process. When add-to-cart is healthy but checkout rate falls, inspect the cart experience and any custom cart logic.
+Choose the primary goal before evaluating a test. CVR helps assess purchase completion; AOV helps assess basket size; RPS helps assess revenue from the traffic. Use intermediate action rates to investigate where a change may have helped or hurt.
 
-## Revenue
+A higher observed metric does not by itself establish a statistically reliable winner. Use the experiment's available decision information and the [testing guide](/experiments/strategic-experiments), rather than a universal visitor-count rule.
 
-Revenue should always be interpreted with the selected date range, attribution scope, and traffic filter. Jurni revenue can differ from Shopify, Meta, GA4, or another analytics platform when those systems use different attribution windows or definitions.
+## Missing data and comparisons
 
-## Experiment metrics
-
-Experiments compare the same core metrics by variant. When evaluating a test, avoid choosing a winner based on one metric without considering the primary business goal of the experiment.
-
-For example:
-
-- Use **CVR** when the test is primarily about purchase completion.
-- Use **AOV** when the test is designed to increase basket size.
-- Use **RPS** when the goal is to maximize revenue generated from the traffic entering the test.
+No tracked data is not automatically zero performance. Before drawing a conclusion, check the active shop, date range, selected page or experiment, tracking setup, and attribution scope. Do not average percentage rows to reconstruct an overall rate: use the underlying totals.
 
 ## Related guides
 
-- Analytics overview
-- Experience analytics
-- Conversion step performance
-- Reading experiment results
-- Attribution overview
-- Event dictionary
+- [Analytics overview](/analytics-reporting/overview)
+- [Experience analytics](/analytics-reporting/experience-analytics)
+- [Read experiment results](/experiments/reading-results)
+- [Attribution overview](/analytics-reporting/attribution-overview)
+- [Why analytics differ](/troubleshooting/analytics-differences)
+- [Event dictionary](/reference/events)
