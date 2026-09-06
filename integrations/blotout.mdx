@@ -1,0 +1,39 @@
+---
+title: "Connect Blotout EdgeTag"
+sidebarTitle: "Blotout"
+description: "Copy the full EdgeTag domain URL from Blotout and coordinate the page, consent, and downstream tracking configuration."
+icon: "shield-check"
+---
+
+Use **Blotout EdgeTag** when Blotout manages part of your brand's tracking setup. Jurni needs the existing EdgeTag domain URL for that implementation; it is not an account API-key connection.
+
+## Find the EdgeTag URL
+
+In Blotout, open **EdgeTag → Domains**. Find the domain configured for this brand and copy its **full HTTPS URL**. This is the EdgeTag endpoint supplied by Blotout, not your Jurni page URL or your Shopify storefront domain.
+
+If several domains are listed, ask your Blotout implementation contact which one is intended for these landing pages. Do not create or guess a new endpoint.
+
+## Connect it in Jurni
+
+1. Open **Settings → Integrations → Data Integrations → Tracking Pixels**.
+2. Paste the full endpoint into **Blotout EdgeTag URL**.
+3. Select **Save Changes**.
+4. Share the intended published Jurni URL with the Blotout/Jurni implementation team and verify the configured tracking on that page.
+
+## Agree the full setup
+
+Before launch, confirm with the implementation owner which events and destinations EdgeTag handles, whether your custom Jurni subdomain is included, and how tracking works after the shopper moves to your store or checkout.
+
+A consent banner is a separate part of that agreement. Pasting an EdgeTag URL does not by itself define the banner design, consent categories, or the scripts that must wait for consent. Do not disable consent simply to make a test event appear.
+
+For **Shopify Pages**, check what the theme already loads. A theme installation and a Jurni configuration can overlap; decide which installation is responsible rather than adding every script twice.
+
+## What to send if it is not working
+
+Send the Jurni team the page URL, publishing method, expected event, and the non-secret EdgeTag domain. State whether the issue occurs before or after consent and whether it also occurs on your existing store. Do not include account secrets in screenshots or AI prompts.
+
+## Related guides
+
+- [Consent and tracking](/integrations/consent-tracking)
+- [Custom Scripts](/integrations/custom-scripts)
+- [Integration troubleshooting](/integrations/troubleshooting)

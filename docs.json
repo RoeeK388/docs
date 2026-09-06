@@ -288,7 +288,8 @@
               "integrations/utm-attribution",
               "integrations/consent-tracking",
               "integrations/northbeam",
-              "integrations/axon"
+              "integrations/axon",
+              "integrations/blotout"
             ]
           },
           {
