@@ -113,9 +113,11 @@
           {
             "group": "AI & Figma",
             "pages": [
+              "build/jurni-agent",
               "build/ai-editing",
               "building-funnels/figma-file",
-              "building-funnels/ai-chat-prompts"
+              "building-funnels/ai-chat-prompts",
+              "build/chat-history"
             ]
           },
           {
