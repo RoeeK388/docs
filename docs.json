@@ -1,0 +1,77 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "Jurni",
+  "colors": {
+    "primary": "#ef7025",
+    "light": "#eec9bc",
+    "dark": "#4fa1ab"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Jurni Help Center",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": []
+          },
+          {
+            "group": "Building Funnels",
+            "pages": [
+              "jurni-funnels/funnel-building"
+            ]
+          },
+          {
+            "group": "Publishing",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Jurni for Shopify",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "jurni-funnels/account-setup",
+              "jurni-funnels/activating-jurni-core",
+              "jurni-funnels/tracking-pixels",
+              "jurni-funnels/shopify-analytics",
+              "jurni-funnels/inviting-team-members"
+            ]
+          },
+          {
+            "group": "Building Funnels",
+            "pages": [
+              "jurni-funnels/creating-a-funnel",
+              "jurni-funnels/funnel-editor",
+              "jurni-funnels/managing-sections",
+              "jurni-funnels/saved-sections"
+            ]
+          },
+          {
+            "group": "Publishing",
+            "pages": [
+              "jurni-funnels/smart-links"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Download on App Store",
+      "href": "https://apps.apple.com/app/id6759559463"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/borrowedfire",
+      "instagram": "https://instagram.com/OurJurni"
+    }
+  }
+}

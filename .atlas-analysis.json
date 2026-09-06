@@ -1,0 +1,104 @@
+{
+  "projectType": "saas",
+  "projectName": "Jurni",
+  "projectDescription": "Jurni is a private iPhone travel-day command center that organizes flights, hotels, and every stop into one smart itinerary — with timing checks, offline documents, group planning, and a focused daily brief for the day of travel.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Help Center",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "getting-started/download-and-setup",
+              "getting-started/creating-your-first-trip",
+              "getting-started/daily-brief"
+            ]
+          },
+          {
+            "group": "Planning Your Trip",
+            "pages": [
+              "planning/smart-import",
+              "planning/timeline",
+              "planning/documents",
+              "planning/timing-checks"
+            ]
+          },
+          {
+            "group": "Travel Day",
+            "pages": [
+              "travel-day/daily-brief-guide",
+              "travel-day/offline-access",
+              "travel-day/widgets-and-shortcuts"
+            ]
+          },
+          {
+            "group": "Group Travel",
+            "pages": [
+              "groups/inviting-travelers",
+              "groups/expense-splitting",
+              "groups/polls"
+            ]
+          },
+          {
+            "group": "Your Profile",
+            "pages": [
+              "profile/passport-and-stats",
+              "profile/badges-and-milestones",
+              "profile/globe"
+            ]
+          },
+          {
+            "group": "Privacy & Security",
+            "pages": [
+              "privacy/data-protection",
+              "privacy/offline-and-encryption",
+              "privacy/account-and-sign-in"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "support/faq",
+              "support/troubleshooting",
+              "support/contact"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Daily Brief — focused travel-day view of your next 24 hours, QR codes, addresses, and key actions",
+    "Smart Import — turn booking confirmation emails and screenshots into trip details automatically",
+    "Timing Checks — flags tight connections, overlaps, and lodging gaps before travel day",
+    "Offline Documents — boarding passes, hotel confirmations, passports, and PDFs available without internet",
+    "One Clean Timeline — flights, trains, hotels, restaurants, and custom stops in a single itinerary",
+    "Group Planning — invite travelers, split expenses, calculate balances, and run polls",
+    "Trip Maps — every stop and route displayed in context",
+    "Widgets & Shortcuts — next step on the iPhone Home Screen; App Intents for fast travel-day actions",
+    "Your Story / Passport — travel stats, milestone badges, trophy room, and end-of-trip summaries",
+    "3D Globe — interactive globe showing visited destinations and flight paths",
+    "End-to-end encryption — AES-256-GCM with keys stored in Apple Keychain, never on servers",
+    "Sign in with Apple — no separate password required"
+  ],
+  "publicApiSurface": [
+    "Smart Import (email, screenshot, pasted itinerary parsing)",
+    "Daily Brief view",
+    "Itinerary Timeline editor",
+    "Document storage and offline access",
+    "Group invite and expense splitting",
+    "Polls",
+    "Trip Maps",
+    "Home Screen Widgets",
+    "App Intents / Shortcuts integration",
+    "Passport & travel stats",
+    "3D Globe",
+    "Sign in with Apple authentication"
+  ]
+}
