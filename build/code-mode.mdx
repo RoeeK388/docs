@@ -1,0 +1,55 @@
+---
+title: "Code mode for supported sections"
+sidebarTitle: "Code mode"
+description: "Use the section Code control when your account has access, understand scoped saves, and avoid confusing it with Shopify theme editing or Custom Scripts."
+icon: "code"
+---
+
+Code mode is an advanced editor workflow for supported sections. Use it when the visual controls or a focused AI edit are not sufficient and you understand the section's structure and behavior.
+
+The **Code** control is shown only when the account has code-editor access. A missing control is not, by itself, an editor loading problem.
+
+## Open and edit section code
+
+<Steps>
+  <Step title="Save a useful checkpoint">
+    Preserve your current work before making a large code change. Confirm which page, section, and device/editing scope you are working in.
+  </Step>
+  <Step title="Select the supported section">
+    Select the section and use its **Code** control when available. Leave Comment mode first.
+  </Step>
+  <Step title="Make a focused change">
+    Preserve working product bindings, state, events, and actions unless changing them is the explicit goal. Jurni section code is not an arbitrary Shopify theme file or an unrestricted website project.
+  </Step>
+  <Step title="Resolve validation problems and save">
+    Review any validation errors and use the code-mode save action. The header can show **Save 1 change** or a count of pending changes.
+  </Step>
+  <Step title="Return to the visual editor">
+    Exit code mode, inspect the rendered section, and test both device views and the affected shopper interactions. Then check the page's save/publish state.
+  </Step>
+</Steps>
+
+## Understand the save scope
+
+Saving code changes and publishing a shopper-facing page are different actions. For a Global Section, you may also be editing a shared source with its own save workflow. Confirm the scope before changing a component used by multiple pages.
+
+If you leave with dirty code, pay attention to the editor's unsaved-change warning. Do not assume closing code mode safely preserved everything.
+
+## When Code is disabled
+
+The control can be disabled while already in code mode, while commenting, or in a Global Section editing state that does not support the operation. Finish or exit the active mode before trying another workflow.
+
+If your account does not have code-editor access, use the visual controls, a clearly scoped AI request, or work with the Jurni team. Do not assume a particular role or plan always exposes the control.
+
+## Keep code changes safe
+
+Never embed private API secrets or server-only credentials in browser-side section code. Keep vendor snippets in their supported integration path rather than adding duplicate loaders into a section.
+
+Test variants, selling plans, price updates, cart actions, modals, and error states after changes to a Buy Box or another interactive section. A section that renders without a syntax error can still have incorrect commerce behavior.
+
+## Related guides
+
+- [AI editing](/build/ai-editing)
+- [Global Sections](/build/global-sections)
+- [Custom Scripts](/integrations/custom-scripts)
+- [QA checklist](/building-funnels/qa-checklist)
