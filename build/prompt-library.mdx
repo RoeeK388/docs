@@ -1,0 +1,134 @@
+---
+title: "Copy-ready prompts for Jurni"
+sidebarTitle: "Prompt examples"
+description: "Adapt practical prompts for campaign pages, scoped edits, mobile layouts, Buy Boxes, and review."
+icon: "copy"
+---
+
+Choose the example closest to your task, replace the bracketed details, and attach the relevant products and references. These are briefs to adapt, not commands that guarantee a particular result.
+
+For the underlying approach, start with [Prompting best practices](/building-funnels/ai-chat-prompts).
+
+## Build a campaign page
+
+```text
+Build a landing page for [product] for [audience] arriving from [ad/channel].
+The main message is [approved message] and the next action is [action].
+Use the attached product, approved copy, and brand images.
+Include a hero, [education/proof sections needed], a Buy Box, and the supplied FAQs.
+Keep the wording consistent with the ad and our brand guidance.
+Do not invent testimonials, product claims, discounts, or deadlines.
+```
+
+Attach the actual ad and product when available. Review the resulting structure before adding more requests.
+
+## Turn a reference into your brand's page
+
+```text
+Use [reference] for layout and section order only.
+Use our brand fonts and colors, the attached product photos, and the approved copy.
+Do not copy the reference brand's testimonials, logo, claims, or pricing.
+Use [connected product] in the Buy Box and keep [purchase behavior].
+```
+
+A reference is not permission to use another brand's assets. Use material you are authorized to publish.
+
+## Work from two Figma frames
+
+```text
+Desktop reference: [frame link]
+Mobile reference: [frame link]
+These are two screen-size designs of the same page.
+Follow the layouts while keeping text and purchasing controls editable.
+Connect [product] and use [intended cart/checkout action].
+Do not append the mobile frame as another page section.
+```
+
+See [Figma references](/building-funnels/figma-file) for preparing the source.
+
+## Change one section without redesigning the page
+
+```text
+Change only the selected [section name].
+Update [specific content/layout] to [desired result].
+Keep [copy/images/button behavior] unchanged.
+Do not change other sections, product selections, or the page's publishing setup.
+```
+
+## Fix a mobile layout
+
+```text
+In the selected section, stack [elements] vertically on mobile and use [spacing].
+Keep the existing desktop layout.
+Preserve the copy, product choices, and button action on both sizes.
+The mobile result should have no horizontal overflow or overlapping controls.
+```
+
+Check both views: **Editing All Sizes** is the base editing mode, not an isolated mobile page.
+
+## Redesign a Buy Box without changing the purchase
+
+```text
+Restyle the selected Buy Box to match [reference].
+Preserve its connected products, variants, subscription choices,
+default selection, quantities, discount behavior, and cart/checkout action.
+Keep selection controls functional.
+Change only [visual details].
+```
+
+After the edit, test one-time and subscription purchases and the important variant combinations. See [Buy Box setup](/products/add-buy-box).
+
+## Brief a bundle or multi-product purchase
+
+```text
+Build a purchase section using [approved products].
+Shoppers should choose [selection rule] before continuing.
+The selected items should enter the cart as [approved quantities and purchase types].
+Use [existing discount arrangement]; do not invent a discount implementation.
+Show [approved offer copy] and preserve [existing checkout flow].
+```
+
+Confirm the actual supported commerce setup before treating the result as ready to sell. Product choice, displayed savings, and checkout discount enforcement are separate concerns.
+
+## Update copy without adding claims
+
+```text
+Rewrite only [section] for [audience] using the approved facts below.
+Keep [must-keep wording] exactly as written.
+Use [tone] and a maximum of [length].
+Do not introduce new health claims, comparisons, testimonials, or numbers.
+Approved source: [copy]
+```
+
+## Create a controlled test variation
+
+Duplicate the experience first so you have a separate draft. Then use:
+
+```text
+On this duplicate, change only [hypothesis, such as the hero message].
+Keep the product, price, offer, purchase options, layout below the hero,
+tracking setup, and CTA action unchanged.
+Use this approved alternative copy: [copy].
+```
+
+This creates a page variation; it does not by itself launch an experiment or assign traffic. Follow [Create an experiment](/experiments/create-experiment).
+
+## Correct an imperfect result
+
+```text
+The [part] is correct. Keep it.
+The remaining issue is [specific mismatch], shown in Current Result.
+Make only [correction] so it matches Desired Result.
+Preserve [working content and behavior].
+```
+
+## Brief a final review
+
+```text
+Review this page against [approved brief].
+List mismatches in copy, product choices, images, mobile layout, and button destinations.
+Do not change the page yet.
+Separate what you can inspect from anything I need to verify in the live cart or checkout.
+```
+
+A review request is not a guarantee that the assistant has tested a live purchase. Finish the [pre-launch checklist](/building-funnels/qa-checklist) yourself or with your team.

@@ -77,6 +77,18 @@
             ]
           },
           {
+            "group": "Build with AI",
+            "pages": [
+              "build/ai-campaign-workflow",
+              "build/jurni-agent",
+              "build/ai-editing",
+              "build/prompt-library",
+              "building-funnels/figma-file",
+              "building-funnels/ai-chat-prompts",
+              "build/chat-history"
+            ]
+          },
+          {
             "group": "Sections & Layers",
             "pages": [
               "building-funnels/managing-sections",
@@ -108,16 +120,6 @@
               "build/template-library",
               "building-funnels/saved-sections",
               "build/global-sections"
-            ]
-          },
-          {
-            "group": "AI & Figma",
-            "pages": [
-              "build/jurni-agent",
-              "build/ai-editing",
-              "building-funnels/figma-file",
-              "building-funnels/ai-chat-prompts",
-              "build/chat-history"
             ]
           },
           {
