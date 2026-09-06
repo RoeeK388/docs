@@ -4,7 +4,7 @@ sidebarTitle: "Overview"
 description: "Jurni's built-in A/B testing framework splits SmartLink traffic between funnel variants so you can find what converts better without changing your ad campaigns."
 ---
 
-Jurni Experiments are the built-in A/B testing framework that lets you split traffic between two or more funnels to find what converts better. Unlike running separate campaigns, experiments use a single SmartLink to split traffic, so your Meta or Google ad set stays untouched and you never push ads back into the learning phase.
+Jurni Experiments let you route traffic between two or more destinations and compare their performance. Experiments can use a Smart Link as the stable campaign URL, so you can change the destinations or traffic split in Jurni without editing the URL already placed in your ads.
 
 ## How Experiments Work
 
@@ -12,11 +12,11 @@ When a shopper clicks your SmartLink, Jurni routes them to one of your variants 
 
 Key details:
 
-- **No learning phase reset.** Your ad set destination URL never changes, so Meta and Google algorithms are not disrupted.
-- **Metrics tracked:** CVR, AOV, RPS, add-to-cart rate, checkout rate.
-- **Results update in near-real-time** as sessions and purchases come in.
-- **What you can test:** Jurni funnel vs. Jurni funnel, or a Jurni funnel vs. your existing Shopify product page or any external URL.
-- **Requirement:** Experiments require a SmartLink. You must have at least two published funnels, or one published funnel and one external URL, to create an experiment.
+- **Stable campaign URL:** When the experiment uses a Smart Link, the URL placed in your campaign can remain unchanged while Jurni controls the destinations behind it.
+- **Traffic weights:** Each variant can receive a configured share of traffic. Small samples will not always match the configured split exactly.
+- **Routing rules:** You can route visitors to specific variants based on URL parameters before the normal weighted split is applied.
+- **Current performance metrics:** Jurni experiment reporting includes sessions, orders, revenue, CTR, CVR, add-to-cart rate, checkout rate, AOV, and revenue per session (RPS).
+- **What you can test:** Experiments can compare Jurni experiences and supported external destinations, such as an existing Shopify page.
 
 <Tip>
   Experiments are the fastest way to find your highest-converting funnel without touching your ad campaigns. Set one up before scaling spend.
@@ -29,8 +29,8 @@ Key details:
 ## Frequently Asked Questions
 
 <AccordionGroup>
-  <Accordion title="Do I need to pause my ads to run an experiment?">
-    No. Experiments route traffic through your SmartLink. Your ad campaign destination URL stays the same, so there is no disruption to ad delivery or algorithm optimization.
+  <Accordion title="Do I need to change the URL in my ads to update an experiment?">
+    Not when the ads already use the Smart Link for that traffic. You can change the destination or use the Smart Link with an experiment from Jurni while keeping the campaign-facing URL stable.
   </Accordion>
 
   <Accordion title="What metrics does Jurni track?">
@@ -40,16 +40,13 @@ Key details:
   <Accordion title="Can I test against my existing Shopify product page?">
     Yes. You can add an external URL as a variant. See [Testing Against Your Website](/experiments/testing-against-website) for details on how attribution works.
   </Accordion>
-
-  <Accordion title="Do I need a paid plan?">
-    Experiments are available on all Jurni plans.
-  </Accordion>
 </AccordionGroup>
 
 ## Related Articles
 
-- [How to Create an Experiment](/experiments/how-to-create-an-experiment)
+- [Create and Run an Experiment](/experiments/create-experiment)
+- [Experiment Routing Rules](/experiments/routing-rules)
+- [How Experiment Traffic Is Assigned](/experiments/traffic-assignment)
 - [Testing Against Your Website](/experiments/testing-against-website)
-- [How to Strategically Run an Experiment](/experiments/how-to-strategically-run-an-experiment)
-- [Reading Test Results](/experiments/reading-test-results)
-- [Troubleshoot Experiment Traffic Not Splitting Correctly](/experiments/troubleshoot-traffic-splitting)
+- [Reading Experiment Results](/experiments/reading-results)
+- [Troubleshoot Experiment Traffic Splitting](/experiments/traffic-troubleshoot)

@@ -21,11 +21,17 @@ The configured percentages describe the expected allocation over meaningful traf
 A 50/50 experiment can temporarily look like 47/53 or 52/48 at low traffic. Random variation is normal. Evaluate the split over a larger number of sessions before treating a small imbalance as a routing problem.
 </Info>
 
-## Visitor consistency
+## Assignment order
 
-Jurni is designed to avoid unnecessarily switching the same visitor between variants during the same experiment. This protects the shopper experience and keeps the experiment easier to interpret.
+Jurni does not simply randomize every request. The current assignment order is:
 
-If you are manually testing different variants, use the experiment's preview or testing workflow rather than repeatedly refreshing the production Smart Link and expecting a new variant on every load.
+1. **Routing Rules first.** If the incoming URL matches a configured Routing Rule, that rule's variant wins.
+2. **Existing assignment next.** If no rule matches and the visitor already has a valid assignment for the experiment, Jurni keeps that variant.
+3. **Traffic weights last.** If there is no matching rule and no valid previous assignment, Jurni chooses a variant according to the configured weights.
+
+Jurni currently remembers an experiment assignment for up to 30 days. A later matching Routing Rule can override that remembered assignment and persist the newly routed variant.
+
+If you are manually testing different variants, use controlled test URLs or change the relevant parameter rather than repeatedly refreshing the same production Smart Link and expecting a new random variant.
 
 ## Changing traffic allocation
 

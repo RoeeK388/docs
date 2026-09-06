@@ -135,7 +135,9 @@
             "pages": [
               "experiments/what-are-experiments",
               "experiments/create-experiment",
+              "experiments/routing-rules",
               "experiments/traffic-assignment",
+              "experiments/pause-end-reuse",
               "experiments/reading-results",
               "experiments/testing-against-website",
               "experiments/traffic-troubleshoot"
@@ -148,6 +150,7 @@
               "analytics-reporting/experience-analytics",
               "analytics-reporting/funnel-step-performance",
               "analytics-reporting/filtering-experiences",
+              "analytics-reporting/custom-events",
               "analytics-reporting/attribution-overview"
             ]
           },

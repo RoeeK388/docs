@@ -1,0 +1,79 @@
+---
+title: "Custom Events and Downstream Tracking"
+sidebarTitle: "Custom Events"
+description: "Understand how Jurni can map customer-specific downstream events, preserve experiment context, and where custom events currently appear in reporting."
+keywords:
+  - "Jurni custom events"
+  - "dataLayer events"
+  - "experiment custom metrics"
+  - "downstream tracking"
+---
+
+Custom Events let Jurni represent important customer-specific actions that are not part of the standard commerce event set. Examples include starting a quiz, completing a wizard step, capturing an email, or firing a customer-defined purchase/conversion event.
+
+Custom event implementations are useful when the real success metric happens **after the landing page** or on a downstream part of the customer's site.
+
+## Standard events vs. custom events
+
+Jurni's standard analytics model includes common visit and commerce events such as click-through, add to cart, checkout initiation, and attributed order/purchase activity.
+
+A **Custom Event** is an additional named event configured for a specific shop or implementation.
+
+Examples from customer implementations include:
+
+- quiz or wizard step reached
+- email captured
+- application started
+- first-time-buyer conversion
+- another event already emitted into a site's `dataLayer`
+
+## How downstream event mapping works
+
+For supported implementations, Jurni can map an event already emitted by the customer's site into a named Jurni Custom Event.
+
+The source can depend on the customer's stack. A common pattern is to use an existing GTM/`dataLayer` event rather than asking the customer to build a second parallel tracking system.
+
+When the downstream flow preserves the Jurni visit/experiment context, the mapped event can be associated with the originating Jurni traffic.
+
+<Info>
+Custom event mapping is implementation-specific. If your shop needs a new downstream event, provide Jurni with the existing event name, where it fires, and any payload condition that determines whether it should count.
+</Info>
+
+## Avoid double-counting
+
+Choose one canonical trigger for a conversion event whenever possible.
+
+For example, if your site already emits a reliable `purchase` event, do not also count a success-page URL as a second purchase trigger unless deduplication is intentionally implemented.
+
+The same rule applies to quiz steps: if the business definition is one conversion per visit, refreshing the page should not create multiple conversions for the same visit.
+
+## What experiment reporting currently shows
+
+Configured custom events can appear in the **experiment-level conversion funnel**.
+
+However, custom events are **not currently exposed as standard selectable metrics throughout the per-variant performance table and time-series experiment charts**.
+
+This distinction matters when the custom event is your primary test KPI. The experiment may contain the custom event data while the variant comparison UI does not yet provide the same side-by-side breakdown as CVR, revenue, or other standard metrics.
+
+<Warning>
+If your experiment decision depends on a custom event, confirm the reporting path before launch. Do not assume every configured custom event will automatically appear as a per-variant metric in every experiment visualization.
+</Warning>
+
+## Information to provide for a new mapping
+
+When asking Jurni to map a downstream event, provide:
+
+1. **Business name** — e.g. `Quiz Start` or `First-Time Buyer`.
+2. **Technical event source** — e.g. GTM/`dataLayer`, JavaScript event, or URL condition.
+3. **Exact event name or URL rule**.
+4. **Payload fields** needed for filtering or deduplication.
+5. **Counting rule** — once per visit, every occurrence, first-time buyers only, etc.
+6. **Where the event fires** — Jurni page, root-domain site, checkout, confirmation flow, and so on.
+
+## Related guides
+
+- [Event Dictionary](/reference/events)
+- [Read Experiment Results](/experiments/reading-results)
+- [Attribution Overview](/analytics-reporting/attribution-overview)
+- [Google Tag Manager](/integrations/gtm)
+- [URL Parameters](/reference/url-parameters)
