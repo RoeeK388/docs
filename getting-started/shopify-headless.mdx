@@ -1,11 +1,79 @@
 ---
-title: "How to Set Up Your Non Shopify or Shopify Headless Account"
-sidebarTitle: "Headless Setup"
-description: "Set up Jurni for Shopify Headless or non Shopify stores. This guide covers configuration steps for headless commerce and custom integrations."
+title: "Shopify Headless Setup"
+sidebarTitle: "Shopify Headless"
+description: "Set up Jurni when Shopify is the commerce backend but the shopper-facing storefront is a custom/headless frontend."
 ---
 
-Jurni works with Shopify Headless and other custom commerce setups. This page explains how to configure your account for headless or non Shopify environments so you can build funnels on any stack.
+Use this setup when **Shopify processes products, carts, checkout, and orders**, but your shopper-facing storefront is rendered by a custom/headless frontend instead of the Shopify Online Store theme.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/3100330576-how-to-set-up-your-shopify-headless-account) for full content.
-</Note>
+This is different from a standard Shopify setup. A headless storefront cannot rely on Shopify theme app embeds for Jurni Core, so the Jurni browser script is loaded directly on the storefront.
+
+## How headless tracking differs
+
+For a Shopify Online Store, Jurni can run through the Shopify theme extension and Shopify web-pixel environment.
+
+For a Shopify Headless storefront, the Jurni script is loaded directly by the custom frontend. Jurni supports host-specific headless configuration so the correct behavior can be loaded for the storefront domain or its root domain.
+
+<Info>
+  A Shopify Headless setup is still a **Shopify commerce** setup. Shopify order/cart signals can still participate in Jurni attribution; only the shopper-facing storefront implementation is different.
+</Info>
+
+## Attribution requirements
+
+Jurni's current Shopify attribution model connects orders back to a Jurni visit using Shopify order/cart/checkout evidence. The strongest implemented signals include:
+
+- Jurni attributes carried on the Shopify cart/order
+- Shopify cart-token joins
+- Shopify checkout-token joins
+- the Jurni session and visit created on the storefront
+
+A headless implementation therefore needs to preserve Jurni context through the custom cart and checkout flow. If your frontend creates Shopify carts itself, validate that the integration keeps the Jurni visit/session and the relevant Shopify cart context connected.
+
+## Setup checklist
+
+<Steps>
+  <Step title="Confirm the storefront domains">
+    Provide the exact shopper-facing domain(s) used by the headless site. Jurni's headless configuration can resolve settings by exact hostname or root domain.
+  </Step>
+  <Step title="Load Jurni Core directly">
+    Add the Jurni browser script to the headless storefront rather than enabling the Shopify theme app embed.
+  </Step>
+  <Step title="Confirm cart and checkout integration">
+    Verify how your frontend creates Shopify carts and moves the shopper into checkout so Jurni context can be maintained.
+  </Step>
+  <Step title="Configure tracking integrations">
+    Decide whether Meta, GA4, GTM, or other data tools are loaded by Jurni, by the headless application, or by an existing tag manager. Avoid loading the same vendor twice.
+  </Step>
+  <Step title="Run an end-to-end order test">
+    Test the live landing page → custom storefront/cart → Shopify checkout → order flow and verify the order is attributed back to the expected Jurni visit.
+  </Step>
+</Steps>
+
+## Publishing
+
+Do **not** use the native Shopify Pages instructions for a headless storefront. Shopify Pages depend on Shopify theme templates and the Jurni app block.
+
+Headless brands normally use Jurni-hosted pages/Smart Links on the configured Jurni domain or a custom integration path agreed for the storefront.
+
+## Shopify Analytics
+
+If you want Jurni storefront activity represented through Shopify's Headless sales channel/analytics flow, configure the separate Shopify Analytics integration in Jurni Data Integrations. This is separate from the Jurni Core tracking setup itself.
+
+## When to involve the Jurni team
+
+Headless storefronts differ in how they create carts, persist identity, and transition into checkout. Before paid traffic, confirm with Jurni:
+
+- storefront domains
+- how the Jurni script is installed
+- cart creation method
+- checkout handoff
+- expected conversion/order events
+- analytics/pixel ownership
+
+## Related guides
+
+- [Choose Your Setup](/getting-started/choose-your-setup)
+- [Non-Shopify Setup](/getting-started/setup-non-shopify)
+- [Attribution Overview](/analytics-reporting/attribution-overview)
+- [Tracking Pixels & Data Integrations](/getting-started/tracking-pixels)
+- [Publishing Jurni Pages](/publishing/overview)

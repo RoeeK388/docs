@@ -1,0 +1,121 @@
+---
+title: "Shopify Pages: When to Use Them and Limitations"
+sidebarTitle: "When to Use & Limitations"
+description: "Understand how native Shopify Pages differ from Jurni-hosted pages, including theme/app behavior, script compatibility, cart behavior, layout, and domain limitations."
+keywords:
+  - "Shopify Pages limitations"
+  - "Jurni Shopify Pages"
+  - "Jurni custom scripts Shopify Pages"
+  - "Shopify page app block"
+---
+
+Shopify Pages are an **optional publishing target for Shopify Online Store brands**. They let a Jurni page live at a native Shopify URL such as:
+
+`https://brand.com/pages/<handle>`
+
+The page is still authored in Jurni, but Shopify serves the published artifact through a Shopify page template containing the Jurni page app block.
+
+Use Shopify Pages when being inside the Shopify theme environment is more important than using the normal Jurni-hosted page runtime.
+
+## When Shopify Pages are a good fit
+
+Shopify Pages are useful when you need:
+
+- a native `/pages/<handle>` URL on the Shopify root domain
+- the page to run inside the existing Shopify theme environment
+- existing Shopify theme/app scripts to be available on the page
+- the page to follow the store's native Shopify page routing model
+
+A recent customer implementation moved to Shopify Pages specifically because their existing Shopify analytics/script stack could run in the native Shopify structure instead of requiring parallel Jurni Custom Scripts.
+
+## How Shopify Pages are rendered
+
+Jurni remains the source of truth for the page design/content. Publishing creates or updates a Shopify Page that uses a shared page template/app block and a compiled Shopify render artifact.
+
+You continue editing in Jurni. Shopify is the deployed copy, not the authoring source.
+
+## Theme template and layout limitations
+
+Every Shopify Page needs a Shopify page template containing the **Jurni page app block**.
+
+The Shopify theme can add its own margins, headers, footers, or default page sections around the Jurni content. Configure the template deliberately:
+
+- remove/hide unwanted default theme sections
+- add the Jurni page app block
+- configure full-width behavior when needed
+- decide whether the Shopify theme header/footer should remain visible
+
+A page that looks correct through the Jurni-hosted URL can look different through Shopify if the Shopify template adds spacing or surrounding theme content.
+
+## Jurni Custom Scripts do not automatically carry over
+
+The native Shopify Page runtime is different from a Jurni-hosted page.
+
+Jurni Custom Scripts are targeted to Jurni-hosted experiences. Do **not** assume a script added in **Settings → Custom Scripts** will automatically execute on the Shopify Page in the same way.
+
+This has affected real customer implementations using script-driven review drawers, overlays, analytics libraries, and other widgets.
+
+For a Shopify Page, prefer the vendor's normal Shopify theme/app installation when that integration is intended to run natively in Shopify.
+
+<Warning>
+Test every script-driven integration on the actual `/pages/` URL. A successful test on a Jurni subdomain or app-proxy page does not prove the Shopify Page implementation is working.
+</Warning>
+
+## Tracking and attribution
+
+Jurni has a dedicated Shopify Pages tracking/attribution path. The shipped implementation is designed so Jurni attribution is preserved on Shopify Pages and Jurni's own tracking should not be loaded twice by the Shopify Pages integration.
+
+However, the Shopify theme can already contain Meta, GTM, GA4, or other vendor scripts. Avoid separately adding the same vendor through another installation path unless intentional.
+
+## Cart behavior can be different
+
+Shopify Pages use Shopify-native host behavior for commerce actions.
+
+The current Shopify Pages cart implementation defaults to navigating to the Shopify cart page unless the shop configures the supported custom cart JavaScript/behavior for its theme or cart provider.
+
+If your store uses a drawer/cart app such as Rebuy or a theme-specific cart, complete the [Shopify Pages Cart Configuration](/shopify-pages/cart-config) and test add-to-cart from the live page.
+
+## Page compatibility
+
+The Shopify publishing pipeline is built around Jurni sections that can be represented in the Shopify publishing target. Generic sections are compiled into a Shopify-oriented artifact and hydrated in the browser where needed.
+
+Older or highly custom page behavior may not map identically to the Shopify target. Always run Shopify publishing QA before moving a live campaign.
+
+## Multiple root domains
+
+Jurni currently does **not** support publishing Shopify Pages across multiple root domains inside the same connected Shopify instance as independent Jurni domain targets.
+
+If the same Shopify store serves more than one root domain, review [Multiple Domains With Shopify Pages](/publishing/shopify-multiple-domains) with the Jurni team before planning URLs.
+
+## Shopify Pages are only for Shopify Online Store
+
+Do not use this setup for:
+
+- Shopify Headless storefronts that do not use the Online Store theme
+- non-Shopify stores
+
+Those environments use the direct Jurni script/custom storefront integration instead of Shopify page templates/app blocks.
+
+## QA checklist
+
+Before launching a Shopify Page, verify:
+
+1. the `/pages/<handle>` URL is correct
+2. desktop/mobile layout and theme margins
+3. Shopify header/footer behavior
+4. all Buy Box actions
+5. subscription/selling-plan behavior
+6. cart drawer or cart-page behavior
+7. discounts/offers
+8. theme/app review widgets and popups
+9. Meta/GA4/GTM and other tracking
+10. Jurni attribution through a real test order
+11. Smart Link routing if the campaign uses one
+
+## Related guides
+
+- [Set Up and Publish Shopify Pages](/shopify-pages/setup-publish)
+- [Shopify Page Templates](/shopify-pages/page-templates)
+- [Shopify Pages Cart Configuration](/shopify-pages/cart-config)
+- [Publishing Jurni Pages](/publishing/overview)
+- [Custom Scripts](/integrations/custom-scripts)

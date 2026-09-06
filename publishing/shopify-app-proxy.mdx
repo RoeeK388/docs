@@ -1,0 +1,67 @@
+---
+title: "Shopify App Proxy URLs"
+sidebarTitle: "Shopify App Proxy"
+description: "Understand the default `/apps/jurni/` URL used by Jurni for Shopify Online Store brands that have not connected a custom Jurni subdomain."
+keywords:
+  - "Jurni app proxy"
+  - "apps jurni URL"
+  - "Shopify app proxy"
+  - "Jurni page URL"
+---
+
+For a standard **Shopify Online Store**, Jurni can serve pages and Smart Links through Shopify's app proxy when the shop does not have a custom Jurni subdomain configured.
+
+The default URL pattern is:
+
+`https://yourdomain.com/apps/jurni/<handle>`
+
+For example:
+
+`https://brand.com/apps/jurni/summer-offer`
+
+## What the app proxy means
+
+The shopper sees the Shopify root domain, but Jurni serves the page behind the `/apps/jurni/` route.
+
+This is **not** the same thing as a native Shopify Page:
+
+| App proxy page | Native Shopify Page |
+| --- | --- |
+| URL uses `/apps/jurni/<handle>` | URL uses `/pages/<handle>` |
+| Page is served through the Jurni app proxy | Page is created in Shopify Pages and rendered through a Shopify page template |
+| Uses the normal Jurni-hosted page runtime | Runs inside the Shopify theme environment |
+| Does not require a custom subdomain | Does not require a custom subdomain |
+
+## What changes after connecting a custom subdomain
+
+When a custom Jurni subdomain is configured, Jurni page/Smart Link URLs can use that branded subdomain instead of the app-proxy fallback.
+
+Example:
+
+`https://go.brand.com/summer-offer`
+
+The handle remains the campaign/page path, but the host changes to the connected Jurni domain.
+
+## Smart Links on the app proxy
+
+Smart Links use the same URL host logic. If the Shopify shop has no custom Jurni subdomain, a newly created Smart Link can use the `/apps/jurni/<slug>` format. If a custom subdomain is configured, the Smart Link uses the custom host.
+
+A Smart Link is still a routing layer—it can point to a single page or control an experiment. The `/apps/jurni/` URL does not mean the Smart Link is a native Shopify Page.
+
+## When to use Shopify Pages instead
+
+Use a native Shopify Page when you specifically need:
+
+- a `/pages/<handle>` URL
+- the Shopify page-template/theme environment
+- theme/app scripts that are already installed in Shopify and need to run natively on the page
+
+Review the Shopify Pages limitations before switching.
+
+## Related guides
+
+- [Publishing Jurni Pages](/publishing/overview)
+- [Custom Subdomain](/getting-started/custom-subdomain)
+- [Smart Links](/building-funnels/smart-links)
+- [Shopify Pages Setup](/shopify-pages/setup-publish)
+- [Shopify Pages Limitations](/shopify-pages/limitations)

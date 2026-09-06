@@ -148,31 +148,34 @@
         "tab": "Publishing",
         "groups": [
           {
-            "group": "Publishing",
+            "group": "Publishing Basics",
             "pages": [
               "publishing/overview",
               "publishing/update-unpublish"
             ]
           },
           {
+            "group": "Jurni URLs & Custom Domains",
+            "pages": [
+              "publishing/shopify-app-proxy",
+              "getting-started/custom-subdomain"
+            ]
+          },
+          {
+            "group": "Smart Links",
+            "pages": [
+              "building-funnels/smart-links"
+            ]
+          },
+          {
             "group": "Shopify Pages",
             "pages": [
               "shopify-pages/setup-publish",
+              "shopify-pages/limitations",
               "shopify-pages/page-templates",
-              "shopify-pages/cart-config"
-            ]
-          },
-          {
-            "group": "Traffic Routing & Domains",
-            "pages": [
-              "building-funnels/smart-links",
-              "getting-started/custom-subdomain",
+              "shopify-pages/cart-config",
               "publishing/shopify-multiple-domains"
             ]
-          },
-          {
-            "group": "Cart, Checkout & Offers",
-            "pages": []
           }
         ]
       },
@@ -217,13 +220,13 @@
         "tab": "Integrations",
         "groups": [
           {
-            "group": "Overview & Setup",
+            "group": "Overview",
             "pages": [
               "integrations/overview"
             ]
           },
           {
-            "group": "Tracking & Analytics",
+            "group": "Data & Tracking",
             "pages": [
               "getting-started/tracking-pixels",
               "getting-started/shopify-analytics",
@@ -234,7 +237,11 @@
             ]
           },
           {
-            "group": "Developer & Automation",
+            "group": "Ad Platforms",
+            "pages": []
+          },
+          {
+            "group": "Developer & Custom",
             "pages": [
               "getting-started/integration-keys",
               "integrations/api-keys",
@@ -243,14 +250,18 @@
             ]
           },
           {
-            "group": "Commerce & Social Proof",
+            "group": "Lifecycle & Messaging",
+            "pages": []
+          },
+          {
+            "group": "Widgets, Reviews & Pop-ups",
             "pages": [
               "integrations/review-integrations",
               "integrations/review-widgets"
             ]
           },
           {
-            "group": "Slack & Notifications",
+            "group": "Slack & Collaboration",
             "pages": [
               "integrations/connect-slack",
               "notifications/slack-reports"
