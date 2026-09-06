@@ -1,0 +1,49 @@
+---
+title: "Connect REVIEWS.io ratings and reviews"
+sidebarTitle: "REVIEWS.io"
+description: "Find the Store ID and product SKU, connect REVIEWS.io, and choose a rating snippet or full widget."
+icon: "star"
+---
+
+Use **REVIEWS.io** to display a compact rating or a full review widget on a Jurni page. The store connection identifies the review account; the widget's **SKU** identifies the product whose reviews it should show.
+
+## Find the connection details
+
+In **REVIEWS.io → Integrations → API**, find **API Credentials** and copy **Store ID**. REVIEWS.io also calls this value `url_key`. Jurni's native connection requests the **Store ID**, not the API key listed next to it.
+
+See [REVIEWS.io's credential guide](https://support.reviews.io/en/articles/9185069-reviews-io-api-key). Vendor access to this screen can depend on the account's plan; ask your REVIEWS.io administrator for the Store ID if needed.
+
+For product-specific reviews, confirm the identifier in your **REVIEWS.io product catalogue**. Do not assume the Shopify product title or numerical product ID is the SKU used by your review feed.
+
+## Connect and place the widget
+
+<Steps>
+  <Step title="Save the store connection">
+    In Jurni, open **Settings → Integrations → Reviews & Pop-ups**, enable **REVIEWS.io**, paste **Store ID**, and select **Save Changes**.
+  </Step>
+  <Step title="Add REVIEWS.io to the page">
+    Open the experience editor's **Integrations** panel, add the REVIEWS.io section, and select the widget.
+  </Step>
+  <Step title="Choose Display and SKU">
+    Set **Display** to **Rating** for a compact snippet or **Widget** for the full reviews area. Enter the exact REVIEWS.io **SKU** for the product.
+  </Step>
+  <Step title="Adjust the relevant presentation">
+    Rating mode exposes star color, rating text, and line-break settings. Widget mode exposes colors, reviews per page, language, and question/review-action controls. Set only the options your placement needs.
+  </Step>
+  <Step title="Verify">
+    Save and check the published page. Confirm that the content belongs to the intended product and fits mobile as well as desktop.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+**The account is connected but no product reviews appear:** check the SKU against REVIEWS.io's catalogue and confirm the product has published reviews. Changing the Buy Box product does not mean an explicitly entered review SKU changed with it.
+
+**The rating works but the full widget does not:** check the selected Display mode and widget options, then test the final URL rather than only the canvas.
+
+For **Shopify Pages**, inspect the theme's existing REVIEWS.io installation to avoid duplicate loaders. For a non-Shopify catalog, confirm the product feed and identifiers with your team.
+
+## Related guides
+
+- [Review widgets](/integrations/review-widgets)
+- [On-page integrations](/build/editor-integrations)

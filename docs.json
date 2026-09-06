@@ -310,6 +310,8 @@
               "integrations/judge-me",
               "integrations/stamped",
               "integrations/trustpilot",
+              "integrations/reviews-io",
+              "integrations/bazaarvoice",
               "integrations/alia"
             ]
           },
