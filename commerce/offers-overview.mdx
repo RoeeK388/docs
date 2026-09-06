@@ -1,0 +1,67 @@
+---
+title: "Offers in Jurni"
+sidebarTitle: "Offers Overview"
+description: "Understand the offer types currently available in Jurni, how offer eligibility affects the cart, and where Shopify discount logic still applies."
+keywords:
+  - "Jurni offers"
+  - "Gift with Purchase"
+  - "free shipping"
+  - "samples"
+  - "discount code"
+---
+
+Offers let you configure shop-level promotional behavior that Jurni can apply across eligible funnels and carts.
+
+The current Jurni Offers UI supports four active offer types:
+
+| Offer type | Current behavior |
+| --- | --- |
+| **Gift with Purchase** | Add or let shoppers select qualifying gift products when the offer rules are met. |
+| **Free Shipping** | Show/trigger free-shipping eligibility based on cart amount or product quantity, with optional subscription handling. |
+| **Samples** | Let shoppers choose from configured sample products after reaching a minimum order amount. |
+| **Discount Code** | Validate and auto-apply an existing Shopify discount code in Jurni funnels, with optional storefront messaging. |
+
+Other offer concepts may exist in Jurni's internal product model, but **Order Discount, Buy More Save More, and Product Discount are not currently enabled as selectable offer types in the merchant UI**.
+
+## Where offer rules live
+
+Offers are configured centrally in Jurni rather than separately inside every Buy Box. Once an offer is active, the storefront/cart evaluates whether the current shopper qualifies.
+
+This is different from page copy. You can mention a promotion anywhere in the page, but the actual offer configuration determines how Jurni changes the cart experience.
+
+## Jurni vs. Shopify responsibilities
+
+Jurni can manage the shopper-facing offer logic—eligibility, cart additions, banners, sample selection, or automatic application of a configured code.
+
+Shopify still remains the commerce authority for final checkout pricing and discount validity.
+
+<Warning>
+Always test the final Shopify checkout. A Jurni banner or cart state is not a substitute for confirming that Shopify applies the intended price, shipping discount, or code.
+</Warning>
+
+## Offer scope and active state
+
+Only active offers are used by the storefront. When an offer is disabled or outside its configured active period, it should not be treated as an active promotion by the Jurni storefront.
+
+Because offers can affect many funnels, test a new offer on a controlled funnel/cart flow before relying on it across a large campaign.
+
+## Common QA flow
+
+For every offer, test:
+
+1. a shopper who does **not** meet the condition
+2. a shopper exactly at the threshold
+3. a shopper above the threshold
+4. adding/removing items after the offer activates
+5. desktop and mobile cart behavior
+6. the final Shopify checkout state
+7. interactions with other active Shopify/Jurni promotions
+
+## Related guides
+
+- [Gift With Purchase](/building-funnels/gift-with-purchase)
+- [Free Shipping Offers](/commerce/free-shipping-offers)
+- [Samples Offers](/commerce/samples-offers)
+- [Discount Code Offers](/commerce/discount-code-offers)
+- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)
+- [How Shopify Discounts Work with Jurni](/commerce/discounts-promotions)

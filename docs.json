@@ -78,8 +78,7 @@
               "building-funnels/products-and-variants",
               "building-funnels/sync-new-products",
               "building-funnels/subscriptions-selling-plans",
-              "building-funnels/bundles",
-              "building-funnels/gift-with-purchase"
+              "building-funnels/bundles"
             ]
           },
           {
@@ -117,9 +116,12 @@
             ]
           },
           {
-            "group": "Cart & Checkout",
+            "group": "Cart, Checkout & Offers",
             "pages": [
+              "commerce/offers-overview",
               "shopify-pages/cart-config",
+              "commerce/free-shipping-offers",
+              "building-funnels/gift-with-purchase",
               "commerce/cart-checkout-behavior",
               "commerce/discounts-promotions",
               "commerce/shopify-markets-currency"
