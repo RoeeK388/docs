@@ -1,0 +1,55 @@
+---
+title: "Connect Stamped reviews"
+sidebarTitle: "Stamped"
+description: "Find the Stamped Store Hash and API Public Key and use them to display reviews for the selected product."
+icon: "star"
+---
+
+Use **Stamped Reviews** to display existing customer reviews on a Jurni page. Jurni needs two store-level values; the product shown by the widget is configured separately on the page.
+
+## Find the connection details
+
+In Stamped, open **Settings → Review Integrations → API Keys**. Copy the values from the same store:
+
+| Jurni field | Value in Stamped |
+| --- | --- |
+| **Store Hash** | Store Hash / Store ID |
+| **API Public Key** | API Public Key / Client ID |
+
+The **Secret / Private Key** is not required for this Jurni integration. See [Stamped's API-key guide](https://stampedsupport.stamped.io/hc/en-us/articles/9069863110043-Account-API-Keys).
+
+## Connect and add the widget
+
+<Steps>
+  <Step title="Save the store connection">
+    Go to **Settings → Integrations → Reviews & Pop-ups** in Jurni. Enable **Stamped**, enter **Store Hash** and **API Public Key**, and select **Save Changes**.
+  </Step>
+  <Step title="Place the review section">
+    Open the experience editor's **Integrations** panel and add the Stamped section. Select the widget and check its product setting.
+  </Step>
+  <Step title="Match the product">
+    Use the product associated with the reviews you want to display. Recheck this after copying a page or switching the Buy Box to another product.
+  </Step>
+  <Step title="Check the published page">
+    Save and test the actual destination. Confirm the review content matches the product and that the section displays at both mobile and desktop widths.
+  </Step>
+</Steps>
+
+## Important limits
+
+Use one primary Stamped review-widget placement on the page. The current widget uses a shared main review area; it is not a way to display several unrelated full Stamped product widgets independently on the same page.
+
+Store-level connection does not automatically add the widget to every page. Review collection and provider-level appearance remain in Stamped.
+
+## Troubleshooting
+
+**A placeholder or empty section appears:** confirm both fields were saved, both belong to the same Stamped store, and the product has published reviews.
+
+**The wrong reviews appear:** check the selected product and the store mapping, not just the visible product headline.
+
+**Only the Shopify Page has an issue:** inspect the theme's Stamped installation and test the final `/pages/` URL. Do not add duplicate loaders to fix an unverified product mapping.
+
+## Related guides
+
+- [Review-widget setup](/integrations/review-widgets)
+- [Products and variants](/building-funnels/products-and-variants)

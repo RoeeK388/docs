@@ -308,6 +308,7 @@
               "integrations/junip",
               "integrations/yotpo",
               "integrations/judge-me",
+              "integrations/stamped",
               "integrations/alia"
             ]
           },
