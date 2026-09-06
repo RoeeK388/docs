@@ -157,11 +157,11 @@
   },
   "fonts": {
     "heading": {
-      "family": "Geist",
+      "family": "Inter",
       "weight": 500
     },
     "body": {
-      "family": "Geist",
+      "family": "Inter",
       "weight": 400
     }
   },
