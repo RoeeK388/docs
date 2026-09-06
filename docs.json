@@ -130,6 +130,12 @@
           "icon": "rocket-vertical",
           "href": "https://getjurni.ai/"
         }
+      ],
+      "anchors": [
+        {
+          "anchor": "Changelog",
+          "href": ""
+        }
       ]
     }
   },
