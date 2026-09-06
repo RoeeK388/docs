@@ -1,0 +1,75 @@
+---
+title: "Configure Tracking Pixels in Jurni Funnels"
+sidebarTitle: "Tracking Pixels"
+description: "Learn how to set up Meta Pixel, Google Analytics, Google Tag Manager, Blotout, and Triple Whale in Jurni to measure funnel performance and conversions."
+---
+
+Jurni makes it easy to measure funnel performance, conversions, and user behavior by supporting popular tracking platforms out of the box. Once you configure your tracking pixels, Jurni automatically loads them on every funnel page. No manual code installation is required.
+
+## Access Tracking Settings
+
+<Steps>
+  <Step title="Log in to Jurni">
+    Open your Jurni dashboard and sign in to your account.
+  </Step>
+  <Step title="Open Settings">
+    Click **Settings** in the left sidebar.
+  </Step>
+  <Step title="Go to Data Integrations">
+    Select **Data Integrations** from the settings menu.
+  </Step>
+</Steps>
+
+## Configure Tracking Pixels
+
+In the **Tracking Pixels** section, paste the relevant ID for each platform you use, then click **Save Changes**.
+
+<CardGroup cols={2}>
+  <Card title="Meta Pixel" icon="facebook">
+    Enter your **Meta Pixel ID** to track conversions and performance for Meta Ads.
+  </Card>
+
+  <Card title="Google Tag Manager" icon="code">
+    Enter your **Google Tag Manager ID** (format: `GTM-XXXXXXX`) for advanced event tracking and tag management.
+  </Card>
+
+  <Card title="Google Analytics" icon="chart-line">
+    Enter your **Google Analytics ID** (format: `G-XXXXXXX`) to measure sessions and funnel performance in GA4.
+  </Card>
+
+  <Card title="Blotout" icon="shield-halved">
+    Enter your **Blotout ID** for privacy-first tracking and data governance.
+  </Card>
+</CardGroup>
+
+<Note>
+  Tracking pixels are automatically injected into all funnel pages after you save. You do not need to add any code manually.
+</Note>
+
+## Triple Whale Integration
+
+Jurni includes a native integration for Triple Whale advanced attribution and analytics.
+
+<Steps>
+  <Step title="Toggle Triple Whale on">
+    In **Data Integrations**, enable the Triple Whale toggle.
+  </Step>
+  <Step title="Automatic script loading">
+    Jurni loads the Triple Whale script on all funnel pages automatically.
+  </Step>
+  <Step title="Use your existing setup">
+    No additional configuration is required inside Jurni. Triple Whale tracks funnel traffic and conversions using your existing Triple Whale account.
+  </Step>
+</Steps>
+
+## Custom Tracking Pixels
+
+If you need a tracking solution not listed above, contact the Jurni team. Share the provider name and your requirements, and the Jurni team will help deploy it across your funnel pages.
+
+## Next Steps
+
+Once your tracking pixels are configured, you can:
+
+- Launch funnels with tracking enabled
+- Run experiments and measure performance
+- Optimize paid campaigns using tracked conversions

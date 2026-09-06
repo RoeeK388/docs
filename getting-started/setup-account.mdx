@@ -1,0 +1,136 @@
+---
+title: "Set Up Your Jurni Account"
+sidebarTitle: "Setup Account"
+description: "Configure your Jurni account with a custom subdomain, tracking pixels, team members, and brand settings before generating your first agentic shopping journey."
+---
+
+This guide walks you through the core account setup steps in Jurni. You will configure a custom subdomain, connect third-party tracking pixels, invite team members, and define your brand and design system. Complete each section before generating your first agentic shopping journey.
+
+## Custom Subdomain Setup
+
+Your Jurni journeys are served from a subdomain you control. Set it up in **Settings > Account Settings > Account**.
+
+<Steps>
+  <Step title="Navigate to Subdomain Setup">
+    Go to **Settings > Account Settings > Account**, then scroll to the Subdomain Setup section.
+  </Step>
+  <Step title="Enter your subdomain prefix">
+    Type your preferred prefix, such as `shop`, `get`, `buy`, or any word that fits your brand. A live preview renders as you type so you can confirm the result before continuing.
+  </Step>
+  <Step title="Save and copy DNS values">
+    Click **Save**. Jurni displays DNS values to copy into your DNS provider.
+  </Step>
+  <Step title="Verify propagation">
+    Status shows **Pending** while DNS propagates. Click **Refresh** after a few minutes. Once propagation is complete, the status updates to **Active**.
+  </Step>
+</Steps>
+
+<Note>
+  DNS propagation typically takes a few minutes but can take longer. Status will not update until propagation is complete.
+</Note>
+
+## Third-Party Tracking Pixels
+
+Connect analytics and ad platforms in **Settings > Integrations > Data Integrations**.
+
+<Steps>
+  <Step title="Open Data Integrations">
+    Go to **Settings > Integrations**, scroll to **Data Integrations**, and view the full list of available pixels.
+  </Step>
+  <Step title="Enable a pixel">
+    Toggle the pixel on.
+  </Step>
+  <Step title="Enter your Pixel ID">
+    Enter the Pixel ID or Tag ID from your platform's settings.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The pixel becomes active immediately.
+  </Step>
+</Steps>
+
+Repeat these steps for each pixel you want to install. Each integration is independent.
+
+## App Integrations
+
+Connect additional apps in the same **Data Integrations** section.
+
+<Steps>
+  <Step title="Open Data Integrations">
+    Go to **Settings > Integrations**, scroll to **Data Integrations**.
+  </Step>
+  <Step title="Enable an app">
+    Toggle the app on.
+  </Step>
+  <Step title="Enter your App Key">
+    Enter the App Key or credential from your app's settings.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+## Inviting Team Members
+
+Add collaborators in **Settings > Members**.
+
+<Steps>
+  <Step title="Open the invite flow">
+    Click **Invite Member** in the top right.
+  </Step>
+  <Step title="Enter email and role">
+    Enter the team member's email and select their role.
+  </Step>
+  <Step title="Send invitation">
+    Click **Send Invitation**.
+  </Step>
+</Steps>
+
+Only **Owner** and **Admin** roles can invite members. Available roles are:
+
+<CardGroup cols={2}>
+  <Card title="Owner" icon="crown">
+    Full control of the shop and organization.
+  </Card>
+
+  <Card title="Admin" icon="shield">
+    Manage the shop and invite team members.
+  </Card>
+
+  <Card title="Staff" icon="user">
+    Manage the shop dashboard and content.
+  </Card>
+
+  <Card title="Designer" icon="palette">
+    Design and manage funnels.
+  </Card>
+</CardGroup>
+
+## Brand and Design System
+
+Brand settings are the foundation Jurni uses when generating every agentic shopping journey. Configure them in **Settings > Brand**.
+
+<Steps>
+  <Step title="Set your logo">
+    Enter a **Logo URL** by uploading an image or pasting a URL. The logo appears across all journeys.
+  </Step>
+  <Step title="Describe your brand">
+    Fill in **Brand Description** to define tone and style. The more specific your description, the better the generated output.
+  </Step>
+  <Step title="Choose brand colors">
+    Click color swatches and enter hex values, or use the eyedropper to sample colors from a live site. Work through each token from surface to neutral, then click **Save Changes**.
+  </Step>
+  <Step title="Adjust border radius">
+    Set **Border Radius** defaults: Card is Small, Button is Medium, and Media is None. Adjust to match your design system and click **Save**.
+  </Step>
+  <Step title="Configure typography">
+    Set mobile and desktop typography separately. Both are required even if the values are identical. Under **Headings**, select a Google Font, then adjust size, weight, text transform, line height, and letter spacing. Custom fonts can be uploaded but offer fewer adjustable properties.
+  </Step>
+</Steps>
+
+<Note>
+  Click **Save Changes** after each section within Brand settings. Changes are not auto-saved.
+</Note>
+
+<Tip>
+  If you plan to use custom fonts, upload them before configuring typography so you can select them in the font dropdown.
+</Tip>

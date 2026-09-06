@@ -9,54 +9,114 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Jurni Help Center",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": []
-          },
-          {
-            "group": "Building Funnels",
-            "pages": [
-              "jurni-funnels/funnel-building"
-            ]
-          },
-          {
-            "group": "Publishing",
-            "pages": []
-          }
+        "group": "Getting Started",
+        "pages": [
+          "getting-started/welcome",
+          "getting-started/create-account",
+          "getting-started/custom-subdomain",
+          "getting-started/setup-account",
+          "getting-started/brand-settings",
+          "getting-started/step-by-step-setup",
+          "getting-started/shopify-headless",
+          "getting-started/setup-non-shopify",
+          "getting-started/activating-jurni-core",
+          "getting-started/setup-ai-knowledge",
+          "getting-started/integration-keys",
+          "getting-started/shopify-analytics",
+          "getting-started/tracking-pixels",
+          "getting-started/funnel-building",
+          "getting-started/inviting-team-members"
         ]
       },
       {
-        "tab": "Jurni for Shopify",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "jurni-funnels/account-setup",
-              "jurni-funnels/activating-jurni-core",
-              "jurni-funnels/tracking-pixels",
-              "jurni-funnels/shopify-analytics",
-              "jurni-funnels/inviting-team-members"
-            ]
-          },
-          {
-            "group": "Building Funnels",
-            "pages": [
-              "jurni-funnels/creating-a-funnel",
-              "jurni-funnels/funnel-editor",
-              "jurni-funnels/managing-sections",
-              "jurni-funnels/saved-sections"
-            ]
-          },
-          {
-            "group": "Publishing",
-            "pages": [
-              "jurni-funnels/smart-links"
-            ]
-          }
+        "group": "Building Funnels",
+        "pages": [
+          "building-funnels/creating-a-funnel",
+          "building-funnels/funnel-editor",
+          "building-funnels/managing-sections",
+          "building-funnels/saved-sections",
+          "building-funnels/sticky-cta-banner",
+          "building-funnels/figma-file",
+          "building-funnels/ai-chat-prompts",
+          "building-funnels/qa-checklist",
+          "building-funnels/smart-links"
+        ]
+      },
+      {
+        "group": "Shopify Pages",
+        "pages": [
+          "shopify-pages/setup-publish",
+          "shopify-pages/cart-config"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/overview",
+          "integrations/api-keys",
+          "integrations/connect-slack",
+          "integrations/gtm",
+          "integrations/ga-meta-pixel",
+          "integrations/custom-scripts",
+          "integrations/utm-attribution",
+          "integrations/review-integrations",
+          "integrations/review-widgets",
+          "integrations/mcp-connector",
+          "integrations/troubleshooting"
+        ]
+      },
+      {
+        "group": "Analytics & Reporting",
+        "pages": [
+          "analytics-reporting/overview",
+          "analytics-reporting/experience-analytics",
+          "analytics-reporting/funnel-step-performance",
+          "analytics-reporting/filtering-experiences"
+        ]
+      },
+      {
+        "group": "Experiments & A/B Testing",
+        "pages": [
+          "experiments/what-are-experiments",
+          "experiments/create-experiment",
+          "experiments/strategic-experiments",
+          "experiments/reading-results",
+          "experiments/testing-against-website",
+          "experiments/traffic-troubleshoot"
+        ]
+      },
+      {
+        "group": "Notifications",
+        "pages": [
+          "notifications/slack-reports"
+        ]
+      },
+      {
+        "group": "Product Updates",
+        "pages": [
+          "product-updates/image-repositioning",
+          "product-updates/jurni-comments",
+          "product-updates/strategizer-opportunities"
+        ]
+      },
+      {
+        "group": "Data Dictionary",
+        "pages": [
+          "data-dictionary/metrics-glossary"
+        ]
+      },
+      {
+        "group": "Strategy",
+        "pages": [
+          "strategy/roadmap"
+        ]
+      },
+      {
+        "group": "Troubleshooting & FAQ",
+        "pages": [
+          "troubleshooting/jurni-sales-channel"
         ]
       }
     ]

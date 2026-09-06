@@ -1,0 +1,76 @@
+---
+title: "Connect Shopify Analytics to Jurni Storefronts"
+sidebarTitle: "Shopify Analytics"
+description: "Route Jurni funnel traffic and sales into Shopify analytics by connecting a Shopify Headless storefront. Setup takes about three minutes."
+---
+
+Jurni runs as a Headless storefront on Shopify. That lets Shopify attribute all traffic and sales from your Jurni funnels to the Jurni channel in your Shopify analytics. The setup takes about three minutes and requires only a public access token.
+
+## Before you start
+
+Make sure you have the following before you begin:
+
+- **Shopify admin access with Apps and channels permission**
+- **A Jurni account connected to your Shopify store**
+
+## Setup steps
+
+<Steps>
+  <Step title="Install the Headless channel from the Shopify App Store">
+    In your Shopify admin, go to the Shopify App Store and install the **Headless** channel app. Click **Add app**, then approve the installation.
+  </Step>
+  <Step title="Create a Jurni storefront in the Headless channel">
+    In your Shopify admin, go to **Sales channels**, select **Headless**, then click **Create storefront**.
+  </Step>
+  <Step title="Rename the storefront to Jurni Headless Storefront">
+    On the **Storefronts** page, click **Edit** beside the storefront name. Rename it to **Jurni Headless Storefront**, then click **Save**.
+  </Step>
+  <Step title="Copy the public access token">
+    In the **Storefront API tokens** card, click **Manage**, then copy the **Public access token**.
+
+    <Warning>
+      Copy the **Public access token**, not the private token. The public token is safe to share with Jurni. The private token must remain secret.
+    </Warning>
+  </Step>
+  <Step title="Paste the token into Jurni">
+    In Jurni, go to **Settings > Data Integrations**. In the **Shopify Analytics** card, paste the public access token, then click **Save**. The card will show **Connected**.
+  </Step>
+</Steps>
+
+## Verifying the connection
+
+After you complete the steps above, Shopify needs a few hours to begin attributing data to the Jurni channel.
+
+To confirm the connection is working:
+
+1. In your Shopify admin, go to **Analytics > Reports**.
+2. Open a report such as **Sales by channel** or **Sessions by channel**.
+3. Look for **Jurni Headless Storefront** in the channel list.
+
+If you do not see data immediately, wait a few hours and check again.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Invalid token error">
+    Make sure you copied the **Public access token** from the Storefront API tokens section, not the private token. If the error persists, generate a new public token and paste it into Jurni again.
+  </Accordion>
+
+  <Accordion title="Cannot find the Headless channel">
+    Confirm you installed the Headless app from the Shopify App Store. If it does not appear under Sales channels, try refreshing the page or reinstalling the app.
+  </Accordion>
+
+  <Accordion title="No data after 24 hours">
+    Verify that your storefront is named **Jurni Headless Storefront** and that the public access token is saved in Jurni. If both are correct, contact Shopify Support to confirm analytics attribution is enabled for your store.
+  </Accordion>
+
+  <Accordion title="Storefront name issues">
+    The storefront must be named **Jurni Headless Storefront** for Shopify to attribute traffic and sales correctly. If you named it something else, edit the storefront and rename it.
+  </Accordion>
+</AccordionGroup>
+
+## Keeping access secure
+
+- The **Public access token** is safe to share with Jurni.
+- The **Private access token** must remain secret and should never be shared.
+- To rotate the public token, go to **Storefront API tokens > Rotate token** in your Shopify admin.
