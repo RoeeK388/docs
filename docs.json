@@ -15,23 +15,7 @@
     "pages": [
       {
         "group": "Getting Started",
-        "pages": [
-          "getting-started/welcome",
-          "getting-started/create-account",
-          "getting-started/custom-subdomain",
-          "getting-started/setup-account",
-          "getting-started/brand-settings",
-          "getting-started/step-by-step-setup",
-          "getting-started/shopify-headless",
-          "getting-started/setup-non-shopify",
-          "getting-started/activating-jurni-core",
-          "getting-started/setup-ai-knowledge",
-          "getting-started/integration-keys",
-          "getting-started/shopify-analytics",
-          "getting-started/tracking-pixels",
-          "getting-started/funnel-building",
-          "getting-started/inviting-team-members"
-        ]
+        "pages": []
       },
       {
         "group": "Building Funnels",
@@ -122,7 +106,8 @@
           "troubleshooting/jurni-sales-channel"
         ]
       },
-      "untitled-page"
+      "untitled-page",
+      ""
     ]
   },
   "navbar": {
