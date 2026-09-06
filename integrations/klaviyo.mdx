@@ -1,0 +1,69 @@
+---
+title: "Connect Klaviyo forms and pop-ups"
+sidebarTitle: "Klaviyo"
+description: "Connect Klaviyo with a Company ID, place an embedded form with its Form ID, and control pop-ups separately for each experience."
+icon: "mail"
+---
+
+Use Klaviyo with Jurni to show supported signup forms and pop-ups. **Connecting the account, adding an inline form, and allowing a pop-up are separate steps.** Complete the steps that match the experience you are building.
+
+## Know which ID belongs where
+
+| Value | Where you use it | What it identifies |
+| --- | --- | --- |
+| **Company ID** | Klaviyo in **Settings → Integrations → Reviews & Pop-ups** | Your Klaviyo account's onsite integration. |
+| **Form ID** | The Klaviyo form element on a page | The specific embedded form you want to display. |
+
+Do not paste a private API key into the Company ID field. A Company ID is also not the identifier for an individual form.
+
+## Connect Klaviyo to the shop
+
+Open **Settings → Integrations**, find Klaviyo in **Reviews & Pop-ups**, enable it, enter the **Company ID**, and select **Save Changes**. Confirm you are connecting the account for the intended brand.
+
+## Add an inline form
+
+<Steps>
+  <Step title="Prepare the intended form">
+    Identify the embedded form you want to use in Klaviyo and copy its Form ID. Confirm that the form is ready for your campaign.
+  </Step>
+  <Step title="Add its page placement">
+    In the Jurni editor, open **Integrations**, select the Klaviyo form section, and add it to the page.
+  </Step>
+  <Step title="Set the Form ID">
+    Select the form element and enter its Form ID. The empty placeholder is not a live signup form.
+  </Step>
+  <Step title="Review and test">
+    Adjust the surrounding layout, save the page, and test a submission on the intended live URL. Confirm the submission reaches the expected Klaviyo destination.
+  </Step>
+</Steps>
+
+When no Form ID is set, the current form component displays a placeholder. Seeing that placeholder means there is still page-level configuration to complete, even when the shop's Klaviyo connection is active.
+
+## Allow or disable pop-ups
+
+Open the experience's editor **Settings**, then its pop-up controls. Choose whether Klaviyo should be enabled for that experience and save the choice. See [Pop-up controls](/build/page-popups) for the main switch and individual-provider behavior.
+
+A pop-up's design and display rules belong to the provider configuration. Enabling Klaviyo in Jurni does not guarantee a pop-up on every visit. Review provider-side eligibility, campaign status, consent, and prior visitor interactions when testing.
+
+## Shopify Pages and duplicate installations
+
+A native Shopify Page uses the Shopify theme environment. Check whether Klaviyo is already installed through the theme or a Shopify app before adding another script. Test the actual `/pages/` URL separately; a working Jurni subdomain preview does not prove the Shopify placement is configured correctly.
+
+Removing an inline form section does not disconnect Klaviyo from the shop. Disabling a Jurni pop-up control is not a universal switch for scripts installed through another loader.
+
+## Troubleshooting
+
+**The placeholder remains:** set the form element's Form ID, not just the shop's Company ID.
+
+**The form area is empty:** check the Company ID, Form ID, provider-side form configuration, consent, and the actual publishing environment.
+
+**The form appears twice:** check for duplicate sections or another installation in Custom Scripts, a tag manager, or the Shopify theme.
+
+**A signup succeeds but does not appear where expected:** verify the form's destination in Klaviyo. A successful visual render is not proof that the intended list or follow-up flow is configured.
+
+## Related guides
+
+- [On-page integrations](/build/editor-integrations)
+- [Pop-up controls](/build/page-popups)
+- [Credentials reference](/integrations/api-keys)
+- [Integration troubleshooting](/integrations/troubleshooting)

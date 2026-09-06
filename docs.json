@@ -290,7 +290,9 @@
           },
           {
             "group": "Lifecycle & Messaging",
-            "pages": []
+            "pages": [
+              "integrations/klaviyo"
+            ]
           },
           {
             "group": "Widgets, Reviews & Pop-ups",
