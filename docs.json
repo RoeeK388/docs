@@ -155,6 +155,7 @@
             "group": "Buy Boxes",
             "pages": [
               "products/add-buy-box",
+              "products/manage-buy-boxes",
               "building-funnels/product-purchase-options",
               "products/update-reuse-buy-boxes",
               "products/editing-scope"
