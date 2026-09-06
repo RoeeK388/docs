@@ -283,14 +283,6 @@
             ]
           },
           {
-            "group": "Developer & Custom",
-            "pages": [
-              "integrations/api-keys",
-              "integrations/custom-scripts",
-              "integrations/mcp-connector"
-            ]
-          },
-          {
             "group": "Lifecycle & Messaging",
             "pages": [
               "integrations/klaviyo",
@@ -310,6 +302,14 @@
             "pages": [
               "integrations/connect-slack",
               "notifications/slack-reports"
+            ]
+          },
+          {
+            "group": "Custom Integrations",
+            "pages": [
+              "integrations/api-keys",
+              "integrations/custom-scripts",
+              "integrations/mcp-connector"
             ]
           }
         ]
