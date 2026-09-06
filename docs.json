@@ -12,9 +12,9 @@
     "dark": "/images/black1.svg"
   },
   "navigation": {
-    "versions": [
+    "tabs": [
       {
-        "version": "Getting Started",
+        "tab": "Getting Started",
         "pages": [
           "getting-started/welcome",
           "getting-started/create-account",
@@ -34,7 +34,7 @@
         ]
       },
       {
-        "version": "Building Funnels",
+        "tab": "Building Funnels",
         "pages": [
           "building-funnels/creating-a-funnel",
           "building-funnels/funnel-editor",
@@ -48,14 +48,14 @@
         ]
       },
       {
-        "version": "Shopify Pages",
+        "tab": "Shopify Pages",
         "pages": [
           "shopify-pages/setup-publish",
           "shopify-pages/cart-config"
         ]
       },
       {
-        "version": "Integrations",
+        "tab": "Integrations",
         "pages": [
           "integrations/overview",
           "integrations/api-keys",
@@ -71,7 +71,7 @@
         ]
       },
       {
-        "version": "Analytics & Reporting",
+        "tab": "Analytics & Reporting",
         "pages": [
           "analytics-reporting/overview",
           "analytics-reporting/experience-analytics",
@@ -80,7 +80,7 @@
         ]
       },
       {
-        "version": "Experiments & A/B Testing",
+        "tab": "Experiments & A/B Testing",
         "pages": [
           "experiments/what-are-experiments",
           "experiments/create-experiment",
@@ -91,13 +91,13 @@
         ]
       },
       {
-        "version": "Notifications",
+        "tab": "Notifications",
         "pages": [
           "notifications/slack-reports"
         ]
       },
       {
-        "version": "Product Updates",
+        "tab": "Product Updates",
         "pages": [
           "product-updates/image-repositioning",
           "product-updates/jurni-comments",
@@ -105,19 +105,19 @@
         ]
       },
       {
-        "version": "Data Dictionary",
+        "tab": "Data Dictionary",
         "pages": [
           "data-dictionary/metrics-glossary"
         ]
       },
       {
-        "version": "Strategy",
+        "tab": "Strategy",
         "pages": [
           "strategy/roadmap"
         ]
       },
       {
-        "version": "Troubleshooting & FAQ",
+        "tab": "Troubleshooting & FAQ",
         "pages": [
           "troubleshooting/jurni-sales-channel"
         ]
