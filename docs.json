@@ -359,8 +359,8 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Download on App Store",
-      "href": "https://apps.apple.com/app/id6759559463"
+      "label": "Dashboard ->",
+      "href": "https://app.getjurni.ai"
     }
   },
   "footer": {
@@ -371,7 +371,7 @@
   "logo": {
     "light": "/images/Icon5.png",
     "dark": "/images/white5.png",
-    "href": "https://app.getjurni.ai"
+    "href": "https://getjurni.ai"
   },
   "background": {
     "color": {
