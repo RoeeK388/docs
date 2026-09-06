@@ -48,10 +48,29 @@
         ]
       },
       {
-        "tab": "Shopify Pages",
+        "tab": "Experiments & A/B Testing",
         "pages": [
-          "shopify-pages/setup-publish",
-          "shopify-pages/cart-config"
+          "experiments/what-are-experiments",
+          "experiments/create-experiment",
+          "experiments/strategic-experiments",
+          "experiments/reading-results",
+          "experiments/testing-against-website",
+          "experiments/traffic-troubleshoot"
+        ]
+      },
+      {
+        "tab": "Strategy",
+        "pages": [
+          "strategy/roadmap"
+        ]
+      },
+      {
+        "tab": "Analytics & Reporting",
+        "pages": [
+          "analytics-reporting/overview",
+          "analytics-reporting/experience-analytics",
+          "analytics-reporting/funnel-step-performance",
+          "analytics-reporting/filtering-experiences"
         ]
       },
       {
@@ -71,23 +90,10 @@
         ]
       },
       {
-        "tab": "Analytics & Reporting",
+        "tab": "Shopify Pages",
         "pages": [
-          "analytics-reporting/overview",
-          "analytics-reporting/experience-analytics",
-          "analytics-reporting/funnel-step-performance",
-          "analytics-reporting/filtering-experiences"
-        ]
-      },
-      {
-        "tab": "Experiments & A/B Testing",
-        "pages": [
-          "experiments/what-are-experiments",
-          "experiments/create-experiment",
-          "experiments/strategic-experiments",
-          "experiments/reading-results",
-          "experiments/testing-against-website",
-          "experiments/traffic-troubleshoot"
+          "shopify-pages/setup-publish",
+          "shopify-pages/cart-config"
         ]
       },
       {
@@ -108,12 +114,6 @@
         "tab": "Data Dictionary",
         "pages": [
           "data-dictionary/metrics-glossary"
-        ]
-      },
-      {
-        "tab": "Strategy",
-        "pages": [
-          "strategy/roadmap"
         ]
       },
       {
