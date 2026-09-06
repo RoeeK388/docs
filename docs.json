@@ -126,8 +126,9 @@
     "global": {
       "tabs": [
         {
-          "tab": "Untitled Tab",
-          "href": ""
+          "tab": "Product Changelog",
+          "icon": "rocket-vertical",
+          "href": "https://getjurni.ai/"
         }
       ]
     }
