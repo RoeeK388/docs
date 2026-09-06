@@ -309,6 +309,7 @@
               "integrations/yotpo",
               "integrations/judge-me",
               "integrations/stamped",
+              "integrations/trustpilot",
               "integrations/alia"
             ]
           },
