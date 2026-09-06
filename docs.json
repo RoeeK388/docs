@@ -8,8 +8,8 @@
     "dark": "#DDE4FF"
   },
   "favicon": {
-    "light": "/images/white1.svg",
-    "dark": "/images/black1.svg"
+    "light": "/images/black1.svg",
+    "dark": "/images/white1.svg"
   },
   "navigation": {
     "tabs": [
@@ -146,8 +146,8 @@
     }
   },
   "logo": {
-    "light": "/images/white1.png",
-    "dark": "/images/black1.png",
+    "light": "/images/black1.png",
+    "dark": "/images/white1.png",
     "href": "https://app.getjurni.ai"
   },
   "background": {
