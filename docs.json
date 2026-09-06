@@ -156,6 +156,7 @@
             "pages": [
               "products/add-buy-box",
               "building-funnels/product-purchase-options",
+              "products/update-reuse-buy-boxes",
               "products/editing-scope"
             ]
           },
