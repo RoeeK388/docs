@@ -1,126 +1,76 @@
 ---
-title: "Product Purchase Options"
-sidebarTitle: "Purchase Options"
-description: "Configure product variants, one-time purchases, subscriptions, quantity, pricing, add-to-cart, and direct-checkout behavior in Jurni purchase sections."
+title: "Configure purchase options"
+sidebarTitle: "Purchase options"
+description: "Distinguish variants, quantity, one-time/subscription defaults, section-specific controls, and the actual cart or checkout purchase."
 keywords:
   - "Product Purchase Options"
   - "Jurni purchase options"
   - "one-time subscription"
   - "selling plan"
   - "buy box"
+icon: "sliders-horizontal"
 ---
 
-Product Purchase Options are the controls inside a Jurni commerce section that determine **what the shopper is buying and how they want to buy it** before the purchase action is triggered.
+Purchase options determine **what the shopper buys and how they buy it**. Configure the actual product selection and behavior, not only the labels and selection-card design.
 
-Depending on the section and product configuration, purchase options can include:
+The available controls depend on the section. The standard library Buy Box, an older Product Purchase Options component, and a custom AI-built Buy Box may not expose the same fields.
 
-- Product variant selection
-- One-time vs. subscription purchase
-- Subscription selling plan
-- Quantity
-- Product pricing and compare-at pricing
-- Add to cart
-- Direct checkout
+## Start with the selected product
 
-## How the selection is resolved
+Choose the real product and check the variant choices it provides. If shoppers select size and flavor, the final combination must resolve to the intended purchasable variant.
 
-Jurni uses the selected product option values to resolve the real commerce variant. This is important for products where a shopper chooses combinations such as:
+Do not treat product variants and subscription plans as the same option. A variant identifies the item; a selling plan defines its subscription purchase. Quantity is another separate value.
 
-- Flavor + pack size
-- Size + color
-- Pack size + formula
-- One-time + subscription configuration
+## One-time and subscription settings
 
-The final cart action should use the actual selected variant ID rather than relying on the text shown in the selector.
+Open the editor's **Settings → Subscriptions** to review the experience's supported subscription visibility and default-selection configuration.
+
+The configuration distinguishes offering subscriptions alongside one-time purchases, offering subscriptions only, and offering one-time purchases only. When both purchase types are offered, the default choices include:
+
+| Default | Intended behavior |
+| --- | --- |
+| **Subscription first** | Preselect the first available subscription plan. |
+| **One-time first** | Start with a one-time purchase unless the shopper chooses subscription. |
+| **No default selection** | Require the shopper to choose their purchase type. |
+
+Save the settings in that control and test the actual purchasing component. Do not assume every custom Buy Box consumes the same experience-level defaults; inspect its own controls and behavior too.
 
 <Warning>
-Always test the cart or checkout payload. A purchase section can look visually correct while still pointing to the wrong Shopify variant or selling plan.
+  These settings do not create subscription plans. The selected product needs valid plans from Shopify or the subscription provider. A designed subscription card cannot substitute for a selling plan that reaches checkout.
 </Warning>
 
-## One-time purchase
+## Pricing and quantity
 
-For a one-time purchase, Jurni adds the selected product variant without a subscription selling plan.
+Check that the displayed amount follows the selected variant, purchase type, and quantity. Subscription pricing can differ from one-time pricing. A static price typed into a section may not change with the shopper's selection.
 
-Use one-time as the only option when the product is not sold as a subscription, or present it alongside subscription when shoppers should be able to choose.
+If the component exposes quantity, confirm how it is passed into the purchase. A “3-pack” variant at quantity 1 is not the same configuration as adding three units of another variant.
 
-## Subscription purchase
+Configure discount enforcement separately from promotional copy. A compare-at price, savings badge, or “free gift” message does not by itself create the corresponding checkout discount.
 
-When the shopper selects subscription, Jurni uses a selling plan available for the selected product and variant.
+## Choose the next action
 
-The subscription option can affect:
+Set the supported action to **Add to cart**, **Go to checkout**, or the intended external destination. On the standard library Buy Box, this is the **Action type** field.
 
-- Final price
-- Compare-at or savings display
-- Delivery frequency
-- Cart line selling-plan data
+For add to cart, confirm the correct item is added and the intended cart behavior follows. For direct checkout, inspect the resulting checkout. For an external URL, confirm where the purchase will happen and how its measurement is implemented.
 
-The selling plan itself is configured in Shopify or your subscription provider—not created by the Jurni section.
+## Variant-selection modal
 
-## Pricing
+When your page uses Jurni's supported variant-selection modal, **Settings → Variant Select Modal** offers **Default** and **Full Screen** styles. Full Screen also offers **Show product gallery**.
 
-Pricing should reflect the currently selected variant, selling plan, and quantity. This matters when subscription pricing differs from one-time pricing or when variants have different prices.
+These are presentation settings for that modal, not a command to replace every custom selector. See [Page settings](/build/page-settings).
 
-Avoid hard-coding prices into a purchase section when the value should come from the connected product. Product-backed pricing is much safer when Shopify pricing changes.
+## Test the complete selection matrix
 
-## Quantity
+Test the default state, each important variant combination, one-time purchase, each subscription choice, and quantity changes where available. Check that unavailable options are handled appropriately.
 
-If the section exposes a quantity selector, the selected quantity is passed into the cart or checkout action.
+For every important path, confirm the actual product, variant, quantity, selling plan, final amount, and applied discount or gift in cart or checkout. Repeat on mobile and desktop and on the real publishing destination.
 
-Quantity is different from a product pack-size variant. For example:
-
-- **2 Pack** may be a Shopify variant.
-- **Quantity 2** means adding two units of the selected variant.
-
-Make sure the page makes that distinction clear to shoppers.
-
-## Add to cart vs. direct checkout
-
-A purchase CTA can follow two common patterns:
-
-### Add to cart
-
-Use add to cart when the shopper should remain in the store flow, open the cart drawer, add more products, or review the cart before checkout.
-
-### Direct checkout
-
-Use direct checkout when the experience is intentionally designed to take the selected configuration straight into checkout.
-
-In both cases, the commerce action should carry the selected:
-
-- Variant
-- Selling plan when subscription is selected
-- Quantity
-
-## When the available options change
-
-Review the Jurni purchase section after changes to:
-
-- Shopify variants
-- Product option names or values
-- Subscription selling plans
-- Product availability
-- Pricing
-- Pack-size structure
-
-A live page should not depend on a variant or plan that has been removed from the connected product.
-
-## QA checklist
-
-Before publishing, test every meaningful purchase path:
-
-1. Default product option.
-2. Each important variant combination.
-3. One-time purchase.
-4. Every subscription option you intend to expose.
-5. Quantity changes.
-6. Add-to-cart behavior.
-7. Direct-checkout behavior when used.
-8. Final cart or checkout price.
+If something is wrong, identify whether the problem is the source product data, section configuration, custom selection logic, or cart integration before rebuilding the design.
 
 ## Related guides
 
-- Buy Boxes in Jurni
-- Products and Variants
-- Subscriptions and Selling Plans
-- Cart and Checkout Behavior
-- Discounts and Promotions
+- [Add a Buy Box](/products/add-buy-box)
+- [Products and variants](/building-funnels/products-and-variants)
+- [Subscriptions and selling plans](/building-funnels/subscriptions-selling-plans)
+- [Discounts and promotions](/commerce/discounts-promotions)
+- [Cart and checkout behavior](/commerce/cart-checkout-behavior)

@@ -131,17 +131,26 @@
         "tab": "Products & Buy Boxes",
         "groups": [
           {
-            "group": "Products",
+            "group": "Start Here",
+            "pages": [
+              "building-funnels/buy-box-overview"
+            ]
+          },
+          {
+            "group": "Product Library",
             "pages": [
               "building-funnels/products-and-variants",
+              "products/catalog-visibility",
+              "products/content-media",
               "building-funnels/sync-new-products"
             ]
           },
           {
             "group": "Buy Boxes",
             "pages": [
-              "building-funnels/buy-box-overview",
-              "building-funnels/product-purchase-options"
+              "products/add-buy-box",
+              "building-funnels/product-purchase-options",
+              "products/editing-scope"
             ]
           },
           {
