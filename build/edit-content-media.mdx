@@ -1,0 +1,60 @@
+---
+title: "Edit text, images, and video"
+sidebarTitle: "Text & media"
+description: "Make manual content changes in the editor while distinguishing visible copy, media assets, product data, and interactive behavior."
+icon: "text-cursor-input"
+---
+
+Select the text or media you want to change on the canvas, or locate it in **Layers**. Use the right panel's controls for that selection rather than rewriting the whole section for a small content edit.
+
+## Edit text
+
+<Steps>
+  <Step title="Check the editing scope">
+    Confirm the page and whether you are editing All Sizes, Desktop Only, a locale, or a Global Section.
+  </Step>
+  <Step title="Select the text element">
+    Select the heading, paragraph, label, or other text element. If the right panel shows settings for the whole section, select the text itself or its corresponding layer.
+  </Step>
+  <Step title="Update the content">
+    Use the text or rich-text field exposed for that element. Preserve approved claims, prices, and legal copy unless the change has been approved.
+  </Step>
+  <Step title="Inspect the result">
+    Check line wrapping, emphasis, spacing, and the other device view. Save or publish through the appropriate action when the edit is ready.
+  </Step>
+</Steps>
+
+Changing a button label does **not** change its action. Changing product text displayed on a page does **not** necessarily update the product catalog or the product selected by the Buy Box. Use the relevant product/action controls for those changes.
+
+## Replace an image or video
+
+Select the media element and open its media selection control. Choose the intended asset and inspect the rendered result. A replacement can have a different aspect ratio from the original, so check the media container and crop on both mobile and desktop.
+
+Use [image repositioning](/product-updates/image-repositioning) when the asset is correct but its visible focal point is wrong. Replacing an image, resizing its container, and repositioning its crop solve different problems.
+
+## Work with lists and repeated content
+
+Some sections expose groups or lists of items, such as FAQ entries, benefits, or cards. Use the section's item controls when available instead of treating the repeated content as one large text block. Check that the correct item is selected before changing its image or text.
+
+When a change requires a different structure rather than different copy, use the [AI editing workflow](/build/ai-editing) and explicitly identify the section and elements to preserve.
+
+## Check dynamic content
+
+A product-driven label, price, image gallery, or review summary may come from connected data. Do not hide an incorrect configuration by typing static replacement text over it. Confirm the selected product and the underlying data source.
+
+## Common problems
+
+**The wrong content changes:** check the selected layer, Global Section scope, product-page scope, and active locale.
+
+**The new image is cropped badly:** adjust the media container or focal position; replacing the image again may not fix the layout constraint.
+
+**Desktop still shows the old value:** inspect the desktop override for that property.
+
+**The page looks right but clicking behaves incorrectly:** test in Preview and check the configured [CTA action](/build/cta-actions).
+
+## Related guides
+
+- [Layers and selection](/build/layers-selection)
+- [Desktop and mobile](/build/desktop-mobile)
+- [Style and layout](/build/style-layout)
+- [Product content and media](/products/content-media)

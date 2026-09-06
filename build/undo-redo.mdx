@@ -1,0 +1,46 @@
+---
+title: "Undo and redo editor changes"
+sidebarTitle: "Undo & redo"
+description: "Reverse current-session edits, understand redo behavior, and distinguish editor history from chat history and published versions."
+icon: "undo-2"
+---
+
+Use the **Undo** and **Redo** controls in the editor header to move through changes recorded in the current editing session.
+
+## Undo an edit
+
+Select **Undo** to step back through the available editor history. Inspect the canvas after each step so you do not accidentally remove an earlier change you intended to keep.
+
+Use **Redo** to move forward again when a redo step is available. A disabled control means there is no available step in that direction or the current editing mode restricts that control.
+
+## A new edit replaces the redo path
+
+Suppose you make changes A, B, and C, then undo C. If you now make a different change D, the editor continues from A, B, D. Do not expect Redo to bring back the old C after creating that new edit.
+
+When comparing alternatives, inspect the result before making another unrelated change.
+
+## What editor history is—and is not
+
+Editor history tracks page-editing state such as sections and design changes. It is not an unlimited audit log of everything that happens in your shop.
+
+Do not use Undo as the recovery plan for a deleted library source, an integration change, billing, a Shopify order, or work done outside the current editor session. Save your draft before leaving and use [published version history](/build/version-history) for the snapshots available there.
+
+Chat history is separate again: reopening an AI conversation does not undo its previous page edits.
+
+## Scoped editing modes
+
+Some dedicated editing modes have their own save/cancel behavior. The legacy sticky-banner editor, for example, disables the main Undo/Redo controls. Read the controls in the active editing mode rather than assuming the main history applies identically everywhere.
+
+For a Global Section, also check whether you are editing the shared source or an ordinary page instance. Undoing a local edit should not be treated as a promise to reverse a shared source change already saved elsewhere.
+
+## A safe recovery sequence
+
+First stop making additional changes. Check which page and editing mode you are in. Use Undo one step at a time and inspect the result on both device views. Once the intended state is restored, use the appropriate save or publish action.
+
+If the needed state is no longer in the session history, check version history or contact the Jurni team with the experience and the change you are trying to recover. Do not repeatedly reload the editor expecting an unsaved history stack to act as a backup.
+
+## Related guides
+
+- [Save, preview, and publish](/build/save-preview-publish)
+- [Restore a published version](/build/version-history)
+- [AI editing and chat history](/build/ai-editing)

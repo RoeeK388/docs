@@ -1,0 +1,66 @@
+---
+title: "Global Sections"
+sidebarTitle: "Global Sections"
+description: "Create, insert, edit, and detach shared sections while understanding how a global update differs from a local page edit."
+icon: "component"
+---
+
+A **Global Section** is shared content that pages reference, rather than an independent copy. Use it for a header, footer, approved purchasing area, or another section you deliberately want to maintain from a shared source.
+
+A [Saved Section](/building-funnels/saved-sections) is different: it gives you a reusable starting point without keeping the inserted copies linked.
+
+## Create a Global Section
+
+<Steps>
+  <Step title="Prepare the section">
+    Finish and test the source section. Decide whether every future use should share its content, product configuration, and behavior.
+  </Step>
+  <Step title="Open Create Global">
+    Select the section in **Layers**, open its more-options menu, and choose **Create Global** when available.
+  </Step>
+  <Step title="Give the shared source a clear name">
+    Enter its name and save. Global names must be unique within the shop; changing only capitalization does not create a distinct name.
+  </Step>
+  <Step title="Verify the linked instance">
+    Confirm that the editor now identifies the section as global. Open **Saved Sections → Global** to find the shared source for reuse.
+  </Step>
+</Steps>
+
+## Add a global reference to a page
+
+Open **Saved Sections → Global**, select the shared section, and add it to the page. Its placement belongs to this page, while its content comes from the shared source.
+
+**Apply Global**, when offered on an existing section's menu, is a replacement action. Use it when you intend that section to become a reference to the selected global source. It is not the same as adding a new section below the existing one.
+
+## Edit shared content
+
+Open the global section's editing flow and check the scoped editing state before making changes. Jurni uses a dedicated Global Section edit session and restricts some whole-page controls during that session.
+
+Make the changes, review mobile and desktop, and save the shared source using that editor's save action. Saving a global source is not just a private edit to one local page.
+
+<Warning>
+  Global updates can affect other pages that reference the same source. Before changing a Buy Box, offer, navigation link, or other live shared content, confirm which uses should receive the change. Do not use a shared source for an isolated experiment unless that wider change is intentional.
+</Warning>
+
+## Make one instance independent
+
+Select **Detach Global** from the global instance's menu when you need to customize only that occurrence. Confirm it is no longer being edited as shared content, then make the page-specific change.
+
+Duplicating a linked instance is not a substitute for detaching it. Removing a global instance from a page is also different from deleting the source in the library.
+
+## Publishing destinations matter
+
+Jurni-hosted pages can use the shared source through their global references. Native Shopify Pages are a separately published artifact. After changing shared content used by a Shopify Page, update that Shopify publication and verify the live `/pages/` URL rather than assuming the deployed snapshot refreshed automatically.
+
+## Scope and practical limits
+
+Global Sections are scoped to the Jurni shop. They are not a cross-brand or cross-store synchronization system. Recheck products, selling plans, currencies, and widget credentials when copying work to a different shop.
+
+Before deleting a global source, review where it is used. If one page merely needs a different version, detaching that instance is a more targeted operation than deleting the shared library item.
+
+## Related guides
+
+- [Saved Sections](/building-funnels/saved-sections)
+- [Product editing scope](/products/editing-scope)
+- [Save, preview, and publish](/build/save-preview-publish)
+- [Shopify Pages](/shopify-pages/setup-publish)

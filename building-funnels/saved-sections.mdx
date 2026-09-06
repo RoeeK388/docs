@@ -1,80 +1,62 @@
 ---
-title: "Saved and Global Sections"
-sidebarTitle: "Saved & Global Sections"
-description: "Save reusable Jurni sections—including product sections and Buy Boxes—and reuse them across experiences in the same shop."
+title: "Saved Sections"
+sidebarTitle: "Saved Sections"
+description: "Save a configured section to your shop's library and reuse it as an independent copy without linking every instance."
+icon: "bookmark"
 ---
 
-Saved or global sections let you turn a section you have already configured into a reusable building block for other Jurni experiences in the same shop. This is especially useful for complex sections that would be expensive or risky to rebuild repeatedly.
+A **Saved Section** is a reusable template in your shop's library. Insert it into a page when you want a copy you can adapt independently—for example, an approved hero layout or Buy Box that needs different content for each campaign.
 
-## Good candidates for reusable sections
-
-Common examples include:
-
-- Navigation and announcement bars
-- Footer sections
-- Product sections and Buy Boxes
-- Repeated offer blocks
-- Testimonial or review sections
-- Branded content modules
-- Complex sections with custom logic
+For shared content that should stay connected across uses, see [Global Sections](/build/global-sections). These are different features, even though both are accessed from the Saved Sections panel.
 
 ## Save a section
 
 <Steps>
-  <Step title="Finish the section first">
-    Configure the section's content, styling, products, and behavior in a real experience.
+  <Step title="Prepare the source section">
+    Finish the section's content, styling, and behavior. Review both mobile and desktop. For a Buy Box, test the product and purchase configuration before saving it for reuse.
   </Step>
-  <Step title="QA the section">
-    For a commerce section, test product selection, variants, selling plans, pricing, cart behavior, and mobile layout before turning it into a reusable section.
+  <Step title="Select the whole section">
+    Open **Layers** and select the section, rather than a single child element inside it.
   </Step>
-  <Step title="Save it to the section library">
-    Use the editor's save/reuse action to store the section as a reusable section for the shop.
+  <Step title="Select Save Section">
+    Open the section's more-options menu and choose **Save Section**. Wait for the save to finish.
   </Step>
-  <Step title="Add it to another experience">
-    Open the saved/global section library from another experience in the same shop and insert the section.
+  <Step title="Find the saved item">
+    Open **Saved Sections** in the editor's left toolbar and select the **Saved** subtab. Use search to locate the reusable item.
   </Step>
 </Steps>
 
-<Warning>
-  Do not save a Buy Box or product section as a reusable section until its product configuration is correct. Reusing a broken commerce configuration simply spreads the problem to more pages.
-</Warning>
+## Insert it into another page
 
-## Saved sections are shop-specific
+Open the destination experience in the **same shop**, select **Saved Sections → Saved**, choose the item, and use **Add Sections**. Locate the inserted section in Layers, move it into place, and customize it.
 
-Reusable section templates are associated with the Jurni shop they were created in. A section saved in a US shop should not be assumed to exist automatically in a separate UK or EU shop.
+The inserted saved section is an independent copy, not a live shared reference. Changing that copy is not the same as updating every page that previously used the template.
 
-When you need the same logic in another shop, first move or recreate the source experience in that shop, verify the products and commerce configuration there, then save the section from that shop.
+## When to use Saved rather than Global
 
-This matters because different shops can have different:
+Use Saved Sections when your team wants the same starting layout with different copy, products, offers, or design adjustments on each page.
 
-- Shopify product IDs and variants
-- Selling plans
-- Pricing and currencies
-- Review integration IDs
-- Market-specific content
+Use Global Sections when the content is meant to stay linked and you intentionally want to maintain a shared source. A campaign-specific Buy Box is often safer as a saved starting point unless the team deliberately wants that purchasing configuration shared.
 
-## Reusing product sections
+## Recheck product and integration settings
 
-Product sections and Buy Boxes are particularly valuable to save when your team uses the same purchase experience across many landing pages.
+A reusable layout can carry the source section's product IDs, action settings, review mappings, and custom behavior. After insertion, confirm the intended product, variants, selling plans, cart action, and widget provider.
 
-Before reusing them, confirm whether the product should stay fixed or be changed for the new page. A copied visual layout can still contain the original product configuration.
+Changing a visible product title does not remap the purchasing action. Make that change in the actual product or action control.
 
-## Updating reusable content
+## Shops and regional stores
 
-Treat a saved/global section as a reusable starting point unless the editor explicitly indicates that instances remain linked. When making a change, verify whether it affects only the current page or the reusable source you intend to use going forward.
+The reusable library is shop-specific. A section saved in one Jurni shop is not automatically a shared library item in a different UK, EU, or other regional shop.
 
-## Best practices
+When moving work between shops, have the source experience or section copied through the supported workflow, recheck the destination shop's products and integrations, and then save the section there. This is not automatic cross-shop synchronization.
 
-- Use clear names that describe the section and product/market when relevant.
-- Avoid saving temporary campaign-specific modules as global defaults.
-- Keep the number of near-duplicate reusable sections under control.
-- Retest commerce behavior after copying a section into another experience.
-- For multi-market shops, include the market or shop in the saved-section name when the configuration is market-specific.
+## Maintain a useful library
+
+Keep approved sections easy to identify and avoid many indistinguishable copies. Save tested, reusable patterns rather than unfinished experiments. Deleting an item from the library and removing a section from a page are separate operations; review what you are changing before doing either.
 
 ## Related guides
 
-- Managing Sections
-- Buy Boxes in Jurni
-- Product Purchase Options
-- Products and Variants
-- Shopify Markets, Currency, and Localized Pricing
+- [Global Sections](/build/global-sections)
+- [Copy and duplicate sections](/build/copy-duplicate-sections)
+- [Add sections](/building-funnels/managing-sections)
+- [Configure a Buy Box](/products/add-buy-box)

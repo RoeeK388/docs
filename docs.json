@@ -77,25 +77,38 @@
           {
             "group": "Sections & Layers",
             "pages": [
-              "building-funnels/managing-sections"
+              "building-funnels/managing-sections",
+              "build/layers-selection",
+              "build/copy-duplicate-sections",
+              "build/reorder-sections",
+              "build/delete-hide-sections"
             ]
           },
           {
             "group": "Design & Behavior",
             "pages": [
+              "build/edit-content-media",
+              "build/style-layout",
+              "build/desktop-mobile",
+              "build/cta-actions",
+              "build/editor-integrations",
+              "build/page-popups",
               "building-funnels/sticky-cta-banner",
-              "product-updates/image-repositioning"
+              "product-updates/image-repositioning",
+              "build/page-settings"
             ]
           },
           {
             "group": "Reusable Sections",
             "pages": [
-              "building-funnels/saved-sections"
+              "building-funnels/saved-sections",
+              "build/global-sections"
             ]
           },
           {
             "group": "AI & Figma",
             "pages": [
+              "build/ai-editing",
               "building-funnels/figma-file",
               "building-funnels/ai-chat-prompts"
             ]
@@ -103,7 +116,11 @@
           {
             "group": "Preview, History & Collaboration",
             "pages": [
+              "build/save-preview-publish",
+              "build/undo-redo",
+              "build/version-history",
               "product-updates/jurni-comments",
+              "build/share-review-links",
               "building-funnels/qa-checklist"
             ]
           }
