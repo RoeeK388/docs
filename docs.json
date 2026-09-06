@@ -63,30 +63,32 @@
         ]
       },
       {
-        "tab": "Reference & Help",
+        "tab": "Build",
         "groups": [
           {
-            "group": "Reference",
+            "group": "Create & Edit",
             "pages": []
           },
           {
-            "group": "Product Updates",
-            "pages": [
-              "product-updates/image-repositioning",
-              "product-updates/jurni-comments",
-              "product-updates/strategizer-opportunities"
-            ]
+            "group": "Products & Buy Boxes",
+            "pages": []
           },
           {
-            "group": "Data Dictionary",
-            "pages": [
-              "data-dictionary/metrics-glossary"
-            ]
+            "group": "Reusable Content & Collaboration",
+            "pages": []
           },
           {
-            "group": "Troubleshooting & FAQ",
+            "group": "Experiences",
             "pages": [
-              "troubleshooting/jurni-sales-channel"
+              "building-funnels/creating-a-funnel",
+              "building-funnels/funnel-editor",
+              "building-funnels/managing-sections",
+              "building-funnels/saved-sections",
+              "building-funnels/sticky-cta-banner",
+              "building-funnels/figma-file",
+              "building-funnels/ai-chat-prompts",
+              "building-funnels/qa-checklist",
+              "building-funnels/smart-links"
             ]
           }
         ]
@@ -111,33 +113,6 @@
             "pages": [
               "shopify-pages/setup-publish",
               "shopify-pages/cart-config"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Build",
-        "groups": [
-          {
-            "group": "Create & Edit",
-            "pages": []
-          },
-          {
-            "group": "Reusable Content & Collaboration",
-            "pages": []
-          },
-          {
-            "group": "Experiences",
-            "pages": [
-              "building-funnels/creating-a-funnel",
-              "building-funnels/funnel-editor",
-              "building-funnels/managing-sections",
-              "building-funnels/saved-sections",
-              "building-funnels/sticky-cta-banner",
-              "building-funnels/figma-file",
-              "building-funnels/ai-chat-prompts",
-              "building-funnels/qa-checklist",
-              "building-funnels/smart-links"
             ]
           }
         ]
@@ -220,6 +195,35 @@
             "group": "Notifications",
             "pages": [
               "notifications/slack-reports"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference & Help",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": []
+          },
+          {
+            "group": "Product Updates",
+            "pages": [
+              "product-updates/image-repositioning",
+              "product-updates/jurni-comments",
+              "product-updates/strategizer-opportunities"
+            ]
+          },
+          {
+            "group": "Data Dictionary",
+            "pages": [
+              "data-dictionary/metrics-glossary"
+            ]
+          },
+          {
+            "group": "Troubleshooting & FAQ",
+            "pages": [
+              "troubleshooting/jurni-sales-channel"
             ]
           }
         ]
