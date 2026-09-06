@@ -181,6 +181,7 @@
             "group": "Cart & Checkout",
             "pages": [
               "commerce/cart-checkout-behavior",
+              "commerce/cart-display-settings",
               "commerce/shopify-markets-currency"
             ]
           }
@@ -246,7 +247,8 @@
               "analytics-reporting/filtering-experiences",
               "analytics-reporting/custom-events",
               "analytics-reporting/attribution-overview",
-              "analytics-reporting/export-csv"
+              "analytics-reporting/export-csv",
+              "analytics-reporting/meta-ad-insights"
             ]
           },
           {
@@ -298,6 +300,10 @@
               "integrations/review-widgets",
               "integrations/alia"
             ]
+          },
+          {
+            "group": "Affiliate & Creator Tools",
+            "pages": []
           },
           {
             "group": "Slack & Collaboration",
