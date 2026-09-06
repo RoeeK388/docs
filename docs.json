@@ -12,7 +12,7 @@
     "dark": "/images/black1.svg"
   },
   "navigation": {
-    "groups": [
+    "pages": [
       {
         "group": "Getting Started",
         "pages": [
@@ -121,7 +121,8 @@
         "pages": [
           "troubleshooting/jurni-sales-channel"
         ]
-      }
+      },
+      "untitled-page"
     ]
   },
   "navbar": {
