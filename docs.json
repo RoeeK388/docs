@@ -12,9 +12,18 @@
     "dark": "/images/white1.svg"
   },
   "navigation": {
-    "tabs": [
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Changelog",
+          "href": "https://getjurni.ai",
+          "icon": "rocket"
+        }
+      ]
+    },
+    "dropdowns": [
       {
-        "tab": "Getting Started",
+        "dropdown": "Getting Started",
         "pages": [
           "getting-started/welcome",
           "getting-started/create-account",
@@ -34,7 +43,7 @@
         ]
       },
       {
-        "tab": "Experiences",
+        "dropdown": "Experiences",
         "pages": [
           "building-funnels/creating-a-funnel",
           "building-funnels/funnel-editor",
@@ -48,7 +57,7 @@
         ]
       },
       {
-        "tab": "Experiments & A/B Testing",
+        "dropdown": "Experiments & A/B Testing",
         "pages": [
           "experiments/what-are-experiments",
           "experiments/create-experiment",
@@ -59,13 +68,13 @@
         ]
       },
       {
-        "tab": "Strategy",
+        "dropdown": "Strategy",
         "pages": [
           "strategy/roadmap"
         ]
       },
       {
-        "tab": "Analytics & Reporting",
+        "dropdown": "Analytics & Reporting",
         "pages": [
           "analytics-reporting/overview",
           "analytics-reporting/experience-analytics",
@@ -74,7 +83,7 @@
         ]
       },
       {
-        "tab": "Integrations",
+        "dropdown": "Integrations",
         "pages": [
           "integrations/overview",
           "integrations/api-keys",
@@ -90,20 +99,20 @@
         ]
       },
       {
-        "tab": "Shopify Pages",
+        "dropdown": "Shopify Pages",
         "pages": [
           "shopify-pages/setup-publish",
           "shopify-pages/cart-config"
         ]
       },
       {
-        "tab": "Notifications",
+        "dropdown": "Notifications",
         "pages": [
           "notifications/slack-reports"
         ]
       },
       {
-        "tab": "Product Updates",
+        "dropdown": "Product Updates",
         "pages": [
           "product-updates/image-repositioning",
           "product-updates/jurni-comments",
@@ -111,27 +120,18 @@
         ]
       },
       {
-        "tab": "Data Dictionary",
+        "dropdown": "Data Dictionary",
         "pages": [
           "data-dictionary/metrics-glossary"
         ]
       },
       {
-        "tab": "Troubleshooting & FAQ",
+        "dropdown": "Troubleshooting & FAQ",
         "pages": [
           "troubleshooting/jurni-sales-channel"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Changelog",
-          "href": "https://getjurni.ai",
-          "icon": "rocket"
-        }
-      ]
-    }
+    ]
   },
   "navbar": {
     "primary": {
