@@ -1,0 +1,66 @@
+---
+title: "Manage, duplicate, and archive experiences"
+sidebarTitle: "Manage experiences"
+description: "Use experience actions to edit, preview, copy campaign links, inspect connected experiments, duplicate into a draft, and understand archive restrictions."
+icon: "files"
+---
+
+Use the **Experiences** list to find an existing page and manage what happens next. Open the three-dot actions menu on an experience to access the actions available for its current status.
+
+## Open the right view
+
+**Edit** opens the experience in the editor. **Analytics** opens its performance view when that action is available. **Open preview** opens the preview in a separate tab.
+
+Previewing a page is not the same as entering through its campaign Smart Link. Use preview for content review, and test the actual campaign entry link when checking routing or experiment assignment.
+
+## Find and copy links
+
+The actions menu can show **Smart links** associated with the experience. When a native Shopify Page URL is present, the **Links** submenu also exposes **Shopify page link**.
+
+Choose the link for the job: use the Smart Link when the campaign should follow routing managed in Jurni; use the Shopify page link to inspect that specific published Shopify destination. An unavailable Smart links action can mean that no active Smart Link is associated with the experience yet.
+
+When an experience is connected to experiments, the **Experiments** submenu provides links to those tests. Review these connections before making changes to a page receiving live test traffic.
+
+## Duplicate an experience
+
+<Steps>
+  <Step title="Find the original">
+    Locate the intended experience and confirm its name and shop.
+  </Step>
+  <Step title="Select Duplicate">
+    Open its actions menu and select **Duplicate**. Wait for Jurni to confirm the copy was created.
+  </Step>
+  <Step title="Open the new draft">
+    The copy is saved as a draft. Open it, give it a recognizable name, and make the changes for the new campaign or test.
+  </Step>
+  <Step title="Review what was reused">
+    Check products, variants, subscription options, offer copy, links, and any shared Global Sections. A duplicated experience should not be assumed to make every referenced shared resource independent.
+  </Step>
+</Steps>
+
+Duplicating an experience is different from duplicating one section. It also does not automatically replace the destination of an existing Smart Link or campaign. Publish and connect the copy deliberately.
+
+## Archive an experience
+
+Use **Archive** only after reviewing its live connections. The experience actions menu prevents archiving when Jurni identifies it as connected to **ads, experiments, or a Shopify Page**. Read the reason displayed on the disabled action.
+
+<Warning>
+  Archiving is not a substitute for ending an experiment or unpublishing a native Shopify Page. Handle the relevant connection first, and confirm where existing campaign traffic will go before retiring the experience.
+</Warning>
+
+For a Shopify Page, use its publishing controls to manage the Shopify publication. For experiments, review the test and Smart Link destination. Do not remove a live campaign destination just to clear an archive restriction.
+
+Archived experiences have a reactivation action. After reactivating, verify the page and every relevant publishing destination before resuming traffic; do not assume old campaign routing has been re-established automatically.
+
+## Keep the list useful
+
+Use clear names and the tag-assignment action to label experiences by campaign, product, or team convention. These organizational labels do not change product selection or traffic routing.
+
+## Related guides
+
+- [Create an experience](/building-funnels/creating-a-funnel)
+- [Copy and duplicate sections](/build/copy-duplicate-sections)
+- [Global Sections](/build/global-sections)
+- [Smart Links](/building-funnels/smart-links)
+- [Pause or end an experiment](/experiments/pause-end-reuse)
+- [Update or unpublish](/publishing/update-unpublish)

@@ -71,7 +71,8 @@
             "group": "Start Building",
             "pages": [
               "building-funnels/creating-a-funnel",
-              "building-funnels/funnel-editor"
+              "building-funnels/funnel-editor",
+              "build/manage-experiences"
             ]
           },
           {
