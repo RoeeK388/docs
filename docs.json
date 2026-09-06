@@ -286,7 +286,9 @@
               "integrations/ga-meta-pixel",
               "integrations/gtm",
               "integrations/utm-attribution",
-              "integrations/consent-tracking"
+              "integrations/consent-tracking",
+              "integrations/northbeam",
+              "integrations/axon"
             ]
           },
           {

@@ -1,0 +1,40 @@
+---
+title: "Connect Axon by AppLovin"
+sidebarTitle: "Axon"
+description: "Find the Axon browser-pixel Event Key, save it in Jurni, and verify page tracking separately from server-side conversion setup."
+icon: "chart-column"
+---
+
+Use **Axon by AppLovin** to connect supported Jurni page activity to your Axon advertising measurement. Jurni's **Axon Pixel ID** field is for the browser pixel's identifier.
+
+## Get the pixel value
+
+Open the browser-pixel setup instructions for the brand's Axon website account. In the native JavaScript snippet, find **AXON_EVENT_KEY** and copy its value. Ask your Axon representative to provide the website's pixel Event Key if the setup screen is not available to you.
+
+See [Axon's browser-pixel instructions](https://frontend-docs.axon.ai/en/growth/promoting-your-websites/track-and-optimize/axon-pixel-native-js). Do not paste a MAX mobile SDK key, product-category ID, advertising account ID, or Conversion API secret into this field.
+
+## Connect it in Jurni
+
+<Steps>
+  <Step title="Enter Axon Pixel ID">
+    Go to **Settings → Integrations → Data Integrations → Tracking Pixels** and paste the browser-pixel value into **Axon Pixel ID**.
+  </Step>
+  <Step title="Save Changes">
+    Save the tracking form. Check that the same pixel is not also being inserted through Custom Scripts or a tag manager.
+  </Step>
+  <Step title="Verify the actual campaign page">
+    Open the published page and use the **Axon Pixel Helper** recommended in Axon's guide. Check the intended account and actions with your tracking owner.
+  </Step>
+</Steps>
+
+## Page pixel versus conversion setup
+
+The browser pixel and Axon's **Conversion API** are different integrations. Entering the Pixel ID here does not configure server-side credentials or a custom checkout's conversion events.
+
+Confirm the complete route from ad to Jurni page to checkout, including campaign parameters. For **Shopify Pages**, inspect the Axon installation already provided by the theme or apps before adding a second loader. Headless and custom checkouts need their own agreed event connection.
+
+## Related guides
+
+- [Tracking setup](/getting-started/tracking-pixels)
+- [Consent and tracking](/integrations/consent-tracking)
+- [Test your campaign link](/publishing/check-campaign-link)
