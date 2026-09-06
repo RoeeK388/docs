@@ -53,6 +53,23 @@
         ]
       },
       {
+        "tab": "Products & Buy Boxes",
+        "groups": [
+          {
+            "group": "Products",
+            "pages": []
+          },
+          {
+            "group": "Buy Boxes",
+            "pages": []
+          },
+          {
+            "group": "Subscriptions & Bundles",
+            "pages": []
+          }
+        ]
+      },
+      {
         "tab": "Experiences",
         "groups": [
           {
