@@ -11,66 +11,53 @@ keywords:
 icon: "sliders-horizontal"
 ---
 
-Purchase options determine **what the shopper buys and how they buy it**. Configure the actual product selection and behavior, not only the labels and selection-card design.
+Purchase options let shoppers choose **which item to buy and how to buy it**. Configure the real purchase first, then check that the labels and design explain it clearly.
 
-The available controls depend on the section. The standard library Buy Box, an older Product Purchase Options component, and a custom AI-built Buy Box may not expose the same fields.
+## Know the three choices
 
-## Start with the selected product
+| Choice | Example | What it changes |
+| --- | --- | --- |
+| **Variant** | Vanilla, size Large, or a 3-pack | The specific version of the product. |
+| **Purchase type** | One-time or subscription | Whether the purchase includes a subscription plan. |
+| **Quantity** | Two units | How many units of the selected variant are purchased. |
 
-Choose the real product and check the variant choices it provides. If shoppers select size and flavor, the final combination must resolve to the intended purchasable variant.
+A 3-pack variant at quantity 1 is different from three units of a single-pack variant.
 
-Do not treat product variants and subscription plans as the same option. A variant identifies the item; a selling plan defines its subscription purchase. Quantity is another separate value.
+## Configure your purchasing section
 
-## One-time and subscription settings
+<Steps>
+  <Step title="Choose the product">
+    Select the Buy Box or purchasing section in the editor. Confirm the product and variant choices are correct.
+  </Step>
+  <Step title="Review the purchase choices">
+    Check which options the section offers and what is selected when the page first loads. For subscriptions, confirm the product has the required plans in Shopify or your subscription provider.
+  </Step>
+  <Step title="Set the next action">
+    Choose the supported cart, checkout, or external-link action. On the standard library Buy Box, use **Action type**.
+  </Step>
+  <Step title="Test each important combination">
+    Try the main variants and purchase types, then confirm the item, quantity, subscription frequency, price, and discount in the actual cart or checkout.
+  </Step>
+</Steps>
 
-Open the editor's **Settings → Subscriptions** to review the experience's supported subscription visibility and default-selection configuration.
+<Note>
+  The standard library Buy Box purchases one unit at a time. Custom Buy Boxes and other purchase sections may support quantities, bundles, or different default selections. Use the controls for the section you placed, not an assumed universal Buy Box setting.
+</Note>
 
-The configuration distinguishes offering subscriptions alongside one-time purchases, offering subscriptions only, and offering one-time purchases only. When both purchase types are offered, the default choices include:
+## Subscription preferences
 
-| Default | Intended behavior |
-| --- | --- |
-| **Subscription first** | Preselect the first available subscription plan. |
-| **One-time first** | Start with a one-time purchase unless the shopper chooses subscription. |
-| **No default selection** | Require the shopper to choose their purchase type. |
+The editor's **Settings → Subscriptions** provides preferences for purchasing components that use the experience-level settings. These include one-time and subscription visibility, and defaults such as **Subscription first**, **One-time first**, and **No default selection** when both are offered.
 
-Save the settings in that control and test the actual purchasing component. Do not assume every custom Buy Box consumes the same experience-level defaults; inspect its own controls and behavior too.
+Save the preference and check your Buy Box. **Do not rely on this control to override a standard library or custom Buy Box's own selection behavior.** If the section does not follow the preference, its purchase logic needs to be adjusted rather than only changing the label.
 
-<Warning>
-  These settings do not create subscription plans. The selected product needs valid plans from Shopify or the subscription provider. A designed subscription card cannot substitute for a selling plan that reaches checkout.
-</Warning>
+These preferences do not create subscription plans or checkout discounts. See [Subscriptions and selling plans](/building-funnels/subscriptions-selling-plans) and [Discounts and promotions](/commerce/discounts-promotions).
 
-## Pricing and quantity
+<Accordion title="Change the variant-selection modal">
+  For pages that use Jurni's variant-selection modal, **Settings → Variant Select Modal** offers **Default** and **Full Screen**. Full Screen also offers **Show product gallery**. These controls change that modal's presentation, not every selector on the page.
+</Accordion>
 
-Check that the displayed amount follows the selected variant, purchase type, and quantity. Subscription pricing can differ from one-time pricing. A static price typed into a section may not change with the shopper's selection.
+## Before publishing
 
-If the component exposes quantity, confirm how it is passed into the purchase. A “3-pack” variant at quantity 1 is not the same configuration as adding three units of another variant.
+Repeat the purchase test on mobile and desktop, and on the final live URL. Check unavailable variants as well as the default choice. A correct-looking price or selection card is not enough—the same selection must reach checkout.
 
-Configure discount enforcement separately from promotional copy. A compare-at price, savings badge, or “free gift” message does not by itself create the corresponding checkout discount.
-
-## Choose the next action
-
-Set the supported action to **Add to cart**, **Go to checkout**, or the intended external destination. On the standard library Buy Box, this is the **Action type** field.
-
-For add to cart, confirm the correct item is added and the intended cart behavior follows. For direct checkout, inspect the resulting checkout. For an external URL, confirm where the purchase will happen and how its measurement is implemented.
-
-## Variant-selection modal
-
-When your page uses Jurni's supported variant-selection modal, **Settings → Variant Select Modal** offers **Default** and **Full Screen** styles. Full Screen also offers **Show product gallery**.
-
-These are presentation settings for that modal, not a command to replace every custom selector. See [Page settings](/build/page-settings).
-
-## Test the complete selection matrix
-
-Test the default state, each important variant combination, one-time purchase, each subscription choice, and quantity changes where available. Check that unavailable options are handled appropriately.
-
-For every important path, confirm the actual product, variant, quantity, selling plan, final amount, and applied discount or gift in cart or checkout. Repeat on mobile and desktop and on the real publishing destination.
-
-If something is wrong, identify whether the problem is the source product data, section configuration, custom selection logic, or cart integration before rebuilding the design.
-
-## Related guides
-
-- [Add a Buy Box](/products/add-buy-box)
-- [Products and variants](/building-funnels/products-and-variants)
-- [Subscriptions and selling plans](/building-funnels/subscriptions-selling-plans)
-- [Discounts and promotions](/commerce/discounts-promotions)
-- [Cart and checkout behavior](/commerce/cart-checkout-behavior)
+[Add a Buy Box](/products/add-buy-box) · [Cart and checkout](/commerce/cart-checkout-behavior) · [Product editing scope](/products/editing-scope)

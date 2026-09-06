@@ -5,51 +5,31 @@ description: "Understand the editor's creator, subscription, cart-icon, pop-up, 
 icon: "settings"
 ---
 
-Open the **Settings gear** in the editor header to configure experience-level behavior. This panel is different from **Settings** in the main Jurni dashboard and from the style controls for one selected element.
+Select the **Settings gear** in the editor header to change settings for the current experience. This is different from the main dashboard's shop settings and from the design controls for an individual section.
 
-## What the panel contains
+## Find the setting you need
 
-| Control | What it configures | What it does not mean |
-| --- | --- | --- |
-| **Creator** | The creator whose content is used by creator-driven parts of the experience. | It is not the page's editor or a team-member invitation. |
-| **Subscriptions** | Default purchase selection and subscription visibility settings. | It does not create selling plans in Shopify. |
-| **Cart → Enable Cart** | Display of the cart icon in the supported header. | It is not a switch that disables Shopify checkout or clears the shopper's cart. |
-| **Sticky Banner**, on experiences using the legacy feature | The existing global sticky-banner configuration. | It is different from adding a modern sticky section. |
-| **Pop-ups** | Which connected pop-up providers are enabled for the experience. | It does not replace the provider's own targeting and design settings. |
-| **Variant Select Modal** | The supported modal's presentation and media display. | It does not turn every custom Buy Box into that modal. |
-| **SEO** | The page's SEO configuration and supplied metadata. | It is not a guarantee of search-engine indexing or ranking. |
+| Setting | Use it to |
+| --- | --- |
+| **Creator** | Choose whose content appears in creator-driven parts of the page. This is not a team-member setting. |
+| **Subscriptions** | Set purchase preferences for components that use the experience-level subscription settings. See [Purchase options](/building-funnels/product-purchase-options). |
+| **Cart → Enable Cart** | Show or hide the cart icon in the supported header. This does not clear the cart or disable checkout. |
+| **Pop-ups** | Choose which connected providers are enabled for this experience. See [Pop-up controls](/build/page-popups). |
+| **Variant Select Modal** | Choose **Default** or **Full Screen**. Full Screen also offers **Show product gallery**. |
+| **SEO** | Set the page title, description, and preview image. See [SEO and sharing preview](/publishing/page-seo). |
 
-Some controls appear only when their prerequisites exist. For example, the pop-ups control requires a connected supported provider, and legacy sticky-banner controls are not the creation path for every new page.
+Older experiences with an existing sticky banner also have controls for that banner. For new builds, follow [Sticky CTAs](/building-funnels/sticky-cta-banner).
 
-## Subscription settings
+Some settings appear only when the relevant feature or provider is configured. The pop-up control, for example, needs a connected supported provider.
 
-Open **Subscriptions** to review purchase-option visibility and defaults. The configuration supports subscription-enabled, subscription-only, and one-time-only modes. When both purchase types are offered, default choices include **Subscription first**, **One-time first**, and **No default selection**.
-
-Save the settings, then test the actual purchasing component. Custom or AI-built Buy Boxes can have their own implementation; do not assume a global default replaces every section's custom logic. The product must have valid selling plans for a subscription purchase.
-
-## Variant selection modal
-
-Open **Variant Select Modal**. The current style options are **Default** and **Full Screen**. In Full Screen mode, **Show product gallery** controls whether the full product gallery is displayed instead of only the selected variant image on each step.
-
-Use the modal's **Save** or **Cancel** action. If it will not close after you changed a field, finish or cancel those changes rather than assuming the editor is frozen.
-
-## SEO settings
-
-Use **Enable SEO** and **Configure SEO** to open the metadata form. The form provides **Title**, **Description**, and an image URL for the page's SEO/social presentation. Save the form and inspect the actual published destination.
-
-Keep these fields accurate to the page. Do not use an old campaign offer or a different product's image merely because it was present in the source template.
-
-## Save behavior is not uniform
+## Save and check the result
 
 <Warning>
-  Some Settings controls save directly. For example, changing **Enable Cart** or **Enable SEO** sends a configuration update immediately. Other controls use their own **Save** button. Do not assume every setting remains an unsaved canvas edit until you select Publish.
+  **Enable Cart** and **Enable SEO** save directly when changed. Other settings use their own **Save** button. On a live experience, treat these as potentially live changes—not only unsaved design edits.
 </Warning>
 
-Wait for the relevant success or error message and verify the result. For a live experience, treat configuration changes as potentially live-impacting. Native Shopify Pages require verification of their own publishing state and runtime.
+Wait for confirmation, then test the result on the page. If a settings dialog will not close after an edit, use its Save or Cancel action.
 
-## Related guides
+Check purchasing behavior on the final live URL. Subscription preferences and variant-modal settings do not automatically replace the behavior of every custom Buy Box. For Shopify Pages, also check the actual Shopify publication.
 
-- [Pop-up controls](/build/page-popups)
-- [Subscriptions and selling plans](/building-funnels/subscriptions-selling-plans)
-- [Sticky CTAs](/building-funnels/sticky-cta-banner)
-- [Save, preview, and publish](/build/save-preview-publish)
+[Save and preview](/build/save-preview-publish) · [Cart display settings](/commerce/cart-display-settings)

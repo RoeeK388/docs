@@ -10,68 +10,47 @@ keywords:
 icon: "shopping-bag"
 ---
 
-A **product** is the item your brand sells. A **Buy Box** is the purchasing interface on a page: it presents the product, lets shoppers make the supported choices, and sends that selection to cart, checkout, or another destination.
+A **product** is what you sell. A **Buy Box** is the section on a page where shoppers choose their options and continue to cart or checkout.
 
-The catalog, the product's supporting content, the Buy Box design, and the final purchase are connected—but changing one does not automatically change all the others.
+Start by finding the right product, add a Buy Box to the page, then test the purchase. You do not need to configure every commerce feature to launch a simple product page.
 
-## Understand the four parts
+## What belongs where?
 
-| Part | What you manage | Where to work |
-| --- | --- | --- |
-| **Connected product catalog** | The real products, variants, prices, availability, and selling plans exposed by your commerce connection. | Your commerce platform and Jurni's Products area. |
-| **Jurni product content** | Supporting benefits, details, reviews, media, and other product customization used by compatible components. | **Products → Edit Product Data**. This content can be shared across experiences using the product. |
-| **Page and Buy Box** | The layout, selected product, visible controls, content placement, and purchasing action. | The Jurni editor. |
-| **Cart and checkout** | The actual items, plan, discount, and amount the shopper purchases. | The connected commerce flow, tested from the published page. |
+| What you are changing | Where to work |
+| --- | --- |
+| The real product, variants, prices, availability, or subscription plans | Your connected commerce platform. |
+| Shared product benefits, details, reviews, or variant media used by Jurni | **Products → Edit Product Data**. |
+| The Buy Box layout, selected product, or button action on a page | The **page editor**. |
+| Discounts, shipping, and the amount actually charged | Your connected cart and checkout setup. |
 
-For example, changing the headline above a Buy Box does not change the selected product. Editing a product's shared benefits is broader than changing a paragraph on one page. Showing “20% off” in a design does not create that discount in checkout.
+For example, editing the headline above a Buy Box does not change its selected product. Showing “20% off” in the design does not create a checkout discount.
 
-## Start with the task you need
+## Set up your first Buy Box
 
-<CardGroup cols={2}>
-  <Card title="Find and manage products" icon="package-search" href="/building-funnels/products-and-variants">
-    Locate the correct product and understand its real variants and purchase data.
-  </Card>
+<Steps>
+  <Step title="Find your product">
+    Open **Products** in the correct shop. Check the product and variants you intend to sell. For a missing Shopify product, review the catalog filters and [product availability guide](/building-funnels/sync-new-products).
+  </Step>
+  <Step title="Add it to the page">
+    In the editor, insert a Buy Box from **Section Library** or use an approved Saved Section. Choose the product and purchasing action. Follow [Add a Buy Box](/products/add-buy-box).
+  </Step>
+  <Step title="Style and test it">
+    Adjust the copy, media, and layout. Check both device views, make a purchase selection, and confirm the correct item and price in cart or checkout.
+  </Step>
+</Steps>
 
-  <Card title="Control catalog visibility" icon="list-filter" href="/products/catalog-visibility">
-    For Shopify, manage which products are available through Jurni's product scope.
-  </Card>
+## Add the options your campaign needs
 
-  <Card title="Edit product content" icon="file-pen-line" href="/products/content-media">
-    Maintain shared benefits, details, reviews, and variant media without confusing them with a local page edit.
-  </Card>
+Use [purchase options](/building-funnels/product-purchase-options) for variants and purchase choices, [subscriptions](/building-funnels/subscriptions-selling-plans) for recurring purchases, [bundles](/building-funnels/bundles) for multi-product offers, and [offers](/commerce/offers-overview) for promotions. Available controls depend on the Buy Box you use.
 
-  <Card title="Add a Buy Box" icon="shopping-cart" href="/products/add-buy-box">
-    Insert a purchasing section, select a real product, choose its action, and test the result.
-  </Card>
-</CardGroup>
+A simple button can be enough when your page only needs to send visitors to an existing product page. See [Buttons and actions](/build/cta-actions).
 
-## Build the purchasing flow in order
+## Reuse without changing the wrong pages
 
-First confirm the product exists and is usable through the connected store. Next add the Buy Box or approved reusable section. Select the intended product and configure the purchasing behavior supported by that section. Then style it, review both device views, and test the actual cart and checkout.
+A **Saved Section** gives you an independent copy. A **Global Section** keeps content shared. Product information edited in **Products** is also shared information, not a change limited to one page.
 
-Different Buy Boxes can expose different controls. A standard library template, an older purchase-options component, and a custom AI-built purchasing section do not necessarily have the same configuration panel. Use the controls and behavior of the section you actually placed.
+Before making a change for just one campaign, check [what your product edit affects](/products/editing-scope).
 
-## When to use a Buy Box
-
-Use a Buy Box when shoppers need to choose a product configuration on the page—for example, a size, flavor, or one-time versus subscription purchase. A simple CTA can be enough when the page only needs to link to an existing product page or another destination.
-
-A subscription or bundle design needs its actual purchase logic connected; it is not complete just because the selection cards look correct.
-
-## Know the scope before editing
-
-A local section belongs to its page. A Saved Section becomes an independent copy when inserted. A Global Section references a shared source. Product data edited from **Products** is also shared product information, not automatically a local change to one page.
-
-Use [Product editing scope](/products/editing-scope), [Saved Sections](/building-funnels/saved-sections), and [Global Sections](/build/global-sections) before reusing a complex purchasing area.
-
-## Platform and publishing differences
-
-Shopify provides the native commerce connection. Headless and non-Shopify stores use the product/cart integration confirmed for their stack. A Shopify-specific selling-plan or cart instruction should not be assumed to work unchanged on another provider.
-
-A Buy Box on a Jurni-hosted page and one published through native Shopify Pages must each be tested in their final environment. See [Cart and checkout behavior](/commerce/cart-checkout-behavior) and [Shopify Pages cart configuration](/shopify-pages/cart-config).
-
-## Continue
-
-- [Purchase options](/building-funnels/product-purchase-options)
-- [Subscriptions and selling plans](/building-funnels/subscriptions-selling-plans)
-- [Bundles](/building-funnels/bundles)
-- [Offers and discounts](/commerce/offers-overview)
+<Note>
+  Shopify has a native Jurni connection. Headless and other platforms use the purchasing setup agreed for that store. Always test the final publishing destination; native Shopify Pages have their own [cart configuration](/shopify-pages/cart-config).
+</Note>

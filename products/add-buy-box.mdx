@@ -5,66 +5,52 @@ description: "Add the standard library Buy Box, select a real product, set Add t
 icon: "shopping-cart"
 ---
 
-Add a Buy Box when shoppers should make their purchase selection directly on the Jurni page. Start from a library template or an approved reusable section, then connect the real product before polishing the design.
+Use a Buy Box when shoppers should select a product and purchase it directly from your page. This guide covers the standard library Buy Box; a custom or older purchasing section may have different controls.
 
-This guide describes the standard library Buy Box's **Product** and **Action type** controls. An older or custom-built purchasing section can expose different settings; do not assume every Buy Box has the same panel.
-
-## Before you begin
-
-Confirm the product is available in the correct shop and that the commerce connection supports the purchase you want. For Shopify subscriptions, the product needs the relevant selling plans. For a custom/headless integration, confirm the cart and checkout implementation with your team.
-
-## Add the section and connect the product
+## Add and connect the Buy Box
 
 <Steps>
-  <Step title="Open the page">
-    Open the experience in the editor and select the page where shoppers will make the purchase decision.
+  <Step title="Add the section">
+    Open the experience in the editor. In **Section Library**, select the product/Buy Box layout and choose **Add Sections**. You can also reuse an approved section from **Saved Sections**.
   </Step>
-  <Step title="Add the Buy Box">
-    Open **Section Library**, find the product/Buy Box layout, select it, and use **Add Sections**. Alternatively, insert an approved section from Saved Sections.
+  <Step title="Select the product">
+    Select the whole Buy Box in **Layers**, then choose the item in the **Product** field. Check that the title, images, and variant options match the intended product.
   </Step>
-  <Step title="Select the whole purchasing section">
-    Find the inserted section in Layers. Select its root to access its configuration rather than only selecting the visible button text.
+  <Step title="Set the button action">
+    Choose **Action type**: **Add to cart**, **Go to checkout**, or **External URL**. For an external link, enter the destination URL.
   </Step>
-  <Step title="Choose Product">
-    Select the intended product in the **Product** field. Check that the displayed title, media, and available options match it.
+  <Step title="Adjust the design">
+    Edit the text, media, and layout with the visual controls or AI. When using AI, ask it to preserve the product selection and purchase behavior unless you intend to change them.
   </Step>
-  <Step title="Choose Action type">
-    Set **Add to cart**, **Go to checkout**, or **External URL**, then provide any destination the action requires.
+  <Step title="Test the purchase">
+    Preview both screen sizes. Try the default selection and the main variant or subscription choices, then check the actual cart or checkout before publishing.
   </Step>
 </Steps>
 
+## Which action should I use?
+
+| Action | Use it when |
+| --- | --- |
+| **Add to cart** | Shoppers should add the selection and review their cart. |
+| **Go to checkout** | The page should take the selected purchase directly into checkout. |
+| **External URL** | The purchase or next step happens at another destination. This action navigates there rather than adding the selection to cart. |
+
 <Note>
-  The standard template shows a product-selection prompt in the editor when no product is selected. Its purchasing area does not render in live/preview without a product. An empty preview can therefore be a missing Product configuration, not a styling problem.
+  The standard library Buy Box purchases **one unit of the selected variant**. A quantity selector, multi-buy offer, or bundle needs a section configured for that behavior. Renaming a button or pack-size label does not change the quantity purchased.
 </Note>
 
-## Pick the right action
+## Check the options and final price
 
-| Action type | Intended result | What to test |
-| --- | --- | --- |
-| **Add to cart** | Add the selected product configuration to the connected cart. | Correct variant, selling plan, and quantity; expected cart behavior. |
-| **Go to checkout** | Continue with the selection into checkout. | Correct checkout destination and purchase details. |
-| **External URL** | Navigate to the specified destination. | Full URL, query parameters, and the intended external purchase path. |
+Variants and available subscription plans come from the connected product. Confirm the default choice, selected plan, and displayed amount. Read [Purchase options](/building-funnels/product-purchase-options) before changing subscription preferences or using a custom Buy Box.
 
-The button label alone does not determine the action. Use the action setting and test the interaction.
+Test the published destination too. For native Shopify Pages, check the real `/pages/` URL and its [cart configuration](/shopify-pages/cart-config).
 
-## Review the available purchase choices
+<AccordionGroup>
+  <Accordion title="Why is the Buy Box missing from Preview?">
+    Check the **Product** field. The standard template shows a selection prompt in the editor when no product is chosen, but does not show a purchasing area in Preview or on the live page without a product.
+  </Accordion>
 
-The standard template builds its choices from connected product data. Check variant options, product availability, pricing, and selling plans where present. A product without usable subscription plans cannot become a real subscription solely through edited text.
-
-For default one-time/subscription behavior, check the experience's **Settings → Subscriptions** and the actual section's implementation. Custom Buy Boxes may handle their own selection logic. See [Purchase options](/building-funnels/product-purchase-options).
-
-## Customize the design without breaking the purchase
-
-Use the visual controls or AI to change spacing, media, copy, and layout. Tell AI which commerce behavior must remain unchanged. A purchase redesign should not replace working selectors with static visual elements.
-
-Check **Editing All Sizes** and **Editing Desktop Only** before making responsive adjustments. Test selection controls in both views.
-
-## Test before publishing
-
-Start with the default selection, then test each meaningful variant and purchase type. Confirm the actual items and plan in cart or checkout—not only the visual labels. Check sold-out/unavailable states and any discounts or gifts.
-
-For native Shopify Pages, test the final `/pages/` URL and its [cart configuration](/shopify-pages/cart-config). The Jurni preview does not prove compatibility with the Shopify theme or cart drawer.
-
-## Reuse a tested Buy Box
-
-Save it as a [Saved Section](/building-funnels/saved-sections) for independently editable copies, or a [Global Section](/build/global-sections) only when shared updates are intentional. Recheck product mappings when inserting it into another experience or copying work to another shop.
+  <Accordion title="How do I reuse this Buy Box?">
+    Use a [Saved Section](/building-funnels/saved-sections) for independent copies, or a [Global Section](/build/global-sections) when updates should be shared. Check the product and purchase options again after inserting it into another experience.
+  </Accordion>
+</AccordionGroup>
