@@ -167,5 +167,8 @@
   },
   "interaction": {
     "drilldown": true
+  },
+  "icons": {
+    "library": "lucide"
   }
 }
