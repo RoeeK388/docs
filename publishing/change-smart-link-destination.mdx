@@ -1,0 +1,57 @@
+---
+title: "Change a Smart Link destination"
+sidebarTitle: "Change a destination"
+description: "Move a campaign to another page without changing its entry URL, and check the impact on other placements."
+icon: "replace"
+---
+
+Update the destination when a campaign should open a different page but keep the same Smart Link in its ads or emails. **Changing the destination is a routing change—not an edit to the old page.**
+
+## Before changing a live link
+
+Open the replacement page directly and check its mobile layout, product options, buttons, cart, and checkout. Verify tracking and widgets on the actual publishing destination, especially when moving between a Jurni subdomain and Shopify Pages.
+
+Identify every campaign using this Smart Link. The connected ads shown in Jurni can help, but a manually pasted link in an email or another channel may also be in use.
+
+## Update the destination
+
+<Steps>
+  <Step title="Find the correct link">
+    Open **Smart Links**, find the entry by its name and URL, and open **Edit**. Check the current destination before replacing it.
+  </Step>
+  <Step title="Select the replacement">
+    Choose the Jurni experience or enter the supported destination URL. Review any destination-change warning and confirm only when the change is intentional.
+  </Step>
+  <Step title="Save the link">
+    Select **Update Link** and wait for success. The link's dashboard name can change, but its URL slug remains the same.
+  </Step>
+  <Step title="Test the campaign entry URL">
+    Open the saved Smart Link, not only the new page's direct URL. Confirm the destination, campaign parameters, and shopper action. Repeat on mobile.
+  </Step>
+</Steps>
+
+## When the link belongs to an experiment
+
+Review the connected experiment and its current state before changing routing. Use the experiment controls for variant allocation and test changes rather than treating a test as an ordinary one-page destination.
+
+A change can affect how subsequent traffic is measured. Record the change time and compare the appropriate reporting period. Historical results do not become a clean test of the replacement page simply because the campaign URL stayed the same.
+
+See [Create an experiment](/experiments/create-experiment) and [Read results](/experiments/reading-results).
+
+## What this does not change
+
+Editing the destination does not rewrite the URL in existing campaign placements, publish a draft destination, or remove the old page. It also does not make two publishing environments share the same cart or script setup.
+
+The ordinary Smart Link edit dialog does not let you change the existing slug or saved search parameters. A different entry URL needs its own rollout: keep the old route working while updating placements that should use the replacement.
+
+## Stop using a link
+
+Do not archive or delete a live campaign link before arranging what happens to its traffic. If the goal is to send visitors somewhere else, changing the destination is a different operation from archiving.
+
+For an unavailable slug, use [URL conflict troubleshooting](/troubleshooting/url-route-conflict). Support may need to check an older route that is no longer visible in your normal list.
+
+## Related guides
+
+- [Smart Links overview](/building-funnels/smart-links)
+- [Check your campaign link](/publishing/check-campaign-link)
+- [Update or unpublish pages](/publishing/update-unpublish)

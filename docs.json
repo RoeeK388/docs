@@ -210,7 +210,9 @@
           {
             "group": "Smart Links",
             "pages": [
-              "building-funnels/smart-links"
+              "building-funnels/smart-links",
+              "publishing/change-smart-link-destination",
+              "publishing/check-campaign-link"
             ]
           },
           {
