@@ -12,13 +12,29 @@
     "dark": "/images/black1.svg"
   },
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": []
+        "tab": "Getting Started",
+        "pages": [
+          "getting-started/welcome",
+          "getting-started/create-account",
+          "getting-started/custom-subdomain",
+          "getting-started/setup-account",
+          "getting-started/brand-settings",
+          "getting-started/step-by-step-setup",
+          "getting-started/shopify-headless",
+          "getting-started/setup-non-shopify",
+          "getting-started/activating-jurni-core",
+          "getting-started/setup-ai-knowledge",
+          "getting-started/integration-keys",
+          "getting-started/shopify-analytics",
+          "getting-started/tracking-pixels",
+          "getting-started/funnel-building",
+          "getting-started/inviting-team-members"
+        ]
       },
       {
-        "group": "Building Funnels",
+        "tab": "Building Funnels",
         "pages": [
           "building-funnels/creating-a-funnel",
           "building-funnels/funnel-editor",
@@ -32,14 +48,14 @@
         ]
       },
       {
-        "group": "Shopify Pages",
+        "tab": "Shopify Pages",
         "pages": [
           "shopify-pages/setup-publish",
           "shopify-pages/cart-config"
         ]
       },
       {
-        "group": "Integrations",
+        "tab": "Integrations",
         "pages": [
           "integrations/overview",
           "integrations/api-keys",
@@ -55,7 +71,7 @@
         ]
       },
       {
-        "group": "Analytics & Reporting",
+        "tab": "Analytics & Reporting",
         "pages": [
           "analytics-reporting/overview",
           "analytics-reporting/experience-analytics",
@@ -64,7 +80,7 @@
         ]
       },
       {
-        "group": "Experiments & A/B Testing",
+        "tab": "Experiments & A/B Testing",
         "pages": [
           "experiments/what-are-experiments",
           "experiments/create-experiment",
@@ -75,13 +91,13 @@
         ]
       },
       {
-        "group": "Notifications",
+        "tab": "Notifications",
         "pages": [
           "notifications/slack-reports"
         ]
       },
       {
-        "group": "Product Updates",
+        "tab": "Product Updates",
         "pages": [
           "product-updates/image-repositioning",
           "product-updates/jurni-comments",
@@ -89,25 +105,23 @@
         ]
       },
       {
-        "group": "Data Dictionary",
+        "tab": "Data Dictionary",
         "pages": [
           "data-dictionary/metrics-glossary"
         ]
       },
       {
-        "group": "Strategy",
+        "tab": "Strategy",
         "pages": [
           "strategy/roadmap"
         ]
       },
       {
-        "group": "Troubleshooting & FAQ",
+        "tab": "Troubleshooting & FAQ",
         "pages": [
           "troubleshooting/jurni-sales-channel"
         ]
-      },
-      "untitled-page",
-      ""
+      }
     ]
   },
   "navbar": {
