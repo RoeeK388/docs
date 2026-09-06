@@ -289,7 +289,8 @@
               "integrations/consent-tracking",
               "integrations/northbeam",
               "integrations/axon",
-              "integrations/blotout"
+              "integrations/blotout",
+              "integrations/polar-analytics"
             ]
           },
           {

@@ -1,0 +1,47 @@
+---
+title: "Connect Polar Analytics"
+sidebarTitle: "Polar Analytics"
+description: "Use the Shopify store domain connected to Polar to enable the supported Jurni page-event integration."
+icon: "chart-column"
+---
+
+Use **Polar Analytics** to include supported Jurni page activity in your existing Polar measurement setup. Jurni requests the Shopify store domain that identifies the store in Polar—not an API key.
+
+## Find the right Shopify domain
+
+Open **Shopify admin → Settings → Domains** and find the store's `your-store.myshopify.com` domain. Confirm that it is the store connected in **Polar → Connectors → Shopify**.
+
+Copy the `.myshopify.com` domain, not your custom storefront domain, the Shopify admin URL, or the Jurni subdomain. See [Polar's Shopify connection guide](https://intercom.help/polar-app/en/articles/6996076-how-can-i-connect-shopify-to-polar).
+
+## Connect and verify
+
+<Steps>
+  <Step title="Enter the store domain">
+    Open **Settings → Integrations → Data Integrations → Tracking Pixels** in Jurni. Enter the value in **Polar Analytics Shopify URL**.
+  </Step>
+  <Step title="Save Changes">
+    Save the tracking form. The field requires a value containing `.myshopify.com`.
+  </Step>
+  <Step title="Check page activity">
+    Open a published Jurni page and perform the relevant shopper actions. Ask your tracking owner to verify the Polar events against the correct store. [Polar's headless troubleshooting guide](https://intercom.help/polar-app/en/articles/12784989-troubleshooting-the-polar-pixel-integration-on-headless-stores) explains how to check the event requests when needed.
+  </Step>
+</Steps>
+
+## Complete the purchase measurement
+
+Keep the appropriate Polar installation on your store and checkout. The Jurni page connection does not replace Polar's Shopify connector, account setup, or custom-checkout event integration. Check that the Polar Pixel is available and configured for your account.
+
+For a third-party checkout, coordinate the implementation with the Jurni and Polar teams. For **Shopify Pages**, verify whether the theme or Shopify app already supplies the necessary tracking before adding overlapping installations.
+
+## Common problems
+
+**The field is rejected:** check that you copied the `.myshopify.com` domain rather than `brand.com` or `admin.shopify.com`.
+
+**The domain is accepted but reporting is missing:** confirm the connected Polar store, account setup, consent, and the exact published page. A successful save does not establish that the entire checkout journey is measured.
+
+**I do not use Shopify:** this specific connection is keyed to a Shopify store. Contact the Jurni team about your custom measurement setup rather than entering another provider's domain.
+
+## Related guides
+
+- [Tracking setup](/getting-started/tracking-pixels)
+- [Analytics differences](/troubleshooting/analytics-differences)
