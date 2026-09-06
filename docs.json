@@ -21,9 +21,9 @@
         }
       ]
     },
-    "dropdowns": [
+    "products": [
       {
-        "dropdown": "Getting Started",
+        "product": "Getting Started",
         "pages": [
           "getting-started/welcome",
           "getting-started/create-account",
@@ -43,7 +43,7 @@
         ]
       },
       {
-        "dropdown": "Experiences",
+        "product": "Experiences",
         "pages": [
           "building-funnels/creating-a-funnel",
           "building-funnels/funnel-editor",
@@ -57,7 +57,7 @@
         ]
       },
       {
-        "dropdown": "Experiments & A/B Testing",
+        "product": "Experiments & A/B Testing",
         "pages": [
           "experiments/what-are-experiments",
           "experiments/create-experiment",
@@ -68,13 +68,13 @@
         ]
       },
       {
-        "dropdown": "Strategy",
+        "product": "Strategy",
         "pages": [
           "strategy/roadmap"
         ]
       },
       {
-        "dropdown": "Analytics & Reporting",
+        "product": "Analytics & Reporting",
         "pages": [
           "analytics-reporting/overview",
           "analytics-reporting/experience-analytics",
@@ -83,7 +83,7 @@
         ]
       },
       {
-        "dropdown": "Integrations",
+        "product": "Integrations",
         "pages": [
           "integrations/overview",
           "integrations/api-keys",
@@ -99,20 +99,20 @@
         ]
       },
       {
-        "dropdown": "Shopify Pages",
+        "product": "Shopify Pages",
         "pages": [
           "shopify-pages/setup-publish",
           "shopify-pages/cart-config"
         ]
       },
       {
-        "dropdown": "Notifications",
+        "product": "Notifications",
         "pages": [
           "notifications/slack-reports"
         ]
       },
       {
-        "dropdown": "Product Updates",
+        "product": "Product Updates",
         "pages": [
           "product-updates/image-repositioning",
           "product-updates/jurni-comments",
@@ -120,13 +120,13 @@
         ]
       },
       {
-        "dropdown": "Data Dictionary",
+        "product": "Data Dictionary",
         "pages": [
           "data-dictionary/metrics-glossary"
         ]
       },
       {
-        "dropdown": "Troubleshooting & FAQ",
+        "product": "Troubleshooting & FAQ",
         "pages": [
           "troubleshooting/jurni-sales-channel"
         ]
