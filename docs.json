@@ -339,7 +339,8 @@
               "data-dictionary/metrics-glossary",
               "reference/events",
               "reference/url-parameters",
-              "build/code-mode"
+              "build/code-mode",
+              "review/release-readiness"
             ]
           },
           {

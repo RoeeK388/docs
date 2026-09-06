@@ -1,0 +1,62 @@
+---
+title: "Release-readiness review: Buy Boxes and experiments"
+sidebarTitle: "Release review"
+description: "Editorial checklist for approving the unreleased Buy Box and experiment guides; not customer documentation."
+icon: "clipboard-check"
+hidden: true
+noindex: true
+tag: "Internal review"
+---
+
+This is an editorial review record on the unmerged release-draft branch, not a customer guide. Hidden navigation and noindex are not access controls. Do not merge this page into the public documentation.
+
+## Branch separation
+
+The AI/prompting and current-metric fixes are in docs PR #5. The five feature guides on this branch are held separately until their rollout and behavior are confirmed. After PR #5 merges, update this branch against main before preparing a release PR.
+
+## Evidence reviewed
+
+| Area | Evidence | Current implication |
+| --- | --- | --- |
+| Managed Buy Boxes | [Engineering PR 2028](https://github.com/jurni-platform/jurni-monorepo/pull/2028), head 063ab74aadca4ea2d40aa2e6d0fa7d24db15d5cc; [ENG-2983](https://linear.app/jurni/issue/ENG-2983/buy-box-management-improvements). | PR was open and issue In Development when reviewed. Creation flow, selectors, shared save confirmation, defaults, templates, and archival were read from the feature branch, not assumed shipped. |
+| Experiment overview | [ENG-2921](https://linear.app/jurni/issue/ENG-2921/experiments-add-ads-tab-traffic-source-breakdown), linked [PR 2020](https://github.com/jurni-platform/jurni-monorepo/pull/2020). | Issue In Review and PR open. Ticket supplies the intended engagement metric tooltips and breakdown requirements. |
+| Statistical significance | [ENG-2017](https://linear.app/jurni/issue/ENG-2017/statistical-significance-to-experiments); available Jurni_Stat_Sig_Dev_Spec.md uploaded September 2. | Issue In Development. The readable uploaded spec was used because the signed Linear attachment could not be fetched; verify that its content matches the latest attached revision. |
+| Duration, depth, bounce tracking | [ENG-2522](https://linear.app/jurni/issue/ENG-2522/visit-deepening-data-collection-duration-depth-bounce), ENG-1988, ENG-1990, ENG-1989. | Parent In Development; children Ready for Dev with empty descriptions. No implementation of the final calculation rules was established in this review. |
+
+## Confirm before publishing the Buy Box guides
+
+Check final entry points and labels in a demo shop. The reviewed implementation uses Create/Save and a separate Add Buy Box to page action; ENG-2983 requests a Save / Save and add to page split and template tabs. Do not publish the requested design as the implemented screen without checking it.
+
+Verify AI is available after product/template setup, connected-page counts are presented clearly, shared edits update the expected uses, and native Shopify Pages follow the correct republishing process. Check the page-only variation workflow: managed Buy Boxes do not expose the ordinary Global Section Detach action in the reviewed panel.
+
+Verify deletion behavior on existing references. The reviewed backend blocks deleting the last active Buy Box and changes the default when required, but deletion must not be documented as a page-unpublish or automatic replacement operation.
+
+## Confirm before publishing confidence guidance
+
+Verify the released success metrics, selectable confidence thresholds, minimum-data gates, and status labels. The available spec proposes configurable minimums of 500 sessions per compared arm for CVR/RPS and 500 sessions plus 30 orders per arm for AOV; do not treat these as universal statistical sufficiency or confirmed production defaults.
+
+Verify Bayesian confidence is actually implemented, that it is not calculated as one minus a p-value, and that its underlying model supports the existing Orders/Sessions metric. Confirm Winning is a live state, Winner is a manual declared outcome, and no automatic stopping is implied.
+
+Confirm behavior for negative/zero lift, zero control baseline, custom thresholds below 80%, missing values, multiple variants, and the actual end/traffic-routing controls. Keep calculation internals out of the marketer guide; describe only the observable result.
+
+## Confirm before publishing engagement calculations
+
+**Duration:** establish the start/end signals, active versus elapsed time, tab-hidden time, same-page returns, the requested 30-minute inactivity cutoff, and which measured visits are included in the average. Do not publish the proposed cutoff as shipped before verification.
+
+**Scroll depth:** confirm whether the per-session measure is maximum depth or another value, how viewport height and changing page height are handled, and which sessions enter the average. Do not import GA4's scroll-event threshold.
+
+**Bounce:** identify exactly which events qualify as interaction and how missing/no-consent data is treated. Confirm scrolling and time alone do or do not qualify. Do not substitute GA4's engaged-session definition.
+
+**All three:** confirm reporting start date, historical backfill, zero versus missing display, experiment and experience coverage, aggregation, device breakdowns, and native Shopify Pages/headless support.
+
+## Screenshot capture list
+
+Use a demo shop with approved non-customer content. Capture the current AI composer and attachments, Guidance/Skills setup, the editor with mobile/desktop indicators, Buy Box product/template setup, the Buy Box Manage/shared-save warning, the updated experiment overview, confidence status, and engagement metrics with tooltips.
+
+Crop around the control being explained. Remove private customer details, credentials, billing information, and irrelevant browser chrome. Use short descriptive filenames and alt text, plus captions when a screenshot depends on a rollout or version. A design mockup must be labeled as a mockup, never a live screen.
+
+No platform screenshots were added in this pass: authenticated browser capture was unavailable and the supplied help-center PDFs contained no embedded screenshot images. Obtain current captures before the visual documentation pass.
+
+## Acceptance checks for the release PR
+
+Confirm product rollout with its owner and test the documented path in the current UI. Replace release-preview notes with the actual applicable availability statement. Merge wording into existing guides where needed rather than keeping two competing versions. Fix all internal links, verify screenshot assets, and require a successful Mintlify build and broken-link check. Keep this review record out of the release PR.
