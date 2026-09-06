@@ -46,18 +46,18 @@
           {
             "group": "Brand, Team & Tracking",
             "pages": [
-              "getting-started/brand-settings"
+              "getting-started/brand-settings",
+              "getting-started/setup-ai-knowledge",
+              "getting-started/inviting-team-members"
             ]
           },
           {
             "group": "Getting Started",
             "pages": [
-              "getting-started/setup-ai-knowledge",
               "getting-started/integration-keys",
               "getting-started/shopify-analytics",
               "getting-started/tracking-pixels",
-              "getting-started/funnel-building",
-              "getting-started/inviting-team-members"
+              "getting-started/funnel-building"
             ]
           }
         ]
@@ -106,6 +106,10 @@
           },
           {
             "group": "Traffic Routing & Domains",
+            "pages": []
+          },
+          {
+            "group": "Cart & Checkout",
             "pages": []
           },
           {
