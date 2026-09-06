@@ -6,3 +6,68 @@ icon: "refresh-cw"
 noindex: true
 tag: "Release draft"
 ---
+
+<Note>
+  Release-preview draft for the new managed Buy Box flow. Confirm the released interface and publishing behavior before using this as live customer guidance.
+</Note>
+
+Before changing a Buy Box, decide whether the change should apply to **every connected page** or **only one campaign**. That decision determines whether to edit the existing Buy Box or create a separate one.
+
+## Choose the right action
+
+| Your goal | Action |
+| --- | --- |
+| Update the approved purchasing design on all its connected pages | Manage and edit the existing Buy Box. Review the shared-update confirmation. |
+| Try a different design on one page or test variant | Create a separate Buy Box for the product, then connect it to that page. |
+| Reuse a design with another product | Save a Buy Box template, create from it, and select the new product. |
+| Change the preferred choice when selecting a product | Set a Buy Box as that product's default. |
+| Change one page's selected purchasing design | Use that page's Buy Box selector. |
+
+## Update an existing Buy Box
+
+Open the purchasing section, confirm the selected product and Buy Box, then select **Manage**. Make the intended edits and check both mobile and desktop.
+
+Before saving, review the connected-page count and confirmation. Saving updates the shared Buy Box; it is not automatically a private change to the page from which you opened it.
+
+Check the pages that should receive the change. For a native Shopify Page, verify the publishing state and live `/pages/` destination separately rather than assuming the Shopify output refreshed when the shared source was saved.
+
+## Create an independent campaign version
+
+For a test that should leave the control unchanged, create another Buy Box rather than editing a source used by both variants. Start from an approved template, select the product, make the targeted change, and connect the new Buy Box only to the intended variant.
+
+The managed Buy Box flow should not be treated as an ordinary Global Section with a Detach action. Use the Buy Box's own creation and selection workflow for an independent version.
+
+## Save a template for reuse
+
+Open the Buy Box's menu and select **Save as Buy Box template**. Use that template as the starting point when creating another Buy Box.
+
+The template is a starting design, not a command to synchronize every future Buy Box made from it. Select and test the new product, including variants, subscription choices, quantities, and any custom logic. A design copied between shops can still contain assumptions from the original shop.
+
+## Set a default
+
+Use **Set as default** on the Buy Box you want preferred for the selected product. Only one active Buy Box is marked as that product's default.
+
+Changing the default does not itself rewrite the Buy Box selected on every existing page. Open the intended page and change its selection when you need a different connection.
+
+## Remove a Buy Box
+
+The management menu's **Delete** action removes the Buy Box from normal active selection. In the implementation under review, this archives the managed Buy Box rather than deleting the underlying commerce product.
+
+The product must retain at least one active Buy Box. When the removed Buy Box was the default, another active Buy Box becomes the default.
+
+<Warning>
+  Do not use Delete as a way to unpublish a page or remove a purchasing section from every live page. Review connected uses and change the intended page connections before removing an old design.
+</Warning>
+
+Deleting a saved template is a different action from deleting a managed Buy Box. Neither should be confused with deleting the product in your commerce platform.
+
+## Review after any purchase-related edit
+
+Test the default selection, one-time and subscription paths where offered, important variants, and the final cart or checkout amount. Confirm campaign links still lead to the correct page.
+
+## Related guides
+
+- [Create and manage Buy Boxes](/products/manage-buy-boxes)
+- [Purchase options](/building-funnels/product-purchase-options)
+- [Product editing scope](/products/editing-scope)
+- [Shopify Pages](/shopify-pages/setup-publish)
