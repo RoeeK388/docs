@@ -21,9 +21,9 @@
         }
       ]
     },
-    "products": [
+    "groups": [
       {
-        "product": "Getting Started",
+        "group": "Getting Started",
         "pages": [
           "getting-started/welcome",
           "getting-started/create-account",
@@ -43,7 +43,7 @@
         ]
       },
       {
-        "product": "Experiences",
+        "group": "Experiences",
         "pages": [
           "building-funnels/creating-a-funnel",
           "building-funnels/funnel-editor",
@@ -57,7 +57,7 @@
         ]
       },
       {
-        "product": "Experiments & A/B Testing",
+        "group": "Experiments & A/B Testing",
         "pages": [
           "experiments/what-are-experiments",
           "experiments/create-experiment",
@@ -68,13 +68,13 @@
         ]
       },
       {
-        "product": "Strategy",
+        "group": "Strategy",
         "pages": [
           "strategy/roadmap"
         ]
       },
       {
-        "product": "Analytics & Reporting",
+        "group": "Analytics & Reporting",
         "pages": [
           "analytics-reporting/overview",
           "analytics-reporting/experience-analytics",
@@ -83,7 +83,7 @@
         ]
       },
       {
-        "product": "Integrations",
+        "group": "Integrations",
         "pages": [
           "integrations/overview",
           "integrations/api-keys",
@@ -99,20 +99,20 @@
         ]
       },
       {
-        "product": "Shopify Pages",
+        "group": "Shopify Pages",
         "pages": [
           "shopify-pages/setup-publish",
           "shopify-pages/cart-config"
         ]
       },
       {
-        "product": "Notifications",
+        "group": "Notifications",
         "pages": [
           "notifications/slack-reports"
         ]
       },
       {
-        "product": "Product Updates",
+        "group": "Product Updates",
         "pages": [
           "product-updates/image-repositioning",
           "product-updates/jurni-comments",
@@ -120,13 +120,13 @@
         ]
       },
       {
-        "product": "Data Dictionary",
+        "group": "Data Dictionary",
         "pages": [
           "data-dictionary/metrics-glossary"
         ]
       },
       {
-        "product": "Troubleshooting & FAQ",
+        "group": "Troubleshooting & FAQ",
         "pages": [
           "troubleshooting/jurni-sales-channel"
         ]
