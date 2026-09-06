@@ -235,6 +235,7 @@
               "experiments/traffic-assignment",
               "experiments/pause-end-reuse",
               "experiments/reading-results",
+              "experiments/statistical-significance",
               "experiments/testing-against-website",
               "experiments/traffic-troubleshoot"
             ]
