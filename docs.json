@@ -124,17 +124,11 @@
       }
     ],
     "global": {
-      "tabs": [
-        {
-          "tab": "Product Changelog",
-          "icon": "rocket-vertical",
-          "href": "https://getjurni.ai/"
-        }
-      ],
       "anchors": [
         {
           "anchor": "Changelog",
-          "href": ""
+          "href": "https://getjurni.ai",
+          "icon": "rocket"
         }
       ]
     }
