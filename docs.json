@@ -236,7 +236,9 @@
           },
           {
             "group": "Ad Platforms",
-            "pages": []
+            "pages": [
+              "integrations/meta-ads"
+            ]
           },
           {
             "group": "Developer & Custom",

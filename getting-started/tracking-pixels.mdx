@@ -4,72 +4,82 @@ sidebarTitle: "Tracking Pixels"
 description: "Configure the tracking IDs and data integrations currently available in Jurni, including Meta Pixel, GTM, GA4, Blotout, Axon, Northbeam, Polar, TikTok, and Triple Whale."
 ---
 
-Jurni makes it easy to measure funnel performance, conversions, and user behavior by supporting popular tracking platforms out of the box. Once you configure your tracking pixels, Jurni automatically loads them on every funnel page. No manual code installation is required.
+Use **Settings → Integrations → Data Integrations** to configure the browser-side tracking tools Jurni currently supports for Jurni-hosted pages.
 
-## Access Tracking Settings
+<Warning>
+  A native **Shopify Page** runs inside the Shopify theme environment. If the same pixel or GTM container is already installed by the Shopify theme/app stack, do not add a second copy through Jurni without a specific reason. Duplicate installations can double-fire events.
+</Warning>
+
+## Current Data Integration fields
+
+Jurni currently exposes the following tracking configuration:
+
+| Integration | Value Jurni asks for |
+| --- | --- |
+| Meta Pixel | One or more Meta Pixel IDs |
+| Google Tag Manager | Container ID in `GTM-...` format |
+| Google Analytics | GA tag / Measurement ID in `G-...` format |
+| TikTok | TikTok Pixel ID |
+| Blotout | Full **EdgeTag URL** |
+| Axon | Axon Pixel ID |
+| Northbeam | Northbeam Pixel ID |
+| Polar Analytics | Shopify domain in `store.myshopify.com` format |
+| Triple Whale | Enable/disable integration toggle |
+| Shopify Analytics | Separate public Storefront API token setup |
+
+Jurni validates some field formats before saving—for example GTM IDs must start with `GTM-`, GA IDs with `G-`, Northbeam expects a valid identifier, and Polar expects a `.myshopify.com` shop URL.
+
+## Add or update tracking
 
 <Steps>
-  <Step title="Log in to Jurni">
-    Open your Jurni dashboard and sign in to your account.
+  <Step title="Open Settings → Integrations">
+    Go to **Data Integrations → Tracking Pixels**.
   </Step>
-  <Step title="Open Settings">
-    Click **Settings** in the left sidebar.
+  <Step title="Enter the provider values">
+    Add only the integrations your measurement stack actually uses. Jurni supports multiple Meta Pixel IDs when the shop intentionally needs more than one.
   </Step>
-  <Step title="Go to Data Integrations">
-    Select **Data Integrations** from the settings menu.
+  <Step title="Save Changes">
+    Save the tracking configuration after the values pass Jurni's validation.
+  </Step>
+  <Step title="Test a live page">
+    Open a published Jurni URL and validate the provider with its browser/debug tool. For GTM, use Tag Assistant; for Meta, use Events Manager/Pixel Helper or your existing debugging workflow.
   </Step>
 </Steps>
 
-## Configure Tracking Pixels
+## Jurni-hosted pages vs. Shopify Pages
 
-In the **Tracking Pixels** section, paste the relevant ID for each platform you use, then click **Save Changes**.
+For a page served through Jurni's app-proxy/custom-subdomain storefront, the Jurni data-integration configuration is the normal place to load supported tracking.
 
-<CardGroup cols={2}>
-  <Card title="Meta Pixel" icon="facebook">
-    Enter your **Meta Pixel ID** to track conversions and performance for Meta Ads.
-  </Card>
+For a **Shopify Page**, the merchant's Shopify theme may already load Meta, GTM, GA4, consent tooling, or other scripts. Use the existing Shopify installation when appropriate instead of blindly adding the same tracker through both environments.
 
-  <Card title="Google Tag Manager" icon="code">
-    Enter your **Google Tag Manager ID** (format: `GTM-XXXXXXX`) for advanced event tracking and tag management.
-  </Card>
+This distinction is one of the most common causes of duplicate reporting.
 
-  <Card title="Google Analytics" icon="chart-line">
-    Enter your **Google Analytics ID** (format: `G-XXXXXXX`) to measure sessions and funnel performance in GA4.
-  </Card>
+## Consent can change what fires
 
-  <Card title="Blotout" icon="shield-halved">
-    Enter your **Blotout ID** for privacy-first tracking and data governance.
-  </Card>
-</CardGroup>
+A correctly configured pixel can still be absent if the shopper has not granted the permission required by Shopify or the consent manager in use.
 
-<Note>
-  Tracking pixels are automatically injected into all funnel pages after you save. You do not need to add any code manually.
-</Note>
+When debugging:
 
-## Triple Whale Integration
+1. test both consented and non-consented states
+2. confirm the provider script actually loads
+3. confirm the Jurni shopper action occurs
+4. verify the downstream event is sent once
 
-Jurni includes a native integration for Triple Whale advanced attribution and analytics.
+## GTM needs an event bridge for Jurni browser events
 
-<Steps>
-  <Step title="Toggle Triple Whale on">
-    In **Data Integrations**, enable the Triple Whale toggle.
-  </Step>
-  <Step title="Automatic script loading">
-    Jurni loads the Triple Whale script on all funnel pages automatically.
-  </Step>
-  <Step title="Use your existing setup">
-    No additional configuration is required inside Jurni. Triple Whale tracks funnel traffic and conversions using your existing Triple Whale account.
-  </Step>
-</Steps>
+Saving a GTM container ID loads GTM on supported Jurni-hosted pages. If you also want Jurni interactions such as completed add to cart or checkout actions to become GTM Custom Events, configure the Jurni-to-GTM event bridge described in the **Google Tag Manager** guide.
 
-## Custom Tracking Pixels
+## Custom providers
 
-If you need a tracking solution not listed above, contact the Jurni team. Share the provider name and your requirements, and the Jurni team will help deploy it across your funnel pages.
+If a provider is not available as a native Data Integration, use **Custom Scripts** when the vendor can safely run as a browser script. Custom Scripts support page targeting and a Tracking mode that keeps tracking scripts out of editor Preview.
 
-## Next Steps
+Do not place private/server-side credentials in Custom Scripts.
 
-Once your tracking pixels are configured, you can:
+## Related guides
 
-- Launch funnels with tracking enabled
-- Run experiments and measure performance
-- Optimize paid campaigns using tracked conversions
+- Google Analytics & Meta Pixel
+- Google Tag Manager
+- Custom Scripts
+- Consent & Tracking
+- Duplicate Tracking Events
+- Shopify Analytics
