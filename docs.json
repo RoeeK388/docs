@@ -122,7 +122,15 @@
           "troubleshooting/jurni-sales-channel"
         ]
       }
-    ]
+    ],
+    "global": {
+      "tabs": [
+        {
+          "tab": "Untitled Tab",
+          "href": ""
+        }
+      ]
+    }
   },
   "navbar": {
     "primary": {
