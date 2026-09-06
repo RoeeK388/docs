@@ -291,14 +291,16 @@
           {
             "group": "Lifecycle & Messaging",
             "pages": [
-              "integrations/klaviyo"
+              "integrations/klaviyo",
+              "integrations/postscript"
             ]
           },
           {
             "group": "Widgets, Reviews & Pop-ups",
             "pages": [
               "integrations/review-integrations",
-              "integrations/review-widgets"
+              "integrations/review-widgets",
+              "integrations/alia"
             ]
           },
           {

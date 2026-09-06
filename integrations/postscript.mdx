@@ -1,0 +1,58 @@
+---
+title: "Connect Postscript signup forms"
+sidebarTitle: "Postscript"
+description: "Connect a Postscript Shop ID, configure the inline form's shop and form identifiers, and test signup delivery separately from pop-up visibility."
+icon: "message-square"
+---
+
+Use Postscript with Jurni for supported SMS signup forms and pop-ups. The shop-level connection and each inline form have different configuration requirements.
+
+## Connect Postscript
+
+Open **Settings → Integrations → Reviews & Pop-ups**, enable **Postscript**, and enter its **Shop ID**. Select **Save Changes**. Use the Shop ID for the intended brand, not a private API key or a Jurni shop identifier.
+
+## Add an inline signup form
+
+<Steps>
+  <Step title="Add the Postscript section">
+    Open the page editor, select **Integrations**, and add the supported Postscript form section.
+  </Step>
+  <Step title="Complete its identifiers">
+    Select the form and configure its **Postscript Shop ID** and **Postscript Form ID**. Use the provider's identifier for the intended signup form or keyword configuration; do not invent one from the form's name.
+  </Step>
+  <Step title="Review the form content">
+    Review the phone-number placeholder, button label, submission message, and success/error text. Adjust the input and button styling through the controls available on the element.
+  </Step>
+  <Step title="Test a real signup">
+    Save and publish the page. Submit through the final live URL using a test number you control, then verify the subscription and intended follow-up in Postscript.
+  </Step>
+</Steps>
+
+The inline form requires **both** identifiers to render as a configured form. A placeholder means that this page-level setup is incomplete. The provider Form ID is separate from the shop-level connection in Jurni settings.
+
+<Note>
+  A success message displayed on the page is not sufficient proof that the expected subscriber or follow-up message was created in Postscript. Verify delivery in the provider before launching the campaign.
+</Note>
+
+## Pop-ups are a separate control
+
+For provider-managed pop-ups, use the experience's editor **Settings → pop-up controls** after Postscript is connected. Those switches control the supported pop-up integration path; they do not remove an inline form section or disable a separate script installed elsewhere.
+
+Review provider-side campaign rules and test the intended visitor conditions. Do not remove your approved signup disclosures when adapting the section's design.
+
+## When the form does not work
+
+**You see a placeholder:** verify the inline form's Shop ID and Form ID.
+
+**The signup reaches the wrong configuration:** check both IDs against the intended brand and form in Postscript.
+
+**It works on the subdomain but not the Shopify Page:** test the native `/pages/` destination separately and check the Shopify theme/app integration path.
+
+**The form submits but the expected follow-up does not arrive:** check the provider's subscriber record and follow-up configuration rather than changing Jurni's page styling.
+
+## Related guides
+
+- [On-page integrations](/build/editor-integrations)
+- [Pop-up controls](/build/page-popups)
+- [Credentials reference](/integrations/api-keys)
+- [Shopify Pages limitations](/shopify-pages/limitations)

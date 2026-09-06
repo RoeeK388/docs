@@ -1,0 +1,51 @@
+---
+title: "Connect Alia pop-ups"
+sidebarTitle: "Alia pop-ups"
+description: "Connect Alia using its HTTPS embed script URL, choose which experiences allow it, and check the actual publishing environment before launch."
+icon: "panel-top"
+---
+
+Connect Alia to load its pop-ups through Jurni's supported integration. Configure the provider once for the shop, then review whether it should be enabled on each experience.
+
+## Connect the provider
+
+<Steps>
+  <Step title="Get the embed script URL">
+    Find the embed code in Alia's CTA settings. Copy the full HTTPS address from the script's source—not the entire embed snippet.
+  </Step>
+  <Step title="Open Alia in Jurni">
+    Go to **Settings → Integrations → Reviews & Pop-ups** and enable **Alia**.
+  </Step>
+  <Step title="Save the URL">
+    Paste the address into **Embed script URL (https)** and select **Save Changes**. This field expects a URL, not an account ID or private API key.
+  </Step>
+  <Step title="Review the experience">
+    Open the page editor's Settings and pop-up controls. Choose whether Alia should be allowed for that experience and save your choice.
+  </Step>
+</Steps>
+
+## Verify the pop-up
+
+Test the intended live page with the provider's display rules in mind. Check the campaign status, audience, timing, consent, and whether your test visitor has already seen or submitted the pop-up. A saved integration does not mean every visitor must see a pop-up immediately.
+
+When there is no saved experience-specific pop-up selection, the editor uses the connected providers as its default. Review the affected experiences when connecting Alia to an existing shop.
+
+## Avoid duplicate installation
+
+Before adding Alia through Custom Scripts as well, check whether the native Jurni integration already loads it. A second loader can make testing confusing.
+
+For native Shopify Pages, inspect the Shopify theme/app configuration and test the actual `/pages/` URL. The Jurni experience switch is not a universal control for a script installed separately in Shopify or a tag manager.
+
+## Troubleshooting
+
+**The URL is rejected or nothing loads:** confirm that you copied the complete HTTPS script source rather than a full HTML tag.
+
+**The pop-up control is missing:** confirm Alia is enabled and its script URL is saved in the correct shop.
+
+**A pop-up remains after disabling Alia for the experience:** inspect other installation paths and the final page URL you are testing.
+
+## Related guides
+
+- [Experience pop-up controls](/build/page-popups)
+- [Custom Scripts](/integrations/custom-scripts)
+- [Integration troubleshooting](/integrations/troubleshooting)
