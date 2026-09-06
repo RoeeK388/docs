@@ -9,68 +9,44 @@ keywords:
   - "automatic discount"
 ---
 
-Jurni can present an offer and add the intended products to cart, but the discount itself must be enforced by Shopify or the discount system used by your store.
+A promotion has two parts: **what the shopper sees on the page** and **what the commerce system actually charges**. Both must agree before you send traffic.
 
-## Separate the page experience from discount enforcement
+## For Shopify stores
 
-A promotion has two layers:
+| Campaign promise | Configure in Jurni | Configure or verify in Shopify |
+| --- | --- | --- |
+| A percentage or amount off with a code | A [Discount Code offer](/commerce/discount-code-offers), plus accurate page copy. | The existing code and its eligibility and combination rules. |
+| A gift with purchase | The [gift products and qualifying conditions](/building-funnels/gift-with-purchase). | The gift's price or discount, product availability, and applicable restrictions. |
+| Free shipping | The [free-shipping qualification and message](/commerce/free-shipping-offers). | A matching free-shipping rate or shipping discount for the intended address and purchase. |
+| Sample selection | The [sample list, limit, and threshold](/commerce/samples-offers). | Actual sample prices and any discount promised. |
+| A bundle price | A working bundle selection and the correct products/quantities. | The pricing or discount implementation that produces that total. |
 
-1. **The Jurni experience** explains the offer and controls the shopper's product selection.
-2. **Shopify or your discount app** determines the final price in cart and checkout.
+The current offer picker has **Gift with Purchase, Free Shipping, Samples, and Discount Code**. Do not look for a separate, self-service tiered-pricing or arbitrary discount builder in Jurni.
 
-<Warning>
-Never publish savings messaging until you have confirmed the same promotion is applied in the actual cart and checkout.
-</Warning>
+## Choose the enforcement method
 
-## Common discount setups
+Your Shopify team may use a code-based discount, an automatic discount, product pricing, or an existing discount app. Use the method that supports the actual offer and purchase type. Confirm discount combinations in Shopify instead of assuming two offers will stack.
 
-Your store may use:
+The current **Create Shopify Discount** control shown in some Jurni offer forms is disabled. An offer message, compare-at price, or savings badge does not create a discount.
 
-- Shopify automatic discounts
-- Discount codes
-- Shopify Functions
-- Third-party discount applications
-- Product pricing or compare-at pricing
-- Dedicated promotional products or variants
+## Brief an AI edit correctly
 
-Jurni does not require every offer to use the same discount method. Use the approach that matches your Shopify architecture.
+> Update this Buy Box to explain the approved offer: [offer]. Keep the connected product, variants, quantities, subscription choices, and purchase action unchanged. Use the existing discount implementation; do not replace dynamic prices with a typed promotional price.
 
-## Automatic discounts
+Then test the result. AI can help present the offer, but the final cart and checkout determine whether it is working.
 
-Automatic discounts are useful when the shopper should receive an offer without entering a code. Make sure the qualifying products, quantities, and thresholds match the product configuration on the Jurni page.
+## Non-Shopify and headless purchases
 
-## Discount codes
+Agree the offer implementation with the Jurni team and your commerce developer. A landing page can link to your store's product page or a valid checkout link; a custom cart API integration can support a different purchase journey. Shopify-specific discount settings do not configure these providers.
 
-If your campaign relies on a code, decide whether the shopper must enter it or whether your commerce setup applies it automatically. Test the code with the exact product and variant combinations used on the page.
+See [Headless and non-Shopify purchase paths](/commerce/non-shopify-purchase-flows).
 
-## Threshold and quantity promotions
+## Launch check
 
-For offers such as "buy 3, save 20%" or "spend $100, get a free gift," test boundary cases:
-
-- One unit below the required quantity
-- Exactly at the required quantity
-- Above the required quantity
-- Just below and above spend thresholds
-- Combination with other discounts
-
-## Gift with purchase
-
-For a GWP offer, Jurni can add the gift product while Shopify controls how that product is discounted. See the dedicated Gift With Purchase guide for the full setup model.
-
-## QA checklist
-
-Before launch, verify:
-
-- The page displays the correct offer.
-- The qualifying products are correct.
-- The cart receives the expected line items.
-- The discount is applied at the expected point.
-- The shopper sees the same final price in checkout.
-- Discount stacking behaves as intended.
+Test one qualifying purchase and one that should not qualify. Check the actual item, quantity, selling plan, gift, discount, shipping, and final total. Repeat for the publishing method, market, and cart your campaign will use. Change the cart after qualifying so you also check whether eligibility is recalculated correctly.
 
 ## Related guides
 
-- Gift with purchase
-- Building bundles
-- Cart and checkout behavior
-- Buy Box overview
+- [Offers overview](/commerce/offers-overview)
+- [Buy Box purchase options](/building-funnels/product-purchase-options)
+- [Shopify Pages cart configuration](/shopify-pages/cart-config)

@@ -184,6 +184,7 @@
             "pages": [
               "commerce/cart-checkout-behavior",
               "commerce/cart-display-settings",
+              "commerce/non-shopify-purchase-flows",
               "commerce/shopify-markets-currency"
             ]
           }

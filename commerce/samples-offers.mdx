@@ -9,44 +9,46 @@ keywords:
   - "cart samples"
 ---
 
-A Samples offer lets shoppers choose from a configured list of sample products after their cart reaches a minimum order amount.
+A **Samples** offer lets shoppers choose from a list of sample products after their cart reaches a minimum amount. These instructions apply to the supported Jurni cart for **Shopify-connected experiences**.
 
-## Current configuration
+**Sample does not automatically mean free.** The selected products can have a price. If the campaign promises free samples, configure the corresponding product prices or discount in Shopify and test checkout.
 
-The current Samples offer supports:
+## Set up the offer
 
-- selecting one or more **sample products**
-- setting how many samples the shopper can choose
-- setting a **minimum order amount** required to unlock samples
+<Steps>
+  <Step title="Create a Samples offer">
+    Open **Offers**, create an offer, and select **Samples**. Add an internal name and the intended experience scope and timing.
+  </Step>
+  <Step title="Choose Sample products">
+    Select the real products customers should be able to choose. Make sure they are available in the connected catalog.
+  </Step>
+  <Step title="Set the selection limit">
+    In **How many samples can customers choose?**, enter the maximum number of samples a shopper can select.
+  </Step>
+  <Step title="Set the qualifying amount">
+    Enter **Minimum order amount to unlock samples**. Qualification uses the cart subtotal excluding sample items. Check the currency shown for the threshold.
+  </Step>
+  <Step title="Save and test">
+    Save the offer. Open an included published experience, qualify for samples, select them, and inspect the final products and prices in cart and checkout.
+  </Step>
+</Steps>
 
-The cart threshold is calculated against the order amount used for qualification, excluding the samples themselves.
+## Example
 
-## Sample product price
+To let shoppers choose up to two samples after spending \$60, select the available sample products, set the selection limit to **2**, and set the qualifying amount to **60** in the intended currency.
 
-The Samples editor allows you to select products regardless of their catalog price. Selecting a product as a sample does not by itself change the product's Shopify price.
+Check that a cart below the threshold does not unlock the offer, a qualifying cart does, and shoppers cannot select more than the intended limit. Sample items should not themselves make the qualifying subtotal reach \$60.
 
-Make sure your Shopify/commerce configuration produces the intended final price for the selected sample products.
+## Samples or Gift with Purchase?
 
-## Shopper flow
+Use **Samples** for an optional choice from a sample list with a selection limit. Use [Gift with Purchase](/building-funnels/gift-with-purchase) for a specified gift, a choice of gifts, or automatic gifts tied to the supported qualifying conditions.
 
-Once the cart reaches the configured minimum amount, the shopper can select up to the maximum number of samples configured for the offer.
+## Other carts and publishing methods
 
-If the cart falls back below the eligibility threshold, test how your specific cart/promotion configuration handles already-selected samples before launch.
-
-## QA checklist
-
-Verify:
-
-1. the sample selector is hidden before qualification
-2. it appears at the configured order threshold
-3. the correct products are available
-4. the shopper cannot select more than the configured maximum
-5. selected samples reach the cart correctly
-6. sample pricing is correct in Shopify checkout
-7. dropping below the threshold does not leave an invalid cart state
+A sample selector in Jurni's cart does not automatically appear in a Shopify theme cart or Rebuy. Confirm that flow before switching a campaign to Shopify Pages. For headless or non-Shopify stores, contact the Jurni team about the purchase implementation.
 
 ## Related guides
 
-- [Offers Overview](/commerce/offers-overview)
-- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)
-- [Products & Variants](/building-funnels/products-and-variants)
+- [Offers overview](/commerce/offers-overview)
+- [Discounts and promotions](/commerce/discounts-promotions)
+- [Cart and checkout behavior](/commerce/cart-checkout-behavior)

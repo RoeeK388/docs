@@ -8,59 +8,59 @@ keywords:
   - "auto apply discount"
 ---
 
-A Discount Code offer connects an existing Shopify discount code to Jurni funnels so the code can be auto-applied in the Jurni commerce flow.
+A **Discount Code** offer uses a code that already exists in your connected **Shopify store**. Jurni validates the code and uses it in the supported purchase flow. Create the discount itself in Shopify, not by typing a percentage into an AI prompt or a page heading.
 
-## Start with an existing Shopify code
+## Get the code from Shopify
 
-The current offer editor asks for a **Shopify Discount Code** and validates it against Shopify.
+Open **Shopify admin → Discounts**, open the intended code-based discount, and copy the code exactly. Confirm its dates, qualifying products, minimum purchase, customer eligibility, purchase types, usage limits, and whether it can combine with other discounts.
 
-Jurni does not use this flow to invent a separate discount rule that only exists on the page. The code must be valid in Shopify.
+An automatic discount with no code is not a value to paste into **Shopify Discount Code**. See [Shopify's discount-code guide](https://help.shopify.com/en/manual/discounts/discount-types).
 
-## Show the promotion in the storefront
+## Configure the offer in Jurni
 
-After Jurni validates the code, you can enable **Show discount in storefronts**.
+<Steps>
+  <Step title="Create a Discount Code offer">
+    Open **Offers**, create an offer, and select **Discount Code**. Give the offer an internal name.
+  </Step>
+  <Step title="Enter Shopify Discount Code">
+    Paste the existing code and wait for validation. A recognized code displays its title. Resolve an invalid-code message before continuing.
+  </Step>
+  <Step title="Choose promotional display">
+    **Show discount in storefronts** controls whether supported product and collection components show the promotion before the cart. When enabled, set **Display Text**, **Apply to**, and optionally **Show calculated price**.
+  </Step>
+  <Step title="Set scope and timing">
+    Choose the intended experiences or **Global** for this Jurni shop. Add optional start/end timing and save the offer.
+  </Step>
+  <Step title="Test the final amount">
+    Start on an included published experience and continue to checkout. Confirm the code is applied and the actual discount matches the message.
+  </Step>
+</Steps>
 
-When enabled, Jurni can show promotion messaging on product/collection experiences. You can configure:
+## Understand the display controls
 
-- **Display Text** — the shopper-facing offer message
-- **Apply to** — Both, One-time purchase only, or Subscription only
-- **Show calculated price** — display the calculated discounted price in the storefront instead of only showing the original price
-
-When **Show discount in storefronts** is disabled, the code can still be applied in the cart without displaying the promotion ahead of time.
-
-## Shopify remains the discount authority
-
-The Shopify discount code determines the actual discount rules, including eligibility, usage limits, products, markets, customer restrictions, and whether it can combine with other discounts.
+| Control | What it does |
+| --- | --- |
+| **Show discount in storefronts** | Allows supported components to show the discount message before cart. Turning it off is not the same as disabling the offer's code. |
+| **Display Text** | The promotional text, such as “Save 15% with code WELCOME.” |
+| **Apply to** | Chooses **Both**, **One-time purchase only**, or **Subscription only** for the promotional message and calculated-price display. |
+| **Show calculated price** | Displays a calculated promotional price in components that support it. |
 
 <Warning>
-Jurni displaying or applying a Shopify code does not override Shopify's discount configuration. Always validate the real checkout result with the same customer/product conditions used in production.
+The **Apply to** display control does not rewrite the discount's purchase-type eligibility in Shopify. The final code acceptance and amount still follow Shopify's rules. Custom Buy Boxes also need their displayed prices checked rather than assuming every design consumes these display settings.
 </Warning>
 
-## One-time vs. subscription messaging
+## Common problems
 
-The **Apply to** setting controls which purchase options receive the Jurni promo message/calculated-price presentation:
+**The code is invalid:** check the connected shop and exact code, and confirm it is a code-based discount in that Shopify store.
 
-- **Both**
-- **One-time purchase only**
-- **Subscription only**
+**The code is recognized but not applied to this cart:** check product, customer, date, minimum-purchase, subscription, usage-limit, and combination restrictions in Shopify.
 
-This should match the actual Shopify discount eligibility. If Jurni displays a subscription discount that Shopify does not accept for that selling plan, the shopper can see a mismatch between page and checkout.
+**The page price differs from checkout:** review both the component's displayed price and the actual Shopify discount. Do not fix the difference by changing the displayed number alone.
 
-## QA checklist
-
-Test:
-
-1. a valid eligible cart
-2. a cart that should not qualify
-3. one-time purchase behavior
-4. subscription behavior when relevant
-5. Shopify usage restrictions
-6. discount stacking/combinations
-7. final checkout price
+For native Shopify Pages, external carts, or direct-checkout custom flows, test the exact destination. Do not assume this offer installs itself into every cart implementation.
 
 ## Related guides
 
-- [Offers Overview](/commerce/offers-overview)
-- [How Shopify Discounts Work with Jurni](/commerce/discounts-promotions)
-- [Subscriptions & Selling Plans](/building-funnels/subscriptions-selling-plans)
-- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)
+- [Offers overview](/commerce/offers-overview)
+- [Discounts and promotions](/commerce/discounts-promotions)
+- [Purchase options](/building-funnels/product-purchase-options)
