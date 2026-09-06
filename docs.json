@@ -29,15 +29,27 @@
             "group": "Start Here",
             "pages": [
               "getting-started/welcome",
+              "getting-started/choose-your-setup",
               "getting-started/step-by-step-setup"
             ]
           },
           {
-            "group": "Account & Store Setup",
+            "group": "Workspace Setup",
             "pages": [
               "getting-started/create-account",
-              "getting-started/setup-account",
-              "getting-started/activating-jurni-core",
+              "getting-started/setup-account"
+            ]
+          },
+          {
+            "group": "Shopify Setup",
+            "pages": [
+              "getting-started/shopify-setup-overview",
+              "getting-started/activating-jurni-core"
+            ]
+          },
+          {
+            "group": "Headless & Non-Shopify Setup",
+            "pages": [
               "getting-started/shopify-headless",
               "getting-started/setup-non-shopify"
             ]

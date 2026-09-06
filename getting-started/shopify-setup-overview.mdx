@@ -1,0 +1,93 @@
+---
+title: "Shopify Setup Overview"
+sidebarTitle: "Shopify Setup Overview"
+description: "Set up Jurni for a Shopify Online Store, activate Jurni Core, and understand the publishing options available before launching pages or experiments."
+keywords:
+  - "Jurni Shopify setup"
+  - "Jurni Core"
+  - "Shopify app proxy"
+  - "Shopify Pages"
+---
+
+Use this setup path when your shopper-facing site runs on the **Shopify Online Store**.
+
+The Shopify setup has three separate parts that are easy to confuse:
+
+1. **Jurni Core** — connects the Shopify storefront to Jurni tracking and attribution.
+2. **Page publishing** — determines where the Jurni page itself lives.
+3. **Third-party integrations** — determines which pixels, analytics tools, review widgets, or scripts run on the page.
+
+Complete each part independently.
+
+## 1. Activate Jurni Core
+
+Jurni Core is the Shopify storefront integration used to maintain Jurni session/visit context and connect Shopify cart, checkout, and order signals back to Jurni.
+
+Enable Jurni Core in the active Shopify theme before relying on Jurni analytics, experiment reporting, or purchase attribution.
+
+See [Activate Jurni Core](/getting-started/activating-jurni-core).
+
+## 2. Choose how Jurni pages will be published
+
+A Shopify Online Store brand can use more than one publishing method.
+
+### Default Shopify app proxy
+
+Without a custom Jurni subdomain, Jurni-generated page/Smart Link URLs use the Shopify app proxy pattern:
+
+`https://yourdomain.com/apps/jurni/<handle>`
+
+This keeps the URL on the Shopify root domain while Jurni serves the page through the app proxy.
+
+### Custom Jurni subdomain
+
+You can connect a branded subdomain such as `go.brand.com` or `try.brand.com`. Jurni pages and Smart Links can then use that branded domain.
+
+There is no Jurni limit on the number of pages you can create on the connected subdomain.
+
+### Native Shopify Pages
+
+Shopify brands can also publish a Jurni page into a Shopify page template. The resulting URL uses Shopify's normal page structure:
+
+`https://yourdomain.com/pages/<handle>`
+
+Shopify Pages use a theme template containing the Jurni app block. They are useful when the page needs to live inside the store's native theme/script environment, but they have different compatibility and cart behavior from a Jurni-hosted page.
+
+See [Publishing Jurni Pages](/publishing/overview) before choosing the method.
+
+## 3. Configure data and page integrations
+
+Configure analytics/pixels in **Settings → Integrations** and custom browser scripts in **Settings → Custom Scripts**.
+
+<Warning>
+A script or widget that works on a Jurni-hosted page does not automatically behave the same way on a native Shopify Page. Shopify Pages inherit the Shopify theme environment, while Jurni Custom Scripts are scoped to Jurni-hosted experiences. Test the actual publishing method you will use.
+</Warning>
+
+## Recommended launch order
+
+<Steps>
+  <Step title="Activate Jurni Core">
+    Confirm the Jurni app embed is active in the Shopify theme.
+  </Step>
+  <Step title="Create and QA the experience">
+    Build the page, connect the real product/Buy Box, and test the purchase flow.
+  </Step>
+  <Step title="Choose the publishing method">
+    Use the app proxy/custom Jurni subdomain for Jurni-hosted pages, or configure Shopify Pages when you specifically want a native `/pages/` URL and theme environment.
+  </Step>
+  <Step title="Configure integrations">
+    Add the tracking and widget integrations required by the campaign.
+  </Step>
+  <Step title="Test the live URL">
+    Validate cart/checkout, attribution, pixels, widgets, and campaign parameters on the exact URL that will receive traffic.
+  </Step>
+</Steps>
+
+## Related guides
+
+- [Choose Your Setup](/getting-started/choose-your-setup)
+- [Activate Jurni Core](/getting-started/activating-jurni-core)
+- [Publishing Jurni Pages](/publishing/overview)
+- [Custom Subdomain](/getting-started/custom-subdomain)
+- [Shopify Pages Setup](/shopify-pages/setup-publish)
+- [Integrations Overview](/integrations/overview)
