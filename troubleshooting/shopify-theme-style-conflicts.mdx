@@ -1,0 +1,66 @@
+---
+title: "Jurni Shopify Page Changes Theme Fonts or Styles"
+sidebarTitle: "Theme Style Conflicts"
+description: "Troubleshoot Shopify Pages where Jurni fonts or CSS unexpectedly affect the theme header, footer, cart, or navigation."
+keywords:
+  - "Jurni font Shopify theme"
+  - "CSS conflict Shopify Pages"
+  - "bold header Jurni"
+  - "theme style override"
+---
+
+A Jurni experience published as a Shopify Page shares the browser page with the Shopify theme. If a font name or CSS rule is too broad, it can sometimes affect theme elements outside the Jurni app block, such as the header, footer, navigation, or cart.
+
+## Common symptom
+
+The Jurni experience itself looks correct, but unrelated Shopify UI suddenly changes—for example:
+
+- Header or footer text becomes bold
+- Navigation typography changes
+- Cart text uses the wrong font
+- A theme element inherits page-specific spacing or styling
+
+## First confirm the issue is page-specific
+
+Compare:
+
+1. A normal Shopify page using the theme.
+2. The Jurni Shopify Page.
+3. Another Jurni Shopify Page if available.
+
+If the theme only changes on one Jurni page, inspect that page's styles and fonts before changing global theme settings.
+
+## Font-name collisions
+
+A custom font loaded by a Jurni experience should use a distinct font-family name. If it reuses or overrides a generic/theme font name, the Shopify theme can resolve its own elements to the Jurni font file or weight.
+
+If a page causes theme typography to change unexpectedly, review recently added custom fonts first.
+
+## CSS scope
+
+Custom CSS or third-party code should be scoped to the Jurni experience instead of targeting broad selectors such as:
+
+- `body`
+- `p`
+- `a`
+- `button`
+- global theme class names
+
+<Warning>
+Avoid page-specific CSS that globally restyles standard HTML elements when the page is embedded inside the Shopify theme.
+</Warning>
+
+## Debugging steps
+
+- Disable or remove recently added custom fonts one at a time.
+- Check Custom Scripts or injected style tags.
+- Inspect which CSS rule is winning on the affected Shopify element.
+- Compare the `font-family`, `font-weight`, and selector source between a normal theme page and the Jurni page.
+- Confirm the Shopify page template itself is not using a different theme configuration.
+
+## Related guides
+
+- Shopify Page Templates
+- Shopify Page Layout
+- Custom Scripts
+- Brand Settings

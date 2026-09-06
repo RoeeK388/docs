@@ -4,8 +4,83 @@ sidebarTitle: "Connect Slack"
 description: "Set up the Jurni Slack integration to receive notifications and updates directly in your workspace. Follow the steps to authorize and configure the connection."
 ---
 
-Connecting Jurni to Slack keeps your team informed with real-time notifications and updates. This guide walks you through authorizing Slack and configuring the integration so messages flow into the right channels.
+Connect Jurni to Slack to receive scheduled performance reports and give approved Slack workspaces access to the Jurni shops you manage.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/1186156079-connect-jurni-to-slack) for full content.
-</Note>
+## Before you connect
+
+You need:
+
+- **Owner or admin access in Jurni**
+- Permission to install apps in the Slack workspace
+
+<Info>
+  Connecting the Slack workspace and configuring performance notifications are separate steps. First install Jurni in Slack, then choose the notification channel and schedules in Jurni settings.
+</Info>
+
+## Install Jurni in Slack
+
+<Steps>
+  <Step title="Open the Slack integration">
+    In Jurni, go to **Settings → Integrations** and start the Slack connection flow.
+  </Step>
+  <Step title="Continue to Slack">
+    Jurni opens Slack's authorization flow so you can choose the workspace where the app should be installed.
+  </Step>
+  <Step title="Approve the installation">
+    Review the requested Slack permissions and approve the Jurni app for the selected workspace.
+  </Step>
+  <Step title="Choose which Jurni shops the workspace may access">
+    During setup, select the Jurni shops that should be available to that Slack workspace.
+  </Step>
+  <Step title="Return to Jurni">
+    After installation is complete, the workspace becomes available in the Slack notification settings.
+  </Step>
+</Steps>
+
+## Multiple Slack workspaces
+
+Jurni can manage more than one connected Slack workspace. Notification settings are configured per workspace, so different workspaces can use different channels or subscriptions.
+
+## User access
+
+The workspace installation makes the Jurni Slack app available to the Slack workspace, but individual people connect their own Jurni account when required. Installing the app does not automatically give every Slack user access to every Jurni shop.
+
+## What to configure next
+
+After connecting Slack, go to **Settings → Notifications** to:
+
+- Enable Slack notifications
+- Choose a destination channel for each workspace
+- Turn Daily and Weekly reports on or off
+- Configure report schedules
+- Send a test message
+
+## Slack Connect channels
+
+Jurni can detect external Slack Connect channels. Because people outside your Slack workspace may be able to see messages in those channels, Jurni requires an explicit acknowledgement before sending shop metrics there.
+
+<Warning>
+  Only send performance reports to an external Slack Connect channel when everyone who can access that channel is allowed to see the shop's metrics.
+</Warning>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I cannot install the Slack app">
+    Confirm you have owner or admin access in Jurni and permission to install apps in the Slack workspace. Your Slack administrator may need to approve the installation.
+  </Accordion>
+
+  <Accordion title="The workspace is connected but I cannot choose a notification channel">
+    Open **Settings → Notifications**, make sure Slack notifications are enabled, and expand the correct connected workspace. Jurni loads the available channels from that workspace.
+  </Accordion>
+
+  <Accordion title="I connected the wrong Slack workspace">
+    Review the workspace connection in Jurni's Integrations area and connect the intended workspace before configuring its notifications.
+  </Accordion>
+</AccordionGroup>
+
+## Related guides
+
+- Set Up Slack Performance Reports
+- Integrations Overview
+- Analytics Overview

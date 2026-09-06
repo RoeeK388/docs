@@ -4,8 +4,162 @@ sidebarTitle: "QA Checklist"
 description: "Run a quality check before launching your Jurni funnel. Review key items to verify functionality, content accuracy, and customer experience."
 ---
 
-Before you publish a Jurni funnel, it is important to verify that everything works as intended. This page provides a checklist of items to review so you can catch issues early and deliver a polished agentic shopping journey.
+Run this checklist before sending meaningful traffic to a new or materially changed Jurni experience. The goal is to verify the **visual page, commerce behavior, publishing destination, and tracking** as one complete shopper journey.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/2301515476-qa-checklist-for-agentic-shopping-journeys) for full content.
-</Note>
+## 1. Content and design
+
+Check both desktop and mobile:
+
+- Headline and body copy are final
+- No placeholder text remains
+- Images and videos are correct
+- Image crops work on mobile
+- Font weights and sizes match the design
+- Spacing is consistent
+- Announcement bar and navigation behave correctly
+- Sticky elements do not cover important content
+- Links are visually identifiable where required
+
+## 2. Products and Buy Boxes
+
+For every commerce section:
+
+- Correct Shopify product is connected
+- Default variant is correct
+- All intended variants are available
+- Product prices are correct
+- Compare-at/savings messaging is accurate
+- Quantity behavior is correct
+- Out-of-stock or unavailable states are reasonable
+
+## 3. One-time and subscription
+
+If the page offers subscriptions:
+
+- One-time purchase adds without a selling plan
+- Subscription adds the correct selling plan
+- Delivery frequency labels are correct
+- Subscription pricing matches Shopify
+- Default purchase option is intentional
+- Switching between purchase types updates the price correctly
+
+## 4. Bundles and gifts
+
+For bundle or GWP offers:
+
+- Minimum/maximum bundle rules work
+- All selected bundle items reach cart
+- Quantities match the shopper selection
+- Gift product is the correct variant
+- Gift is only added when the shopper qualifies
+- Shopify applies the expected discount to the gift or bundle
+
+<Warning>
+  The landing page showing a discount is not enough. Confirm the final cart and checkout price.
+</Warning>
+
+## 5. Cart and checkout
+
+Test the actual shopper path:
+
+1. Add the default offer to cart.
+2. Add at least one alternate variant or purchase option.
+3. Open the cart.
+4. Confirm product, variant, selling plan, quantity, and price.
+5. Continue to checkout.
+6. Verify discount behavior.
+7. Confirm the checkout destination and store are correct.
+
+For Shopify Pages, also verify the theme's cart integration or Cart Config.
+
+## 6. Links and CTAs
+
+Click every important interactive element:
+
+- Add to cart
+- Checkout
+- Internal section anchors
+- External links
+- Retailer / Amazon links
+- Quiz or next-step buttons
+- Navigation items
+- Footer links
+
+Make sure the CTA label matches what the action actually does.
+
+## 7. Publishing
+
+Confirm:
+
+- Correct publishing method is selected
+- Custom subdomain is verified when used
+- Shopify Page uses the intended page template
+- Page handle / route is correct
+- Live URL loads without authentication
+- No old campaign URL points somewhere unexpected
+- Smart Link resolves to the intended destination
+
+## 8. Tracking and attribution
+
+Verify the production page—not only the editor preview:
+
+- Jurni PageView / visit is recorded
+- AddToCart occurs after a successful cart action
+- Checkout is recorded on the intended transition
+- Meta / GA4 / GTM load once
+- No duplicate pixels are present
+- UTMs and click IDs remain available through the expected flow
+- Consent accepted/declined states behave correctly
+
+## 9. Experiments
+
+Before launching an experiment:
+
+- Every variant is published and reachable
+- Traffic weights are correct
+- The campaign uses the experiment Smart Link
+- No ad is still pointing directly to a variant unless intentional
+- Primary success metric is clear
+- Internal QA traffic is complete before launch
+
+## 10. Shopify Pages only
+
+Check the Shopify theme shell:
+
+- Jurni Funnel Page app block is present
+- Page width is correct
+- No unwanted Shopify sections appear
+- Header/footer configuration is intentional
+- Theme fonts/styles are not being overridden by page CSS
+- The cart works with the store's cart provider
+
+## 11. Mobile device check
+
+Do one final test on a real phone when possible. Pay attention to:
+
+- Sticky CTA behavior
+- Variant selectors
+- Carousels
+- Video playback
+- Modals
+- Cart drawer
+- Keyboard/input behavior
+- Tap targets
+- Long offer or subscription labels
+
+## Launch sign-off
+
+A page is ready for traffic when you can complete the intended shopper journey from landing URL to checkout without relying on editor assumptions.
+
+<Tip>
+  For a high-spend campaign, record the final live URL, test order, device, and time of QA. That makes tracking or attribution issues much easier to debug after launch.
+</Tip>
+
+## Related guides
+
+- Publishing Overview
+- Buy Boxes in Jurni
+- Cart and Checkout Behavior
+- Google Analytics & Meta Pixel Setup
+- Smart Links
+- How Experiment Traffic Is Assigned

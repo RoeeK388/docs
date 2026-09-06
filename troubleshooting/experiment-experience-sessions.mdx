@@ -1,0 +1,63 @@
+---
+title: "Experiment and Experience Session Counts Do Not Match"
+sidebarTitle: "Experiment vs Experience Sessions"
+description: "Understand why an experiment variant and its underlying experience can show different session counts, and how to diagnose the difference."
+keywords:
+  - "experiment sessions"
+  - "experience sessions"
+  - "Jurni session discrepancy"
+  - "wrong campaign link"
+---
+
+An experience used inside an experiment can show a different session total from the experiment variant. Before treating that as a tracking issue, compare the reporting scope and confirm **all traffic entered through the experiment**.
+
+## The most common causes
+
+### Different date ranges
+
+The experience view and the experiment view may not be using the same reporting period. One surface can show a broader or all-time total while the experiment is filtered to a specific date range.
+
+Always align the date range before comparing the counts.
+
+### Traffic reached the experience directly
+
+If someone uses the direct experience URL instead of the experiment's Smart Link, those sessions can appear on the experience without belonging to the experiment variant.
+
+This commonly happens when:
+
+- An ad agency uses the direct landing-page URL
+- A preview or QA link is shared broadly
+- An old campaign still points directly to the experience
+- The experience was live before it was added to the experiment
+
+### Internal QA traffic
+
+Manual testing can also create small differences, especially immediately after launch.
+
+## How to diagnose the difference
+
+<Steps>
+  <Step title="Align the reporting period">
+    Set the same start and end dates on the experience and experiment views.
+  </Step>
+  <Step title="Check the campaign destination">
+    Confirm every live ad or campaign uses the intended experiment Smart Link rather than the direct experience URL.
+  </Step>
+  <Step title="Compare the size of the difference">
+    A one- or two-session difference may be QA traffic. A large or growing difference usually points to another traffic source.
+  </Step>
+  <Step title="Check older links">
+    Review active ads, emails, creator links, and redirects that may still reference the underlying experience directly.
+  </Step>
+</Steps>
+
+<Info>
+If the experience is only intended to receive experiment traffic, the direct page URL should not be used as a live campaign destination.
+</Info>
+
+## Related guides
+
+- How Experiment Traffic Is Assigned
+- Smart Links
+- Analytics Overview
+- Filtering Data on Experiences

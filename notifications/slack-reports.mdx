@@ -4,8 +4,102 @@ sidebarTitle: "Slack Reports"
 description: "Configure Slack performance reports in Jurni to receive automated updates. Stay informed about experiment results and funnel metrics directly in Slack."
 ---
 
-Jurni lets you send performance reports directly to Slack so your team stays informed without logging in. This page covers how to set up Slack notifications and choose which metrics and updates to receive.
+Jurni can send scheduled performance reports to Slack so your team can monitor shop performance without opening the Jurni dashboard every day.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/8848933713-set-up-slack-performance-reports) for full content.
-</Note>
+## Available reports
+
+Jurni currently supports two scheduled Slack report types:
+
+| Report | Schedule |
+| --- | --- |
+| **Daily report** | Sent every day at the configured time and timezone |
+| **Weekly report** | Sent on the configured weekday, time, and timezone |
+
+Daily reports compare performance with the **previous day**. Weekly reports compare performance with the **week before**.
+
+## What the report includes
+
+Slack reports include the shop's overall performance for the reporting period:
+
+- Revenue
+- Orders
+- Sessions
+- Conversion rate (CVR)
+- Average order value (AOV)
+
+Each metric also shows its change versus the comparison period when a meaningful comparison is available.
+
+Reports can also include rankings for:
+
+- **Top funnels by revenue**
+- **Top experiment / experiments**
+
+Ranked items show revenue, sessions, orders, and CVR.
+
+## Configure Slack reports
+
+<Steps>
+  <Step title="Connect Slack first">
+    Go to **Settings → Integrations** and connect the Slack workspace if it is not already installed.
+  </Step>
+  <Step title="Open Notifications">
+    Go to **Settings → Notifications** and find the Slack section.
+  </Step>
+  <Step title="Enable Slack notifications">
+    Turn on the Slack notification provider.
+  </Step>
+  <Step title="Choose a workspace and channel">
+    Expand the connected Slack workspace and select the channel that should receive reports.
+  </Step>
+  <Step title="Choose report types">
+    Turn **Daily report** and/or **Weekly report** on for that workspace.
+  </Step>
+  <Step title="Configure the schedule">
+    Set the send time and timezone. For weekly reports, also choose the weekday.
+  </Step>
+  <Step title="Save and test">
+    Save the settings, then use **Send test message** to confirm Jurni can post to the selected channel.
+  </Step>
+</Steps>
+
+## Multiple workspaces
+
+Each connected Slack workspace has its own destination channel and report subscriptions. This lets you send the same shop's reports to different Slack workspaces when your access setup allows it.
+
+The report schedule itself is shared for every provider subscribed to that notification type. For example, if the Daily report is configured for a particular send time, providers subscribed to that Daily report use that schedule.
+
+## Slack Connect / external channels
+
+If the selected destination is a Slack Connect channel, Jurni labels it as external and requires you to acknowledge that people outside the Slack workspace may see the shop's metrics.
+
+Jurni will not let you save that external destination until the acknowledgement is checked.
+
+## Channel access
+
+If Jurni is not yet a member of the selected channel, Jurni can join the channel when the settings are saved or when you send a test message, where Slack permissions allow it.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="No Slack workspaces appear">
+    Connect a Slack workspace from **Settings → Integrations** first.
+  </Accordion>
+
+  <Accordion title="The report is enabled but cannot be saved">
+    Make sure an available channel is selected. If it is an external Slack Connect channel, complete the external-channel acknowledgement.
+  </Accordion>
+
+  <Accordion title="The channel is shown as unavailable">
+    The previously saved Slack channel may have been removed or Jurni may no longer be able to access it. Select a current channel and save again.
+  </Accordion>
+
+  <Accordion title="I want to verify the setup before waiting for the schedule">
+    Use **Send test message** in the workspace's notification settings.
+  </Accordion>
+</AccordionGroup>
+
+## Related guides
+
+- Connect Jurni to Slack
+- Analytics Overview
+- Metrics Glossary

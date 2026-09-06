@@ -4,8 +4,94 @@ sidebarTitle: "Review Integrations"
 description: "Explore Jurni's review platform integrations and learn how to connect services that collect and display customer feedback across your pages and widgets."
 ---
 
-Jurni integrates with popular review platforms to help you collect and showcase customer feedback. This page covers the available review integrations, how to connect them, and where the collected reviews appear across your site.
+Jurni can connect to supported review platforms so product ratings and customer reviews can be used inside Jurni experiences without manually copying review content into every page.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/1400630113-review-integrations) for full content.
-</Note>
+## Supported review platforms
+
+Current review integrations include:
+
+- Junip
+- Stamped
+- Trustpilot
+- Okendo
+- Yotpo
+- Judge.me
+- Bazaarvoice
+- REVIEWS.io
+
+Each provider requires its own store/account identifier or public credential.
+
+## Credentials by provider
+
+| Provider | Jurni setting |
+| --- | --- |
+| Junip | Store Key |
+| Stamped | Store Hash + API Public Key |
+| Trustpilot | Business Unit ID |
+| Okendo | Subscriber ID / User ID |
+| Yotpo | App Key |
+| Judge.me | Public API Token |
+| Bazaarvoice | Client Name |
+| REVIEWS.io | Store ID / URL key |
+
+<Info>
+  Use public/storefront credentials intended for browser-side review rendering. Do not paste private admin API secrets into a field that asks for a public token or store identifier.
+</Info>
+
+## Connect a review provider
+
+<Steps>
+  <Step title="Open Integrations">
+    In Jurni, go to **Settings → Integrations** and find the loyalty/reviews integrations.
+  </Step>
+  <Step title="Choose the provider">
+    Open the review platform your shop already uses.
+  </Step>
+  <Step title="Enter the required identifier">
+    Add the provider-specific Store Key, App Key, Subscriber ID, token, or other required value.
+  </Step>
+  <Step title="Enable and save">
+    Enable the integration and save the settings.
+  </Step>
+  <Step title="Add a review widget to a page">
+    Open the Jurni editor and configure a supported review section or widget to use the reviews you want to display.
+  </Step>
+</Steps>
+
+## Provider notes
+
+### Judge.me
+
+Use the **Public API Token** from Judge.me. Jurni's current integration also expects platform-independent widgets to be enabled in Judge.me where required by your account configuration.
+
+### Yotpo
+
+Use the Yotpo **App Key** associated with the correct store/account. If your brand operates multiple Yotpo instances for different markets, verify you are using the key for the shop you are configuring.
+
+### Okendo
+
+Use the Okendo **Subscriber ID / User ID** for the connected review account.
+
+## Connecting the provider does not automatically add reviews to every page
+
+The integration makes the review data available to Jurni. You still control where reviews are displayed by adding/configuring review widgets in the editor.
+
+## Multi-market shops
+
+US, UK, EU, or other shops can use different review accounts or identifiers. Do not copy a review integration credential between shops unless both stores intentionally use the same review dataset.
+
+## Troubleshooting
+
+If a widget is empty after connecting the provider:
+
+1. Confirm the integration is enabled.
+2. Re-check the provider credential.
+3. Verify the review widget's mode and product/group selection.
+4. Confirm the product has reviews in the source platform.
+5. Make sure the product identifier in Jurni maps to the expected product in the review provider.
+
+## Related guides
+
+- Configuring Review Widgets in the Editor
+- Products and Variants
+- Integration Troubleshooting

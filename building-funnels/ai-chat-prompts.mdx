@@ -4,8 +4,136 @@ sidebarTitle: "AI Chat Prompts"
 description: "Improve your results from Jurni's AI chat by writing clear, specific prompts. Learn techniques that help the assistant understand your requests."
 ---
 
-Jurni's AI chat can speed up your workflow when you know how to communicate with it effectively. This page shares practical tips for writing prompts that produce accurate, useful responses from the AI assistant.
+Jurni's AI chat works best when the prompt describes the **outcome, source material, constraints, and scope of the change**. You do not need to write a long prompt, but you should be specific about what Jurni is allowed to change.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/8198976632-how-to-write-prompts-that-get-better-results-from-jurni-s-ai-chat) for full content.
-</Note>
+## A strong prompt has four parts
+
+A useful pattern is:
+
+1. **Goal** — what you want to build or change
+2. **Source** — the page, Figma frame, ad, product, or section it should use
+3. **Constraints** — what must stay the same
+4. **Acceptance criteria** — how you will know the result is correct
+
+For example:
+
+> Build this Figma landing page in Jurni. Use the desktop and mobile frames as responsive versions of the same page. Keep the existing Shopify product purchase flow, match the design closely, and do not invent new claims or testimonials.
+
+## Be explicit about scope
+
+If you only want one section changed, say so.
+
+Better:
+
+> Only update the hero section. Keep every section below the hero unchanged.
+
+Less clear:
+
+> Make the page better.
+
+Broad prompts can lead to broader changes than you intended.
+
+## Reference the exact source
+
+When Jurni should match an existing asset, include it directly:
+
+- Figma frame link
+- Existing Jurni experience
+- Screenshot or source page
+- Product
+- Ad creative
+- Copy document
+
+If you provide both desktop and mobile Figma frames, label them so Jurni knows they are two breakpoints of the same page.
+
+## Tell Jurni what not to change
+
+Constraints are especially important on live or nearly finished pages.
+
+Examples:
+
+- Keep the Buy Box logic unchanged.
+- Do not change the product or variant mapping.
+- Keep all tracking attributes and CTA behavior.
+- Keep desktop as-is and fix only mobile.
+- Do not rewrite the copy.
+- Do not add new sections.
+
+## Separate design from commerce logic
+
+A visual prompt can describe how the section should look, but commerce behavior should be stated explicitly when it matters.
+
+For example:
+
+> Match this design, but keep the current one-time/subscription selector and existing Shopify selling-plan logic.
+
+This is safer than assuming the AI can infer business logic from a screenshot.
+
+## Use real product language
+
+When asking Jurni to build a product experience, use the exact product, variant, pack size, and offer names where possible.
+
+Avoid vague prompts like:
+
+> Add the bigger pack.
+
+Prefer:
+
+> Make the 3-month Day & Night bundle the default selection and keep the 1-month bundle available as the secondary option.
+
+## Iterate in smaller changes
+
+Once the page is close, switch from broad creation prompts to small targeted edits.
+
+A good iteration sequence:
+
+1. Build the page structure.
+2. Fix visual differences.
+3. Configure products and purchase logic.
+4. Fix mobile behavior.
+5. QA links, cart, and tracking.
+
+Trying to solve all five with one late-stage prompt can make a nearly finished page less predictable.
+
+## Prompt patterns
+
+### Replicate a page
+
+> Replicate this source page in Jurni. Match the section order, layout, spacing, typography, and imagery. Keep the build responsive and use the connected Jurni product for commerce actions.
+
+### Match an ad angle
+
+> Create a landing page for this Meta ad. Keep the same core promise and audience angle from the ad, then structure the page around the product benefits and proof already available in AI Knowledge. Do not add unsupported claims.
+
+### Fix mobile only
+
+> Keep desktop unchanged. On mobile, reduce the hero height, keep the product image fully visible, stack the Buy Box options vertically, and make the primary CTA full width.
+
+### Edit an existing section
+
+> Only update this testimonial section. Change it from a 3-column grid to a swipeable mobile carousel, keep the existing testimonials and copy, and do not modify sections above or below it.
+
+### Preserve Buy Box logic
+
+> Update the visual design of this Buy Box to match the reference, but preserve the existing product IDs, variants, selling plans, quantities, and add-to-cart behavior.
+
+## If an edit does not apply correctly
+
+Instead of repeating the same prompt, make the instruction more local and testable:
+
+- Name the section.
+- Name the specific property that is wrong.
+- State what should remain unchanged.
+- Provide a visual reference when appropriate.
+
+For example:
+
+> In the mobile hero only, the image is being cropped at the top. Keep the section height and copy unchanged, but reposition the image so the full product is visible.
+
+## Related guides
+
+- Create a Funnel with AI, Templates, or Scratch
+- Figma File
+- AI Knowledge Setup
+- Funnel Editor
+- QA Checklist
