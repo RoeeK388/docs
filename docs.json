@@ -4,8 +4,8 @@
   "name": "Jurni",
   "colors": {
     "primary": "#FB4E26",
-    "light": "#eec9bc",
-    "dark": "#4fa1ab"
+    "light": "#ffffff",
+    "dark": "#DDE4FF"
   },
   "favicon": {
     "light": "/images/white1.svg",
@@ -141,5 +141,10 @@
     "light": "/images/white1.png",
     "dark": "/images/black1.png",
     "href": "https://app.getjurni.ai"
+  },
+  "background": {
+    "color": {
+      "dark": "#000000"
+    }
   }
 }
