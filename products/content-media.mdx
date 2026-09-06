@@ -1,68 +1,60 @@
 ---
 title: "Edit product content and variant media"
 sidebarTitle: "Product content & media"
-description: "Use Edit Product Data to manage shared benefits, details, reviews, offers, cross-sell content, and variant media for compatible Jurni components."
+description: "Use the seven Edit Product Data tabs, understand their shared scope, and distinguish content from actual prices and discounts."
 icon: "file-pen-line"
 ---
 
-Open a product in **Products** to access **Edit Product Data**. This drawer manages shared Jurni product information that compatible pages and components can use across experiences.
+Use **Products → Edit Product Data** to maintain reusable information for a product. Supported page components can use this information across experiences, so this is different from editing one paragraph on one landing page.
 
-<Warning>
-  This is not an isolated text edit on one page. Before changing shared product content, consider other experiences using that product. For a campaign-only paragraph or image, edit the local section instead.
-</Warning>
-
-## Edit product information
+## Open and save product data
 
 <Steps>
-  <Step title="Find the correct product">
-    Open Products in the correct shop and search for the product. Check its name and image before opening the edit drawer.
+  <Step title="Find the product">
+    Open **Products** in the correct shop, search for the product, and open **Edit Product Data**.
   </Step>
-  <Step title="Open the relevant tab">
-    Choose the content area you need: **Variants**, **Benefits**, **Details**, **Reviews**, **Offers**, **Cross-Sell**, or **Variant Media**.
+  <Step title="Choose the relevant tab">
+    Use the tabs below to edit the information you need. Keep the real product, variant, and subscription setup in your commerce platform.
   </Step>
-  <Step title="Update the intended fields">
-    Use approved product content and the correct media. Keep product facts, customer review content, and promotional messages accurate.
+  <Step title="Save Changes">
+    Select **Save Changes** at the bottom of the drawer. **Cancel** leaves without saving those form changes. A separate media-selection dialog may also need confirmation before the overall product save.
   </Step>
-  <Step title="Save and inspect a consuming page">
-    Save the product changes and wait for confirmation. Open an experience using that product to verify how its particular components display the updated data.
+  <Step title="Check a page that uses it">
+    Open a relevant page and confirm the component reads the updated product data. Static text written directly into a section is not automatically replaced by a product-data update.
   </Step>
 </Steps>
 
-## What each tab is for
+## What each tab does
 
-| Tab | What to review |
+| Tab | What you can maintain |
 | --- | --- |
-| **Variants** | Product option and variant presentation/configuration exposed by the drawer. Do not confuse these controls with creating Shopify variants. |
-| **Benefits** | Reusable benefit text and supporting presentation, including the icon fields offered. |
-| **Details** | Supporting product descriptions and details used by compatible components. |
-| **Reviews** | Product review content and summary/display fields used by the Jurni product presentation. |
-| **Offers** | Product offer content. Displayed offer information is not itself proof of a working checkout discount. |
-| **Cross-Sell** | Products configured as cross-sell suggestions where the consuming cart/component supports them. |
-| **Variant Media** | Media associated with product variants/options for supported product presentations. |
+| **Variants** | Swatch presentation for existing options and linked-product options supported by the purchasing component. This does not create Shopify variants. |
+| **Benefits** | Reusable benefit text and icons. |
+| **Details** | Supporting product information and accordion questions/answers. **Custom URL** can override the default product-page navigation used by compatible components. |
+| **Reviews** | Curated review content and related presentation information. This is separate from a live Okendo, Yotpo, or other provider widget. Only use real, approved review material. |
+| **Offers** | Promotional content such as a title, description, badge, button text, and link. **This is not the main Offers area and does not create a checkout discount.** |
+| **Cross-Sell** | Related product selections for components that use that product information. This does not add a configurable upsell to every cart. |
+| **Variant Media** | The media selection and order for each variant. |
 
-Not every section automatically uses every field. A manually written heading, a custom image, or a custom AI-built section may have its own local value or logic.
+## Set media for a variant
 
-## Product data versus provider widgets
+Open **Variant Media**, choose the variant, and select its images/videos from the available product media, shop assets, or supported URL input. Reorder the selected media to put the most useful view first, confirm the selection, and save the product.
 
-Editing product review content in this drawer is not the same as connecting Okendo, Judge.me, or another reviews provider. A provider widget uses its integration and product mapping; connect and configure it through the [review integration workflow](/integrations/review-integrations).
+**Always include main variant image** keeps the variant's main image first even when custom media is selected. When it is off, the custom selection controls that variant's media. Test by changing the actual product option on a page that uses variant media.
 
-Similarly, adding offer text does not create an automatic Shopify discount or a valid selling plan. Configure the underlying commerce rules in the appropriate system and verify the final cart or checkout.
+## Use Sync Product deliberately
 
-## Product media versus one page's image
+**Sync Product** starts a separate process to retrieve product content. It is not the same as **Save Changes**, and starting it does not mean every field has already refreshed. Review the result before using it in a campaign, especially approved benefits and claims.
 
-Change shared variant media when the product's selected option should use that media in compatible product components. Change a local image in the page editor when only that campaign's section needs a different visual.
+If the problem is a missing Shopify product, price, or selling plan, first check its catalogue availability and source configuration. Do not assume the content-sync button fixes every commerce connection problem.
 
-After changing variant media, test each relevant option and check that the displayed image corresponds to what will actually be added to cart.
+## Choose the correct scope
 
-## Sync Product
-
-The drawer includes **Sync Product**. Treat it as a product-refresh operation, not a way to save arbitrary local page edits or to change which catalog products are visible. Review the result and any important customizations after refreshing.
-
-For a product missing from the library, first inspect [product visibility](/products/catalog-visibility) and the [missing-product checks](/building-funnels/sync-new-products).
+For a one-page campaign headline, edit that page. For reusable product information, edit Product Data. For an offer's qualification, use [Offers](/commerce/offers-overview). For a shared layout change, review the [editing-scope guide](/products/editing-scope) before saving.
 
 ## Related guides
 
-- [Product editing scope](/products/editing-scope)
-- [Text and media in the page editor](/build/edit-content-media)
-- [Purchase options](/building-funnels/product-purchase-options)
-- [Discounts and promotions](/commerce/discounts-promotions)
+- [Products and variants](/building-funnels/products-and-variants)
+- [Catalogue visibility](/products/catalog-visibility)
+- [Review providers](/integrations/review-integrations)
+- [Buy Box setup](/products/add-buy-box)

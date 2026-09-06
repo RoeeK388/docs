@@ -9,65 +9,50 @@ keywords:
 icon: "package"
 ---
 
-Use **Products** to find the catalog items available to your current Jurni shop. Use the product selector inside a Buy Box or other product component to decide which item that section uses.
+A **product** is the item in your connected commerce catalogue. A **variant** is a purchasable option of that product, such as a size or flavor. A subscription **selling plan** is another part of the purchase—not a different name for a variant.
 
-Shopify has a native product connection. For headless or non-Shopify stores, the available product data depends on the commerce implementation configured for the shop.
-
-## Find a product
+## Find a product in Jurni
 
 <Steps>
-  <Step title="Check the shop">
-    Confirm that you are working in the intended brand or regional store.
-  </Step>
   <Step title="Open Products">
-    Search using **Search products...** and inspect the product name and image.
+    Check that you are in the correct shop, then open **Products**. Search by the product name and review the available status filters.
   </Step>
-  <Step title="Review filters and visibility">
-    Check the current status filters. For Shopify, also inspect **Manage products** if a saved catalog scope might exclude the item.
+  <Step title="Check catalogue access">
+    For Shopify, **Manage products** controls the catalogue available to the product list, editor, and AI. If a product is missing, check that scope as well as the product's Shopify availability.
   </Step>
-  <Step title="Open the relevant configuration">
-    Open the product to edit its shared Jurni content, or return to the page editor and select it in the intended product component.
+  <Step title="Open Edit Product Data">
+    Open the product to manage its Jurni content and presentation. This drawer is not the Shopify screen for creating products, changing inventory, or setting a price.
   </Step>
 </Steps>
 
-The product edit drawer is not the same as the page editor. See [Product content and media](/products/content-media) before changing information used across experiences.
+See [Catalogue visibility](/products/catalog-visibility) for the difference between browsing filters and saved shop-wide scope.
 
-## Product, variant, selling plan, and quantity
+## What to edit where
 
-| Item | Example | Why it matters |
-| --- | --- | --- |
-| **Product** | A body mist | The catalog item used by the component. |
-| **Variant** | Size: 8 oz; scent: Vanilla | The purchasable option combination that reaches cart. |
-| **Selling plan** | Subscription delivered every month | The subscription purchase terms attached to the selected item. |
-| **Quantity** | Two units | How many units of the selected variant are added. |
+| Change | Where to make it |
+| --- | --- |
+| Create a Shopify product or variant; change price, inventory, or selling plans | Shopify and the relevant commerce/subscription app. |
+| Maintain reusable benefits, detail text, curated reviews, or variant media | **Products → Edit Product Data** in Jurni. |
+| Change a page's product selection, purchasing action, or layout | The Buy Box or relevant element in the Jurni editor. |
+| Configure a promotion's qualifying conditions | **Offers** for the supported Shopify flow, with the actual discount configured in Shopify. |
 
-A pack-size variant and quantity are not interchangeable. “2-pack, quantity 1” is different from “single item, quantity 2,” even when the shopper receives a similar number of individual items.
+For headless and non-Shopify stores, the connected catalogue and purchase rules come from the agreed commerce integration. Contact the team when the imported data or purchasing behavior needs changing.
 
-For Shopify, cart actions need the real selected variant and selling plan where applicable. A visible label or product image is not proof that those identifiers are correct.
+## Variants versus linked products
 
-## Select a product on a page
+The **Variants** tab in Edit Product Data includes presentation options such as swatches. It can also hold linked-product options used by supported components. A flavor stored as a separate product is not automatically a variant of the currently selected product.
 
-Select the Buy Box or product component and use the **Product** control it exposes. Check the resulting variants, pricing, media, and action in Preview, then test the final published destination.
+Changing a swatch label or color in Jurni does not create a new Shopify variant. Test that the visible selection still purchases the correct real item.
 
-For a custom purchasing component, its configuration and logic may differ from the standard library Buy Box. Do not change only the displayed name when the goal is to sell a different product.
+## Connect the product to a page
 
-[Add and configure a Buy Box](/products/add-buy-box)
+Use [Add a Buy Box](/products/add-buy-box) to place a purchasing section and select the actual product. Review its variants and purchase types in preview, then verify the selected product, variant, quantity, and plan in the final cart or checkout.
 
-## Product data can change outside the editor
-
-When variants, availability, selling plans, or prices change in the commerce platform, recheck the pages that use the product. Deleting or replacing a variant can invalidate an existing selection or custom configuration.
-
-Keep commerce source data separate from static page copy. A manually typed price or promotion can become outdated even when the connected catalog is correct.
-
-## A product or option is missing
-
-Check the shop, product-list filters, saved Shopify product scope, channel/storefront availability, and the component's own configuration. A missing selling plan requires a different check from a missing product.
-
-Use [Product visibility](/products/catalog-visibility) and [Sync or find missing Shopify products](/building-funnels/sync-new-products) before recreating the Buy Box.
+A product title typed into a heading does not connect a product. Copying a page or switching a Buy Box's product also requires checking any separately configured review SKU, gift, or link.
 
 ## Related guides
 
 - [Product content and media](/products/content-media)
+- [Find missing products](/building-funnels/sync-new-products)
 - [Purchase options](/building-funnels/product-purchase-options)
-- [Subscriptions and selling plans](/building-funnels/subscriptions-selling-plans)
-- [Product and cart troubleshooting](/troubleshooting/product-cart-issues)
+- [Headless and non-Shopify purchase paths](/commerce/non-shopify-purchase-flows)

@@ -9,57 +9,46 @@ keywords:
   - "unlisted Shopify product"
 ---
 
-Jurni syncs products from your connected Shopify store automatically. You do not normally create a second copy of the product inside Jurni.
+Create and maintain Shopify products in **Shopify**, then use them through the connected catalogue in Jurni. You do not normally need to create a second catalogue product in Jurni.
 
-## Requirement: the product must be published to the Online Store
-
-For a Shopify product to sync into Jurni, it needs to be available to the Shopify **Online Store** sales channel.
-
-You can keep the product **unlisted** if you do not want shoppers discovering it through normal storefront navigation or search, but it still needs to be published to the Online Store so Jurni can access it.
-
-<Info>
-Publishing a product to the Online Store does not require you to link to it from your navigation or collections. An unlisted product can still be used in a dedicated Jurni campaign.
-</Info>
-
-## Add a new product
+## Make the product available
 
 <Steps>
-  <Step title="Create or update the product in Shopify">
-    Configure the title, variants, pricing, media, inventory, and any selling plans the Jurni page will need.
+  <Step title="Prepare the Shopify product">
+    Configure the actual product, variants, prices, inventory, and subscription plans. Check that it is not archived or deleted.
   </Step>
-  <Step title="Publish it to Online Store">
-    Make the product available to the Shopify Online Store sales channel. Use an unlisted setup if it should not be discoverable through normal storefront browsing.
+  <Step title="Check Online Store availability">
+    Make the product available to the **Online Store** sales channel. A product can use Shopify's **Unlisted** status for a dedicated campaign while remaining available through that channel; it does not have to appear in your navigation.
   </Step>
-  <Step title="Return to Jurni">
-    Open the product selector in your Buy Box or commerce section.
+  <Step title="Check Jurni's catalogue scope">
+    Open **Products → Manage products** in Jurni and confirm your saved collections, tags, and status scope includes the item. In the product list, also check the current search and status filters.
   </Step>
-  <Step title="Search for the product">
-    Search by the Shopify product title and select it when it appears.
-  </Step>
-  <Step title="Verify the commerce options">
-    Confirm the expected variants, pricing, and selling plans are available before publishing the page.
+  <Step title="Select the product on your page">
+    Return to the editor's product picker, refresh if necessary, and select the real product. Check the variants and purchase types before publishing.
   </Step>
 </Steps>
 
-## If the product is missing
+## When the product is still missing
 
-Check:
+Confirm the connected Shopify store and product link, then review channel availability and [catalogue scope](/products/catalog-visibility). If it was just changed, refresh the product list and picker.
 
-1. The correct Shopify store is connected to the Jurni workspace.
-2. The product is active in Shopify.
-3. The product is published to the Online Store sales channel.
-4. The product has not been archived or deleted.
-5. You are searching the correct product title.
+Contact the Jurni team with the Shopify product link and the affected Jurni shop/page when it remains unavailable. Do not create a duplicate Shopify product just to work around an unidentified sync problem.
 
-If you changed product availability only moments ago, refresh the Jurni product selector and try again.
+## What does Sync Product do?
 
-## Changes after the product is already used
+The **Sync Product** button inside **Edit Product Data** starts a separate content-retrieval process. It is not the same as saving your product edits or changing Shopify channel availability. A message that the process started does not mean every field or purchase option has already refreshed.
 
-When you modify variants, selling plans, or product structure in Shopify, re-open any important Jurni page using that product and test it again. Removing or replacing a Shopify variant can invalidate an old selection on a live page.
+Use [Product content and media](/products/content-media) for the content workflow.
+
+## Recheck pages after catalogue changes
+
+When a variant or selling plan is removed, recreated, or changed in Shopify, test the important pages using it. A design can continue to show an old label even when its original purchase selection is no longer valid.
+
+For non-Shopify stores, use the catalogue connection agreed with the Jurni team rather than these Shopify channel instructions.
 
 ## Related guides
 
-- Products and Variants
-- Buy Boxes in Jurni
-- Product Purchase Options
-- Subscriptions and Selling Plans
+- [Products and variants](/building-funnels/products-and-variants)
+- [Catalogue visibility](/products/catalog-visibility)
+- [Add a Buy Box](/products/add-buy-box)
+- [Subscriptions](/building-funnels/subscriptions-selling-plans)
