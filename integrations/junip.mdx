@@ -1,0 +1,45 @@
+---
+title: "Connect Junip reviews"
+sidebarTitle: "Junip"
+description: "Get your Junip Store Key, connect the account, and place a product or store review section on a Jurni page."
+icon: "star"
+---
+
+Use **Junip** to show the reviews your brand already collects in Junip. This connection displays reviews; it does not move review collection, moderation, or customer-review emails into Jurni.
+
+## Find your Store Key
+
+In Junip, open **Settings** and the store's settings to find its **Store Key**. Copy the key for the same store whose products you are using in Jurni. Junip also shows it in its custom-installation configuration as `data-store-key`.
+
+Follow [Junip's custom-installation guide](https://help.junip.co/en/articles/4607115-custom-html-installation) to locate the key. You only need the key for Jurni's native connection—not another copy of the Junip script.
+
+## Set up Junip in Jurni
+
+<Steps>
+  <Step title="Connect the provider">
+    Open **Settings → Integrations → Reviews & Pop-ups**. Enable **Junip**, paste the **Store Key**, and select **Save Changes** on that card.
+  </Step>
+  <Step title="Add reviews to your page">
+    Open the experience editor's **Integrations** panel and add the Junip review section where it should appear.
+  </Step>
+  <Step title="Select the review scope">
+    Choose the available store/all-reviews or product-specific option. For product reviews, select the matching product. Review the section's available summary, list/grid, and review-count controls.
+  </Step>
+  <Step title="Verify real reviews">
+    Save and preview the page, then check the actual published URL. Compare the displayed product and review content with Junip.
+  </Step>
+</Steps>
+
+## What to check when reviews are missing
+
+Confirm the integration is enabled and saved, the Store Key belongs to the correct store, and the chosen product has published reviews. A Shopify product ID and a variant ID are not interchangeable.
+
+If the widget appears twice, check whether a second section, Custom Script, or Shopify theme app is also installing it. Do not paste Junip's full installation snippet into every section after connecting it natively.
+
+For **Shopify Pages**, test the `/pages/` URL independently because the theme can already load Junip. For a custom/non-Shopify product catalog, ask the Jurni team to confirm the product-to-review mapping.
+
+## Related guides
+
+- [Review widgets](/integrations/review-widgets)
+- [On-page integrations](/build/editor-integrations)
+- [Integration troubleshooting](/integrations/troubleshooting)

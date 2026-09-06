@@ -305,6 +305,8 @@
               "integrations/review-integrations",
               "integrations/review-widgets",
               "integrations/okendo",
+              "integrations/junip",
+              "integrations/yotpo",
               "integrations/alia"
             ]
           },

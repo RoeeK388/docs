@@ -1,0 +1,49 @@
+---
+title: "Connect Yotpo reviews"
+sidebarTitle: "Yotpo"
+description: "Find the Yotpo App Key and review-widget Instance ID, then connect the account and configure the page placement."
+icon: "star"
+---
+
+Use **Yotpo Reviews** to display product or site reviews in a Jurni page. The account connection and the widget are two separate steps: **App Key identifies your store; Instance ID identifies the review widget.**
+
+## Get the two identifiers
+
+| Value | Where to find it | Where it goes in Jurni |
+| --- | --- | --- |
+| **App Key** | Yotpo account menu → **Account Settings → General Settings**. Copy App Key, sometimes shown as Store ID. | The Yotpo integration card in Settings. |
+| **Widget Instance ID** | **On-site Widgets** → edit the intended review widget → **Publish → Show Instructions → Get the Code**. Copy the value in `data-yotpo-instance-id`. | The Yotpo widget's configuration in the page editor. |
+
+Use the [App Key instructions](https://support.yotpo.com/docs/finding-your-yotpo-app-key-and-secret-key-1) and [widget Instance ID instructions](https://support.yotpo.com/docs/general-reviews-widgets-faq). **Jurni does not request the Yotpo Secret Key for this review connection.**
+
+## Connect and configure
+
+<Steps>
+  <Step title="Connect the account">
+    Open **Settings → Integrations → Reviews & Pop-ups**, enable **Yotpo**, enter **App Key**, and select **Save Changes**.
+  </Step>
+  <Step title="Add the widget">
+    In the experience editor, open **Integrations** and add Yotpo. Select the inserted widget and enter its **Instance ID**.
+  </Step>
+  <Step title="Choose the review scope">
+    For product reviews, choose product mode and the correct product. Use the all/site-reviews mode for a site-review placement. Match this choice to the widget configured in Yotpo.
+  </Step>
+  <Step title="Save and inspect">
+    Save the page and verify the real review widget on the published destination. Check product identity, review content, and mobile layout.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+**App Key is saved but only a placeholder appears:** check the widget's Instance ID. An account connection alone does not tell Jurni which Yotpo widget to render.
+
+**Site reviews appear instead of product reviews:** check the review mode and product selection. The product-specific placement expects the matching Shopify product, not a product title or variant ID.
+
+**I need Loyalty, referrals, or another Yotpo feature:** this article describes the Reviews integration. Those products are not automatically configured by saving the Reviews App Key.
+
+For **Shopify Pages**, check the theme's Yotpo installation as well as the Jurni section so the loader and widget are not duplicated.
+
+## Related guides
+
+- [Review-widget setup](/integrations/review-widgets)
+- [Shopify Pages limitations](/shopify-pages/limitations)
