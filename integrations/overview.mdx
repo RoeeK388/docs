@@ -4,112 +4,105 @@ sidebarTitle: "Overview"
 description: "Manage all Jurni integrations from Settings. Connect Shopify, analytics pixels, review widgets, email providers, and custom scripts to power your funnels."
 ---
 
-Jurni connects to your existing DTC tech stack so you can keep the tools you already use. From review platforms and analytics pixels to email providers and custom scripts, every integration lives in one place: **Settings → Integrations**. This page covers the available categories, how to read status indicators, the two connection methods, and answers to common questions.
+Use **Settings → Integrations** to configure the external platforms that Jurni currently exposes in the merchant app. Different integrations use different connection methods—some use OAuth, some use IDs/URLs, and some are simple enable/disable integrations.
 
-<Note>
-  Screenshot: Settings → Integrations page showing category tiles with green and red status indicators.
-</Note>
+Do not assume every integration needs an API key or that the same credential type is used across vendors.
 
-## Integration Categories
+## Current integration areas
 
-Jurni organizes integrations into categories so you can find and manage them quickly.
+### Ad Integrations
 
-<CardGroup cols={2}>
-  <Card title="Shopify (Core)" icon="shopify">
-    Required. Powers product data, checkout, and order tracking across all funnels.
-  </Card>
+The current **Ad Integrations** section connects **Meta Ads** accounts to Jurni. This is separate from entering a Meta Pixel ID for page tracking.
 
-  <Card title="Analytics & Ad Platforms" icon="chart-line">
-    Google Tag Manager, GA4, Meta Pixel, TikTok Pixel, Blot Out, Axon, Polar analytics, and Triple Whale. Fire standard ecommerce events on funnel activity.
-  </Card>
+### Messaging
 
-  <Card title="Design" icon="pen-nib">
-    Figma.
-  </Card>
+The current Messaging integration is **Slack**. Jurni supports more than one connected Slack workspace for a shop, subject to the user's Jurni permissions.
 
-  <Card title="Affiliate" icon="handshake">
-    Affiliatly and Bix Grow.
-  </Card>
+See [Connect Jurni to Slack](/integrations/connect-slack) for the installation and access model.
 
-  <Card title="Reviews" icon="star">
-    Alia, Judge.me, Yotpo, Okendo, Junip, Stamped, Trustpilot, Reviews.io, and Bazaarvoice. Display star ratings and review widgets in funnels.
-  </Card>
+### Data Integrations
 
-  <Card title="Email & SMS" icon="envelope">
-    Klaviyo and Postscript. Sync opt-ins and subscriber data in real time.
-  </Card>
+The current Data Integrations page includes the following tracking fields/integrations:
 
-  <Card title="Custom Scripts" icon="code">
-    Inject any third-party pixel or tracking tag globally or per funnel.
-  </Card>
-</CardGroup>
+- **Meta Pixel IDs** — more than one Pixel ID can be configured
+- **Google Tag Manager ID** — must use the `GTM-...` format
+- **Google Analytics tag ID** — must use the `G-...` format
+- **Blotout EdgeTag URL**
+- **Axon Pixel ID**
+- **Northbeam Pixel ID**
+- **Polar Analytics Shopify URL**
+- **TikTok Pixel ID**
+- **Shopify Analytics** configuration
+- **Triple Whale** enable/disable integration
 
-## Status Indicators
+<Info>
+  Meta Ads account connection and Meta Pixel tracking are different integrations. Connecting a Meta ad account does not replace configuring the Pixel IDs you want Jurni pages to load.
+</Info>
 
-Every integration tile shows a status indicator so you can spot issues at a glance.
+### Design
 
-- **Active (green)** — The integration is connected and working.
-- **Disconnected (red)** — The integration has not been set up yet or needs reconnection. This usually means a revoked or expired API key. Re-authenticate to resolve.
+Jurni currently exposes a **Figma** connection for Figma-powered workflows. Connection and management are permission-controlled in Jurni.
 
-<Tip>
-  Check the status of all integrations after major changes to your Shopify store or third-party accounts. Re-keying in one platform can break connections in another.
-</Tip>
+### Affiliate Integrations
 
-## Connection Methods
+The current affiliate toggles are:
 
-Integrations connect in one of two ways. Choose the method that matches the platform you are connecting.
+- **Affiliatly**
+- **Bix Grow**
 
-<Steps>
-  <Step title="OAuth">
-    Click **Connect** and authorize Jurni in the third-party platform. Shopify and Slack use OAuth.
-  </Step>
-  <Step title="API Key">
-    Paste a key or Measurement ID from the third-party platform into Jurni. GA4, Meta Pixel, Klaviyo, and review platforms use API keys.
-  </Step>
-</Steps>
+### Lifecycle, Widgets & Reviews
 
-<AccordionGroup>
-  <Accordion title="Where to find common API keys and credentials">
-    - **Yotpo** — Dashboard → Account Settings → Store Settings → API Key
-    - **Okendo** — Dashboard → Settings → API
-    - **Junip** — Dashboard → Settings → Integrations → API Key
-    - **Stamped** — Dashboard → Settings → API Keys
-    - **Trustpilot** — Business → Integrations → API
-    - **Klaviyo** — Account → Settings → API Keys → Create Private Key
-    - **Google Analytics 4** — Admin → Data Streams → select your stream → Measurement ID (format: `G-XXXXXXXXXX`)
-    - **Meta Pixel** — Events Manager → select your pixel → Settings → Pixel ID
-    - **Blot Out** — Site Settings → find the EdgeTag URL and paste it into Jurni
-  </Accordion>
+The current integration registry includes:
 
-  <Accordion title="Key security guidelines">
-    - Never share API keys in Slack, email, or any public channel.
-    - Never commit API keys to version control.
-    - If a key is compromised, regenerate it immediately in the third-party platform, then update it in **Jurni Settings → Integrations**.
-    - Use Private API Keys for server-side integrations like Klaviyo. Public keys are safe for client-side widget display.
-    - Rotate keys periodically as part of your team's security hygiene.
-  </Accordion>
-</AccordionGroup>
+- **Klaviyo** — Company ID
+- **Postscript** — Shop ID
+- **Alia** — embed script URL
+- **Junip** — Store Key
+- **Stamped** — Store Hash + API Public Key
+- **Trustpilot** — Business Unit ID
+- **Okendo** — Subscriber ID (User ID)
+- **Yotpo** — App Key
+- **Judge.me** — Public API Token
+- **Bazaarvoice** — Client Name
+- **REVIEWS.io** — Store ID
 
-## Frequently Asked Questions
+The credential requested by Jurni is the credential shown in the integration card. For example, Jurni currently asks for a **Klaviyo Company ID**, not a Klaviyo private API key.
 
-<AccordionGroup>
-  <Accordion title="Do I need all integrations connected before I can launch a funnel?">
-    No. Shopify is the only required integration. You can launch funnels without review widgets, analytics, or email capture. Add integrations as your stack grows.
-  </Accordion>
+## Custom Scripts are separate
 
-  <Accordion title="Can I connect multiple accounts for the same integration type?">
-    Most integrations support one connected account at a time. If you need multi-account support, contact the Jurni team at [info@getjurni.ai](mailto:info@getjurni.ai) or via Slack.
-  </Accordion>
+**Settings → Custom Scripts** is a separate system from the Integrations page. Use it for third-party browser code that does not have an appropriate native Jurni integration.
 
-  <Accordion title="What happens if an integration disconnects?">
-    Jurni will show a red error status. Funnel pages will still load, but affected features (review widgets, pixel events, email capture) will stop working until the connection is restored.
-  </Accordion>
+Custom Scripts support **All funnels**, **Only selected**, and **All except** targeting. Tracking scripts only run on live funnels, not Preview.
 
-  <Accordion title="What happens if I enter the wrong API key?">
-    Jurni will show a red error status on that integration tile. The integration will not function until a valid key is entered and saved.
-  </Accordion>
+See [Custom Scripts](/integrations/custom-scripts) for the exact behavior and Shopify Pages limitation.
 
-  <Accordion title="Do I need to update Jurni when I regenerate a key in a third-party platform?">
-    Yes. Whenever you regenerate or rotate a key in a third-party platform, you must update that key in Jurni Settings → Integrations immediately or the integration will break.
-  </Accordion>
-</AccordionGroup>
+## Before connecting an integration
+
+Identify what you actually need the integration to do:
+
+- **Ad account data** → Meta Ads connection
+- **Page/event tracking** → tracking pixel / GTM / GA configuration
+- **Review widgets** → connect the matching review provider
+- **Slack data access/reporting** → Slack integration + notification settings
+- **Custom browser-side vendor** → Custom Scripts when appropriate
+
+This distinction helps avoid duplicate installations—for example loading a Meta Pixel through both Jurni Data Integrations and GTM.
+
+## Verify after setup
+
+After saving an integration:
+
+1. Test a **live** funnel, not only Preview.
+2. Confirm the vendor/script loads only once.
+3. Trigger the relevant customer action.
+4. Verify the event/widget in the third-party platform.
+5. If the page is a Shopify Page, verify the behavior separately because Shopify theme/app integrations and Jurni-hosted funnel integrations do not have identical loading paths.
+
+## Related guides
+
+- [Google Analytics & Meta Pixel](/integrations/ga-meta-pixel)
+- [Google Tag Manager](/integrations/gtm)
+- [Custom Scripts](/integrations/custom-scripts)
+- [Review Integrations](/integrations/review-integrations)
+- [Connect Jurni to Slack](/integrations/connect-slack)
+- [Consent & Tracking](/integrations/consent-tracking)

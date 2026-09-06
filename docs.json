@@ -43,18 +43,17 @@
             ]
           },
           {
-            "group": "Brand, Team & Tracking",
+            "group": "Brand & Team",
             "pages": [
               "getting-started/brand-settings",
               "getting-started/setup-ai-knowledge",
-              "getting-started/inviting-team-members",
-              "getting-started/tracking-pixels"
+              "getting-started/inviting-team-members"
             ]
           }
         ]
       },
       {
-        "tab": "Build",
+        "tab": "Experiences",
         "groups": [
           {
             "group": "Create & Edit",
@@ -91,7 +90,7 @@
         ]
       },
       {
-        "tab": "Publish & Commerce",
+        "tab": "Publishing",
         "groups": [
           {
             "group": "Publishing",
@@ -180,6 +179,7 @@
           {
             "group": "Tracking & Analytics",
             "pages": [
+              "getting-started/tracking-pixels",
               "getting-started/shopify-analytics",
               "integrations/ga-meta-pixel",
               "integrations/gtm",
