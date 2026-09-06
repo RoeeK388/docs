@@ -1,11 +1,77 @@
 ---
-title: "How to Strategically Run an Experiment"
-sidebarTitle: "Strategic Experiments"
-description: "Discover how to plan and run Jurni experiments with a clear strategy. Learn best practices for hypothesis building, test design, and measuring outcomes."
+title: "Strategically Run Experiments in Jurni for Reliable Results"
+sidebarTitle: "Strategy"
+description: "Learn how to run Jurni A/B experiments with proper duration, traffic thresholds, and budget expectations so you can trust your results and avoid common mistakes."
 ---
 
-Running experiments in Jurni is most effective when you have a clear strategy. This page covers how to plan your tests, form strong hypotheses, and structure experiments so you get meaningful, actionable results.
+Running an experiment for too short a period is the most common reason teams draw wrong conclusions from their tests. This guide covers the minimum run times, traffic thresholds, and confidence levels you need to trust the results you see in Jurni, plus how to budget time and money for faster insights.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/6403105051-how-to-strategically-run-an-experiment) for full content.
-</Note>
+## Minimum Guidelines
+
+Use the table below as your baseline before you act on any experiment result.
+
+| Factor | Minimum |
+| --- | --- |
+| Run time | 3 weeks (21 days) |
+| Sessions per variant | 500 |
+| Statistical confidence | 95% |
+
+**Why 3 weeks?** A full three weeks accounts for day-of-week traffic variation. Stopping after one weekend or one weekday spike risks drawing conclusions from unrepresentative data.
+
+**Why 500 sessions per variant?** Below this threshold, statistical confidence scores on the dashboard are unreliable regardless of what they display.
+
+**Why 95% confidence?** This is the standard minimum for making decisions based on experiment results. The Jurni dashboard displays confidence as a score; wait for 95+ before declaring a winner.
+
+## Budget and Timeline Expectations
+
+There is no minimum spend requirement in Jurni, but more traffic means faster results.
+
+- Brands spending ~\$500/day on a campaign can typically reach significance in 1 to 2 weeks.
+- Brands spending ~\$100/day may need 4 to 6 weeks.
+
+Push as much traffic as possible to reach significance faster.
+
+## What to Avoid
+
+<Warning>
+  Do not pause or adjust an experiment in the first 48 to 72 hours. Early data is noisy and consistently misleading.
+</Warning>
+
+- **Do not act on results below 95% confidence**, even if the trend looks strong.
+- **Do not change the traffic allocation mid-experiment.** This resets the signal quality.
+
+## Early Winners
+
+If one variant is performing dramatically better (for example, 2x or more on CVR after 7 days), you can choose to end early. Document that the result is directional and not statistically confirmed. Use it to inform your next test, not as a final conclusion.
+
+## Multi-Variant Experiments
+
+Experiments with 3 or more variants need proportionally more traffic. Add roughly 50% more sessions per additional variant beyond the original two.
+
+<Tip>
+  Keep early experiments to two variants (control vs. one change) to reach significance faster and isolate what is actually driving the difference.
+</Tip>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Can I extend an experiment that is close to significance?">
+    Yes. Just let it run longer. The clock does not reset unless you change the traffic allocation.
+  </Accordion>
+
+  <Accordion title="What if traffic is too low to ever reach significance?">
+    Focus traffic on fewer funnels, increase ad spend on the experiment Smart Link, or run a simpler single-variable test with a tighter creative change. Simpler tests require less traffic to reach significance.
+  </Accordion>
+
+  <Accordion title="Should I run an experiment on a brand new funnel or a proven one?">
+    Start with your best-performing funnel as the control. Testing against a weak baseline inflates apparent lift and makes it harder to know if your change is genuinely effective.
+  </Accordion>
+</AccordionGroup>
+
+## Related Articles
+
+- [Testing Jurni Funnels Against Your Existing Website Pages](/testing-jurni-funnels-against-your-existing-website-pages)
+- [What Are Experiments?](/what-are-experiments)
+- [How to Create an Experiment](/how-to-create-an-experiment)
+- [Reading Tests Results](/reading-tests-results)
+- [Troubleshoot: Experiment Traffic Not Splitting Correctly](/troubleshoot-experiment-traffic-not-splitting-correctly)

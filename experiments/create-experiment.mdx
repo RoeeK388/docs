@@ -1,11 +1,96 @@
 ---
-title: "How to Create an Experiment"
-sidebarTitle: "Create Experiment"
-description: "Follow this guide to create a new experiment in Jurni. Learn how to set up variations, define traffic splits, and launch your first test step by step."
+title: "Create and Run an A/B Test in Jurni"
+sidebarTitle: "Create Test"
+description: "Learn how to build, launch, and manage an A/B experiment in Jurni. Set variants, control traffic splits, and route all future traffic to the winning journey automatically."
 ---
 
-Jurni makes it easy to create experiments so you can start testing variations of your experiences. This page walks you through the full process of setting up and launching an experiment from start to finish.
+Jurni experiments let you test agentic shopping journeys against each other using a single SmartLink. You drop one URL into your ads, Jurni splits traffic across your variants, and when a winner is clear you can route all future traffic to it without changing your campaign links. This page walks you through creating an experiment from setup to finish.
+
+<Steps>
+  <Step title="Create your experiment">
+    Open the **Experiments** tab and select **Create Experiment** in the top right corner.
+
+    Name your experiment with two labels:
+
+    - **Test Name**: your internal name for finding the experiment inside Jurni.
+    - **Link Name**: the external name used in the SmartLink itself.
+  </Step>
+  <Step title="Add your variants">
+    Select **Add Variant** for each journey you want to test. You can add up to 10 variants.
+
+    For every variant, choose one of two sources:
+
+    - An agentic shopping journey already built in Jurni.
+    - A custom URL.
+  </Step>
+  <Step title="Set the traffic split">
+    Jurni distributes traffic evenly across your variants by default. A two-variant experiment splits 50/50, a four-variant experiment splits 25% each, and so on.
+
+    To use a different distribution, adjust the weight on each variant to set how much traffic it receives. This is useful when you want to favor a proven journey while still testing a new one, or to limit exposure on an experimental variant until the early data looks right.
+
+    <Tip>
+      Because every variant runs on the same SmartLink, traffic routes automatically based on the weights you set the moment your experiment goes live.
+    </Tip>
+  </Step>
+  <Step title="Save and start the test">
+    When you are ready, select **Save and Start Test**. Your experiment goes live immediately and you land on the experiment dashboard.
+  </Step>
+</Steps>
+
+## Manage a live experiment
+
+From the dashboard you can:
+
+- Review your metrics, with an overview and a breakdown by variant.
+- Edit existing variants, or add a new one at any time.
+- See a full history of every change made.
+- Select **Copy Link** to bring the SmartLink URL straight into your ads.
+- Pause the experiment whenever you need to hold traffic.
 
 <Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/7382054785-how-to-create-an-experiment) for full content.
+  Screenshot: the experiment dashboard showing metrics overview, variant breakdown, and the Copy Link button.
 </Note>
+
+## End an experiment and name a winner
+
+When one variant clearly wins, follow these steps to close the test and route all traffic to the winner:
+
+<Steps>
+  <Step title="Select End">
+    On the experiment dashboard, select **End** to begin closing the experiment.
+  </Step>
+  <Step title="Choose the winning variant">
+    Pick the variant that performed best based on your metrics.
+  </Step>
+  <Step title="Confirm to end the experiment">
+    Confirm your choice. Because the link is a SmartLink, all traffic from that point forward routes automatically to your winning variant. No new URL to swap into your ads, no campaign downtime.
+  </Step>
+</Steps>
+
+<Warning>
+  Ending an experiment is final. Once you confirm the winner, traffic will no longer split and all visitors will be routed to the selected variant.
+</Warning>
+
+## Need a hand?
+
+Reach out to our team at [info@getjurni.ai](mailto:info@getjurni.ai) or on Slack and we will help you set up your first experiment.
+
+## Related guides
+
+<CardGroup>
+  <Card title="What Are Experiments?" href="/experiments/what-are-experiments">
+    Learn the basics of Jurni experiments and how they work.
+  </Card>
+
+  <Card title="Testing Jurni Funnels Against Your Existing Website Pages" href="/experiments/testing-funnels">
+    Compare Jurni journeys side by side with your current pages.
+  </Card>
+
+  <Card title="Reading Test Results" href="/experiments/reading-results">
+    Understand your experiment metrics and pick a winner with confidence.
+  </Card>
+
+  <Card title="Troubleshoot Experiment Traffic" href="/experiments/troubleshoot-traffic">
+    Fix traffic splitting issues when visitors are not distributed as expected.
+  </Card>
+</CardGroup>

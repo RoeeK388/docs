@@ -1,11 +1,93 @@
 ---
 title: "Reading Tests Results"
 sidebarTitle: "Reading Results"
-description: "Learn how to read and interpret Jurni experiment results. Understand statistical significance, winner declarations, and how to act on your test data."
+description: "Learn how to read Jurni experiment metrics, interpret statistical significance, and know when you have enough data to declare a winning variant."
 ---
 
-Jurni experiment results tell you which variation performed best and whether the outcome is statistically significant. This page explains how to read test results and decide what to do next based on the data.
+The Tests dashboard in Jurni gives you a real-time view of how each variant is performing. This page explains what each metric means, how to read the confidence score, and when you have enough data to act on the results.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/8689108420-reading-tests-results) for full content.
-</Note>
+## Metrics Per Variant
+
+For each variant, Jurni displays the following metrics:
+
+| Metric | Definition |
+| --- | --- |
+| **Sessions** | Total unique visits routed to this variant. |
+| **CVR (Conversion Rate)** | Percentage of sessions that resulted in a purchase. |
+| **AOV (Average Order Value)** | Average revenue per order on this variant. |
+| **Revenue** | Total revenue attributed to this variant. |
+| **RPS (Revenue Per Session)** | Revenue divided by sessions. |
+| **Add-to-Cart Rate** | Percentage of sessions that added a product to cart. |
+| **Checkout Rate** | Percentage of sessions that reached checkout. |
+
+<Tip>
+  **RPS is often the best decision metric.** A variant with slightly lower CVR but higher AOV can still outperform on total revenue, so RPS captures both conversion and basket size in a single number.
+</Tip>
+
+## Statistical Significance
+
+Statistical significance is displayed as a confidence score from 0 to 100%.
+
+<Steps>
+  <Step title="95% or above">
+    Results are statistically significant. The difference between variants is unlikely to be due to random chance. You can act on this data with confidence.
+  </Step>
+  <Step title="80% to 94%">
+    Trending, but not conclusive. Collect more data before declaring a winner.
+  </Step>
+  <Step title="Below 80%">
+    Insufficient data. Do not draw conclusions yet.
+  </Step>
+</Steps>
+
+### Time to Significance
+
+Time to reach significance depends on your traffic volume. High-traffic funnels may hit 95% within a few days. Low-traffic funnels may need two to four weeks. Running your experiment for at least seven days is recommended regardless of traffic, to account for day-of-week variations in shopper behavior.
+
+## What Results Are Not
+
+<Warning>
+  Results are not retroactively adjusted. Data recorded before an allocation change is preserved as-is.
+</Warning>
+
+Results for external URL variants may not include revenue if your external tracking is not configured. See [Running Experiments with External Destinations](/articles/6403105051-how-to-strategically-run-an-experiment) for setup guidance.
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="How often do metrics update?">
+    Metrics update in near-real-time as sessions and purchase events come in.
+  </Accordion>
+
+  <Accordion title="My CVR looks lower than usual. Is something wrong with the test?">
+    Not necessarily. Check that both funnels are published and that the Smart Link is correctly set as your ad destination. You can also cross-reference session counts with your ad platform's click data.
+  </Accordion>
+
+  <Accordion title="Can I export results?">
+    Export is not currently available directly from the Experiments dashboard. You can manually copy metrics for reporting purposes.
+  </Accordion>
+
+  <Accordion title="What if both variants have the same CVR?">
+    Compare RPS and AOV. If both are truly equal after reaching statistical significance, the experiment is inconclusive. You may want to run a new test with a more significant change.
+  </Accordion>
+</AccordionGroup>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Testing Jurni Funnels Against Your Existing Website Pages" href="/articles/8177452792-testing-jurni-funnels-against-your-existing-website-pages">
+    Learn how to set up head-to-head tests between Jurni funnels and your current pages.
+  </Card>
+
+  <Card title="What Are Experiments?" href="/articles/5431976135-what-are-experiments">
+    Understand the basics of Jurni experiments and how they work.
+  </Card>
+
+  <Card title="How to Strategically Run an Experiment" href="/articles/6403105051-how-to-strategically-run-an-experiment">
+    Best practices for planning, running, and concluding experiments.
+  </Card>
+
+  <Card title="How to Create an Experiment" href="/articles/7382054785-how-to-create-an-experiment">
+    Step-by-step instructions for building a new experiment in Jurni.
+  </Card>
+</CardGroup>

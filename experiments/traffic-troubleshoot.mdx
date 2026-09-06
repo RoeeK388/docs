@@ -1,11 +1,91 @@
 ---
-title: "Troubleshoot: Experiment Traffic Not Splitting Correctly"
-sidebarTitle: "Traffic Troubleshoot"
-description: "Fix issues when Jurni experiment traffic is not splitting as expected. Learn common causes and steps to diagnose and resolve traffic allocation problems."
+title: "Troubleshoot Experiment Traffic Splitting in Jurni"
+sidebarTitle: "Traffic Split Issues"
+description: "Diagnose why Jurni experiment traffic is not splitting evenly. Check Smart Links, browser caching, traffic volume, and draft variants with step-by-step fixes."
 ---
 
-If your Jurni experiment traffic is not splitting evenly or as configured, there are a few common causes to check. This page helps you diagnose and fix traffic allocation issues so your experiments run correctly.
+If your Jurni experiment traffic is not distributing between variants as expected, there are four common causes to investigate. This guide walks you through each check so you can identify the issue and restore a balanced split.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/4359117751-troubleshoot-experiment-traffic-not-splitting-correctly) for full content.
-</Note>
+<AccordionGroup>
+  <Accordion title="Check 1: Smart Link Not in Use">
+    <Warning>
+      Experiments only split traffic through Smart Links. A direct funnel URL always loads the same variant.
+    </Warning>
+
+    If your ad campaign is pointing to a direct funnel URL instead of a Smart Link, every visitor will see the same variant and the experiment will not split traffic. Confirm your ad campaign destination is the Smart Link URL, not a direct link to either funnel.
+
+    <Steps>
+      <Step title="Open your ad campaign settings">
+        Go to the platform where your ads are running (Meta, Google, TikTok, etc.).
+      </Step>
+      <Step title="Review the destination URL">
+        Look at the landing page URL set for the campaign or ad set.
+      </Step>
+      <Step title="Replace with the Smart Link">
+        If the URL is a direct funnel link, swap it for the experiment Smart Link from Jurni.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Check 2: Browser Caching (Cookie-Based Assignment)">
+    <Info>
+      Jurni uses cookie-based assignment to ensure each visitor sees a consistent experience across visits.
+    </Info>
+
+    Returning visitors are served the same variant repeatedly. This is expected behavior. The split is not 50/50 per page load, but 50/50 across unique visitors over time. If you are testing by refreshing the same browser, you will keep seeing the same variant.
+
+    <Tip>
+      To verify the split is working, test from different browsers, devices, or incognito windows. Each new cookie should assign a variant randomly.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Check 3: Low Traffic Volume">
+    <Note>
+      Splits even out significantly once each variant reaches 500 or more sessions.
+    </Note>
+
+    At very low volumes, statistical variance naturally creates the appearance of uneven splitting. A 50/50 split might look like 60/40 or 70/30 when only a handful of sessions have been recorded. Avoid drawing conclusions from small sample sizes.
+
+    | Sessions per variant | What to expect |
+    | --- | --- |
+    | Fewer than 200 | High variance; split may look uneven |
+    | 200 to 500 | Variance decreases; trend becomes clearer |
+    | 500 or more | Split should closely match your target ratio |
+  </Accordion>
+
+  <Accordion title="Check 4: Variant Is in Draft">
+    <Warning>
+      A draft funnel cannot receive experiment traffic.
+    </Warning>
+
+    If one variant funnel is still in draft status, all traffic will flow to the published variant and the other will show zero sessions. Open both variant funnels in the Jurni editor and confirm both are published before the experiment goes live.
+
+    <Steps>
+      <Step title="Open the experiment">
+        Go to the Experiments section in your Jurni workspace.
+      </Step>
+      <Step title="Click each variant funnel">
+        Open both funnels from the experiment details.
+      </Step>
+      <Step title="Confirm published status">
+        Make sure each funnel shows as Published, not Draft.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Frequently Asked Questions">
+    **Can I change the traffic split after an experiment is live?**
+
+    Yes, but doing so resets the statistical significance calculation. Only adjust the split if you have a strong reason to, and note that prior data will no longer be part of the calculation.
+
+    **Why is one variant getting 0 sessions?**
+
+    The most likely cause is that the variant funnel is still in draft status. Confirm both variants are published. If both are published, verify the Smart Link is in use and that traffic volume is high enough for a split to appear.
+
+    **How do I know if my experiment is getting enough traffic?**
+
+    Aim for at least 200 sessions per variant before drawing any conclusions. For statistical significance, 500 or more sessions per variant is recommended.
+  </Accordion>
+</AccordionGroup>
+
+If you have reviewed all four checks and traffic is still not splitting correctly, contact Jurni support at [info@getjurni.ai](mailto:info@getjurni.ai) or reach out in Slack.

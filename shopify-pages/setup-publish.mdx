@@ -1,11 +1,186 @@
 ---
-title: "Setting Up and Publishing Shopify Pages"
+title: "Set Up and Publish Shopify Pages with Jurni"
 sidebarTitle: "Setup & Publish"
-description: "Learn how to set up and publish Shopify pages with Jurni. Follow the steps to connect your store, configure pages, and make them live for customers."
+description: "Connect your Shopify store, configure a theme template, and publish Jurni funnels as native Shopify pages. Covers enabling Shopify Pages, theme setup, publishing, and troubleshooting."
 ---
 
-Jurni helps you create and publish pages directly to your Shopify store. This page walks you through the setup process, from connecting your store to publishing your first Jurni-powered page.
+Jurni Shopify Pages let you publish funnels as native pages inside your Shopify store instead of hosting them on a Jurni domain. This guide walks you through enabling the integration, configuring your theme, and publishing your first Shopify Page.
 
-<Note>
-  This article is being migrated from the Jurni Help Center. [View the original article](https://help.getjurni.ai/articles/8145431660-setting-up-and-publishing-shopify-pages) for full content.
-</Note>
+## How Shopify Pages work
+
+When you publish a funnel to Shopify, Jurni creates or updates a native Shopify page under your store's `/pages/` path (for example, `/pages/black-friday`). You continue to design and manage the funnel in Jurni, while Shopify serves the published page using one of your Shopify page templates. Shopify Pages also work seamlessly with Smart Links, so you can redirect campaign traffic without changing your marketing URLs.
+
+## Prerequisites
+
+Before you begin, confirm the following:
+
+- Your Shopify store is connected to Jurni.
+- The Jurni Shopify app is installed.
+- You have administrator access to your Shopify store and theme.
+
+## Step 1: Enable Shopify Pages
+
+<Steps>
+  <Step title="Open Shopify Pages settings">
+    In Jurni, navigate to **Settings**.
+  </Step>
+  <Step title="Enable the feature">
+    Locate the **Shopify Pages** section and enable **Shopify Pages**.
+  </Step>
+  <Step title="Update app permissions if prompted">
+    If your Shopify app requires additional permissions, you will be prompted to update the app before continuing. Approve the update to complete the setup.
+  </Step>
+</Steps>
+
+<Info>
+  You will also see a **Cart Config Code** option in this section. Cart configuration depends on your cart provider and is covered in a separate guide.
+</Info>
+
+## Step 2: Configure your Shopify theme
+
+When you begin setup, Jurni will guide you through connecting your Shopify theme.
+
+### Create your first page template
+
+<Steps>
+  <Step title="Open the theme editor">
+    In Shopify, go to **Online Store → Themes → Customize**.
+  </Step>
+  <Step title="Create a new page template">
+    Create a new **Page template** named `jurni-funnel`.
+  </Step>
+</Steps>
+
+<Tip>
+  We recommend naming your first template `jurni-funnel`. After setup, you can create additional page templates at any time. As long as a template contains the **Jurni Funnel Page** app section, it can be selected when publishing a funnel from Jurni.
+</Tip>
+
+### Configure the template
+
+After creating the template:
+
+<Steps>
+  <Step title="Remove default sections">
+    Review the template and remove or hide any sections your theme adds by default, such as banners, featured collections, newsletters, image sections, or other page content.
+  </Step>
+  <Step title="Add the Jurni Funnel Page section">
+    Click **Add section**, then under **Apps** select **Jurni Funnel Page**.
+  </Step>
+  <Step title="Set the layout width">
+    Select the **Jurni Funnel Page** section and configure its layout. Depending on your Shopify theme, either turn **Match section margins to theme** **Off**, or enable **Full page width**. This ensures your Jurni funnel spans the full width of the page instead of inheriting your theme's spacing and layout.
+  </Step>
+  <Step title="Save and connect">
+    Save the template, return to Jurni, and select **Connect** to complete the setup.
+  </Step>
+</Steps>
+
+## Step 3: Confirm setup
+
+After connecting:
+
+<Steps>
+  <Step title="Return to Jurni">
+    Go back to Jurni in your browser.
+  </Step>
+  <Step title="Refresh the page">
+    Refresh the page to confirm the integration is active.
+  </Step>
+</Steps>
+
+Your Shopify Pages integration is now configured and ready to use.
+
+## Step 4: Publish a Shopify Page
+
+Once setup is complete, publish a funnel directly to Shopify:
+
+<Steps>
+  <Step title="Open your funnel">
+    Open your funnel in the Jurni editor.
+  </Step>
+  <Step title="Start publishing">
+    Click **Publish** in the upper-right corner, then select **Publish to Shopify**.
+  </Step>
+  <Step title="Confirm your store">
+    Confirm your Shopify store is connected.
+  </Step>
+  <Step title="Set the page handle">
+    Enter the **Page Handle** (for example, `black-friday`). This becomes the URL path for your page.
+  </Step>
+  <Step title="Select a template">
+    Select the Shopify page template you want to use.
+  </Step>
+  <Step title="Publish">
+    Click **Publish to Shopify**. Your funnel will be published as a native Shopify page.
+  </Step>
+</Steps>
+
+<Warning>
+  Some legacy Jurni sections are not supported on Shopify Pages. If your funnel contains unsupported sections, Jurni will identify them before publishing so they can be updated.
+</Warning>
+
+## Updating a published page
+
+After publishing, the **Publish** menu displays:
+
+- Current publish status
+- Published page URL
+- Last published date
+- Last published by
+
+To publish new changes, click **Update**.
+
+## Unpublishing a page
+
+To remove a page from Shopify:
+
+<Steps>
+  <Step title="Open Publish to Shopify">
+    In your funnel, open **Publish to Shopify**.
+  </Step>
+  <Step title="Unpublish">
+    Select **Unpublish page from Shopify**.
+  </Step>
+</Steps>
+
+## Step 5: Cart configuration
+
+Depending on your cart provider (such as Shopify Native Cart or Rebuy), additional cart configuration may be required after publishing. See [Cart Configurations for Shopify Pages](/shopify-pages/cart-config) for provider-specific instructions.
+
+## Limitations
+
+Keep the following limitations in mind when using Shopify Pages:
+
+- Shopify Pages require at least one page template containing the **Jurni Funnel Page** app section.
+- Any default Shopify theme sections should be removed or hidden from templates used for Jurni funnels.
+- Some legacy Jurni sections are not supported for Shopify Pages and must be updated before publishing.
+- Cart functionality may require additional configuration depending on your cart provider.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Shopify Pages won't connect">
+    Verify the following:
+
+    - Shopify Pages are enabled in Jurni.
+    - Your Shopify app has been updated with the latest permissions.
+    - A page template named `jurni-funnel` has been created.
+    - The template contains the **Jurni Funnel Page** app section.
+    - The template has been saved before returning to Jurni.
+  </Accordion>
+
+  <Accordion title="My funnel doesn't display correctly">
+    This is usually caused by the Shopify page template. Check that:
+
+    - Any default theme sections have been removed or hidden.
+    - The **Jurni Funnel Page** section has been added to the template.
+    - **Match section margins to theme** is disabled, or **Full page width** is enabled, depending on your theme.
+  </Accordion>
+
+  <Accordion title="Some sections are missing after publishing">
+    Some older Jurni sections cannot currently be published as Shopify Pages. Before publishing, Jurni will identify any unsupported sections so they can be replaced.
+  </Accordion>
+</AccordionGroup>
+
+## Need help?
+
+If you continue to experience issues setting up or publishing Shopify Pages, contact your Jurni representative or reach out via Slack or at [info@getjurni.ai](mailto:info@getjurni.ai).
