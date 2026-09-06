@@ -1,0 +1,58 @@
+---
+title: "Set up affiliate references"
+sidebarTitle: "Affiliatly & Bix Grow"
+description: "Enable Affiliatly or Bix Grow in Jurni, add the correct creator reference, and verify the campaign without confusing affiliate IDs with discount codes."
+icon: "link"
+---
+
+Jurni includes **Affiliatly** and **Bix Grow** controls in **Settings → Integrations → Affiliate Integrations**. Enabling a provider makes its reference field available in the Creators workflow.
+
+Use these settings when your brand already works with that affiliate provider. They are not a replacement for setting up the affiliate program itself.
+
+## Enable the provider
+
+<Steps>
+  <Step title="Check the shop and provider">
+    Confirm which Jurni shop you are configuring and which affiliate platform your brand uses. Have the creator's reference from that platform available.
+  </Step>
+  <Step title="Open Affiliate Integrations">
+    Go to **Settings → Integrations** and locate **Affiliate Integrations**.
+  </Step>
+  <Step title="Enable Affiliatly or Bix Grow">
+    Turn on the relevant provider and wait for the setting to finish saving. These cards use enable/disable controls rather than an API-key form.
+  </Step>
+  <Step title="Add the reference to the creator">
+    Open **Creators** and add or edit the relevant creator. Fill **Affiliatly Ref** or **Bix Grow Ref**, then save the creator record.
+  </Step>
+</Steps>
+
+## Keep these values separate
+
+| Value | Purpose |
+| --- | --- |
+| Creator name or Instagram handle | Identifies the creator in your team's records. |
+| Discount Code | Records the promotional code associated with the creator. |
+| Affiliatly Ref / Bix Grow Ref | Records the creator's reference for the corresponding affiliate provider. |
+| Campaign or Smart Link URL | The link the audience actually visits. Its destination and routing are configured separately. |
+
+Copy the affiliate reference from the intended provider account. Do not replace it with an email, social handle, or discount code unless that is the exact reference your affiliate implementation expects.
+
+## Verify the complete campaign
+
+Before sharing a creator's campaign, test the actual link and its destination. Check any promotional code in the purchase flow, and validate referral recognition in your affiliate platform with the person who manages that program.
+
+<Warning>
+  Turning on a provider or saving a creator reference is not proof that every sale will receive affiliate credit. It also does not confirm commission rates, payout eligibility, or settlement. Verify those separately in the affiliate platform.
+</Warning>
+
+For native Shopify Pages or a custom storefront, validate the installed affiliate implementation on that specific page and checkout path. Do not assume a working Jurni-hosted campaign proves a different publishing environment is configured correctly.
+
+## Missing reference field
+
+If the field is not visible, confirm that the corresponding integration is enabled in the **same shop**. The Creators table and form show the provider-specific fields conditionally.
+
+If the field is present but referral recognition fails, share the provider name, creator record, campaign link, and test path with Jurni support. Avoid sending private API keys in a support message.
+
+- [Manage creators](/integrations/manage-creators)
+- [Smart Links](/building-funnels/smart-links)
+- [Discounts and promotions](/commerce/discounts-promotions)

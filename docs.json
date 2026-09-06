@@ -97,8 +97,7 @@
               "build/page-popups",
               "building-funnels/sticky-cta-banner",
               "product-updates/image-repositioning",
-              "build/page-settings",
-              "build/code-mode"
+              "build/page-settings"
             ]
           },
           {
@@ -303,7 +302,10 @@
           },
           {
             "group": "Affiliate & Creator Tools",
-            "pages": []
+            "pages": [
+              "integrations/manage-creators",
+              "integrations/affiliate-tools"
+            ]
           },
           {
             "group": "Slack & Collaboration",
@@ -330,7 +332,8 @@
             "pages": [
               "data-dictionary/metrics-glossary",
               "reference/events",
-              "reference/url-parameters"
+              "reference/url-parameters",
+              "build/code-mode"
             ]
           },
           {
