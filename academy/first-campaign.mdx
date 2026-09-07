@@ -1,0 +1,138 @@
+---
+title: "Launch your first Jurni campaign"
+sidebarTitle: "First Campaign"
+description: "A marketer-first walkthrough from campaign brief to page, campaign link, QA, launch, and first learning loop."
+icon: "rocket"
+hidden: true
+---
+
+This playbook is the shortest path from **“we have an idea”** to **“traffic is hitting a verified Jurni campaign.”** It is designed for a marketer launching a new landing page, not for someone configuring every Jurni feature at once.
+
+## The outcome
+
+By the end, you should have:
+
+- one campaign brief with a clear audience, angle, offer, and action;
+- one reviewed Jurni experience;
+- the correct product / purchase path for the campaign;
+- the publishing destination you intend to use;
+- a campaign-facing Smart Link when appropriate;
+- tracking checked on the real URL;
+- one documented hypothesis for what you will learn after launch.
+
+## 1. Write the campaign brief before opening the editor
+
+Do not begin with “build me a landing page.” Give Jurni a point of view.
+
+```text
+CAMPAIGN
+Product: [product]
+Audience: [who is this for?]
+Traffic source: [Meta / TikTok / Google / email / creator / other]
+Audience temperature: [cold / warm / returning]
+Primary angle: [the message from the ad or campaign]
+Offer: [approved offer, or “no special offer”]
+Primary action: [add to cart / choose subscription / continue to store / sign up]
+
+PROOF WE CAN USE
+- [approved benefit or claim]
+- [review / rating / UGC source]
+- [shipping / guarantee / trust detail]
+
+MUST KEEP
+- [brand or legal requirement]
+- [purchase behavior]
+
+DO NOT INVENT
+Claims, customer results, reviews, prices, discounts, deadlines, or guarantees.
+```
+
+If the brief is unclear, use the [Prompting 101](/academy/prompting-101) meta-prompt to ask Jurni what information is missing before it builds.
+
+## 2. Gather only the references that matter
+
+Attach the actual inputs Jurni should work from: the connected product when available, the ad creative, approved copy or claims, product imagery, and any reference URL, screenshot, or Figma frame that genuinely matters.
+
+Label references. A screenshot can mean **“copy this layout”** or **“place this image in the page.”** Those are different instructions.
+
+```text
+Reference 1 = layout inspiration only.
+Reference 2 = actual product image to use.
+Attached ad = source of campaign angle and headline direction.
+Attached product = source of product and purchase information.
+```
+
+## 3. Build the first useful version
+
+Start with structure and message match, not micro-styling.
+
+```text
+Build a landing page for the campaign brief above.
+
+The first screen should immediately connect to the ad angle and make the next action obvious.
+Use a clear visual hierarchy and keep one primary conversion path.
+
+Recommended flow:
+1. Hero that matches the campaign message
+2. Fast proof / trust
+3. Product benefits or problem-solution education
+4. Social proof using only approved sources
+5. Product / purchase section
+6. Objection handling / FAQ
+7. Final CTA
+
+Use our brand guidance and attached assets.
+Do not invent proof or commerce details.
+Prioritize mobile because [X]% of this campaign's traffic is expected to be mobile.
+```
+
+Review the page structure before asking for ten additional changes. If the story is wrong, fix the story first.
+
+## 4. Refine the highest-leverage parts
+
+Work section by section. Usually the order is hero / above the fold, proof, purchase section, mobile, then long-form education and FAQ.
+
+Use [Prompting 101](/academy/prompting-101) to preserve working content while editing one area.
+
+## 5. Confirm the purchase path
+
+For Shopify campaigns, test the actual product, variant, selling plan, quantity, discount, cart, and checkout that the page is supposed to use.
+
+For non-Shopify or headless flows, confirm the agreed cart API, checkout link, product-page destination, or custom handoff before launch. See [Cart & Checkout](/commerce/cart-checkout-behavior).
+
+The page is not finished because the CTA looks correct. It is finished when the intended shopper action works.
+
+## 6. Choose how the page goes live
+
+Use the [Publishing overview](/publishing/overview) if you need setup details. From a campaign perspective, choose based on the destination you need: Jurni-hosted, Shopify Pages, or the agreed headless/custom route.
+
+If paid media, email, creators, or QR codes should use a stable campaign-facing URL, create or use a [Smart Link](/building-funnels/smart-links).
+
+## 7. Test the exact link you will send traffic to
+
+Never QA only the editor preview. Open the final campaign link and verify destination, mobile and desktop, purchase path, offer outcome, forms/reviews, consent, tracking, campaign parameters, and checkout transition.
+
+Use [Check your campaign link](/publishing/check-campaign-link) for the operational checklist.
+
+## 8. Define what you want to learn
+
+A launch should create a learning loop even when it is not a formal A/B test.
+
+> We believe [specific page/campaign choice] will help [audience] because [reason]. We will watch [primary metric] and [secondary diagnostic].
+
+If you can isolate the change, turn it into an experiment with [Run your first experiment](/academy/playbooks/first-experiment).
+
+## What good looks like
+
+Before launching, a teammate who did not build the page should be able to answer: Who is this page for? What brought them here? What is the main promise? What should they do next? What proof supports it? What are they actually buying?
+
+If those answers are fuzzy, another round of styling is usually not the highest-priority fix.
+
+## Next playbooks
+
+<CardGroup cols={2}>
+  <Card title="Turn an ad into a landing page" href="/academy/playbooks/ad-to-landing-page" icon="megaphone">Improve message match from paid creative to page.</Card>
+  <Card title="Optimize above the fold" href="/academy/playbooks/optimize-above-fold" icon="panel-top">Tighten the part of the page every visitor sees first.</Card>
+  <Card title="Create a controlled variation" href="/academy/playbooks/controlled-variation" icon="copy-plus">Build a test variant without changing multiple variables.</Card>
+  <Card title="Prompt library" href="/academy/prompts" icon="copy">Grab a prompt for your next page or edit.</Card>
+</CardGroup>
