@@ -1,0 +1,240 @@
+---
+title: "Build a repeatable optimization loop"
+sidebarTitle: "Optimization loop"
+description: "Turn campaign observations and experiment results into a repeatable cycle of hypotheses, controlled changes, learning, and the next test."
+icon: "refresh-cw"
+---
+
+# Build a repeatable optimization loop
+
+The goal of experimentation is not to find one “perfect page.” It is to build a system that **learns faster than a sequence of random redesigns**.
+
+Use this playbook to turn page analytics, campaign context, and experiment results into a repeatable workflow your team can use every week.
+
+## The loop
+
+A useful Jurni optimization loop is:
+
+**Observe → Prioritize → Hypothesize → Build → QA → Run → Interpret → Record → Repeat**
+
+Each step protects the quality of the next one.
+
+## 1. Observe what is happening
+
+Look for signals rather than conclusions:
+
+- a strong ad with a generic landing page
+- a page attracting sessions but weak purchase behavior
+- a product section with unclear options
+- an experiment where one treatment changes an earlier funnel behavior
+- repeated customer objections
+- campaign audiences behaving differently
+
+Write observations without deciding the solution yet.
+
+```text
+OBSERVATION
+[What did we see?]
+
+CONTEXT
+[Traffic source, audience, offer, date range, device, campaign changes]
+
+WHAT WE DO NOT KNOW YET
+[Why it happened / whether it generalizes]
+```
+
+## 2. Prioritize the customer decision
+
+Ask which unresolved decision is most important:
+
+- relevance after click
+- product understanding
+- belief / trust
+- comparison
+- offer clarity
+- purchase-option clarity
+- checkout intent
+
+Use [What to test next](/academy/playbooks/what-to-test) to rank ideas rather than letting the loudest opinion win.
+
+## 3. Write the hypothesis before building
+
+```text
+If we [single change], then [audience] will be more likely to [behavior] because [customer reason].
+```
+
+Also define:
+
+- what stays constant
+- primary metric
+- diagnostic metrics you may use to understand behavior
+
+The hypothesis becomes the guardrail for the AI build.
+
+## 4. Build the smallest useful variant
+
+Use Jurni AI to make the change without unintentionally expanding the test.
+
+```text
+This is an experiment variant.
+
+HYPOTHESIS
+[hypothesis]
+
+CHANGE ONLY
+[test variable]
+
+KEEP IDENTICAL
+[product, offer, page structure, proof, CTA, tracking, etc.]
+
+Do not make additional optimizations.
+After the edit, summarize what is intentionally different from the control.
+```
+
+Then manually compare the experiences.
+
+## 5. QA the treatment, not just the page
+
+Your QA question is not only “does it work?” It is also:
+
+> Is this still the test we intended to run?
+
+Check:
+
+- only intended differences
+- same product / offer unless deliberately tested
+- same purchase action
+- same publishing environment
+- working mobile behavior
+- exact Smart Link
+- campaign parameters
+
+## 6. Run without moving the goalposts
+
+Once meaningful traffic has entered the experiment, avoid repeatedly tweaking the treatment. A changing variant makes the date-range result harder to interpret.
+
+Keep a note of any bug correction or campaign change that could affect the test context.
+
+## 7. Interpret against the original question
+
+Start with the primary metric, then use supporting metrics to understand the path.
+
+For example:
+
+- CVR improved and ATC improved → the treatment may have helped before purchase.
+- ATC improved but CVR did not → the change may have increased product engagement without resolving later friction.
+- AOV changed while CVR was flat → check whether the treatment influenced purchase selection or product mix.
+
+These are observations to investigate, not automatic proof of mechanism.
+
+## 8. Record a learning, not just a winner
+
+Bad experiment note:
+
+> Variant B won.
+
+Better:
+
+> For first-time Meta traffic from the convenience campaign, a hero that continued the convenience promise led on CVR over the broad brand headline during this test. We have not yet shown that the same framing works for search or returning traffic.
+
+A useful learning includes:
+
+- audience / traffic context
+- treatment
+- primary metric result
+- what you believe is supported
+- what remains uncertain
+
+## Prompt: convert a result into learning
+
+```text
+Help me turn this experiment into a reusable learning.
+
+CONTEXT
+[audience, traffic source, campaign, dates]
+
+HYPOTHESIS
+[hypothesis]
+
+CONTROL
+[control]
+
+VARIANT
+[variant]
+
+RESULT
+[relevant Jurni metrics]
+
+Return:
+1. OBSERVATION
+2. REASONABLE CONCLUSION
+3. WHAT THIS DOES NOT PROVE
+4. WHERE THIS LEARNING MAY APPLY
+5. 3 NEXT HYPOTHESES
+
+Do not invent statistical certainty or a causal explanation that the result does not establish.
+```
+
+## 9. Choose the next test based on what changed in your understanding
+
+Three useful follow-up patterns:
+
+### Deepen the winning idea
+
+If message match appears promising, test the next part of the same journey: proof, product transition, or offer clarity.
+
+### Test the boundary
+
+Ask where the learning stops applying: cold versus returning traffic, one creative angle versus another, mobile versus desktop context.
+
+### Resolve a new friction point
+
+If an earlier metric improves but purchase does not, investigate the next decision in the journey instead of repeating the same test.
+
+## Build a simple weekly rhythm
+
+A practical cadence can be:
+
+**Review:** active tests and major page/campaign changes.
+
+**Learn:** write what completed tests actually taught.
+
+**Prioritize:** choose the next few hypotheses.
+
+**Build:** use AI for focused treatments.
+
+**QA / launch:** route only when the treatment is clean.
+
+The exact cadence depends on traffic and team capacity; do not force weekly conclusions from tests that need more time.
+
+## Avoid these anti-patterns
+
+**Winner worship.** A winning treatment is useful, but the learning is what compounds.
+
+**Constant redesign.** Rebuilding the whole page resets too many assumptions at once.
+
+**No record of context.** A lesson without traffic source, audience, or offer context is easy to overgeneralize.
+
+**Backlog inflation.** Hundreds of unprioritized ideas are less useful than a small queue tied to evidence.
+
+**Using AI to choose truth.** Jurni AI can help generate and evaluate hypotheses; real campaign results decide what your audience did.
+
+## What good looks like
+
+Over time, your team should be able to answer:
+
+- what messages work for which audiences
+- which proof reduces which objections
+- where visitors need more education
+- which offer framing is clearest
+- what purchase choices create friction
+- which patterns are repeatable versus campaign-specific
+
+That accumulated knowledge should make the next page better **before** its first test.
+
+## Next playbooks
+
+- [CRO review](/academy/playbooks/cro-review)
+- [What to test](/academy/playbooks/what-to-test)
+- [First A/B test](/academy/playbooks/first-ab-test)
+- [Message match](/academy/playbooks/message-match)
