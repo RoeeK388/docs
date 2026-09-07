@@ -1,0 +1,183 @@
+---
+title: "Turn a reference page into your brand's experience"
+sidebarTitle: "Build from a reference"
+description: "Use a screenshot or URL as design and interaction inspiration while rebuilding the page with your own brand, product, claims, proof, and purchase flow."
+icon: "scan"
+hidden: true
+---
+
+Use this playbook when you have a landing page, PDP, screenshot, or campaign experience that captures a useful structure or interaction you want to adapt in Jurni.
+
+The goal is **translate the pattern, not copy the brand**.
+
+## When to use it
+
+Useful for:
+
+- recreating a useful page structure in your brand system;
+- adapting a proven category pattern to another product;
+- briefing Jurni from a competitor / inspiration URL;
+- combining the interaction from one reference with the visual style of another;
+- rebuilding an existing internal page as editable Jurni content.
+
+## Phase 1 — Decide what the reference is actually for
+
+A reference can help with different jobs:
+
+- **layout** — section order, column structure, spacing, hierarchy;
+- **visual style** — typography scale, card treatment, image composition;
+- **interaction** — selector / bundle / step flow;
+- **content pattern** — FAQ arrangement, comparison framework, proof placement;
+- **page story** — advertorial / PDP / listicle sequence.
+
+Do not simply say “copy this page.” Tell Jurni which of these jobs matters.
+
+## Phase 2 — Separate the reference from your real sources
+
+Create a simple map:
+
+```text
+REFERENCE URL / IMAGE 1
+Use for: [LAYOUT / INTERACTION / STYLE]
+Do not use: brand, product, copy, claims, reviews, prices, offer, logo.
+
+OUR SOURCES
+- Product: [CONNECTED PRODUCT]
+- Brand: AI Knowledge
+- Copy / claims: [APPROVED SOURCE]
+- Images: [APPROVED ASSETS]
+- Proof: [APPROVED REVIEWS / PROVIDER]
+- Offer: [REAL CONFIGURED OFFER]
+```
+
+This is one of the highest-value prompting habits when building from references.
+
+## Phase 3 — Ask Jurni to extract the pattern first
+
+```text
+Do not build yet.
+Analyze [REFERENCE URL / SCREENSHOT] as a design reference.
+
+Identify:
+- page / section structure;
+- visual hierarchy;
+- major reusable layout patterns;
+- meaningful interactions;
+- mobile considerations visible from the reference;
+- which parts are brand-specific and should NOT be reused.
+
+Return a clean implementation outline for our brand.
+Do not copy reference copy, claims, reviews, product information, pricing, imagery, or logo.
+```
+
+Review the outline and delete anything you do not actually need.
+
+## Phase 4 — Build with explicit priorities
+
+```text
+Build our version using the approved outline.
+
+PRIORITY 1 — preserve our real content and commerce
+Use [PRODUCT], approved assets, AI Knowledge, and [REAL PURCHASE ACTION].
+
+PRIORITY 2 — adapt the reference pattern
+Use [REFERENCE] for [LAYOUT / INTERACTION / STYLE] only.
+
+PRIORITY 3 — keep it editable
+Build the result with editable Jurni sections, text, images, and functional shopper controls.
+Do not use the screenshot itself as the finished page.
+
+Do not copy another brand's claims, reviews, prices, offer, imagery, logo, or exact copy.
+```
+
+## Phase 5 — Describe behavior separately from appearance
+
+A screenshot cannot prove how an interaction works.
+
+For a bundle selector, for example:
+
+```text
+Use the reference for the visual layout of the cards.
+Behavior should be:
+- shopper selects [REAL SELECTION RULE];
+- selected products / quantities are [REAL CONFIGURATION];
+- current purchase action remains [ACTION].
+
+Do not convert working selection controls into static cards.
+```
+
+For another brand’s cart, quiz, animation, or subscription control, confirm what Jurni actually supports before promising the same interaction.
+
+## Phase 6 — Brand the pattern deliberately
+
+Ask which elements should be transformed:
+
+- fonts and type scale;
+- brand colors;
+- product / lifestyle media;
+- corner radius / card treatment;
+- iconography;
+- voice;
+- proof;
+- CTA language.
+
+A good adaptation should not look like the reference with a new logo pasted on top.
+
+## Phase 7 — Check mobile independently
+
+If you only have a desktop screenshot, do not assume the hidden mobile behavior.
+
+Ask Jurni to create a reasonable responsive adaptation and then review it:
+
+```text
+The reference only shows desktop.
+For mobile, preserve the same information hierarchy but adapt it for one-column reading.
+Prioritize [PRODUCT / CTA / PROOF].
+Do not invent a separate interaction that is not defined in the brief.
+```
+
+If you have a mobile reference too, label both clearly.
+
+## Phase 8 — Verify every copied assumption
+
+Before launch, ask:
+
+- Did any competitor claim / review sneak into the copy?
+- Are product choices real?
+- Are prices / discounts actual?
+- Do links go to your destinations?
+- Is the interaction functional rather than decorative?
+- Does the mobile version make sense without reference assumptions?
+- Are you using assets you have the right to publish?
+
+## What good looks like
+
+Someone familiar with the reference might recognize the **pattern or interaction idea**, but a customer should experience a coherent Jurni page for **your** brand, product, audience, and offer.
+
+## Common mistakes
+
+### “Make it exactly like this URL”
+
+It gives no priority or legal / brand boundary.
+
+### Treating a screenshot as a behavior spec
+
+Explain the dynamic behavior yourself.
+
+### Copying reviews / claims with the layout
+
+Reference structure is not source material.
+
+### Trying to reproduce every section
+
+Extract only the useful pattern. More fidelity is not always more value.
+
+### Forgetting mobile
+
+A beautiful desktop recreation can be a poor landing page on paid-social traffic.
+
+## Related
+
+- [Prompting 101](/academy/prompting-101)
+- [Page-building prompts](/academy/prompts/page-building)
+- [Figma → Jurni](/academy/playbooks/figma-to-page)
