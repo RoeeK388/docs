@@ -1,68 +1,116 @@
----
-title: "Offers for Shopify stores"
-sidebarTitle: "Offers overview"
-description: "Set the promotion, experience scope, timing, and qualification, then match the actual discount in Shopify."
-keywords:
-  - "Jurni offers"
-  - "Gift with Purchase"
-  - "free shipping"
-  - "samples"
-  - "discount code"
-icon: "tags"
----
+Use **Offers** when the campaign promise depends on a real promotion such as a gift, free shipping, samples, or a Shopify discount code.
 
-Use **Offers** to configure promotions for eligible Jurni experiences connected to **Shopify**. Offers are separate from the Buy Box design and from the general controls in Storefront Settings.
+For Shopify brands, think of every offer as two connected pieces:
 
-<Note>
-  Non-Shopify and custom cart flows need an agreed implementation with the Jurni team. These instructions do not automatically configure WooCommerce, Salesforce, a headless cart, or an external checkout.
-</Note>
+1. **What Jurni shows / qualifies on the experience.**
+2. **What Shopify actually charges or applies in cart / checkout.**
 
-## Choose the offer type
+Those two pieces need to match before you send traffic.
 
-| Offer | What you configure in Jurni | What must also be correct in Shopify |
-| --- | --- | --- |
-| [Gift with Purchase](/building-funnels/gift-with-purchase) | The gift products, qualifying cart conditions, and gift selection behavior. | Gift availability and the rule or price that makes the gift free. |
-| [Free Shipping](/commerce/free-shipping-offers) | A qualifying amount or quantity, with an optional subscription qualification. | The shipping rate or shipping discount available at checkout. |
-| [Samples](/commerce/samples-offers) | Eligible sample products, the selection limit, and the minimum qualifying amount. | Sample prices and any applicable discount. Samples are not automatically free. |
-| [Discount Code](/commerce/discount-code-offers) | An existing Shopify code, where it applies in Jurni, and optional promotional display. | The code's value, eligibility, combinations, purchase types, dates, and usage limits. |
+## What kind of campaign are you running?
 
-The current offer picker does not expose separate **Order Discount**, **Buy More Save More**, or **Product Discount** creation flows. A custom bundle or Buy Box can still need a promotion, but its discount must be implemented separately.
+<CardGroup cols={2}>
+  <Card title="Gift with purchase" icon="gift" href="/building-funnels/gift-with-purchase">
+    Give or let shoppers choose a gift after a supported product, quantity, spend, or subscription condition is met.
+  </Card>
 
-## Create an offer
+  <Card title="Free shipping" icon="truck" href="/commerce/free-shipping-offers">
+    Show free-shipping qualification in the supported Jurni flow and match it to the real Shopify shipping rule.
+  </Card>
+
+  <Card title="Samples" icon="package-plus" href="/commerce/samples-offers">
+    Let qualifying shoppers choose from a sample list after reaching the intended spend threshold.
+  </Card>
+
+  <Card title="Discount code" icon="badge-percent" href="/commerce/discount-code-offers">
+    Use an existing Shopify discount code in eligible Jurni experiences and optionally show the promotion before cart.
+  </Card>
+</CardGroup>
+
+## The most important rule
+
+**A Jurni offer does not automatically create the underlying Shopify discount.**
+
+Examples:
+
+- “Spend $$75 and get a free gift” → Jurni can manage the supported qualification / gift flow, but Shopify still needs to make the gift $$0 or discounted as promised.
+- “Free shipping over \$50” → Jurni can show the qualification, but Shopify still needs a matching shipping rate / discount for the shopper's address.
+- “Use code SAVE15” → the code must already exist in Shopify with the correct product, customer, timing, purchase-type, and combination rules.
+- “Choose two samples” → the samples can still have a price unless Shopify / product pricing makes them free.
+
+The current **Create Shopify Discount** control shown on some offer forms is disabled. Saving an offer is not the same as creating its Shopify discount.
+
+## A marketer offer workflow
 
 <Steps>
-  <Step title="Open Offers and choose a type">
-    Create a new offer and select one of the available types above.
+  <Step title="Write the exact customer promise">
+    Before configuring anything, state the offer in one sentence: **who / what qualifies, what the shopper receives, and any important limit or timing.**
   </Step>
-  <Step title="Name the offer">
-    Use an internal name your team can recognize. **Display Text**, where provided, is the separate message shown to shoppers by supported components.
+  <Step title="Set the real Shopify rule">
+    Configure or confirm the discount, shipping rate, gift price, or code in Shopify / your existing discount app. If another person owns Shopify discounts, align the rule with them first.
   </Step>
-  <Step title="Choose Offer Scope">
-    **Global** makes the offer available across eligible experiences in this shop. To limit it, use the selected-experiences option and choose the intended pages. This control may still display the legacy label **Funnels**. It is not a rule targeting every page on your entire Shopify website.
+  <Step title="Create the matching Jurni offer">
+    Open **Offers**, choose the supported type, set its qualification, scope, timing, products, and shopper-facing text where available.
   </Step>
-  <Step title="Set timing and rules">
-    Add start/end timing when needed, then configure the conditions for the selected offer type. Check the displayed currency for amount thresholds.
+  <Step title="Explain the offer on the page">
+    Use clear campaign copy near the hero / purchase decision when the promotion matters to the campaign. The page message should match the actual offer rule exactly.
   </Step>
-  <Step title="Save and test">
-    Save the offer, check its status in Offers, and test an included experience. Confirm both the shopper-facing message and the actual checkout result.
+  <Step title="Test both qualifying and non-qualifying carts">
+    Verify the real published experience, cart, and checkout. Remove a qualifying item or drop below a threshold and confirm the result updates correctly.
   </Step>
 </Steps>
 
-## Jurni messaging is not discount enforcement
+## Offer scope: where should it run?
 
-**Creating an offer does not mean Jurni created its discount in Shopify.** The current **Create Shopify Discount** control shown on some offer forms is disabled. Configure the actual discount or shipping rule in Shopify or your discount app.
+Use **Global** when the offer should apply across eligible Jurni experiences in this shop.
 
-For example, “Spend $$75, get a free gift” needs both a qualifying Jurni gift rule and a Shopify setup that charges $$0 for the intended gift. A correct banner with a full-priced gift is not a completed setup.
+Use the selected-experiences option when the promotion belongs only to specific campaigns / pages. The current UI may still use the legacy label **Funnels** for this control.
 
-## Check eligibility before launch
+This scope applies to Jurni experiences—it is not a rule that automatically changes every Shopify store page.
 
-Test below and above the threshold, the intended one-time/subscription purchase, and both an included and excluded experience. Remove a qualifying item and check what happens. For multiple currencies, repeat the test in the relevant market.
+## Timing
 
-For Shopify Pages or a third-party cart, confirm that the selected offer has been connected to that cart. Do not assume Jurni cart banners and gift-selection behavior are installed in the theme cart automatically.
+Use start / end timing only when the campaign truly has those dates. The shopper-facing page copy should use the same approved timing.
 
-## Related guides
+Do not add countdowns, “ending soon,” or urgency that is not represented by the actual campaign.
 
-- [Discounts and promotions](/commerce/discounts-promotions)
-- [Cart and checkout behavior](/commerce/cart-checkout-behavior)
-- [Shopify Pages cart configuration](/shopify-pages/cart-config)
-- [Markets and currency](/commerce/shopify-markets-currency)
+## How to test an offer properly
+
+For every offer, test at least:
+
+- a cart that **should not** qualify;
+- the exact point where it **should** qualify;
+- the intended product / variant / purchase type;
+- removing / changing the qualifying item;
+- final checkout price / shipping / gift;
+- the market / currency if your campaign runs across markets.
+
+For Shopify Pages or third-party theme carts, verify the offer in that actual cart environment. Do not assume the Jurni-hosted cart UI automatically appears in a native Shopify drawer.
+
+## Campaign playbooks
+
+If you need strategy and page messaging—not just the setup controls—use:
+
+- [Gift-with-purchase campaign playbook](/academy/playbooks/gwp-campaign)
+- [Subscription-first campaign playbook](/academy/playbooks/subscription-campaign)
+- [Campaign & offer prompt library](/academy/prompts/campaigns-offers)
+
+## What Jurni does not currently provide here
+
+The self-service offer picker currently focuses on:
+
+- Gift with Purchase
+- Free Shipping
+- Samples
+- Discount Code
+
+Do not look for a general-purpose Shopify discount-function builder, arbitrary tiered-pricing engine, or full cart upsell designer in this area.
+
+For a promotion outside these supported flows, confirm the actual Shopify / cart implementation with your team and use the landing page to communicate it accurately.
+
+## Related Help Center guides
+
+- [Discounts & promotions](/commerce/discounts-promotions)
+- [Cart & checkout behavior](/commerce/cart-checkout-behavior)
+- [Markets & currency](/commerce/shopify-markets-currency)
+- [Shopify Pages cart connection](/shopify-pages/cart-config)

@@ -1,74 +1,154 @@
----
-title: "Create and Run an A/B Test in Jurni"
-sidebarTitle: "Create Test"
-description: "Choose a new or existing campaign link, configure page variants and traffic weights, and check the test before sending visitors."
-icon: "flask-conical"
----
+This guide covers the **Jurni setup steps** for an A/B test. If you are still deciding what to test or how to structure the hypothesis, start with [Run your first Jurni experiment](/academy/playbooks/first-experiment).
 
-An experiment sends visitors from one campaign link to different page variants so you can compare their results. Prepare the pages first, then configure the test and use its connected Smart Link in your campaign.
+## Before you create the test
 
-## Before you start
+Have these ready:
 
-Decide what you are testing and which metric will guide your decision. For example: “Does a shorter hero improve purchase conversion?” Start with your existing page and one meaningful alternative rather than changing every part of the journey at once.
+- **Control** — the current page / destination.
+- **Variant** — the alternative you want to compare.
+- **Hypothesis** — one sentence explaining what changed and why it may matter.
+- **Primary metric** — the result that will guide your decision.
+- **Campaign link plan** — whether you need a new Smart Link or will intentionally use an existing one.
 
-Test both pages on mobile and desktop, including their product options and checkout. A custom URL also needs the appropriate Jurni tracking connection to report results; successfully redirecting traffic there is not enough.
+Both pages should already be reviewed on mobile / desktop and through the real product / conversion path.
 
-To prepare an alternative with AI, duplicate the experience and ask for the specific change in the copy. For example: “Change only the hero headline to the approved alternative below. Keep the offer, products, button actions, and other sections unchanged.” Review and publish the alternative before selecting it as a variant. See [Prompt examples](/build/prompt-library) and [Manage experiences](/build/manage-experiences).
+If you are creating the alternative with AI, use [Controlled variation](/academy/playbooks/controlled-variation) so unrelated page details stay fixed.
 
-[Testing best practices](/experiments/strategic-experiments) · [Test against an existing website page](/experiments/testing-against-website)
-
-## Set up the experiment
+## Create the experiment
 
 <Steps>
-  <Step title="Create the test">
-    Open the tests/experiments area and start a new experiment. Enter a **Test Name** you will recognize later. Use the optional **Description** to record the hypothesis.
+  <Step title="Start a new experiment">
+    Open **Experiments / Tests** and create a new experiment. Give it a name your team will understand later, such as **Meta — Hero proof test — September** instead of “Test 4.”
   </Step>
-  <Step title="Choose the campaign link">
-    Under **Link**, choose **Create new link** and enter its slug, or **Use existing link** and select an available Smart Link. The existing-link picker excludes links already connected to experiments.
+  <Step title="Record the hypothesis">
+    Use the description to write what you are testing. A useful format is: **We believe [change] will improve [metric / behavior] because [reason].**
   </Step>
-  <Step title="Add the page variants">
-    For each variant, set its **Variant Name** and **Destination**. Select a published Jurni page or enter the supported custom URL. Use names that describe the difference, such as “Current hero” and “Short hero.”
+  <Step title="Choose the Smart Link">
+    Under **Link**, choose **Create new link** when this campaign needs a new entry URL, or **Use existing link** when you deliberately want an available Smart Link's current traffic to enter the experiment.
+  </Step>
+  <Step title="Add the control and variant destinations">
+    Give each variant a clear **Variant Name** and choose its **Destination**. Use names that describe the difference: **Current hero** / **Benefit-led hero**, not A / B when the team will need to remember the test months later.
   </Step>
   <Step title="Review Weight %">
-    The initial two variants start at 50% each. Adjust their weights if needed. Adding or removing a variant redistributes the weights, so review the final split before saving.
+    With two variants, the initial setup starts at 50% / 50%. Change the weights only when your test plan calls for it. Adding or removing variants redistributes weights, so recheck the final numbers.
   </Step>
-  <Step title="Add routing rules only when needed">
-    Use [Routing Rules](/experiments/routing-rules) when specific campaign parameters must reach a particular variant. This is separate from a simple weighted comparison; leave rules out when you do not need that routing behavior.
+  <Step title="Add Routing Rules only when intentional">
+    Routing Rules send matching URL-parameter traffic to a specific variant. Leave them out for a straightforward randomized comparison unless you have a campaign-routing reason to use them.
   </Step>
-  <Step title="Save and start">
-    Review the destinations and link, then use the form's save/start action. Confirm any warning about replacing an existing link's destination. Wait for the success message and open the experiment overview.
+  <Step title="Start the experiment">
+    Review the Smart Link, destinations, weights, and any routing rules. Save / start the experiment and wait for the success confirmation.
   </Step>
 </Steps>
 
+## Create new link or use existing link?
+
+### Create new link
+
+Choose this when:
+
+- the campaign is new;
+- no existing Smart Link should be repurposed;
+- you want a clean campaign entry URL for the test.
+
+The slug becomes part of the campaign URL you will share / put in ads.
+
+### Use existing link
+
+Choose this when:
+
+- the campaign already uses a Smart Link;
+- you intentionally want that link's traffic to start entering this test.
+
 <Warning>
-  Reusing a Smart Link that is already in ads or emails can change where that existing traffic goes when you start the test. Do not treat this as a private draft operation.
+  An existing Smart Link can already be live in Meta ads, emails, creator campaigns, QR codes, or other traffic. Connecting it to a new experiment can change where those visitors go. Treat this as a live routing change.
 </Warning>
 
-## Launch through the right URL
+The existing-link selector excludes Smart Links already connected to another experiment.
 
-Copy the experiment's connected Smart Link into the campaign. Open that exact URL with the campaign parameters and check the result. Direct visits to a variant page do not automatically belong to the experiment.
+## Set the variants clearly
 
-A returning visitor can keep their assignment. Repeatedly refreshing one browser is not a meaningful check of whether a 50/50 split is working.
+For each variant, check:
 
-Use [Test your campaign link](/publishing/check-campaign-link) before sending traffic.
+- **Variant Name** — describes the idea being tested;
+- **Destination** — the exact page or supported custom URL;
+- **Weight** — intended share of normal experiment traffic.
 
-## Review or change a running test
+For a custom / external destination, the page still needs the appropriate Jurni tracking / attribution path. A redirect working is not proof that experiment results will be measured correctly.
 
-Read the variant metrics using the same date range and your chosen decision metric. Check [Reading results](/experiments/reading-results) before interpreting a small difference as a winner.
+[Test against your existing website page →](/experiments/testing-against-website)
 
-The variant-editing form locks the destination URL of an existing variant. Do not assume you can replace its URL in place. Record any changes to the test or underlying page, since combining results from different page versions can make the comparison harder to interpret.
+## What should I put in the ad?
 
-For traffic weights and returning visitors, see [Traffic assignment](/experiments/traffic-assignment).
+Use the **experiment's Smart Link** as the campaign destination.
 
-## Pause or finish deliberately
+Do not put the direct variant URL in the ad when you expect Jurni to split experiment traffic.
 
-Before pausing, read the confirmation: the current pause flow warns that visitors will be sent to the shop home page. Ending is a different action that asks you to choose the winning destination.
+After setup:
 
-Follow [Pause, end, and reuse](/experiments/pause-end-reuse) before changing a test with live campaign traffic. Selecting a winner is a routing decision; it is not, by itself, proof of statistical significance.
+1. copy the Smart Link;
+2. open that exact URL yourself;
+3. add the real campaign parameters you expect to use;
+4. verify the page and purchase path;
+5. check tracking / consent.
 
-## Related guides
+[Test the campaign link →](/publishing/check-campaign-link)
 
-- [What experiments do](/experiments/what-are-experiments)
-- [Smart Links](/building-funnels/smart-links)
-- [Experiment versus experience sessions](/troubleshooting/experiment-experience-sessions)
-- [Metric definitions](/data-dictionary/metrics-glossary)
+## Why do I keep seeing the same variant?
+
+Jurni can keep a visitor's assignment consistent. That means repeatedly refreshing the same browser is **not** a useful 50/50 traffic test.
+
+Use a fresh browser / context when appropriate for assignment QA, and read [Traffic assignment](/experiments/traffic-assignment) before interpreting a few manual visits as traffic imbalance.
+
+## Routing Rules: when should I use them?
+
+Use Routing Rules when a parameter should **deterministically** control the variant.
+
+Examples:
+
+- `utm_term=persona1` → Persona 1 page;
+- a specific campaign parameter → matching page.
+
+This is different from a normal random weighted test because matching traffic is intentionally routed before the standard split.
+
+[Configure Routing Rules →](/experiments/routing-rules)
+
+## Before sending traffic
+
+QA both variants through the Smart Link and confirm:
+
+- correct page / product;
+- real offer / price;
+- product options / subscription where relevant;
+- Add to Cart / checkout;
+- mobile / desktop;
+- forms / review widgets;
+- tracking / consent;
+- campaign parameters;
+- intended routing rules.
+
+For a structured manual checklist, copy a prompt from [Experiment & QA prompts](/academy/prompts/experiments-qa).
+
+## While the test is running
+
+Avoid casual changes to:
+
+- the pages;
+- the product / offer;
+- tracking;
+- weights;
+- routing rules.
+
+If a change is necessary, record it. Combining results from materially different versions can make the test harder to interpret.
+
+The destination URL for an existing variant is locked in the current variant-editing flow; do not plan on silently swapping the underlying destination in place.
+
+## Reading and ending the test
+
+Use [Read experiment results](/experiments/reading-results) with the same test period and primary metric you chose before launch.
+
+Before changing live routing:
+
+- [Pause, end, and reuse](/experiments/pause-end-reuse)
+- [Turn results into the next test](/academy/playbooks/results-to-next-test)
+
+Selecting a winner when ending the experiment is a **traffic-routing decision**. It is not automatically a statistical claim.
