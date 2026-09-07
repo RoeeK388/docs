@@ -1,0 +1,238 @@
+---
+title: "Decide what to test next"
+sidebarTitle: "What to test"
+description: "Prioritize experiment ideas around meaningful customer decisions instead of random cosmetic changes, using the evidence you actually have."
+icon: "lightbulb"
+---
+
+# Decide what to test next
+
+The best test idea is rarely “the thing we can change fastest.” It is the **most important uncertain customer decision you can isolate well enough to learn from**.
+
+Use this playbook when you have several ideas and need to decide what deserves traffic first.
+
+## Start with evidence sources
+
+Good hypotheses can come from:
+
+- a mismatch between ad and landing page
+- experiment results
+- Jurni page analytics
+- recurring customer/support objections
+- campaign performance differences by audience or creative
+- user research or customer calls
+- obvious purchase-path confusion
+- new approved offers or product positioning
+- strong external references that suggest a pattern worth testing
+
+An idea does not need perfect evidence. It should have a clear reason for existing.
+
+## Step 1: write observations without proposing solutions
+
+Examples:
+
+**Observation:** “Visitors reach the product section, but many do not continue into Add to Cart.”
+
+**Observation:** “Our top Meta ad leads with convenience while the landing page hero leads with ingredients.”
+
+**Observation:** “Customers repeatedly ask whether subscription can be skipped or canceled.”
+
+Avoid jumping directly to “make the button orange.” First identify the decision that seems difficult.
+
+## Step 2: map the observation to a customer decision
+
+Ask:
+
+> What does the visitor need to understand, believe, choose, or do at this moment?
+
+Common high-value decisions include:
+
+- “Is this page relevant to why I clicked?”
+- “Is this product for someone like me?”
+- “Do I understand what this product does?”
+- “Do I believe the main benefit?”
+- “Is this meaningfully different from my current option?”
+- “Do I understand the offer?”
+- “Do I know which variant / plan to choose?”
+- “Do I trust this enough to purchase?”
+
+These are usually stronger testing territories than isolated visual preferences.
+
+## Step 3: create a one-line hypothesis
+
+Use:
+
+```text
+If we [change one thing], then [audience] will be more likely to [behavior] because [customer reason].
+```
+
+Examples:
+
+```text
+If we show the creator's exact recommendation in the hero, creator traffic will be more likely to continue because the page will feel consistent with the content they clicked.
+```
+
+```text
+If we explain the subscription's approved cancellation flexibility beside the plan selector, more product-section visitors will choose a purchase option because a common commitment objection will be addressed at the decision point.
+```
+
+The “because” forces you to state the behavioral logic.
+
+## Step 4: score test ideas with a lightweight framework
+
+Score each idea from 1–3 on:
+
+| Factor | 1 | 2 | 3 |
+| --- | --- | --- | --- |
+| **Decision impact** | minor | meaningful | central to purchase |
+| **Evidence** | mostly opinion | some supporting evidence | repeated / strong evidence |
+| **Clarity** | several variables | somewhat isolated | one clear variable |
+| **Reach** | few visitors encounter it | many encounter it | nearly everyone in target traffic sees it |
+| **Effort** | large / risky | moderate | easy to build and QA |
+
+Do not treat the total as scientific truth. The scoring forces useful tradeoffs.
+
+A high-effort test can still deserve priority when the customer decision is important enough.
+
+## Step 5: choose the smallest useful change
+
+Suppose the observation is poor ad-to-page congruence. You could:
+
+- rewrite the hero
+- redesign the hero
+- change product imagery
+- add creator proof
+- reorder the whole page
+
+Start with the smallest change that directly tests the hypothesis. If a hero message change answers the question, do not redesign six sections at once.
+
+## Prompt: turn a page review into ranked tests
+
+```text
+Use the observations below to propose experiment hypotheses.
+Do not edit the page.
+
+CAMPAIGN CONTEXT
+Traffic: [source]
+Audience: [audience]
+Primary action: [action]
+Primary business metric: [metric]
+
+OBSERVATIONS
+[paste observations / analytics / customer objections]
+
+For each test idea provide:
+1. observation
+2. customer decision
+3. hypothesis
+4. one variable to change
+5. what stays constant
+6. primary metric
+7. expected learning if it wins
+8. expected learning if it loses
+
+Then rank the ideas by:
+- customer decision impact
+- strength of evidence
+- isolation / interpretability
+- reach
+- implementation effort
+
+Do not estimate a conversion lift percentage.
+```
+
+## High-value testing territories
+
+### Message match
+
+Test when the campaign promise and page entry point feel disconnected.
+
+Ideas:
+
+- exact creative angle versus broad brand value prop
+- creator hook versus brand headline
+- campaign product image versus generic hero image
+
+### Value proposition
+
+Test when visitors may not understand why the product matters.
+
+Ideas:
+
+- outcome framing versus mechanism framing
+- one primary benefit versus several competing benefits
+- audience-specific language versus category-general copy
+
+### Proof
+
+Test when a claim may be understood but not believed.
+
+Ideas:
+
+- proof near the claim versus later
+- customer proof versus founder proof for a specific objection
+- product evidence above product section versus below
+
+### Offer clarity
+
+Test when the real offer exists but is poorly understood.
+
+Ideas:
+
+- savings-led framing versus convenience-led framing
+- GWP qualification near hero versus only near cart
+- subscription value explained beside the plan choice
+
+### Purchase decision
+
+Test when the visitor reaches the product but choice is difficult.
+
+Ideas:
+
+- simplified option hierarchy
+- clearer one-time/subscription explanation
+- earlier clarification of what is included
+
+Do not change the actual offer or product economics unless that is intentionally the experiment.
+
+### Page depth
+
+Test when you are unsure how much education this audience needs.
+
+Ideas:
+
+- short retargeting path versus full educational path
+- product introduced earlier versus after education
+- condensed FAQ versus extensive objections section
+
+## Low-quality test patterns
+
+Be cautious with:
+
+- button color with no visibility problem
+- arbitrary headline changes with no campaign logic
+- “make it more premium” variants with many simultaneous changes
+- moving sections because a competitor does it
+- testing a new price, offer, copy, and layout at the same time
+
+These can still produce different numbers, but they often teach less.
+
+## What good looks like
+
+A useful test backlog is not a list of designs. Each item should state:
+
+- the observed problem
+- the customer decision
+- the hypothesis
+- the intended change
+- the success metric
+- the learning you hope to get
+
+That backlog becomes more valuable over time because new results can strengthen, weaken, or replace old assumptions.
+
+## Next playbooks
+
+- [CRO review](/academy/playbooks/cro-review)
+- [First A/B test](/academy/playbooks/first-ab-test)
+- [Optimization loop](/academy/playbooks/optimization-loop)
+- [Message match](/academy/playbooks/message-match)

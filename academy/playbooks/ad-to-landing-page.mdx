@@ -1,0 +1,204 @@
+---
+title: "Turn an ad into a landing page"
+sidebarTitle: "Ad → landing page"
+description: "Build a Jurni landing page that preserves the promise, audience, and visual context of a paid ad while adding the education and proof needed to convert."
+icon: "megaphone"
+---
+
+# Turn an ad into a landing page
+
+Use this playbook when you already have an ad or creator asset and want the landing page to feel like the **next sentence in the same conversation**.
+
+The core principle is **message match**: the visitor should recognize the promise, product, and context they clicked before you ask them to absorb new information.
+
+## When to use this
+
+This works especially well for:
+
+- Meta or TikTok ads with a clear hook
+- creator / influencer traffic
+- campaigns testing one specific benefit or problem
+- ads that are already earning good click-through but sending traffic to a generic PDP or homepage
+
+## Step 1: extract the campaign truth
+
+Before building, answer:
+
+```text
+AD HOOK
+[What stopped the scroll?]
+
+PROMISE
+[What outcome / benefit / idea earned the click?]
+
+AUDIENCE
+[Who is this speaking to?]
+
+PRODUCT
+[What product does the ad show or imply?]
+
+PROOF
+[What proof appears in the ad, if any?]
+
+CTA EXPECTATION
+[What does the visitor expect after clicking?]
+```
+
+Do not invent a new “better” angle if the current ad already earned the visit.
+
+## Step 2: attach the ad and product
+
+If the ad is available through the Meta connection, attach the relevant ad. Otherwise attach the video, image, screenshot, or creative brief.
+
+Also attach the real connected product and any approved claims or proof that should support the page.
+
+## Step 3: build the first screen first
+
+The first screen should answer three questions immediately:
+
+1. **Am I in the right place?**
+2. **Is this still about the thing I clicked?**
+3. **What should I do next?**
+
+A strong first pass often contains:
+
+- campaign-matched headline
+- product visual consistent with the ad
+- one short supporting explanation
+- one primary CTA
+- one credible proof point when available
+
+Avoid opening with a corporate brand story if the ad sold a specific problem or benefit.
+
+## Copy-ready build prompt
+
+```text
+Use the attached ad as the primary campaign brief.
+
+First, identify the ad's:
+- audience
+- hook
+- main promise
+- product
+- proof
+- expected next action
+
+Then build a landing page that continues those ideas without making the visitor reorient.
+
+HERO
+Repeat or closely continue the main ad promise.
+Use the same product context and approved visual direction.
+Make the primary next action obvious.
+
+BODY
+Add only the education, proof, and objection handling needed to move this audience toward [primary action].
+
+SOURCES
+Use the attached product, approved assets, AI Knowledge, and supplied proof.
+
+DO NOT
+- invent a new campaign angle
+- invent claims or reviews
+- change the product or approved offer
+- replace working purchase controls with static UI
+
+MOBILE
+Keep the ad promise, product context, proof, and CTA easy to understand in the first mobile screens.
+```
+
+## Step 4: decide how much education this visitor needs
+
+Not every ad needs the same landing page depth.
+
+### Shorter page
+
+Use a shorter path when:
+
+- the ad already explains the product well
+- traffic is retargeting or product-aware
+- the offer is simple
+- the main barrier is purchase confidence, not understanding
+
+### Longer page
+
+Use more education when:
+
+- the category is unfamiliar
+- the product mechanism needs explanation
+- the ad introduces a problem more than the product
+- the purchase requires more trust or comparison
+
+Do not confuse “long page” with “high-converting page.” Every section should answer a real customer question.
+
+## Step 5: place proof near the claim it supports
+
+If the hero says “easy to use every morning,” proof about routine adoption belongs near that idea. If the product section makes a savings claim, the real price / offer context should be close to it.
+
+Avoid creating one giant “social proof” block that is disconnected from the decisions the visitor is making throughout the page.
+
+## Step 6: review message drift
+
+Use this prompt before launch:
+
+```text
+Compare the attached ad with this landing page.
+Do not edit yet.
+
+Score the page from 1–5 on:
+1. headline message match
+2. product consistency
+3. offer consistency
+4. visual continuity
+5. audience relevance
+6. CTA continuity
+
+For every score below 4, explain the smallest change that would fix the mismatch.
+Do not recommend unrelated redesigns.
+```
+
+## Step 7: test the exact campaign URL
+
+Open the exact destination you will place in the ad platform. Verify:
+
+- correct experience
+- correct product
+- campaign parameters preserved
+- page loads well on mobile
+- CTA works
+- cart / checkout destination is correct
+
+Do not use a working editor preview as proof that the paid campaign URL is ready.
+
+## What good looks like
+
+A strong ad-to-page experience usually feels **boringly consistent** at first: same core idea, same product, same audience, same offer. The additional page content should reduce uncertainty—not compete with the ad.
+
+## Common mistakes
+
+**Headline drift:** the ad says one thing; the page leads with a broader brand slogan.
+
+**Product drift:** the creative features one product or bundle while the page opens with another.
+
+**Offer drift:** the ad promises a gift, discount, or subscription benefit that the page does not make obvious.
+
+**Over-education:** the page makes a motivated visitor read several generic sections before finding the product.
+
+**Creator voice becomes brand voice immediately:** creator traffic often performs better when the transition feels continuous before the brand takes over the explanation.
+
+## What to test next
+
+After you have basic message match, useful hypotheses include:
+
+- exact ad hook versus a broader benefit headline
+- proof immediately under hero versus later
+- product shown above the fold versus after one education section
+- short page versus additional objection handling
+
+Change one meaningful decision at a time.
+
+## Next playbooks
+
+- [Improve message match](/academy/playbooks/message-match)
+- [Run your first A/B test](/academy/playbooks/first-ab-test)
+- [Creator landing page](/academy/playbooks/creator-page)
+- [Prompt Library](/academy/prompt-library)

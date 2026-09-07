@@ -1,0 +1,470 @@
+---
+title: "Prompting 101: get better results from Jurni AI"
+sidebarTitle: "Prompting 101"
+description: "A practical framework for briefing Jurni AI, using products and references correctly, controlling scope, and iterating toward a launch-ready page."
+icon: "sparkles"
+---
+
+# Prompting 101
+
+Jurni AI works best when you treat the prompt like a **creative and conversion brief**, not a magic sentence.
+
+The goal is not to write the longest prompt. The goal is to give Jurni enough context to understand **who the page is for, what you want the shopper to do, what sources are trustworthy, what should change, and what must stay working**.
+
+A good prompt can be short for a small edit and detailed for a new campaign build.
+
+## The Jurni prompt framework
+
+For most meaningful builds, use this structure:
+
+```text
+CONTEXT
+Who is visiting, where are they coming from, and what do they already know?
+
+GOAL
+What should this page or section accomplish?
+
+SOURCES
+Which products, ads, images, files, URLs, Figma frames, or approved copy should Jurni use?
+
+BUILD / CHANGE
+What exactly should Jurni create or modify?
+
+KEEP
+What should remain unchanged?
+
+BEHAVIOR
+What should buttons, selectors, forms, or purchase controls actually do?
+
+RESPONSIVE
+What should happen on mobile versus desktop?
+
+VERIFY
+What should Jurni review before calling the task complete?
+```
+
+You do not need every heading for every prompt. The framework exists so you can quickly spot what is missing.
+
+## Example: a strong campaign brief
+
+```text
+CONTEXT
+This page is for first-time customers arriving from the attached Meta ad.
+The ad leads with “clean energy without the afternoon crash.”
+Audience: health-conscious professionals who know the problem but do not know our brand.
+
+GOAL
+Continue the ad's message and move shoppers toward trying the product.
+The primary action is to choose a purchase option in the product section.
+
+SOURCES
+- Use the attached Meta ad for the campaign angle.
+- Use the attached product for accurate product information and purchase options.
+- Use our AI Knowledge for brand voice and approved claims.
+- Use Reference 1 for layout inspiration only.
+
+BUILD
+Create a landing page with:
+1. A hero that continues the ad promise immediately.
+2. A short “why this feels different” benefit section.
+3. Product proof and approved social proof.
+4. A clear product / purchase section.
+5. FAQs that address the supplied objections.
+
+KEEP
+Do not invent claims, review counts, pricing, discounts, deadlines, or guarantees.
+
+BEHAVIOR
+Keep product selectors and purchase controls functional.
+Do not replace dynamic product choices with static buttons.
+
+RESPONSIVE
+On mobile, prioritize the headline, product visual, primary CTA, and proof above secondary content.
+Avoid side-by-side layouts that become cramped.
+
+VERIFY
+Before finishing, check that the first screen matches the ad angle, all claims come from provided sources, and the page has one obvious primary conversion path.
+```
+
+That is detailed because the task is large. A small edit should be much shorter.
+
+## Start with context, not “make it better”
+
+Vague prompts force the AI to guess what “better” means.
+
+**Weak:**
+
+```text
+Make this landing page convert better.
+```
+
+**Better:**
+
+```text
+This page receives cold Meta traffic from the attached creator ad.
+The first screen currently explains the product before repeating the ad's main promise.
+Rewrite only the selected hero so the first headline continues the ad angle immediately.
+Keep the product, offer, CTA destination, and every section below the hero unchanged.
+```
+
+The second prompt gives Jurni a reason for the change and a boundary around it.
+
+## Tell Jurni what the visitor already knows
+
+A page for cold traffic should not assume the visitor understands the brand. A retargeting page can usually move faster to product and offer details.
+
+Useful context includes:
+
+- Traffic source: Meta, TikTok, Google, creator, email, SMS, organic.
+- Audience: new customer, returning customer, specific persona, problem-aware, product-aware.
+- Ad angle: the promise or problem that earned the click.
+- Stage of awareness: whether the visitor needs education, proof, comparison, or a purchase decision.
+- Desired action: add to cart, choose a subscription, complete a quiz, click to another PDP, or another approved next step.
+
+### Copy-ready context block
+
+```text
+TRAFFIC
+[Meta / TikTok / Google / email / creator / other]
+
+AUDIENCE
+[Who is this for? New or returning? What problem or desire matters most?]
+
+WHAT THEY JUST SAW
+[Paste the ad headline / hook / creator message / search intent]
+
+PRIMARY GOAL
+[The one action the page should drive]
+```
+
+## Use real sources instead of asking AI to guess
+
+Jurni can work with the context you provide in chat, including connected products, media, files, web links, Meta ad references, Figma links, templates, and the selected section when available.
+
+The best source depends on the task:
+
+| Source | Use it for |
+| --- | --- |
+| **Connected product** | Real product information and the product you intend to sell. |
+| **Meta ad** | Campaign angle, creative message, audience congruence. |
+| **Media library** | Approved product and brand imagery. |
+| **File / PDF / text** | Approved claims, briefs, research, FAQs, copy. |
+| **Web URL** | Layout, page structure, interaction, or content reference. |
+| **Figma frame** | A specific design to reproduce or use as visual direction. |
+| **Template** | Starting structure that should be adapted rather than invented. |
+| **AI Knowledge** | Evergreen brand, product, audience, and messaging context. |
+
+### Reference images versus content images
+
+Always tell Jurni which is which.
+
+```text
+Image 1 is a layout reference only.
+Image 2 is the actual product image to use in the hero.
+Image 3 is approved social proof that can appear on the page.
+Do not place Image 1 into the finished page.
+```
+
+This is especially important when you attach screenshots of other sites. A reference explains **how something should look**; it is not automatically content you are allowed or expected to publish.
+
+## Separate layout inspiration from brand content
+
+When using another page as inspiration, define what you want to borrow.
+
+```text
+Use this URL as a reference for:
+- section order
+- the pacing from education into product
+- the sticky CTA behavior
+
+Do not copy:
+- the brand's logo or imagery
+- their testimonials
+- their product claims
+- their pricing or offer
+- their product names
+
+Use our attached product, assets, AI Knowledge, and approved copy for all customer-facing content.
+```
+
+This gives Jurni a useful visual and structural target without creating a page that feels like a copy of another brand.
+
+## Build a page in stages
+
+For a new experience, asking for every detail at once often makes review harder. A stronger workflow is:
+
+1. **Structure** — page flow and major sections.
+2. **Message** — headline, benefits, proof, objections.
+3. **Visual refinement** — spacing, hierarchy, media, styling.
+4. **Commerce / interaction** — product choices, forms, CTA behavior.
+5. **Responsive pass** — mobile and desktop.
+6. **QA pass** — claims, links, products, offer, conversion path.
+
+### Stage 1: structure
+
+```text
+Before styling the page heavily, create the page structure for this campaign.
+Use the attached ad and brief.
+
+Proposed flow:
+1. Hero that continues the ad promise.
+2. Three short problem/benefit points.
+3. “How it works” education.
+4. Social proof.
+5. Product section.
+6. Objection-handling FAQ.
+
+Keep the first pass focused on hierarchy, section purpose, and message flow.
+```
+
+### Stage 2: refine the strongest section
+
+```text
+The page structure is right.
+Now refine only the hero.
+
+Make the headline more specific to the attached ad angle.
+Keep it under 12 words.
+Use one supporting sentence and one primary CTA.
+Keep the existing product connection and CTA action unchanged.
+```
+
+## Name the exact scope of an edit
+
+Once a page is close, broad prompts become risky.
+
+**Weak:**
+
+```text
+Make the page more premium.
+```
+
+**Better:**
+
+```text
+Edit only the selected testimonial section.
+Increase the visual hierarchy of the customer quotes, reduce the heading width, and add more whitespace between cards.
+Keep all testimonial wording, names, ratings, section order, and every other page section unchanged.
+```
+
+If you want one section changed, select that section and say **only this section**.
+
+## Protect working behavior explicitly
+
+Visual edits should not accidentally change the shopping experience.
+
+For product and purchase areas, useful “keep” instructions include:
+
+```text
+KEEP
+- connected product
+- existing variants
+- subscription choices
+- default purchase selection
+- quantities
+- displayed dynamic pricing
+- current CTA action
+- cart / checkout behavior
+```
+
+For a normal CTA:
+
+```text
+Keep the button's current action and destination.
+Change only its label, size, and visual treatment.
+```
+
+For an experiment variation:
+
+```text
+Change only the hypothesis described below.
+Keep product, offer, pricing, tracking, CTA action, and all other page sections identical to the control.
+```
+
+## Describe behavior separately from appearance
+
+A screenshot shows what a selector looks like; it does not explain what should happen when someone clicks it.
+
+```text
+Use the reference for the visual style of the three option cards.
+Behavior:
+- only one option can be selected at a time
+- the selected option should be visually obvious
+- changing the option should update the real purchase selection
+- the primary button should continue using the existing purchase action
+```
+
+Do not assume the AI can infer real commerce logic from a picture alone.
+
+## Be explicit about mobile
+
+“Make it responsive” is weaker than describing the intended mobile hierarchy.
+
+```text
+MOBILE
+- stack the hero copy above the product image
+- keep the headline, primary proof, and CTA visible without excessive scrolling
+- make the CTA full width
+- change the comparison table into stacked comparison cards
+- keep all purchase controls easy to tap
+
+DESKTOP
+Keep the current two-column hero and horizontal comparison layout.
+```
+
+If only mobile is wrong:
+
+```text
+The desktop version is approved. Do not change it.
+Fix only the mobile layout of the selected section:
+- remove horizontal overflow
+- stack the cards vertically
+- reduce side padding
+- keep the copy and button action exactly the same
+```
+
+## Use correction prompts, not repeated rebuilds
+
+When Jurni gets 80% of a section right, do not repeat the full original prompt. Tell it what is correct and what remains wrong.
+
+```text
+KEEP
+The layout, headline, CTA, and section spacing are now correct.
+
+FIX
+On mobile, the product image still crops the top of the bottle.
+Change only the mobile image crop so the full bottle is visible.
+Do not change the desktop image, layout, or copy.
+```
+
+This keeps the conversation anchored to the version you already like.
+
+## Use screenshots to point at mistakes
+
+A screenshot of the current result can be more useful than a paragraph trying to describe a visual problem.
+
+```text
+The first attached screenshot is the CURRENT result.
+The second is the DESIRED reference.
+
+Only fix these differences:
+1. The card border should be visible.
+2. The icon should sit inside the card, not above it.
+3. The card spacing should match the desired reference more closely.
+
+Keep all text and the rest of the page unchanged.
+```
+
+## Know when not to prompt
+
+AI is not always the fastest tool.
+
+Use direct editor controls when you simply need to:
+
+- delete one element
+- move a section
+- replace exact copy
+- change a known color or spacing value
+- toggle visibility
+
+Use AI when the task is easier to describe than to build manually: redesigning a section, adapting a reference, restructuring a page, creating an alternative campaign angle, or reviewing a page against a brief.
+
+## Start a fresh chat when the job changes
+
+Continue the same conversation while refining one build. Start a new chat when:
+
+- you move to a different campaign
+- the old conversation contains conflicting instructions
+- you are changing from creation to a completely different objective
+- the AI keeps bringing old decisions into new edits
+
+A fresh chat does not remove the page itself; it gives the new request a cleaner conversational context.
+
+## Do not use the prompt as your source of truth
+
+A prompt can describe “20% off,” but that does not create a real Shopify discount. A prompt can say “subscription,” but it does not create a selling plan. A prompt can ask for “4.9 stars,” but Jurni should not invent a review rating.
+
+Use real product data, approved claims, actual offers, and connected integrations. The AI should present the truth of your campaign—not manufacture it.
+
+## Useful prompt patterns
+
+### Build from an ad
+
+```text
+Use the attached Meta ad as the campaign brief.
+Build a landing page that feels like the natural next step after someone clicks that ad.
+
+Keep the same core promise in the hero, then add the minimum education and proof needed to move a first-time shopper toward [primary action].
+Use the attached product and approved assets.
+Do not introduce a new angle before the visitor understands the one they clicked.
+```
+
+### Recreate a section from a URL
+
+```text
+Use [URL] as a reference for the [section name] section only.
+Recreate its structure and interaction pattern using our brand styles and attached content.
+Do not copy content from other sections of the reference page.
+Do not copy the reference brand's claims, reviews, pricing, or assets.
+```
+
+### Create a controlled test variant
+
+```text
+This is an experiment variant.
+Hypothesis: [specific hypothesis].
+
+Change only [one meaningful variable].
+Keep the product, offer, purchase behavior, pricing, tracking, and all unrelated sections identical to the control.
+Use this approved alternative copy: [copy].
+```
+
+### Ask Jurni to review before editing
+
+```text
+Review this page against the attached campaign brief before making changes.
+
+List:
+1. message-match problems
+2. unclear or unsupported claims
+3. weak conversion hierarchy
+4. mobile layout risks
+5. CTA or purchase-path inconsistencies
+
+Do not edit yet.
+Prioritize the findings from highest to lowest likely impact.
+```
+
+This is useful when you want diagnosis before generation.
+
+## The pre-send checklist
+
+Before submitting an important prompt, ask:
+
+- Did I explain **who this is for**?
+- Did I explain **what should happen next**?
+- Did I give Jurni **real source material**?
+- Did I clearly say **what to change**?
+- Did I clearly say **what not to change**?
+- Did I explain any important **interaction or purchase behavior**?
+- Did I say what matters on **mobile**?
+- Did I avoid asking Jurni to invent claims, reviews, pricing, discounts, or urgency?
+
+You do not need every item every time. You need enough of them that the AI does not have to guess the important parts.
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Prompt Library" href="/academy/prompt-library" icon="copy">
+    Copy prompts for specific marketer tasks and adapt the bracketed fields.
+  </Card>
+  <Card title="Turn an ad into a page" href="/academy/playbooks/ad-to-landing-page" icon="megaphone">
+    Apply this framework to a complete paid-social workflow.
+  </Card>
+  <Card title="Recreate a reference page" href="/academy/playbooks/recreate-reference-page" icon="scan">
+    Use URLs and screenshots without losing brand and commerce accuracy.
+  </Card>
+  <Card title="Build your first campaign" href="/academy/start/first-campaign" icon="rocket">
+    Follow the complete build → publish → traffic → test workflow.
+  </Card>
+</CardGroup>

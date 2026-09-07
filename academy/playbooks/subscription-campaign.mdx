@@ -1,0 +1,200 @@
+---
+title: "Build a subscription campaign"
+sidebarTitle: "Subscription campaign"
+description: "Explain the real one-time and subscription choices clearly, present approved value, and QA the selling plan through the final purchase path."
+icon: "repeat-2"
+hidden: true
+---
+
+# Build a subscription campaign
+
+Use this playbook when a subscription is an important part of the campaign and you want customers to understand **what they get, how often, what they save, and what commitment they are making** before they purchase.
+
+The landing page can improve subscription framing. It cannot create a selling plan that does not exist in your commerce system.
+
+## Before you build
+
+Confirm the real plan terms:
+
+```text
+PRODUCT
+[product]
+
+ONE-TIME PRICE
+[actual price]
+
+SUBSCRIPTION PRICE / SAVINGS
+[actual price or approved savings]
+
+DELIVERY CADENCE(S)
+[available selling plans]
+
+SUBSCRIPTION TERMS
+[approved skip / cancel / change information]
+
+DEFAULT CAMPAIGN CHOICE
+[one-time / subscription, if intentionally configured]
+
+PRIMARY CUSTOMER REASON
+[why subscription is useful to this audience]
+```
+
+Do not use a copied campaign brief as the source of truth when the live selling plan has changed.
+
+## Step 1: decide what the campaign is actually testing or selling
+
+There are several different subscription strategies:
+
+- **subscription-first campaign** — the campaign deliberately leads with recurring purchase value
+- **choice campaign** — one-time and subscription are equally legitimate choices
+- **subscription education** — the page explains recurring value to reduce commitment concerns
+- **subscription experiment** — you are testing presentation while keeping the underlying plan unchanged
+
+Be clear which one you are building.
+
+## Step 2: explain customer value before savings alone
+
+“Save 15%” can help, but the customer may also care about:
+
+- convenience
+- replenishment cadence
+- avoiding reordering
+- flexibility, where the real terms support it
+- access to a subscription-specific offer
+
+Use only benefits supported by the actual program.
+
+## Copy-ready Jurni prompt
+
+```text
+CONTEXT
+This campaign is designed to help [audience] understand and choose between the real one-time and subscription options for [product].
+
+REAL PLAN INFORMATION
+One-time: [price / terms]
+Subscription: [price / approved savings]
+Cadence: [cadence]
+Approved flexibility / terms: [terms]
+
+GOAL
+Make the choices easy to compare without making subscription feel hidden or misleading.
+
+CHANGE / BUILD
+- clearly label one-time and subscription choices
+- explain the approved subscription value beside the choice
+- show real price / savings dynamically where available
+- address the main subscription objection: [objection]
+- keep the purchase CTA close to the selected choice
+
+KEEP
+Use the existing real selling plans and product connection.
+Do not create a new cadence, price, discount, or subscription term.
+
+DO NOT
+- imply “cancel anytime” unless it is approved and accurate
+- invent savings
+- make one-time look disabled if it is a valid option
+- replace real selling-plan controls with static design elements
+```
+
+## Step 3: make the comparison answer the actual objection
+
+Customers often hesitate because they do not understand the commitment.
+
+A useful comparison answers:
+
+- What do I pay now?
+- How often will this arrive?
+- What do I save?
+- Can I change or stop it, if applicable?
+- What happens if I choose one-time instead?
+
+Do not overwhelm the choice with every policy detail. Put the most decision-relevant terms at the point of selection and link or explain additional terms appropriately.
+
+## Step 4: keep the selected state obvious
+
+The shopper should always know which purchase type is selected. Review:
+
+- visual selected state
+- price tied to the selection
+- cadence / plan shown
+- CTA follows the selection
+- mobile tap targets
+
+A card that looks selected but sends the one-time variant to cart is a critical QA failure.
+
+## Step 5: place subscription proof near the concern
+
+Good proof depends on the campaign. It might include approved customer feedback about routine/convenience, product usage context, or brand support information.
+
+Do not create “most customers subscribe” or subscription-retention claims unless you actually have approved data.
+
+## Step 6: QA the real selling plan
+
+Test:
+
+1. One-time selection.
+2. Subscription selection.
+3. Every cadence promoted by the page.
+4. Variant changes while subscription is selected.
+5. Final line item / selling plan in cart or checkout.
+6. Displayed and charged price.
+7. Discount code / offer combinations relevant to the campaign.
+8. Back navigation when important to the flow.
+9. Mobile.
+
+The page can look correct while the wrong plan reaches checkout.
+
+## Step 7: experiment with framing, not hidden economics
+
+Useful tests include:
+
+- convenience-led subscription explanation versus savings-led
+- subscription card first versus one-time first, if the product configuration supports the intended default
+- flexibility information beside selector versus FAQ
+- price comparison emphasized versus product-benefit explanation emphasized
+
+If you change the actual subscription discount at the same time, you are testing economics as well as presentation.
+
+## Prompt: review subscription clarity
+
+```text
+Review the selected purchase section for subscription clarity.
+Do not edit yet.
+
+Using only the actual plan information supplied, answer:
+1. Is one-time vs subscription obvious?
+2. Is the selected choice obvious?
+3. Are price and savings consistent?
+4. Is cadence clear?
+5. Are important commitment/flexibility terms clear?
+6. Could any copy imply terms that are not guaranteed?
+7. Is the choice easy to use on mobile?
+
+Return BLOCKER / SHOULD FIX / OPTIONAL.
+```
+
+## What good looks like
+
+A shopper should understand the recurring choice without needing to interpret tiny labels or discover the actual terms only in checkout.
+
+The subscription value should feel connected to their use of the product—not just to a crossed-out price.
+
+## Common mistakes
+
+**Writing a subscription in the design before confirming the selling plan.** Visual copy does not create commerce behavior.
+
+**Savings mismatch.** The page, product selector, cart, and checkout need to agree.
+
+**Hiding one-time purchase.** If it exists as a valid option, don't make the experience misleading.
+
+**Overpromising flexibility.** Use approved real terms.
+
+**Static price in a dynamic selector.** Recheck every variant/plan combination.
+
+## Next playbooks
+
+- [GWP campaign](/academy/playbooks/gwp-campaign)
+- [First A/B test](/academy/playbooks/first-ab-test)
+- [CRO review](/academy/playbooks/cro-review)
+- [Subscriptions Help Center](/building-funnels/subscriptions-selling-plans)

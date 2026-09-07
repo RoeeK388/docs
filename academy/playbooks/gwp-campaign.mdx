@@ -1,0 +1,163 @@
+---
+title: "Launch a gift-with-purchase campaign"
+sidebarTitle: "GWP campaign"
+description: "Align the campaign message, Jurni gift qualification, Shopify discount setup, page presentation, and checkout QA for a gift-with-purchase offer."
+icon: "gift"
+hidden: true
+---
+
+# Launch a gift-with-purchase campaign
+
+Use this playbook when the campaign promise includes a **free gift after a qualifying purchase**.
+
+A GWP campaign has several layers that must agree:
+
+**Ad / campaign promise → landing-page explanation → Jurni gift eligibility → Shopify price or discount → final cart / checkout.**
+
+If any layer disagrees, the customer can see the right message and still get the wrong purchase result.
+
+## Before you build
+
+Confirm the actual commercial rule:
+
+```text
+GIFT
+[exact product + variant]
+
+QUALIFICATION
+[minimum amount / minimum products / specific product]
+
+PURCHASE TYPE
+[all / subscription only, where applicable]
+
+GIFT QUANTITY / LIMIT
+[rule]
+
+WHERE IT APPLIES
+[eligible Jurni experiences]
+
+HOW THE GIFT BECOMES FREE
+[$0 product / Shopify discount / existing discount app]
+
+CAMPAIGN MESSAGE
+[approved wording]
+```
+
+Do not start the creative before the team agrees on the actual qualification.
+
+## Step 1: configure the commerce truth first
+
+For a Shopify campaign, make sure the gift product exists and is available for the intended flow. Configure the actual method that makes the gift free in Shopify or the discount system your store uses.
+
+Jurni can manage the supported gift-selection and qualification logic, but the customer should not reach checkout with a paid gift when the campaign promises a free one.
+
+Use the Help Center's [Gift with Purchase guide](/building-funnels/gift-with-purchase) for the exact current controls.
+
+## Step 2: decide when the visitor should learn about the gift
+
+A GWP can play different roles:
+
+**Primary campaign hook:** if the ad itself is about the gift, repeat the qualification clearly in the hero or first screen.
+
+**Purchase accelerator:** if the campaign is product-led, introduce the gift near the product decision rather than making the entire page about it.
+
+**Threshold motivator:** if the gift unlocks after a spend threshold, explain the threshold close enough to the purchase area that the shopper knows what they need to do.
+
+## Step 3: build the page message around one clear rule
+
+```text
+CONTEXT
+This campaign includes an approved gift-with-purchase offer.
+Traffic: [source]
+Audience: [audience]
+
+OFFER
+Gift: [gift]
+Qualification: [qualification]
+Limit / purchase type: [rule]
+Approved wording: [copy]
+
+GOAL
+Make the gift motivating without making the qualification confusing.
+
+BUILD / CHANGE
+- communicate the gift where it naturally supports the campaign
+- state the qualification in plain language
+- show the real gift product / approved image
+- keep the primary product purchase as the main path
+- reinforce the offer near the purchase section when appropriate
+
+KEEP
+The actual product, gift configuration, discount implementation, and purchase behavior are already configured. Do not change or invent them.
+
+DO NOT
+Say “free gift” without the qualification when a qualification exists.
+Do not invent gift value, scarcity, expiry, or availability.
+```
+
+## Step 4: make the qualification understandable at a glance
+
+**Less clear:** “Unlock a complimentary gift.”
+
+**Clearer:** “Spend $75 and choose a free travel-size cleanser.”
+
+If the qualification is subscription-only, say that plainly. Use only the actual rule your checkout supports.
+
+## Step 5: don't let the gift overpower the product
+
+A GWP can increase attention while weakening product value if the whole campaign becomes “buy anything for the free thing.” The page should still explain why the core product matters, what the customer is buying, and why the gift makes the offer more attractive.
+
+## Step 6: QA qualifying and non-qualifying carts
+
+Test at least:
+
+1. A cart that should **not** qualify.
+2. A cart that **does** qualify.
+3. Removing the qualifying product or dropping below the threshold.
+4. Gift variant and quantity.
+5. Gift price in cart and checkout.
+6. Subscription versus one-time when the rule depends on it.
+7. Mobile.
+8. Relevant Shopify market / currency when applicable.
+
+Do not stop QA when the page displays the gift banner correctly.
+
+## Step 7: test the message, not the mechanics
+
+Once the offer works, good experiment ideas include:
+
+- gift mentioned in hero versus near product
+- product value first versus gift first
+- gift image prominent versus compact offer badge
+- qualification explained in headline versus supporting copy
+
+Keep the real qualification and discount constant unless the test intentionally changes the economics.
+
+## What good looks like
+
+A shopper should be able to answer:
+
+- What is the gift?
+- What do I need to buy to get it?
+- Is there a quantity limit?
+- Does purchase type matter?
+- Is the gift actually free at checkout?
+
+without hunting through fine print.
+
+## Common mistakes
+
+**Visual offer without checkout enforcement.** The page says free; Shopify charges full price.
+
+**Hidden qualification.** The ad advertises a gift but the threshold appears only deep in the page.
+
+**Different numbers across ad, page, cart, and checkout.** Keep one approved offer truth.
+
+**Testing message and economics at the same time.** Separate presentation tests from qualification changes when possible.
+
+## Next playbooks
+
+- [Subscription campaign](/academy/playbooks/subscription-campaign)
+- [First A/B test](/academy/playbooks/first-ab-test)
+- [Ad → landing page](/academy/playbooks/ad-to-landing-page)
+- [Gift setup Help Center](/building-funnels/gift-with-purchase)

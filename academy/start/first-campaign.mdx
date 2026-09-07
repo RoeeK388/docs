@@ -1,0 +1,244 @@
+---
+title: "Launch your first Jurni campaign"
+sidebarTitle: "First campaign"
+description: "A complete marketer workflow from campaign brief to AI build, publication, Smart Link, QA, and the first experiment."
+icon: "rocket"
+---
+
+# Launch your first Jurni campaign
+
+Use this playbook when you want to go from **campaign idea → Jurni page → campaign URL → traffic → learning** without getting lost in individual product settings.
+
+## What you will end with
+
+By the end of this workflow you should have:
+
+- one clear campaign brief
+- a Jurni experience built around that brief
+- the correct product and primary action
+- a tested publishing destination
+- the URL you will actually use in ads or another campaign channel
+- a launch checklist
+- one sensible next test
+
+## Step 1: write the campaign brief before building
+
+Do not begin with “make me a landing page.” Start with the click you are trying to earn and what should happen after it.
+
+Fill this in:
+
+```text
+TRAFFIC SOURCE
+[Meta / TikTok / Google / creator / email / SMS / other]
+
+AUDIENCE
+[Who is clicking? New or returning? What do they care about?]
+
+CAMPAIGN ANGLE
+[The promise, problem, or idea that earns the click]
+
+PRODUCT
+[What are we selling or introducing?]
+
+OFFER
+[Approved offer, if any]
+
+PRIMARY ACTION
+[Add to cart / choose a purchase option / complete quiz / visit PDP / other]
+
+TOP OBJECTIONS
+1. [objection]
+2. [objection]
+3. [objection]
+
+SUCCESS METRIC
+[CVR / RPS / AOV / CTR / other relevant metric]
+```
+
+If you already have the ad creative, use the ad itself as a primary campaign source.
+
+## Step 2: give Jurni the right context
+
+Before prompting, attach what should be treated as source material:
+
+- connected product
+- campaign ad or creative
+- approved imagery
+- brief / approved copy / claims
+- URL or screenshot references
+- Figma frames when design already exists
+
+Keep persistent brand and product guidance in AI Knowledge rather than repeating every evergreen instruction in every prompt.
+
+## Step 3: build the first page with AI
+
+Use this starter prompt:
+
+```text
+CONTEXT
+This page is for [audience] arriving from [traffic source].
+They just saw this campaign angle: [angle].
+
+GOAL
+Continue that promise and move visitors toward [primary action].
+
+SOURCES
+Use the attached ad, product, approved assets, and AI Knowledge.
+
+BUILD
+Create the minimum page needed to move this visitor from click to purchase decision.
+Include:
+- hero with strong message match
+- product / benefit education
+- approved proof
+- purchase or next-step section
+- FAQ for the supplied objections
+
+KEEP
+Do not invent claims, reviews, pricing, discounts, guarantees, or urgency.
+
+MOBILE
+Make the primary message, proof, product, and CTA easy to understand on the first mobile screens.
+
+VERIFY
+Check that the first screen feels like a continuation of the campaign, not a new campaign.
+```
+
+Do not spend the first hour perfecting small spacing details. First check whether the **message flow and purchase path make sense**.
+
+## Step 4: refine in focused passes
+
+A good sequence is:
+
+1. Hero and message match.
+2. Proof and objections.
+3. Product and offer clarity.
+4. Visual hierarchy.
+5. Mobile.
+6. Final QA.
+
+Example refinement prompt:
+
+```text
+The page structure is approved.
+Edit only the selected hero.
+Make the headline more directly aligned with this ad phrase: [phrase].
+Keep the product, CTA action, offer, and all other sections unchanged.
+```
+
+Use [Prompting 101](/academy/prompting-101) when the build starts drifting or changing too much at once.
+
+## Step 5: check the actual conversion path
+
+Before publishing, verify what the visitor will actually do.
+
+For a Shopify-connected purchase, check the real product, selected variant, purchase type, price, and next action. If the campaign sends visitors to an existing store PDP instead, check the destination URL and campaign parameters.
+
+For headless or non-Shopify stores, confirm the intended cart API, checkout link, PDP redirect, or custom implementation with your team.
+
+The visual page is only half the campaign. A beautiful page with the wrong purchase destination is not launch-ready.
+
+## Step 6: choose the publishing path
+
+Use the publishing method that matches your implementation:
+
+- **Jurni-hosted / custom subdomain** for the standard hosted experience.
+- **Shopify Pages** when you intentionally want the page inside the Shopify theme environment.
+- **Headless / custom storefront** when your commerce flow is integrated separately.
+
+Use the [publishing guide](/publishing/overview) when you are unsure which path is right.
+
+## Step 7: use the correct campaign URL
+
+If the campaign should point to a stable Jurni routing URL, use a **Smart Link**. Smart Links are also the traffic entry point used by Jurni experiments.
+
+Before putting the URL into Meta, TikTok, email, or another channel:
+
+1. Open the exact URL.
+2. Confirm it reaches the intended page.
+3. Confirm campaign parameters remain intact.
+4. Test mobile.
+5. Complete the intended CTA or purchase action.
+
+Use [Test your campaign link](/publishing/check-campaign-link) for the detailed checklist.
+
+## Step 8: run a pre-launch review
+
+Paste this into Jurni before final QA:
+
+```text
+Review this page against the attached campaign brief.
+Do not edit yet.
+
+Return a prioritized checklist:
+BLOCKER
+SHOULD FIX
+OPTIONAL
+
+Check:
+- ad-to-page message match
+- unsupported claims
+- wrong product or offer references
+- CTA clarity
+- mobile hierarchy
+- proof placement
+- objection handling
+- obvious link or purchase-path inconsistencies
+```
+
+Then manually verify the live page and final cart / checkout where applicable.
+
+## Step 9: launch with one first test in mind
+
+Do not launch with ten possible changes in your head. Pick one question that would be valuable to answer next.
+
+Examples:
+
+- Does repeating the ad's exact benefit in the hero improve CVR?
+- Does a shorter education flow improve RPS for retargeting traffic?
+- Does moving approved social proof above the product section improve ATC rate?
+- Does subscription-first framing improve the intended purchase mix?
+
+A good test should change one meaningful customer decision—not five unrelated design details.
+
+## What good looks like
+
+Your first Jurni campaign is in good shape when:
+
+- the first screen immediately makes sense after the ad click
+- the visitor can tell what the product is and why it matters
+- proof supports the claims near where the claims are made
+- there is one obvious primary next action
+- the purchase path uses real products and approved offers
+- the mobile version is intentionally reviewed
+- the actual campaign URL is tested
+- you know what you want to learn next
+
+## Common mistakes
+
+**Starting with a page type instead of a campaign.** “Build an advertorial” is not enough if you have not defined audience and angle.
+
+**Overbuilding the first version.** More sections do not automatically mean more persuasion.
+
+**Changing the product through text only.** A product name in copy is not the same as the connected product used by a purchase control.
+
+**Launching the preview instead of the campaign URL.** Test the exact URL the audience will click.
+
+**Making several major CRO changes at once.** You can improve the page, but you will learn less from the experiment.
+
+## Next lessons
+
+<CardGroup cols={2}>
+  <Card title="Turn an ad into a landing page" href="/academy/playbooks/ad-to-landing-page" icon="megaphone">
+    Go deeper on campaign congruence and ad-to-page structure.
+  </Card>
+  <Card title="Run your first A/B test" href="/academy/playbooks/first-ab-test" icon="flask-conical">
+    Turn your first hypothesis into a controlled Jurni experiment.
+  </Card>
+  <Card title="Prompt Library" href="/academy/prompt-library" icon="copy">
+    Borrow prompts for the next build or edit.
+  </Card>
+  <Card title="Publishing help" href="/publishing/overview" icon="send">
+    Use the Help Center for exact publishing controls.
+  </Card>
+</CardGroup>

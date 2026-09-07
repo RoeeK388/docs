@@ -1,0 +1,178 @@
+---
+title: "Improve ad-to-page message match"
+sidebarTitle: "Message match"
+description: "Audit the transition from campaign creative to landing page and fix the promise, product, offer, proof, and CTA continuity that matters after the click."
+icon: "route"
+---
+
+# Improve ad-to-page message match
+
+Use this playbook when an ad earns clicks but the landing page feels generic, confusing, or disconnected from the promise that earned the visit.
+
+**Message match** means the visitor recognizes the same campaign after the click: the same core promise, product context, audience, offer, and expected next step.
+
+## Why this matters
+
+A click creates an expectation. When the first screen changes subject, product, tone, or offer, the visitor has to decide whether they landed in the right place before they can evaluate the product.
+
+The goal is not to repeat every word from the ad. It is to **preserve the meaning of the click**.
+
+## Step 1: audit six types of continuity
+
+Compare the ad and landing page across:
+
+| Dimension | Ask |
+| --- | --- |
+| **Hook** | Does the page address the same problem, desire, or idea? |
+| **Audience** | Does the page still sound like it was made for the person in the ad? |
+| **Product** | Is the same product, bundle, or category obvious? |
+| **Offer** | Is the advertised offer still clear and accurate? |
+| **Proof** | Does the page support the promise with relevant approved proof? |
+| **CTA** | Does the next action make sense after the ad's CTA? |
+
+## Step 2: let Jurni diagnose before editing
+
+Attach the ad and use:
+
+```text
+Compare this landing page with the attached campaign creative.
+Do not edit yet.
+
+Score 1–5 for:
+- hook continuity
+- audience continuity
+- product continuity
+- offer continuity
+- proof continuity
+- CTA continuity
+
+For every score below 4:
+1. quote or summarize the mismatch
+2. explain why it may create friction
+3. recommend the smallest page change that fixes it
+
+Prioritize the first screen and first 25% of the page.
+Do not recommend a full redesign unless the mismatch is structural.
+```
+
+This separates diagnosis from generation.
+
+## Step 3: fix the highest-impact mismatch first
+
+Most message-match problems can be improved through one of these areas:
+
+### Hero promise
+
+```text
+Edit only the selected hero.
+Continue this approved ad promise more directly: [promise].
+
+The visitor should recognize the campaign immediately.
+Keep the product, offer, CTA destination, and all sections below the hero unchanged.
+```
+
+### Product continuity
+
+If the ad shows a specific product, bundle, flavor, or use case, make sure the first screen does not lead with a different item or a generic category message.
+
+### Offer continuity
+
+If an ad says “free gift,” “save 15%,” or “subscribe and save,” the page should make the approved offer easy to find. The page copy must match the real commerce setup; do not create a discount by typing it into a prompt.
+
+### Proof continuity
+
+A problem-focused ad may need proof that the product addresses that specific concern, not a generic review unrelated to the campaign angle.
+
+## Step 4: preserve the angle long enough
+
+A common mistake is matching the first headline and then abandoning the angle in the next section.
+
+Review the first several sections as a sequence:
+
+1. **Recognize the promise.**
+2. **Understand why it is credible or relevant.**
+3. **Learn enough about the product to believe it fits.**
+4. **See proof or objection handling.**
+5. **Take the next action.**
+
+The page can expand beyond the ad; it should not contradict it.
+
+## Step 5: make the visual transition feel intentional
+
+Visual continuity does not require copying the ad layout. Useful continuity can come from:
+
+- same hero product or visual context
+- similar color or imagery treatment
+- creator present in both ad and page when appropriate
+- campaign-specific headline language
+- offer badge or proof that appeared in the ad
+
+Do not force visual consistency that makes the page harder to use. The page has more work to do than the ad.
+
+## Step 6: check traffic segmentation
+
+If several ads with very different promises all point to one generic page, the page may be unable to match all of them well.
+
+That is a campaign strategy question, not just a copy problem. Consider whether major creative angles deserve separate Jurni experiences or experiment variants.
+
+## Copy-ready fix prompt
+
+```text
+CONTEXT
+Traffic comes from the attached [ad / creator creative].
+The strongest click-driving idea is: [angle].
+
+PROBLEM
+The current landing page first screen leads with: [current message].
+This creates a gap because: [reason].
+
+CHANGE
+Edit only [hero / first two sections].
+Make the campaign angle recognizable immediately, then connect it to the product.
+
+KEEP
+- product
+- approved offer
+- existing CTA action
+- proof outside the selected area
+- all downstream purchase behavior
+
+DO NOT
+Create a new claim or broaden the promise beyond the approved campaign material.
+```
+
+## What good looks like
+
+After the change, a teammate should be able to see the ad and first screen side by side and immediately understand why they belong to the same campaign.
+
+The page should then add value the ad could not: explanation, proof, objection handling, product choice, and conversion.
+
+## Common mistakes
+
+**Copying the ad word for word without adding clarity.** Message match is continuity, not duplication.
+
+**Matching the headline but changing the product.** Product congruence often matters as much as copy.
+
+**Making a page for the brand instead of the campaign.** Generic mission statements can wait when the visitor clicked a specific promise.
+
+**Inventing proof for the angle.** If the campaign needs evidence that you do not have, change the claim or gather approved evidence.
+
+**Sending every creative angle to one compromise page.** Some messages are different enough to deserve their own experience.
+
+## What to test next
+
+Once obvious mismatch is fixed, test one meaningful question:
+
+- exact ad-hook continuation versus a product-led hero
+- campaign-specific proof above the fold versus below
+- creator-first hero versus product-first hero
+- shorter direct page versus a longer education path
+
+Use the campaign's desired outcome to choose the primary experiment metric.
+
+## Next playbooks
+
+- [Ad → landing page](/academy/playbooks/ad-to-landing-page)
+- [First A/B test](/academy/playbooks/first-ab-test)
+- [What to test next](/academy/playbooks/what-to-test)
+- [CRO review](/academy/playbooks/cro-review)

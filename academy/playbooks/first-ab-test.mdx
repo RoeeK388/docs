@@ -1,0 +1,217 @@
+---
+title: "Run your first Jurni A/B test"
+sidebarTitle: "First A/B test"
+description: "Turn one customer insight into a controlled page variant, route traffic through a Smart Link, and interpret the result using the metric that matches the hypothesis."
+icon: "flask-conical"
+---
+
+# Run your first Jurni A/B test
+
+Use this playbook when you have one clear question you want real traffic to answer.
+
+The objective is not to create the most different variant possible. It is to make **one meaningful change**, hold the important context steady, and measure the outcome that best reflects the hypothesis.
+
+## The Jurni experiment model
+
+At a marketer level, the flow is:
+
+**Campaign URL / Smart Link → Jurni assigns a variant → shopper sees that experience → Jurni attributes the session and outcome → you compare variants.**
+
+The Smart Link is the stable URL used to split experiment traffic. If you connect an existing Smart Link that is already receiving campaign traffic, that traffic becomes part of the experiment routing.
+
+## Step 1: write a hypothesis that explains the customer decision
+
+Use:
+
+```text
+OBSERVATION
+[What did we notice?]
+
+HYPOTHESIS
+If we [single change], then [audience] will be more likely to [behavior] because [customer reason].
+
+CHANGE
+[The one meaningful variable]
+
+KEEP CONSTANT
+[Product, offer, other sections, CTA action, etc.]
+
+PRIMARY METRIC
+[metric]
+```
+
+Example:
+
+```text
+OBSERVATION
+The ad leads with convenience, but the hero leads with brand mission.
+
+HYPOTHESIS
+If the hero repeats the convenience angle, first-time Meta visitors will be more likely to purchase because the page will feel immediately relevant to the click.
+
+CHANGE
+Hero headline + supporting copy.
+
+KEEP CONSTANT
+Product, offer, design below hero, CTA action, proof, purchase flow.
+
+PRIMARY METRIC
+CVR.
+```
+
+## Step 2: choose a metric that matches the hypothesis
+
+Common experiment metrics currently available in Jurni include Sessions, Orders, Revenue, CTR, CVR, Add-to-Cart Rate, Checkout Rate, AOV, and RPS.
+
+For a marketer:
+
+- **CVR** — use when the question is primarily about purchase conversion.
+- **RPS** — use when the change can affect both conversion and order value and you care about revenue per session.
+- **AOV** — use when the hypothesis is specifically about basket size among purchasers.
+- **CTR / Add-to-Cart / Checkout Rate** — useful for earlier journey behavior and diagnostics.
+
+Do not select AOV simply because it is larger than CVR, or switch your success metric after seeing the result because another metric looks better.
+
+## Step 3: make a controlled duplicate
+
+Create a separate experience for the new variant so the control remains intact.
+
+Then prompt Jurni:
+
+```text
+This is an experiment variant.
+
+HYPOTHESIS
+[Paste hypothesis]
+
+CHANGE ONLY
+[The variable being tested]
+
+KEEP IDENTICAL TO CONTROL
+- connected product
+- real offer and pricing
+- purchase options
+- CTA action
+- page structure outside the test area
+- tracking setup
+- all unrelated copy and assets
+
+Use this approved alternative input:
+[copy / reference / design]
+
+Do not make additional CRO improvements.
+```
+
+After the edit, compare control and variant manually. AI can introduce accidental differences even when you told it not to.
+
+## Step 4: create the experiment
+
+In Jurni, create an experiment and choose whether to create a **new Smart Link** or use an **existing Smart Link**.
+
+For a new campaign, creating a new Smart Link gives you a fresh campaign URL.
+
+For an existing campaign, using the existing Smart Link lets the experiment take over traffic already reaching that link. Confirm this is what you want before activating the test.
+
+Add the control and variant experiences and set the intended traffic weights.
+
+For exact product controls, see [Create an experiment](/experiments/create-experiment).
+
+## Step 5: test the link before sending traffic
+
+Open the exact Smart Link. Check:
+
+- it resolves successfully
+- campaign/query parameters are retained as intended
+- both variants are valid published experiences
+- important product and purchase actions work on both
+- tracking is not duplicated
+- mobile behavior is correct
+
+If your experiment uses routing rules, verify those rules deliberately rather than assuming every visitor sees the weighted split.
+
+## Step 6: let the test answer the question you wrote
+
+Avoid changing the variant mid-test unless you are correcting a real bug. A material page change after traffic has already entered means the variant no longer represents one stable treatment across the whole date range.
+
+If you discover a serious issue, document the correction and consider whether a fresh test window is cleaner.
+
+## Step 7: interpret results without inventing certainty
+
+Start with the original hypothesis and primary metric.
+
+Ask:
+
+1. Which variant leads on the primary metric?
+2. How large is the observed difference?
+3. Is the date range representative of the campaign?
+4. Are traffic volumes balanced as expected?
+5. Do diagnostic metrics help explain where behavior changed?
+6. Could offer, traffic source, campaign mix, or another concurrent change confound the comparison?
+
+The current shipped dashboard should not be treated as an automatic declaration that every observed lead is statistically conclusive. Use the results as evidence with the context of the test.
+
+## Prompt: summarize the result responsibly
+
+```text
+Here is the experiment hypothesis and result:
+
+HYPOTHESIS
+[hypothesis]
+
+PRIMARY METRIC
+[metric]
+
+RESULTS
+[paste the relevant Jurni results]
+
+Help me interpret the test.
+Separate:
+1. OBSERVATION — what the numbers show
+2. CONCLUSION — what we can reasonably say
+3. UNCERTAINTY — what the result does not prove
+4. NEXT TEST — the most logical follow-up hypotheses
+
+Do not claim causality beyond the controlled difference.
+Do not treat a leading variant as statistically conclusive unless the supplied result explicitly supports that conclusion.
+```
+
+## Step 8: decide what to keep
+
+A winning page is not just a URL to archive. Turn the result into a reusable learning:
+
+> “For cold Meta traffic on the convenience angle, explicit message match in the hero outperformed the broader brand headline during this test.”
+
+That learning is more useful than “Variant B won.”
+
+Use it to inform the next campaign, then test whether the lesson generalizes.
+
+## What good looks like
+
+A good first experiment has:
+
+- one clear customer hypothesis
+- one primary metric chosen before the result
+- a control that remains intact
+- a variant with one meaningful intended difference
+- a tested Smart Link
+- enough context to interpret the result responsibly
+- an explicit next learning
+
+## Common mistakes
+
+**Testing an entire redesign.** It may win, but you will not know what caused the change.
+
+**Changing price or offer accidentally.** Now you are testing economics, not just messaging/design.
+
+**Using different campaign traffic for each variant outside Jurni.** That makes the audiences harder to compare.
+
+**Ending because one variant is ahead very early.** A temporary lead is still a temporary lead.
+
+**Looking for a different success metric after the fact.** Diagnose with other metrics, but keep the original success question visible.
+
+## Next playbooks
+
+- [What to test next](/academy/playbooks/what-to-test)
+- [Optimization loop](/academy/playbooks/optimization-loop)
+- [CRO review](/academy/playbooks/cro-review)
+- [Experiment results Help Center](/experiments/reading-results)
