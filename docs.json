@@ -386,11 +386,55 @@
       },
       {
         "tab": "Changelog",
-        "href": "/changelog"
+        "pages": [
+          "changelog"
+        ]
       },
       {
         "tab": "Academy",
-        "href": "/academy"
+        "pages": [
+          "academy",
+          "academy/start/first-campaign",
+          {
+            "group": "Campaign Playbooks",
+            "pages": [
+              "academy/playbooks",
+              "academy/playbooks/ad-to-landing-page",
+              "academy/playbooks/advertorial",
+              "academy/playbooks/listicle",
+              "academy/playbooks/founder-story",
+              "academy/playbooks/creator-page",
+              "academy/playbooks/comparison-page",
+              "academy/playbooks/problem-solution",
+              "academy/playbooks/message-match",
+              "academy/playbooks/recreate-reference-page",
+              "academy/playbooks/figma-to-page"
+            ]
+          },
+          {
+            "group": "AI & Prompting",
+            "pages": [
+              "academy/prompting-101",
+              "academy/prompt-library"
+            ]
+          },
+          {
+            "group": "Commerce Playbooks",
+            "pages": [
+              "academy/playbooks/gwp-campaign",
+              "academy/playbooks/subscription-campaign"
+            ]
+          },
+          {
+            "group": "CRO & Experimentation",
+            "pages": [
+              "academy/playbooks/cro-review",
+              "academy/playbooks/first-ab-test",
+              "academy/playbooks/what-to-test",
+              "academy/playbooks/optimization-loop"
+            ]
+          }
+        ]
       }
     ]
   },
