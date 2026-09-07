@@ -1,0 +1,229 @@
+---
+title: "Review a page before you start testing"
+sidebarTitle: "CRO review"
+description: "Diagnose message match, clarity, proof, friction, hierarchy, and purchase-path issues before creating random experiment variants."
+icon: "clipboard-check"
+---
+
+# Review a page before you start testing
+
+Use this playbook when you have a live or nearly finished page and want to decide **what is actually worth changing**.
+
+The goal of a CRO review is not to generate a long list of subjective design opinions. It is to identify **customer decisions that may be difficult, unclear, unsupported, or distracting**, then turn those observations into testable hypotheses.
+
+## Start with the visitor, not the page
+
+Before reviewing the design, define:
+
+```text
+TRAFFIC SOURCE
+[Meta / TikTok / Google / creator / email / other]
+
+AUDIENCE
+[audience and awareness]
+
+CAMPAIGN PROMISE
+[why they clicked]
+
+PRIMARY ACTION
+[what should they do]
+
+PRIMARY BUSINESS METRIC
+[CVR / RPS / AOV / other relevant metric]
+```
+
+A page can be “good” in isolation and still be wrong for its traffic.
+
+## Review the page through six questions
+
+### 1. Does the first screen make sense after the click?
+
+Check:
+
+- campaign message match
+- product continuity
+- offer continuity
+- clear primary action
+- enough context to know what the page is about
+
+### 2. Is the value proposition specific?
+
+Look for language that could belong to any competitor:
+
+- “premium quality”
+- “designed for you”
+- “game-changing”
+- “feel your best”
+
+Replace generic language only when you have a more specific, approved product truth.
+
+### 3. Is proof close to the claim it supports?
+
+Ask whether the visitor sees enough credible evidence at the moment skepticism is likely to appear.
+
+Proof can include approved:
+
+- product facts
+- ratings and reviews
+- creator or founder material
+- comparison evidence
+- guarantees or policies
+- certifications or awards
+
+Do not score a page higher simply because it has many badges. Relevance matters more than quantity.
+
+### 4. Is the buying decision easy to understand?
+
+Check:
+
+- what the visitor is buying
+- variant or option labels
+- one-time versus subscription choice
+- actual offer
+- CTA action
+- next step after the click
+
+A visual product card can look clear while still sending the wrong variant or purchase choice to cart, so final QA remains necessary.
+
+### 5. Is the page asking for too much attention?
+
+Look for:
+
+- several competing CTAs
+- repeated benefits
+- long copy without new information
+- decorative UI that competes with product choice
+- sections that exist because “landing pages have this section” rather than because the visitor needs it
+
+### 6. Does mobile preserve the same hierarchy?
+
+Mobile is not a smaller desktop screenshot. Check whether the important message, proof, and action still appear in a useful order without excessive scrolling or cramped interactions.
+
+## Ask Jurni for a diagnosis, not an automatic redesign
+
+Use:
+
+```text
+Review this page as a CRO analyst before making any changes.
+
+CONTEXT
+Traffic: [source]
+Audience: [audience]
+Campaign promise: [promise]
+Primary action: [action]
+Primary metric: [metric]
+
+Evaluate:
+1. message match
+2. value-proposition clarity
+3. proof and trust
+4. objection handling
+5. purchase / CTA clarity
+6. visual hierarchy
+7. mobile hierarchy
+8. unnecessary friction or distraction
+
+For each finding provide:
+- OBSERVATION: what is currently happening
+- CUSTOMER DECISION: what decision it may make harder
+- EVIDENCE: what on the page or campaign suggests this
+- HYPOTHESIS: the single change worth testing
+- METRIC: the metric most directly connected to that hypothesis
+
+Prioritize the top 5.
+Do not edit the page yet.
+Do not invent analytics data or claim a change will increase conversion.
+```
+
+## Separate evidence from opinion
+
+Not all observations have the same confidence.
+
+Useful evidence can come from:
+
+- experiment results
+- page analytics
+- high drop-off before a key step
+- recurring support or customer objections
+- campaign-to-page mismatch you can directly observe
+- repeated usability issues
+- clear inconsistencies in product/offer information
+
+Lower-confidence ideas can still be worth testing, but label them honestly.
+
+## Prioritize by decision impact
+
+A practical prioritization question is:
+
+> If this hypothesis is right, how important is the customer decision it changes?
+
+Higher-impact decisions often include:
+
+- whether the page feels relevant after the click
+- whether the visitor understands the product
+- whether they trust the main claim
+- whether the offer is clear
+- whether they understand the purchase choices
+- whether the CTA takes them where expected
+
+Changing a border radius can matter if it solves a real comprehension issue. Usually it does not deserve the same priority as the questions above.
+
+## Turn one finding into a test brief
+
+Example:
+
+```text
+OBSERVATION
+The Meta ad leads with “no afternoon crash,” but the hero headline is a broad brand slogan.
+
+CUSTOMER DECISION
+The visitor must decide whether the page is still relevant to the ad they clicked.
+
+HYPOTHESIS
+Repeating the approved “no afternoon crash” angle in the hero will make the campaign more immediately relevant.
+
+CHANGE
+Hero headline and supporting sentence only.
+
+KEEP
+Product, offer, page structure, CTA action, proof, and everything below the hero.
+
+PRIMARY METRIC
+CVR.
+
+SECONDARY DIAGNOSTIC
+CTR / ATC rate, depending on the page flow.
+```
+
+Now you have a useful test—not “make the hero better.”
+
+## What good looks like
+
+A good CRO review ends with **fewer, stronger hypotheses**.
+
+You should know:
+
+- what problem you observed
+- what customer decision may be affected
+- what single change you want to test
+- what will remain constant
+- which metric matches the hypothesis
+
+## Common mistakes
+
+**Asking AI to optimize the entire page.** You may get a nicer page but learn very little.
+
+**Treating best practices as evidence.** “Put the CTA above the fold” is a hypothesis unless your own context makes the issue obvious.
+
+**Choosing tests because they are easy.** Test important decisions first.
+
+**Using analytics without context.** A number does not tell you why it happened.
+
+**Changing several major things in one variant.** If it wins, you will not know which change mattered.
+
+## Next playbooks
+
+- [Decide what to test next](/academy/playbooks/what-to-test)
+- [Run your first A/B test](/academy/playbooks/first-ab-test)
+- [Build an optimization loop](/academy/playbooks/optimization-loop)
+- [Message match](/academy/playbooks/message-match)
