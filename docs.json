@@ -380,9 +380,19 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Dashboard ->",
+      "label": "Open Jurni",
       "href": "https://app.getjurni.ai"
-    }
+    },
+    "links": [
+      {
+        "href": "/academy",
+        "label": "Academy"
+      },
+      {
+        "href": "/changelog",
+        "label": "Changelog"
+      }
+    ]
   },
   "footer": {
     "socials": {
