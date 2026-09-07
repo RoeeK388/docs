@@ -391,9 +391,22 @@
         "tab": "Academy",
         "pages": [
           "academy",
+          "academy/start/first-campaign",
           {
             "group": "Campaign Playbooks",
-            "pages": []
+            "pages": [
+              "academy/playbooks",
+              "academy/playbooks/ad-to-landing-page",
+              "academy/playbooks/advertorial",
+              "academy/playbooks/listicle",
+              "academy/playbooks/founder-story",
+              "academy/playbooks/creator-page",
+              "academy/playbooks/comparison-page",
+              "academy/playbooks/problem-solution",
+              "academy/playbooks/message-match",
+              "academy/playbooks/recreate-reference-page",
+              "academy/playbooks/figma-to-page"
+            ]
           },
           {
             "group": "AI & Prompting",
