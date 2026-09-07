@@ -1,0 +1,202 @@
+---
+title: "Build a product comparison page"
+sidebarTitle: "Comparison page"
+description: "Help shoppers compare meaningful decision criteria with approved evidence, clear framing, and a mobile-friendly path into the purchase decision."
+icon: "columns-3"
+hidden: true
+---
+
+# Build a product comparison page
+
+Use a comparison page when the visitor is actively deciding between **your product and a real alternative, product types, or purchase options**.
+
+A comparison is persuasive when it reduces decision complexity. It becomes weak when every row says you win or when claims cannot be supported.
+
+## Decide what kind of comparison you are making
+
+### Product versus alternative
+
+Use when customers commonly compare you with another product or approach and you have approved, supportable evidence.
+
+### Product type versus product type
+
+Example: ready-to-drink versus powder, one-step versus multi-step, or another category-level decision.
+
+### Your own options
+
+Use when the customer needs help choosing between variants, bundles, sizes, or purchase plans.
+
+Each version needs different evidence and a different CTA.
+
+## Step 1: define the real decision criteria
+
+Do not start by listing every product feature. Ask what shoppers actually compare.
+
+```text
+AUDIENCE
+[audience]
+
+ALTERNATIVES
+[what they are deciding between]
+
+TOP DECISION CRITERIA
+1. [criterion]
+2. [criterion]
+3. [criterion]
+4. [criterion]
+5. [criterion]
+
+APPROVED EVIDENCE
+[source for each claim]
+
+PRIMARY ACTION
+[action]
+```
+
+A strong criterion is specific enough to matter: “serving format,” “delivery cadence,” “ingredients,” “price per approved unit,” or “setup time,” where supported. “Quality” is too vague unless you define how it is measured.
+
+## Step 2: choose fair framing
+
+Comparisons build trust when they are visibly fair.
+
+Avoid:
+
+- invented competitor weaknesses
+- outdated competitor pricing
+- implying an alternative lacks a feature without evidence
+- “X” marks on every competitor row with no nuance
+- comparing your best plan to someone else's least favorable option without explaining it
+
+If a competitor value is not reliable, use a category-level comparison or omit the row.
+
+## Copy-ready Jurni prompt
+
+```text
+Build a comparison landing page for [audience] deciding between [our product] and [alternative / category].
+
+DECISION CRITERIA
+Use only these approved criteria:
+1. [criterion + approved values]
+2. [criterion + approved values]
+3. [criterion + approved values]
+4. [criterion + approved values]
+
+GOAL
+Help the shopper understand the meaningful differences and decide whether [product] fits their needs.
+
+BUILD
+- campaign-matched hero
+- concise explanation of who this comparison is for
+- comparison section using the approved values only
+- short explanation for the 2–3 criteria that need context
+- approved proof
+- clear product / purchase transition
+- FAQ for remaining comparison questions
+
+TONE
+Confident and factual, not insulting.
+
+DO NOT
+- invent competitor values
+- create superiority claims beyond the supplied evidence
+- use fake ratings or badges
+- imply every shopper should prefer our product
+
+MOBILE
+Convert wide comparison tables into readable stacked cards or rows without hiding criteria.
+```
+
+## Step 3: make the table a summary, not the whole argument
+
+The table should help a shopper scan. Important criteria may still need a short explanation below it.
+
+For example, if the table says “single-serve packets,” a supporting section can explain why that format matters to the intended audience using approved product information.
+
+Avoid squeezing paragraphs into table cells.
+
+## Step 4: explain who your product is best for
+
+A credible comparison can say:
+
+> “Best for shoppers who prioritize [approved criteria].”
+
+This is often stronger than pretending your product is universally better.
+
+If an alternative genuinely fits a different need, acknowledge the tradeoff. Clarity can increase trust.
+
+## Step 5: keep prices and offers current
+
+Pricing comparisons are especially sensitive to staleness. If you show price, savings, or subscription terms:
+
+- confirm current approved values
+- specify the comparable unit or plan
+- review market/currency implications
+- avoid hard-coding values that change frequently unless the team owns the update process
+
+The purchase section should always use the real current product data.
+
+## Step 6: make mobile comparison usable
+
+Large tables often fail on phones. Prefer:
+
+- stacked criterion cards
+- sticky first column only when genuinely usable
+- one criterion per row with clearly labeled products
+- short copy
+
+Use:
+
+```text
+Keep the desktop comparison structure.
+On mobile, convert the comparison into stacked criterion cards.
+Each card must show the criterion, our approved value, and the alternative value without horizontal scrolling.
+Keep all comparison wording unchanged.
+```
+
+## Step 7: review every claim before launch
+
+```text
+Audit this comparison page against the supplied approved evidence.
+Do not edit yet.
+
+For every comparative statement, return:
+- CLAIM
+- SOURCE PROVIDED? yes/no
+- CURRENT / TIME-SENSITIVE? yes/no
+- NEEDS QUALIFICATION? yes/no
+
+Flag any wording that goes beyond the supplied evidence.
+Flag any number likely to become stale.
+```
+
+## What good looks like
+
+A visitor should be able to scan the comparison and understand the **few differences that actually matter to their purchase**.
+
+The page should feel useful even to someone who is skeptical of your brand.
+
+## Common mistakes
+
+**Comparing everything.** More rows often make the decision harder.
+
+**Unverifiable competitor claims.** A weak comparison can hurt trust more than no comparison.
+
+**One-sided criteria.** Choosing only dimensions designed to make you win looks manipulative.
+
+**Outdated prices.** Review time-sensitive information before each campaign.
+
+**Desktop-only table.** Comparison must remain readable on mobile.
+
+## What to test next
+
+- comparison table near hero versus later
+- 3 high-value criteria versus a more comprehensive table
+- product versus category framing
+- comparison-first page versus problem/education-first page
+
+## Next playbooks
+
+- [Listicle](/academy/playbooks/listicle)
+- [Problem-solution page](/academy/playbooks/problem-solution)
+- [First A/B test](/academy/playbooks/first-ab-test)
+- [Prompt Library](/academy/prompt-library)
