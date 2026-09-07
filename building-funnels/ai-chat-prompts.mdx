@@ -5,85 +5,142 @@ description: "Write precise Jurni AI requests for page creation, section edits, 
 icon: "message-square-text"
 ---
 
-A useful Jurni prompt tells the assistant **what to change, what to use, what to preserve, and how you will check the result**. More words are not automatically better: precise scope is more useful than a long list of vague improvements.
+A good prompt is a useful creative brief, not a technical specification. Tell Jurni **what you want to achieve, which content to use, what to change, and what to keep**.
 
-## Use this prompt structure
+Start with the quick pattern below. Use the rest of this guide when you are building a new campaign, working from references, or making a more complex edit.
+
+## A prompt you can use immediately
 
 ```text
-Goal: What should the page or section achieve?
-Target: Which page, section, or element should change?
-Reference: Which product, ad, Figma frame, web page, or approved copy should be used?
-Change: What should be different?
-Preserve: What must remain unchanged?
-Check: What should be true when the work is finished?
+Create a landing page for [product] aimed at [audience] arriving from [ad or channel].
+The main action is [add to cart / choose a subscription / visit another page].
+Use [attached product, approved copy, images, or reference].
+Include [the sections this campaign needs].
+Keep [brand requirements and existing purchase behavior].
+Do not invent reviews, claims, prices, or discounts.
 ```
 
-You do not need every label for a small edit. “In the selected FAQ section, change only the second answer to the approved copy below” is already a clear request.
+For a small edit, one sentence is enough:
 
-## Match the prompt to the stage of the build
+> In the selected FAQ section, replace the second answer with the copy below. Keep the other answers and the layout unchanged.
 
-For a new page, describe the audience, traffic source, product, goal, and reference. For a nearly finished page, narrow the task to one section or one behavior. Avoid asking for an entire redesign when the problem is one image crop or spacing value.
+## 1. Give the campaign context
 
-Bring real product and media context into the chat using the available attachments. For a Figma reference, include both desktop and mobile frame links and label them. For a web reference, say whether to use its appearance, shopping interaction, copy structure, or a combination.
+For a new page, describe the audience, the message that brought them there, the product or offer, and the action you want them to take. A visitor discovering your brand from an ad may need different information from a returning customer comparing purchase options.
 
-## Separate design, content, and purchasing logic
+**Too vague:** “Make a high-converting supplement page.”
 
-A screenshot shows appearance, not the implementation of variants, subscriptions, discounts, or cart actions. State those behaviors explicitly.
+**More useful:** “Build a page for first-time customers arriving from the attached morning-routine ad. Use the attached product and approved benefits. Explain how it fits into their routine, answer the supplied questions, then let shoppers select their purchase option.”
 
-A styled discount label does not create a Shopify discount. A button labeled “Subscribe” does not by itself select a valid selling plan. Ask for the design and commerce configuration separately, and verify the purchase in the cart or checkout.
+An objective such as improving conversion helps set direction. It is not a promise that a generated page will achieve a particular uplift. Use [experiments](/experiments/what-are-experiments) to evaluate a change.
 
-## Copy-ready examples
+## 2. Attach the right source material
 
-### Create a page from a brief
+Use the attachment options available in Jurni chat to supply products, images, files, ads, Figma links, or web references. A product name typed into a prompt is less precise than selecting the correct connected product when the product attachment is available.
 
-> Build a product-focused landing page for the attached product and ad. The audience is [audience], and the main action is [action]. Use the approved benefits and product facts in the attached brief. Include a hero, product education, existing reviews, a Buy Box, and an FAQ only where they support the brief. Do not invent testimonials, product claims, discounts, or scarcity. Keep the page responsive.
+| Source | Tell Jurni how to use it |
+| --- | --- |
+| Connected product | Use its real product choices and purchase data. |
+| Approved copy or brand guidance | Treat this as the approved wording and factual source. |
+| Ad creative | Carry its message and audience angle into the page. |
+| Layout screenshot | Use the arrangement and styling as a reference. |
+| Product photograph | Place this actual asset in the page. |
+| Figma frame | Follow this design for the named screen size. |
+| Web page | Use the specified section, visual style, or shopping interaction. |
 
-### Change one section
+### Reference images are not content images
 
-> Edit only the selected hero section. Put the image beside the copy on desktop and keep the existing mobile stack. Preserve the text, product, CTA destination, and all sections below the hero. The result should have no horizontal overflow and the primary button should remain visible without overlapping the image.
+Label what each attachment is for. Otherwise a picture of a layout can be mistaken for an image to place inside the page.
 
-### Use desktop and mobile Figma references
+> Image 1 is a layout reference. Image 2 is the product photo to use in the hero. Recreate the arrangement using editable content; do not use the layout screenshot as the finished section.
 
-> Use these as two responsive versions of the same page: Desktop: [frame link]. Mobile: [frame link]. Match their section order, spacing, typography, and media placement as closely as possible. Use the attached real products for purchase actions. Do not interpret the mobile frame as a second independent page.
+### Separate visual design from interaction
 
-### Redesign a Buy Box without changing commerce
+A screenshot cannot explain everything a selector or purchase button does. Describe the behavior separately.
 
-> Update the selected Buy Box's appearance to match the reference. Preserve the product IDs, available variants, default purchase selection, selling plans, quantities, discount application, and add-to-cart behavior. Do not replace working commerce controls with static buttons. I will test every purchase option after the edit.
+> Use the first reference for the bundle-selection steps and the second for typography and spacing. Shoppers should choose [approved items] before continuing. Keep the existing cart connection and use the attached products.
 
-### Reuse an approved section
+For Figma, provide **Desktop: [frame link]** and **Mobile: [frame link]** as two versions of the same page. See [Build from Figma](/building-funnels/figma-file).
 
-> Work from the approved section I inserted from Saved Sections. Change only its headline, image, and supporting copy using the supplied assets. Preserve its layout and existing button behavior. Do not rebuild it as a new section.
+## 3. Name the part that should change
 
-For a Global Section, decide whether the edit should affect the shared source. [Detach it](/build/global-sections) first when only this page should change.
+Select the intended section or element and check the context attached to your request. Then name that area in the prompt.
 
-### Correct a specific mismatch
+> Edit only the selected hero. Put the image beside the text on desktop. Keep the mobile stack, all copy, the CTA destination, and every section below it unchanged.
 
-> In the mobile hero, the product is cropped at the top. Keep the copy and section height unchanged; adjust only the image position so the full product is visible. Preserve the desktop crop. Do not replace the image.
+For a larger build, it helps to work in stages: establish the page structure, refine the content and visual design, connect the purchase behavior, then test. Do not ask for a complete rebuild when only one crop or spacing value is wrong.
 
-### Change a shopper action intentionally
+## 4. Protect the working parts
 
-> Change the selected CTA to open [full destination URL] instead of adding to cart. Keep its appearance and label unchanged. Do not modify the Buy Box or other buttons. I will verify the destination from the final live page.
+State what must remain unchanged, especially on a nearly finished page. Useful constraints include the approved copy, selected product, variant choices, purchase type, quantity, button destination, and sections outside the requested area.
 
-## Make responsive instructions explicit
+> Restyle this Buy Box to match the reference. Keep its products, available variants, subscription choices, default selection, quantities, discounts, and cart action unchanged. Keep the controls functional rather than replacing them with static artwork.
 
-The editor's base/mobile mode is **Editing All Sizes**, while desktop can have its own overrides. State the desired mobile and desktop outcomes in your prompt and inspect both after the edit. “Mobile only” in the request is a constraint to verify, not a reason to skip checking desktop.
+<Warning>
+  Check whether you are editing a Global Section or shared product content. A prompt saying “only this page” is not a substitute for [detaching a global instance](/build/global-sections) when an independent version is needed.
+</Warning>
 
-## Iterate without losing control
+A displayed discount does not create a checkout discount. Adding a subscription label does not create a valid subscription plan. Use [purchase options](/building-funnels/product-purchase-options) and [offers](/commerce/offers-overview) for the corresponding setup.
 
-Review one meaningful change before stacking another request on top of it. If the result is wrong, name the mismatch and the parts that were correct. For example: “The new spacing is right, but the CTA action changed. Keep the spacing and restore the original cart action.”
+## 5. Describe mobile and desktop outcomes
 
-Use [Undo/redo](/build/undo-redo) when appropriate. Use Chat history to resume a discussion, not to restore an old page version. Save a tested draft or publish deliberately after reviewing the result.
+Say what should happen at each screen size instead of simply asking for “responsive design.”
 
-## Avoid these requests
+> On mobile, stack the image above the text and make the button full width. On desktop, keep the existing two-column layout. Preserve the product selection and button action on both sizes.
 
-“Make it convert better,” “fix everything,” and “make it like this” leave the scope unclear. Replace them with a target, a reference, and the specific result you need.
+Jurni's base/mobile editing mode is **Editing All Sizes**; desktop can have separate overrides. Check both views after an AI edit. See [Desktop and mobile](/build/desktop-mobile).
 
-Do not paste private API keys or account credentials into prompts. Do not ask the assistant to fabricate customer reviews or unsupported product claims. Supply approved source material instead.
+## 6. Review one meaningful change at a time
 
-## Related guides
+Check the result before sending the next instruction. When it is close, describe the remaining mismatch rather than repeating the whole brief.
 
-- [AI editing and chat history](/build/ai-editing)
-- [Desktop and mobile editing](/build/desktop-mobile)
-- [Figma workflow](/building-funnels/figma-file)
-- [AI Knowledge](/getting-started/setup-ai-knowledge)
-- [QA checklist](/building-funnels/qa-checklist)
+**Less useful:** “Still wrong. Fix it.”
+
+**More useful:** “The new layout is right. The image still crops the bottle cap on mobile. Keep the layout and copy; change only the crop so the full bottle is visible.”
+
+A screenshot of the current problem can help. Label it **Current result**, and label the target **Desired result**. Explain the difference that matters.
+
+For a straightforward deletion, reordering, or exact text replacement, direct [editor controls](/building-funnels/funnel-editor) may be simpler than another prompt. Use AI for changes that are easier to describe than make manually.
+
+## 7. Keep the conversation focused
+
+Continue the same chat when refining one task. Start a new chat when switching to an unrelated campaign or when old instructions conflict with the new brief. Supply the important context again rather than assuming a fresh thread contains the previous discussion.
+
+Chat history, Undo/Redo, and published versions do different jobs. Opening an old chat does not restore an old design. Use [chat history](/build/chat-history), [Undo/Redo](/build/undo-redo), or [version history](/build/version-history) for the appropriate task.
+
+## 8. Verify the page before launch
+
+Review the changed area and the parts that were meant to stay unchanged. Check approved claims and pricing, both screen sizes, product choices, links, and the final cart or checkout. Then save or publish deliberately.
+
+<Note>
+  An AI response saying an edit is complete is not a substitute for testing it. Use the [pre-launch checklist](/building-funnels/qa-checklist), including the actual published destination and campaign link.
+</Note>
+
+## Common prompting problems
+
+<AccordionGroup>
+  <Accordion title="Jurni changed more than I intended">
+    Name the exact target, remove unrelated requests, and list what must remain unchanged. Check whether the selected content is shared. Recover with the appropriate editor history control before making the next edit when necessary.
+  </Accordion>
+
+  <Accordion title="The design matches, but buying does not work">
+    A visual reference does not establish commerce behavior. Confirm the connected product, available variants, purchase plan, quantity, and button action. Test the actual cart item, not just the design.
+  </Accordion>
+
+  <Accordion title="The reference and the brand guidance disagree">
+    Set priorities: for example, “Use the reference for layout, but keep our approved copy, fonts, colors, and product imagery.” Do not leave Jurni to guess which source wins.
+  </Accordion>
+
+  <Accordion title="The request keeps producing generic results">
+    Replace broad adjectives with concrete instructions: which section, what arrangement, what copy, which asset, and which next action. Include approved source material instead of asking Jurni to invent proof.
+  </Accordion>
+</AccordionGroup>
+
+Never paste private API keys, passwords, or customer personal information into a creative brief. Use approved assets and real testimonials, and do not request invented results or scarcity.
+
+## Continue
+
+- [Copy-ready prompt examples](/build/prompt-library)
+- [Build your first page with AI](/build/ai-campaign-workflow)
+- [Edit a page with AI](/build/ai-editing)
+- [Set up AI Knowledge](/getting-started/setup-ai-knowledge)

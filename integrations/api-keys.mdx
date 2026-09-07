@@ -1,81 +1,57 @@
 ---
-title: "Finding API Keys & Credentials Per Integration"
-sidebarTitle: "API Keys"
-description: "Learn how to locate and manage API keys and credentials for each Jurni integration. Securely connect your accounts with the right authentication details."
+title: "Find your integration connection details"
+sidebarTitle: "Connection details"
+description: "Find the exact ID, public token, URL, or authorization flow each Jurni integration needs."
+icon: "key-round"
 ---
 
-Different Jurni integrations use different credential types. Do not assume every integration needs an API key: some use OAuth, some use public IDs/tokens, and some only need a storefront identifier.
+Use this directory when Jurni asks for a connection value. **The provider guides include the full steps; this page tells you which value to look for.** Do not assume every integration needs an API key.
 
-The fields below reflect the credential labels currently exposed in Jurni.
+## Tracking
 
-## Data & tracking
+| Provider | Copy this | Find it here |
+| --- | --- | --- |
+| [GA4](/integrations/google-analytics) | Measurement ID beginning **G-** | Google Analytics → Admin → Data streams → web stream. |
+| [GTM](/integrations/gtm) | Container ID beginning **GTM-** | Google Tag Manager → the web container's Workspace. |
+| [Meta Pixel](/integrations/meta-pixel) | Website Pixel ID | Meta Events Manager → the intended website data source → details/Settings. |
+| [TikTok](/integrations/tiktok) | Website Pixel ID | TikTok Ads Manager → Tools → Events Manager → pixel details. |
+| [Northbeam](/integrations/northbeam) | Data Client ID, called **Northbeam Pixel ID** in Jurni | Northbeam's pixel-placement instructions; the ID in its browser script URL. |
+| [Axon](/integrations/axon) | Browser pixel Event Key | Axon's native JavaScript pixel instructions; the **AXON_EVENT_KEY** value. |
+| [Blotout](/integrations/blotout) | Full HTTPS EdgeTag endpoint | Blotout → EdgeTag → Domains; confirm the correct endpoint with your implementation owner. |
+| [Polar](/integrations/polar-analytics) | The connected store's **.myshopify.com** domain | Shopify → Settings → Domains; match the store connected in Polar. |
+| [Shopify Analytics](/getting-started/shopify-analytics) | **Public** Storefront API token | The storefront in Shopify's Headless sales channel, as explained in the guide. |
+| [Triple Whale](/integrations/triple-whale) | No pasted credential | Enable the Triple Whale card; confirm the existing Shopify/pixel setup. |
 
-| Integration | Credential used in Jurni |
-| --- | --- |
-| Meta Pixel | Pixel ID. Jurni supports multiple Meta Pixel IDs. |
-| Google Tag Manager | Container ID in `GTM-...` format |
-| Google Analytics | GA tag / Measurement ID in `G-...` format |
-| TikTok | TikTok Pixel ID |
-| Blotout | EdgeTag URL |
-| Axon | Axon Pixel ID |
-| Northbeam | Northbeam Pixel ID |
-| Polar Analytics | Shopify URL in `store.myshopify.com` format |
-| Shopify Analytics | Public Storefront API access token from Shopify's Headless sales channel |
-| Triple Whale | Enabled through the Jurni integration toggle; no key field is currently shown in Jurni |
+## Forms, pop-ups, and reviews
 
-## Reviews, pop-ups & lifecycle
+| Provider | Account value | Additional value for the page |
+| --- | --- | --- |
+| [Klaviyo](/integrations/klaviyo) | **Public API Key / Site ID**, entered as Company ID; account Settings → API keys. | Embedded Form ID from the form's Targeting and behavior → Display → Embed Code. |
+| [Postscript](/integrations/postscript) | Shop ID from account/shop Settings. | Jurni's native inline form uses the opt-in keyword ID as its Form ID. See the guide before using an ID from another Postscript form builder. |
+| [Alia](/integrations/alia) | Full HTTPS script-source URL from Settings → CTAs → embed code. | Select the allowed provider in the experience's pop-up settings. |
+| [Okendo](/integrations/okendo) | User ID, entered as Subscriber ID; Settings → Integrations → Okendo. | Product or Group ID when using those review modes. |
+| [Junip](/integrations/junip) | Store Key from store settings/custom-installation details. | The product for a product-specific placement. |
+| [Yotpo](/integrations/yotpo) | App Key from Account Settings → General Settings. | Instance ID from the review widget's publishing instructions. |
+| [Judge.me](/integrations/judge-me) | Public API Token from Settings → Integrations → View API tokens. | Product and widget type; configure compatible platform-independent widgets for external pages. |
+| [Stamped](/integrations/stamped) | Store Hash/Store ID and API Public Key/Client ID from Review Integrations → API Keys. | Product for the review widget. |
+| [Trustpilot](/integrations/trustpilot) | Business Unit ID from the chosen TrustBox embed code. | Template ID from that same widget's code. |
+| [REVIEWS.io](/integrations/reviews-io) | Store ID / url_key from Integrations → API. | The product SKU used in the REVIEWS.io catalogue. |
+| [Bazaarvoice](/integrations/bazaarvoice) | Case-sensitive Client Name supplied for the production deployment. | Product identifier compatible with your Bazaarvoice catalogue. |
 
-| Integration | Credential used in Jurni |
-| --- | --- |
-| Klaviyo | **Company ID** |
-| Postscript | **Shop ID** |
-| Alia | HTTPS embed script URL |
-| Junip | Store Key |
-| Stamped | Store Hash + API Public Key |
-| Trustpilot | Business Unit ID |
-| Okendo | Subscriber ID (User ID) |
-| Yotpo | App Key |
-| Judge.me | Public API Token |
-| Bazaarvoice | Client Name |
-| REVIEWS.io | Store ID / `url_key` |
+## Authorization screens and switches
 
-<Warning>
-  Older Jurni help-center articles referenced credentials that are no longer the fields shown in the current product. For example, the current Klaviyo integration asks for the **Company ID**, not a private API key. Always follow the label shown in **Settings → Integrations**.
-</Warning>
+[Meta Ads](/integrations/meta-ads), [Slack](/integrations/connect-slack), and [Figma](/building-funnels/figma-file) use the relevant connection/authorization flow. Use the account with access to the intended ad account, workspace, or design files.
 
-## OAuth connections
+[Affiliatly and Bix Grow](/integrations/affiliate-tools) use Jurni integration switches and the appropriate affiliate reference on the creator record. They are not generic API-key fields.
 
-Some integrations do not require you to paste a key at all. The current product uses an authorization flow for integrations such as:
+## Before you save
 
-- Meta Ads account connection
-- Slack
-- Figma
+Confirm the value belongs to the correct brand account and matches the field—not a neighboring private key, variant ID, or unrelated widget ID. Save through the control shown on that integration, then test the actual page result.
 
-Use the **Connect** or **Add to** action in Jurni and complete the provider's authorization flow.
-
-## Security guidance
-
-- Never paste private/server-side secrets into Jurni unless the integration explicitly asks for that credential type.
-- Do not put private API secrets into Custom Scripts; those scripts run in the shopper's browser.
-- Treat private Shopify Storefront tokens as secrets. Jurni's Shopify Analytics setup specifically uses the **public** access token.
-- If a credential is rotated in the provider, update the corresponding field in Jurni.
-- After changing a credential, test the actual widget, pixel, or data flow rather than relying only on an “Active” status.
-
-## If an integration is not working
-
-Check the following:
-
-1. The credential type matches the exact field shown in Jurni.
-2. The credential belongs to the same store/account that Jurni is connected to.
-3. The integration is enabled after saving the credential.
-4. The vendor has not revoked or rotated the credential.
-5. The feature is being tested in the correct environment—for example, some tracking scripts should be tested on a live page rather than editor Preview.
+Do not put account secrets in AI prompts, Custom Scripts, or screenshots. A browser script is visible to shoppers; only use identifiers explicitly intended for that integration path.
 
 ## Related guides
 
-- Integrations Overview
-- Tracking Pixels
-- Review Integrations
-- Connect Shopify Analytics
-- Custom Scripts
-- Integration Troubleshooting
+- [Integrations overview](/integrations/overview)
+- [Review-widget setup](/integrations/review-widgets)
+- [Integration troubleshooting](/integrations/troubleshooting)

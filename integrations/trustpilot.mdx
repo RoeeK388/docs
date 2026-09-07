@@ -1,0 +1,51 @@
+---
+title: "Connect a Trustpilot review widget"
+sidebarTitle: "Trustpilot"
+description: "Copy the Business Unit ID and widget Template ID from Trustpilot and use each in the correct Jurni setting."
+icon: "star"
+---
+
+Use **Trustpilot** to add a TrustBox review display to your Jurni page. The current Jurni integration needs both the business identifier and the chosen widget template.
+
+## Get the identifiers from Trustpilot
+
+In **Trustpilot Business → Share & promote → Website widgets**, choose a service-review widget available to your account and select **Get code**. Some accounts use the older **Showcase** menu label.
+
+In the widget's HTML, copy only these values:
+
+| Trustpilot code field | What it identifies | Jurni destination |
+| --- | --- | --- |
+| `data-businessunit-id` | Your business's review profile. | **Business Unit ID** on the Trustpilot integration card. |
+| `data-template-id` | The chosen TrustBox design. | The Trustpilot widget's template-ID field in the page editor. |
+
+For example, copy the value between quotation marks—not the attribute name or the entire HTML block. See [Trustpilot's widget setup](https://trustpilot.zendesk.com/hc/en-us/articles/203840826-Add-a-service-review-TrustBox-widget).
+
+## Add it in Jurni
+
+<Steps>
+  <Step title="Connect the business">
+    Open **Settings → Integrations → Reviews & Pop-ups**, enable **Trustpilot**, enter **Business Unit ID**, and select **Save Changes**.
+  </Step>
+  <Step title="Place the widget">
+    Open the experience editor's **Integrations** panel and add Trustpilot where the reviews should appear.
+  </Step>
+  <Step title="Choose the template">
+    Enter the widget Template ID from the code you obtained. Review any supported minimum-star setting and give the widget enough height to display correctly.
+  </Step>
+  <Step title="Check the live result">
+    Save and verify the correct business's reviews on the published page, including mobile.
+  </Step>
+</Steps>
+
+## Common mix-ups
+
+The Business Unit ID is not the widget Template ID. Saving the business ID alone does not select a TrustBox design. Do not paste a Trustpilot API key into either field.
+
+The current native placement is not an automatic setup for Trustpilot product-review SKU mapping or every custom TrustBox option. Ask the Jurni team about a product-specific or custom-language implementation before promising that behavior in a campaign.
+
+For **Shopify Pages**, check whether the theme already loads Trustpilot. Adding another full loader through Custom Scripts is not a substitute for supplying the missing widget identifiers.
+
+## Related guides
+
+- [Review widgets](/integrations/review-widgets)
+- [On-page integrations](/build/editor-integrations)

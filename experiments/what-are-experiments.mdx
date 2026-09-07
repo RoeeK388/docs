@@ -4,49 +4,55 @@ sidebarTitle: "Overview"
 description: "Understand how Jurni experiments assign Smart Link traffic between page variants, keep visitor assignments consistent, and compare performance without changing the campaign-facing URL."
 ---
 
-Jurni Experiments let you route traffic between two or more destinations and compare their performance. Experiments can use a Smart Link as the stable campaign URL, so you can change the destinations or traffic split in Jurni without editing the URL already placed in your ads.
+Use an **experiment** to compare page variants through one campaign link. For example, send some visitors to your current page and others to a version with a different hero, then compare purchase conversion and revenue.
 
-## How Experiments Work
+The page is the destination, the Smart Link is the campaign entry URL, and the experiment manages the comparison.
 
-When a shopper clicks your SmartLink, Jurni routes them to one of your variants based on your traffic allocation. Every session is tracked and attributed to the correct variant automatically.
+## How it works
 
-Key details:
+<Steps>
+  <Step title="Prepare the alternatives">
+    Build and test the pages you want to compare. A variant can be a published Jurni page or a supported existing website URL. Custom destinations need the appropriate Jurni tracking connection for reporting.
+  </Step>
+  <Step title="Configure the test">
+    Name the experiment, choose a new or available existing Smart Link, and set the variant destinations and traffic weights.
+  </Step>
+  <Step title="Send traffic through the test link">
+    Put the connected Smart Link in your campaign. Going directly to a variant page does not automatically enter the test.
+  </Step>
+  <Step title="Compare results and decide">
+    Review the variants using the same date range and the metric chosen for your hypothesis. When ending a test, deliberately choose the destination that should continue receiving traffic.
+  </Step>
+</Steps>
 
-- **Stable campaign URL:** When the experiment uses a Smart Link, the URL placed in your campaign can remain unchanged while Jurni controls the destinations behind it.
-- **Traffic weights:** Each variant can receive a configured share of traffic. Small samples will not always match the configured split exactly.
-- **Routing rules:** You can route visitors to specific variants based on URL parameters before the normal weighted split is applied.
-- **Current performance metrics:** Jurni experiment reporting includes sessions, orders, revenue, CTR, CVR, add-to-cart rate, checkout rate, AOV, and revenue per session (RPS).
-- **What you can test:** Experiments can compare Jurni experiences and supported external destinations, such as an existing Shopify page.
+[Create an experiment](/experiments/create-experiment) provides the setup steps.
 
-<Tip>
-  Experiments help you compare page variants while keeping the campaign-facing Smart Link stable. Use them when you need evidence before deciding which page to scale.
-</Tip>
+## What to understand before launching
 
-<Note>
-  Screenshot: Experiments dashboard overview showing active experiments, variant cards, and CVR comparison.
-</Note>
+**Weights describe the intended split, not an exact visitor-by-visitor quota.** Small samples can be uneven, and returning visitors can retain an assignment. Refreshing one browser repeatedly does not test the allocation.
 
-## Frequently Asked Questions
+**Routing Rules are optional.** They can direct matching URL-parameter traffic to a specific variant before the normal split. That is useful for campaign routing, but is a different traffic setup from a simple randomized comparison.
 
-<AccordionGroup>
-  <Accordion title="Do I need to change the URL in my ads to update an experiment?">
-    Not when the ads already use the Smart Link for that traffic. You can change the destination or use the Smart Link with an experiment from Jurni while keeping the campaign-facing URL stable.
-  </Accordion>
+**Reporting depends on the measurement setup.** A link can open an external page successfully without its required events being tracked. Check the purchase path and measurement before launching.
 
-  <Accordion title="What metrics does Jurni track?">
-    Jurni tracks CVR, AOV, RPS, add-to-cart rate, and checkout rate for each variant. All metrics update in near-real-time.
-  </Accordion>
+[Traffic assignment](/experiments/traffic-assignment) · [Routing Rules](/experiments/routing-rules) · [Testing existing pages](/experiments/testing-against-website)
 
-  <Accordion title="Can I test against my existing Shopify product page?">
-    Yes. You can add an external URL as a variant. See [Testing Against Your Website](/experiments/testing-against-website) for details on how attribution works.
-  </Accordion>
-</AccordionGroup>
+## Choose a useful comparison
 
-## Related Articles
+Use a clear hypothesis and a primary metric. CVR measures orders relative to sessions; AOV measures revenue per order; RPS measures revenue per session. Interaction rates can help explain where shoppers progress or drop off.
 
-- [Create and Run an Experiment](/experiments/create-experiment)
-- [Experiment Routing Rules](/experiments/routing-rules)
-- [How Experiment Traffic Is Assigned](/experiments/traffic-assignment)
-- [Testing Against Your Website](/experiments/testing-against-website)
-- [Reading Experiment Results](/experiments/reading-results)
-- [Troubleshoot Experiment Traffic Splitting](/experiments/traffic-troubleshoot)
+Do not choose a winner simply because one number is temporarily higher. See [Reading results](/experiments/reading-results) and [Testing best practices](/experiments/strategic-experiments). Exact definitions belong in the [metrics glossary](/data-dictionary/metrics-glossary).
+
+## Keep the campaign link stable
+
+When your campaign already uses the experiment's Smart Link, you can manage the test behind that entry URL. Page changes, variant changes, pausing, and ending are still different actions with different effects.
+
+<Warning>
+  Before pausing or ending a test with live traffic, check where visitors will go. The current pause dialog warns that traffic will go to the shop home page; ending asks you to select the winning destination. Read [Pause, end, and reuse](/experiments/pause-end-reuse) first.
+</Warning>
+
+## Related guides
+
+- [Test your campaign link](/publishing/check-campaign-link)
+- [Experiment versus experience sessions](/troubleshooting/experiment-experience-sessions)
+- [Troubleshoot traffic assignment](/experiments/traffic-troubleshoot)

@@ -1,97 +1,49 @@
 ---
-title: "Review Integrations"
-sidebarTitle: "Review Integrations"
-description: "Explore Jurni's review platform integrations and learn how to connect services that collect and display customer feedback across your pages and widgets."
+title: "Connect your review provider"
+sidebarTitle: "Review providers"
+description: "Get the provider's connection details, then complete the separate review-widget setup on your page."
+icon: "star"
 ---
 
-Jurni can connect to supported review platforms so product ratings and customer reviews can be used inside Jurni experiences without manually copying review content into every page.
+Connect the review platform your brand already uses, then place its widget on your page. **Saving an account connection does not automatically add a review section to every experience.**
 
-## Supported review platforms
+## Find your provider
 
-Current review integrations include:
+| Provider | Value needed in Settings | Additional page-level configuration |
+| --- | --- | --- |
+| [Okendo](/integrations/okendo) | Subscriber ID / User ID | All, product, or group reviews; the matching product or Group ID. |
+| [Junip](/integrations/junip) | Store Key | Review scope and the matching product where applicable. |
+| [Yotpo](/integrations/yotpo) | App Key | Widget Instance ID and review scope/product. |
+| [Judge.me](/integrations/judge-me) | Public API Token | Supported widget type and product; platform-independent setup for Jurni-hosted pages. |
+| [Stamped](/integrations/stamped) | Store Hash and API Public Key | Product for the main review widget. |
+| [Trustpilot](/integrations/trustpilot) | Business Unit ID | Widget Template ID. |
+| [REVIEWS.io](/integrations/reviews-io) | Store ID / url_key | Rating or full widget and the product's REVIEWS.io SKU. |
+| [Bazaarvoice](/integrations/bazaarvoice) | Client Name | Product mapping and compatibility with your Bazaarvoice deployment. |
 
-- Junip
-- Stamped
-- Trustpilot
-- Okendo
-- Yotpo
-- Judge.me
-- Bazaarvoice
-- REVIEWS.io
+Each linked guide explains where to find the exact values. These identifiers are not interchangeable: a product ID is not an account ID, and a widget ID is not an API key.
 
-Each provider requires its own store/account identifier or public credential.
+## Complete the two-step setup
 
-## Credentials by provider
+**Connect the account:** open **Settings → Integrations → Reviews & Pop-ups**, enable the provider, enter the required values, and select **Save Changes** on its card.
 
-| Provider | Jurni setting |
-| --- | --- |
-| Junip | Store Key |
-| Stamped | Store Hash + API Public Key |
-| Trustpilot | Business Unit ID |
-| Okendo | Subscriber ID / User ID |
-| Yotpo | App Key |
-| Judge.me | Public API Token |
-| Bazaarvoice | Client Name |
-| REVIEWS.io | Store ID / URL key |
+**Place the reviews:** open the page editor's **Integrations** panel, add the provider's section, select the widget, and complete its settings. Save the page and verify it on the published destination.
 
-<Info>
-  Use public/storefront credentials intended for browser-side review rendering. Do not paste private admin API secrets into a field that asks for a public token or store identifier.
-</Info>
+Use [Configure review widgets](/integrations/review-widgets) for the page workflow.
 
-## Connect a review provider
+## What stays in the review platform?
 
-<Steps>
-  <Step title="Open Integrations">
-    In Jurni, go to **Settings → Integrations** and find the loyalty/reviews integrations.
-  </Step>
-  <Step title="Choose the provider">
-    Open the review platform your shop already uses.
-  </Step>
-  <Step title="Enter the required identifier">
-    Add the provider-specific Store Key, App Key, Subscriber ID, token, or other required value.
-  </Step>
-  <Step title="Enable and save">
-    Enable the integration and save the settings.
-  </Step>
-  <Step title="Add a review widget to a page">
-    Open the Jurni editor and configure a supported review section or widget to use the reviews you want to display.
-  </Step>
-</Steps>
+Manage review collection, approval, product feeds, and the provider's own widget design there. Jurni provides the supported placement and configuration; it does not migrate your reviews or automatically connect every product in that company's suite.
 
-## Provider notes
+For example, a Yotpo Reviews connection does not configure its Loyalty product. An Okendo review widget does not automatically implement a custom review drawer or quiz.
 
-### Judge.me
+## Check the publishing environment
 
-Use the **Public API Token** from Judge.me. Jurni's current integration also expects platform-independent widgets to be enabled in Judge.me where required by your account configuration.
+On Jurni-hosted pages, the provider needs the Jurni connection and placement. On **Shopify Pages**, a provider may also be loaded by the Shopify theme or app. Check the final `/pages/` URL for both missing and duplicate widgets.
 
-### Yotpo
-
-Use the Yotpo **App Key** associated with the correct store/account. If your brand operates multiple Yotpo instances for different markets, verify you are using the key for the shop you are configuring.
-
-### Okendo
-
-Use the Okendo **Subscriber ID / User ID** for the connected review account.
-
-## Connecting the provider does not automatically add reviews to every page
-
-The integration makes the review data available to Jurni. You still control where reviews are displayed by adding/configuring review widgets in the editor.
-
-## Multi-market shops
-
-US, UK, EU, or other shops can use different review accounts or identifiers. Do not copy a review integration credential between shops unless both stores intentionally use the same review dataset.
-
-## Troubleshooting
-
-If a widget is empty after connecting the provider:
-
-1. Confirm the integration is enabled.
-2. Re-check the provider credential.
-3. Verify the review widget's mode and product/group selection.
-4. Confirm the product has reviews in the source platform.
-5. Make sure the product identifier in Jurni maps to the expected product in the review provider.
+For a headless or non-Shopify catalog, verify product-ID/SKU compatibility with the Jurni team instead of assuming a Shopify-specific widget mapping applies unchanged.
 
 ## Related guides
 
-- Configuring Review Widgets in the Editor
-- Products and Variants
-- Integration Troubleshooting
+- [Forms and other on-page integrations](/build/editor-integrations)
+- [Pop-up controls](/build/page-popups)
+- [Integration troubleshooting](/integrations/troubleshooting)

@@ -1,0 +1,46 @@
+---
+title: "Connect Judge.me reviews"
+sidebarTitle: "Judge.me"
+description: "Find the Public API Token, enable platform-independent widgets, and add a supported review placement to your page."
+icon: "star"
+---
+
+Use **Judge.me** to show your existing product reviews, star ratings, or supported review collections on Jurni pages. A Jurni-hosted page is outside the Shopify theme, so Judge.me's **platform-independent widget** setup matters.
+
+## Prepare Judge.me
+
+<Steps>
+  <Step title="Copy the Public API Token">
+    Open **Judge.me → Settings → Integrations → View API tokens** and copy **Public API Token**. Do not copy the private token. See [Judge.me API access](https://judge.me/help/en/articles/8409180-using-judge-me-api).
+  </Step>
+  <Step title="Enable the external-page widget setup">
+    In Judge.me, open **Settings → Advanced → Platform-independent Review Widget**, enable it, and save. Check [Judge.me's platform-independent widget requirements](https://judge.me/help/en/articles/8394958-platform-independent-widgets), including the required vendor plan and supported widget version.
+  </Step>
+</Steps>
+
+Judge.me's platform-independent setup is intended for external/headless pages connected to a Shopify store. Do not assume this makes the current Jurni product-review mapping compatible with any non-Shopify catalog.
+
+## Connect and place reviews in Jurni
+
+1. Go to **Settings → Integrations → Reviews & Pop-ups** and enable **Judge.me**.
+2. Paste the **Public API Token** and select **Save Changes**.
+3. Open the experience editor's **Integrations** panel and add Judge.me.
+4. Choose the supported widget type: product reviews, star-rating badge, review carousel, or all reviews. For product reviews or a star badge, select the correct product.
+5. Save and check the real published page on desktop and mobile.
+
+## When a widget is empty
+
+Check the saved token, the connected Shopify shop, the product selected, and whether Judge.me has published reviews for that product. A Shopify product ID is different from its variant ID.
+
+Then check Judge.me's external-page requirements. Its current platform-independent documentation distinguishes the legacy Review Widget from the newer widget; a valid token is not sufficient when the selected widget version is incompatible.
+
+For **Shopify Pages**, the theme may already load Judge.me. Check the theme installation rather than adding another full script through Custom Scripts.
+
+## What stays in Judge.me
+
+Manage review collection, moderation, and the provider's widget settings in Judge.me. Connecting it in Jurni does not migrate reviews or create a new review-request program.
+
+## Related guides
+
+- [Review widgets](/integrations/review-widgets)
+- [Integration troubleshooting](/integrations/troubleshooting)

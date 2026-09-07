@@ -1,0 +1,44 @@
+---
+title: "Connect Google Analytics 4"
+sidebarTitle: "Google Analytics 4"
+description: "Find the web stream's G- measurement ID, save it in Jurni, and verify tracking without duplicating a GTM installation."
+icon: "chart-column"
+---
+
+Use **Google Analytics 4 (GA4)** to analyze activity on your Jurni pages alongside the rest of your website. Jurni's direct connection uses the web stream's **G- measurement ID**.
+
+## Find the correct ID
+
+In Google Analytics, select the correct account and property, then open **Admin → Data streams → your web stream**. Copy **Measurement ID** from Stream details. Use the value beginning **G-**, not the numerical property/stream ID, an old UA- ID, or a GTM- container ID.
+
+See [Google's instructions for finding the tag ID](https://support.google.com/analytics/answer/9539598?hl=en).
+
+## Connect GA4 in Jurni
+
+<Steps>
+  <Step title="Choose one installation path">
+    Check whether your team already loads this GA4 property through Google Tag Manager. Use either that existing tag setup or Jurni's direct GA field for the same purpose; do not install a duplicate without a deliberate tracking plan.
+  </Step>
+  <Step title="Save the measurement ID">
+    Open **Settings → Integrations → Data Integrations → Tracking Pixels**. Paste the G- value into **Google Analytics tag ID** and select **Save Changes**.
+  </Step>
+  <Step title="Test a published page">
+    Open the actual campaign/page URL, follow the appropriate consent flow, and perform a test action. In GA4, check the correct property's **Realtime** report; use your team's debugging tools for more detailed event verification.
+  </Step>
+</Steps>
+
+## What this does not configure
+
+This connects the supported Jurni page tracking. It is not a Google Ads account connection, a GTM container, or a guarantee that every downstream checkout and custom conversion is configured. Confirm the measurement path for the purchase destination, especially with custom or headless storefronts.
+
+For **Shopify Pages**, the theme or Shopify apps may already load GA4. Inspect the final `/pages/` URL before adding another installation.
+
+## When data is missing or duplicated
+
+Check the property and G- ID first, then consent, browser blocking, and any duplicate tag in GTM, Custom Scripts, or the Shopify theme. PageView tracking alone does not verify purchase tracking. Jurni and GA4 can use different session and attribution definitions, so their totals need not match exactly.
+
+## Related guides
+
+- [Google Tag Manager](/integrations/gtm)
+- [Consent and tracking](/integrations/consent-tracking)
+- [Analytics differences](/troubleshooting/analytics-differences)

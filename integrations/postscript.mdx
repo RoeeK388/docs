@@ -7,6 +7,14 @@ icon: "message-square"
 
 Use Postscript with Jurni for supported SMS signup forms and pop-ups. The shop-level connection and each inline form have different configuration requirements.
 
+## Find the values in Postscript
+
+**Shop ID:** open your Postscript shop/account menu and its **Settings** or **Account settings**. Copy the Shop ID for the brand. This is not the Jurni shop ID or your Shopify product ID.
+
+**Postscript Form ID:** for Jurni's current native inline form, this value is the **numeric keyword ID** used by Postscript's form-subscription flow. Open **Acquisition → Keywords**, edit the intended opt-in keyword, and copy the keyword ID from the page URL or the form instructions supplied by Postscript. See [Postscript's explanation of keyword IDs](https://help.postscript.io/en/articles/13563883-guide-to-postscript-reports).
+
+Do not paste the keyword's text, a pop-up ID, a private API key, or an unrelated embedded-form identifier. If your Postscript account uses a newer form builder with different identifiers, ask the Jurni team to verify that embed instead of assuming the native Form ID field accepts it.
+
 ## Connect Postscript
 
 Open **Settings → Integrations → Reviews & Pop-ups**, enable **Postscript**, and enter its **Shop ID**. Select **Save Changes**. Use the Shop ID for the intended brand, not a private API key or a Jurni shop identifier.
@@ -18,7 +26,7 @@ Open **Settings → Integrations → Reviews & Pop-ups**, enable **Postscript**,
     Open the page editor, select **Integrations**, and add the supported Postscript form section.
   </Step>
   <Step title="Complete its identifiers">
-    Select the form and configure its **Postscript Shop ID** and **Postscript Form ID**. Use the provider's identifier for the intended signup form or keyword configuration; do not invent one from the form's name.
+    Select the form and configure its **Postscript Shop ID** and **Postscript Form ID** using the shop and keyword identifiers described above. Check that the keyword belongs to the same Postscript shop.
   </Step>
   <Step title="Review the form content">
     Review the phone-number placeholder, button label, submission message, and success/error text. Adjust the input and button styling through the controls available on the element.

@@ -4,88 +4,95 @@ sidebarTitle: "AI Knowledge Setup"
 description: "Configure AI knowledge features in Jurni to power intelligent responses. This guide covers how to set up and manage your AI knowledge base."
 ---
 
-AI Knowledge gives Jurni additional brand and product context to use when generating, editing, or reasoning about experiences. It is most valuable when the information is accurate, specific, and reusable across campaigns.
+Use **Settings → AI Knowledge** to give Jurni reusable instructions about your brand. This is where you keep guidance you would otherwise repeat in every conversation.
 
-## AI Knowledge vs. Brand Settings
+There are two parts: **Guidance** for standing instructions, and **Skills** for reusable instructions Jurni can select when relevant to a task.
 
-Use the two areas for different jobs:
+## Put information in the right place
 
-| Brand Settings | AI Knowledge |
+| Information | Best place |
 | --- | --- |
-| Visual identity and reusable brand configuration | Deeper product, audience, positioning, and brand context |
-| Logos and typography | Product facts and differentiators |
-| Product mapping / default product context | Messaging guidance and approved claims |
-| Defaults used during creation | Knowledge Jurni can use while generating or assisting |
+| Logo, colors, and typography | [Brand Settings](/getting-started/brand-settings). |
+| Brand voice, approved terminology, and standing restrictions | **Guidance** in AI Knowledge. |
+| A repeatable task such as writing product education or reviewing campaign copy | A **Skill** in AI Knowledge. |
+| This campaign's audience, ad, offer, deadline, and requested edit | The current chat prompt and attachments. |
+| Real product choices, prices, variants, and subscription plans | The connected product and commerce configuration. |
 
-## What to add
+Knowledge gives the assistant context. It does not create a product, change a checkout price, or guarantee that every generated sentence is correct.
 
-Prioritize information that helps Jurni make better content decisions, such as:
-
-- Product benefits and differentiators
-- Approved product facts
-- Ingredient, material, or technical context
-- Target audiences and customer pain points
-- Brand voice and messaging guidance
-- Frequently asked product questions
-- Important positioning or competitive context
-- Claims the brand is approved to make
-
-## What not to use as evergreen knowledge
-
-Avoid filling the knowledge base with temporary or contradictory campaign instructions.
-
-Examples that are usually better kept in the specific page or prompt:
-
-- A one-week discount
-- A temporary holiday headline
-- A campaign-specific promo code
-- Experimental messaging that has not been approved
-- Outdated product information
-
-<Warning>
-  AI Knowledge should not become a dumping ground for every internal document. Incorrect or conflicting information makes generated output less reliable.
-</Warning>
-
-## Set up AI Knowledge
+## Add brand guidance
 
 <Steps>
-  <Step title="Open AI Knowledge">
-    Go to the AI Knowledge area for your workspace.
+  <Step title="Open the correct shop">
+    Confirm the brand in the shop switcher, then go to **Settings → AI Knowledge**.
   </Step>
-  <Step title="Add verified information">
-    Add the source material or knowledge entries you want Jurni to use.
+  <Step title="Write Guidance">
+    Add concise instructions about voice, approved facts, required wording, and what the assistant should avoid. Keep temporary campaign instructions in the chat instead.
   </Step>
-  <Step title="Organize around reusable concepts">
-    Keep product facts, audience context, brand guidance, and other reusable information easy to distinguish.
+  <Step title="Select Save guidance">
+    Wait for the confirmation. Text left unsaved in the field is not the same as updated guidance.
   </Step>
-  <Step title="Review for conflicts">
-    Remove outdated or duplicated information that could give the AI competing instructions.
-  </Step>
-  <Step title="Test with a real build">
-    Generate or edit an experience and confirm Jurni is using the knowledge in the way you expect.
+  <Step title="Test a real request">
+    Start a focused conversation using an approved product or brief. Review whether the resulting copy follows your instructions before using it in a live page.
   </Step>
 </Steps>
 
-## Keep knowledge current
+For example:
 
-Review AI Knowledge whenever the brand changes something fundamental:
+```text
+Use a clear, warm, direct tone. Avoid exaggerated promises.
+Use the approved product names and facts supplied for each task.
+Do not invent testimonials, certifications, comparison results, discounts, or deadlines.
+Ask for missing product information rather than guessing.
+Keep existing purchase behavior unchanged unless the request explicitly asks to change it.
+```
 
-- New product launch
-- Formula or ingredient change
-- Rebrand
-- New approved claims
-- New target audience
-- Major pricing or positioning change
+Adapt this to your brand. Include actual approved product facts and wording where needed instead of relying only on general rules.
 
-## Use prompts for campaign instructions
+## Add a reusable Skill
 
-AI Knowledge should provide the stable background. The prompt should describe what you want **for this campaign**.
+A Skill is a reusable set of instructions for a particular job. You do not need to write code.
 
-For example, keep evergreen product benefits in AI Knowledge, then prompt Jurni to build a creator-style landing page for a specific Meta ad angle.
+Select **Add skill** and complete:
+
+| Field | What to enter |
+| --- | --- |
+| **Name** | A recognizable task name, such as `product-education-copy`. |
+| **Description** | What the instructions do and when Jurni should use them. |
+| **Content** | The complete instructions, approved examples, and constraints. Markdown is supported. |
+
+Select **Add skill** to save. To revise an existing item, open its edit action, change the fields, and select **Save skill**.
+
+A useful description is “Use when writing benefit and FAQ sections for first-time customers.” It is clearer than “Helpful marketing information.”
+
+### Example Skill content
+
+```text
+For product-education sections:
+- Start with the customer's question or concern.
+- Answer using only the approved product facts supplied for the task.
+- Use short headings and plain language.
+- Explain the benefit without adding unsupported outcome claims.
+- Keep purchasing terms consistent with the connected product and approved offer.
+- Flag missing evidence rather than filling it with invented proof.
+```
+
+## Upload existing instructions
+
+The Skills area accepts **.md, .markdown, and .txt** files. Use its upload action for an existing instruction file and review the saved entry afterward. Do not assume a PDF or a slide deck is accepted by this upload control.
+
+For a one-off reference image, Figma frame, or campaign file, use the relevant [chat attachment](/build/ai-editing) instead.
+
+## Keep guidance useful over time
+
+Update the relevant entry when approved claims, product facts, tone, or brand requirements change. Remove instructions that conflict with newer guidance. Keep each Skill focused so its purpose is clear.
+
+Editing knowledge does not automatically rewrite already-created pages. Open the page and request the intended change, then review it. For live purchasing content, test the real product and checkout behavior after the edit.
 
 ## Related guides
 
-- Brand Settings
-- Create an Experience
-- AI Chat Prompts
-- Products and Variants
+- [Build a campaign page with AI](/build/ai-campaign-workflow)
+- [Prompting best practices](/building-funnels/ai-chat-prompts)
+- [Prompt examples](/build/prompt-library)
+- [Brand Settings](/getting-started/brand-settings)
+- [Product content and media](/products/content-media)

@@ -1,60 +1,51 @@
 ---
-title: "Customize the Jurni cart"
-sidebarTitle: "Cart display settings"
-description: "Change the Jurni cart title, price formatting, discount field, shipping calculator, and button prices without changing your store's commercial rules."
+title: "Shopify cart display settings"
+sidebarTitle: "Shopify cart settings"
+description: "Use the five general Cart Settings controls in Storefront Settings. These do not redesign your Shopify theme cart or checkout."
 icon: "shopping-cart"
 ---
 
-Use **Settings → Storefront Settings → Cart Settings** to configure the cart presentation used by the Jurni storefront. These are shop-level settings, not the layout controls for a single Buy Box.
+Use **Settings → Storefront Settings → Cart Settings** for small changes to the supported Jurni cart on Shopify-connected experiences.
 
 <Note>
-  This guide applies to the **Jurni cart**. A Shopify theme cart, Rebuy drawer, or custom/headless cart has its own settings. For a page published natively to Shopify, start with [Shopify Pages cart configuration](/shopify-pages/cart-config).
+  This is not a cart builder. These settings do not redesign Shopify checkout, a Shopify theme cart, or a third-party cart such as Rebuy. For other commerce platforms, contact the Jurni team about your [purchase integration](/commerce/non-shopify-purchase-flows).
 </Note>
 
-## Available settings
+## Available controls
 
-| Setting | What it controls |
+| Control | What it changes |
 | --- | --- |
 | **Cart title** | The heading at the top of the cart. |
-| **Remove decimals from whole prices** | Whether whole prices display without trailing decimals; for example, `$20.00` becomes `$20`. This changes formatting, not the price charged. |
-| **Show discount code field** | Whether shoppers can enter a discount code in the Jurni cart. The code still needs to be valid for the order. |
-| **Show shipping calculator** | Whether the cart presents the shipping-estimate interface before checkout. |
-| **Show prices on buttons** | Whether supported cart action buttons display the relevant price. |
+| **Remove decimals from whole prices** | Shows a whole price such as $$20 instead of $$20.00. It does not change the price charged. |
+| **Show discount code field** | Shows or hides the field where shoppers enter a code. Hiding the field does not disable every discount already applied by Shopify. |
+| **Show shipping calculator** | Shows or hides the cart's shipping estimate control. It does not create or change your shipping rates. |
+| **Show prices on buttons** | Shows the relevant price on supported cart action buttons. |
 
-## Update the cart
+## Change and save
 
 <Steps>
   <Step title="Open the correct shop">
-    Check the shop switcher, then open **Settings → Storefront Settings**.
+    Check the shop name, then open **Settings → Storefront Settings** and find **Cart Settings**.
   </Step>
-  <Step title="Find Cart Settings">
-    Update the cart title and the display switches needed for your store.
+  <Step title="Adjust the controls">
+    Enter the cart title or change the relevant switches. These settings belong to the shop, not only the page you last edited.
   </Step>
-  <Step title="Save this settings card">
-    Select **Save Changes** in Cart Settings and wait for the saved confirmation. **Reset** discards unsaved changes in this card; it is not a rollback of your published page.
+  <Step title="Save Changes">
+    Select **Save Changes** in the Cart Settings area and wait for confirmation. **Reset** returns unsaved form changes to their saved values; it does not empty a shopper's cart.
   </Step>
-  <Step title="Test a page using the Jurni cart">
-    Open the shopper-facing page, add the intended product, and inspect the cart. Check desktop and mobile, especially when the title or button content is long.
+  <Step title="Check the cart">
+    Open a published Jurni-hosted page, add a real product, and verify the changed display on desktop and mobile.
   </Step>
 </Steps>
 
-## Display settings do not create offers
+## What needs a different setup?
 
-Showing a discount field does not create a discount code or guarantee that codes can combine. Configure the actual discount in the commerce system and test its eligibility in cart and checkout.
+Use **Offers** for supported promotional rules, not Cart Settings. Configure actual discount and shipping rules in Shopify. For a custom cart layout, additional upsells, subscription-frequency behavior, or another cart provider, discuss the requirement with the Jurni team rather than looking for controls that are not in this panel.
 
-Similarly, showing a shipping calculator does not create a free-shipping offer or change your shipping rules. Confirm the final checkout result for the shopper's country and selected products.
+When using **Shopify Pages**, follow [Shopify Pages cart configuration](/shopify-pages/cart-config). Settings for Jurni's cart do not automatically control the theme's drawer.
 
-A displayed price on a button should agree with the shopper's selected purchase option and cart. Check one-time purchases and subscriptions separately when both are offered.
-
-## Troubleshooting
-
-**The cart did not change:** confirm that the page is opening the Jurni cart rather than a theme or third-party drawer. Confirm that you saved the correct shop's Cart Settings.
-
-**The discount field is visible, but the code fails:** check the code's eligibility and combination rules. A presentation setting cannot override an invalid or ineligible code.
-
-**Only one page behaves differently:** compare its purchase action and cart configuration with a page that works. Do not assume the two pages use the same cart just because they sell the same product.
+## Related guides
 
 - [Cart and checkout behavior](/commerce/cart-checkout-behavior)
-- [Discounts and promotions](/commerce/discounts-promotions)
-- [Free-shipping offers](/commerce/free-shipping-offers)
-- [Product and cart troubleshooting](/troubleshooting/product-cart-issues)
+- [Offers for Shopify](/commerce/offers-overview)
+- [Shopify Pages cart configuration](/shopify-pages/cart-config)

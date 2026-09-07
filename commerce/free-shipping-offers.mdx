@@ -8,42 +8,48 @@ keywords:
   - "cart threshold"
 ---
 
-A Free Shipping offer lets Jurni show and evaluate free-shipping eligibility in the storefront cart.
+For **Shopify-connected experiences**, a Free Shipping offer tells the supported Jurni cart when to show the free-shipping promotion. **Shopify must also provide the actual free-shipping rate or discount at checkout.**
 
-The current offer editor supports two trigger types:
+## Configure the offer
 
-- **Minimum Amount** — unlock free shipping when the cart reaches a configured value.
-- **Minimum Product Quantity** — unlock free shipping when the cart contains at least a configured number of items.
+<Steps>
+  <Step title="Create a Free Shipping offer">
+    Open **Offers**, create an offer, and select **Free Shipping**.
+  </Step>
+  <Step title="Choose where it applies">
+    Add an internal name, optional shopper-facing text, experience scope, and timing. **Global** applies across eligible Jurni experiences in this shop, not every page of your Shopify website.
+  </Step>
+  <Step title="Set Trigger Condition">
+    Choose **Minimum Amount** and enter the cart amount, or **Minimum Product Quantity** and enter the number of items. For an amount, check the currency displayed beside the field.
+  </Step>
+  <Step title="Review the subscription option">
+    Enable **Offer free shipping with subscription products** only when a cart containing a subscription should also qualify, regardless of the amount or quantity threshold.
+  </Step>
+  <Step title="Save and verify Shopify checkout">
+    Save the offer. Check the promotion in the supported cart, then enter a shipping address at checkout and confirm a free-shipping option is actually available.
+  </Step>
+</Steps>
 
-## Subscription option
+## Match the Shopify rule
 
-For either trigger type, you can enable **Offer free shipping with subscription products**.
+The Jurni offer and Shopify shipping configuration must agree. Check the minimum spend, eligible shipping regions, products, purchase type, and any discount restrictions with the person who manages Shopify.
 
-When enabled, a cart that contains a subscription product can qualify for the free-shipping offer regardless of the normal cart threshold, and the cart messaging can present both paths to eligibility.
+The **Create Shopify Discount** switch shown in the current Jurni form is disabled. Do not treat saving this offer as creating a Shopify shipping discount.
 
-## Shopify discount enforcement
+## Example: free shipping at \$75 or with a subscription
 
-The Jurni offer controls the storefront/cart eligibility and messaging. The final shipping discount must still be valid in Shopify checkout.
+Choose **Minimum Amount**, set the threshold to 75 in the intended currency, and enable the subscription option. This expresses two ways to qualify in Jurni: reach the amount **or** have a subscription in the cart. Configure equivalent shipping eligibility in Shopify.
 
-Jurni's current **Create Shopify Discount** control in the offer editor is not an editable self-service control. Do not rely on creating the Jurni offer alone to create a new Shopify free-shipping discount.
+Test a one-time cart below \$75, a qualifying one-time cart, and a smaller subscription cart. Check the actual shipping method after entering an address, not just the cart message.
 
-<Warning>
-Configure and verify the actual free-shipping discount in Shopify or your store's discount logic. Test checkout—not only the Jurni cart banner.
-</Warning>
+## When the message and checkout disagree
 
-## QA checklist
+A “free shipping” message with a shipping charge usually means the Shopify rate/discount, address, product eligibility, or other checkout condition differs from the promotion configured in Jurni. Changing the message does not change that charge.
 
-Test:
-
-1. below the threshold
-2. exactly at the threshold
-3. above the threshold
-4. adding/removing items after qualification
-5. subscription and one-time carts if the subscription option is enabled
-6. the final shipping charge in Shopify checkout
+For Shopify Pages or another cart app, confirm which system displays the promotion. For non-Shopify stores, use a [team-assisted purchase integration](/commerce/non-shopify-purchase-flows).
 
 ## Related guides
 
-- [Offers Overview](/commerce/offers-overview)
-- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)
-- [How Shopify Discounts Work with Jurni](/commerce/discounts-promotions)
+- [Offers overview](/commerce/offers-overview)
+- [Shopify cart settings](/commerce/cart-display-settings)
+- [Markets and currency](/commerce/shopify-markets-currency)

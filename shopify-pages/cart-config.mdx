@@ -1,232 +1,61 @@
 ---
-title: "Cart Configuration for Shopify Pages"
-sidebarTitle: "Cart Config"
-description: "Configure cart behavior for Jurni pages published natively to Shopify, including Shopify theme/cart integrations and provider-specific setup when the page should open a drawer instead of the standard cart page."
+title: "Connect the cart on Shopify Pages"
+sidebarTitle: "Cart connection"
+description: "Connect the existing Shopify theme or app cart with the Jurni team; understand the limited custom-code settings and save behavior."
+icon: "shopping-cart"
 ---
 
-Jurni's Cart Config Code makes your published Shopify pages trigger the same slide-out cart your store already uses. This guide covers why cart configuration is needed, where to set it up in Jurni, how to identify your cart provider, and ready-to-use snippets for the most common themes and cart apps.
+This guide applies to **native Shopify Pages** published at `/pages/your-handle`. It does not configure Jurni's hosted cart or a non-Shopify cart API.
 
-## Overview
+When a Shopify Page adds an item, the default behavior is to take the shopper to Shopify's cart page. To open and refresh your existing theme drawer or cart app instead, the page may need a provider-specific connection.
 
-Some themes and apps provide a built-in cart experience that is not a full page. These carts usually slide out from somewhere on the page after a product is added, instead of redirecting to a different page.
+## Start with the cart your store already uses
 
-When you publish a Jurni page to Shopify, its **Add to Cart** action needs to work with the cart experience used by your Shopify theme or cart provider. The **Cart Config Code** in Jurni lets you add the provider-specific bridge needed for published Shopify Pages when the default behavior is not sufficient.
+Ask your Shopify owner which cart is installed: a theme drawer, Rebuy, or another cart app. Test the Jurni Shopify Page before changing anything. An integration already installed in the theme may handle some behavior, but that must be checked on the actual page.
 
-## Why cart configuration is needed
+The goal is to connect the existing cart—not design a new cart inside Jurni.
 
-Most Shopify stores no longer send shoppers to a separate cart page. Instead, when a product is added, a cart slides out or drops down, often called a cart drawer, mini cart, or slide-out cart.
-
-This experience is powered by your theme or a cart app (like Rebuy), and each one opens and refreshes the cart in its own way. Your Cart Config Code tells Jurni how to trigger your specific cart so that:
-
-- The cart opens automatically when a customer adds a product
-- The cart contents refresh correctly
-- Customers can stay on the published page while the intended cart experience opens
-
-The Cart Config Code field supports any provider, so you can configure the exact behavior your store uses in one place.
-
-## Where to set it up in Jurni
+## Configure the connection with your developer or Jurni
 
 <Steps>
-  <Step title="Open Settings">
-    Go to **Settings** in Jurni.
+  <Step title="Share a working example">
+    Send your technical teammate or the Jurni team the published Jurni Shopify Page, an existing store page where the cart works, and the theme/cart-app name.
   </Step>
-  <Step title="Find Shopify Pages">
-    Locate the **Shopify Pages** section.
+  <Step title="Prepare the correct cart code">
+    The implementation owner should supply code that refreshes and opens that specific cart after an item is added. Different themes and app versions use different methods; do not paste a random snippet because the cart looks similar.
   </Step>
-  <Step title="Toggle on Cart Config Code">
-    Enable the **Cart Config Code** option.
+  <Step title="Use Shopify Pages settings">
+    In Jurni's **Settings → Shopify Pages** area, the control is **Cart Custom JavaScript (optional)**. When enabled, it exposes the code field and optional **Cart Section IDs** for Shopify sections the integration needs to refresh.
   </Step>
-  <Step title="Paste your snippet">
-    Paste the snippet for your cart provider into the code field.
-  </Step>
-  <Step title="Save">
-    Click **Save Changes**.
+  <Step title="Save and test">
+    Save the code changes with **Save Changes**, update the Shopify publication when needed, and test the published page's Add to cart action and cart icon.
   </Step>
 </Steps>
 
-<Note>
-  You only need to do this once. Your cart configuration then applies to your funnels published to Shopify.
-</Note>
+<Warning>
+  Turning the custom-code switch on or off saves that behavior change immediately. Code-field edits have a separate **Save Changes** action. Coordinate changes on live campaigns; do not turn it on with unfinished code and assume nothing changes until you publish.
+</Warning>
 
-## Finding your cart provider
+## What the settings do
 
-Before adding a snippet, identify which cart your store uses:
+**Cart Custom JavaScript** runs the configured behavior after adding items or when opening the cart. It is not a place to paste an API secret or install every script the cart vendor provides.
 
-- **Using a cart app?** Check your Shopify apps for tools like Rebuy, Monster Upsells, Kaching, or Slide-Cart.
-- **Using your theme's native cart?** Confirm your theme by opening your store, going to **Dev Tools → Console**, and running `window.Shopify.theme`.
+**Cart Section IDs** are Shopify theme section identifiers supplied by the implementation owner, with up to five supported. They are not product IDs or the names of sections in Jurni's editor.
 
-## Cart configuration snippets
+These settings are shared by the shop's Shopify Pages. They do not provide a self-service cart-layout editor, discount engine, or checkout designer. The [general Jurni cart settings](/commerce/cart-display-settings) are a different configuration.
 
-Below is a non-exhaustive list of snippets that work today. The right one depends on your theme or cart app. If you have a custom-developed theme, your developer can provide the correct snippet.
+## Verify the complete flow
 
-<Tabs>
-  <Tab title="Cart Apps">
-    **Rebuy**
+Add the intended product and variant, check that the cart refreshes and opens, then change the quantity or remove an item and proceed to checkout. Test subscriptions, gifts, and discount behavior relevant to the campaign. Repeat on mobile.
 
-    Rebuy's SmartCart usually opens automatically when a product is added, so no extra configuration is needed in most cases. If you do need to trigger it manually:
+Opening the drawer is only part of the check: it must contain the correct items and total. If the Jurni preview works but the Shopify Page does not, investigate the theme/cart connection on the `/pages/` URL.
 
-    ```js
-    Rebuy.SmartCart.show()
-    ```
+## Other storefronts
 
-    **Monster Upsells**
+For a Shopify headless storefront without a theme, or a non-Shopify store, use the [team-assisted purchase paths](/commerce/non-shopify-purchase-flows): cart API, checkout link, store product page, or custom implementation.
 
-    ```js
-    window.monster_refresh();
-    ```
+## Related guides
 
-    **Kaching AI Slide Cart Drawer**
-
-    ```js
-    window.kachingCartApi.openCart();
-    ```
-
-    **Slide-Cart & Cart Upsells**
-
-    ```js
-    window.SLIDECART_UPDATE();
-    window.SLIDECART_OPEN();
-    ```
-  </Tab>
-  <Tab title="Native Themes">
-    <Tip>
-      Verify the theme in use by running `window.Shopify.theme` in **Dev Tools → Console** anywhere on the store.
-    </Tip>
-
-    **Flex Theme**
-
-    ```js
-    Shopify.theme.jsAjaxCart.showDrawer()
-    Shopify.theme.jsAjaxCart.updateView()
-    ```
-
-    **Focal Theme**
-
-    ```js
-    fetch("/cart.js")
-      .then(res => res.json())
-      .then(cart => document.documentElement.dispatchEvent(
-        new CustomEvent('cart:refresh', {
-          bubbles: true,
-          detail: { cart: cart, openMiniCart: true }
-        })
-      ))
-    ```
-
-    **Dawn & Shrine Theme**
-
-    ```js
-    fetch("/cart/update.js", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        updates: {},
-        sections: ["cart-drawer", "cart-icon-bubble"]
-      })
-    }).then((res) => res.json()).then((cartData) => {
-      document.querySelector("cart-drawer").renderContents(cartData);
-      document.querySelector("cart-drawer.drawer").classList.remove("is-empty");
-    });
-    ```
-
-    **Impact Theme**
-
-    ```js
-    const cartDrawerSlide = document.querySelector("#cart-drawer");
-    if (cartDrawerSlide) {
-      cartDrawerSlide._onCartRefresh().then(() => cartDrawerSlide.show());
-    }
-    ```
-
-    **Horizon Theme**
-
-    ```js
-    fetch('/cart.js')
-      .then(res => res.json())
-      .then(cart => {
-        document.dispatchEvent(new CustomEvent('cart:update', {
-          bubbles: true,
-          detail: {
-            resource: cart,
-            sourceId: 'custom',
-            data: { itemCount: cart.item_count, source: 'custom' }
-          }
-        }));
-        customElements.whenDefined('cart-drawer-component').then(() => {
-          document.querySelector('cart-drawer-component').open();
-        });
-      });
-    ```
-
-    **Impulse Theme**
-
-    ```js
-    var cart = new theme.CartDrawer();
-    cart.init();
-    cart.open();
-    ```
-
-    **Motion Theme**
-
-    ```js
-    tniReloadMinicart1();
-    theme._CartDrawer.drawer.open();
-    ```
-  </Tab>
-  <Tab title="Third-Party">
-    **Smart Theme (Platter)**
-
-    ```js
-    _cart.get(true).then(() => {
-      const items = Alpine.store('cart').state.items;
-      document.querySelectorAll('[data-line-item-key]').forEach(el => {
-        const data = Alpine.$data(el);
-        if (data?.card) data.card.line_item = items.find(i => i.key === el.getAttribute('data-line-item-key'));
-      });
-      _stores.modal.setId("modal--cart-drawer");
-    });
-    ```
-  </Tab>
-</Tabs>
-
-## Verifying your cart works
-
-After saving your Cart Config Code:
-
-<Steps>
-  <Step title="Publish your funnel">
-    Publish or update your funnel to Shopify.
-  </Step>
-  <Step title="Open the published page">
-    Load the published page in your browser.
-  </Step>
-  <Step title="Click Add to Cart">
-    Click **Add to Cart** on a product.
-  </Step>
-  <Step title="Confirm the cart opens">
-    Confirm the cart opens (slides out or drops down) and shows the correct item.
-  </Step>
-  <Step title="Test checkout">
-    Proceed to checkout to confirm the full flow works.
-  </Step>
-</Steps>
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Cart doesn't open when adding a product">
-    - Confirm you pasted the correct snippet for your cart provider.
-    - Verify your theme name by running `window.Shopify.theme` in the browser console.
-    - Make sure **Cart Config Code** is toggled on and saved.
-  </Accordion>
-
-  <Accordion title="Customers get redirected off the page">
-    This usually means the cart is not set to open in-page. Apply the matching snippet for your provider.
-  </Accordion>
-
-  <Accordion title="Your theme or app isn't listed">
-    If you have a custom theme, contact your theme developer for the correct cart trigger code.
-  </Accordion>
-</AccordionGroup>
-
-If your theme or cart app is not covered here, or your snippet is not working, contact us via Slack or at [info@getjurni.ai](mailto:info@getjurni.ai) and we'll help you find the right configuration.
+- [Set up Shopify Pages](/shopify-pages/setup-publish)
+- [Shopify Pages limitations](/shopify-pages/limitations)
+- [Cart and checkout behavior](/commerce/cart-checkout-behavior)

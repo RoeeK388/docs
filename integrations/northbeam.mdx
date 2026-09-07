@@ -1,0 +1,36 @@
+---
+title: "Connect Northbeam page tracking"
+sidebarTitle: "Northbeam"
+description: "Get the Data Client ID from your Northbeam pixel instructions and add it to Jurni's Northbeam Pixel ID field."
+icon: "chart-column"
+---
+
+Use **Northbeam** to include Jurni landing-page activity in your brand's Northbeam measurement setup. The native field loads the store's Northbeam browser pixel; it is not an installation of every order, ad-account, or attribution connection in Northbeam.
+
+## Get the correct identifier
+
+Open the brand's Northbeam setup instructions under **Pixel and Event Tracking → Northbeam Pixel**, or its onboarding **Pixel Placement** step. Find the **Data Client ID** in the supplied browser snippet. It is the identifier in the script URL between `/ota-sp/` and `.js`.
+
+Jurni calls this value **Northbeam Pixel ID**. Copy only the identifier, not the entire snippet, an advertising account ID, or an API secret. Jurni validates it as a UUID. See [Northbeam's pixel instructions](https://docs.northbeam.io/docs/add-pixel).
+
+## Add it to Jurni
+
+1. Open **Settings → Integrations → Data Integrations → Tracking Pixels**.
+2. Paste the value into **Northbeam Pixel ID**.
+3. Select **Save Changes**.
+4. Visit a published Jurni page and confirm with your tracking owner that Northbeam receives the page activity under the correct account.
+
+## Complete the measurement journey
+
+Keep Northbeam's existing Shopify or custom-store installation in place where it is required for the downstream purchase flow. Adding the Jurni page pixel does not replace that setup. Test the campaign entry URL through checkout and compare the identifiers and events your tracking team expects.
+
+For **Shopify Pages**, check whether the Shopify theme already loads Northbeam before adding another installation. Avoid loading the same pixel through Jurni, a tag manager, and Custom Scripts simultaneously.
+
+## Troubleshooting
+
+If Save is unavailable, check the identifier format and whether the form changed. If no activity arrives, confirm the correct Northbeam account, published URL, consent, and browser blocking. A difference between Jurni and Northbeam totals is not proof the pixel failed; the systems may use different attribution definitions.
+
+## Related guides
+
+- [Tracking setup](/getting-started/tracking-pixels)
+- [Analytics differences](/troubleshooting/analytics-differences)

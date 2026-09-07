@@ -1,0 +1,51 @@
+---
+title: "Purchase paths for headless and non-Shopify stores"
+sidebarTitle: "Headless & non-Shopify"
+description: "Agree the cart API, direct checkout, store product-page, or custom purchase path with the Jurni team before building the purchasing section."
+icon: "route"
+---
+
+A Jurni landing page does not have to use the Jurni Shopify cart. For **WooCommerce, Salesforce, a custom storefront, or a headless store**, the Jurni team helps connect the page to the purchase flow your business already uses.
+
+## Decide where the shopper should purchase
+
+| Path | When to use it | What your team supplies |
+| --- | --- | --- |
+| **Existing store product page** | The landing page educates shoppers before they select options on your store. | The full product-page URL and any required campaign parameters. |
+| **Direct checkout link** | Your commerce system can create a checkout for the intended selection. | The supported checkout link or link-generation flow, including products, quantity, and purchase type. |
+| **Cart API integration** | Shoppers should select products on the Jurni page and add them to your existing cart. | Your technical contact and the documented cart/checkout integration. |
+| **Custom solution** | A quiz, subscription flow, bundle, or other purchase journey needs different behavior. | The required journey and your existing implementation details. |
+
+A normal button link can take a shopper to a store product page. A dynamic cart or checkout connection requires integration work; pasting an API URL into a button does not create that connection.
+
+## Set up the flow with Jurni
+
+<Steps>
+  <Step title="Share the intended journey">
+    Tell the Jurni team your commerce provider, storefront domain, product, and desired action. Include a working example from your current store.
+  </Step>
+  <Step title="Confirm the integration">
+    For a cart API or custom checkout, introduce your developer. Agree how product options, quantities, subscriptions, discounts, and the cart session reach checkout. Keep credentials in the agreed secure integration channel, not in AI prompts.
+  </Step>
+  <Step title="Build the page around that path">
+    Use a direct CTA for a store product-page link, or a connected purchasing section for the agreed cart/checkout implementation. The displayed choices must match what the destination can actually purchase.
+  </Step>
+  <Step title="Test purchase and measurement">
+    Start at the campaign link and complete the agreed test journey. Check the actual items and total, then confirm with the team how the completed purchase returns to Jurni reporting.
+  </Step>
+</Steps>
+
+## Shopify Headless is a separate case
+
+A headless store can use Shopify for products and checkout without using a Shopify theme. Its cart connection still needs to match the headless storefront. Do not apply Shopify theme-drawer instructions to it automatically.
+
+## What not to assume
+
+Shopify-specific offer settings, Shopify Pages, and the Jurni cart display controls do not automatically apply to another commerce platform. The chosen provider remains responsible for the actual purchase rules. A successful redirect is not proof that purchase attribution is connected.
+
+## Related guides
+
+- [Supported commerce platforms](/getting-started/choose-your-setup)
+- [Headless Shopify setup](/getting-started/shopify-headless)
+- [Non-Shopify setup](/getting-started/setup-non-shopify)
+- [Buttons and actions](/build/cta-actions)

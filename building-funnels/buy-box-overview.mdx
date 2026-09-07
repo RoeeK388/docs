@@ -10,47 +10,57 @@ keywords:
 icon: "shopping-bag"
 ---
 
-A **product** is what you sell. A **Buy Box** is the section on a page where shoppers choose their options and continue to cart or checkout.
+A **product** is what you sell. A **Buy Box** is the purchasing area on a page: it presents the product, lets shoppers make the supported choices, and sends that selection to cart, checkout, or another destination.
 
-Start by finding the right product, add a Buy Box to the page, then test the purchase. You do not need to configure every commerce feature to launch a simple product page.
+A Buy Box is not necessarily a full product detail page. You can place it inside a longer campaign page with education, reviews, and FAQs.
 
-## What belongs where?
-
-| What you are changing | Where to work |
-| --- | --- |
-| The real product, variants, prices, availability, or subscription plans | Your connected commerce platform. |
-| Shared product benefits, details, reviews, or variant media used by Jurni | **Products → Edit Product Data**. |
-| The Buy Box layout, selected product, or button action on a page | The **page editor**. |
-| Discounts, shipping, and the amount actually charged | Your connected cart and checkout setup. |
-
-For example, editing the headline above a Buy Box does not change its selected product. Showing “20% off” in the design does not create a checkout discount.
-
-## Set up your first Buy Box
+## The workflow
 
 <Steps>
-  <Step title="Find your product">
-    Open **Products** in the correct shop. Check the product and variants you intend to sell. For a missing Shopify product, review the catalog filters and [product availability guide](/building-funnels/sync-new-products).
+  <Step title="Make the real product available">
+    Find the product in **Products** and check its variants and subscription plans in the connected commerce system. For Shopify, check **Manage products** if the item is missing from the editor or AI product picker.
   </Step>
-  <Step title="Add it to the page">
-    In the editor, insert a Buy Box from **Section Library** or use an approved Saved Section. Choose the product and purchasing action. Follow [Add a Buy Box](/products/add-buy-box).
+  <Step title="Prepare reusable product content">
+    Open **Edit Product Data** for benefits, product details, curated reviews, and variant media. Skip this step for content that should exist only on this campaign page.
   </Step>
-  <Step title="Style and test it">
-    Adjust the copy, media, and layout. Check both device views, make a purchase selection, and confirm the correct item and price in cart or checkout.
+  <Step title="Add and connect the Buy Box">
+    In the editor, add the purchasing section and select the actual product. Set the supported purchase choices and action. A product name typed into the design is not a product connection.
+  </Step>
+  <Step title="Refine the layout">
+    Use the visual controls or AI to adjust copy, images, spacing, and the mobile/desktop layout. Preserve the real product selection and working purchasing controls.
+  </Step>
+  <Step title="Test the purchase, then publish">
+    Test the default selection and important alternatives. Verify the product, variant, quantity, subscription plan, discount, and final amount in the intended cart or checkout.
   </Step>
 </Steps>
 
-## Add the options your campaign needs
+Start with [Add and configure a Buy Box](/products/add-buy-box) for the page steps.
 
-Use [purchase options](/building-funnels/product-purchase-options) for variants and purchase choices, [subscriptions](/building-funnels/subscriptions-selling-plans) for recurring purchases, [bundles](/building-funnels/bundles) for multi-product offers, and [offers](/commerce/offers-overview) for promotions. Available controls depend on the Buy Box you use.
+## Where each kind of change belongs
 
-A simple button can be enough when your page only needs to send visitors to an existing product page. See [Buttons and actions](/build/cta-actions).
+| You want to change… | Go to… |
+| --- | --- |
+| Product price, inventory, Shopify variants, or selling plans | Shopify or the relevant commerce/subscription app. |
+| Shared benefits, details, or variant media | [Products → Edit Product Data](/products/content-media). |
+| A page's layout, selected product, and purchasing action | The Buy Box in the page editor. |
+| Offer qualification and promotional rules | [Offers](/commerce/offers-overview), with actual discount enforcement in Shopify. |
+| General display options for the supported Shopify cart | [Storefront Settings → Cart Settings](/commerce/cart-display-settings). |
 
-## Reuse without changing the wrong pages
+## Reusing a purchasing design
 
-A **Saved Section** gives you an independent copy. A **Global Section** keeps content shared. Product information edited in **Products** is also shared information, not a change limited to one page.
+A **template** is a starting design. A reusable section or shared Buy Box can have a different update scope from an ordinary local section. Before editing an existing shared purchasing area, check what the editor says will be updated.
 
-Before making a change for just one campaign, check [what your product edit affects](/products/editing-scope).
+[Saved Sections](/building-funnels/saved-sections) create independent inserted copies; [Global Sections](/build/global-sections) remain linked to shared content. Do not assume duplicating a whole page makes every shared section independent.
 
-<Note>
-  Shopify has a native Jurni connection. Headless and other platforms use the purchasing setup agreed for that store. Always test the final publishing destination; native Shopify Pages have their own [cart configuration](/shopify-pages/cart-config).
-</Note>
+## Shopify versus other storefronts
+
+Shopify has the native product connection. Jurni-hosted pages and native Shopify Pages use different cart environments, so test the destination you will actually publish.
+
+For headless or non-Shopify brands, agree the [purchase path](/commerce/non-shopify-purchase-flows) with the Jurni team first: cart API, direct checkout, store product-page link, or a custom solution. Do not build selectable options that the destination cannot purchase.
+
+## Continue with your task
+
+- [Products and variants](/building-funnels/products-and-variants)
+- [Product content and media](/products/content-media)
+- [Purchase options](/building-funnels/product-purchase-options)
+- [Understand the scope of an edit](/products/editing-scope)

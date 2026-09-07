@@ -1,0 +1,53 @@
+---
+title: "Check your campaign link before launch"
+sidebarTitle: "Test your campaign link"
+description: "Verify the exact ad or email link, its destination, shopper actions, and tracking before sending campaign traffic."
+icon: "list-checks"
+---
+
+A working page preview is not the final launch test. Start with the **exact URL that will be used in the campaign**, including its tracking parameters, and follow the shopper's journey.
+
+## 1. Confirm you copied the right link
+
+| Link | Use it for |
+| --- | --- |
+| **Preview or review link** | Internal review. Do not use it as the live campaign destination. |
+| **Published page URL** | Direct traffic to that page. It does not automatically enter an experiment. |
+| **Smart Link** | A campaign entry URL whose destination you manage in Jurni. |
+| **Experiment's connected Smart Link** | Traffic that should enter the test and be assigned to a variant. |
+
+For Shopify, `/apps/jurni/` and `/pages/` are different publishing paths. A page on the store's domain is not automatically a native Shopify Page.
+
+## 2. Follow the full journey
+
+<Steps>
+  <Step title="Open the campaign entry link">
+    Use a fresh browser session for the first test. Confirm the destination is live and does not require an editor login.
+  </Step>
+  <Step title="Check campaign details">
+    Confirm the intended campaign parameters survive the journey. Keep the entry URL and final URL available when investigating a mismatch; an external redirect or script can change them.
+  </Step>
+  <Step title="Check the page">
+    Inspect mobile and desktop layout, images, offer copy, primary buttons, forms, and reviews. Test the real page rather than relying on the editor canvas.
+  </Step>
+  <Step title="Check the purchase">
+    Select the important variants, quantities, and one-time or subscription options. Verify the actual cart and checkout, including discounts or gifts. Use an agreed test-order process when purchase attribution needs validation.
+  </Step>
+  <Step title="Check measurement">
+    Have the person responsible for tracking confirm the required events and consent behavior. Check for duplicate pixels or tag managers, especially on Shopify Pages.
+  </Step>
+</Steps>
+
+## When launching an experiment
+
+Confirm each variant works on its own, then enter through the test's connected link. Refreshing one browser repeatedly is not a reliable test of the allocation: a visitor can retain their assignment.
+
+Compare results using the same date range. The underlying experience can also receive direct traffic, so its session total need not match the experiment's total.
+
+[Traffic assignment](/experiments/traffic-assignment) · [Session-count differences](/troubleshooting/experiment-experience-sessions)
+
+## When something fails
+
+Capture the entry URL, final URL, device, time of the test, selected product option, and the expected versus actual result. Include a screenshot of the relevant state, with customer and payment information removed.
+
+Use [link troubleshooting](/troubleshooting/url-route-conflict), [cart troubleshooting](/troubleshooting/product-cart-issues), or [integration troubleshooting](/integrations/troubleshooting). Fix the failing step before increasing traffic.

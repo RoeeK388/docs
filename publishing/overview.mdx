@@ -1,109 +1,60 @@
 ---
 title: "Publishing Jurni Pages"
 sidebarTitle: "Publishing Overview"
-description: "Understand where Jurni pages can live, how Shopify app proxy/custom subdomain/native Shopify Pages differ, and how Smart Links sit above those destinations."
+description: "Understand the live page destination, the campaign Smart Link, and the publishing steps that apply to your storefront."
 keywords:
   - "publish Jurni"
   - "Jurni URL"
   - "Shopify Pages"
   - "custom subdomain"
+icon: "rocket"
 ---
 
-Publishing determines **where the live Jurni page is served**. Smart Links determine **which URL you put in campaigns and where that traffic is routed**.
+**Publishing makes a page available to shoppers. A Smart Link determines where your campaign traffic goes.** You can keep the campaign link the same while changing its destination in Jurni.
 
-Those are related, but they are not the same thing.
+## Understand the URLs
 
-## The three publishing paths
+These examples show the different paths for a standard Shopify Online Store. Use the actual URLs provided in your account.
 
-### 1. Jurni page on a custom subdomain
+| Publishing path | Example | What it means |
+| --- | --- | --- |
+| **Jurni custom subdomain** | `go.brand.com/summer-offer` | A branded Jurni-hosted page or Smart Link on your connected subdomain. |
+| **Shopify app proxy** | `brand.com/apps/jurni/summer-offer` | The default Jurni route for Shopify stores without a connected custom subdomain. It is not a native Shopify Page. |
+| **Shopify Pages** | `brand.com/pages/summer-offer` | A page built in Jurni and published into the Shopify Online Store's theme environment. |
 
-This is the standard branded Jurni-hosted setup for paid landing pages.
+A URL on your store's root domain does not, by itself, tell you which publishing path is in use. Check whether it is the app-proxy route or a native Shopify Page.
 
-After you connect a domain such as `go.brand.com`, your live pages and Smart Links can use that domain.
+## Follow the path for your storefront
 
-Example page or Smart Link URL:
+**Shopify Online Store:** use the Jurni-hosted flow, with the app-proxy route available before a custom subdomain is connected. Use Shopify Pages when you specifically want a native `/pages/` destination and the Shopify theme environment.
 
-`https://go.brand.com/summer-offer`
+**Shopify headless or another commerce platform:** use the domain, cart, checkout, and tracking arrangement agreed for that storefront. Installing a Shopify theme block does not install it on a separate headless frontend. Native Shopify Pages require a Shopify Online Store theme; they are not a publishing mechanism for a WooCommerce or Salesforce storefront.
 
-There is no Jurni limit on the number of pages you can create on the connected subdomain.
+[Supported platforms](/getting-started/choose-your-setup) · [Custom subdomain setup](/getting-started/custom-subdomain) · [App-proxy URLs](/publishing/shopify-app-proxy)
 
-### 2. Shopify app proxy
+## Publish, then connect the campaign
 
-For a **Shopify Online Store** that has not connected a custom Jurni subdomain, Jurni uses the Shopify app proxy as the default root-domain route.
+<Steps>
+  <Step title="Review the page">
+    Finish the design and product setup. Check mobile and desktop and save the work you intend to review. A preview link is not your live campaign URL.
+  </Step>
+  <Step title="Publish to the intended destination">
+    Open the editor's publishing controls. For a native Shopify Page, complete its [template setup and Shopify publication](/shopify-pages/setup-publish).
+  </Step>
+  <Step title="Choose the campaign entry link">
+    Use a [Smart Link](/building-funnels/smart-links) for a destination you want to manage centrally. For an experiment, use the link connected through the [test setup](/experiments/create-experiment).
+  </Step>
+  <Step title="Test the live journey">
+    Open the exact campaign link. Check the destination, product options, cart, checkout, tracking, and any forms or reviews before sending visitors.
+  </Step>
+</Steps>
 
-Example:
+## Moving to Shopify Pages
 
-`https://brand.com/apps/jurni/summer-offer`
+A Shopify Page uses a different theme and cart environment from a Jurni-hosted page. Check the [limitations](/shopify-pages/limitations) and [cart setup](/shopify-pages/cart-config) before switching a live campaign. Do not assume a custom script or widget that works in one environment works unchanged in the other.
 
-The page is still served by Jurni, but the shopper-facing URL stays on the Shopify store domain through the app proxy.
+## After launch
 
-### 3. Native Shopify Pages
+Use [Update or unpublish](/publishing/update-unpublish) when changing page content or retiring a destination. Use [Change a Smart Link destination](/publishing/change-smart-link-destination) when changing where the campaign sends visitors.
 
-Shopify Online Store brands can optionally publish a Jurni page into a Shopify page template.
-
-Example:
-
-`https://brand.com/pages/summer-offer`
-
-Jurni creates/uses a Shopify page template containing the Jurni app block, and each published page can have its own Shopify page handle.
-
-This is a different runtime from a Jurni-hosted page: the page lives inside the Shopify theme environment and can inherit theme/app behavior that is already installed in Shopify.
-
-## Smart Links are the campaign-facing layer
-
-For paid traffic, we generally recommend putting a **Smart Link** in the ad rather than hard-coding a page destination directly.
-
-A Smart Link can point to:
-
-- one Jurni page
-- a native Shopify Page
-- a supported external URL
-- an experiment that splits traffic across multiple destinations
-
-You can later change the destination behind the Smart Link without replacing the Smart Link URL in the campaign.
-
-<Info>
-  If a custom Jurni subdomain is configured, Smart Links use that domain. For Shopify shops without a custom subdomain, the current fallback URL uses the Shopify app proxy path under `/apps/jurni/`.
-</Info>
-
-## Shopify vs. Headless / Non-Shopify
-
-| Store setup | Jurni-hosted / custom-domain pages | Shopify app proxy | Native Shopify Pages |
-| --- | --- | --- | --- |
-| **Shopify Online Store** | Yes | Yes, when no custom Jurni subdomain is configured | Optional |
-| **Shopify Headless** | Yes / implementation-specific | Do not assume the Online Store proxy/theme flow applies | No — Shopify Pages depend on Online Store theme templates |
-| **Non-Shopify** | Yes / implementation-specific | No | No |
-
-See [Supported commerce platforms](/getting-started/choose-your-setup) before publishing if you are not on a standard Shopify Online Store.
-
-## Which Shopify publishing method should I use?
-
-Use **Jurni-hosted / custom subdomain or app proxy** when you want the normal Jurni page runtime and Jurni-managed page integrations.
-
-Use **Shopify Pages** when you specifically need the page inside the Shopify theme environment—for example, to use a native `/pages/` URL or existing Shopify theme/app scripts.
-
-Shopify Pages have their own compatibility and cart considerations, so review [Shopify Pages: When to Use Them and Limitations](/shopify-pages/limitations) before switching a live campaign.
-
-## Before sending traffic
-
-Test the exact live URL and publishing method you will use:
-
-1. desktop and mobile layout
-2. all primary links and buttons
-3. Buy Box/product configuration
-4. subscription and bundle behavior
-5. cart and checkout
-6. pixels and analytics
-7. review/popup/widget integrations
-8. consent behavior
-9. Smart Link routing and URL parameters
-10. purchase attribution
-
-## Related guides
-
-- [Shopify App Proxy URLs](/publishing/shopify-app-proxy)
-- [Custom Subdomain](/getting-started/custom-subdomain)
-- [Smart Links](/building-funnels/smart-links)
-- [Shopify Pages Setup](/shopify-pages/setup-publish)
-- [Shopify Pages Limitations](/shopify-pages/limitations)
-- [Update or Unpublish a Page](/publishing/update-unpublish)
+For the full launch check, follow [Test your campaign link](/publishing/check-campaign-link).

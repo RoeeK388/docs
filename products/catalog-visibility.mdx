@@ -5,54 +5,48 @@ description: "Use Shopify product scope, collections, tags, and status filters t
 icon: "list-filter"
 ---
 
-For Shopify shops, **Products → Manage products** controls the product scope available in Jurni. Use it to keep the catalog relevant to the products your team builds with.
+For Shopify shops, **Manage products** controls the catalogue available in Jurni. It affects **Products, editor product selection, and AI generation**—not just the list currently on screen.
 
-This is different from changing the product's status or sales-channel availability in Shopify. A Jurni visibility setting does not create a product, change inventory, or publish it to a Shopify channel.
+## Browse filters versus saved scope
 
-## Review your current product list
+| Control | Purpose |
+| --- | --- |
+| Search and status filters on Products | Find products while browsing. |
+| **Manage products → Save scope** | Save which products are available through the shop's Jurni catalogue. |
 
-Open **Products**, search for the product, and check the list's status filters. The list distinguishes statuses such as **Active** and **Unlisted**. A product can be missing from the current list because of a filter, not because its integration failed.
+If AI or a product picker cannot find an item, check the saved scope rather than only clearing the visible search field.
 
-Check the active shop before changing anything, especially when your account manages multiple stores.
-
-## Set product scope
+## Set the catalogue scope
 
 <Steps>
   <Step title="Open Manage products">
-    From the Products area in a Shopify shop, select **Manage products**. The dialog is titled **Manage Products** and lets you select visible products.
+    Go to **Products** and select **Manage products**. This control is shown for Shopify shops.
   </Step>
-  <Step title="Review collections, tags, and status">
-    Configure the available **Collections**, **Tags**, and **Status** selections. Use the store's existing values rather than inventing a new collection or tag here.
+  <Step title="Review Collections, Tags, and Status">
+    Choose the restrictions you need using the available Shopify collections, tags, and product statuses. Leave unnecessary restrictions unset.
   </Step>
-  <Step title="Save the scope">
-    Select **Save scope**. The saved scope applies to product availability in Jurni's Products area, editor, and AI workflows—not just to the current search result.
+  <Step title="Save scope">
+    Select **Save scope** to apply the configuration. **Cancel** leaves without saving. **Clear all** clears the selected scope fields; select Save scope to apply that change.
   </Step>
-  <Step title="Verify the product you need">
-    Search again and open the product selector in the relevant experience. Confirm that the required product is available before updating a live page.
+  <Step title="Verify the available products">
+    Search for an expected included product and check the editor product picker. Recheck the shop and source product when an expected item is still absent.
   </Step>
 </Steps>
 
-Use **Clear all** to clear the draft scope selections, then save when you intend to remove those scope restrictions. Use **Cancel** to leave without applying the changes in that dialog.
+## What this does not do
 
-## Scope versus a temporary filter
+It does not delete products from Shopify, change inventory, create variants, or publish an unavailable product to a Shopify sales channel. A product also needs to be available through the connected Shopify catalogue.
 
-| Setting | What it affects |
-| --- | --- |
-| Search and status filters in the product list | What you are currently browsing. |
-| Saved **Manage products** scope | Which products Jurni makes available to its product, editor, and AI workflows. |
-| Shopify product status, channel publication, and availability | The underlying store's product configuration and commerce availability. |
-| The product selected in a Buy Box | What that particular purchasing section uses. |
+Narrowing the selection is not a substitute for reviewing already published pages that use those products. Before removing a product from the available catalogue, check the campaign pages and purchasing flows that depend on it.
 
-Do not use catalog scope as a substitute for removing a product from a live campaign or discontinuing it in Shopify. Inspect the page and purchasing flow separately.
+## Missing products
 
-## A product is still missing
+Confirm the correct Shopify store, source availability, saved scope, and current browsing filters. Include **Unlisted** in your search when the intended item uses that status. If the item remains missing, send the Jurni team the Shopify product link and the affected Jurni shop/page.
 
-Check the correct shop, current list filters, saved product scope, and the product's Shopify configuration. Confirm that it is available to the required storefront/channel and that its variants are usable for the intended purchase.
-
-For non-Shopify or headless integrations, use the product availability process defined for that implementation. The current **Manage products** control documented here is Shopify-specific.
+For a non-Shopify catalogue, use the agreed integration with your team; this Shopify Manage products dialog is not a universal product-import screen.
 
 ## Related guides
 
 - [Products and variants](/building-funnels/products-and-variants)
-- [Sync or find a missing Shopify product](/building-funnels/sync-new-products)
-- [Add a Buy Box](/products/add-buy-box)
+- [Find missing products](/building-funnels/sync-new-products)
+- [Build with AI](/build/ai-campaign-workflow)

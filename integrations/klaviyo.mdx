@@ -14,7 +14,13 @@ Use Klaviyo with Jurni to show supported signup forms and pop-ups. **Connecting 
 | **Company ID** | Klaviyo in **Settings → Integrations → Reviews & Pop-ups** | Your Klaviyo account's onsite integration. |
 | **Form ID** | The Klaviyo form element on a page | The specific embedded form you want to display. |
 
-Do not paste a private API key into the Company ID field. A Company ID is also not the identifier for an individual form.
+## Find the IDs in Klaviyo
+
+**Company ID:** open your Klaviyo account menu, then **Settings → API keys**. Copy the **Public API Key / Site ID**. This is the value Jurni calls Company ID. Do not create or paste a private API key. See [Klaviyo's API-key guide](https://help.klaviyo.com/hc/en-us/articles/115005062267).
+
+**Form ID:** open **Sign-up forms**, select the intended **Embed** form, and open **Targeting and behavior → Display**. Under **Embed Code**, copy the identifier after `klaviyo-form-`, not the whole HTML block. Publish the form in Klaviyo. See [Klaviyo's embedded-form guide](https://help.klaviyo.com/hc/en-us/articles/32004602396443).
+
+The form determines its destination list and signup behavior in Klaviyo. A list ID, pop-up ID, and Company ID are not substitutes for the embedded Form ID.
 
 ## Connect Klaviyo to the shop
 

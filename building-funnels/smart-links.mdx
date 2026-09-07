@@ -1,111 +1,59 @@
 ---
 title: "Smart Links: Route Traffic Without Editing Campaign URLs"
 sidebarTitle: "Smart Links"
-description: "Use Jurni Smart Links as stable campaign URLs while changing destinations, routing traffic, and running experiments from Jurni."
+description: "Create a stable campaign URL, choose its destination, and understand which settings you can change later."
+icon: "link"
 ---
 
-Smart Links give you a stable URL that can route traffic to a Jurni experience or another destination. Instead of changing the URL in every ad, email, or campaign when the landing page changes, update the destination behind the Smart Link in Jurni.
+A **Smart Link** is the URL you put in an ad, email, or campaign. Jurni manages what that URL opens, so you can change the destination without replacing the link everywhere it is used.
 
-## Why use a Smart Link
+The three pieces have different jobs: the **page** is what shoppers see, the **Smart Link** is their campaign entry URL, and an **experiment** decides which variant an incoming visitor reaches when the link is used for a test.
 
-Smart Links are useful when you want to:
-
-- Keep the campaign-facing URL stable
-- Change the landing experience without editing every traffic source
-- Route traffic into a Jurni experiment
-- Replace or retire a destination without breaking existing campaign links
-- Send traffic to a Jurni experience or supported custom URL
-
-For paid media, avoiding unnecessary edits to a live ad can also reduce the chance that the ad needs to be reviewed or reprocessed by the advertising platform. The exact effect of an ad edit is controlled by that platform, not by Jurni.
-
-## Create a Smart Link
+## Create a link for a page
 
 <Steps>
-  <Step title="Create the Smart Link">
-    Open Smart Links in Jurni and create a new link.
+  <Step title="Open Smart Links">
+    Open **Smart Links** in Jurni and start creating a link. You can also manage links from the experience's publishing flow.
+  </Step>
+  <Step title="Name the link and choose its URL slug">
+    Use **Link Name** to identify it in your dashboard, such as “Paid social — Summer offer.” Set **URL Slug** to the campaign-facing path, such as `summer-offer`. These are different: renaming the link does not rename its URL.
   </Step>
   <Step title="Choose the destination">
-    Select a published Jurni experience, an experiment, or a supported custom URL.
+    Select the Jurni experience or enter the supported destination URL. When creating a link from an experience, the destination may already be selected. Confirm that the intended page is published and accessible.
   </Step>
-  <Step title="Copy the Smart Link URL">
-    Use the Smart Link—not the underlying destination URL—as the campaign destination when you want future routing changes to happen inside Jurni.
+  <Step title="Add campaign parameters when needed">
+    Set any fixed search parameters required for this link. Coordinate with the parameters already configured in your ad platform so the same field does not carry conflicting values.
   </Step>
-  <Step title="Test before launch">
-    Open the Smart Link in a new browser session and confirm it reaches the expected destination with the required campaign parameters intact.
-  </Step>
-</Steps>
-
-## Change the destination later
-
-Once the Smart Link is already used by a campaign, you can update its destination in Jurni without changing the Smart Link URL itself.
-
-<Steps>
-  <Step title="Open the Smart Link">
-    Find the link in Jurni.
-  </Step>
-  <Step title="Choose the new destination">
-    Select the replacement experience, experiment, or custom URL.
-  </Step>
-  <Step title="Save and verify">
-    Save the routing change, then open the Smart Link and confirm new traffic resolves to the expected destination.
+  <Step title="Create and test">
+    Select **Create Link**, then copy the saved Smart Link. Open it with the campaign parameters you intend to use and test the resulting page and purchase path.
   </Step>
 </Steps>
 
-<Warning>
-  Do not route meaningful traffic to a draft, unpublished, archived, or inaccessible destination. Verify the destination before changing a live Smart Link.
-</Warning>
+<Note>
+  In the Smart Links create/edit dialog, **URL Slug and the saved search parameters are locked after creation**. You can update the link's name and destination. Choose the permanent campaign URL before sharing it.
+</Note>
 
-## Smart Links and experiments
+## Which domain will it use?
 
-Smart Links are commonly used as the traffic entry point for Jurni experiments. The campaign continues to use one stable Smart Link while Jurni handles variant assignment behind it.
+With a connected Jurni custom subdomain, a link can look like `https://go.brand.com/summer-offer`. For standard Shopify stores without that subdomain, the fallback uses the store's app-proxy path, such as `https://brand.com/apps/jurni/summer-offer`.
 
-This is especially useful when you want to compare:
+Copy the URL Jurni generates rather than assembling one manually. A native Shopify Page at `/pages/summer-offer` is a possible destination, not the same thing as the Smart Link. See [Publishing overview](/publishing/overview).
 
-- Two or more Jurni experiences
-- A Jurni experience against an existing website page
-- Different landing-page concepts without changing the campaign URL for every variant
+## Use a link for an experiment
 
-## Campaign parameters
+Set up the test through the [experiment creation flow](/experiments/create-experiment) and confirm the intended Smart Link is connected. Use that entry link in the campaign. Sending traffic directly to a variant page bypasses the test's assignment step.
 
-When your ads use UTMs or click identifiers, test that the required parameters remain available through the Smart Link flow. Common parameters include `utm_source`, `utm_campaign`, `fbclid`, and `gclid`.
+To change an existing campaign, see [Change a Smart Link destination](/publishing/change-smart-link-destination). Do not assume selecting a page destination in the ordinary link dialog starts an experiment.
 
-Use the URL Parameters and UTM Attribution guides when routing depends on those values.
+## Keep campaigns manageable
 
-## Smart Link vs. direct destination URL
+Reuse a link when it represents the same campaign purpose. Use separate links when different teams or campaigns need independent destination changes. Updating one shared link affects every placement that uses it.
 
-|  | Smart Link | Direct page URL |
-| --- | --- | --- |
-| Campaign-facing URL | Stays stable when Jurni routing changes | Must be edited when the destination changes |
-| Destination control | Managed in Jurni | Managed at the traffic source |
-| Experiments | Designed to work as an experiment entry point | Can be used for a single direct destination |
-| Best for | Paid campaigns, testing, flexible routing | Static destinations unlikely to change |
-
-## When to create a new Smart Link
-
-Reuse a Smart Link when it represents the **same campaign or traffic purpose** and you are intentionally changing what sits behind it.
-
-Create a separate Smart Link when you need independent routing, reporting, ownership, or campaign behavior. Keeping unrelated campaigns on separate links makes changes safer and easier to understand.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="The Smart Link goes to the wrong page">
-    Open the Smart Link in Jurni and confirm the currently saved destination. If it routes to an experiment, also check the experiment's active variants and traffic configuration.
-  </Accordion>
-
-  <Accordion title="The destination works directly but not through the Smart Link">
-    Confirm the destination is published and publicly reachable, then test for redirect rules or parameters that behave differently when the request enters through the Smart Link.
-  </Accordion>
-
-  <Accordion title="My UTMs are missing">
-    Follow the full redirect path and verify where the parameter disappears. Check custom redirects, external destinations, and any scripts that rewrite the URL.
-  </Accordion>
-</AccordionGroup>
+For a used or unavailable slug, check the existing and archived links and follow [URL conflict troubleshooting](/troubleshooting/url-route-conflict). Archiving a link should not be treated as a guarantee that its slug is free to reuse.
 
 ## Related guides
 
-- How Experiment Traffic Is Assigned
-- URL and Attribution Parameters
-- UTM Parameter Passthrough & Attribution
-- Publishing Jurni Experiences
-- Update or Unpublish an Experience
+- [Check your campaign link before launch](/publishing/check-campaign-link)
+- [URL parameters](/reference/url-parameters)
+- [Experiment traffic assignment](/experiments/traffic-assignment)
+- [Experiment versus experience sessions](/troubleshooting/experiment-experience-sessions)

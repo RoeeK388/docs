@@ -1,88 +1,58 @@
 ---
-title: "Configuring Review Widgets in the Editor"
-sidebarTitle: "Review Widgets"
-description: "Learn how to add and configure review widgets in the Jurni editor. Customize display settings, layout, and styling to showcase customer feedback on your pages."
+title: "Add a review widget to a page"
+sidebarTitle: "Review-widget setup"
+description: "Place the connected provider's widget, set its identifiers, and verify real reviews on the published page."
+icon: "layout-panel-top"
 ---
 
-Review widgets let you display review data from a connected provider inside a Jurni experience. Configure the widget based on **which reviews should appear**, then style the surrounding section to fit the page.
+A review widget is the area on your page that displays reviews from a connected provider. Finish the [provider connection](/integrations/review-integrations) first; adding a visual placeholder alone does not connect an account.
 
-## Connect the review provider first
-
-Before adding the widget, make sure the correct review platform is enabled in **Settings → Integrations** and has the required store/account identifier.
-
-A widget cannot display provider data that Jurni cannot access.
-
-## Review display modes
-
-Jurni review widgets support three core modes:
-
-| Mode | Use it when |
-| --- | --- |
-| **Product** | Show reviews for one specific Shopify product |
-| **Group** | Show reviews for a configured product/review group |
-| **All Reviews** | Show reviews across the connected review source/store |
-
-## Product mode
-
-Use Product mode on PDP-style landing pages where the social proof should match the exact product being sold.
+## Add and configure
 
 <Steps>
-  <Step title="Select Product mode">
-    Set the widget's review mode to **Product**.
+  <Step title="Open the page editor">
+    Open the experience you want to edit and choose the page where reviews belong.
   </Step>
-  <Step title="Choose the product">
-    Select the Shopify product whose reviews should be displayed.
+  <Step title="Add the provider's section">
+    Open **Integrations** in the editor and add the matching review section. Place it in the page using the section-order controls.
   </Step>
-  <Step title="Preview the results">
-    Confirm the returned reviews belong to the intended product and market.
+  <Step title="Select the actual widget">
+    Select the review element inside the section, not just its surrounding heading. The right panel shows the settings for that provider.
+  </Step>
+  <Step title="Complete the identifiers">
+    Supply the product, SKU, review group, or widget ID the selected provider needs. Use the provider guide below; each service uses different values.
+  </Step>
+  <Step title="Save and verify">
+    Save the page and check the published destination. Confirm review content, product identity, and mobile layout—not just whether stars appeared.
   </Step>
 </Steps>
 
-## Group mode
+## The details most often missed
 
-Use Group mode when the review provider or Jurni configuration groups related products together—for example, multiple sizes, scents, or variants that should share a review pool.
+**Yotpo needs an Instance ID** after you connect its App Key. **Trustpilot needs a Template ID** after you connect its Business Unit ID. **REVIEWS.io uses a SKU** to identify product reviews. **Judge.me on Jurni-hosted pages needs its compatible platform-independent configuration.**
 
-Make sure the group itself is configured correctly before using it on several landing pages.
+Use the specific guides: [Yotpo](/integrations/yotpo), [Trustpilot](/integrations/trustpilot), [REVIEWS.io](/integrations/reviews-io), and [Judge.me](/integrations/judge-me).
 
-## All Reviews mode
+For [Okendo](/integrations/okendo), [Junip](/integrations/junip), [Stamped](/integrations/stamped), or [Bazaarvoice](/integrations/bazaarvoice), check the chosen review scope and product mapping.
 
-Use All Reviews when the section is intended to show broader brand/store social proof rather than proof for the exact product on the page.
+## Edit layout without replacing the reviews
 
-This works well for brand-level testimonials, but can be less relevant on a highly specific product page.
+Use Jurni for the surrounding section's heading, spacing, and position. Use the widget's available controls for its supported settings. Provider-rendered content may have appearance settings in the provider itself; it is not all ordinary editable page text.
 
-## Product ratings and review counts
+When asking AI to adjust the section, specify that it must preserve the provider widget and its identifiers. Do not replace live reviews with invented testimonials or static rating text.
 
-Some Jurni sections can also display product rating summaries or review counts near product information. Those values should come from the connected product/review data rather than being manually typed when they are intended to stay current.
+## When something is wrong
 
-## Styling
+**No reviews:** check the saved account connection, missing widget identifier, product mapping, and published reviews in the provider.
 
-The review provider supplies the underlying review data, while the Jurni section controls how that content is presented.
+**Wrong reviews:** compare the product ID/SKU or review group with the provider. Recheck after duplicating a page or changing its product.
 
-Review:
+**Repeated widgets:** look for a duplicate section or another installation in the Shopify theme, Custom Scripts, or a tag manager.
 
-- Number of reviews shown
-- Card layout
-- Desktop columns
-- Mobile carousel/stacking
-- Star treatment
-- Reviewer name
-- Review body length
-- Product context when needed
-
-## If no reviews appear
-
-Check:
-
-1. The review integration is enabled.
-2. The credential belongs to the correct store/account.
-3. The widget is using the intended mode.
-4. Product mode points to the correct Shopify product.
-5. The review source actually contains reviews for that product/group.
-6. The shop is using the correct market-specific review integration.
+**Only one publishing method fails:** compare the Jurni-hosted URL with the Shopify Page. The theme and script environment differ; testing one does not verify the other.
 
 ## Related guides
 
-- Review Integrations
-- Products and Variants
-- Managing Sections
-- Integration Troubleshooting
+- [All review providers](/integrations/review-integrations)
+- [Shopify Pages limitations](/shopify-pages/limitations)
+- [AI prompting best practices](/building-funnels/ai-chat-prompts)

@@ -77,6 +77,18 @@
             ]
           },
           {
+            "group": "Build with AI",
+            "pages": [
+              "build/ai-campaign-workflow",
+              "build/jurni-agent",
+              "build/ai-editing",
+              "build/prompt-library",
+              "building-funnels/figma-file",
+              "building-funnels/ai-chat-prompts",
+              "build/chat-history"
+            ]
+          },
+          {
             "group": "Sections & Layers",
             "pages": [
               "building-funnels/managing-sections",
@@ -108,16 +120,6 @@
               "build/template-library",
               "building-funnels/saved-sections",
               "build/global-sections"
-            ]
-          },
-          {
-            "group": "AI & Figma",
-            "pages": [
-              "build/jurni-agent",
-              "build/ai-editing",
-              "building-funnels/figma-file",
-              "building-funnels/ai-chat-prompts",
-              "build/chat-history"
             ]
           },
           {
@@ -182,6 +184,7 @@
             "pages": [
               "commerce/cart-checkout-behavior",
               "commerce/cart-display-settings",
+              "commerce/non-shopify-purchase-flows",
               "commerce/shopify-markets-currency"
             ]
           }
@@ -208,7 +211,9 @@
           {
             "group": "Smart Links",
             "pages": [
-              "building-funnels/smart-links"
+              "building-funnels/smart-links",
+              "publishing/change-smart-link-destination",
+              "publishing/check-campaign-link"
             ]
           },
           {
@@ -267,18 +272,27 @@
           {
             "group": "Overview",
             "pages": [
-              "integrations/overview"
+              "integrations/overview",
+              "integrations/api-keys"
             ]
           },
           {
             "group": "Data & Tracking",
             "pages": [
               "getting-started/tracking-pixels",
+              "integrations/google-analytics",
+              "integrations/meta-pixel",
+              "integrations/tiktok",
               "getting-started/shopify-analytics",
               "integrations/ga-meta-pixel",
               "integrations/gtm",
               "integrations/utm-attribution",
-              "integrations/consent-tracking"
+              "integrations/consent-tracking",
+              "integrations/northbeam",
+              "integrations/axon",
+              "integrations/blotout",
+              "integrations/polar-analytics",
+              "integrations/triple-whale"
             ]
           },
           {
@@ -288,18 +302,26 @@
             ]
           },
           {
-            "group": "Lifecycle & Messaging",
+            "group": "Forms & Pop-ups",
             "pages": [
               "integrations/klaviyo",
-              "integrations/postscript"
+              "integrations/postscript",
+              "integrations/alia"
             ]
           },
           {
-            "group": "Widgets, Reviews & Pop-ups",
+            "group": "Reviews",
             "pages": [
               "integrations/review-integrations",
               "integrations/review-widgets",
-              "integrations/alia"
+              "integrations/okendo",
+              "integrations/junip",
+              "integrations/yotpo",
+              "integrations/judge-me",
+              "integrations/stamped",
+              "integrations/trustpilot",
+              "integrations/reviews-io",
+              "integrations/bazaarvoice"
             ]
           },
           {
@@ -319,7 +341,6 @@
           {
             "group": "Custom Integrations",
             "pages": [
-              "integrations/api-keys",
               "integrations/custom-scripts",
               "integrations/mcp-connector"
             ]

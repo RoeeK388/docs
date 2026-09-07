@@ -9,87 +9,60 @@ keywords:
   - "Jurni gift"
 ---
 
-Gift with Purchase is a Jurni **Offer** that controls when gift products become available or are added in the Jurni cart experience.
-
-The current offer editor supports three trigger types:
-
-- **Minimum Amount** — trigger the gift when the cart reaches a minimum value.
-- **Minimum Products** — trigger the gift when the cart contains a minimum number of products.
-- **Specific Products** — trigger the gift when configured products are present in the cart.
-
-## Choose the gift behavior
-
-Jurni supports both single-gift and multiple-gift setups.
-
-### Single Gift
-
-Choose one gift product and, when needed, the exact gift variant. This is the best option when the qualifying shopper should always receive one specific item.
-
-### Multiple Gifts
-
-Choose multiple gift products. The current editor supports two behaviors:
-
-- let the shopper **pick one gift** from the configured list
-- enable **Auto-add all selected gifts to cart** so every eligible gift is added automatically
-
-## Jurni vs. Shopify responsibilities
-
-The behavior is split between Jurni and Shopify:
-
-| Jurni | Shopify / discount system |
-| --- | --- |
-| Evaluates the GWP offer rules | Enforces the final price/discount in checkout |
-| Adds or presents eligible gift products | Determines whether the gift is \$0, discounted, or covered by another promotion |
-| Removes/manages gift state as the Jurni cart changes | Applies Shopify discount-code, automatic-discount, Function, or app logic |
+A **Gift with Purchase** offer adds or offers a gift when the shopper's cart qualifies. For **Shopify stores**, Jurni handles the supported gift-selection flow; the gift's actual price or discount must also be configured in Shopify.
 
 <Warning>
-  A product being added as a Jurni gift does **not by itself guarantee a free final price**. The current GWP editor does not provide an editable self-service control that automatically creates a new Shopify discount for the offer. Configure the price/discount behavior in Shopify or the discount system used by your store.
+  Adding a gift is not the same as making it free. Set up a suitable Shopify discount or a \$0 gift product, then verify the final cart and checkout. The current **Create Shopify Discount** control in the Jurni offer form is disabled.
 </Warning>
 
-Common approaches include:
+## Before you begin
 
-- a gift SKU priced at **\$0**
-- a Shopify automatic discount
-- a Shopify discount code
-- a Shopify Function or third-party discount app
+Make the gift product available to your Jurni-connected catalog and choose the correct variant. Decide which purchase qualifies, how many gifts shoppers can receive, and whether they choose a gift or receive it automatically.
 
-## Set up a GWP offer
+## Create the offer
 
 <Steps>
-  <Step title="Create a Gift with Purchase offer">
-    Open Jurni **Offers** and choose **Gift with Purchase**.
+  <Step title="Choose Gift with Purchase">
+    Open **Offers**, create an offer, and select **Gift with Purchase**. Give it an internal name.
   </Step>
-  <Step title="Choose the gift products">
-    Configure a single gift or a list of multiple gifts. For a single gift, select the required variant when applicable.
+  <Step title="Set scope and timing">
+    Choose **Global** for eligible experiences across this Jurni shop, or select the particular experiences for the campaign. Add optional display text and start/end timing. See [Offer scope and setup](/commerce/offers-overview).
   </Step>
-  <Step title="Choose the trigger">
-    Configure **Minimum Amount**, **Minimum Products**, or **Specific Products** and enter the matching rule values.
+  <Step title="Choose the gift">
+    **Single Gift** lets you select a product and its gift variant. **Multiple Gifts** lets you supply a list: shoppers choose one by default. Enable **Auto-add all selected gifts to cart** only when every eligible gift should be added automatically.
   </Step>
-  <Step title="Configure Shopify pricing">
-    Confirm how the gift will become free or discounted in Shopify checkout.
+  <Step title="Set the qualifying condition">
+    Choose **Minimum Amount**, **Minimum Products**, or **Specific Products**, then complete the fields for that condition.
   </Step>
-  <Step title="Test qualification and removal">
-    Test a non-qualifying cart, an exactly qualifying cart, and a cart that qualifies and then has items removed.
+  <Step title="Save and test the purchase">
+    Save the offer and open an included published experience. Qualify for the gift and check its variant, quantity, and price through checkout.
   </Step>
 </Steps>
 
-## QA checklist
+## Qualifying conditions
 
-Before launch, verify:
+| Condition | What to enter |
+| --- | --- |
+| **Minimum Amount** | The qualifying cart amount in the currency shown. Gift items are excluded from the gift-qualification subtotal. |
+| **Minimum Products** | The minimum qualifying product quantity. Test the exact cart combination used by your campaign. |
+| **Specific Products** | A trigger product, optionally restricted to a variant and selling plan; or several trigger products, where any selected product can qualify. |
 
-- the correct gift product/variant is used
-- the offer does not trigger below the threshold
-- the offer triggers at the exact threshold
-- single vs. multiple gift behavior matches the configuration
-- removing qualifying items does not leave an invalid gift state
-- the final gift price is correct in Shopify checkout
-- other discounts stack or exclude each other as intended
-- desktop and mobile cart behavior match
+For **Specific Products**, **Purchase type** can be **All** or **Subscription only**. The gift quantity can increase with the quantity of matching trigger products. **Maximum gifts** caps it; **No maximum** removes that cap. This is separate from choosing several different gift products.
+
+## Example: a gift with a subscription
+
+Select the gift product and variant, choose **Specific Products**, select the qualifying product, and set **Purchase type → Subscription only**. Set the gift limit you intend. Configure the corresponding Shopify discount so the gift is free for that purchase.
+
+Test a one-time purchase as well as a subscription. The offer should not qualify simply because the page says “subscribe”; the selected purchase needs the actual selling plan.
+
+## Check changes to the cart
+
+On the supported Jurni cart, gift eligibility is re-evaluated as the cart changes. Remove the qualifying product or drop below the threshold and check that the gift is handled correctly. Also test a second qualifying unit, an unavailable gift, and another market when relevant.
+
+**Shopify Pages and third-party carts require a separate compatibility check.** Do not assume a gift picker or automatic gift handling has been added to your theme cart. For headless or non-Shopify purchase flows, agree the implementation with the Jurni team.
 
 ## Related guides
 
-- [Offers Overview](/commerce/offers-overview)
-- [Free Shipping Offers](/commerce/free-shipping-offers)
-- [Discount Code Offers](/commerce/discount-code-offers)
-- [Cart & Checkout Behavior](/commerce/cart-checkout-behavior)
-- [Products & Variants](/building-funnels/products-and-variants)
+- [Discounts and promotions](/commerce/discounts-promotions)
+- [Samples](/commerce/samples-offers)
+- [Shopify Pages cart configuration](/shopify-pages/cart-config)

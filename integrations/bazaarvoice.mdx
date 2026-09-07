@@ -1,0 +1,48 @@
+---
+title: "Connect Bazaarvoice reviews"
+sidebarTitle: "Bazaarvoice"
+description: "Obtain your Bazaarvoice Client Name, connect the review service, and verify the product identifier used by the widget."
+icon: "star"
+---
+
+Use **Bazaarvoice** to display existing product reviews on a Jurni page. This connection is for the review widget; it does not set up Bazaarvoice product feeds, review collection, or syndication for you.
+
+## Obtain your Client Name
+
+Ask your Bazaarvoice administrator or implementation contact for the **Client Name** used by your production Conversations deployment. It is case-sensitive and is not a display name you invent in Jurni.
+
+Your existing Bazaarvoice loader can help identify it: the client-name segment appears after `/deployments/` in the widget script URL. Have the owner of that deployment confirm it rather than copying a staging or another brand's value. See [Bazaarvoice deployment setup](https://developers.bazaarvoice.com/v1.0-PS-Export/docs/set-up).
+
+Jurni requests **Client Name**, not a Bazaarvoice private API key. If your implementation uses a custom deployment, site, locale, or product-ID format, share those details with the Jurni team before launch.
+
+## Connect and place the reviews
+
+<Steps>
+  <Step title="Save the connection">
+    Open **Settings → Integrations → Reviews & Pop-ups** in Jurni. Enable **Bazaarvoice**, enter **Client Name**, and select **Save Changes**.
+  </Step>
+  <Step title="Add the widget">
+    In the experience editor, open **Integrations** and add the Bazaarvoice review section.
+  </Step>
+  <Step title="Check the product mapping">
+    Select the intended product for the review placement. Confirm its identifier corresponds to the product in your Bazaarvoice catalogue. A matching visible product name is not enough when the systems use different identifiers.
+  </Step>
+  <Step title="Verify the published page">
+    Save and check the actual live destination. Compare the reviews with the same product on your store and check mobile layout.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+**The service does not load:** verify the Client Name, capitalization, and production deployment with your Bazaarvoice contact.
+
+**The service loads but the product is empty:** check the catalogue mapping and whether reviews are available for that product. Do not change the review product ID simply to make unrelated reviews appear.
+
+**It works on the store but not the Jurni page:** the store may have additional deployment configuration. Share the working store URL and Jurni URL with the team so the difference can be checked.
+
+Shopify Pages can already inherit a Bazaarvoice loader from the theme. Check that environment separately rather than installing multiple copies.
+
+## Related guides
+
+- [Review widgets](/integrations/review-widgets)
+- [Integration troubleshooting](/integrations/troubleshooting)
