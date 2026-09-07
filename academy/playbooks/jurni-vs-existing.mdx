@@ -1,0 +1,197 @@
+---
+title: "Test a Jurni page against your existing website page"
+sidebarTitle: "Jurni vs existing page"
+description: "Prepare a fair test between a new Jurni experience and an existing Shopify or external page without confusing platform differences with the landing-page hypothesis."
+icon: "split-square-horizontal"
+hidden: true
+---
+
+Use this playbook when your baseline is an existing Shopify, headless, or external landing page and you want to compare it with a new Jurni experience.
+
+This is a valuable test because it answers a business question—**should this campaign move to the new Jurni experience?**—but it requires more QA than comparing two pages built in the same environment.
+
+## Start with the business question
+
+Write:
+
+> We want to know whether **[JURNI EXPERIENCE]** performs better for **[CAMPAIGN / AUDIENCE]** than **[CURRENT PAGE]** while keeping **[PRODUCT / OFFER / TRAFFIC]** comparable.
+
+Then define what is intentionally different.
+
+Examples:
+
+- campaign-specific story vs generic PDP;
+- creator-matched page vs normal product page;
+- advertorial vs existing direct-response page;
+- new mobile-first experience vs current landing page.
+
+## Phase 1 — Inventory the differences
+
+Before launching, compare the pages in four categories:
+
+### Marketing differences
+
+These are often what you *want* to test:
+
+- page story;
+- hero message;
+- layout;
+- proof;
+- education;
+- CTA framing.
+
+### Commercial differences
+
+Usually align these unless they are the hypothesis:
+
+- product;
+- variant / bundle;
+- price;
+- discount;
+- subscription choice;
+- shipping / gift offer.
+
+### Technical differences
+
+Understand / QA these because they can affect the result:
+
+- cart / checkout path;
+- theme vs Jurni-hosted environment;
+- tracking installation;
+- consent;
+- page availability;
+- campaign-parameter handling.
+
+### Performance differences
+
+Load speed or technical performance can legitimately be part of “which whole destination performs better,” but do not attribute the result purely to the marketing design if the platform / runtime differs substantially.
+
+## Phase 2 — Use Jurni AI to create the comparison checklist
+
+```text
+Do not edit anything.
+Help me prepare a fair test between:
+
+CONTROL
+[EXISTING PAGE]
+
+VARIANT
+[JURNI PAGE]
+
+AUDIENCE / TRAFFIC
+[CAMPAIGN]
+
+PRIMARY METRIC
+[METRIC]
+
+INTENDED DIFFERENCE
+[HYPOTHESIS / WHOLE-PAGE QUESTION]
+
+List differences under:
+1. Intended marketing differences
+2. Commercial differences to align
+3. Tracking / attribution checks
+4. Cart / checkout checks
+5. Mobile / availability checks
+6. Differences that may limit what we can conclude
+
+Do not invent details that are not visible / supplied.
+```
+
+## Phase 3 — Align the commercial promise
+
+If the test is about page experience, make sure a customer is not choosing between two materially different deals by accident.
+
+Check:
+
+- same core product / variant where intended;
+- same current price;
+- same discount / code eligibility;
+- same subscription availability where relevant;
+- same gift / shipping offer;
+- comparable checkout expectation.
+
+If you intentionally test a new offer *plus* a new page, document that the result is a **whole campaign package test**, not evidence that the page design alone caused the difference.
+
+## Phase 4 — Validate tracking and attribution
+
+Different destinations can have different tracking paths.
+
+Before sending traffic:
+
+- confirm the Jurni experiment context is passed to the existing-page destination as supported by your setup;
+- verify downstream checkout / purchase attribution;
+- verify Meta / GA4 / other provider behavior on both pages;
+- check duplicate tags on Shopify Pages / theme environments;
+- check consent behavior;
+- keep UTM / click IDs intact.
+
+Use [Test a Jurni page against an existing website page](/experiments/testing-against-website) for current product behavior and implementation details.
+
+## Phase 5 — Use the experiment Smart Link
+
+Configure the existing page and Jurni page as variants in the experiment, then use the **experiment Smart Link** as the campaign destination.
+
+Do not send one ad directly to the control URL and another ad to the Jurni URL and assume you have a clean page experiment—the ad delivery itself may differ.
+
+## Phase 6 — QA both paths from the same campaign entry
+
+Test the actual Smart Link / campaign URL.
+
+Verify:
+
+- both destinations are reachable;
+- page parameters pass as expected;
+- product and offer are correct;
+- mobile / desktop work;
+- checkout works;
+- purchase attribution is visible as intended;
+- returning / assigned behavior is understood.
+
+Use a fresh browser context where you need to inspect assignment behavior; existing assignment can keep the same browser on one variant.
+
+## Phase 7 — Choose what kind of conclusion the test can support
+
+If the pages differ in many ways, the valid question may be:
+
+> “Which whole experience works better for this campaign?”
+
+It is **not** automatically:
+
+> “This hero, layout, platform, or page speed individually caused the result.”
+
+If the Jurni page wins and you want to understand why, follow with controlled tests *within* the winning structure.
+
+## What good looks like
+
+The test has:
+
+- one campaign-facing Smart Link;
+- comparable audience delivery;
+- aligned commercial promise unless intentionally different;
+- verified tracking / checkout;
+- a result interpretation proportional to the number of things that changed.
+
+## Common mistakes
+
+### Different ad sets instead of a shared experiment entry
+
+That adds media-delivery differences.
+
+### Offer mismatch
+
+A stronger deal on one page is a major confound.
+
+### Tracking only the Jurni page
+
+The external destination needs experiment / purchase context where required by the implementation.
+
+### Over-specific learning from a whole-page test
+
+Use follow-up controlled tests to learn which page decisions mattered.
+
+## Related
+
+- [Existing-page experiment Help Center](/experiments/testing-against-website)
+- [First experiment](/academy/playbooks/first-experiment)
+- [Controlled variation](/academy/playbooks/controlled-variation)
