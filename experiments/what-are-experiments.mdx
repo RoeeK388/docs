@@ -4,55 +4,127 @@ sidebarTitle: "Overview"
 description: "Understand how Jurni experiments assign Smart Link traffic between page variants, keep visitor assignments consistent, and compare performance without changing the campaign-facing URL."
 ---
 
-Use an **experiment** to compare page variants through one campaign link. For example, send some visitors to your current page and others to a version with a different hero, then compare purchase conversion and revenue.
+Use a Jurni **experiment** when you have a specific question about which page experience works better for the same campaign traffic.
 
-The page is the destination, the Smart Link is the campaign entry URL, and the experiment manages the comparison.
+A simple way to think about it is:
 
-## How it works
+**Your ad or campaign uses one Smart Link → Jurni assigns incoming visitors to the experiment variants → you compare what those visitors do.**
+
+The experiment is the testing layer behind the campaign URL. You do not need to create separate ad destinations for each Jurni variant.
+
+## A real example
+
+Suppose your Meta ad leads with **convenience**, but the current landing page hero leads with a broad brand message.
+
+Your hypothesis might be:
+
+> If the hero continues the convenience angle, first-time Meta visitors will be more likely to purchase because the page will feel immediately relevant to the ad they clicked.
+
+You keep the product, offer, CTA, and rest of the page the same, then compare:
+
+- **Control:** current hero
+- **Variant:** convenience-focused hero
+
+That is a cleaner experiment than redesigning the whole page and calling the result a “hero test.”
+
+## How a Jurni experiment works
 
 <Steps>
-  <Step title="Prepare the alternatives">
-    Build and test the pages you want to compare. A variant can be a published Jurni page or a supported existing website URL. Custom destinations need the appropriate Jurni tracking connection for reporting.
+  <Step title="Start with a question">
+    Write the observation, hypothesis, one intended change, and the primary metric you will use to judge it. If you need help choosing the test, use the [Jurni Academy CRO review](/academy/playbooks/cro-review).
   </Step>
-  <Step title="Configure the test">
-    Name the experiment, choose a new or available existing Smart Link, and set the variant destinations and traffic weights.
+  <Step title="Prepare the variants">
+    Build and publish the pages you want to compare. A variant can use a Jurni page or a supported existing website destination when the required measurement is connected.
   </Step>
-  <Step title="Send traffic through the test link">
-    Put the connected Smart Link in your campaign. Going directly to a variant page does not automatically enter the test.
+  <Step title="Choose the Smart Link">
+    Create a new Smart Link for a new campaign, or deliberately connect an existing Smart Link when the campaign is already sending traffic through it.
   </Step>
-  <Step title="Compare results and decide">
-    Review the variants using the same date range and the metric chosen for your hypothesis. When ending a test, deliberately choose the destination that should continue receiving traffic.
+  <Step title="Set the traffic split">
+    Add the variant destinations and choose the intended weights. The percentages describe the intended allocation over traffic; they are not a promise that every small sample will be perfectly even.
+  </Step>
+  <Step title="Send campaign traffic through the Smart Link">
+    Use the experiment's Smart Link as the campaign entry URL. Going directly to an individual variant bypasses the normal experiment entry path.
+  </Step>
+  <Step title="Read the result against the original hypothesis">
+    Use the same date range and compare the primary metric you selected before looking at the result. Use other metrics to understand behavior, not to quietly replace the success question after the test starts.
   </Step>
 </Steps>
 
-[Create an experiment](/experiments/create-experiment) provides the setup steps.
+Use [Create an experiment](/experiments/create-experiment) for the exact setup controls or [Run your first A/B test](/academy/playbooks/first-ab-test) for the complete marketer workflow.
 
-## What to understand before launching
+## New Smart Link or existing Smart Link?
 
-**Weights describe the intended split, not an exact visitor-by-visitor quota.** Small samples can be uneven, and returning visitors can retain an assignment. Refreshing one browser repeatedly does not test the allocation.
+**Create a new Smart Link** when you are launching a new campaign and want a fresh campaign URL.
 
-**Routing Rules are optional.** They can direct matching URL-parameter traffic to a specific variant before the normal split. That is useful for campaign routing, but is a different traffic setup from a simple randomized comparison.
+**Use an existing Smart Link** when a live campaign already sends traffic through that link and you intentionally want the experiment to begin routing that traffic across variants.
 
-**Reporting depends on the measurement setup.** A link can open an external page successfully without its required events being tracked. Check the purchase path and measurement before launching.
+Before connecting a live link, confirm what currently receives its traffic. The Smart Link is not just a label in the experiment—it is the campaign entry URL.
 
-[Traffic assignment](/experiments/traffic-assignment) · [Routing Rules](/experiments/routing-rules) · [Testing existing pages](/experiments/testing-against-website)
+## What should I test?
 
-## Choose a useful comparison
+Good experiments change one meaningful customer decision, for example:
 
-Use a clear hypothesis and a primary metric. CVR measures orders relative to sessions; AOV measures revenue per order; RPS measures revenue per session. Interaction rates can help explain where shoppers progress or drop off.
+- campaign-specific hero message
+- proof placement
+- shorter versus longer education path
+- product introduced earlier versus later
+- offer presentation
+- clearer one-time versus subscription framing
+- comparison section versus no comparison section
 
-Do not choose a winner simply because one number is temporarily higher. See [Reading results](/experiments/reading-results) and [Testing best practices](/experiments/strategic-experiments). Exact definitions belong in the [metrics glossary](/data-dictionary/metrics-glossary).
+A complete redesign can still be compared, but it answers a broader question: **“Did this whole treatment perform differently?”** It tells you less about which individual change mattered.
 
-## Keep the campaign link stable
+See [Decide what to test next](/academy/playbooks/what-to-test) for a prioritization framework.
 
-When your campaign already uses the experiment's Smart Link, you can manage the test behind that entry URL. Page changes, variant changes, pausing, and ending are still different actions with different effects.
+## Which metric should I care about?
+
+Choose the metric that matches the hypothesis.
+
+| If your question is mainly… | A useful primary metric may be… |
+| --- | --- |
+| “Did more sessions become orders?” | **CVR** |
+| “Did this treatment create more revenue per visit?” | **RPS** |
+| “Did purchasers build larger baskets?” | **AOV** |
+| “Did more visitors interact with the product / CTA?” | **CTR / Add-to-Cart / Checkout Rate**, depending on the step |
+
+Jurni also shows Sessions, Orders, and Revenue so you can understand the scale behind the rate metrics.
+
+Do not pick whichever metric looks best after the result. See [Reading experiment results](/experiments/reading-results) for the current reporting workflow and [Metrics glossary](/data-dictionary/metrics-glossary) for definitions.
+
+## Why can the traffic split look uneven?
+
+Weights are the intended allocation over traffic. Small samples can naturally look uneven, and returning visitors can retain their existing assignment. Repeatedly refreshing your own browser is not a useful way to validate the split.
+
+Use [How traffic assignment works](/experiments/traffic-assignment) when you need the detailed behavior.
+
+## When should I use Routing Rules?
+
+Routing Rules are for traffic that should go to a specific variant based on URL parameters rather than simply joining the normal weighted comparison.
+
+For example, you might intentionally send one campaign parameter to a matching experience. That is useful routing behavior, but it changes how that traffic participates in the experiment. See [Routing Rules](/experiments/routing-rules).
+
+## Before you launch
+
+Open the exact Smart Link and verify:
+
+- the intended destination variants are published
+- mobile works
+- product / CTA / cart behavior is correct in every variant
+- campaign parameters behave as intended
+- required tracking is connected
+
+If you are testing an external website page, a link opening successfully does not mean Jurni can measure all of the outcomes you need. Follow [Testing a Jurni page against an existing website](/experiments/testing-against-website).
+
+## Pausing and ending need deliberate traffic decisions
 
 <Warning>
-  Before pausing or ending a test with live traffic, check where visitors will go. The current pause dialog warns that traffic will go to the shop home page; ending asks you to select the winning destination. Read [Pause, end, and reuse](/experiments/pause-end-reuse) first.
+  The current pause flow warns that traffic will go to the shop home page. Ending an experiment asks you to choose the winning destination that should continue receiving traffic. Do not pause or end a live campaign casually—review [Pause, end, and reuse an experiment](/experiments/pause-end-reuse) first.
 </Warning>
 
-## Related guides
+## Learn the workflow, then use the Help Center for the controls
 
-- [Test your campaign link](/publishing/check-campaign-link)
-- [Experiment versus experience sessions](/troubleshooting/experiment-experience-sessions)
+- [Academy: Run your first A/B test](/academy/playbooks/first-ab-test)
+- [Academy: Review a page before testing](/academy/playbooks/cro-review)
+- [Create an experiment](/experiments/create-experiment)
+- [Read experiment results](/experiments/reading-results)
 - [Troubleshoot traffic assignment](/experiments/traffic-troubleshoot)

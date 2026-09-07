@@ -12,15 +12,6 @@
     "dark": "/images/white1.svg"
   },
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Changelog",
-          "href": "https://getjurni.ai",
-          "icon": "rocket"
-        }
-      ]
-    },
     "tabs": [
       {
         "tab": "Get Started",

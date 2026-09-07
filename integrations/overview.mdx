@@ -5,63 +5,118 @@ description: "Find the right integration and finish the account, page-widget, or
 icon: "plug"
 ---
 
-Start with the job you need the integration to do. **Connecting an account, placing a widget, and configuring tracking are different tasks.** Use the provider guide for the exact values and setup steps.
+Connect the tools your team already uses, then verify the **customer-facing result** on the real Jurni page.
 
-## Track visits and conversions
+You do not need every integration. Start with the outcome you need.
 
-| Tool | Use it for |
-| --- | --- |
-| [Google Analytics 4](/integrations/google-analytics) | Website activity and campaign analysis in your GA4 property. |
-| [Google Tag Manager](/integrations/gtm) | Loading your team's tag container; tags and event mappings are configured separately. |
-| [Meta Pixel](/integrations/meta-pixel) | Supported browser events for the website pixel used by Meta advertising. |
-| [TikTok Pixel](/integrations/tiktok) | Supported browser events for the TikTok website data source. |
-| [Northbeam](/integrations/northbeam) | Including Jurni pages in your Northbeam measurement setup. |
-| [Axon](/integrations/axon) | Axon/AppLovin browser-pixel tracking. |
-| [Polar Analytics](/integrations/polar-analytics) | Supported page events for the Shopify store connected to Polar. |
-| [Triple Whale](/integrations/triple-whale) | Loading Triple Pixel for the connected Shopify shop. |
-| [Blotout EdgeTag](/integrations/blotout) | Connecting the existing EdgeTag implementation agreed with your tracking team. |
-| [Shopify Analytics](/getting-started/shopify-analytics) | The supported Shopify analytics setup for Jurni-hosted pages. |
+## What are you trying to connect?
 
-Configure these from **Settings → Integrations → Data Integrations**. Most tracking IDs share one **Save Changes** action; Shopify Analytics and Triple Whale have their own controls.
+<CardGroup cols={2}>
+  <Card title="Analytics & pixels" icon="chart-line" href="/getting-started/tracking-pixels">
+    Send supported page activity into GA4, Meta Pixel, TikTok, GTM, Northbeam, Polar, Axon, Triple Whale, or your existing measurement setup.
+  </Card>
 
-## Display reviews, collect leads, and show pop-ups
+  <Card title="Reviews" icon="star" href="/integrations/review-integrations">
+    Show the real reviews your brand already collects in Okendo, Yotpo, Junip, Judge.me, Stamped, Trustpilot, REVIEWS.io, or Bazaarvoice.
+  </Card>
 
-For reviews, connect the provider in **Settings → Integrations → Reviews & Pop-ups**, then add its widget from the **editor → Integrations** panel. Some widgets need another identifier after the account is connected.
+  <Card title="Forms & pop-ups" icon="mail" href="/integrations/klaviyo">
+    Add Klaviyo or Postscript signup experiences and control supported pop-up providers such as Alia.
+  </Card>
 
-[Okendo](/integrations/okendo) · [Junip](/integrations/junip) · [Yotpo](/integrations/yotpo) · [Judge.me](/integrations/judge-me) · [Stamped](/integrations/stamped) · [Trustpilot](/integrations/trustpilot) · [REVIEWS.io](/integrations/reviews-io) · [Bazaarvoice](/integrations/bazaarvoice)
+  <Card title="Meta Ads" icon="megaphone" href="/integrations/meta-ads">
+    Connect the advertising account for Jurni's ad-data workflows. This is separate from the Meta Pixel used for browser tracking.
+  </Card>
 
-For lead collection, use [Klaviyo](/integrations/klaviyo) or [Postscript](/integrations/postscript). Use [Alia](/integrations/alia) for its pop-up connection. Embedded forms are placements on the page; [pop-up controls](/build/page-popups) are separate experience-level switches.
+  <Card title="Figma" icon="figma" href="/building-funnels/figma-file">
+    Connect private Figma designs so your team can use frames directly in Jurni AI workflows.
+  </Card>
 
-## Connect ad accounts, design tools, and your team
+  <Card title="Slack" icon="message-square" href="/integrations/connect-slack">
+    Connect your workspace, then configure the Jurni notifications and reports your team actually wants to receive.
+  </Card>
 
-[Meta Ads](/integrations/meta-ads) connects the advertising account and supports the related ad-data workflows. **It does not replace Meta Pixel setup.**
+  <Card title="Affiliate & creator tools" icon="users" href="/integrations/affiliate-tools">
+    Connect supported Affiliatly or Bix Grow references to the creator campaign workflow.
+  </Card>
 
-[Figma](/building-funnels/figma-file) connects design references to your page-building workflow. [Slack](/integrations/connect-slack) connects the workspace; [scheduled reports](/notifications/slack-reports) are configured separately.
+  <Card title="Something custom" icon="code-2" href="/integrations/custom-scripts">
+    Use Custom Scripts only when a native integration is not the right fit and browser-side installation is appropriate.
+  </Card>
+</CardGroup>
 
-[Affiliatly and Bix Grow](/integrations/affiliate-tools) support the relevant affiliate setup; [creator records](/integrations/manage-creators) hold the corresponding creator information.
+## The integration workflow
 
-## Complete the connection, not just the form
+Most integrations have two or three steps:
 
 <Steps>
-  <Step title="Get the right values">
-    Open the provider guide and copy the required ID, URL, or public token from the correct brand account. Some connections use an authorization screen or a switch instead; do not create an API key unless the guide asks for it.
+  <Step title="Connect the provider">
+    Open **Settings → Integrations**, choose the correct brand account, and enter or authorize the value Jurni asks for. The provider-specific guide tells you exactly where to find it.
   </Step>
-  <Step title="Configure Jurni">
-    Save the account connection. For a widget, add and configure its page placement. For tracking, have your tracking owner check the required events and checkout connection.
+  <Step title="Configure where it should appear or what it should track">
+    A connected review provider still needs a review widget on the page. A connected Klaviyo account still needs the intended form or pop-up setup. A GTM container still needs its actual tags and triggers configured in GTM.
   </Step>
-  <Step title="Verify the published destination">
-    Test the real page and shopper action. Check the expected review, signup, or event in the provider, not just the integration's enabled state.
+  <Step title="Test the real published page">
+    Open the final campaign destination and perform the action you care about. Verify the review, signup, or event in the third-party platform—not only the “connected” state in Jurni.
   </Step>
 </Steps>
 
-## Shopify Pages and custom storefronts
+## Tracking & analytics providers
 
-**Shopify Pages** run in your theme, where some tools may already be installed. Verify the final page for missing or duplicate scripts. A working Jurni-hosted preview does not verify a Shopify theme placement.
+| If your team uses… | Start here | What Jurni needs |
+| --- | --- | --- |
+| Google Analytics 4 | [GA4 setup](/integrations/google-analytics) | Your web stream's **G- Measurement ID** |
+| Google Tag Manager | [GTM setup](/integrations/gtm) | Your **GTM- container ID** |
+| Meta Pixel | [Meta Pixel setup](/integrations/meta-pixel) | The website Pixel ID(s) |
+| TikTok | [TikTok Pixel setup](/integrations/tiktok) | The website Pixel ID |
+| Northbeam | [Northbeam setup](/integrations/northbeam) | The Data Client ID / pixel ID used by your Northbeam setup |
+| Polar Analytics | [Polar setup](/integrations/polar-analytics) | The connected Shopify store's `.myshopify.com` domain |
+| Axon / AppLovin | [Axon setup](/integrations/axon) | The browser pixel Event Key |
+| Blotout | [Blotout setup](/integrations/blotout) | The EdgeTag URL supplied for your implementation |
+| Triple Whale | [Triple Whale setup](/integrations/triple-whale) | No pasted key in the current Jurni card; enable the integration for the connected Shopify shop |
+| Shopify Analytics | [Shopify Analytics setup](/getting-started/shopify-analytics) | The public Storefront API token used by the supported setup |
 
-For **headless or non-Shopify stores**, confirm catalog identifiers and downstream cart/checkout tracking with the Jurni team. A provider connection does not automatically configure your commerce integration.
+The individual guide explains **where to get the value**, where to put it, and how to verify it.
 
-For a tool not listed here, use [Custom Scripts](/integrations/custom-scripts) only when the implementation is appropriate, or contact the team about a custom integration.
+## Review providers
 
-## Need a specific value?
+Choose the platform your brand already uses:
 
-Use the [connection-details directory](/integrations/api-keys) for a quick map of what to copy and where it goes. Use [Integration troubleshooting](/integrations/troubleshooting) when a connection saves but the expected result is missing.
+[Okendo](/integrations/okendo) · [Yotpo](/integrations/yotpo) · [Junip](/integrations/junip) · [Judge.me](/integrations/judge-me) · [Stamped](/integrations/stamped) · [Trustpilot](/integrations/trustpilot) · [REVIEWS.io](/integrations/reviews-io) · [Bazaarvoice](/integrations/bazaarvoice)
+
+The workflow is usually:
+
+**connect provider → add its review section → choose the correct product / widget / SKU when required → publish → compare the reviews with the provider.**
+
+Do not paste screenshots of reviews when the goal is to keep the page connected to the live review provider.
+
+## Forms and pop-ups
+
+Use [Klaviyo](/integrations/klaviyo) for supported embedded forms and Klaviyo pop-up control. Use [Postscript](/integrations/postscript) for supported SMS signup forms and pop-ups. Use [Alia](/integrations/alia) for its supported pop-up script connection.
+
+A shop-level connection and a page-level form are different things. If the account is connected but the page still shows a placeholder, complete the form/widget setup on the page.
+
+## Meta Ads is not Meta Pixel
+
+These are intentionally separate:
+
+- **Meta Ads connection** → lets Jurni work with the selected advertising account and related ad data.
+- **Meta Pixel** → loads the configured website pixel for supported browser tracking.
+
+Many brands use both. Connecting one does not automatically configure the other.
+
+## Shopify Pages need a second check
+
+A native Shopify Page runs inside the Shopify theme, where Klaviyo, review apps, GTM, pixels, and cart apps may already load.
+
+Before adding another installation, test the actual `/pages/` destination and check what the theme already provides. Duplicate installations can create duplicate events or widgets.
+
+## Headless and non-Shopify stores
+
+A provider connection does not automatically solve product mapping, cart/checkout attribution, or a custom storefront's script environment. For those setups, use the provider guide for the Jurni side and confirm the storefront implementation with the Jurni team.
+
+## Can't find the value Jurni is asking for?
+
+Use [Where to find integration connection details](/integrations/api-keys) for the quick lookup table, then open the provider guide for screenshots/steps as those are added.
+
+If the integration saves but the expected result is missing, use [Integration troubleshooting](/integrations/troubleshooting).

@@ -4,80 +4,155 @@ sidebarTitle: "Overview"
 description: "Understand Jurni analytics for individual experiences and experiments, including sessions, conversion rates, revenue, attribution, and how to compare performance responsibly."
 ---
 
-Jurni analytics connect traffic, shopper behavior, commerce events, and experiment assignments so you can understand how each experience performs from landing through purchase.
+Jurni analytics should help you answer a marketing question—not just give you another dashboard to watch.
 
-## Where analytics appear
-
-Jurni reporting is organized around two main questions:
+Start with what you are trying to learn:
 
 <CardGroup cols={2}>
-  <Card title="How is this experience performing?" icon="chart-line">
-    Use experience analytics to review traffic, conversion, revenue, and shopper behavior for a specific Jurni experience.
+  <Card title="How is this page performing?" icon="chart-line" href="/analytics-reporting/experience-analytics">
+    Use experience analytics when you want to understand the traffic and outcomes associated with one Jurni experience.
   </Card>
 
-  <Card title="Which variant performs better?" icon="flask">
-    Use experiment results to compare the same metrics across variants that received controlled traffic.
+  <Card title="Which treatment performed better?" icon="flask" href="/experiments/reading-results">
+    Use experiment results when traffic was deliberately split across variants and you want to compare the treatments.
   </Card>
 </CardGroup>
 
-## Core metrics
+That distinction matters. A page can receive direct traffic, campaign traffic, or experiment traffic. An experiment view is specifically about the traffic assigned through that test.
 
-The main metrics you will see across Jurni include:
+## The metrics marketers use most
 
-- Sessions
-- Conversion rate (CVR)
-- Revenue
-- Average order value (AOV)
-- Revenue per session (RPS)
-- Add-to-cart rate
-- Checkout rate
-- Purchases / orders
+| Metric | The question it helps answer |
+| --- | --- |
+| **Sessions** | How many measured visits are in this view? |
+| **Orders** | How many attributed purchases came from those sessions? |
+| **Revenue** | How much attributed revenue came from those sessions? |
+| **CVR** | What share of sessions became orders? |
+| **RPS** | How much revenue did each session generate on average? |
+| **AOV** | How much revenue did the average attributed order contain? |
+| **CTR** | What share of sessions included a tracked click? |
+| **Add-to-Cart Rate** | What share of sessions reached add to cart? |
+| **Checkout Rate** | What share of sessions reached checkout? |
 
-For exact definitions and formulas, use the Metrics Glossary.
+Use the [Metrics glossary](/data-dictionary/metrics-glossary) when you need the exact definition or formula.
 
-## Read the full conversion journey, not only the final conversion
+## Start with the business outcome, then diagnose the journey
 
-A purchase is the final outcome, but intermediate steps help explain **why** performance changed.
+If the campaign goal is purchase conversion, start with CVR or the relevant revenue metric. Then use earlier steps to understand **where behavior changed**.
 
-A common conversion journey looks like:
+For example:
 
-`Session → Product interaction → Add to Cart → Checkout → Purchase`
+**Low CTR** can mean the page is not making the next action compelling or obvious.
 
-If CVR falls, inspect the earlier steps:
+**CTR is healthy but Add-to-Cart Rate is weak** can point to product, offer, or purchase-choice friction.
 
-- Low add-to-cart rate can point to product, offer, or page-message friction.
-- Healthy add-to-cart with low checkout can point to cart friction.
-- Healthy checkout with low purchase can point to checkout, payment, shipping, or discount issues.
+**Add-to-Cart Rate improves but CVR does not** means more people reached cart without a matching increase in orders. Look further down the journey before declaring the page better.
 
-## Filters and date ranges
+**CVR is flat but RPS improves** can mean the treatment influenced revenue per visit through order value or product mix.
 
-Use the same date range and filters when comparing performance. Changing the date range, traffic source, or experience selection can materially change the result.
+These are diagnostic patterns, not automatic explanations. The numbers tell you **what changed**, not necessarily **why**.
 
-When comparing Jurni with another platform, also align:
+## Use the same context when comparing performance
 
-- Timezone
-- Attribution window
-- Session definition
-- Included traffic
-- Consent state
+Before comparing two periods or views, check:
 
-## Experiments
+- date range
+- campaign / traffic source
+- audience
+- offer
+- product availability
+- market / currency
+- major page changes
+- consent / tracking changes
 
-Experiment analytics use the same commerce outcomes but break them down by variant. A valid experiment requires more than one variant having a higher number at a point in time—traffic allocation, sample size, duration, and the decision metric all matter.
+A “better” week can simply contain different traffic or a stronger offer.
 
-## Attribution
+## Experience analytics versus experiment results
 
-Jurni maintains attribution context across supported Jurni-to-commerce flows. Third-party tools can report different totals because they use their own cookies, identity rules, consent handling, and attribution models.
+### Experience analytics
 
-<Info>
-  Use Jurni analytics as the source of truth for Jurni experience and experiment performance, then use external analytics platforms to understand their own channel-specific view of the same traffic.
-</Info>
+Use this when you want to understand the performance of a page itself across the traffic reaching it.
 
-## Related guides
+Good questions:
 
-- Experience analytics
-- Conversion step performance
-- Filtering data
-- Attribution overview
-- Metrics glossary
-- Reading experiment results
+- How much traffic did this experience receive?
+- What is its CVR / RPS?
+- Where do shoppers progress or drop off?
+- Did performance change after a page update?
+
+Be careful when comparing two separate experiences that received different traffic. A higher CVR does not automatically mean one design caused the difference.
+
+### Experiment results
+
+Use this when you intentionally routed comparable traffic across variants through the experiment's Smart Link.
+
+Good questions:
+
+- Which variant leads on the metric we chose for this hypothesis?
+- Did the treatment change earlier journey behavior?
+- What did this test teach us?
+
+For the complete marketer workflow, use [Run your first A/B test](/academy/playbooks/first-ab-test).
+
+## Pick your primary metric before you chase the dashboard
+
+A simple decision guide:
+
+- **CVR** — purchase conversion is the main question.
+- **RPS** — you care about the combined revenue effect of conversion and basket value.
+- **AOV** — the treatment is specifically intended to influence order value among purchasers.
+- **CTR / ATC / Checkout Rate** — the hypothesis is focused on an earlier step, or you are using these as diagnostics.
+
+If the treatment changes subscription mix, bundles, quantities, or upsells, revenue metrics may tell a different story from CVR alone.
+
+## Why Jurni can disagree with GA4, Meta, or another analytics platform
+
+Different platforms can use different:
+
+- session definitions
+- identity / cookie rules
+- attribution windows
+- consent handling
+- channel attribution
+- timezone and date boundaries
+- event deduplication
+
+That means totals do not need to match exactly to be useful.
+
+When investigating a large difference, align the date range and traffic first, then check the measurement path. Use [Why analytics platforms differ](/troubleshooting/analytics-differences) and [Attribution overview](/analytics-reporting/attribution-overview).
+
+## Turn analytics into a next action
+
+Use this prompt when you want Jurni AI to help organize what you see:
+
+```text
+Here is the page context and Jurni analytics:
+
+TRAFFIC / AUDIENCE
+[context]
+
+PAGE / OFFER CHANGES
+[context]
+
+METRICS
+[paste relevant values]
+
+Do not claim a cause from correlation.
+Separate:
+1. OBSERVATIONS — what changed
+2. POSSIBLE FRICTION POINTS — hypotheses worth investigating
+3. WHAT ELSE I SHOULD CHECK
+4. 3 TESTABLE NEXT HYPOTHESES
+
+Prioritize customer decisions over cosmetic changes.
+```
+
+Then use [Review a page before testing](/academy/playbooks/cro-review) or [Decide what to test next](/academy/playbooks/what-to-test) to turn the observation into a clean experiment.
+
+## Continue
+
+- [Experience analytics](/analytics-reporting/experience-analytics)
+- [Conversion-step performance](/analytics-reporting/funnel-step-performance)
+- [Reading experiment results](/experiments/reading-results)
+- [Filtering analytics](/analytics-reporting/filtering-experiences)
+- [Metrics glossary](/data-dictionary/metrics-glossary)
