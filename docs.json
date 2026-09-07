@@ -389,7 +389,9 @@
       },
       {
         "tab": "Academy",
-        "href": "/academy"
+        "pages": [
+          "academy"
+        ]
       }
     ]
   },
