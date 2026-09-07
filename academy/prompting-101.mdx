@@ -1,0 +1,595 @@
+---
+title: "Prompting 101 for Jurni AI"
+sidebarTitle: "Prompting 101"
+description: "A practical performance-marketer guide to briefing Jurni AI, using references, preserving working behavior, iterating safely, and getting stronger page outputs."
+icon: "brain-circuit"
+hidden: true
+---
+
+Prompting Jurni well is much closer to **briefing a strong creative teammate** than writing a magic command. The goal is not to make every prompt long. The goal is to give Jurni the context it needs, remove ambiguity where it matters, and protect the parts of the page that already work.
+
+This guide is written for performance marketers, ecommerce teams, and CRO teams. You do not need to know code.
+
+## The most important idea
+
+A useful prompt answers five questions:
+
+1. **Why are we doing this?**
+2. **What real source material should Jurni use?**
+3. **What exactly should change or be built?**
+4. **What must not change?**
+5. **How will we know the result is ready to review?**
+
+For complex work, use the **BRIEF** structure below.
+
+## The Jurni BRIEF framework
+
+### B — Business context
+
+Tell Jurni who the page is for and what job the page needs to do.
+
+Useful context:
+
+- traffic source: Meta, TikTok, Google, creator, email, organic;
+- audience: cold prospect, retargeting visitor, returning customer;
+- campaign angle: the promise or story from the ad;
+- product or category;
+- approved offer;
+- primary action;
+- what you are trying to learn or improve.
+
+You do **not** need to invent an arbitrary conversion target just to make the prompt sound sophisticated. If you have a real target, include it. Otherwise state the actual objective.
+
+```text
+BUSINESS CONTEXT
+We are sending cold Meta traffic from a creator ad to this page.
+The ad angle is “an easier 2-minute morning routine.”
+The page should help a first-time visitor understand the product, trust it,
+and choose the intended purchase option.
+```
+
+### R — References and real sources
+
+Tell Jurni what it can trust.
+
+Strong sources include:
+
+- the connected product;
+- approved product / claim copy;
+- the ad creative;
+- approved customer reviews or UGC;
+- brand imagery;
+- a URL or screenshot used as design inspiration;
+- Figma frames;
+- AI Knowledge that your team keeps current.
+
+Do not make Jurni guess which attachment is a **reference** versus actual **content**.
+
+```text
+REFERENCES
+- Attached product = source of product and purchase information.
+- Image 1 = layout reference only. Do not place this image in the page.
+- Image 2 = approved hero image to use in the page.
+- Attached Meta ad = source of the campaign angle.
+- Use our AI Knowledge for approved brand voice and product claims.
+```
+
+### I — Instructions
+
+Describe the outcome and the meaningful changes.
+
+Be concrete about:
+
+- the page type;
+- section order when it matters;
+- message hierarchy;
+- the one primary CTA;
+- what should happen on mobile;
+- the specific section / element if editing an existing page.
+
+```text
+INSTRUCTIONS
+Create a new hero for the selected page.
+Lead with the same “2-minute morning routine” angle as the ad.
+Place the headline, short supporting copy, and primary CTA on the left on desktop.
+Use the approved product image on the right.
+Add a compact proof row below the CTA using only the supplied proof.
+```
+
+Avoid replacing clear instructions with adjectives.
+
+**Weak:** “Make this more premium and high converting.”
+
+**Stronger:** “Reduce the hero to one headline, one sentence, one CTA, and three short proof points. Increase whitespace and remove the secondary link competing with the main CTA.”
+
+### E — Existing behavior to preserve
+
+This is especially important when a page is already working.
+
+Tell Jurni what is **locked**:
+
+- product selection;
+- variants;
+- subscription / selling-plan choices;
+- quantities;
+- price and offer logic;
+- CTA action or URL;
+- integration widget;
+- sections outside the selected area;
+- approved copy that must remain exact.
+
+```text
+EXISTING BEHAVIOR TO PRESERVE
+Keep the current product, variants, subscription choices, prices,
+quantities, and Add to Cart behavior unchanged.
+Do not edit any section below the selected hero.
+Do not replace the review widget with static review text.
+```
+
+A sentence saying “only change this page” does not override the actual scope of shared content. If you are editing a Global Section or other shared source, confirm that scope in Jurni first.
+
+### F — Finish criteria
+
+Tell Jurni what “done enough to review” looks like.
+
+```text
+FINISH CRITERIA
+- Mobile: copy first, image second, full-width CTA, no horizontal overflow.
+- Desktop: keep the two-column layout.
+- Use only approved claims and supplied proof.
+- Keep the main CTA visible in the first screen.
+- After the edit, summarize what changed and what I still need to verify in the live cart/checkout.
+```
+
+Finish criteria are not a guarantee that AI tested a real checkout. They tell Jurni how to shape and review the output. You still verify live behavior.
+
+## A complete BRIEF prompt
+
+```text
+BUSINESS CONTEXT
+Cold Meta traffic for [PRODUCT].
+Audience: [AUDIENCE].
+Ad angle: [ANGLE].
+Primary action: [ACTION].
+
+REFERENCES
+- Attached product = source of real product information.
+- Attached ad = message and audience reference.
+- Image 1 = layout inspiration only.
+- Use AI Knowledge for brand voice and approved claims.
+
+INSTRUCTIONS
+Build a dedicated landing page that carries the ad message into the page.
+Structure:
+1. Message-matched hero
+2. Fast trust / proof
+3. Three key benefits
+4. How it works / product education
+5. Approved social proof
+6. Product / purchase section
+7. FAQ for the main objections
+8. Final CTA
+
+EXISTING BEHAVIOR TO PRESERVE
+Use the connected product and its real purchase choices.
+Do not invent discounts, reviews, results, claims, or scarcity.
+
+FINISH CRITERIA
+Prioritize mobile.
+One primary conversion path.
+Keep sections easy to scan.
+At the end, list anything that needs live cart/checkout verification.
+```
+
+## You do not need BRIEF for every prompt
+
+Use a short request when the task is simple and the context is obvious.
+
+```text
+In the selected hero, shorten the paragraph to two sentences.
+Keep the headline, image, CTA, layout, and every other section unchanged.
+```
+
+The BRIEF framework is most useful for:
+
+- new campaign pages;
+- large redesigns;
+- pages built from references;
+- commerce-heavy sections;
+- changes where multiple constraints matter;
+- important A/B test variants.
+
+## Four ways to prompt Jurni
+
+### 1. Build prompting
+
+Use when creating a page or substantial section from a brief.
+
+```text
+Build an advertorial for first-time visitors arriving from [AD ANGLE].
+Use the supplied founder story and approved product facts.
+The article should educate first, introduce the product naturally,
+and move to the purchase section only after the core problem and mechanism are clear.
+```
+
+See the [Advertorial playbook](/academy/playbooks/advertorial).
+
+### 2. Edit prompting
+
+Use when the page is directionally right and you want a scoped change.
+
+```text
+Change only the selected testimonial section.
+Move it directly above the purchase section and show three testimonials instead of six.
+Keep the testimonial wording, customer attribution, styling, and all other sections unchanged.
+```
+
+This is usually more reliable than asking AI to “improve the page” repeatedly.
+
+### 3. Review prompting
+
+Ask Jurni to inspect before changing anything.
+
+```text
+Review the current page for a cold paid-social visitor.
+Do not edit yet.
+
+Assess:
+- message match with the attached ad;
+- clarity of the first screen;
+- proof appearing before high-friction asks;
+- CTA consistency;
+- mobile hierarchy;
+- repeated or unnecessary sections.
+
+Separate:
+1. Issues you can see in the page.
+2. Things I need to verify in the live cart, checkout, tracking, or provider.
+Prioritize the top 5 changes by likely customer impact.
+```
+
+Review prompting is useful when you know the page is weak but do not yet know the best change.
+
+### 4. Meta prompting
+
+Ask Jurni to improve the brief itself before building.
+
+```text
+Do not build yet.
+Review the campaign prompt below as a senior performance marketer.
+Tell me what information is missing or ambiguous.
+Ask only the questions that would materially change the page.
+Then rewrite my prompt into a clear BRIEF structure for Jurni.
+
+[PASTE ROUGH PROMPT]
+```
+
+This is one of the best ways to avoid a long round of generic output when the campaign strategy is not defined yet.
+
+## Reverse prompting: turn a good result into a reusable prompt
+
+After you finish a strong page or section, capture the pattern.
+
+```text
+Do not change the page.
+Analyze the final structure and the decisions we made in this chat.
+Turn this into a reusable prompt template for another product or campaign.
+Replace campaign-specific details with [PLACEHOLDERS].
+Separate strategy, page structure, must-keep behavior, and QA criteria.
+```
+
+This is how a team builds a useful internal prompt library instead of rewriting the same brief every week.
+
+## Working with screenshots and reference pages
+
+A reference should have a job.
+
+### Layout reference
+
+```text
+Use Reference 1 for layout and visual hierarchy only.
+Do not copy its brand, product, claims, testimonials, logo, pricing, or imagery.
+Rebuild the structure with our editable Jurni content and supplied assets.
+```
+
+### Content image
+
+```text
+Image 2 is approved content. Use it as the hero product image.
+Do not crop out the product cap or label on mobile.
+```
+
+### Interaction reference
+
+A screenshot cannot explain dynamic behavior. State it.
+
+```text
+Use the reference for the visual treatment of the selector.
+Behavior should stay the same as our existing purchase section:
+customers select the available real product option and then use the existing purchase action.
+Do not replace the controls with static cards.
+```
+
+### URL reference
+
+When URL/reference input is available, explain *which part* matters.
+
+```text
+Use [REFERENCE URL] as inspiration for the hero and benefits storytelling.
+Do not replicate the full page.
+Do not reuse the other brand's copy, reviews, claims, product data, or offer.
+```
+
+This creates a better result than “copy this website.”
+
+## Working from Figma
+
+Treat desktop and mobile frames as two views of the same page.
+
+```text
+Desktop reference: [FIGMA DESKTOP FRAME]
+Mobile reference: [FIGMA MOBILE FRAME]
+
+These are two responsive versions of the same page.
+Follow their visual structure while keeping content and shopper controls editable.
+Use the attached product and approved assets.
+Do not add the mobile frame as another section below desktop.
+```
+
+See [Build from Figma](/building-funnels/figma-file) for the product workflow.
+
+## AI Knowledge vs. the current prompt
+
+Use **AI Knowledge** for information Jurni should understand across many builds: brand positioning, audience, product truths, approved claims, voice, and reusable guidance.
+
+Use the **current prompt** for campaign-specific instructions: this ad angle, this offer, this page structure, this experiment, this temporary seasonal message.
+
+A useful rule:
+
+> **Evergreen truth goes in AI Knowledge. Campaign intent goes in the prompt.**
+
+Do not overload evergreen knowledge with contradictory Black Friday, launch-week, or one-off test instructions that will be wrong next month.
+
+## Prompt incrementally, not endlessly
+
+A good workflow:
+
+1. Establish the campaign and page structure.
+2. Review the first screen.
+3. Refine proof and education.
+4. Confirm the purchase section.
+5. Fix mobile.
+6. Run a final review.
+7. QA the live page.
+
+Do not send one giant prompt containing 40 unrelated tweaks unless they are truly part of one coherent build.
+
+When the result is close, **anchor the good parts**:
+
+```text
+The section order and copy are correct. Keep them.
+Only the mobile hero needs another pass:
+- prevent the product image from cropping;
+- reduce the gap between subhead and CTA;
+- keep the CTA full width;
+- do not change desktop.
+```
+
+## Few-shot prompting: show the pattern you want
+
+Examples are useful for tone and structure.
+
+```text
+Use this headline pattern:
+[Specific benefit] + [who it is for]
+
+Examples of the style I want:
+- “Daily hydration without another complicated routine”
+- “A simpler wind-down for people who hate long routines”
+
+Write 5 options for [PRODUCT / AUDIENCE].
+Use only the approved benefits in AI Knowledge.
+Do not add numbers or outcomes we have not supplied.
+```
+
+Few-shot prompting is especially useful for:
+
+- headline style;
+- FAQ answer length;
+- benefit bullet structure;
+- CTA voice;
+- advertorial section rhythm;
+- comparison-table language.
+
+## How to prompt for mobile
+
+“Make it responsive” is less useful than describing the intended hierarchy.
+
+```text
+MOBILE ONLY
+- Stack copy above imagery.
+- Keep the product recognizable without scrolling past a full-screen image.
+- CTA should be full width.
+- Keep selectors easy to tap.
+- Reduce decorative spacing where it pushes the purchase decision too far down.
+- No horizontal overflow.
+
+DESKTOP
+Keep the current two-column structure unchanged.
+```
+
+Remember that responsive editing is still one page. Review both sizes after meaningful AI changes.
+
+## How to protect commerce behavior
+
+Commerce is where visual prompting can accidentally become dangerous.
+
+Use explicit language:
+
+```text
+Restyle the purchase section but preserve its real commerce behavior.
+Keep:
+- connected product;
+- available variants;
+- selling plans / subscription choices;
+- default selection;
+- quantities;
+- real displayed pricing logic;
+- current purchase action.
+
+Do not turn functional controls into static design elements.
+Do not invent a discount or promotional price.
+```
+
+A beautiful card saying “Subscribe & Save 20%” does not create a selling plan or discount. Verify the actual purchase in the intended cart / checkout.
+
+## How to create a clean experiment variation
+
+If you want to learn from a test, preserve everything except the hypothesis.
+
+```text
+This is an experiment variant.
+Change only [HYPOTHESIS].
+
+Keep unchanged:
+- product and purchase behavior;
+- offer and pricing;
+- all sections outside [TARGET];
+- tracking setup;
+- CTA destination;
+- mobile behavior unless the hypothesis specifically includes mobile.
+
+After editing, summarize exactly what differs from the control.
+```
+
+See [Controlled variation](/academy/playbooks/controlled-variation).
+
+## Prompt Jurni to critique, not hallucinate
+
+When asking AI for CRO ideas, separate observation from speculation.
+
+```text
+Audit this page for a first-time paid-social visitor.
+Do not invent customer research or performance data.
+
+For every recommendation, label it as:
+- PAGE OBSERVATION — directly visible in this page;
+- HYPOTHESIS — a testable interpretation;
+- DATA NEEDED — something we should verify in analytics, research, or checkout.
+```
+
+This produces a much more useful optimization conversation than “tell me why this page isn't converting.”
+
+## Common prompting mistakes
+
+### “Make it better”
+
+**Problem:** no definition of better.
+
+**Instead:** name the target and desired outcome.
+
+```text
+The hero is too dense for cold mobile traffic.
+Reduce it to one headline, one short supporting sentence, one primary CTA,
+and no more than three compact proof points. Keep the existing product image.
+```
+
+### Asking AI to invent proof
+
+**Problem:** “add testimonials” gives the model no approved source.
+
+**Instead:** attach approved reviews or use a connected review provider.
+
+### Mixing layout and commerce instructions
+
+**Problem:** the AI may interpret a visual reference as behavior.
+
+**Instead:** say “match this styling; preserve this actual behavior.”
+
+### Too many changes at once
+
+**Problem:** you cannot tell which instruction created the bad result.
+
+**Instead:** work through the page in meaningful chunks.
+
+### Repeating the entire prompt after a small problem
+
+**Problem:** you reopen decisions that were already correct.
+
+**Instead:** explicitly keep the correct parts and describe the mismatch.
+
+### Treating AI confirmation as QA
+
+**Problem:** an assistant saying “done” does not prove a live discount, tracking event, or checkout works.
+
+**Instead:** use the real campaign URL and [QA checklist](/building-funnels/qa-checklist).
+
+## A recovery prompt when an edit goes wrong
+
+```text
+Stop making additional changes.
+
+What was correct before:
+- [CORRECT PART 1]
+- [CORRECT PART 2]
+
+What is wrong now:
+- [SPECIFIC PROBLEM]
+
+Restore / keep the correct parts and fix only the problem above.
+Do not change any other section, product selection, CTA behavior, or responsive layout.
+```
+
+Use Undo / version history when restoring the actual previous state is safer than trying to describe it back into existence.
+
+## A final AI review prompt
+
+```text
+Do not change anything yet.
+Review this page against the campaign brief and list issues by priority.
+
+Check:
+1. Message match with the traffic source / ad
+2. Audience clarity
+3. First-screen hierarchy
+4. Proof and credibility
+5. Product / purchase clarity
+6. Repeated or conflicting CTAs
+7. Mobile hierarchy
+8. Claims or copy that are not grounded in supplied sources
+9. Links or visible actions that appear inconsistent
+
+Separate:
+- visible page issues;
+- hypotheses worth testing;
+- things that require live cart / checkout / tracking verification.
+```
+
+## Before you press Send
+
+For an important prompt, ask yourself:
+
+- Is the audience clear?
+- Is the campaign angle clear?
+- Did I provide the real source material?
+- Did I tell Jurni which reference is for what?
+- Did I name the area to change?
+- Did I protect working behavior?
+- Did I say what not to invent?
+- Did I describe mobile when it matters?
+- Is this one coherent task or five unrelated tasks?
+
+If you can answer those quickly, the prompt is probably ready.
+
+## Next: copy a prompt instead of starting from zero
+
+<CardGroup cols={2}>
+  <Card title="Page-building prompts" href="/academy/prompts/page-building" icon="layout-template">Launch pages, advertorials, listicles, founder stories, creator pages, and reference builds.</Card>
+  <Card title="CRO & editing prompts" href="/academy/prompts/cro-editing" icon="wand-sparkles">Hero optimization, mobile fixes, proof, copy, section-level changes, and audits.</Card>
+  <Card title="Campaign & offer prompts" href="/academy/prompts/campaigns-offers" icon="badge-percent">Message match, promotions, GWP communication, subscription positioning, and creator campaigns.</Card>
+  <Card title="Experiment & QA prompts" href="/academy/prompts/experiments-qa" icon="flask-conical">Controlled variants, analysis, pre-launch review, and turning findings into test ideas.</Card>
+</CardGroup>
+
+<Note>
+  The examples in this Academy are templates, not guaranteed performance formulas. Adapt them to your actual audience, approved claims, offer, product, traffic source, and customer evidence.
+</Note>
