@@ -110,10 +110,7 @@
               {
                 "group": "Assets & Reuse",
                 "pages": [
-                  "build/assets-library",
-                  "build/template-library",
-                  "building-funnels/saved-sections",
-                  "build/global-sections"
+                  "build/assets-library"
                 ]
               },
               {
@@ -385,18 +382,12 @@
         ]
       },
       {
-        "tab": "Changelog",
+        "tab": "Guides",
         "pages": [
-          "changelog"
-        ]
-      },
-      {
-        "tab": "Academy",
-        "pages": [
-          "academy",
+          "guides",
           "academy/start/first-campaign",
           {
-            "group": "Campaign Playbooks",
+            "group": "Page Building Guides",
             "pages": [
               "academy/playbooks",
               "academy/playbooks/ad-to-landing-page",
@@ -412,21 +403,31 @@
             ]
           },
           {
-            "group": "AI & Prompting",
+            "group": "Prompting Guides",
             "pages": [
               "academy/prompting-101",
               "academy/prompt-library"
             ]
           },
           {
-            "group": "Commerce Playbooks",
+            "group": "Templates & Reusable Sections",
+            "icon": "layout-template",
             "pages": [
-              "academy/playbooks/gwp-campaign",
-              "academy/playbooks/subscription-campaign"
+              "build/template-library",
+              "building-funnels/saved-sections",
+              "build/global-sections"
             ]
           },
           {
-            "group": "CRO & Experimentation",
+            "group": "Commerce Guides",
+            "pages": [
+              "academy/playbooks/gwp-campaign",
+              "academy/playbooks/subscription-campaign"
+            ],
+            "hidden": true
+          },
+          {
+            "group": "Experimentation Guides",
             "pages": [
               "academy/playbooks/cro-review",
               "academy/playbooks/first-ab-test",
@@ -434,6 +435,18 @@
               "academy/playbooks/optimization-loop"
             ]
           }
+        ]
+      },
+      {
+        "tab": "Learn",
+        "pages": [
+          "learn"
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "pages": [
+          "changelog"
         ]
       }
     ]
