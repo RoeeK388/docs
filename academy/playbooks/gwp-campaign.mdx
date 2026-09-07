@@ -1,0 +1,176 @@
+---
+title: "Launch a gift-with-purchase campaign"
+sidebarTitle: "GWP campaign"
+description: "Coordinate the campaign story, Jurni gift qualification, Shopify discount, page messaging, cart behavior, and live checkout QA for a gift-with-purchase offer."
+icon: "gift"
+hidden: true
+---
+
+Use this playbook when the campaign incentive is a **gift with purchase (GWP)** and you need the landing page, Jurni offer rules, and Shopify checkout outcome to agree.
+
+A GWP campaign has two different jobs:
+
+1. **Jurni communicates and handles the supported gift qualification / selection flow.**
+2. **Shopify or your commerce setup must actually make the gift free or discounted as promised.**
+
+A beautiful “free gift” banner is not a working GWP campaign if checkout charges for the item.
+
+## Before you start
+
+Define the offer in one sentence:
+
+> When a shopper **[QUALIFYING CONDITION]**, they receive / can choose **[GIFT]**, up to **[LIMIT]**, during **[REAL CAMPAIGN SCOPE / TIMING]**.
+
+Gather:
+
+- gift product / variant;
+- qualifying product(s) or threshold;
+- purchase-type requirement, if any;
+- gift quantity / maximum;
+- actual Shopify discount / $0 product setup;
+- approved campaign copy / image;
+- intended Jurni experiences.
+
+## Phase 1 — Configure the real commerce rule
+
+For the current Shopify flow, use the Jurni **Gift with Purchase** offer to choose the gift and qualifying conditions. Separately configure the actual Shopify pricing / discount setup that makes the gift free when the campaign promises free.
+
+Follow [Set up a gift with purchase](/building-funnels/gift-with-purchase) for the current UI and supported rule types.
+
+Do not use AI copy as a substitute for offer configuration.
+
+## Phase 2 — Write the offer so a shopper can understand it instantly
+
+Good offer copy answers:
+
+- What do I need to do?
+- What do I get?
+- Is it automatic or do I choose?
+- Is there a meaningful limit / condition?
+
+Example:
+
+> Spend $75 and choose a free travel-size [product]. One gift per order.
+
+Avoid vague wording such as “Free gift available” when qualification is conditional.
+
+## Phase 3 — Brief Jurni AI on the campaign messaging
+
+```text
+Update this page to communicate the approved gift-with-purchase campaign.
+
+OFFER
+Qualifying condition: [CONDITION]
+Gift: [GIFT PRODUCT]
+Maximum / selection rule: [RULE]
+Campaign timing / scope: [REAL DETAILS]
+
+MESSAGE
+Make the offer easy to understand near the hero and purchase decision.
+Use the approved gift image [ASSET] where helpful.
+Explain the qualification in one concise sentence.
+
+KEEP
+- existing product / purchase behavior;
+- real prices;
+- existing cart / checkout action.
+
+DO NOT
+- invent a lower threshold;
+- claim the gift is free unless the actual Shopify setup makes it free;
+- add fake scarcity / inventory;
+- imply every page / purchase qualifies when the offer scope is narrower.
+```
+
+## Phase 4 — Choose where the offer appears
+
+Useful places:
+
+- hero / campaign announcement when the GWP is a primary reason for the click;
+- product / purchase section where the qualification becomes actionable;
+- cart / gift-selection flow where the shopper sees qualification status;
+- FAQ for conditions that genuinely need explanation.
+
+Avoid repeating the full offer in every section. Repetition can make a simple promotion feel complicated.
+
+## Phase 5 — Test qualification and disqualification
+
+Do not only test the happy path.
+
+For a spend threshold:
+
+1. Cart below threshold → gift should not qualify.
+2. Cart reaches threshold → gift becomes available / is added according to setup.
+3. Remove qualifying item → gift qualification should update.
+4. Add another qualifying item → verify gift quantity / maximum.
+5. Proceed to checkout → gift price is correct.
+
+For a specific-product condition:
+
+- test correct product / variant;
+- test an unqualified product;
+- test one-time vs subscription when purchase type matters;
+- test maximum gifts.
+
+## Phase 6 — Check the real cart environment
+
+Jurni-hosted pages and native Shopify Pages can use different cart environments.
+
+If the campaign is published as a Shopify Page or uses a third-party theme cart, verify that the gift flow is supported there; do not assume the Jurni-hosted cart behavior automatically appears in the theme drawer.
+
+Use [Cart & Checkout behavior](/commerce/cart-checkout-behavior) and [Shopify Pages cart connection](/shopify-pages/cart-config) when relevant.
+
+## Phase 7 — QA campaign messaging against the actual rule
+
+Before launch, compare:
+
+| Page says | Commerce must do |
+| --- | --- |
+| “Free gift over $75” | Gift qualifies at the correct threshold and checkout price is free. |
+| “Choose your gift” | Customer actually gets a supported choice rather than an automatic fixed gift. |
+| “With subscription” | The real selected selling plan qualifies. |
+| “One per order” | Gift quantity / maximum reflects that rule. |
+
+Any mismatch is a launch blocker.
+
+## What good looks like
+
+A shopper should understand the offer without reading fine print, see qualification behave predictably, and reach checkout with the exact gift / price they were promised.
+
+## Common mistakes
+
+### Jurni offer configured, Shopify discount missing
+
+The gift can reach cart at full price.
+
+### Page says “free” because the product is displayed as a gift
+
+Only say free when checkout makes it free.
+
+### Threshold copy differs from the actual rule
+
+Keep one source of truth for the campaign condition.
+
+### Testing only a qualifying cart
+
+Always test losing qualification too.
+
+### Assuming every Shopify Page cart supports the gift UI
+
+Test the actual published environment.
+
+## Useful follow-up tests
+
+Once the offer is working, test **presentation**, not the underlying gift logic:
+
+- offer-led vs product-led hero;
+- gift image vs copy-only callout;
+- qualification message near hero vs near purchase section;
+- fixed gift vs choice of gifts only when both are real campaign options.
+
+## Related
+
+- [Gift with Purchase Help Center](/building-funnels/gift-with-purchase)
+- [Offers overview](/commerce/offers-overview)
+- [Campaign & offer prompts](/academy/prompts/campaigns-offers)
+- [First campaign](/academy/first-campaign)
