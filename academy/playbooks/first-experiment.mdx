@@ -1,0 +1,204 @@
+---
+title: "Run your first Jurni experiment"
+sidebarTitle: "First experiment"
+description: "A marketer-first workflow for choosing a hypothesis, preparing variants, using the correct Smart Link, QAing traffic, and making a result-driven decision."
+icon: "flask-conical"
+hidden: true
+---
+
+Use this playbook when you have at least two experiences worth comparing and a clear reason for the comparison.
+
+Jurni experiments split traffic from a **Smart Link** across page variants. The campaign-facing URL stays stable while Jurni assigns visitors according to the experiment setup.
+
+## The outcome
+
+By the end you should have:
+
+- one written hypothesis;
+- a control and variant that reflect that hypothesis;
+- a chosen primary metric;
+- a Smart Link used as the experiment entry point;
+- intended traffic weights / routing;
+- both variants QA'd through the customer journey;
+- a documented rule for what decision you will make from the result.
+
+## Phase 1 — Start with a real observation
+
+Good experiments usually start from one of three places:
+
+- **campaign insight** — the ad angle is specific but the landing page is generic;
+- **page observation** — important proof or product clarity appears too late;
+- **performance signal** — a meaningful step in the journey looks weak relative to your expectation / other pages.
+
+Write down what you know versus what you infer.
+
+```text
+OBSERVATION
+[WHAT WE ACTUALLY SEE / KNOW]
+
+HYPOTHESIS
+We believe [CHANGE] will improve [BEHAVIOR / METRIC]
+because [INTERPRETATION WE WANT TO TEST].
+
+PRIMARY METRIC
+[METRIC]
+
+DIAGNOSTICS
+[SUPPORTING METRICS / BEHAVIOR]
+```
+
+Do not turn a hunch into fake evidence. “We think visitors do not trust the page” is a hypothesis unless you actually have research supporting it.
+
+## Phase 2 — Choose the primary metric
+
+Pick the metric that matches the customer behavior in the hypothesis.
+
+Examples:
+
+- **CVR** — when the hypothesis is about purchase conversion;
+- **RPS** — when the change may affect both conversion and order value / revenue per session;
+- **AOV** — when the hypothesis is specifically about basket size among orders;
+- **CTR / Add-to-Cart / Checkout Rate** — useful for earlier behavior in the journey when that is the intended change.
+
+Use [Read Experiment Results](/experiments/reading-results) for the metrics currently available in Jurni.
+
+Do not choose the metric after seeing which one looks best.
+
+## Phase 3 — Build the variant cleanly
+
+If you have not yet built it, follow [Create a controlled variation](/academy/playbooks/controlled-variation).
+
+Before continuing, be able to answer:
+
+- What exactly changes?
+- What remains identical?
+- Why should that change affect the primary metric?
+
+## Phase 4 — Create the experiment around the campaign link
+
+Follow the current Jurni experiment creation flow in [Create an experiment](/experiments/create-experiment).
+
+From a campaign perspective, pay attention to the link choice:
+
+- **Create new link** — use when this experiment needs a new campaign-facing Smart Link.
+- **Use existing link** — use when the campaign already uses that Smart Link and you intentionally want its traffic to enter this experiment.
+
+An existing link may already receive real traffic. Treat connecting it as a live campaign decision, not clerical setup.
+
+## Phase 5 — Add the correct pages and traffic
+
+Confirm each variant is the exact page you reviewed.
+
+Choose traffic weights based on the test you intend to run. Do not change weights casually after launch and then read the full-period totals as though allocation never changed.
+
+If you use [Routing Rules](/experiments/routing-rules), remember that matching rules can intentionally send specific parameter values to particular variants rather than leaving those visitors to the normal weighted split.
+
+That is useful for deterministic routing; it also means you must understand which traffic is actually participating in the comparison.
+
+## Phase 6 — QA the Smart Link, not only the pages
+
+The experiment entry URL is part of the product you are launching.
+
+Use a fresh / incognito context where appropriate and verify:
+
+- Smart Link resolves;
+- expected variants are reachable;
+- campaign parameters are preserved as intended;
+- routing rules behave as configured;
+- control and variant both work on mobile / desktop;
+- product / offer / cart / checkout are correct;
+- tracking / consent work on each destination.
+
+Existing visitors can have a sticky experiment assignment. Do not conclude the split is broken because one browser keeps returning to the same variant.
+
+See [How experiment traffic is assigned](/experiments/traffic-assignment).
+
+## Phase 7 — Launch through the Smart Link
+
+Use the Smart Link as the destination in the campaign when you expect Jurni to assign experiment traffic.
+
+Avoid mixing direct variant URLs into the same campaign unless that is an intentional traffic source outside the experiment. Direct page visits can show up in experience analytics without being experiment-assigned traffic, which is one reason underlying experience sessions and experiment variant sessions may differ.
+
+## Phase 8 — Leave the live test stable
+
+Once meaningful traffic is flowing:
+
+- avoid changing the hypothesis mid-test;
+- avoid silently changing product / offer / tracking on only one variant;
+- record intentional traffic-weight changes;
+- if a bug affects the customer journey, fix it deliberately and note the impact.
+
+A live experiment is not the best place for ongoing page-design tinkering.
+
+## Phase 9 — Read the result in context
+
+Start with:
+
+1. selected date range;
+2. primary metric;
+3. direction and size of observed difference;
+4. supporting funnel / revenue metrics;
+5. whether any implementation or traffic changes complicate interpretation.
+
+Do not treat a page being numerically ahead at one moment as automatic proof that the underlying idea is true.
+
+Use [Reading Results](/experiments/reading-results) and the [results interpretation prompt](/academy/prompts/experiments-qa) to structure the review without inventing confidence or thresholds.
+
+## Phase 10 — Make a decision and capture the learning
+
+A useful decision is not always “variant wins.” It can be:
+
+- adopt the variant;
+- keep the control;
+- keep running because the result is not decision-ready;
+- investigate implementation / measurement before interpreting;
+- design a follow-up test because the result raises a more specific question.
+
+Write a short learning record:
+
+> We tested **X** because **Y**. We observed **Z** on the primary metric, with **supporting signals**. We decided **ACTION**. Our next question is **NEXT QUESTION**.
+
+Then use [Results → next test](/academy/playbooks/results-to-next-test).
+
+## What good looks like
+
+A teammate should be able to open the experiment and quickly understand:
+
+- what was being tested;
+- which page is control;
+- which page is variant;
+- what metric matters most;
+- what traffic enters the test;
+- what decision the team expects to make.
+
+If those are unclear, the test is operationally harder to trust even before discussing statistics.
+
+## Common mistakes
+
+### Putting the direct page URL in the ad
+
+If you need the experiment to split campaign traffic, the ad should use the experiment's Smart Link, not one variant's direct page URL.
+
+### Testing too many things
+
+A full redesign can answer “which whole page performed better,” but it is weak evidence for *why*.
+
+### Reading experience totals as experiment totals
+
+An experience can receive direct traffic outside the experiment. Use the experiment view when making experiment claims.
+
+### Changing weights without documenting it
+
+Allocation changes affect how much traffic each variant receives during different periods.
+
+### Picking a winner from a convenient date range
+
+Choose the analysis window based on the test period and known campaign changes, not the range that creates the preferred story.
+
+## Related
+
+- [Create an experiment](/experiments/create-experiment)
+- [Traffic assignment](/experiments/traffic-assignment)
+- [Reading results](/experiments/reading-results)
+- [Controlled variation](/academy/playbooks/controlled-variation)
+- [Experiment & QA prompts](/academy/prompts/experiments-qa)
