@@ -157,7 +157,9 @@
             "group": "Buy Boxes",
             "pages": [
               "products/add-buy-box",
+              "products/manage-buy-boxes",
               "building-funnels/product-purchase-options",
+              "products/update-reuse-buy-boxes",
               "products/editing-scope"
             ]
           },
@@ -234,12 +236,14 @@
           {
             "group": "Experiments",
             "pages": [
+              "experiments/new-reporting-overview",
               "experiments/what-are-experiments",
               "experiments/create-experiment",
               "experiments/routing-rules",
               "experiments/traffic-assignment",
               "experiments/pause-end-reuse",
               "experiments/reading-results",
+              "experiments/statistical-significance",
               "experiments/testing-against-website",
               "experiments/traffic-troubleshoot"
             ]
@@ -249,6 +253,7 @@
             "pages": [
               "analytics-reporting/overview",
               "analytics-reporting/experience-analytics",
+              "analytics-reporting/engagement-metrics",
               "analytics-reporting/funnel-step-performance",
               "analytics-reporting/filtering-experiences",
               "analytics-reporting/custom-events",
@@ -356,7 +361,8 @@
               "data-dictionary/metrics-glossary",
               "reference/events",
               "reference/url-parameters",
-              "build/code-mode"
+              "build/code-mode",
+              "review/release-readiness"
             ]
           },
           {

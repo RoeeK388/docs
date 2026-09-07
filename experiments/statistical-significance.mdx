@@ -1,0 +1,85 @@
+---
+title: "Understand lift, confidence, and experiment winners"
+sidebarTitle: "Confidence & winners"
+description: "Read observed lift, confidence, and the difference between a leading variant and a declared experiment winner."
+icon: "chart-no-axes-combined"
+noindex: true
+tag: "Release draft"
+---
+
+<Note>
+  Release-preview draft: this guide describes the planned confidence workflow. Availability and final labels must be confirmed before this guide is published as live product documentation.
+</Note>
+
+Use **lift** to understand the difference between variants so far, and **confidence** to understand how strongly the data supports a variant performing better than the control. Neither replaces checking that the test is measuring the right thing.
+
+## Start with one success metric
+
+The planned first version supports **CVR**, **AOV**, and **RPS** as success metrics.
+
+| Metric | Use it to evaluate | What to watch alongside it |
+| --- | --- | --- |
+| **CVR** | Attributed orders relative to sessions. | Order value and revenue per session. |
+| **AOV** | Average attributed order value. | Whether fewer sessions are purchasing. |
+| **RPS** | Revenue generated per session. | Purchase rate, order value, and the campaign's economics. |
+
+Choose the success metric before evaluating results. Engagement measures such as scroll depth can help explain behavior, but are not included in this first set of confidence calculations.
+
+## Lift: how much the result differs
+
+Lift is the percentage difference between a variant's selected metric and the control's metric.
+
+For example, moving from **4% CVR to 4.4% CVR** is **+10% lift**. It is also a **0.4 percentage-point** increase in CVR; these are two ways to describe the same change, not interchangeable numbers.
+
+A negative lift means the variant's observed result is lower. The control is the baseline. When the control metric is zero, relative percentage lift is not defined and should display a dash rather than an infinite improvement.
+
+Lift describes what has happened so far. It does not guarantee that the same improvement will continue.
+
+## Confidence: how much evidence supports the difference
+
+In the planned Bayesian workflow, confidence estimates how likely the variant is to outperform the control on the selected success metric, given the data and the statistical model.
+
+For example, **92% confidence** means the model assigns a 92% probability to the variant outperforming the control on that metric. It does **not** mean 92% of visitors will buy, the result is 92% better, or there is a 92% chance of reproducing the exact observed lift.
+
+A large lift with little data can still be uncertain. A modest difference supported by more consistent evidence can have higher confidence.
+
+## Set a confidence threshold
+
+The planned configuration offers **85%, 90%, 95%, or a custom threshold**. The threshold determines when a qualifying positive result can be shown as **Winning**. A higher threshold requires stronger evidence; it does not guarantee a bigger commercial improvement.
+
+Keep the threshold aligned with your decision before reviewing outcomes. Lowering it only because a preferred result has not reached it makes the decision less meaningful.
+
+## Read the result status
+
+| Status | Meaning |
+| --- | --- |
+| **Collecting Data** | The compared control and variant have not met the required minimum-data conditions. |
+| **Early Lead** | A positive observed result is emerging, but the evidence is still weak. |
+| **Likely to Win** | Confidence is at least 80% but below the configured winning threshold, after the data requirements are met. |
+| **Winning** | The positive result meets the configured confidence threshold and data requirements. The experiment is still running. |
+| **Winner** | You ended the experiment and explicitly declared the winner. |
+
+The control remains the reference baseline. Minimum-data requirements take precedence over a strong-looking confidence number. Treat the requirements shown by the released product as the source for the applicable threshold; a universal session count is not proof of a reliable result.
+
+<Warning>
+  **Winning is not the same as Winner.** Reaching the confidence threshold does not automatically end the experiment or change the campaign's destination.
+</Warning>
+
+## Tests with more than two variants
+
+Each variant is compared with the control independently. Confidence against the control is not a probability of being best among every variant in the test.
+
+The current leader is the active variant with the highest selected success metric. Continue checking its evidence and the test setup; do not select a result merely because it happens to rank first today.
+
+## Before declaring a winner
+
+Confirm that traffic entered through the intended experiment link, the date range is appropriate, and every variant's purchase path and tracking work. Review other important outcomes so an AOV improvement, for example, does not hide a drop in revenue per session.
+
+Then use the experiment's end-and-winner workflow and confirm the future traffic destination. Keep a record of what you tested and what changed.
+
+## Related guides
+
+- [Read experiment results](/experiments/reading-results)
+- [Metric definitions](/data-dictionary/metrics-glossary)
+- [Testing best practices](/experiments/strategic-experiments)
+- [Pause or end an experiment](/experiments/pause-end-reuse)
