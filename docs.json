@@ -110,10 +110,7 @@
               {
                 "group": "Assets & Reuse",
                 "pages": [
-                  "build/assets-library",
-                  "build/template-library",
-                  "building-funnels/saved-sections",
-                  "build/global-sections"
+                  "build/assets-library"
                 ]
               },
               {
@@ -387,7 +384,7 @@
       {
         "tab": "Guides",
         "pages": [
-          "guides/index",
+          "guides",
           "academy/start/first-campaign",
           {
             "group": "Page Building Guides",
@@ -415,7 +412,11 @@
           {
             "group": "Templates & Reusable Sections",
             "icon": "layout-template",
-            "pages": []
+            "pages": [
+              "build/template-library",
+              "building-funnels/saved-sections",
+              "build/global-sections"
+            ]
           },
           {
             "group": "Commerce Guides",
@@ -439,7 +440,7 @@
       {
         "tab": "Learn",
         "pages": [
-          "learn/index"
+          "learn"
         ]
       },
       {
