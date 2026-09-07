@@ -5,3 +5,220 @@ description: "Convert a Jurni experiment result into a proportional learning, a 
 icon: "route"
 hidden: true
 ---
+
+Use this playbook after an experiment has produced enough information for your team to make a decision or ask a better question.
+
+The goal is not to manufacture a dramatic “winner” story. The goal is to capture **what the test changed, what the observed result suggests, what remains uncertain, and what you should learn next**.
+
+## Phase 1 — Restate the original question
+
+Before looking for a new idea, remind the team what the test was supposed to answer.
+
+Write:
+
+```text
+HYPOTHESIS
+We believed [CHANGE] would improve [BEHAVIOR / METRIC] because [REASON].
+
+CONTROL
+[WHAT CONTROL DID]
+
+VARIANT
+[WHAT VARIANT DID DIFFERENTLY]
+
+PRIMARY METRIC
+[METRIC]
+```
+
+This protects the analysis from drifting toward whichever metric looks most interesting after the fact.
+
+## Phase 2 — Separate observation from explanation
+
+Two levels matter:
+
+**Observation:** what the experiment metrics actually show.
+
+**Explanation:** why you think that happened.
+
+Example:
+
+- Observation: Variant B has higher observed CVR over the selected test period.
+- Explanation hypothesis: The proof-led hero reduced skepticism for cold traffic.
+
+The first is a result. The second is an interpretation that may deserve another test or supporting evidence.
+
+Use Jurni AI to keep the distinction clean:
+
+```text
+Help me review this experiment.
+
+Original hypothesis: [HYPOTHESIS]
+Primary metric: [METRIC]
+Results: [PASTE JURNI RESULTS]
+Known campaign / implementation changes: [NOTES]
+
+Separate your response into:
+1. Observations directly supported by the supplied result
+2. Plausible interpretations / hypotheses
+3. Things the result does not tell us
+4. Checks that could invalidate or complicate the interpretation
+
+Do not invent confidence, customer intent, or causal certainty.
+```
+
+## Phase 3 — Look at supporting behavior
+
+Supporting metrics can help explain the journey, but they should not replace the primary metric because they happen to look better.
+
+Examples:
+
+- higher CTR but flat CVR may mean the page encouraged more clicks without improving purchase completion;
+- higher Add-to-Cart Rate but lower checkout completion may move friction later in the journey;
+- higher CVR with lower AOV can still produce a different revenue outcome than CVR alone suggests;
+- higher AOV based on a small number of orders can be volatile and should be interpreted in context.
+
+Use supporting metrics to ask **where the journey changed**, not to cherry-pick a win.
+
+## Phase 4 — Check for confounds
+
+Before capturing the learning, ask:
+
+- Did product / offer change during the test?
+- Did one variant have a bug or cart issue?
+- Did traffic weights or routing change?
+- Did the campaign audience change materially?
+- Did one page receive meaningful direct traffic outside the experiment?
+- Did tracking or consent behavior differ?
+- Did the analysis window include periods before / after the intended test?
+
+If the result is operationally compromised, the right next action may be **rerun cleanly**, not invent a CRO insight.
+
+## Phase 5 — Decide what you can reasonably learn
+
+A useful learning is specific but proportional.
+
+**Too broad:** “Customers prefer social proof.”
+
+**Better:** “For this cold Meta campaign, moving the approved proof into the first screen was associated with stronger purchase conversion than the original hero during this test.”
+
+The second statement preserves the context. You can later test whether the principle generalizes.
+
+## Phase 6 — Record the decision
+
+Use a lightweight test record:
+
+```text
+WHAT WE TESTED
+[CONTROL VS VARIANT]
+
+WHY
+[HYPOTHESIS]
+
+PRIMARY RESULT
+[OBSERVED RESULT]
+
+SUPPORTING SIGNALS
+[OTHER RELEVANT METRICS / NOTES]
+
+LEARNING
+[PROPORTIONAL CONCLUSION]
+
+LIMITATIONS
+[WHAT WE STILL DO NOT KNOW]
+
+DECISION
+[ADOPT / KEEP CONTROL / KEEP RUNNING / INVESTIGATE / RERUN]
+```
+
+This record is more valuable six months later than a screenshot labeled “winner.”
+
+## Phase 7 — Generate the next questions
+
+Now ask what remains uncertain.
+
+If a benefit-led hero performs better than a feature-led hero, next questions could include:
+
+- Which benefit resonates most?
+- Does the effect hold for different traffic sources?
+- Was the result driven by the headline or the reduced copy density?
+- Does additional proof amplify the benefit-led message?
+
+If a variant underperforms, do not automatically test a more extreme version. Ask whether the underlying hypothesis was wrong, the execution was weak, or the page changed too many things.
+
+## Phase 8 — Pick the next test based on learning value
+
+Use:
+
+```text
+Use this completed experiment to recommend the next test.
+
+Original hypothesis: [HYPOTHESIS]
+Observed result: [RESULT]
+What changed: [DIFFERENCE]
+Supporting signals: [SIGNALS]
+Known limitations: [LIMITATIONS]
+
+Generate 4 possible next tests.
+For each:
+- question it answers;
+- single variable to change;
+- why it follows from this result;
+- what stays fixed;
+- primary metric;
+- what we would learn from either outcome.
+
+Rank them by learning value and practical relevance.
+Do not assign fake conversion-lift estimates.
+```
+
+Prefer tests that reduce an important uncertainty rather than simply generate more variants.
+
+## Phase 9 — Turn the learning into other marketing work
+
+Some experiment learnings can inform more than another landing-page test.
+
+Examples:
+
+- a strong message angle can become new ad creative;
+- a recurring objection can influence email / SMS education;
+- an effective creator framing can inform creator briefs;
+- an offer explanation that reduces confusion can improve other campaign pages;
+- a weak purchase choice can trigger product / merchandising investigation.
+
+Do not blindly copy a winning element to every channel. Translate the **learning**, not the exact design.
+
+## What good looks like
+
+At the end of the review, your team should have:
+
+- one primary decision;
+- one concise learning;
+- an explicit limitation / unknown;
+- one next test or action with a reason.
+
+If you leave with ten unrelated CRO ideas, the review was not prioritized enough.
+
+## Common mistakes
+
+### “Winner = universal best practice”
+
+A result is tied to the tested audience, traffic, page, offer, and period. Generalize only with further evidence.
+
+### Explaining the result with customer psychology you never measured
+
+Use customer-behavior explanations as hypotheses unless you have research or other evidence.
+
+### Ignoring implementation issues because the result is exciting
+
+A broken control or tracking discrepancy can make a strong-looking result meaningless.
+
+### Testing the exact same idea forever
+
+Once a question is sufficiently answered for a business decision, move to the next meaningful uncertainty.
+
+## Related
+
+- [Read experiment results](/experiments/reading-results)
+- [Experiment & QA prompts](/academy/prompts/experiments-qa)
+- [Controlled variation](/academy/playbooks/controlled-variation)
+- [First experiment](/academy/playbooks/first-experiment)
