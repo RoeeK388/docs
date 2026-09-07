@@ -1,78 +1,81 @@
 ---
 title: "Launch your first Jurni experience"
 sidebarTitle: "Quickstart"
-description: "Connect your shop, prepare the essentials, build your first page, and verify the complete customer journey before launch."
-icon: "list-checks"
+description: "Go from your campaign idea to a tested, live Jurni experience."
+icon: "rocket"
 ---
 
-Use this checklist to take your brand from onboarding to its first live Jurni page. You can build while some launch work is still in progress; the important distinction is **what you need to start editing** versus **what must work before real campaign traffic arrives**.
+This quickstart gives you the shortest path from a campaign idea to a live Jurni experience.
 
-## 1. Finish onboarding, shop creation, and billing
+You do not need to configure every feature before you begin. Start with one real product, offer, or campaign and complete the essential path below.
 
-Complete onboarding using your existing commerce provider, confirm the correct shop was created or connected, and finish the billing flow for that shop. Then invite the teammates who will build, review, or manage it.
+<Note>
+  If your Jurni shop is not connected yet, first [choose the setup for your commerce platform](/getting-started/choose-your-setup).
+</Note>
 
-Already working in an active shop? Continue below rather than creating another account or shop.
+## Before you begin
 
-[Create your account and shop](/getting-started/create-account) · [Invite team members](/getting-started/inviting-team-members)
+Have these campaign inputs ready:
 
-## 2. Confirm the integration for your storefront
+- The product, offer, or action the experience should promote
+- The ad, brief, screenshot, URL, Figma design, or template you want to start from
+- The approved message, imagery, and brand guidance
+- A clear idea of where the customer should go after clicking the main CTA
 
-**Shopify Online Store:** confirm the native Shopify connection and activate **Jurni Core** in your active Shopify theme. Save the theme change. Recheck the embed when you change your active theme.
+## 1. Open the right shop
 
-**Shopify headless:** keep the Shopify commerce connection, but have your developer confirm the separate frontend's Jurni script, cart continuity, and checkout handoff. A theme embed does not install itself on that frontend.
+Sign in to Jurni and confirm that you are working in the correct brand's shop. Your products, brand settings, integrations, experiences, and reports belong to that shop.
 
-**WooCommerce, Salesforce, BigCommerce, or another custom setup:** complete the integration agreed with the Jurni team. Confirm how products, purchasing actions, and completed purchases are connected.
+[Create or access your shop](/getting-started/create-account)
 
-[Activate Jurni Core](/getting-started/activating-jurni-core) · [Shopify headless](/getting-started/shopify-headless) · [Non-Shopify setup](/getting-started/setup-non-shopify)
+## 2. Create an experience
 
-## 3. Review your brand and AI guidance
+Start a new experience and give Jurni AI the context it needs. You can describe the page, attach campaign creative, reference a product, provide a screenshot, link an existing page, or begin from a template.
 
-Check the brand's logo, colors, typography, and other design defaults in **Settings → Brand**. Supply approved product facts, tone, messaging requirements, and restrictions in **AI Knowledge**.
+A useful first prompt explains:
 
-Review what onboarding has prepared instead of assuming every field is correct. Save changes in the relevant settings screen. You can refine these inputs while building; they are not a reason to describe every optional brand field as a technical launch blocker.
+- What you are promoting
+- Who the campaign is for
+- The offer or main message
+- The page you want to create
+- The action the customer should take
 
-[Brand settings](/getting-started/brand-settings) · [AI Knowledge](/getting-started/setup-ai-knowledge)
+<Card title="Build your first page with AI" icon="sparkles" href="/build/ai-campaign-workflow">
+  Follow the complete building workflow and use a copy-ready starting prompt.
+</Card>
 
-## 4. Confirm products and the intended shopper action
+## 3. Connect the real customer action
 
-Find the products you need in Jurni. Confirm variants and any subscription options. Decide whether the page should add to cart, go to checkout, or send shoppers to an existing product or other destination page.
+Confirm that the experience uses the correct product, variant, selling plan, form, link, cart action, or checkout path. Visual text such as a price or discount does not configure the underlying commerce behavior.
 
-Connect real products early. A price written into a text block, a designed discount badge, or an AI-generated button does not by itself configure the actual purchase.
+[Products and Buy Boxes](/building-funnels/buy-box-overview) · [CTA actions](/build/cta-actions)
 
-[Products and variants](/building-funnels/products-and-variants) · [Buy Boxes](/building-funnels/buy-box-overview) · [Cart and checkout](/commerce/cart-checkout-behavior)
+## 4. Review the experience
 
-## 5. Prepare the publishing destination
+Check the full page on desktop and mobile. Review the message, imagery, offer, product selection, buttons, forms, cart behavior, and checkout handoff.
 
-For a standard Shopify store, Jurni can use the app-proxy route `brand.com/apps/jurni/<handle>` while a custom Jurni subdomain is not configured. A connected subdomain uses a branded URL such as `go.brand.com/<handle>`.
+Use the [pre-launch QA checklist](/building-funnels/qa-checklist) for a complete review.
 
-Native **Shopify Pages** are optional and require their own page-template/app-block setup. They use `brand.com/pages/<handle>` and must be tested in the Shopify theme environment.
+## 5. Publish and test the live URL
 
-Non-Shopify and headless brands should use the publishing arrangement confirmed for their implementation.
+Publish using the route configured for your shop. Then open the exact URL your campaign audience will use and complete the intended customer journey yourself.
 
-You can configure tracking IDs while domain work is in progress. The launch requirement is that the **final destination is reachable and its tracking has been tested**—not that DNS must finish before you are allowed to enter an integration ID.
+Do not rely only on the editor preview—the live URL is where you should verify products, actions, integrations, tracking, and responsive behavior.
 
-[Publishing overview](/publishing/overview) · [Custom subdomain](/getting-started/custom-subdomain) · [Shopify Pages](/shopify-pages/setup-publish)
+[Choose a publishing method](/publishing/overview)
 
-## 6. Connect only the tools your campaign needs
+## 6. Send traffic and improve
 
-Set up the required data integrations, review providers, forms, and custom scripts. An integration's required value may be a public identifier, a URL, or an authorization flow—not always an API key.
+Once the live experience and measurement are working, add the URL to your campaign. Use a [Smart Link](/building-funnels/smart-links) when you want to control the destination centrally or run a test.
 
-For Shopify Pages, check which scripts are already installed by the Shopify theme or apps. Avoid loading the same pixel or tag manager twice. Test consent behavior and any visible widgets on the intended publishing destination.
+After traffic arrives, review the experience results and decide what to improve next.
 
-[Integrations](/integrations/overview) · [Credentials reference](/integrations/api-keys) · [Duplicate tracking](/troubleshooting/duplicate-tracking-events)
+<CardGroup cols={2}>
+  <Card title="Run your first A/B test" icon="flask-conical" href="/academy/playbooks/first-ab-test">
+    Turn one clear hypothesis into a focused Jurni test.
+  </Card>
 
-## 7. Build, review, and test
-
-Create the page, add and edit sections, and review **both mobile and desktop**. Save your draft before sharing it. Use the appropriate preview or comment-review link for your reviewers.
-
-Before launch, test the selected product and variant, subscription choice, quantity, discount or gift, cart behavior, and checkout. Verify that the required events reach the intended analytics tools on the live page.
-
-[Editor guide](/building-funnels/funnel-editor) · [Pre-launch QA checklist](/building-funnels/qa-checklist)
-
-## 8. Publish and test the campaign entry link
-
-Publish to the intended destination and open the exact URL you will use in the campaign. When using a Smart Link or experiment, enter through that link—not directly through a variant page—and check the resulting destination and parameters.
-
-Start sending traffic only after the page, purchasing path, and measurement are ready. Keep the shop owner, builder, and person responsible for tracking aligned on the launch.
-
-[Smart Links](/building-funnels/smart-links) · [Create an experiment](/experiments/create-experiment)
+  <Card title="Explore campaign guides" icon="book-open" href="/guides">
+    Use practical page-building and prompting workflows for your next experience.
+  </Card>
+</CardGroup>
