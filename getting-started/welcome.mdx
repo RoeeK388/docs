@@ -1,171 +1,102 @@
 ---
-title: "Documentation"
-sidebarTitle: "Introduction"
-description: "Build, launch, test, and improve high-performing landing experiences with Jurni."
+title: "Start with Jurni"
+sidebarTitle: "Start here"
+description: "Understand the Jurni campaign workflow from connected store to AI-built page, publishing, Smart Link, experiment, and optimization."
 icon: "house"
-mode: "frame"
 ---
 
-export const HeroCard = ({ title, description, href, children }) => {
-  return (
-    <a className="group cursor-pointer pb-8 no-underline" href={href}>
-      <div className="overflow-hidden rounded-2xl border border-orange-100 bg-[#FFF4EF] dark:border-orange-950 dark:bg-[#21120E] transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg">
-        {children}
-      </div>
-      <h3 className="mt-5 text-gray-950 dark:text-zinc-50 font-medium">
-        {title}
-      </h3>
-      <span className="mt-1.5 block text-gray-500 dark:text-zinc-400">
-        {description}
-      </span>
-    </a>
-  );
-};
+Jurni helps growth and ecommerce teams turn a campaign idea into a shopper experience, launch it through the right URL, and learn what to improve next.
 
-<div className="relative overflow-hidden">
-  <div className="absolute -top-10 left-0 right-0 opacity-90 pointer-events-none">
-    <svg viewBox="0 0 1200 430" className="w-full h-auto" aria-hidden="true">
-      <defs>
-        <linearGradient id="heroWash" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#FFF8F5" />
+The easiest way to understand Jurni is as one connected workflow—not a collection of separate features.
 
-          <stop offset="100%" stopColor="#FFE8DE" />
-        </linearGradient>
+## The Jurni campaign workflow
 
-        <pattern id="heroGrid" width="44" height="44" patternUnits="userSpaceOnUse">
-          <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#FB4E26" strokeOpacity="0.08" strokeWidth="1" />
-        </pattern>
-      </defs>
+<Steps>
+  <Step title="Connect your shop">
+    Start with the commerce setup you already use. Shopify connects natively; headless and non-Shopify storefronts use the product, cart, checkout, and tracking integration agreed for that storefront.
+  </Step>
+  <Step title="Give Jurni your campaign context">
+    Set up your brand and AI Knowledge, then bring the real campaign inputs into Jurni: your product, ad creative, imagery, approved copy, Figma frames, or reference pages.
+  </Step>
+  <Step title="Build the experience">
+    Use Jurni AI for the first build and larger creative changes, then use the editor for precise adjustments. Your page should continue the message that earned the click and make the next customer decision clear.
+  </Step>
+  <Step title="Connect the real action">
+    Make sure the page uses the correct product, form, CTA destination, or purchase path. A button that looks right is not enough if it sends the shopper to the wrong place.
+  </Step>
+  <Step title="Publish and choose the campaign URL">
+    Publish to the destination that fits your storefront, then use the correct campaign URL. Smart Links let you manage a campaign destination centrally and are also the entry point for Jurni experiments.
+  </Step>
+  <Step title="Test the full journey">
+    Open the exact URL your audience will click. Check mobile, product selections, offer, cart or checkout, forms, integrations, and tracking—not only the editor preview.
+  </Step>
+  <Step title="Learn and iterate">
+    Review experience analytics or run an experiment around one clear hypothesis. Keep what you learn and use it to improve the next page or test.
+  </Step>
+</Steps>
 
-      <rect width="1200" height="430" fill="url(#heroWash)" opacity="0.75" />
+## Where should I start?
 
-      <rect width="1200" height="430" fill="url(#heroGrid)" />
+<CardGroup cols={2}>
+  <Card title="Launch my first campaign" icon="rocket" href="/academy/start/first-campaign">
+    Follow the complete marketer workflow in Jurni Academy, with prompts, examples, QA, and the first experiment idea.
+  </Card>
 
-      <g fill="none" stroke="#FB4E26" strokeWidth="2" strokeOpacity="0.18">
-        <path d="M70 285 C150 100 255 90 330 245 C372 332 447 320 488 222" />
+  <Card title="Set up my shop" icon="store" href="/getting-started/step-by-step-setup">
+    Complete the product and platform setup needed before your first live campaign.
+  </Card>
 
-        <path d="M716 82 C784 14 894 52 907 143 C918 222 1004 240 1130 153" />
+  <Card title="Build with AI" icon="sparkles" href="/build/ai-campaign-workflow">
+    Create or edit a page with Jurni AI using your real campaign inputs.
+  </Card>
 
-        <rect x="488" y="20" width="224" height="148" rx="28" transform="rotate(-8 600 94)" />
+  <Card title="Learn how to prompt Jurni" icon="message-square-text" href="/academy/prompting-101">
+    Use Prompting 101 and the copy-ready Prompt Library for deeper AI workflows.
+  </Card>
 
-        <circle cx="1066" cy="310" r="92" />
+  <Card title="Publish a page" icon="send" href="/publishing/overview">
+    Choose between Jurni-hosted pages, Shopify Pages, or your custom/headless storefront setup.
+  </Card>
 
-        <path d="M1018 310h96M1066 262v96" />
-      </g>
-    </svg>
-  </div>
+  <Card title="Run an A/B test" icon="flask-conical" href="/experiments/what-are-experiments">
+    Route one Smart Link across variants and compare the result.
+  </Card>
 
-  <div className="relative z-10 px-4 py-16 lg:py-44 lg:pb-24 max-w-3xl mx-auto">
-    <h1 className="block text-4xl font-medium text-center text-gray-950 dark:text-zinc-50 tracking-tight">
-      Documentation
-    </h1>
+  <Card title="Connect my marketing tools" icon="plug" href="/integrations/overview">
+    Find the provider you already use and complete its Jurni setup.
+  </Card>
 
-    <div className="max-w-xl mx-auto px-4 mt-4 text-lg text-center text-gray-500 dark:text-zinc-400">
-      Everything you need to build, launch, test, and improve high-performing landing experiences with Jurni.
-    </div>
+  <Card title="Troubleshoot a problem" icon="circle-help" href="/integrations/troubleshooting">
+    Start with the symptom, then check the relevant page, purchase, tracking, or integration path.
+  </Card>
+</CardGroup>
 
-    <div className="px-6 lg:px-0 mt-12 lg:mt-24 grid sm:grid-cols-2 gap-x-6 gap-y-4">
-      <HeroCard title="Quickstart" description="Connect your shop and launch your first Jurni experience" href="/getting-started/step-by-step-setup">
-        <svg viewBox="0 0 520 300" className="block w-full h-auto" aria-label="A Jurni launch path">
-          <defs>
-            <pattern id="gridLaunch" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M40 0H0V40" fill="none" stroke="#FB4E26" strokeOpacity="0.16" />
-            </pattern>
-          </defs>
+## Jurni works with your existing commerce setup
 
-          <rect width="520" height="300" fill="url(#gridLaunch)" />
+**Shopify:** connect the existing store and use Jurni with its product and checkout ecosystem. Depending on the campaign, you can publish through Jurni-hosted routes or intentionally publish a native Shopify Page.
 
-          <g fill="none" stroke="#FB4E26" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M157 218c-8-53 8-110 58-151 51 5 91 35 109 83-27 48-72 76-126 80l-41-12Z" fill="#FFD8C9" />
+**Headless or non-Shopify:** keep the storefront and commerce system you already use. The Jurni team confirms how product data, cart / checkout, and purchase tracking connect. See [Supported commerce platforms](/getting-started/choose-your-setup).
 
-            <circle cx="254" cy="132" r="25" fill="#FFF4EF" />
+You do not need to choose a platform because Jurni has several options—the platform you already operate determines the right implementation.
 
-            <path d="m189 220-24 36 53-23M321 172l45 4-39 34" />
+## The few Jurni concepts worth knowing
 
-            <path d="M126 112h48M105 145h52M132 178h34" strokeOpacity="0.55" />
-          </g>
-        </svg>
-      </HeroCard>
+| Term | Think of it as… |
+| --- | --- |
+| **Experience** | The page / shopper journey your team creates and manages in Jurni. |
+| **Section** | A part of the page, such as the hero, proof, FAQ, or purchase area. |
+| **Smart Link** | The campaign-facing URL whose destination Jurni can manage. |
+| **Experiment** | A test that uses a Smart Link to assign incoming traffic across variants. |
+| **Analytics** | The view of sessions, shopper actions, orders, and revenue associated with Jurni experiences and experiments. |
 
-      <HeroCard title="Build with AI" description="Turn your campaign context into a polished landing experience" href="/build/ai-campaign-workflow">
-        <svg viewBox="0 0 520 300" className="block w-full h-auto" aria-label="AI-assisted page building">
-          <defs>
-            <pattern id="gridAI" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M40 0H0V40" fill="none" stroke="#FB4E26" strokeOpacity="0.16" />
-            </pattern>
-          </defs>
+You can learn the product one task at a time. You do not need to memorize every term before building.
 
-          <rect width="520" height="300" fill="url(#gridAI)" />
+## Help Center or Academy?
 
-          <g stroke="#FB4E26" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="116" y="70" width="286" height="176" rx="18" fill="#FFD8C9" />
+Use the **Help Center** when you need an exact answer such as “How do I publish to Shopify Pages?” or “Where do I connect Yotpo?”
 
-            <path d="M116 112h286" fill="none" />
+Use [**Jurni Academy**](/academy) when you want a complete workflow such as “Turn a winning Meta ad into a landing page,” “Build an advertorial,” or “Decide what to A/B test next.”
 
-            <circle cx="143" cy="91" r="5" fill="#FB4E26" />
+## Before your first launch
 
-            <circle cx="162" cy="91" r="5" fill="#FB4E26" />
-
-            <path d="M185 164h94M185 191h146" fill="none" />
-
-            <path d="m347 48 8 20 20 8-20 8-8 20-8-20-20-8 20-8 8-20Z" fill="#FFF4EF" />
-
-            <path d="m155 142 5 12 12 5-12 5-5 12-5-12-12-5 12-5 5-12Z" fill="#FFF4EF" />
-          </g>
-        </svg>
-      </HeroCard>
-
-      <HeroCard title="Publish an experience" description="Choose the right destination and send traffic through a reliable campaign URL" href="/publishing/overview">
-        <svg viewBox="0 0 520 300" className="block w-full h-auto" aria-label="Publishing a Jurni experience">
-          <defs>
-            <pattern id="gridPublish" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M40 0H0V40" fill="none" stroke="#FB4E26" strokeOpacity="0.16" />
-            </pattern>
-          </defs>
-
-          <rect width="520" height="300" fill="url(#gridPublish)" />
-
-          <g fill="none" stroke="#FB4E26" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="108" y="71" width="304" height="174" rx="18" fill="#FFD8C9" />
-
-            <path d="M108 111h304" />
-
-            <circle cx="136" cy="91" r="5" fill="#FB4E26" />
-
-            <path d="M189 175h86" />
-
-            <path d="M278 151h64v64h-64" fill="#FFF4EF" />
-
-            <path d="m306 182 25-25M314 157h17v17" />
-          </g>
-        </svg>
-      </HeroCard>
-
-      <HeroCard title="Run a test" description="Compare experiences, understand results, and decide what to improve next" href="/experiments/what-are-experiments">
-        <svg viewBox="0 0 520 300" className="block w-full h-auto" aria-label="Experiment results improving over time">
-          <defs>
-            <pattern id="gridTest" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M40 0H0V40" fill="none" stroke="#FB4E26" strokeOpacity="0.16" />
-            </pattern>
-          </defs>
-
-          <rect width="520" height="300" fill="url(#gridTest)" />
-
-          <g fill="none" stroke="#FB4E26" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="114" y="62" width="292" height="188" rx="18" fill="#FFD8C9" />
-
-            <path d="M151 211V102M151 211h217" />
-
-            <path d="m170 191 52-44 45 25 78-72" strokeWidth="6" />
-
-            <path d="m326 100h19v19" />
-
-            <circle cx="222" cy="147" r="7" fill="#FFF4EF" />
-
-            <circle cx="267" cy="172" r="7" fill="#FFF4EF" />
-          </g>
-        </svg>
-      </HeroCard>
-    </div>
-  </div>
-</div>
+Complete the [first-launch checklist](/getting-started/step-by-step-setup) and test the actual campaign URL from click through the intended conversion path. If you want a guided workflow rather than a checklist, follow [Launch your first Jurni campaign](/academy/start/first-campaign).
