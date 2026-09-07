@@ -1,0 +1,208 @@
+---
+title: "Build a Jurni page from Figma"
+sidebarTitle: "Figma → page"
+description: "Turn approved desktop and mobile Figma frames into editable Jurni sections, then verify real products, links, and interactions before launch."
+icon: "figma"
+---
+
+# Build a Jurni page from Figma
+
+Use this playbook when your design team has already defined the page in Figma and you want Jurni AI to turn those frames into a **real, editable experience** rather than a flattened visual copy.
+
+The important distinction is: Figma is the **design source**. Jurni still needs the real product, approved content, and actual interaction behavior.
+
+## Before you start
+
+Collect:
+
+- the approved desktop frame
+- the approved mobile frame when one exists
+- the connected product used by the page
+- approved imagery if the Figma uses placeholders
+- the intended CTA or purchase behavior
+- any notes about interactions that are not obvious in a static frame
+
+If the Figma file is private, make sure the workspace's Figma connection is available before trying to import the frame.
+
+## Step 1: identify what is design and what is behavior
+
+A frame can show a button, selector, carousel, accordion, or product card. It cannot always tell Jurni what the control is expected to do.
+
+Annotate the handoff before building:
+
+```text
+DESKTOP FRAME
+[link]
+
+MOBILE FRAME
+[link]
+
+REAL PRODUCT
+[connected product]
+
+PRIMARY ACTION
+[add to cart / checkout / external URL / form / other]
+
+INTERACTIONS NOT OBVIOUS FROM FIGMA
+- [interaction]
+- [interaction]
+```
+
+## Step 2: tell Jurni that the two frames are one responsive page
+
+This avoids one of the most common implementation mistakes: treating the mobile frame as additional page content.
+
+```text
+Desktop frame: [link]
+Mobile frame: [link]
+
+These are desktop and mobile versions of the SAME page.
+Recreate them as editable Jurni sections.
+Do not append the mobile frame below the desktop content.
+```
+
+## Step 3: build with a precise handoff prompt
+
+```text
+Use the attached Figma frames as the approved design source.
+
+DESKTOP
+Match the desktop frame's hierarchy, spacing, typography scale, media placement, section order, and alignment.
+
+MOBILE
+Use the mobile frame as the intended mobile layout for the same content.
+Do not simply shrink desktop.
+
+CONTENT
+Use the copy and assets from Figma where they are approved.
+When a Figma asset is a placeholder, use the attached approved asset instead.
+
+PRODUCT / INTERACTION
+Use the attached connected product.
+Keep the real [variants / subscription choices / CTA action] functional.
+Do not recreate interactive controls as static artwork.
+
+SCOPE
+Build only the frames provided.
+Do not add extra CRO sections unless I ask for them.
+
+VERIFY
+Compare the implementation against both frames and list any parts that could not be represented exactly before making an alternative design decision.
+```
+
+## Step 4: review the first implementation by section
+
+Do not start by reviewing individual pixels. First check the structural questions:
+
+- Are all intended sections present once?
+- Is the page order correct?
+- Are desktop and mobile using the right hierarchy?
+- Are real product or form controls connected?
+- Are Figma placeholders replaced with the right approved assets?
+- Are interactions functional rather than decorative?
+
+Then refine typography, spacing, media crop, and fine layout.
+
+## Step 5: use focused visual corrections
+
+Instead of asking for the entire design again, select the mismatched section and make the difference explicit.
+
+```text
+The selected section is close to the desktop Figma.
+Keep its content and behavior.
+
+Fix only:
+1. Heading width should match the Figma more closely.
+2. Increase the gap between the copy and image.
+3. Align the CTA with the left edge of the body copy.
+
+Do not change mobile in this pass.
+```
+
+For mobile:
+
+```text
+Desktop is approved.
+Compare only the selected section's mobile layout with the mobile Figma frame.
+Fix the order, spacing, and image crop.
+Keep desktop and all copy unchanged.
+```
+
+## Step 6: verify any component that carries business logic
+
+Pay extra attention to:
+
+- product selectors
+- subscriptions
+- quantities
+- price displays
+- discounts and offers
+- forms
+- review widgets
+- buttons and links
+- sticky CTAs
+
+A Figma mock can display a “Save 20%” label even when no such checkout rule exists. The implementation must use your real commerce setup.
+
+## Step 7: separate design approval from launch approval
+
+A page can match Figma perfectly and still be unready for traffic.
+
+After design review, separately test:
+
+1. The published destination.
+2. Mobile and desktop.
+3. Every important CTA.
+4. Product / purchase selections.
+5. Forms and integrations.
+6. Final cart or checkout when applicable.
+7. The campaign URL.
+
+## Prompt: ask for a Figma comparison review
+
+```text
+Review the current implementation against:
+Desktop: [link]
+Mobile: [link]
+
+Do not edit yet.
+
+For each major section, classify the difference as:
+- CONTENT
+- LAYOUT
+- RESPONSIVE
+- INTERACTION
+- ASSET
+
+Prioritize differences that materially change the intended design or shopper experience.
+Ignore tiny pixel differences unless they affect hierarchy or alignment.
+```
+
+## What good looks like
+
+A strong Figma handoff produces a page that:
+
+- feels visually faithful to the approved frames
+- remains editable in Jurni
+- behaves correctly on both screen sizes
+- uses real products and real interactions
+- does not turn mock UI into fake functionality
+
+## Common mistakes
+
+**Only sending the desktop frame.** Jurni then has to infer mobile behavior.
+
+**Assuming a visual selector defines purchase logic.** Explain the real behavior separately.
+
+**Letting AI add “helpful” sections.** For an approved design handoff, scope should be tighter than a blank-page AI build.
+
+**Fixing the whole page for one mismatch.** Use section-level corrections after the first implementation.
+
+**Treating Figma approval as launch QA.** Test the published experience and purchase path independently.
+
+## Next playbooks
+
+- [Reference → page](/academy/playbooks/recreate-reference-page)
+- [Prompting 101](/academy/prompting-101)
+- [Pre-test CRO review](/academy/playbooks/cro-review)
+- [Launch your first campaign](/academy/start/first-campaign)
