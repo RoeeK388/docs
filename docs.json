@@ -342,6 +342,13 @@
         "tab": "Help",
         "groups": [
           {
+            "group": "Get Help",
+            "icon": "life-buoy",
+            "pages": [
+              "help/start"
+            ]
+          },
+          {
             "group": "Reference",
             "pages": [
               "data-dictionary/metrics-glossary",
@@ -351,7 +358,7 @@
             ]
           },
           {
-            "group": "Troubleshooting & FAQ",
+            "group": "Troubleshooting",
             "pages": [
               "integrations/troubleshooting",
               "troubleshooting/jurni-sales-channel",
@@ -415,5 +422,17 @@
   },
   "icons": {
     "library": "lucide"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/academy/index",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/academy/playbooks/index",
+      "destination": "/academy/playbooks",
+      "permanent": true
+    }
+  ]
 }
