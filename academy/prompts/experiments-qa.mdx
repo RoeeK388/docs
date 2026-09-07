@@ -1,0 +1,427 @@
+---
+title: "Experiment and QA prompt collection"
+sidebarTitle: "Experiment & QA prompts"
+description: "Copy-ready prompts for controlled variants, experiment hypotheses, pre-launch reviews, result interpretation, QA, and turning learnings into the next test."
+icon: "flask-conical"
+hidden: true
+---
+
+Use these prompts when you want Jurni AI to help plan or review an experiment without pretending that AI has already validated the live traffic, checkout, tracking, or statistical result.
+
+The key principle is simple: **change one meaningful thing when you want to learn one meaningful thing.**
+
+## Create a controlled experiment variant
+
+```text
+This is an A/B-test variant.
+
+HYPOTHESIS
+We believe changing [ONE THING] will improve [CUSTOMER BEHAVIOR / METRIC]
+because [REASON].
+
+CHANGE ONLY
+[TARGET SECTION / MESSAGE / LAYOUT / OFFER PRESENTATION]
+
+KEEP IDENTICAL TO CONTROL
+- product and purchase behavior;
+- pricing and offer logic;
+- all non-target sections;
+- CTA destination;
+- tracking setup;
+- page publishing setup;
+- responsive behavior unless mobile is part of the hypothesis.
+
+After editing, summarize exactly what is different from control.
+Do not make additional “improvements” outside the hypothesis.
+```
+
+## Turn a page observation into testable hypotheses
+
+```text
+Do not edit the page.
+
+Observed issue:
+[PAGE OBSERVATION OR DATA SIGNAL]
+
+Generate 5 testable hypotheses.
+For each one provide:
+1. Customer behavior we think is happening
+2. The single page variable we would change
+3. Why the change could matter
+4. Primary metric to watch
+5. Useful diagnostic metric / behavior
+6. What would remain fixed so the test is interpretable
+
+Do not invent customer research or performance data.
+Separate evidence we actually have from assumptions we would be testing.
+```
+
+## Prioritize test ideas
+
+```text
+Here are our current test ideas:
+[PASTE IDEAS]
+
+Prioritize them for a performance-marketing team using:
+- likely customer impact;
+- strength of existing evidence;
+- ability to isolate the variable;
+- implementation effort;
+- risk of breaking purchase behavior;
+- how much we would learn from a clear result.
+
+Return:
+1. Recommended order
+2. Why each idea is ranked there
+3. What evidence would change the priority
+
+Do not assign fake numeric impact estimates.
+```
+
+## Build three meaningfully different hero hypotheses
+
+```text
+Do not edit yet.
+
+Create 3 hero hypotheses for the same product and campaign.
+
+Audience: [AUDIENCE]
+Traffic source: [SOURCE]
+Current campaign angle: [ANGLE]
+Approved proof: [PROOF]
+
+Variant A — Benefit-led
+Variant B — Problem-led
+Variant C — Proof / differentiation-led
+
+For each provide:
+- headline direction;
+- supporting message;
+- proof placement;
+- CTA framing;
+- why this is a meaningfully different hypothesis.
+
+Keep product, offer, purchase behavior, and all sections below the hero constant.
+```
+
+## Compare control and variant before launch
+
+```text
+Do not edit anything.
+Compare the CONTROL and VARIANT pages.
+
+The intended hypothesis is:
+[HYPOTHESIS]
+
+List every visible difference between the two pages.
+Classify each difference as:
+- INTENDED — directly part of the hypothesis;
+- ACCEPTABLE SUPPORT — necessary to make the intended change coherent;
+- UNINTENDED — unrelated and should be reverted before launch.
+
+Also list anything you cannot verify from the page alone, such as cart behavior,
+tracking, campaign routing, or checkout.
+```
+
+## Check test fairness
+
+```text
+Review this planned A/B test for fairness before launch.
+Do not edit.
+
+Control: [DESCRIPTION / PAGE]
+Variant: [DESCRIPTION / PAGE]
+Hypothesis: [HYPOTHESIS]
+Primary metric: [METRIC]
+Traffic source: [SOURCE]
+
+Check whether the two experiences differ in anything that could confound the result:
+- product / price / offer;
+- purchase path;
+- page speed assumptions we have not measured;
+- tracking;
+- audience / routing;
+- unrelated design changes;
+- mobile behavior;
+- CTA destinations.
+
+Return a short pre-launch correction list.
+Do not claim the test is statistically valid based on traffic volume alone.
+```
+
+## Prepare an experiment brief
+
+```text
+Turn this idea into a concise experiment brief.
+
+IDEA
+[ROUGH IDEA]
+
+Return:
+- Problem / observation
+- Evidence we actually have
+- Hypothesis
+- Control
+- Variant
+- Primary metric
+- Secondary diagnostics
+- What must remain fixed
+- QA requirements
+- What result would change our next decision
+
+Do not build or launch the experiment yet.
+Do not invent baseline metrics or minimum sample sizes.
+```
+
+## Test a Jurni page against an existing website page
+
+```text
+Help me prepare a fair test between:
+CONTROL: [EXISTING WEBSITE PAGE]
+VARIANT: [JURNI PAGE]
+
+Traffic source: [SOURCE]
+Primary customer action: [ACTION]
+
+Before launch, identify what needs to be aligned or verified across both destinations:
+- product / offer;
+- campaign parameters;
+- CTA / checkout path;
+- tracking and attribution;
+- mobile experience;
+- page availability;
+- any other major customer-facing difference unrelated to the hypothesis.
+
+Separate:
+1. Page differences we can intentionally test
+2. Implementation differences we should remove or account for
+3. Live checks I need to perform outside the editor
+```
+
+## Final pre-launch page review
+
+```text
+Do not edit yet.
+Review this page for launch readiness.
+
+Check the visible page for:
+- campaign / ad message match;
+- obvious placeholder content;
+- inconsistent offer copy;
+- unsupported claims or invented proof;
+- broken-looking layout;
+- mobile hierarchy;
+- CTA labels and visible destinations;
+- duplicated or contradictory content;
+- selected product / option presentation.
+
+Then create a separate LIVE QA list for things the page view alone cannot prove:
+- real cart item;
+- variant / subscription plan;
+- actual discount / gift / shipping result;
+- checkout;
+- forms / integrations;
+- consent;
+- analytics / pixels;
+- Smart Link routing;
+- campaign parameters.
+
+Do not say an item passed unless it was actually observable from the page context.
+```
+
+## Mobile QA prompt
+
+```text
+Do not redesign the page.
+Review the current mobile experience only.
+
+Look for:
+- content hidden or cut off;
+- horizontal overflow;
+- product images cropped in a harmful way;
+- oversized whitespace;
+- CTA pushed too far down;
+- tap targets too close together;
+- selectors that are hard to scan;
+- sticky content covering important controls;
+- desktop-oriented multi-column layouts that do not translate well.
+
+Return issues in priority order and propose the smallest fix for each.
+Preserve desktop unless a shared change is necessary.
+```
+
+## Commerce QA planning prompt
+
+```text
+Create a purchase-flow QA checklist for this campaign.
+
+Product: [PRODUCT]
+Purchase types: [ONE-TIME / SUBSCRIPTION / BOTH]
+Important variants: [VARIANTS]
+Offer: [OFFER OR NONE]
+Publishing path: [JURNI HOSTED / SHOPIFY PAGE / HEADLESS / OTHER]
+
+Include test cases for:
+- default selection;
+- each high-priority variant;
+- one-time / subscription where relevant;
+- quantity;
+- cart item and price;
+- discount / gift / shipping qualification;
+- removing / changing a qualifying item;
+- checkout transition;
+- back-navigation if it matters to the campaign.
+
+Do not mark tests as passed. This is only the checklist I should execute live.
+```
+
+## Tracking QA planning prompt
+
+```text
+Create a tracking QA plan for this campaign.
+
+Publishing path: [PATH]
+Tracking tools: [META / GA4 / GTM / TIKTOK / NORTHBEAM / ETC.]
+Primary conversion: [ACTION]
+Consent setup: [KNOWN SETUP]
+
+Separate checks into:
+1. Page load / PageView
+2. Key on-page action
+3. Add to Cart / checkout transition
+4. Purchase / downstream conversion
+5. Campaign parameters and click IDs
+6. Duplicate installation checks
+
+For each, tell me where the marketer should verify the event.
+Do not claim Jurni AI can confirm delivery unless the event has actually been inspected in the provider.
+```
+
+## Read experiment results without overclaiming
+
+```text
+Help me interpret this experiment result as a marketer.
+
+Data provided:
+[PASTE CURRENT JURNI RESULT / METRICS]
+
+Primary hypothesis: [HYPOTHESIS]
+Primary metric: [METRIC]
+
+Return:
+1. What the observed data says
+2. What it does NOT prove
+3. Whether the direction is consistent with the hypothesis
+4. Useful supporting metrics / diagnostics
+5. Checks for confounding changes
+6. Recommended next action: keep running, investigate, iterate, or prepare a follow-up test
+
+Do not invent statistical confidence, thresholds, or causal certainty that are not present in the supplied result.
+```
+
+## Explain a metric move
+
+```text
+We observed:
+- [METRIC 1]: [CHANGE]
+- [METRIC 2]: [CHANGE]
+- [METRIC 3]: [CHANGE]
+
+Hypothesis tested: [HYPOTHESIS]
+
+Generate possible interpretations, but label each as a hypothesis rather than a fact.
+For each interpretation, list what additional page behavior, analytics, or customer evidence would help confirm or reject it.
+Do not invent customer intent from the metric alone.
+```
+
+## Turn a result into the next test
+
+```text
+Use this completed experiment to propose the next learning step.
+
+Original hypothesis: [HYPOTHESIS]
+Observed result: [RESULT]
+What changed between variants: [DIFFERENCE]
+Supporting signals: [METRICS / NOTES]
+
+Return:
+- strongest learning we can reasonably take from this test;
+- open questions that remain;
+- 3 possible next tests;
+- recommended next test and why;
+- what should stay fixed in that next test.
+
+Avoid simply testing a larger version of the same change unless the result gives a reason to do so.
+```
+
+## Document an experiment learning
+
+```text
+Turn the notes below into a short experiment learning record for our team.
+
+[PASTE TEST NOTES / RESULT]
+
+Format:
+- What we tested
+- Why we tested it
+- What changed
+- Primary result
+- Supporting observations
+- What we learned
+- What we did not learn / limitations
+- Decision made
+- Next test / follow-up
+
+Keep conclusions proportional to the evidence.
+```
+
+## Ask AI to find unintended changes after several edits
+
+```text
+We have iterated on this test variant several times.
+The only intended difference from control is: [HYPOTHESIS].
+
+Do not edit yet.
+Audit the current variant and list anything else that appears to have changed:
+- copy;
+- product choices;
+- price / offer presentation;
+- CTA behavior;
+- section order;
+- mobile layout;
+- integrations / widgets;
+- links.
+
+Flag anything unrelated so I can revert it before launching the experiment.
+```
+
+## Pre-launch Smart Link checklist prompt
+
+```text
+Create a launch checklist for this experiment's campaign link.
+
+Campaign / Smart Link: [LINK OR NAME]
+Control: [CONTROL]
+Variant(s): [VARIANTS]
+Traffic source: [SOURCE]
+Routing rules if any: [RULES]
+
+Checklist should cover:
+- the exact URL used in ads;
+- expected destinations;
+- routing / traffic assignment assumptions;
+- forwarded campaign parameters;
+- mobile / desktop destination availability;
+- purchase flow;
+- tracking;
+- what to verify in an incognito / fresh-assignment test versus an already-assigned browser.
+
+Do not launch or change the link. This is a manual QA plan.
+```
+
+## Next
+
+- [Controlled-variation playbook](/academy/playbooks/controlled-variation)
+- [Run your first experiment](/academy/playbooks/first-experiment)
+- [Results → next test](/academy/playbooks/results-to-next-test)
+- [Jurni experiment Help Center](/experiments/what-are-experiments)
