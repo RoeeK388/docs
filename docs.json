@@ -385,14 +385,9 @@
         ]
       },
       {
-        "tab": "Changelog",
+        "tab": "Guides",
         "pages": [
-          "changelog"
-        ]
-      },
-      {
-        "tab": "Academy",
-        "pages": [
+          "guides/index",
           "academy",
           "academy/start/first-campaign",
           {
@@ -434,6 +429,18 @@
               "academy/playbooks/optimization-loop"
             ]
           }
+        ]
+      },
+      {
+        "tab": "Learn",
+        "pages": [
+          "learn/index"
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "pages": [
+          "changelog"
         ]
       }
     ]
