@@ -1,0 +1,232 @@
+---
+title: "Optimize above the fold"
+sidebarTitle: "Optimize above the fold"
+description: "Improve the first screen of a Jurni landing page around message match, product recognition, proof, CTA clarity, and mobile hierarchy."
+icon: "panel-top"
+hidden: true
+---
+
+Use this playbook when the page is already broadly right but the first screen feels unclear, generic, crowded, or disconnected from the campaign.
+
+“Above the fold” is not a fixed pixel height. It is the first meaningful screen a visitor sees before they choose whether to keep engaging. The goal is to make that first decision easier.
+
+## What the first screen needs to accomplish
+
+For most commerce landing pages, a visitor should quickly understand:
+
+1. **Am I in the right place?** — message match with the ad / campaign.
+2. **What is this?** — clear product or solution recognition.
+3. **Why should I care?** — one useful benefit or angle.
+4. **Why should I believe it?** — enough proof or credibility to keep going.
+5. **What can I do next?** — a clear primary action.
+
+Not every hero needs all five as separate elements. But if the visitor cannot infer them, the page is making them work too hard.
+
+## Phase 1 — Diagnose before redesigning
+
+Use Jurni to review the current hero first.
+
+```text
+Do not edit yet.
+Review only the current first screen for [AUDIENCE] arriving from [TRAFFIC SOURCE / AD].
+
+Assess:
+- message match;
+- clarity of what the product / page is;
+- hierarchy of headline, supporting copy, image, proof, and CTA;
+- whether anything competes with the primary action;
+- whether the hero asks the visitor to believe something unsupported;
+- mobile readability and product recognition.
+
+Return:
+1. Visible issue
+2. Why it may matter to this visitor
+3. Smallest useful fix
+
+Label interpretation as a hypothesis, not a fact.
+Do not edit yet.
+```
+
+Choose the **one or two** issues that matter most. Do not automatically rebuild the entire hero.
+
+## Phase 2 — Reconnect the hero to campaign intent
+
+A useful headline is not merely “punchier.” It should reflect the reason this particular visitor clicked.
+
+If traffic comes from a specific ad, check:
+
+- same audience language;
+- same central promise;
+- no contradictory offer;
+- product / use case continuity;
+- CTA that makes sense after the click.
+
+If traffic is broad or organic, use the product’s primary customer problem and positioning rather than an ad-specific hook.
+
+## Phase 3 — Simplify the hierarchy
+
+A hero often becomes weak by accumulating too many elements over time.
+
+Useful hierarchy:
+
+- eyebrow / context only when it adds meaning;
+- one primary headline;
+- one supporting message;
+- one main CTA;
+- compact proof / trust;
+- one dominant visual story.
+
+This does not mean every hero must be minimal. It means every visible element should have a job.
+
+Use:
+
+```text
+Edit only the selected hero.
+
+Primary audience: [AUDIENCE]
+Campaign angle: [ANGLE]
+Primary action: [ACTION]
+
+Simplify the first screen to one clear message hierarchy.
+Keep:
+- [MUST-KEEP IMAGE / PRODUCT VISUAL];
+- [APPROVED HEADLINE IDEA / CLAIM];
+- existing CTA behavior;
+- all sections below the hero.
+
+Change:
+- remove / reduce competing secondary copy;
+- make the primary headline the strongest element;
+- shorten supporting copy to [LENGTH];
+- use only approved proof below / near the CTA;
+- make the primary CTA visually obvious.
+
+Do not invent claims, reviews, pricing, or urgency.
+```
+
+## Phase 4 — Use proof that supports the hero claim
+
+Proof is strongest when it answers the skepticism created by the headline.
+
+Examples:
+
+- headline about ease → approved “easy to use” customer quote / relevant product fact;
+- headline about popularity → real rating / count if approved and current;
+- headline about a specific product benefit → a factual supporting mechanism or approved review;
+- creator angle → supplied creator quote / asset.
+
+Do not add generic five-star icons with no real source just to decorate the hero.
+
+## Phase 5 — Make the visual explain the product
+
+Ask whether the hero image helps someone understand the product or simply fills space.
+
+Depending on the campaign, a useful visual can show:
+
+- product clearly;
+- product in use;
+- bundle / assortment;
+- creator context;
+- key before-purchase decision such as format or size.
+
+For mobile, product recognition often matters more than preserving a dramatic desktop crop.
+
+```text
+MOBILE ONLY
+Keep the hero message and CTA unchanged.
+Adjust the selected image so [PRODUCT / KEY VISUAL] is fully recognizable without an awkward crop.
+Keep the label / important feature visible.
+Do not change desktop.
+```
+
+## Phase 6 — Review CTA clarity
+
+The CTA label and behavior need to agree.
+
+A button labeled “Get Started” that actually opens checkout can feel surprising. A “Shop Now” button that scrolls to a purchase section may be fine if the page context makes that obvious, but the user should not have to guess.
+
+Use [Buttons & actions](/build/cta-actions) for the actual setup.
+
+Ask Jurni for CTA options without changing behavior:
+
+```text
+The actual button action is: [ACTION].
+Write 8 CTA label options that clearly set that expectation.
+Audience: [AUDIENCE].
+Tone: [TONE].
+Maximum: [X] words.
+No fake urgency or offer language.
+Do not change the button behavior.
+```
+
+## Phase 7 — Do a dedicated mobile pass
+
+The mobile first screen should not be a squeezed desktop composition.
+
+Check:
+
+- headline readable without awkward line breaks;
+- product / key image not pushed far below;
+- CTA not hidden after a full-screen decorative image;
+- proof still readable;
+- no overlapping elements;
+- no excessive vertical gaps;
+- sticky CTA, if used, does not cover controls.
+
+```text
+Review the selected hero on mobile only.
+Do not edit desktop.
+
+Prioritize this hierarchy:
+1. [HEADLINE / PRODUCT / CTA ORDER]
+2. Product recognition
+3. Supporting proof
+
+Reduce spacing only where it improves the first decision.
+Keep the existing copy and CTA behavior unless explicitly listed.
+```
+
+## Phase 8 — Decide whether to ship or test
+
+If the current hero is clearly broken—wrong offer, unreadable mobile layout, broken hierarchy—fixing it may simply be QA.
+
+If both versions are plausible and you want to learn whether a different message / proof / visual works better, preserve the control and use [Create a controlled variation](/academy/playbooks/controlled-variation).
+
+## What good looks like
+
+A useful review exercise: show the first screen to a teammate for five seconds, then hide it.
+
+Can they answer:
+
+- What product / solution is this?
+- Who / what is it for?
+- What is the main reason to care?
+- What action was available?
+- What gave it credibility?
+
+They do not need to memorize the copy. They should understand the page’s **decision**.
+
+## Common mistakes
+
+### Adding more proof instead of better proof
+
+Six tiny badges are not automatically more persuasive than one clear piece of evidence tied to the headline.
+
+### Changing headline, offer, visual, CTA, and page structure at once
+
+That may make a better page, but it makes a weak experiment. Separate QA from hypotheses.
+
+### Writing for the brand instead of the visitor
+
+“Welcome to the future of wellness” can sound polished while saying almost nothing about why this visitor clicked.
+
+### Letting mobile become a long stack of desktop elements
+
+Prioritize. You do not have to preserve every decorative element in the first screen on mobile.
+
+## Next
+
+- [Ad → landing page](/academy/playbooks/ad-to-landing-page)
+- [CRO audit → first edit](/academy/playbooks/cro-audit)
+- [Create a controlled variation](/academy/playbooks/controlled-variation)
+- [CRO & editing prompts](/academy/prompts/cro-editing)
