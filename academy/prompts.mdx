@@ -1,0 +1,139 @@
+---
+title: "Jurni Prompt Library"
+sidebarTitle: "Prompt Library"
+description: "Copy and adapt ready-to-use Jurni AI prompts for page building, CRO, campaign offers, experiments, and QA."
+icon: "copy"
+hidden: true
+---
+
+Use this library when you know the job you want Jurni to do and do not want to start from a blank prompt.
+
+Every prompt is designed to be **adapted**, not pasted blindly. Replace the bracketed fields, attach the real sources, and remove instructions that do not apply to your campaign.
+
+If you want to understand *why* these prompts are structured this way, read [Prompting 101](/academy/prompting-101) first.
+
+## Browse by job
+
+<CardGroup cols={2}>
+  <Card title="Page building" href="/academy/prompts/page-building" icon="layout-template">
+    Product launches, advertorials, listicles, founder stories, creator pages, Figma, screenshots, and URL references.
+  </Card>
+  <Card title="CRO & editing" href="/academy/prompts/cro-editing" icon="wand-sparkles">
+    Improve a hero, tighten copy, reorder proof, fix mobile, simplify CTAs, and review a page without rebuilding it.
+  </Card>
+  <Card title="Campaigns & offers" href="/academy/prompts/campaigns-offers" icon="badge-percent">
+    Message-match ads, present discounts, communicate GWP, position subscriptions, build seasonal campaigns, and creator journeys.
+  </Card>
+  <Card title="Experiments & QA" href="/academy/prompts/experiments-qa" icon="flask-conical">
+    Create controlled variants, generate hypotheses, review results, QA a page, and prepare a launch checklist.
+  </Card>
+</CardGroup>
+
+## Five prompts worth saving today
+
+### 1. Turn a rough idea into a proper brief
+
+```text
+Do not build yet.
+Act like a senior performance marketer reviewing this campaign idea.
+
+My rough idea:
+[PASTE IDEA]
+
+Identify only the missing information that would materially change the page:
+- audience;
+- traffic source / ad angle;
+- product / offer;
+- primary action;
+- proof we can use;
+- must-keep brand or commerce behavior.
+
+Ask me the smallest number of questions needed.
+Then rewrite the final brief in the Jurni BRIEF format.
+```
+
+### 2. Build a message-matched landing page
+
+```text
+Build a dedicated landing page for [PRODUCT] for [AUDIENCE].
+Traffic is coming from [CHANNEL / AD].
+The campaign angle is [ANGLE].
+
+Use:
+- attached product for real product information;
+- attached ad for message and visual direction;
+- AI Knowledge for approved brand voice and claims;
+- supplied reviews / UGC only for social proof.
+
+The first screen should clearly continue the ad's story.
+Use one primary conversion path.
+Do not invent pricing, discounts, claims, reviews, urgency, or guarantees.
+Prioritize mobile.
+```
+
+### 3. Make one section better without touching the rest
+
+```text
+Edit only the selected [SECTION].
+The problem is: [SPECIFIC PROBLEM].
+Desired result: [SPECIFIC OUTCOME].
+
+Keep unchanged:
+- all other sections;
+- existing copy that is not explicitly mentioned;
+- product and purchase behavior;
+- CTA destination;
+- desktop/mobile behavior outside this section.
+```
+
+### 4. Ask Jurni for a CRO audit without fake certainty
+
+```text
+Do not edit yet.
+Audit this page for [AUDIENCE] arriving from [TRAFFIC SOURCE].
+
+For each finding, label it:
+- PAGE OBSERVATION — directly visible;
+- HYPOTHESIS — a testable interpretation;
+- DATA NEEDED — something we should confirm in analytics, research, cart, or checkout.
+
+Prioritize the 5 highest-leverage issues.
+Do not invent performance data or customer research.
+```
+
+### 5. Create a clean A/B-test variation
+
+```text
+This is an experiment variant.
+Change only: [HYPOTHESIS].
+
+Keep the following identical to control:
+- product and purchase behavior;
+- offer and price;
+- all non-target sections;
+- CTA destination;
+- tracking setup;
+- responsive behavior unless it is part of the hypothesis.
+
+After editing, summarize exactly what changed compared with control.
+```
+
+## How to use this library
+
+A good workflow is:
+
+1. Copy the closest prompt.
+2. Replace the placeholders with the real campaign context.
+3. Attach the source material you want Jurni to trust.
+4. Delete irrelevant instructions.
+5. Send the prompt.
+6. Review the result and continue with smaller follow-ups.
+7. Save a prompt that worked well for your team as an internal reusable template.
+
+<Tip>
+  The best reusable prompts capture **decisions and constraints**, not a fixed visual template. Keep the structure repeatable while allowing the product, audience, ad angle, evidence, and offer to change.
+</Tip>
+
+## Want the full workflow instead of only a prompt?
+
+Browse [Academy Playbooks](/academy/playbooks). Each playbook explains when to use a page type, what to prepare, how to build it, what to review, and which prompt to use at each stage.
