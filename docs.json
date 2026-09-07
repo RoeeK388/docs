@@ -17,18 +17,15 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
+            "expanded": true,
             "pages": [
+              "getting-started/welcome",
+              "getting-started/step-by-step-setup",
+              "getting-started/how-jurni-works",
+              "getting-started/choose-your-setup",
               {
-                "group": "Start Here",
-                "pages": [
-                  "getting-started/welcome",
-                  "getting-started/step-by-step-setup",
-                  "getting-started/choose-your-setup"
-                ]
-              },
-              {
-                "group": "Account & Team",
+                "group": "Account & Workspace",
                 "pages": [
                   "getting-started/create-account",
                   "getting-started/setup-account",
@@ -44,14 +41,14 @@
                 ]
               },
               {
-                "group": "Headless & Non-Shopify Setup",
+                "group": "Other Commerce Setups",
                 "pages": [
                   "getting-started/shopify-headless",
                   "getting-started/setup-non-shopify"
                 ]
               },
               {
-                "group": "Brand & AI Knowledge",
+                "group": "Brand & AI",
                 "pages": [
                   "getting-started/brand-settings",
                   "getting-started/setup-ai-knowledge"
