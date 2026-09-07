@@ -397,11 +397,19 @@
           },
           {
             "group": "Commerce Playbooks",
-            "pages": []
+            "pages": [
+              "academy/playbooks/gwp-campaign",
+              "academy/playbooks/subscription-campaign"
+            ]
           },
           {
             "group": "CRO & Experimentation",
-            "pages": []
+            "pages": [
+              "academy/playbooks/cro-review",
+              "academy/playbooks/first-ab-test",
+              "academy/playbooks/what-to-test",
+              "academy/playbooks/optimization-loop"
+            ]
           }
         ]
       }
