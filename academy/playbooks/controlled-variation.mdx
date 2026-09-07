@@ -1,0 +1,196 @@
+---
+title: "Create a controlled A/B test variation"
+sidebarTitle: "Controlled variation"
+description: "Use Jurni AI to change one meaningful hypothesis while preserving the rest of the customer journey so your experiment stays interpretable."
+icon: "copy-plus"
+hidden: true
+---
+
+Use this playbook when you have a page worth keeping as the control and want to test **one meaningful hypothesis** without accidentally redesigning everything else.
+
+A good test variation is not the page you like more. It is the page that makes the hypothesis clear enough to learn from the result.
+
+## Start with the hypothesis, not the design
+
+Write the hypothesis in one sentence:
+
+> We believe changing **[PAGE VARIABLE]** for **[AUDIENCE]** will improve **[CUSTOMER BEHAVIOR / PRIMARY METRIC]** because **[REASON].**
+
+Examples:
+
+- We believe a benefit-led hero will improve CVR for cold Meta traffic because the current feature-led headline does not explain why the product matters.
+- We believe moving approved review proof above the purchase section will improve purchase intent because visitors currently see the Buy Box before meaningful social proof.
+- We believe a simpler mobile hero will increase progression because the CTA is pushed below a large visual block.
+
+Avoid “the variant will convert better because it is better.” That is not a useful hypothesis.
+
+## Phase 1 — Define the variable
+
+Name exactly what can change.
+
+Good test variables:
+
+- hero message;
+- hero visual emphasis;
+- proof placement;
+- section order;
+- CTA framing;
+- offer presentation when the underlying offer is the same;
+- amount / type of education;
+- mobile-specific hierarchy.
+
+If your idea requires changing product, price, offer, page story, and checkout together, it may be a **new experience** rather than a clean test of one variable.
+
+## Phase 2 — Decide what stays fixed
+
+Create a fixed list before editing:
+
+- product;
+- variants / purchase options;
+- actual price / discount / gift rules;
+- CTA action / destination;
+- tracking setup;
+- sections outside the test area;
+- campaign audience;
+- campaign-facing link / experiment setup;
+- any responsive behavior unrelated to the hypothesis.
+
+This list is what stops “helpful” AI edits from becoming confounds.
+
+## Phase 3 — Create a separate draft / variant
+
+Do not overwrite the control when you need to compare it.
+
+Use the current Jurni page / experience workflow to create the separate version you intend to use as the variant. Check the experience name so the team can identify control vs variant clearly.
+
+A naming pattern such as **Campaign — Control** and **Campaign — Hero Benefit Variant** is more useful than “Version 2.”
+
+## Phase 4 — Give Jurni the controlled-edit prompt
+
+```text
+This page is an A/B-test variant.
+
+HYPOTHESIS
+We believe changing [ONE VARIABLE] will improve [BEHAVIOR / METRIC]
+because [REASON].
+
+CHANGE ONLY
+[EXACT SECTION / COPY / LAYOUT CHANGE]
+
+KEEP IDENTICAL TO CONTROL
+- product and purchase behavior;
+- pricing and offer logic;
+- CTA destination;
+- all non-target sections;
+- integrations / tracking setup;
+- responsive behavior unless it is explicitly part of the hypothesis.
+
+Do not make additional CRO improvements outside the test.
+After editing, summarize every visible difference from control.
+```
+
+Review the summary. If it includes changes outside the hypothesis, inspect and revert them.
+
+## Phase 5 — Compare control and variant
+
+Use a second pass before launching:
+
+```text
+Do not edit.
+Compare the control and current variant.
+
+Intended hypothesis:
+[HYPOTHESIS]
+
+List every visible difference and classify it:
+- INTENDED — part of the hypothesis
+- NECESSARY SUPPORT — required to make the intended change coherent
+- UNINTENDED — unrelated and should be reverted
+
+Also list anything that requires live verification rather than visual comparison.
+```
+
+Examples of **necessary support**:
+
+- changing the supporting sentence so it matches the new headline;
+- changing the hero image crop to accommodate a new layout.
+
+Examples of **unintended**:
+
+- a different product default;
+- FAQ wording changed for no reason;
+- mobile layout altered when the test is headline-only;
+- CTA destination changed.
+
+## Phase 6 — QA commerce and integrations
+
+A visually controlled test can still be invalid if the purchase paths differ.
+
+Open both published / test destinations and verify:
+
+- same product when intended;
+- same variant / purchase options;
+- same actual offer;
+- same Add to Cart / checkout action;
+- same tracking installations;
+- no broken review / form widgets in one variant;
+- intended mobile behavior;
+- both pages load and are available.
+
+Use [Experiment & QA prompts](/academy/prompts/experiments-qa) to generate the checklist, then execute it manually.
+
+## Phase 7 — Connect the variant to the experiment
+
+Follow [Create and Run an A/B Test](/experiments/create-experiment) for the product steps.
+
+From a marketer’s perspective, confirm:
+
+- the correct Smart Link is the campaign-facing URL;
+- control and variant are the pages you just QA’d;
+- traffic weights reflect the intended test;
+- routing rules, if used, are deliberate;
+- the audience hitting the link is the audience in your hypothesis.
+
+Do not use a direct variant page URL in the campaign when you expect the experiment Smart Link to split traffic.
+
+## What good looks like
+
+You should be able to describe the test to another marketer in one sentence:
+
+> “Everything is the same except **X**, because we want to learn **Y**.”
+
+If that sentence needs a paragraph of exceptions, the test may be too broad.
+
+## Common mistakes
+
+### “Make a better version of the page”
+
+That produces a redesign, not a controlled hypothesis.
+
+### Changing the offer while testing messaging
+
+A stronger discount can swamp the effect of the message. Keep the commercial offer fixed unless the offer itself is the hypothesis.
+
+### Variant has hidden mobile differences
+
+Always compare both screen sizes.
+
+### Fixing control bugs only in the variant
+
+If control has a genuine broken CTA / product issue, fix the bug in both experiences before testing the marketing hypothesis.
+
+### Over-reacting to secondary metrics
+
+Choose the primary metric before launch. Use secondary metrics to help interpret the journey, not to search for any number that makes the variant look successful.
+
+## After launch
+
+Do not keep editing a live variant casually. If you materially change it, you change what the test is testing.
+
+When the result is ready for a decision, use [Results → next test](/academy/playbooks/results-to-next-test).
+
+## Related
+
+- [Experiment & QA prompts](/academy/prompts/experiments-qa)
+- [Run your first Jurni experiment](/academy/playbooks/first-experiment)
+- [Testing best practices](/experiments/strategic-experiments)
