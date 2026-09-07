@@ -1,0 +1,243 @@
+---
+title: "Recreate a landing page from a reference"
+sidebarTitle: "Reference → page"
+description: "Use a URL or screenshots as structure and interaction references while rebuilding the page with your own brand, products, claims, and purchase behavior."
+icon: "scan"
+---
+
+# Recreate a landing page from a reference
+
+Use this playbook when you have found a page with a strong **structure, shopping flow, or visual pattern** and want to adapt the idea into Jurni without copying another brand's customer-facing content.
+
+The most useful way to think about a reference is: **show Jurni the pattern you want, then tell it what must come from your brand.**
+
+## Good reasons to use a reference
+
+A reference is useful when you want to borrow:
+
+- section order or page pacing
+- the structure of a hero or comparison section
+- how a product selector is presented
+- how proof is introduced
+- a mobile layout pattern
+- a sticky CTA or other interaction pattern
+- a general visual direction such as editorial, minimal, clinical, playful, or premium
+
+A reference should not be treated as the factual source for your product, pricing, claims, testimonials, or offer.
+
+## Step 1: decide exactly what you like
+
+Do not prompt with only “recreate this page.” Before building, identify what is actually valuable.
+
+Fill this in:
+
+```text
+REFERENCE
+[URL or screenshots]
+
+USE FOR
+[section order / interaction / layout / typography / spacing / visual tone]
+
+DO NOT COPY
+[claims / product content / reviews / logo / offer / pricing / imagery]
+
+OUR SOURCES
+[product / assets / approved copy / AI Knowledge / reviews / offer]
+
+PRIMARY ACTION
+[what our visitor should do]
+```
+
+This prevents Jurni from having to decide which parts of the reference matter.
+
+## Step 2: capture the important responsive states
+
+If the mobile version of the reference behaves differently from desktop, include both. A desktop screenshot does not explain how the original creator intended cards, tables, menus, or purchasing controls to adapt on a phone.
+
+For a full-page reference, collect only the screenshots that add information. Five useful screenshots are better than twenty near-duplicates.
+
+Label them clearly:
+
+```text
+Reference 1 = desktop hero and first education section
+Reference 2 = desktop purchase section
+Reference 3 = mobile hero
+Reference 4 = mobile purchase section
+```
+
+## Step 3: attach your real sources too
+
+Alongside the reference, give Jurni:
+
+- the connected product you actually sell
+- your approved product imagery
+- the campaign brief or ad creative
+- approved claims and proof
+- your actual offer information
+- AI Knowledge for persistent brand context
+
+This tells Jurni what to **replace the reference content with**.
+
+## Step 4: use the reference as a system, not a screenshot
+
+Copy this prompt:
+
+```text
+Use [URL / attached references] as a STRUCTURAL AND INTERACTION reference.
+
+WHAT TO BORROW
+- [section order]
+- [specific layout patterns]
+- [specific interaction]
+- [spacing / hierarchy / visual direction]
+
+WHAT TO USE FROM OUR BRAND
+- attached product
+- approved brand assets
+- AI Knowledge
+- approved copy / claims
+- our current offer
+
+DO NOT COPY FROM THE REFERENCE
+- logo or brand identity
+- product names or imagery
+- testimonials or review counts
+- product claims
+- pricing or discounts
+- guarantees or urgency
+
+GOAL
+Build this for [audience] arriving from [traffic source] and move them toward [primary action].
+
+BEHAVIOR
+Keep real product and purchase controls functional. If the reference contains an interaction that cannot be inferred from its visual appearance, ask me or preserve the working Jurni behavior instead of inventing it.
+
+RESPONSIVE
+Use the attached mobile references for mobile behavior. Do not simply shrink the desktop layout.
+```
+
+## Step 5: compare section purpose, not pixel position
+
+A reference may contain a section your campaign does not need. Before copying the page flow exactly, ask what each section is doing.
+
+For example:
+
+| Reference section | Job it may be doing | Your decision |
+| --- | --- | --- |
+| Editorial opening | Build problem awareness | Keep only if your traffic needs education |
+| Comparison table | Help evaluate alternatives | Keep only with approved comparison evidence |
+| Founder quote | Add trust / point of view | Replace with your real founder material or omit |
+| Bundle selector | Simplify product choice | Rebuild only if your commerce setup supports it |
+| Long FAQ | Resolve purchase objections | Use your real objections, not theirs |
+
+The best recreation keeps the **logic** of the page while making every section relevant to your visitor.
+
+## Step 6: rebuild interactions deliberately
+
+Visual references are weakest at explaining behavior.
+
+If you are recreating:
+
+- tabs
+- option cards
+- quantity selectors
+- subscription selectors
+- bundle builders
+- sticky CTAs
+- quizzes
+
+write the expected behavior separately.
+
+Example:
+
+```text
+The reference has three product-option cards.
+Use that visual pattern only.
+
+Our behavior should be:
+- one option selected at a time
+- selected state clearly visible
+- option selection updates the actual purchase choice
+- primary CTA keeps the existing cart action
+
+Use our connected products and real available options.
+```
+
+## Step 7: make a brand pass after the structural pass
+
+Once the page structure is right, review it again specifically for brand fit.
+
+Use:
+
+```text
+The structure is approved.
+Now review this page only for brand fit.
+
+Check:
+- typography hierarchy
+- color usage
+- image choices
+- tone of voice
+- button language
+- amount of whitespace
+
+Use AI Knowledge and approved assets as the source of truth.
+Do not change page structure, product behavior, or claims during this pass.
+```
+
+## Step 8: run a reference-contamination check
+
+Before launch, ask Jurni:
+
+```text
+Review this page against the supplied reference and our approved sources.
+Do not edit yet.
+
+Flag anything that appears to have been carried over from the reference brand, including:
+- brand names
+- product names
+- claims
+- numbers
+- review language
+- pricing
+- offer details
+- logos or imagery
+
+Then flag anything that looks generic or invented rather than grounded in our supplied sources.
+```
+
+## What good looks like
+
+A strong reference-based build should feel familiar in **structure** but unmistakably yours in **content and brand**.
+
+You should be able to explain every major section in terms of a customer decision: understand the problem, trust the solution, evaluate the product, choose an option, or act.
+
+## Common mistakes
+
+**“Copy this exactly.”** That gives the AI no instruction about what must be replaced with your own brand truth.
+
+**Using the reference as the product spec.** The reference brand's bundle or subscription behavior may not exist in your store.
+
+**Ignoring mobile.** A desktop page with complex cards or tables often needs a different mobile pattern.
+
+**Keeping sections because the reference has them.** Page length should follow customer needs, not the original page's section count.
+
+**Accidentally importing another brand's proof.** Testimonials, logos, review counts, comparisons, and claims require your own approved sources.
+
+## What to test next
+
+Once the adapted page is correct, useful test questions include:
+
+- the reference's section order versus a shorter Jurni version
+- editorial opening versus product-forward opening
+- proof before product versus proof after product
+- reference-inspired hero layout versus your current control
+
+Do not treat the reference as “the winning design.” Treat it as a hypothesis source.
+
+## Next playbooks
+
+- [Build from Figma](/academy/playbooks/figma-to-page)
+- [Turn an ad into a landing page](/academy/playbooks/ad-to-landing-page)
+- [CRO review](/academy/playbooks/cro-review)
+- [Prompt Library](/academy/prompt-library)
