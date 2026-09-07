@@ -1,68 +1,189 @@
----
-title: "Product, Variant, or Selling Plan Is Wrong in Cart"
-sidebarTitle: "Product & Cart Issues"
-description: "Troubleshoot Jurni commerce actions when the wrong product, variant, quantity, subscription plan, or cart item is added."
-keywords:
-  - "wrong variant cart"
-  - "Jurni add to cart issue"
-  - "selling plan missing"
-  - "product not adding"
----
+Use this guide when the page looks right but the **wrong thing happens after the shopper chooses a product or clicks the purchase button**.
 
-If a Jurni Buy Box or product section looks correct but the wrong item reaches cart, troubleshoot the commerce configuration from the cart payload backward.
-
-## First identify what is wrong
-
-Check the actual cart and note whether the issue is with:
-
-- Product
-- Variant
-- Quantity
-- Selling plan / subscription
-- Bundle line items
-- Gift product
-- Discount
-
-Do not diagnose only from the text shown on the landing page. The cart is the first place to confirm what the commerce action actually produced.
-
-## Wrong product or variant
-
-Check that the Jurni section is mapped to the expected Shopify product and exact variant. Variant IDs matter even when two options have similar names.
-
-If the product was recently edited in Shopify, reopen the experience and verify the product configuration again.
-
-## Selling plan is missing
-
-If one-time purchase works but subscription does not:
-
-1. Confirm the selling plan is active in Shopify.
-2. Confirm the selected product and variant are included in the plan.
-3. Confirm the subscription app has synced the selling plan to Shopify.
-4. Re-test the Jurni purchase option.
-
-## Bundle items are wrong
-
-For bundle experiences, test multiple valid combinations. Verify that the expected products and quantities appear as separate or bundled cart items according to the store's bundle implementation.
-
-## Gift appears but is not free
-
-This is usually a discount configuration issue rather than an add-to-cart issue. Jurni can add the gift product, while Shopify or your discount system controls the final price of that gift.
+Start with the actual cart / checkout result. That tells you which part of the purchase setup is wrong.
 
 ## Nothing is added to cart
 
 Check:
 
-- The product/variant is active and available.
-- The page's cart configuration is correct.
-- The Shopify Page uses the expected cart provider setup.
-- Browser console errors are not blocking the commerce action.
-- A custom cart app has not changed its integration behavior.
+1. Is the product / variant still active and available in Shopify / your commerce system?
+2. Is the page using the intended purchase action?
+3. If this is a Shopify Page, is its theme / cart connection configured?
+4. Does the same product work from another page / normal storefront?
+5. Is a third-party cart app or custom storefront integration involved?
 
-## Related guides
+For native Shopify Pages, see [Cart connection](/shopify-pages/cart-config).
 
-- Products and Variants
-- Buy Box Overview
-- Subscriptions and Selling Plans
-- Building Bundles
-- Gift With Purchase
-- Cart and Checkout Behavior
+For non-Shopify / headless stores, confirm the agreed [purchase integration](/commerce/non-shopify-purchase-flows).
+
+## The wrong product is added
+
+Compare:
+
+- product shown on the page;
+- selected product in the purchasing section;
+- product that appears in cart.
+
+A product title typed into a heading does not control the cart item. The purchasing section needs to be connected to the intended real product.
+
+If the page was duplicated from another campaign, recheck the product connection rather than assuming the visible copy was the only thing that carried over.
+
+## The wrong variant is added
+
+Check the exact option the shopper selected and the variant that reached cart.
+
+If Shopify variants were changed, removed, or recreated after the page was built, reopen the page and retest the important combinations.
+
+Two variants with similar labels are still different commerce items.
+
+## Subscription is missing or becomes one-time purchase
+
+If one-time works but subscription does not:
+
+1. Confirm the product still has an active selling plan in Shopify / your subscription app.
+2. Confirm the relevant product / variant is included in that plan.
+3. On the page, choose the actual subscription option / selling plan.
+4. Add to cart / checkout and inspect the line item.
+
+A visible “Subscribe & Save” label does not create a subscription plan.
+
+[Subscriptions & selling plans →](/building-funnels/subscriptions-selling-plans)
+
+## The wrong subscription frequency / plan is added
+
+Check which selling plan is selected—not only whether “Subscription” is selected.
+
+If the product has several frequencies, test each high-priority plan through cart / checkout.
+
+Page copy such as “Ships every 30 days” should match the plan the customer actually selected.
+
+## The quantity is wrong
+
+Confirm whether the page uses:
+
+- a fixed quantity;
+- a quantity selector;
+- multi-product / bundle logic;
+- an offer that changes gift quantity.
+
+Renaming a card “3-pack” does not itself make the purchase quantity three.
+
+Test the real cart lines / quantities instead of reading the visual pack label as proof.
+
+## Bundle items are wrong
+
+For a bundle / multi-product journey, test more than one valid combination.
+
+Verify:
+
+- expected products;
+- variants;
+- quantities;
+- purchase type;
+- final cart lines;
+- actual discount / bundle pricing.
+
+The page can show the intended bundle design while the underlying commerce flow still needs correction.
+
+## Gift appears but costs money
+
+This is usually an **offer / Shopify discount** problem rather than a failure to add the gift.
+
+Jurni can qualify / add the supported gift while Shopify / the discount system controls whether that gift is actually free.
+
+Check:
+
+- gift product / variant;
+- qualifying rule;
+- Shopify gift price / discount;
+- final checkout amount.
+
+[Gift with Purchase →](/building-funnels/gift-with-purchase)
+
+## Discount code is shown but checkout rejects it
+
+Check the code in Shopify:
+
+- exact code spelling;
+- active dates;
+- eligible products;
+- customer eligibility;
+- minimum purchase;
+- one-time vs subscription eligibility;
+- combination rules;
+- usage limits.
+
+Jurni displaying the promotion does not override Shopify's code rules.
+
+[Discount-code offers →](/commerce/discount-code-offers)
+
+## Free shipping is shown but checkout charges shipping
+
+Compare the Jurni campaign rule with the actual Shopify shipping eligibility:
+
+- threshold / quantity;
+- subscription condition;
+- customer shipping address / market;
+- products;
+- active shipping discount / rate.
+
+The page message and the checkout rule need to agree.
+
+[Free-shipping offers →](/commerce/free-shipping-offers)
+
+## Add to Cart works but the drawer doesn't open
+
+The item can be added successfully while the intended **theme / cart-app UI** fails to open or refresh.
+
+This is common when a Shopify Page needs a connection to the store's existing theme cart / Rebuy / cart app.
+
+First inspect the actual cart contents. Then follow [Shopify Pages cart connection](/shopify-pages/cart-config) for the drawer behavior.
+
+## It works in Preview but not on the live Shopify Page
+
+Preview and native Shopify Pages are different environments.
+
+On the `/pages/` URL, check:
+
+- Shopify template / app block;
+- theme / cart app;
+- product / cart behavior;
+- theme scripts;
+- offer compatibility.
+
+Use [Shopify Pages limitations](/shopify-pages/limitations) when the issue only appears in the theme environment.
+
+## It works on Shopify but not on our headless / custom store
+
+Do not troubleshoot a custom frontend as if it were a Shopify theme.
+
+The Jurni team / your developer needs to confirm the intended:
+
+- product / variant identifiers;
+- cart API / checkout link;
+- session / cart token behavior;
+- subscription / offer mapping;
+- purchase attribution.
+
+[Headless & non-Shopify purchase paths →](/commerce/non-shopify-purchase-flows)
+
+## A useful support report
+
+If the issue remains, send:
+
+- exact page URL;
+- publishing method;
+- expected product / variant / plan / quantity;
+- what actually reached cart;
+- screenshot / recording of the selection and cart;
+- affected Shopify product link where relevant;
+- whether the same purchase works on the normal store.
+
+That is much more useful than “the Buy Box is broken.”
+
+## Related
+
+- [Cart & checkout behavior](/commerce/cart-checkout-behavior)
+- [Offers overview](/commerce/offers-overview)
+- [Subscriptions](/building-funnels/subscriptions-selling-plans)
+- [Check your campaign link](/publishing/check-campaign-link)

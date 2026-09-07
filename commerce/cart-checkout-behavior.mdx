@@ -1,62 +1,173 @@
----
-title: "Cart and Checkout Behavior"
-sidebarTitle: "Cart & Checkout Behavior"
-description: "Understand how Jurni adds products to cart, hands shoppers into Shopify cart or checkout, and which parts of the flow are controlled by your store."
-keywords:
-  - "Jurni cart"
-  - "Shopify checkout"
-  - "add to cart"
-  - "cart behavior"
----
+The cart / checkout experience depends on **where your page is running** and **which commerce setup your store already uses**.
 
-**The purchase path depends on your store and where the page is published.** Choosing a product in a Buy Box does not choose or configure a cart provider.
+Jurni does not replace every Shopify theme cart or custom storefront cart with one universal cart. Start with the shopper outcome you need.
 
-## Shopify: three different actions
+## What happens when someone clicks a purchase button?
 
-| Page action | What the shopper does next |
-| --- | --- |
-| **Add to cart** | Adds the selected variant, quantity, and subscription plan, when applicable, to the connected cart. |
-| **Go to checkout** | Continues to checkout with the configured purchase selection. |
-| **External URL** | Opens the destination you provide, such as an existing store product page. It is a link, not an add-to-cart operation. |
+### Add to cart
 
-Set the action on the button or purchasing section. Changing its text from “Add to cart” to “Buy now” does not change what it does. See [Buy Box setup](/products/add-buy-box) and [Buttons and actions](/build/cta-actions).
+Adds the selected real product choice to the connected cart.
 
-## Which cart settings can I change?
+Depending on the purchase section, that can include:
 
-For the supported Jurni cart on **Shopify-connected experiences**, go to **Settings → Storefront Settings → Cart Settings**. The available controls are the cart title, whole-price formatting, discount-code field, shipping calculator, and prices on cart buttons.
+- product / variant;
+- quantity;
+- subscription selling plan when selected;
+- other supported product data.
 
-These are **general display settings, not a visual cart builder**. They do not let you rearrange arbitrary cart sections, design any upsell flow, replace subscription logic, or customize Shopify checkout. See [Shopify cart display settings](/commerce/cart-display-settings) for the exact controls.
+The next visual experience depends on the publishing / cart environment.
 
-Shopify and the store's commerce apps still determine inventory, actual discounts, shipping rates, taxes, checkout, and subscription contracts.
+### Go to checkout
 
-## Shopify Pages use the store's cart environment
+Takes the configured purchase selection into checkout instead of asking the shopper to review a cart first.
 
-A page published at `/pages/your-handle` runs in your Shopify theme environment. Its add-to-cart behavior may need a connection to the theme or cart app; the Jurni cart settings above do not configure Rebuy or every Shopify theme drawer.
+### External URL
 
-Use [Shopify Pages cart configuration](/shopify-pages/cart-config) with your theme developer or the Jurni team. Test the final Shopify Page, not just the Jurni preview.
+Sends the shopper to the URL you configured—for example, an existing store PDP or another purchase flow.
 
-## Headless and non-Shopify stores
+It is a navigation action. It does **not** add the visible product to cart just because the button text says “Buy now.”
 
-Do not follow the Shopify cart instructions for WooCommerce, Salesforce, or a custom storefront. Work with the Jurni team to confirm one of these paths:
+[Buttons & actions →](/build/cta-actions)
 
-- Connect the page to your existing **cart API**.
-- Use a **direct checkout link** supplied by your commerce system.
-- Send shoppers to an existing **product detail page** on your store.
-- Implement a **custom purchase flow** with your team.
+## If my page is Jurni-hosted on Shopify, which cart does it use?
 
-Shopify Headless also needs its storefront/cart behavior confirmed; having Shopify as the commerce backend does not mean a Shopify theme drawer is present.
+Jurni-hosted Shopify experiences can use the supported Jurni storefront/cart flow connected to the Shopify shop.
 
-See [Purchase paths for headless and non-Shopify stores](/commerce/non-shopify-purchase-flows).
+Your shop's **Storefront Settings → Cart Settings** provides only a small set of general display controls:
 
-## Verify one complete purchase
+- cart title;
+- remove decimals from whole prices;
+- show / hide discount-code field;
+- show / hide shipping calculator;
+- show prices on cart buttons.
 
-Start at the actual campaign link. Select the product options, click the main purchase button, and inspect the product, variant, quantity, subscription choice, and final price in cart or checkout. Test the offer as well as the design.
+This is **not a drag-and-drop cart builder**.
 
-Check the back button separately if returning from checkout matters to the campaign. Do not assume it clears the cart or creates a fresh checkout.
+[See the exact cart settings →](/commerce/cart-display-settings)
 
-## Related guides
+Shopify / the store's commerce apps still determine things such as:
 
-- [Purchase options](/building-funnels/product-purchase-options)
-- [Offers for Shopify](/commerce/offers-overview)
-- [Shopify Pages limitations](/shopify-pages/limitations)
-- [Pre-launch checklist](/publishing/check-campaign-link)
+- inventory;
+- real product prices;
+- discount validity;
+- shipping rates;
+- tax;
+- subscription contracts;
+- final checkout.
+
+## Can I use my existing Shopify theme cart or Rebuy?
+
+If the page is published as a **native Shopify Page**, it runs inside your Shopify theme environment.
+
+That means the store may already use:
+
+- the theme's native cart drawer;
+- Rebuy;
+- another cart app;
+- custom theme JavaScript.
+
+Jurni can be connected to that existing cart behavior where supported, but there is no universal “use Rebuy” switch that configures every theme / version automatically.
+
+Use [Shopify Pages cart connection](/shopify-pages/cart-config) and test the actual `/pages/` destination.
+
+If your theme / cart app needs custom post-add-to-cart behavior, your developer or the Jurni team should confirm the correct integration rather than pasting a random snippet from another store.
+
+## Can I customize the cart in Jurni?
+
+For the supported Jurni Shopify cart, the self-service settings today are the general display controls listed above.
+
+You **cannot currently use Storefront Settings as a full cart designer** to:
+
+- rearrange arbitrary cart sections;
+- build custom upsell / cross-sell journeys;
+- design every cart component;
+- replace Shopify checkout;
+- redefine subscription behavior;
+- create a custom discount engine.
+
+If your campaign needs a more custom cart experience, discuss the desired shopper journey with the Jurni team before assuming there is a hidden cart-editor control.
+
+## What if I am not on Shopify?
+
+Do not follow the Shopify cart instructions for WooCommerce, Salesforce, a custom commerce stack, or another headless frontend.
+
+Jurni can work with the purchase flow your business already uses. Common patterns include:
+
+### Existing cart API
+
+The Jurni page sends the selected product / purchase data into your existing cart integration.
+
+### Direct checkout link
+
+The CTA sends the shopper to a checkout URL created by your commerce system.
+
+### Existing product page
+
+The landing page does the education / campaign storytelling, then sends the customer to your existing PDP to choose / purchase.
+
+### Custom solution
+
+A quiz, bundle, subscription, or other unique flow may require a custom implementation with your team and Jurni.
+
+[Headless & non-Shopify purchase paths →](/commerce/non-shopify-purchase-flows)
+
+Shopify Headless is also a separate case: Shopify can still be the commerce backend without the frontend using a Shopify theme drawer.
+
+## What about offers and discounts?
+
+The page can explain an offer, but the real cart / checkout still needs the actual commercial rule.
+
+Examples:
+
+- free gift → actual Shopify gift pricing / discount;
+- free shipping → real eligible shipping rule;
+- discount code → real Shopify code;
+- subscription savings → real selling plan / price;
+- bundle savings → real configured bundle / discount behavior.
+
+Use [Offers](/commerce/offers-overview) for the supported Shopify campaign rules.
+
+## How do I test the purchase flow?
+
+Start from the **actual campaign URL**, not just Preview.
+
+For an important campaign, test:
+
+1. default product choice;
+2. key variants;
+3. one-time / subscription when relevant;
+4. quantity;
+5. Add to Cart / Go to Checkout behavior;
+6. real cart item and plan;
+7. discount / gift / shipping result;
+8. checkout;
+9. mobile behavior;
+10. back-navigation if it matters to the campaign.
+
+The page is not ready because the button looks correct. It is ready when the customer reaches the intended cart / checkout with the exact product and commercial promise you advertised.
+
+## Common questions
+
+### The button says Add to Cart but no drawer opens
+
+The product may have been added even if the intended theme / third-party cart drawer was not opened. Check the cart contents and the publishing environment, then follow the relevant Shopify Pages cart setup.
+
+### Can Jurni clear the cart every time someone returns?
+
+Do not assume browser back-navigation clears the existing cart or creates a fresh checkout. If your campaign depends on a specific fresh-cart behavior, raise that requirement with the Jurni team and test it explicitly.
+
+### Does changing button text change the action?
+
+No. The displayed label and the configured button / purchase action are separate. A button can say “Buy now” while still being configured to Add to Cart.
+
+### Does hiding the discount-code field disable discounts?
+
+No. The cart display control hides that input. It does not disable Shopify automatic discounts or other discount logic.
+
+## Related
+
+- [Shopify cart settings](/commerce/cart-display-settings)
+- [Shopify Pages cart connection](/shopify-pages/cart-config)
+- [Offers overview](/commerce/offers-overview)
+- [Headless & non-Shopify purchase paths](/commerce/non-shopify-purchase-flows)
+- [Check your campaign link](/publishing/check-campaign-link)

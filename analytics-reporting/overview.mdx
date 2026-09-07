@@ -1,83 +1,204 @@
----
-title: "Analytics Overview: Experiences & Experiments"
-sidebarTitle: "Overview"
-description: "Understand Jurni analytics for individual experiences and experiments, including sessions, conversion rates, revenue, attribution, and how to compare performance responsibly."
----
+Use Jurni analytics to answer three marketer questions:
 
-Jurni analytics connect traffic, shopper behavior, commerce events, and experiment assignments so you can understand how each experience performs from landing through purchase.
+1. **How is this page / experience performing?**
+2. **Where in the shopper journey is behavior changing?**
+3. **Did my experiment create a meaningful difference worth acting on?**
 
-## Where analytics appear
+Start with the question, then open the report that matches it.
 
-Jurni reporting is organized around two main questions:
+## Which report should I use?
 
 <CardGroup cols={2}>
-  <Card title="How is this experience performing?" icon="chart-line">
-    Use experience analytics to review traffic, conversion, revenue, and shopper behavior for a specific Jurni experience.
+  <Card title="Experience analytics" icon="chart-line" href="/analytics-reporting/experience-analytics">
+    Review all attributed traffic, commerce, and shopper behavior for one Jurni experience.
   </Card>
 
-  <Card title="Which variant performs better?" icon="flask">
-    Use experiment results to compare the same metrics across variants that received controlled traffic.
+  <Card title="Experiment results" icon="flask-conical" href="/experiments/reading-results">
+    Compare only the traffic assigned through a Jurni experiment.
+  </Card>
+
+  <Card title="Meta ad insights" icon="megaphone" href="/analytics-reporting/meta-ad-insights">
+    Review connected Meta ad-account spend, clicks, revenue, ROAS, and CPA.
+  </Card>
+
+  <Card title="Attribution overview" icon="route" href="/analytics-reporting/attribution-overview">
+    Understand how Jurni connects campaign / page sessions to downstream commerce outcomes.
   </Card>
 </CardGroup>
 
-## Core metrics
+## Experience analytics vs. experiment results
 
-The main metrics you will see across Jurni include:
+This distinction matters a lot.
 
-- Sessions
-- Conversion rate (CVR)
-- Revenue
-- Average order value (AOV)
-- Revenue per session (RPS)
-- Add-to-cart rate
-- Checkout rate
-- Purchases / orders
+**Experience analytics** can include traffic that reaches the page from multiple paths:
 
-For exact definitions and formulas, use the Metrics Glossary.
+- Smart Links;
+- experiments;
+- direct page URLs;
+- other campaigns;
+- QA / internal visits.
 
-## Read the full conversion journey, not only the final conversion
+**Experiment analytics** focuses on the visits assigned through that experiment.
 
-A purchase is the final outcome, but intermediate steps help explain **why** performance changed.
+So if your experiment says 5,000 sessions but the underlying page shows 6,200, that is not automatically a tracking bug. The page may simply receive traffic outside the experiment.
 
-A common conversion journey looks like:
+[Why the counts can differ →](/troubleshooting/experiment-experience-sessions)
 
-`Session → Product interaction → Add to Cart → Checkout → Purchase`
+## The core commerce metrics
 
-If CVR falls, inspect the earlier steps:
+| Metric | The marketer question it answers |
+| --- | --- |
+| **Sessions** | How many attributed visits reached the experience / variant? |
+| **Orders** | How many attributed purchases came from those visits? |
+| **Revenue** | How much attributed order revenue did they generate? |
+| **CVR** | What percentage of sessions produced an order? |
+| **RPS** | How much attributed revenue did each session produce on average? |
+| **AOV** | How large was the average attributed order? |
+| **CTR** | How often did sessions include the relevant click-through action? |
+| **Add-to-Cart Rate** | How often did sessions reach Add to Cart? |
+| **Checkout Rate** | How often did sessions start checkout? |
 
-- Low add-to-cart rate can point to product, offer, or page-message friction.
-- Healthy add-to-cart with low checkout can point to cart friction.
-- Healthy checkout with low purchase can point to checkout, payment, shipping, or discount issues.
+Use the [Metrics Glossary](/data-dictionary/metrics-glossary) for exact current definitions / formulas.
 
-## Filters and date ranges
+## Read the journey, not only CVR
 
-Use the same date range and filters when comparing performance. Changing the date range, traffic source, or experience selection can materially change the result.
+When performance moves, the earlier steps can help you understand **where** to investigate.
 
-When comparing Jurni with another platform, also align:
+A useful simplified journey is:
 
-- Timezone
-- Attribution window
-- Session definition
-- Included traffic
-- Consent state
+**Session → Click / product interaction → Add to Cart → Checkout → Order**
 
-## Experiments
+Examples:
 
-Experiment analytics use the same commerce outcomes but break them down by variant. A valid experiment requires more than one variant having a higher number at a point in time—traffic allocation, sample size, duration, and the decision metric all matter.
+### Add-to-Cart Rate is weak
 
-## Attribution
+Investigate:
 
-Jurni maintains attribution context across supported Jurni-to-commerce flows. Third-party tools can report different totals because they use their own cookies, identity rules, consent handling, and attribution models.
+- message / product mismatch;
+- unclear offer;
+- purchase choices;
+- product / price expectation;
+- CTA / Buy Box usability;
+- mobile layout.
 
-<Info>
-  Use Jurni analytics as the source of truth for Jurni experience and experiment performance, then use external analytics platforms to understand their own channel-specific view of the same traffic.
-</Info>
+That does not prove which issue is responsible. It tells you where to look.
 
-## Related guides
+### Add to Cart looks healthy, Checkout Rate is weak
 
-- Experience analytics
-- Conversion step performance
-- Filtering data
-- Attribution overview
-- Metrics glossary
-- Reading experiment results
+Investigate:
+
+- cart behavior;
+- gift / discount expectations;
+- unexpected quantity / plan;
+- theme / third-party cart issues;
+- shopper hesitation before checkout.
+
+### Checkout Rate looks healthy, orders are weak
+
+Investigate the downstream checkout:
+
+- shipping / taxes;
+- payment;
+- discount / offer mismatch;
+- checkout errors;
+- attribution / purchase tracking.
+
+Landing-page changes are not always the right fix for a downstream problem.
+
+## Use date ranges deliberately
+
+Before comparing two reports, align the time period.
+
+Ask:
+
+- Did the campaign start / stop during this range?
+- Did the page change materially?
+- Did an offer change?
+- Did experiment weights / routing change?
+- Was tracking fixed partway through?
+- Does the other platform use a different timezone?
+
+A wider range is not always “more accurate” if it mixes fundamentally different campaign periods.
+
+## Compare pages responsibly
+
+A page with higher CVR is not automatically “better” if:
+
+- it receives warmer traffic;
+- it has a stronger offer;
+- it sells a lower-priced product;
+- it has different purchase options;
+- its campaign mix is different.
+
+If you want to compare two page ideas fairly under the same campaign traffic, use a [Jurni experiment](/experiments/what-are-experiments).
+
+## Compare Jurni with GA4, Meta, Shopify, Northbeam, etc.
+
+Different systems can legitimately report different totals because they use different:
+
+- session definitions;
+- identity / cookie logic;
+- attribution windows;
+- traffic scope;
+- consent behavior;
+- event delivery paths;
+- purchase attribution rules.
+
+Before asking “which number is right?”, ask whether the systems are answering the same question.
+
+Examples:
+
+- Meta ad-account revenue is not the same scope as all Jurni-attributed page revenue.
+- Shopify total orders include store traffic unrelated to the Jurni campaign.
+- GA4 can define sessions differently from Jurni.
+- a Jurni page can receive direct traffic outside the experiment you are analyzing.
+
+[Why analytics numbers differ →](/troubleshooting/analytics-differences)
+
+## A marketer workflow for reviewing a campaign
+
+<Steps>
+  <Step title="Start with the campaign question">
+    Are you reviewing one page, an A/B test, or the ad account? Open the report that matches that question.
+  </Step>
+  <Step title="Set the relevant period">
+    Match the actual campaign / test window.
+  </Step>
+  <Step title="Read the primary business outcome">
+    Start with CVR / RPS / revenue / the metric your campaign is actually trying to improve.
+  </Step>
+  <Step title="Use earlier journey metrics as diagnostics">
+    Identify where behavior appears to change, then investigate the page / cart / checkout rather than jumping straight to a design fix.
+  </Step>
+  <Step title="Form one useful hypothesis">
+    Convert the observation into something testable rather than a list of random CRO changes.
+  </Step>
+</Steps>
+
+For that last step, use [CRO audit → first edit](/academy/playbooks/cro-audit) or [Results → next test](/academy/playbooks/results-to-next-test).
+
+## Useful analytics questions
+
+**“Which page should I scale?”**
+
+First make sure the pages have comparable audience / offer context. For a controlled answer, run an experiment.
+
+**“Why did CVR fall?”**
+
+Look at earlier journey metrics, campaign / offer changes, and checkout before assuming the hero is responsible.
+
+**“Why are experiment sessions lower than page sessions?”**
+
+The page can receive non-experiment traffic. See [experiment vs experience sessions](/troubleshooting/experiment-experience-sessions).
+
+**“Can I use Jurni data to understand Meta performance?”**
+
+Use Jurni page / experiment reporting for the landing experience, and [Meta ad insights](/analytics-reporting/meta-ad-insights) for the connected ad account view.
+
+## Next
+
+- [Experience analytics](/analytics-reporting/experience-analytics)
+- [Read experiment results](/experiments/reading-results)
+- [Attribution overview](/analytics-reporting/attribution-overview)
+- [Export reporting data](/analytics-reporting/export-csv)
+- [Metrics glossary](/data-dictionary/metrics-glossary)
