@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "luma",
   "name": "Jurni",
   "colors": {
     "primary": "#FB4E26",
@@ -14,393 +14,392 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Get Started",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Start Here",
+            "group": "Get Started",
             "pages": [
-              "getting-started/welcome",
-              "getting-started/step-by-step-setup",
-              "getting-started/choose-your-setup"
+              {
+                "group": "Start Here",
+                "pages": [
+                  "getting-started/welcome",
+                  "getting-started/step-by-step-setup",
+                  "getting-started/choose-your-setup"
+                ]
+              },
+              {
+                "group": "Account & Team",
+                "pages": [
+                  "getting-started/create-account",
+                  "getting-started/setup-account",
+                  "getting-started/inviting-team-members",
+                  "getting-started/shop-access"
+                ]
+              },
+              {
+                "group": "Shopify Setup",
+                "pages": [
+                  "getting-started/shopify-setup-overview",
+                  "getting-started/activating-jurni-core"
+                ]
+              },
+              {
+                "group": "Headless & Non-Shopify Setup",
+                "pages": [
+                  "getting-started/shopify-headless",
+                  "getting-started/setup-non-shopify"
+                ]
+              },
+              {
+                "group": "Brand & AI Knowledge",
+                "pages": [
+                  "getting-started/brand-settings",
+                  "getting-started/setup-ai-knowledge"
+                ]
+              }
             ]
           },
           {
-            "group": "Account & Team",
+            "group": "Build Experiences",
             "pages": [
-              "getting-started/create-account",
-              "getting-started/setup-account",
-              "getting-started/inviting-team-members",
-              "getting-started/shop-access"
+              {
+                "group": "Start Building",
+                "pages": [
+                  "building-funnels/creating-a-funnel",
+                  "building-funnels/funnel-editor",
+                  "build/manage-experiences"
+                ]
+              },
+              {
+                "group": "Build with AI",
+                "pages": [
+                  "build/ai-campaign-workflow",
+                  "build/jurni-agent",
+                  "build/ai-editing",
+                  "build/prompt-library",
+                  "building-funnels/figma-file",
+                  "building-funnels/ai-chat-prompts",
+                  "build/chat-history"
+                ]
+              },
+              {
+                "group": "Sections & Layers",
+                "pages": [
+                  "building-funnels/managing-sections",
+                  "build/layers-selection",
+                  "build/copy-duplicate-sections",
+                  "build/reorder-sections",
+                  "build/delete-hide-sections"
+                ]
+              },
+              {
+                "group": "Design & Behavior",
+                "pages": [
+                  "build/edit-content-media",
+                  "build/style-layout",
+                  "build/desktop-mobile",
+                  "build/cta-actions",
+                  "build/editor-integrations",
+                  "build/page-popups",
+                  "building-funnels/sticky-cta-banner",
+                  "product-updates/image-repositioning",
+                  "build/page-settings",
+                  "build/localization"
+                ]
+              },
+              {
+                "group": "Assets & Reuse",
+                "pages": [
+                  "build/assets-library",
+                  "build/template-library",
+                  "building-funnels/saved-sections",
+                  "build/global-sections"
+                ]
+              },
+              {
+                "group": "Preview, History & Collaboration",
+                "pages": [
+                  "build/save-preview-publish",
+                  "build/undo-redo",
+                  "build/version-history",
+                  "product-updates/jurni-comments",
+                  "build/share-review-links",
+                  "building-funnels/qa-checklist"
+                ]
+              }
             ]
           },
           {
-            "group": "Shopify Setup",
+            "group": "Products & Commerce",
             "pages": [
-              "getting-started/shopify-setup-overview",
-              "getting-started/activating-jurni-core"
+              {
+                "group": "Start Here",
+                "pages": [
+                  "building-funnels/buy-box-overview"
+                ]
+              },
+              {
+                "group": "Product Library",
+                "pages": [
+                  "building-funnels/products-and-variants",
+                  "products/catalog-visibility",
+                  "products/content-media",
+                  "building-funnels/sync-new-products"
+                ]
+              },
+              {
+                "group": "Buy Boxes",
+                "pages": [
+                  "products/add-buy-box",
+                  "products/manage-buy-boxes",
+                  "building-funnels/product-purchase-options",
+                  "products/update-reuse-buy-boxes",
+                  "products/editing-scope"
+                ]
+              },
+              {
+                "group": "Subscriptions & Bundles",
+                "pages": [
+                  "building-funnels/subscriptions-selling-plans",
+                  "building-funnels/bundles"
+                ]
+              },
+              {
+                "group": "Offers",
+                "pages": [
+                  "commerce/offers-overview",
+                  "building-funnels/gift-with-purchase",
+                  "commerce/free-shipping-offers",
+                  "commerce/samples-offers",
+                  "commerce/discount-code-offers",
+                  "commerce/discounts-promotions"
+                ]
+              },
+              {
+                "group": "Cart & Checkout",
+                "pages": [
+                  "commerce/cart-checkout-behavior",
+                  "commerce/cart-display-settings",
+                  "commerce/non-shopify-purchase-flows",
+                  "commerce/shopify-markets-currency"
+                ]
+              }
             ]
           },
           {
-            "group": "Headless & Non-Shopify Setup",
+            "group": "Publishing",
             "pages": [
-              "getting-started/shopify-headless",
-              "getting-started/setup-non-shopify"
+              {
+                "group": "Publishing Basics",
+                "pages": [
+                  "publishing/overview",
+                  "publishing/update-unpublish",
+                  "publishing/page-seo"
+                ]
+              },
+              {
+                "group": "Jurni URLs & Custom Domains",
+                "pages": [
+                  "publishing/shopify-app-proxy",
+                  "getting-started/custom-subdomain"
+                ]
+              },
+              {
+                "group": "Smart Links",
+                "pages": [
+                  "building-funnels/smart-links",
+                  "publishing/change-smart-link-destination",
+                  "publishing/check-campaign-link"
+                ]
+              },
+              {
+                "group": "Shopify Pages",
+                "pages": [
+                  "shopify-pages/setup-publish",
+                  "shopify-pages/limitations",
+                  "shopify-pages/page-templates",
+                  "shopify-pages/cart-config",
+                  "publishing/shopify-multiple-domains"
+                ]
+              }
             ]
           },
           {
-            "group": "Brand & AI Knowledge",
+            "group": "Tests & Analytics",
             "pages": [
-              "getting-started/brand-settings",
-              "getting-started/setup-ai-knowledge"
+              {
+                "group": "Experiments",
+                "pages": [
+                  "experiments/new-reporting-overview",
+                  "experiments/what-are-experiments",
+                  "experiments/create-experiment",
+                  "experiments/routing-rules",
+                  "experiments/traffic-assignment",
+                  "experiments/pause-end-reuse",
+                  "experiments/reading-results",
+                  "experiments/statistical-significance",
+                  "experiments/testing-against-website",
+                  "experiments/traffic-troubleshoot"
+                ]
+              },
+              {
+                "group": "Analytics & Reporting",
+                "pages": [
+                  "analytics-reporting/overview",
+                  "analytics-reporting/experience-analytics",
+                  "analytics-reporting/engagement-metrics",
+                  "analytics-reporting/funnel-step-performance",
+                  "analytics-reporting/filtering-experiences",
+                  "analytics-reporting/custom-events",
+                  "analytics-reporting/attribution-overview",
+                  "analytics-reporting/export-csv",
+                  "analytics-reporting/meta-ad-insights"
+                ]
+              },
+              {
+                "group": "Optimization Strategy",
+                "pages": [
+                  "experiments/strategic-experiments",
+                  "strategy/roadmap"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "integrations/overview",
+                  "integrations/api-keys"
+                ]
+              },
+              {
+                "group": "Data & Tracking",
+                "pages": [
+                  "getting-started/tracking-pixels",
+                  "integrations/google-analytics",
+                  "integrations/meta-pixel",
+                  "integrations/tiktok",
+                  "getting-started/shopify-analytics",
+                  "integrations/ga-meta-pixel",
+                  "integrations/gtm",
+                  "integrations/utm-attribution",
+                  "integrations/consent-tracking",
+                  "integrations/northbeam",
+                  "integrations/axon",
+                  "integrations/blotout",
+                  "integrations/polar-analytics",
+                  "integrations/triple-whale"
+                ]
+              },
+              {
+                "group": "Ad Platforms",
+                "pages": [
+                  "integrations/meta-ads"
+                ]
+              },
+              {
+                "group": "Forms & Pop-ups",
+                "pages": [
+                  "integrations/klaviyo",
+                  "integrations/postscript",
+                  "integrations/alia"
+                ]
+              },
+              {
+                "group": "Reviews",
+                "pages": [
+                  "integrations/review-integrations",
+                  "integrations/review-widgets",
+                  "integrations/okendo",
+                  "integrations/junip",
+                  "integrations/yotpo",
+                  "integrations/judge-me",
+                  "integrations/stamped",
+                  "integrations/trustpilot",
+                  "integrations/reviews-io",
+                  "integrations/bazaarvoice"
+                ]
+              },
+              {
+                "group": "Affiliate & Creator Tools",
+                "pages": [
+                  "integrations/manage-creators",
+                  "integrations/affiliate-tools"
+                ]
+              },
+              {
+                "group": "Slack & Collaboration",
+                "pages": [
+                  "integrations/connect-slack",
+                  "notifications/slack-reports"
+                ]
+              },
+              {
+                "group": "Custom Integrations",
+                "pages": [
+                  "integrations/custom-scripts",
+                  "integrations/mcp-connector"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Help & Reference",
+            "pages": [
+              {
+                "group": "Get Help",
+                "icon": "life-buoy",
+                "pages": [
+                  "help/start"
+                ]
+              },
+              {
+                "group": "Reference",
+                "pages": [
+                  "data-dictionary/metrics-glossary",
+                  "reference/events",
+                  "reference/url-parameters",
+                  "build/code-mode",
+                  "review/release-readiness"
+                ]
+              },
+              {
+                "group": "Troubleshooting",
+                "pages": [
+                  "integrations/troubleshooting",
+                  "troubleshooting/jurni-sales-channel",
+                  "troubleshooting/duplicate-tracking-events",
+                  "troubleshooting/shopify-page-layout",
+                  "troubleshooting/product-cart-issues",
+                  "troubleshooting/analytics-differences",
+                  "troubleshooting/experiment-experience-sessions",
+                  "troubleshooting/url-route-conflict",
+                  "troubleshooting/shopify-theme-style-conflicts"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "Build",
-        "groups": [
-          {
-            "group": "Start Building",
-            "pages": [
-              "building-funnels/creating-a-funnel",
-              "building-funnels/funnel-editor",
-              "build/manage-experiences"
-            ]
-          },
-          {
-            "group": "Build with AI",
-            "pages": [
-              "build/ai-campaign-workflow",
-              "build/jurni-agent",
-              "build/ai-editing",
-              "build/prompt-library",
-              "building-funnels/figma-file",
-              "building-funnels/ai-chat-prompts",
-              "build/chat-history"
-            ]
-          },
-          {
-            "group": "Sections & Layers",
-            "pages": [
-              "building-funnels/managing-sections",
-              "build/layers-selection",
-              "build/copy-duplicate-sections",
-              "build/reorder-sections",
-              "build/delete-hide-sections"
-            ]
-          },
-          {
-            "group": "Design & Behavior",
-            "pages": [
-              "build/edit-content-media",
-              "build/style-layout",
-              "build/desktop-mobile",
-              "build/cta-actions",
-              "build/editor-integrations",
-              "build/page-popups",
-              "building-funnels/sticky-cta-banner",
-              "product-updates/image-repositioning",
-              "build/page-settings",
-              "build/localization"
-            ]
-          },
-          {
-            "group": "Assets & Reuse",
-            "pages": [
-              "build/assets-library",
-              "build/template-library",
-              "building-funnels/saved-sections",
-              "build/global-sections"
-            ]
-          },
-          {
-            "group": "Preview, History & Collaboration",
-            "pages": [
-              "build/save-preview-publish",
-              "build/undo-redo",
-              "build/version-history",
-              "product-updates/jurni-comments",
-              "build/share-review-links",
-              "building-funnels/qa-checklist"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Products & Buy Boxes",
-        "groups": [
-          {
-            "group": "Start Here",
-            "pages": [
-              "building-funnels/buy-box-overview"
-            ]
-          },
-          {
-            "group": "Product Library",
-            "pages": [
-              "building-funnels/products-and-variants",
-              "products/catalog-visibility",
-              "products/content-media",
-              "building-funnels/sync-new-products"
-            ]
-          },
-          {
-            "group": "Buy Boxes",
-            "pages": [
-              "products/add-buy-box",
-              "products/manage-buy-boxes",
-              "building-funnels/product-purchase-options",
-              "products/update-reuse-buy-boxes",
-              "products/editing-scope"
-            ]
-          },
-          {
-            "group": "Subscriptions & Bundles",
-            "pages": [
-              "building-funnels/subscriptions-selling-plans",
-              "building-funnels/bundles"
-            ]
-          },
-          {
-            "group": "Offers",
-            "pages": [
-              "commerce/offers-overview",
-              "building-funnels/gift-with-purchase",
-              "commerce/free-shipping-offers",
-              "commerce/samples-offers",
-              "commerce/discount-code-offers",
-              "commerce/discounts-promotions"
-            ]
-          },
-          {
-            "group": "Cart & Checkout",
-            "pages": [
-              "commerce/cart-checkout-behavior",
-              "commerce/cart-display-settings",
-              "commerce/non-shopify-purchase-flows",
-              "commerce/shopify-markets-currency"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Publishing",
-        "groups": [
-          {
-            "group": "Publishing Basics",
-            "pages": [
-              "publishing/overview",
-              "publishing/update-unpublish",
-              "publishing/page-seo"
-            ]
-          },
-          {
-            "group": "Jurni URLs & Custom Domains",
-            "pages": [
-              "publishing/shopify-app-proxy",
-              "getting-started/custom-subdomain"
-            ]
-          },
-          {
-            "group": "Smart Links",
-            "pages": [
-              "building-funnels/smart-links",
-              "publishing/change-smart-link-destination",
-              "publishing/check-campaign-link"
-            ]
-          },
-          {
-            "group": "Shopify Pages",
-            "pages": [
-              "shopify-pages/setup-publish",
-              "shopify-pages/limitations",
-              "shopify-pages/page-templates",
-              "shopify-pages/cart-config",
-              "publishing/shopify-multiple-domains"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Test & Optimize",
-        "groups": [
-          {
-            "group": "Experiments",
-            "pages": [
-              "experiments/new-reporting-overview",
-              "experiments/what-are-experiments",
-              "experiments/create-experiment",
-              "experiments/routing-rules",
-              "experiments/traffic-assignment",
-              "experiments/pause-end-reuse",
-              "experiments/reading-results",
-              "experiments/statistical-significance",
-              "experiments/testing-against-website",
-              "experiments/traffic-troubleshoot"
-            ]
-          },
-          {
-            "group": "Analytics & Reporting",
-            "pages": [
-              "analytics-reporting/overview",
-              "analytics-reporting/experience-analytics",
-              "analytics-reporting/engagement-metrics",
-              "analytics-reporting/funnel-step-performance",
-              "analytics-reporting/filtering-experiences",
-              "analytics-reporting/custom-events",
-              "analytics-reporting/attribution-overview",
-              "analytics-reporting/export-csv",
-              "analytics-reporting/meta-ad-insights"
-            ]
-          },
-          {
-            "group": "Optimization Strategy",
-            "pages": [
-              "experiments/strategic-experiments",
-              "strategy/roadmap"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Integrations",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "integrations/overview",
-              "integrations/api-keys"
-            ]
-          },
-          {
-            "group": "Data & Tracking",
-            "pages": [
-              "getting-started/tracking-pixels",
-              "integrations/google-analytics",
-              "integrations/meta-pixel",
-              "integrations/tiktok",
-              "getting-started/shopify-analytics",
-              "integrations/ga-meta-pixel",
-              "integrations/gtm",
-              "integrations/utm-attribution",
-              "integrations/consent-tracking",
-              "integrations/northbeam",
-              "integrations/axon",
-              "integrations/blotout",
-              "integrations/polar-analytics",
-              "integrations/triple-whale"
-            ]
-          },
-          {
-            "group": "Ad Platforms",
-            "pages": [
-              "integrations/meta-ads"
-            ]
-          },
-          {
-            "group": "Forms & Pop-ups",
-            "pages": [
-              "integrations/klaviyo",
-              "integrations/postscript",
-              "integrations/alia"
-            ]
-          },
-          {
-            "group": "Reviews",
-            "pages": [
-              "integrations/review-integrations",
-              "integrations/review-widgets",
-              "integrations/okendo",
-              "integrations/junip",
-              "integrations/yotpo",
-              "integrations/judge-me",
-              "integrations/stamped",
-              "integrations/trustpilot",
-              "integrations/reviews-io",
-              "integrations/bazaarvoice"
-            ]
-          },
-          {
-            "group": "Affiliate & Creator Tools",
-            "pages": [
-              "integrations/manage-creators",
-              "integrations/affiliate-tools"
-            ]
-          },
-          {
-            "group": "Slack & Collaboration",
-            "pages": [
-              "integrations/connect-slack",
-              "notifications/slack-reports"
-            ]
-          },
-          {
-            "group": "Custom Integrations",
-            "pages": [
-              "integrations/custom-scripts",
-              "integrations/mcp-connector"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Help",
-        "groups": [
-          {
-            "group": "Get Help",
-            "icon": "life-buoy",
-            "pages": [
-              "help/start",
-              "guides",
-              "changelog"
-            ]
-          },
-          {
-            "group": "Reference",
-            "pages": [
-              "data-dictionary/metrics-glossary",
-              "reference/events",
-              "reference/url-parameters",
-              "build/code-mode",
-              "review/release-readiness"
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "pages": [
-              "integrations/troubleshooting",
-              "troubleshooting/jurni-sales-channel",
-              "troubleshooting/duplicate-tracking-events",
-              "troubleshooting/shopify-page-layout",
-              "troubleshooting/product-cart-issues",
-              "troubleshooting/analytics-differences",
-              "troubleshooting/experiment-experience-sessions",
-              "troubleshooting/url-route-conflict",
-              "troubleshooting/shopify-theme-style-conflicts"
-            ]
-          }
-        ]
+        "tab": "Academy",
+        "href": "/academy"
       }
     ]
   },
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Open Jurni",
+      "label": "Dashboard",
       "href": "https://app.getjurni.ai"
     },
     "links": [
       {
-        "href": "/academy",
-        "label": "Academy"
-      },
-      {
-        "href": "/guides",
-        "label": "Guides"
-      },
-      {
-        "href": "/changelog",
-        "label": "Changelog"
+        "href": "https://getjurni.ai/book-a-call",
+        "label": "Talk to us"
       }
     ]
   },
@@ -416,8 +415,10 @@
   },
   "background": {
     "color": {
-      "dark": "#000000"
-    }
+      "dark": "#0B0B0D",
+      "light": "#FFFDFB"
+    },
+    "decoration": "gradient"
   },
   "fonts": {
     "heading": {
@@ -430,7 +431,7 @@
     }
   },
   "interaction": {
-    "drilldown": true
+    "drilldown": false
   },
   "icons": {
     "library": "lucide"
