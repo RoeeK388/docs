@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "luma",
   "name": "Jurni",
   "colors": {
     "primary": "#FB4E26",
@@ -13,6 +13,35 @@
   },
   "navigation": {
     "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": []
+          },
+          {
+            "group": "Build Experiences",
+            "pages": []
+          },
+          {
+            "group": "Products & Commerce",
+            "pages": []
+          },
+          {
+            "group": "Publishing",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "href": "/changelog"
+      },
+      {
+        "tab": "Academy",
+        "href": "/academy"
+      },
       {
         "tab": "Get Started",
         "groups": [
@@ -386,21 +415,13 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Open Jurni",
+      "label": "Dashboard",
       "href": "https://app.getjurni.ai"
     },
     "links": [
       {
-        "href": "/academy",
-        "label": "Academy"
-      },
-      {
-        "href": "/guides",
-        "label": "Guides"
-      },
-      {
-        "href": "/changelog",
-        "label": "Changelog"
+        "href": "https://getjurni.ai/book-a-call",
+        "label": "Talk to us"
       }
     ]
   },
@@ -416,8 +437,10 @@
   },
   "background": {
     "color": {
-      "dark": "#000000"
-    }
+      "dark": "#0B0B0D",
+      "light": "#FFFDFB"
+    },
+    "decoration": "gradient"
   },
   "fonts": {
     "heading": {
@@ -430,7 +453,7 @@
     }
   },
   "interaction": {
-    "drilldown": true
+    "drilldown": false
   },
   "icons": {
     "library": "lucide"
