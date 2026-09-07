@@ -4,81 +4,209 @@ sidebarTitle: "Reading Results"
 description: "Understand Jurni's current experiment metrics, date-range behavior, attribution differences, and how to compare variants without over-interpreting the data."
 ---
 
-Jurni experiment reporting lets you compare the traffic, commerce, and revenue performance attributed to each variant. Use the same date range and the same decision metric when comparing variants.
+Use experiment results to answer the question you wrote **before the test started**. Start with the primary metric, then use supporting metrics to understand _where_ the customer journey changed.
 
-## Current experiment metrics
+Do not start by scanning every number for the biggest green percentage.
 
-The current experiment analytics model includes:
+## Read a result in five steps
 
-| Metric | How Jurni calculates it |
-| --- | --- |
-| **Sessions** | Attributed visits assigned to the experiment variant. |
-| **Orders** | Orders attributed back to those visits. |
-| **Revenue** | Attributed order revenue. |
-| **CTR** | Visits with a click-through event ÷ sessions × 100. |
-| **CVR** | Orders ÷ sessions × 100. |
-| **Add-to-Cart Rate** | Visits with an add-to-cart event ÷ sessions × 100. |
-| **Checkout Rate** | Visits with a checkout-initiated event ÷ sessions × 100. |
-| **AOV** | Revenue ÷ orders. |
-| **RPS** | Revenue ÷ sessions. |
+<Steps>
+  <Step title="Use the actual test period">
+    Set the reporting range to the dates you want to evaluate. Exclude known pre-test or post-test periods when they do not belong in the comparison.
+  </Step>
+  <Step title="Start with the primary metric">
+    Read the metric you chose for the hypothesis—such as CVR, RPS, AOV, or an earlier interaction rate.
+  </Step>
+  <Step title="Compare the observed direction and size">
+    Which variant is currently ahead on the primary metric, and by how much in observed terms? Treat this as what the data shows so far, not automatic proof of future lift.
+  </Step>
+  <Step title="Use supporting metrics to understand the journey">
+    Review sessions, clicks, add-to-cart, checkout, orders, revenue, and AOV/RPS where relevant. These can help locate where behavior differed.
+  </Step>
+  <Step title="Check whether anything complicates the result">
+    Consider traffic/weight changes, routing rules, direct page traffic, product or offer changes, tracking issues, and differences in the compared destinations.
+  </Step>
+</Steps>
 
-Jurni counts the core interaction event groups at most once per visit for these rate calculations. This helps prevent repeated clicks or repeated add-to-cart actions in the same visit from inflating the visit-level rate.
+For the strategy layer—what to learn and what to test next—use the [Optimization Loop](/academy/playbooks/optimization-loop).
 
-## Choose the metric that matches the test goal
+## Core experiment metrics
 
-There is no single metric that is best for every experiment.
+| Metric | What it tells a marketer | Calculation |
+| --- | --- | --- |
+| **Sessions** | How many attributed visits reached the variant in the experiment. | Attributed experiment visits assigned to that variant. |
+| **Orders** | How many attributed purchases came from those visits. | Orders attributed to the variant visits. |
+| **Revenue** | How much attributed order revenue those visits produced. | Attributed order revenue. |
+| **CTR** | How often a session included the relevant click-through interaction. | Sessions with the click event ÷ sessions × 100. |
+| **CVR** | What percentage of sessions produced an order. | Orders ÷ sessions × 100. |
+| **Add-to-Cart Rate** | What percentage of sessions reached an add-to-cart action. | Sessions with add to cart ÷ sessions × 100. |
+| **Checkout Rate** | What percentage of sessions initiated checkout. | Sessions with checkout initiated ÷ sessions × 100. |
+| **AOV** | Average attributed order value among orders. | Revenue ÷ orders. |
+| **RPS** | How much attributed revenue each session produced on average. | Revenue ÷ sessions. |
 
-- Use **CVR** when the primary goal is increasing the percentage of visitors who purchase.
-- Use **RPS** when you want to compare the amount of revenue produced per visit.
-- Use **AOV** when the hypothesis is specifically about basket size.
-- Use **CTR, Add-to-Cart Rate, or Checkout Rate** when the experiment is intended to improve an earlier step in the shopper journey.
+For the core visit-level interaction rates, repeated actions in the same visit do not make that visit count as multiple converted sessions for the rate.
 
-<Tip>
-  Define the primary metric before the experiment starts. Looking for whichever metric improved after the test makes the result much easier to over-interpret.
-</Tip>
+## Which metric should I care about?
+
+Choose based on the hypothesis, not the metric that happens to look best later.
+
+### CVR
+
+Use when the main question is:
+
+> “Does this experience turn a higher percentage of visitors into buyers?”
+
+Common tests:
+
+- hero message;
+- proof placement;
+- page story;
+- purchase clarity.
+
+### RPS
+
+Use when revenue per visitor is the most important overall business outcome.
+
+This can be useful when a change may affect both conversion and the amount purchased.
+
+### AOV
+
+Use when the test is specifically about basket size or order value.
+
+Do not use AOV alone to judge a page that changes purchase conversion. A variant can have higher AOV but fewer buyers.
+
+### CTR / Add-to-Cart / Checkout Rate
+
+Use these as primary metrics only when the hypothesis is intentionally about that earlier behavior. Otherwise they are often more useful as **diagnostics**.
+
+## Example: CVR rises while AOV falls
+
+Suppose the variant shows:
+
+- higher observed CVR;
+- lower observed AOV;
+- RPS roughly flat.
+
+A reasonable interpretation is **not** “the variant won because conversion increased.”
+
+The page may be creating more orders but smaller ones, leaving revenue per session similar. Review the metric that matched your hypothesis and the customer or merchandising change you made.
+
+## Example: Add-to-Cart Rate rises but CVR does not
+
+Possible observation:
+
+- more sessions add to cart;
+- purchase conversion remains flat or falls.
+
+That tells you the page changed an earlier step in the journey, but it does not tell you why customers failed to finish.
+
+Questions to investigate:
+
+- Was cart/checkout the same across variants?
+- Did the offer expectation change?
+- Did the variant encourage lower-intent cart additions?
+- Was there a product or plan mismatch?
+
+Treat the explanation as a hypothesis until you have more evidence.
+
+## Experience analytics and experiment results can differ
+
+An underlying Jurni experience can receive traffic outside the experiment—for example:
+
+- direct page URL;
+- another campaign;
+- a link that bypasses the experiment Smart Link;
+- QA or internal traffic.
+
+That traffic can appear in **Experience analytics** without being assigned to an experiment variant.
+
+When making an experiment decision, use experiment results rather than assuming the experience's total session count represents experiment traffic.
+
+[Why session counts can differ →](/troubleshooting/experiment-experience-sessions)
 
 ## Date ranges matter
 
-Experiment metrics are scoped to the selected reporting period. When you compare an experiment with the underlying Experience analytics, make sure both views are using the same time window.
+Use the same dates when comparing views.
 
-An Experience view can include traffic that did not enter through the experiment. For example, someone may visit the page directly or an ad may use the page URL instead of the experiment Smart Link. That traffic can appear in Experience analytics without belonging to an experiment variant.
+Be especially careful when:
 
-## Traffic changes are not retroactive
+- the experiment started partway through the selected range;
+- traffic weights changed;
+- routing rules changed;
+- the offer or product changed;
+- an ad campaign was paused or restarted;
+- tracking was fixed during the test.
 
-If you change variant weights or routing rules after an experiment has started, historical traffic stays attributed to the variant it originally reached. New routing settings affect future visitors; they do not rewrite earlier results.
+Historical sessions keep their original attribution. A new weight or routing rule changes future traffic; it does not rewrite the past.
 
-<Warning>
-  Changing traffic allocation or routing logic during a test can make the combined result harder to interpret. Record when and why the change was made so you can evaluate the appropriate date range.
-</Warning>
+## Traffic weights and routing changes
 
-## Statistical significance
+If you alter traffic allocation during the test, record **when and why**.
 
-A higher observed metric is not automatically a reliable winner. Keep the selected success metric, traffic quality, and amount of data in view when making a decision.
+A combined full-period result can still be useful, but your team should understand that different parts of the test ran under different allocation conditions.
 
-The new confidence and winner-status workflow is being prepared separately. Do not assume it is available simply because a report shows conversion or revenue differences. Use the controls actually available in your account, and confirm feature availability with Jurni before relying on a confidence threshold.
+Routing Rules also mean some traffic can be intentionally directed to one variant rather than randomized through normal weights.
 
-An observed lift describes the difference so far; it does not guarantee the same improvement on future traffic. See [Testing best practices](/experiments/strategic-experiments).
+[Traffic assignment →](/experiments/traffic-assignment)
 
-## Custom downstream events
+## Statistical significance / confidence
 
-Jurni can support mapped downstream events for specific implementations, but custom events are not yet presented as standard variant-level metrics throughout the experiment graphs and variant breakdown. If your test depends on a custom event such as quiz start, email capture, or another downstream conversion, confirm how that event will be measured before launching the test.
+A variant being numerically ahead does **not** automatically mean you have a reliable winner.
 
-## Troubleshooting differences
+Use the confidence/statistical information actually shown in the Jurni experiment workflow available to your account. Do not apply universal rules such as “500 sessions means significant” or “95% is always required” unless the methodology your team is using explicitly defines them.
 
-If the experiment numbers do not match another view, check these first:
+When a newer confidence/winner-status workflow is available, read the status together with the selected metric, minimum-data conditions, and the actual test context rather than treating the label as permission to stop thinking.
 
-1. The date range in both reports.
-2. Whether all campaign traffic is using the intended Smart Link.
-3. Whether the underlying Experience also receives direct traffic.
-4. Whether the compared platform uses the same session and attribution model.
-5. Whether consent or tracking configuration prevented an event from being recorded.
+[Confidence & winners →](/experiments/statistical-significance)
 
-## Related guides
+## Custom events
 
-- [What Are Experiments?](/experiments/what-are-experiments)
-- [Create and Run an Experiment](/experiments/create-experiment)
-- [How Experiment Traffic Is Assigned](/experiments/traffic-assignment)
-- [Experiment Routing Rules](/experiments/routing-rules)
-- [Testing Against Your Website](/experiments/testing-against-website)
-- [Experiment vs Experience Session Counts](/troubleshooting/experiment-experience-sessions)
-- [Analytics Differences](/troubleshooting/analytics-differences)
+Some implementations use mapped downstream events such as quiz steps, email capture, or other custom actions.
+
+These are not standard variant-level metrics throughout every experiment graph. If a custom event is the success condition for your test, agree **how it will be measured and read** before launching.
+
+## If Jurni and another platform disagree
+
+Check:
+
+1. Same date range?
+2. Same traffic scope?
+3. Is campaign traffic entering through the experiment Smart Link?
+4. Does the external platform use the same session/attribution definition?
+5. Did consent block one system but not the other?
+6. Is the underlying page receiving direct traffic?
+7. Are purchases attributed through the same checkout path?
+
+A difference between Jurni, GA4, Meta, Northbeam, and Shopify does not automatically mean one tool is broken.
+
+[Understand analytics differences →](/troubleshooting/analytics-differences)
+
+## A useful AI review prompt
+
+```text
+Help me interpret this experiment as a marketer.
+
+Hypothesis: [HYPOTHESIS]
+Primary metric: [METRIC]
+Test period: [DATES]
+Results: [PASTE CURRENT RESULT]
+Known traffic / implementation changes: [NOTES]
+
+Separate:
+1. What the observed data directly says
+2. What it does not prove
+3. Plausible interpretations to investigate
+4. Confounds / checks
+5. Recommended next decision or test
+
+Do not invent statistical confidence, customer intent, or causal certainty.
+```
+
+More examples: [Experiment Prompt Library](/academy/prompt-library).
+
+## Related
+
+- [Run your first A/B test](/academy/playbooks/first-ab-test)
+- [Optimization Loop](/academy/playbooks/optimization-loop)
+- [Metric definitions](/data-dictionary/metrics-glossary)
+- [Traffic troubleshooting](/experiments/traffic-troubleshoot)

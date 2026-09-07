@@ -4,127 +4,168 @@ sidebarTitle: "Overview"
 description: "Understand how Jurni experiments assign Smart Link traffic between page variants, keep visitor assignments consistent, and compare performance without changing the campaign-facing URL."
 ---
 
-Use a Jurni **experiment** when you have a specific question about which page experience works better for the same campaign traffic.
+Use a **Jurni experiment** when you want to send the same campaign audience to different page experiences and learn which approach performs better.
 
-A simple way to think about it is:
+The basic model is:
 
-**Your ad or campaign uses one Smart Link → Jurni assigns incoming visitors to the experiment variants → you compare what those visitors do.**
+**Campaign / ad → Smart Link → experiment → control or variant → cart / checkout**
 
-The experiment is the testing layer behind the campaign URL. You do not need to create separate ad destinations for each Jurni variant.
+The **Smart Link is the URL you put in the campaign**. The experiment decides which page that visitor receives.
 
-## A real example
+## When should I run an experiment?
 
-Suppose your Meta ad leads with **convenience**, but the current landing page hero leads with a broad brand message.
+Good reasons to test:
 
-Your hypothesis might be:
+- a clear page hypothesis, such as a different hero message;
+- a dedicated Jurni landing page vs. your current website page;
+- proof placed earlier vs. later;
+- shorter vs. longer education;
+- a different campaign-specific page structure;
+- a meaningful offer presentation when the underlying commercial offer is the same.
 
-> If the hero continues the convenience angle, first-time Meta visitors will be more likely to purchase because the page will feel immediately relevant to the ad they clicked.
+A test is less useful when the team has no idea what changed or why.
 
-You keep the product, offer, CTA, and rest of the page the same, then compare:
+**“New design vs. old design”** can answer which whole page performed better, but it does not tell you which of 15 redesign decisions caused the difference.
 
-- **Control:** current hero
-- **Variant:** convenience-focused hero
+For the marketer strategy behind a clean test, use [Run your first A/B test](/academy/playbooks/first-ab-test).
 
-That is a cleaner experiment than redesigning the whole page and calling the result a “hero test.”
+## The four parts of a Jurni experiment
 
-## How a Jurni experiment works
+### 1. Control
 
-<Steps>
-  <Step title="Start with a question">
-    Write the observation, hypothesis, one intended change, and the primary metric you will use to judge it. If you need help choosing the test, use the [Jurni Academy CRO review](/academy/playbooks/cro-review).
-  </Step>
-  <Step title="Prepare the variants">
-    Build and publish the pages you want to compare. A variant can use a Jurni page or a supported existing website destination when the required measurement is connected.
-  </Step>
-  <Step title="Choose the Smart Link">
-    Create a new Smart Link for a new campaign, or deliberately connect an existing Smart Link when the campaign is already sending traffic through it.
-  </Step>
-  <Step title="Set the traffic split">
-    Add the variant destinations and choose the intended weights. The percentages describe the intended allocation over traffic; they are not a promise that every small sample will be perfectly even.
-  </Step>
-  <Step title="Send campaign traffic through the Smart Link">
-    Use the experiment's Smart Link as the campaign entry URL. Going directly to an individual variant bypasses the normal experiment entry path.
-  </Step>
-  <Step title="Read the result against the original hypothesis">
-    Use the same date range and compare the primary metric you selected before looking at the result. Use other metrics to understand behavior, not to quietly replace the success question after the test starts.
-  </Step>
-</Steps>
+The current experience or existing page you want to compare against.
 
-Use [Create an experiment](/experiments/create-experiment) for the exact setup controls or [Run your first A/B test](/academy/playbooks/first-ab-test) for the complete marketer workflow.
+### 2. Variant
 
-## New Smart Link or existing Smart Link?
+The alternative experience. Ideally, its difference from control maps to a clear hypothesis.
 
-**Create a new Smart Link** when you are launching a new campaign and want a fresh campaign URL.
+### 3. Smart Link
 
-**Use an existing Smart Link** when a live campaign already sends traffic through that link and you intentionally want the experiment to begin routing that traffic across variants.
+The campaign-facing entry URL. Traffic sent directly to a variant page does not automatically become experiment traffic.
 
-Before connecting a live link, confirm what currently receives its traffic. The Smart Link is not just a label in the experiment—it is the campaign entry URL.
+### 4. Metric
 
-## What should I test?
+The customer outcome you will use to guide the decision—such as CVR, RPS, AOV, or a relevant interaction rate.
 
-Good experiments change one meaningful customer decision, for example:
+Choose the primary metric **before** reading the result.
 
-- campaign-specific hero message
-- proof placement
-- shorter versus longer education path
-- product introduced earlier versus later
-- offer presentation
-- clearer one-time versus subscription framing
-- comparison section versus no comparison section
+## Example: test a stronger hero
 
-A complete redesign can still be compared, but it answers a broader question: **“Did this whole treatment perform differently?”** It tells you less about which individual change mattered.
+Hypothesis:
 
-See [Decide what to test next](/academy/playbooks/what-to-test) for a prioritization framework.
+> We believe a benefit-led hero will improve purchase conversion for cold Meta visitors because the current feature-led headline does not explain why the product matters quickly enough.
 
-## Which metric should I care about?
+Control:
 
-Choose the metric that matches the hypothesis.
+- current hero.
 
-| If your question is mainly… | A useful primary metric may be… |
-| --- | --- |
-| “Did more sessions become orders?” | **CVR** |
-| “Did this treatment create more revenue per visit?” | **RPS** |
-| “Did purchasers build larger baskets?” | **AOV** |
-| “Did more visitors interact with the product / CTA?” | **CTR / Add-to-Cart / Checkout Rate**, depending on the step |
+Variant:
 
-Jurni also shows Sessions, Orders, and Revenue so you can understand the scale behind the rate metrics.
+- benefit-led hero.
 
-Do not pick whichever metric looks best after the result. See [Reading experiment results](/experiments/reading-results) for the current reporting workflow and [Metrics glossary](/data-dictionary/metrics-glossary) for definitions.
+Keep fixed:
 
-## Why can the traffic split look uneven?
+- product;
+- offer;
+- purchase options;
+- CTA action;
+- rest of page;
+- campaign traffic.
 
-Weights are the intended allocation over traffic. Small samples can naturally look uneven, and returning visitors can retain their existing assignment. Repeatedly refreshing your own browser is not a useful way to validate the split.
+Primary metric:
 
-Use [How traffic assignment works](/experiments/traffic-assignment) when you need the detailed behavior.
+- CVR.
 
-## When should I use Routing Rules?
+That is much easier to learn from than “AI made a better-looking page.”
 
-Routing Rules are for traffic that should go to a specific variant based on URL parameters rather than simply joining the normal weighted comparison.
+## What URL should go in Meta, TikTok, email, or creator traffic?
 
-For example, you might intentionally send one campaign parameter to a matching experience. That is useful routing behavior, but it changes how that traffic participates in the experiment. See [Routing Rules](/experiments/routing-rules).
+Use the **Smart Link connected to the experiment** when you want that campaign traffic assigned between variants.
 
-## Before you launch
+Do **not** put the direct control or variant URL in the campaign and expect Jurni to split that traffic behind the scenes.
 
-Open the exact Smart Link and verify:
+If you connect an existing Smart Link that already receives real traffic, starting the experiment can change where that existing traffic goes. Treat it as a live campaign decision.
 
-- the intended destination variants are published
-- mobile works
-- product / CTA / cart behavior is correct in every variant
-- campaign parameters behave as intended
-- required tracking is connected
+[Create an experiment →](/experiments/create-experiment)
 
-If you are testing an external website page, a link opening successfully does not mean Jurni can measure all of the outcomes you need. Follow [Testing a Jurni page against an existing website](/experiments/testing-against-website).
+## How traffic assignment works
 
-## Pausing and ending need deliberate traffic decisions
+For a standard weighted test, Jurni assigns traffic according to the configured variant weights.
 
-<Warning>
-  The current pause flow warns that traffic will go to the shop home page. Ending an experiment asks you to choose the winning destination that should continue receiving traffic. Do not pause or end a live campaign casually—review [Pause, end, and reuse an experiment](/experiments/pause-end-reuse) first.
-</Warning>
+A few things to expect:
 
-## Learn the workflow, then use the Help Center for the controls
+- a 50/50 setup does not mean every consecutive pair of visitors splits perfectly one-and-one;
+- a returning visitor can retain the same assigned variant;
+- repeatedly refreshing one browser is not a useful test of allocation;
+- Routing Rules can intentionally send matching campaign parameters to a specific variant before the normal weighted split.
 
-- [Academy: Run your first A/B test](/academy/playbooks/first-ab-test)
-- [Academy: Review a page before testing](/academy/playbooks/cro-review)
-- [Create an experiment](/experiments/create-experiment)
-- [Read experiment results](/experiments/reading-results)
-- [Troubleshoot traffic assignment](/experiments/traffic-troubleshoot)
+[How traffic assignment works →](/experiments/traffic-assignment)
+
+## Experiments vs. page analytics
+
+A Jurni experience can receive traffic **outside** an experiment—for example through a direct page URL, another campaign, or another path.
+
+That means:
+
+- experience-level sessions can include traffic that was never assigned by this experiment;
+- experiment results should be read from the experiment context when making experiment decisions.
+
+[Why experiment and experience sessions can differ →](/troubleshooting/experiment-experience-sessions)
+
+## Testing against an existing website page
+
+A variant can also point to a supported existing or external page when the tracking and attribution setup is correctly connected.
+
+This lets you ask a useful business question:
+
+> “Should this campaign use our current Shopify / website page or the new Jurni experience?”
+
+Because the two destinations can use different runtimes, carts, scripts, or tracking paths, QA both before interpreting the result.
+
+[How to test against an existing page →](/experiments/testing-against-website)
+
+## How should I read the result?
+
+Start with:
+
+1. the date range for the actual test period;
+2. your primary metric;
+3. the observed difference between variants;
+4. supporting journey/revenue metrics;
+5. any traffic, page, product, offer, or tracking changes that complicate interpretation.
+
+Do not declare a winner simply because one number is temporarily higher.
+
+[Read experiment results →](/experiments/reading-results)
+
+Then use the [Optimization Loop](/academy/playbooks/optimization-loop) to turn the result into a learning and follow-up hypothesis.
+
+## What happens when I pause or end a test?
+
+Pause and End are traffic-routing decisions, not just reporting labels.
+
+The current pause flow warns that traffic is sent to the shop home page. Ending asks you to choose the destination/winner that should continue receiving traffic.
+
+Do not pause or end a live campaign without checking the exact routing consequence first.
+
+[Pause, end, and reuse an experiment →](/experiments/pause-end-reuse)
+
+## Start here
+
+<CardGroup cols={2}>
+  <Card title="Run your first A/B test" icon="flask-conical" href="/academy/playbooks/first-ab-test">
+    Learn the full marketer workflow from hypothesis to decision.
+  </Card>
+
+  <Card title="Create the experiment in Jurni" icon="settings-2" href="/experiments/create-experiment">
+    Follow the product steps for link, variants, weights, and launch.
+  </Card>
+
+  <Card title="Experiment prompt library" icon="copy" href="/academy/prompt-library">
+    Use AI to create clean variants, QA them, and interpret results without overclaiming.
+  </Card>
+
+  <Card title="Troubleshoot experiment traffic" icon="wrench" href="/experiments/traffic-troubleshoot">
+    Check Smart Link use, sticky assignment, routing rules, and date ranges.
+  </Card>
+</CardGroup>

@@ -393,6 +393,10 @@
         "label": "Academy"
       },
       {
+        "href": "/guides",
+        "label": "Guides"
+      },
+      {
         "href": "/changelog",
         "label": "Changelog"
       }
