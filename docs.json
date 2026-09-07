@@ -350,7 +350,8 @@
             "group": "Get Help",
             "icon": "life-buoy",
             "pages": [
-              "help/start"
+              "help/start",
+              "changelog"
             ]
           },
           {
