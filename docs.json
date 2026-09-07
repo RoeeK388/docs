@@ -390,7 +390,19 @@
       {
         "tab": "Academy",
         "pages": [
-          "academy"
+          "academy",
+          {
+            "group": "Campaign Playbooks",
+            "pages": []
+          },
+          {
+            "group": "Commerce Playbooks",
+            "pages": []
+          },
+          {
+            "group": "CRO & Experimentation",
+            "pages": []
+          }
         ]
       }
     ]
