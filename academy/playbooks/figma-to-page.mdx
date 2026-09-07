@@ -1,0 +1,206 @@
+---
+title: "Turn Figma frames into a Jurni page"
+sidebarTitle: "Figma → Jurni"
+description: "Use desktop and mobile Figma frames as design references, connect real content and commerce, and refine the result into a launch-ready Jurni experience."
+icon: "figma"
+hidden: true
+---
+
+Use this playbook when your designer has already defined the page in Figma and you want to move from static design to an editable, functional Jurni experience.
+
+The key shift is that **Figma describes appearance; Jurni still needs real content, responsive intent, and shopper behavior**.
+
+## Before you start
+
+Prepare:
+
+- the desktop Figma frame;
+- the mobile Figma frame when available;
+- connected product(s);
+- approved copy and assets;
+- real CTA / purchase behavior;
+- integration widgets that need to appear;
+- any design elements that are visual placeholders rather than real functionality.
+
+Use [Build from Figma references](/building-funnels/figma-file) for connection / setup details.
+
+## Phase 1 — Label the frames clearly
+
+Do not paste two frame links and assume Jurni knows how they relate.
+
+```text
+Desktop reference: [FIGMA DESKTOP FRAME]
+Mobile reference: [FIGMA MOBILE FRAME]
+
+These are two responsive versions of the SAME page.
+The desktop frame is not section 1 and the mobile frame is not section 2.
+```
+
+If only one frame exists, say so explicitly and ask Jurni to create the responsive adaptation based on the same hierarchy.
+
+## Phase 2 — Separate design placeholders from real behavior
+
+Identify anything in Figma that must be connected to actual product behavior:
+
+- product selectors;
+- subscription cards;
+- price / compare-at display;
+- add-to-cart button;
+- checkout button;
+- review widget;
+- embedded form;
+- carousel / tabs;
+- sticky CTA;
+- navigation / anchors.
+
+Write the expected behavior beside the design reference.
+
+Example:
+
+```text
+The two cards in the Figma are purchase-type controls.
+Use the real one-time / subscription options available for the connected product.
+Do not recreate them as static cards with typed prices.
+```
+
+## Phase 3 — Build the design shell
+
+```text
+Build this Jurni experience from the Figma references.
+
+DESIGN
+Desktop: [FRAME]
+Mobile: [FRAME]
+Follow the visual hierarchy, layout, spacing, typography intent, and media placement.
+
+CONTENT
+Use the approved copy and assets attached here.
+Use AI Knowledge for brand rules.
+
+COMMERCE
+Use [CONNECTED PRODUCT] and preserve / configure [REAL PURCHASE ACTION].
+Where the Figma shows purchase controls, make them functional using the real supported product options.
+
+INTEGRATIONS
+[REVIEW / FORM / OTHER WIDGET REQUIREMENTS]
+
+Do not create static stand-ins for real commerce controls.
+Do not invent prices, reviews, claims, or interaction behavior that is not defined.
+```
+
+## Phase 4 — Review fidelity by priority
+
+Do not judge the build only by “does it look identical?” Review in this order:
+
+1. **Structure** — section order, hierarchy, major layouts.
+2. **Content** — correct copy / imagery / product.
+3. **Function** — CTA, product choices, forms, widgets.
+4. **Responsive intent** — mobile vs desktop behavior.
+5. **Fine styling** — spacing, borders, radii, crop, typography details.
+
+A 2-pixel spacing mismatch is less important than a purchase selector becoming decorative.
+
+## Phase 5 — Fix one mismatch at a time
+
+Use a specific correction:
+
+```text
+The overall section is correct.
+Change only the selected hero to better match the Figma:
+- desktop image should occupy roughly [RELATIVE WIDTH];
+- headline aligns with [REFERENCE POINT];
+- reduce the gap between body copy and CTA;
+- keep the existing product / CTA behavior unchanged.
+
+Do not alter mobile in this pass.
+```
+
+For mobile:
+
+```text
+Mobile only:
+Match the supplied mobile frame's order:
+1. [ELEMENT]
+2. [ELEMENT]
+3. [ELEMENT]
+
+Keep desktop unchanged.
+Preserve all copy and behavior.
+```
+
+## Phase 6 — Reconcile design and real content
+
+Static designs often use placeholder text, fixed prices, mock reviews, or product names that changed after design handoff.
+
+When the real data disagrees with the mockup, decide explicitly which source wins:
+
+- approved current product data over mock price;
+- approved legal / claims copy over old Figma copy;
+- live review widget over placeholder testimonials;
+- real selling plans over mocked subscription labels.
+
+Do not force outdated Figma content into production just for visual fidelity.
+
+## Phase 7 — Test responsive behavior, not screenshots
+
+Check multiple widths rather than only the exact Figma viewport.
+
+Look for:
+
+- text wrapping badly between breakpoints;
+- image crop that only works at one width;
+- cards too narrow / wide;
+- sticky content covering controls;
+- selectors losing hierarchy;
+- desktop overrides accidentally affecting the base / mobile layout.
+
+See [Desktop & mobile](/build/desktop-mobile) for the editor model.
+
+## Phase 8 — QA the live page
+
+A design match is not launch readiness.
+
+Verify:
+
+- actual product / variants / plans;
+- CTA actions;
+- forms and review widgets;
+- offer / discount result;
+- published page layout;
+- tracking / consent;
+- campaign URL.
+
+Shopify Pages in particular need checking on the final `/pages/` URL because the theme environment can differ from the editor / Jurni-hosted page.
+
+## What good looks like
+
+The live page should preserve the designer's **intent and hierarchy**, while behaving like a real Jurni commerce experience rather than an image-perfect prototype.
+
+## Common mistakes
+
+### Treating desktop + mobile as two pages
+
+They are responsive references for one page.
+
+### Mock price becomes real copy
+
+Use current product / offer data.
+
+### Pixel-perfect before functional
+
+Validate the purchase / integration path first.
+
+### One giant “match Figma exactly” correction
+
+Fix the meaningful mismatch in a scoped pass.
+
+### Ignoring intermediate widths
+
+A design can match both frame screenshots and still break between them.
+
+## Related
+
+- [Figma reference setup](/building-funnels/figma-file)
+- [Prompting 101](/academy/prompting-101)
+- [Build from a reference](/academy/playbooks/reference-page)
+- [Desktop & mobile](/build/desktop-mobile)
